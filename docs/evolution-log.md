@@ -5,9 +5,9 @@
 ## 当前状态
 
 - Git 仓库根目录：本工作区；未来应用目录：`PathLab-AI/`，不另建嵌套仓库。
-- 本地 Git 已真实初始化，分支为 `main`；没有远程仓库。本轮创建仅包含规格、规则与归档工具的文档基线，不包含未来应用功能；真实提交哈希在创建后归档。
+- 分支为 `main`；文档/工具基线已真实提交：`30523e1622322bd44592b87f3c550cb8a88ef279`，只包含当时已有规格、规则与归档工具，不包含未来应用功能。没有远程仓库。
 - 2026-10-17 用户提供作者名称 `LJQZS08` 与邮箱；已仅在本仓库配置 `user.name` / `user.email`，并核对实际作者与提交者身份。保留仓库级 `user.useConfigOnly=true`；未更改全局配置、伪造身份或倒填时间。
-- 只完成记录规则、归档工具与文档基线准备；未启动应用开发。E000 的最终答复已从真实记录补齐；当前作者确认轮次的最终答复须于下一轮补齐，不提前声称完整归档。
+- 已完成记录规则、归档工具与本地文档基线提交；未启动应用开发。E000 的最终答复已从真实记录补齐；E001 作者确认轮次已保存当前可见消息，最终答复须于下一轮补齐。
 - 未创建或推送 GitHub 仓库，未更改 Public 或评审权限；这些操作需用户明确确认。
 
 ## 本轮 E000：强制演进与留证规则
@@ -24,8 +24,22 @@
 | 问题引导者 | 上述问题由 AI 执行时自行发现、自行修复；用户未实际追加 Bug 指引，**不能冒充用户引导修复链** |
 | 执行者 | AI 通过本地 PowerShell 实际执行；尚无人类验收记录 |
 | 验证结果 | Windows PowerShell 5.1 与 PowerShell 7.6.5 各通过 14 项自动检查；2026-10-17 作者确认轮次已在两者重跑并各通过 14 项；真实会话提取在两者均成功 |
-| Git 状态 | 作者信息阻塞已解除；基线准备提交，消息为 `docs: establish competition evidence policy and prompt archives`；成功后再登记实际哈希，不提前编造 |
+| Git 状态 | 已真实提交 `30523e1622322bd44592b87f3c550cb8a88ef279`；消息 `docs: establish competition evidence policy and prompt archives`；本索引在后续证据归档提交中登记该哈希，不改写基线 |
 | 核心链计数 | 0/3；本轮是流程与工具准备，不算应用核心功能链 |
+
+## E001：作者确认与首个真实基线（2026-10-17）
+
+| 字段 | 真实记录 |
+|---|---|
+| 用户意图 | 提供 GitHub 名称 `LJQZS08` 与 Git 作者邮箱，解除本地提交的身份阻塞；不是远程发布授权 |
+| 原始 Prompt 与可见答复 | `prompts/sessions/2026-10-17-git-author-baseline.md` 与同名 JSONL；当前 2 条真实可见消息，`finalCaptured=False`；最终答复下一轮从原始记录补齐 |
+| 实际操作 | 仅配置本仓库作者名称与用户提供的邮箱；核对实际 author/committer；补齐 E000 最终答复；审查暂存范围后创建首个本地文档/工具基线 |
+| 归档变更 | 本索引登记已经存在的基线哈希；归档本轮作者确认快照；不启动应用、不增加虚构功能或空提交 |
+| 实际验证 | 本轮两版 PowerShell 各重跑并通过 14 项检查；核对两组真实 JSONL 全部消息的原文 SHA256；显式暂存文件清单与预期一致；暂存差异检查通过；限定文件中未匹配到所检查的常见凭证模式，但不等于全面安全认证 |
+| 基线提交 | `30523e1622322bd44592b87f3c550cb8a88ef279`，`docs: establish competition evidence policy and prompt archives`；真实作者与提交者均为用户提供的身份，使用自然当前时间 |
+| 当前归档提交 | 本记录与作者确认快照构成独立证据归档；用 `git log -- prompts/sessions/2026-10-17-git-author-baseline.jsonl` 定位，不为填入提交自身哈希反复 amend |
+| 远程与隐私 | 无远程仓库、未 push、未变更 Public/评审权限；Git 作者元数据与本地原始 Prompt 含邮箱，未来发布前须确认公开范围 |
+| 剩余缺口 | 当前最终答复尚未生成，快照不是完整收尾；三条应用核心链仍为 0/3，本轮不计入核心功能迭代 |
 
 ## 可复用验证命令
 
@@ -40,7 +54,7 @@ pwsh.exe -NoLogo -NoProfile -File .\scripts\Test-PromptSnapshot.ps1
 
 测试使用明确标记的合成对话，仅作测试夹具；不作为真实参赛材料。检查目录和生成的测试快照均在本工作区内，用后删除；保留真实 Prompt 证据。
 
-## E000 最终答复已补齐与后续刷新方式
+## 快照完整性与下一轮补齐操作
 
 E000 已用下列命令读取真实记录补齐最终答复，共 4 条消息且 `finalCaptured=True`。重复刷新仍只允许追加原文，不推测生成：
 
@@ -49,6 +63,14 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 ```
 
 核验输出 `finalCaptured=True`；若最终答复不在原始记录中，则如实标记缺失，采用真实导出/截图/录屏补充，不自行写成“原文”。
+
+E001 当前快照有 2 条真实消息，最终答复尚未写入。下一轮开始先运行：
+
+```powershell
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '[**LJQZS08**]' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-git-author-baseline' -Refresh
+```
+
+再核对 `finalCaptured=True`、原文哈希与未覆盖附件；不要把内部交接摘要当成人类 Prompt。
 
 后续每轮使用本轮 Prompt 的唯一真实前缀及新的 OutputStem。若存在附件、图片或录屏，这个文字提取脚本不会替代对应原始媒体；须另外保留。发现公开材料含敏感信息时保留本地原件，提供标明脱敏范围的评审副本，不自动外发。
 
@@ -77,7 +99,7 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 
 - [x] 补齐 E000 规则更新轮次的真实最终答复。
 - [ ] 下一轮补齐当前作者确认轮次的真实最终答复。
-- [ ] 用户提供实际 Git 作者姓名和邮箱，按真实身份完成首次文档/工具基线提交。
+- [x] 用户提供 Git 作者信息，仅配置本仓库并创建首个真实文档/工具基线：`30523e1622322bd44592b87f3c550cb8a88ef279`。
 - [ ] 第一轮应用开发起持续进行细粒度提交与同步证据归档。
 - [ ] 应用核心链实际达到 3/3，含真实用户引导、验证与提交。
 - [ ] 发布前确认 GitHub 操作并检查密钥/个人信息，核实评审访问权限。
