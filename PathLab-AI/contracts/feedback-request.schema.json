@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "levelId",
+    "algorithm",
+    "runId",
+    "gridRevision",
+    "requestedHintLevel",
+    "answerRevealed",
+    "facts"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "levelId": {
+      "enum": [
+        "L01",
+        "L02",
+        "L03",
+        "L04"
+      ]
+    },
+    "algorithm": {
+      "enum": [
+        "bfs",
+        "astar"
+      ]
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+    },
+    "gridRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "requestedHintLevel": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "answerRevealed": {
+      "type": "boolean"
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "predictionCount",
+        "correctCount",
+        "candidateErrorTypes",
+        "events"
+      ],
+      "properties": {
+        "predictionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "correctCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidateErrorTypes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "only_goal_distance",
+              "ignore_path_cost",
+              "misunderstand_queue_order",
+              "confuse_search_and_path",
+              "overtrust_greedy_choice",
+              "cannot_explain_counterfactual"
+            ]
+          }
+        },
+        "events": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "eventId",
+              "type",
+              "description"
+            ],
+            "properties": {
+              "eventId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+              },
+              "type": {
+                "enum": [
+                  "prediction_submitted",
+                  "run_finished",
+                  "counterfactual_applied",
+                  "reflection_completed"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

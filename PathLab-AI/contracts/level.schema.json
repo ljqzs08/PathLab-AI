@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "narrative",
+    "learningObjectives",
+    "algorithms",
+    "grid",
+    "start",
+    "goal",
+    "checkpoints",
+    "counterfactual",
+    "successCriteria",
+    "teachingNotes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "narrative": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "learningObjectives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      },
+      "minItems": 1
+    },
+    "algorithms": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "bfs",
+          "astar"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height",
+        "rows"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 25
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 25
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[.#]+$"
+          },
+          "minItems": 3,
+          "maxItems": 25
+        }
+      }
+    },
+    "start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "beforeSelectionOrdinal",
+          "minCandidates",
+          "prompt"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+          },
+          "beforeSelectionOrdinal": {
+            "type": "integer",
+            "minimum": 2
+          },
+          "minCandidates": {
+            "const": 2
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "counterfactual": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "cell"
+          ],
+          "properties": {
+            "type": {
+              "const": "block_cell"
+            },
+            "cell": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y"
+              ],
+              "properties": {
+                "x": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "y": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "cell"
+          ],
+          "properties": {
+            "type": {
+              "const": "move_goal"
+            },
+            "cell": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y"
+              ],
+              "properties": {
+                "x": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "y": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "successCriteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      },
+      "minItems": 1
+    },
+    "teachingNotes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      },
+      "minItems": 1
+    }
+  }
+}

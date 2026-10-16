@@ -1,0 +1,42 @@
+{
+  "notice": "SYNTHETIC CONTRACT FIXTURE — not a real learner or AI call",
+  "request": {
+    "schemaVersion": 1,
+    "levelId": "L01",
+    "algorithm": "bfs",
+    "runId": "fixture-run",
+    "gridRevision": 0,
+    "requestedHintLevel": 2,
+    "answerRevealed": true,
+    "facts": {
+      "predictionCount": 2,
+      "correctCount": 1,
+      "candidateErrorTypes": [
+        "misunderstand_queue_order"
+      ],
+      "events": [
+        {
+          "eventId": "fixture-run:12",
+          "type": "prediction_submitted",
+          "description": "两次选择中一次未选择 FIFO 队首。"
+        }
+      ]
+    }
+  },
+  "response": {
+    "schemaVersion": 1,
+    "mode": "local",
+    "summary": "本次两次预测中一次与队列顺序不同。",
+    "primaryErrorType": "misunderstand_queue_order",
+    "evidence": [
+      {
+        "eventId": "fixture-run:12",
+        "factPath": "/facts/events/0/description"
+      }
+    ],
+    "hintLevel": 2,
+    "nextQuestion": "同层节点应按什么顺序出队？",
+    "recommendation": "查看候选节点入队序号后再次比较。",
+    "insufficientEvidence": false
+  }
+}

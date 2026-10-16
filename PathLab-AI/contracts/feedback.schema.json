@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "mode",
+    "summary",
+    "primaryErrorType",
+    "evidence",
+    "hintLevel",
+    "nextQuestion",
+    "recommendation",
+    "insufficientEvidence"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "mode": {
+      "enum": [
+        "local",
+        "remote"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "primaryErrorType": {
+      "enum": [
+        "only_goal_distance",
+        "ignore_path_cost",
+        "misunderstand_queue_order",
+        "confuse_search_and_path",
+        "overtrust_greedy_choice",
+        "cannot_explain_counterfactual",
+        null
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "eventId",
+          "factPath"
+        ],
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+          },
+          "factPath": {
+            "type": "string",
+            "pattern": "^/facts/[a-zA-Z0-9_/-]+$"
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 12
+    },
+    "hintLevel": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "nextQuestion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "recommendation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "insufficientEvidence": {
+      "type": "boolean"
+    }
+  }
+}

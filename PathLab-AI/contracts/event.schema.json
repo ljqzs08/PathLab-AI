@@ -1,0 +1,1110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "sessionId",
+    "runId",
+    "levelId",
+    "gridRevision",
+    "algorithm",
+    "algorithmVersion",
+    "step",
+    "createdAt",
+    "type",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "eventId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+    },
+    "sessionId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+    },
+    "levelId": {
+      "enum": [
+        "L01",
+        "L02",
+        "L03",
+        "L04"
+      ]
+    },
+    "gridRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "algorithm": {
+      "enum": [
+        "bfs",
+        "astar"
+      ]
+    },
+    "algorithmVersion": {
+      "const": "1.0.0"
+    },
+    "step": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "createdAt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+    },
+    "type": {
+      "enum": [
+        "mission_started",
+        "prediction_requested",
+        "prediction_submitted",
+        "node_discovered",
+        "node_selected",
+        "node_expanded",
+        "node_skipped",
+        "frontier_snapshot",
+        "path_updated",
+        "run_paused",
+        "run_resumed",
+        "run_finished",
+        "counterfactual_applied",
+        "diagnosis_generated",
+        "reflection_completed",
+        "node_relaxed"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "mission_started"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "gridRevision"
+            ],
+            "properties": {
+              "gridRevision": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "prediction_requested"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "checkpointId",
+              "candidates"
+            ],
+            "properties": {
+              "checkpointId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "node",
+                    "entrySequence",
+                    "distanceFromStart",
+                    "g",
+                    "h",
+                    "f"
+                  ],
+                  "properties": {
+                    "node": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "x",
+                        "y"
+                      ],
+                      "properties": {
+                        "x": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "y": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "entrySequence": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "distanceFromStart": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "g": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "h": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "f": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "prediction_submitted"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "checkpointId",
+              "selected",
+              "actual",
+              "candidates",
+              "correct",
+              "hintLevel",
+              "elapsedBucket",
+              "retryCount"
+            ],
+            "properties": {
+              "checkpointId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+              },
+              "selected": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "actual": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "node",
+                    "entrySequence",
+                    "distanceFromStart",
+                    "g",
+                    "h",
+                    "f"
+                  ],
+                  "properties": {
+                    "node": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "x",
+                        "y"
+                      ],
+                      "properties": {
+                        "x": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "y": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "entrySequence": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "distanceFromStart": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "g": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "h": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "f": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 1
+              },
+              "correct": {
+                "type": "boolean"
+              },
+              "hintLevel": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4
+              },
+              "elapsedBucket": {
+                "enum": [
+                  "under_10s",
+                  "10_to_30s",
+                  "over_30s"
+                ]
+              },
+              "retryCount": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "node_discovered"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "node",
+              "parent",
+              "g",
+              "h",
+              "f",
+              "entrySequence"
+            ],
+            "properties": {
+              "node": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "parent": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "x",
+                      "y"
+                    ],
+                    "properties": {
+                      "x": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "y": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "g": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "h": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "f": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "entrySequence": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "node_selected"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "node",
+              "g",
+              "h",
+              "f",
+              "entrySequence"
+            ],
+            "properties": {
+              "node": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "g": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "h": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "f": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "entrySequence": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "node_expanded"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "node"
+            ],
+            "properties": {
+              "node": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "node_skipped"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "node",
+              "reason"
+            ],
+            "properties": {
+              "node": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer"
+                  },
+                  "y": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "reason": {
+                "enum": [
+                  "blocked",
+                  "out_of_bounds",
+                  "already_discovered",
+                  "not_better",
+                  "stale_entry"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "frontier_snapshot"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "nodes"
+            ],
+            "properties": {
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "node",
+                    "g",
+                    "h",
+                    "f",
+                    "entrySequence"
+                  ],
+                  "properties": {
+                    "node": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "x",
+                        "y"
+                      ],
+                      "properties": {
+                        "x": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "y": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "g": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "h": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "f": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "entrySequence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "path_updated"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "nodes",
+              "final"
+            ],
+            "properties": {
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "y": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 0
+              },
+              "final": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "run_paused"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reason"
+            ],
+            "properties": {
+              "reason": {
+                "enum": [
+                  "user",
+                  "checkpoint",
+                  "restore"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "run_resumed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "speed"
+            ],
+            "properties": {
+              "speed": {
+                "enum": [
+                  0.5,
+                  1,
+                  2,
+                  4
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "run_finished"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "path",
+              "metrics"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "found",
+                  "unreachable"
+                ]
+              },
+              "path": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "y": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 0
+              },
+              "metrics": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "discoveredCount",
+                  "expandedCount",
+                  "selectionCount",
+                  "frontierPeak",
+                  "pathLength"
+                ],
+                "properties": {
+                  "discoveredCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "expandedCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "selectionCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "frontierPeak": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "pathLength": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "counterfactual_applied"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "previousRunId",
+              "previousGridRevision",
+              "newGridRevision",
+              "change"
+            ],
+            "properties": {
+              "previousRunId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+              },
+              "previousGridRevision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "newGridRevision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "change": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "type",
+                      "cell"
+                    ],
+                    "properties": {
+                      "type": {
+                        "const": "block_cell"
+                      },
+                      "cell": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "x",
+                          "y"
+                        ],
+                        "properties": {
+                          "x": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "y": {
+                            "type": "integer",
+                            "minimum": 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "type",
+                      "cell"
+                    ],
+                    "properties": {
+                      "type": {
+                        "const": "move_goal"
+                      },
+                      "cell": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "x",
+                          "y"
+                        ],
+                        "properties": {
+                          "x": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "y": {
+                            "type": "integer",
+                            "minimum": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "diagnosis_generated"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "feedbackId",
+              "mode",
+              "evidenceEventIds"
+            ],
+            "properties": {
+              "feedbackId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+              },
+              "mode": {
+                "enum": [
+                  "local",
+                  "remote"
+                ]
+              },
+              "evidenceEventIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+                },
+                "minItems": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "reflection_completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "evidenceEventIds",
+              "explanation"
+            ],
+            "properties": {
+              "evidenceEventIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$"
+                },
+                "minItems": 1
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "node_relaxed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "node",
+              "parent",
+              "previousG",
+              "g",
+              "h",
+              "f",
+              "entrySequence"
+            ],
+            "properties": {
+              "node": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "parent": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "previousG": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "g": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "h": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "f": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "entrySequence": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

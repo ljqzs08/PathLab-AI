@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "states": [
+    "idle",
+    "briefing",
+    "editing",
+    "prediction",
+    "running",
+    "paused",
+    "reflection",
+    "counterfactual",
+    "report"
+  ],
+  "initial": "idle",
+  "transitions": [
+    {
+      "from": "idle",
+      "action": "select_mission",
+      "to": "briefing"
+    },
+    {
+      "from": "briefing",
+      "action": "edit",
+      "to": "editing"
+    },
+    {
+      "from": "editing",
+      "action": "save_valid_map",
+      "to": "briefing"
+    },
+    {
+      "from": "editing",
+      "action": "cancel",
+      "to": "briefing"
+    },
+    {
+      "from": "briefing",
+      "action": "start_valid_run",
+      "to": "prediction"
+    },
+    {
+      "from": "prediction",
+      "action": "submit_valid_choice",
+      "to": "paused"
+    },
+    {
+      "from": "prediction",
+      "action": "no_checkpoint_available",
+      "to": "paused"
+    },
+    {
+      "from": "paused",
+      "action": "play",
+      "to": "running"
+    },
+    {
+      "from": "running",
+      "action": "pause",
+      "to": "paused"
+    },
+    {
+      "from": "running",
+      "action": "checkpoint_due",
+      "to": "prediction"
+    },
+    {
+      "from": "paused",
+      "action": "checkpoint_due",
+      "to": "prediction"
+    },
+    {
+      "from": "running",
+      "action": "finish",
+      "to": "reflection"
+    },
+    {
+      "from": "paused",
+      "action": "finish",
+      "to": "reflection"
+    },
+    {
+      "from": "paused",
+      "action": "step",
+      "to": "paused"
+    },
+    {
+      "from": "reflection",
+      "action": "experiment",
+      "to": "counterfactual"
+    },
+    {
+      "from": "counterfactual",
+      "action": "apply_valid_change",
+      "to": "briefing"
+    },
+    {
+      "from": "counterfactual",
+      "action": "cancel",
+      "to": "reflection"
+    },
+    {
+      "from": "reflection",
+      "action": "complete_reflection",
+      "to": "report"
+    },
+    {
+      "from": "report",
+      "action": "experiment",
+      "to": "counterfactual"
+    },
+    {
+      "from": "report",
+      "action": "select_mission",
+      "to": "briefing"
+    }
+  ],
+  "reset": {
+    "action": "reset_task",
+    "from": [
+      "briefing",
+      "editing",
+      "prediction",
+      "running",
+      "paused",
+      "reflection",
+      "counterfactual",
+      "report"
+    ],
+    "to": "briefing",
+    "preserve": [
+      "aggregatedLearningStats",
+      "completedRunSummaries"
+    ],
+    "clear": [
+      "activeRun",
+      "predictionDraft",
+      "playbackCursor",
+      "unsavedEdits"
+    ]
+  },
+  "restore": {
+    "running": "paused",
+    "prediction": "prediction",
+    "editing": "briefing",
+    "counterfactual": "reflection",
+    "invalid": "briefing"
+  }
+}

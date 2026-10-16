@@ -1,0 +1,256 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "L01",
+    "title": "一层一层抵达",
+    "narrative": "图书馆机器人向医务室配送物资；每一步代价相同。",
+    "learningObjectives": [
+      "按 FIFO 队列顺序预测下一次出队节点",
+      "区分搜索扩展与最终路径"
+    ],
+    "algorithms": [
+      "bfs"
+    ],
+    "start": {
+      "x": 0,
+      "y": 2
+    },
+    "goal": {
+      "x": 6,
+      "y": 2
+    },
+    "counterfactual": {
+      "type": "move_goal",
+      "cell": {
+        "x": 6,
+        "y": 4
+      }
+    },
+    "teachingNotes": [
+      "下一次出队不等于进入下一层；同层仍按发现顺序处理。",
+      "入队即标记 discovered。"
+    ],
+    "grid": {
+      "width": 7,
+      "height": 5,
+      "rows": [
+        ".......",
+        "..#.#..",
+        ".......",
+        "..#.#..",
+        "......."
+      ]
+    },
+    "checkpoints": [
+      {
+        "id": "L01-P1",
+        "beforeSelectionOrdinal": 2,
+        "minCandidates": 2,
+        "prompt": "当前候选节点中，哪一个将被算法下一次选中？"
+      },
+      {
+        "id": "L01-P2",
+        "beforeSelectionOrdinal": 4,
+        "minCandidates": 2,
+        "prompt": "根据队列顺序或 f、h、入队序号，选择下一个节点。"
+      }
+    ],
+    "successCriteria": [
+      "每个实际触发的预测点至少提交一次选择",
+      "完成原始运行和一次条件修改后的新运行",
+      "复盘引用至少一条可见事件；不要求首次预测全对"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "id": "L02",
+    "title": "施工区绕行",
+    "narrative": "施工围挡阻断直线道路；比较 BFS 与 A* 的搜索过程。",
+    "learningObjectives": [
+      "比较相同地图的最少步数和唯一扩展节点数",
+      "解释 A* 的 f、h、sequence 排序"
+    ],
+    "algorithms": [
+      "bfs",
+      "astar"
+    ],
+    "start": {
+      "x": 1,
+      "y": 1
+    },
+    "goal": {
+      "x": 7,
+      "y": 1
+    },
+    "counterfactual": {
+      "type": "block_cell",
+      "cell": {
+        "x": 4,
+        "y": 5
+      }
+    },
+    "teachingNotes": [
+      "不预设 A* 在所有地图搜索更少。",
+      "最短步数相同不代表路径节点序列相同。"
+    ],
+    "grid": {
+      "width": 9,
+      "height": 7,
+      "rows": [
+        "....#....",
+        "....#....",
+        "....#....",
+        "....#....",
+        "....#....",
+        ".........",
+        "........."
+      ]
+    },
+    "checkpoints": [
+      {
+        "id": "L02-P1",
+        "beforeSelectionOrdinal": 2,
+        "minCandidates": 2,
+        "prompt": "当前候选节点中，哪一个将被算法下一次选中？"
+      },
+      {
+        "id": "L02-P2",
+        "beforeSelectionOrdinal": 4,
+        "minCandidates": 2,
+        "prompt": "根据队列顺序或 f、h、入队序号，选择下一个节点。"
+      }
+    ],
+    "successCriteria": [
+      "每个实际触发的预测点至少提交一次选择",
+      "完成原始运行和一次条件修改后的新运行",
+      "复盘引用至少一条可见事件；不要求首次预测全对"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "id": "L03",
+    "title": "封锁东门，重新规划",
+    "narrative": "完成原始调度后封锁东侧通道；创建新的运行而非继续旧动画。",
+    "learningObjectives": [
+      "识别旧路径对新地图无效",
+      "依据修改坐标解释重规划差异"
+    ],
+    "algorithms": [
+      "astar"
+    ],
+    "start": {
+      "x": 0,
+      "y": 2
+    },
+    "goal": {
+      "x": 8,
+      "y": 2
+    },
+    "counterfactual": {
+      "type": "block_cell",
+      "cell": {
+        "x": 4,
+        "y": 2
+      }
+    },
+    "teachingNotes": [
+      "旧运行只读保留用于前后比较，不作为新地图答案。",
+      "这是离散的两次静态规划，不是动态避障算法。"
+    ],
+    "grid": {
+      "width": 9,
+      "height": 5,
+      "rows": [
+        ".........",
+        ".#######.",
+        ".........",
+        ".#######.",
+        "........."
+      ]
+    },
+    "checkpoints": [
+      {
+        "id": "L03-P1",
+        "beforeSelectionOrdinal": 2,
+        "minCandidates": 2,
+        "prompt": "当前候选节点中，哪一个将被算法下一次选中？"
+      },
+      {
+        "id": "L03-P2",
+        "beforeSelectionOrdinal": 4,
+        "minCandidates": 2,
+        "prompt": "根据队列顺序或 f、h、入队序号，选择下一个节点。"
+      }
+    ],
+    "successCriteria": [
+      "每个实际触发的预测点至少提交一次选择",
+      "完成原始运行和一次条件修改后的新运行",
+      "复盘引用至少一条可见事件；不要求首次预测全对"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "id": "L04",
+    "title": "调度员复盘",
+    "narrative": "自主选择算法，预测节点并修改终点，为一次节点选择给出证据解释。",
+    "learningObjectives": [
+      "区分累计代价、剩余估计与搜索节点数",
+      "完成有证据的反事实复盘"
+    ],
+    "algorithms": [
+      "bfs",
+      "astar"
+    ],
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "goal": {
+      "x": 8,
+      "y": 6
+    },
+    "counterfactual": {
+      "type": "move_goal",
+      "cell": {
+        "x": 8,
+        "y": 0
+      }
+    },
+    "teachingNotes": [
+      "预测正确不等于已证明掌握。",
+      "短文本为本地记录，默认不发给远程模型。"
+    ],
+    "grid": {
+      "width": 9,
+      "height": 7,
+      "rows": [
+        ".........",
+        ".###.###.",
+        "...#.....",
+        ".#...#.#.",
+        "...#.....",
+        ".###.###.",
+        "........."
+      ]
+    },
+    "checkpoints": [
+      {
+        "id": "L04-P1",
+        "beforeSelectionOrdinal": 2,
+        "minCandidates": 2,
+        "prompt": "当前候选节点中，哪一个将被算法下一次选中？"
+      },
+      {
+        "id": "L04-P2",
+        "beforeSelectionOrdinal": 4,
+        "minCandidates": 2,
+        "prompt": "根据队列顺序或 f、h、入队序号，选择下一个节点。"
+      }
+    ],
+    "successCriteria": [
+      "每个实际触发的预测点至少提交一次选择",
+      "完成原始运行和一次条件修改后的新运行",
+      "复盘引用至少一条可见事件；不要求首次预测全对"
+    ]
+  }
+]
