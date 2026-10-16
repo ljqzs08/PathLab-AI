@@ -115,9 +115,9 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 - 关键决定：无 UI 不提前安装 Next/React；阶段 0 只使用开发期 TypeScript/Ajv 与 Node 内置测试；新增 A* node_relaxed；算法轨迹与用户会话事件分层；AI 预测后才请求；旧运行只读保留但不适用新地图。
 - 验证：类型检查、22 项契约测试在 PowerShell 5.1/7 均通过；锁文件 ci 成功；Prompt 工具在两版各 14 项通过；JavaScript 语法和环境变量恢复检查通过。详见 verification-stage-0.md。
 - 真实问题：README 命令转义丢反斜杠；先建立失败断言得到 21 pass/1 fail，修复后 22/22；AI 自查自修，不是用户引导。
-- 当前提交：准备创建本地规格/契约里程碑，提交成功后登记真实哈希；不得预填。
+- 实际阶段提交：`d870a9f572e897017b08590f4e1d211f6ace8ad8`，`docs: freeze stage zero specifications and validate contracts`。本条哈希由后续证据归档提交登记，不改写已提交历史。
 - 核心链状态：0/3；C01/C02/C03 均尚未实现核心模块，本阶段不冒充完成任何完整链。
-- 风险：无网页/算法/真实 AI/浏览器或人工验收；图可达性/预测点效果待算法实现核对；赛事细则本轮未复核；未推送远程。
+- 风险：无网页/算法/真实 AI/浏览器或人工验收；图可达性/预测点效果待算法实现核对；赛事细则本轮未复核；未推送远程。工具策略拒绝缓存删除，.cache/npm 与 .cache/tmp 仍在仓库内且被忽略，不能声称已清空。
 - 下一阶段：由用户确认后搭建最小 Next/React/TS 应用壳；当前按规则停止。
 
 下一轮先从原始会话刷新 E002：
