@@ -1,0 +1,14 @@
+
+PSMessageDetails      : 
+Exception             : System.Management.Automation.RuntimeException: FAIL: Chinese handoff is not a real final answer
+TargetObject          : FAIL: Chinese handoff is not a real final answer
+CategoryInfo          : OperationStopped: (FAIL: Chinese hando…a real final answer:String) [], RuntimeException
+FullyQualifiedErrorId : FAIL: Chinese handoff is not a real final answer
+ErrorDetails          : 
+InvocationInfo        : System.Management.Automation.InvocationInfo
+ScriptStackTrace      : at Assert-True, D:\竞赛\scripts\Test-PromptSnapshot.ps1: line 14
+                        at <ScriptBlock>, D:\竞赛\scripts\Test-PromptSnapshot.ps1: line 51
+                        at <ScriptBlock>, <No file>: line 4
+PipelineIterationInfo : {}
+
+

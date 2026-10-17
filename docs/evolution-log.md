@@ -284,3 +284,13 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 同步：更新 `docs/evidence/standalone-final-audit.json`、`docs/verification-standalone-html.md`、`docs/progress-status.md` 与 E012 索引；未修改应用源码、完整 HTML、算法、测试逻辑或历史证据，既有 `PathLab-AI/tests/browser/stage6-review.temp.spec.ts` 保持未跟踪。
 - 验证：刷新脚本返回 2 条/`finalCaptured=True`；JSON 快照与审计文件可解析；HTML 仍为 330771 bytes、SHA256 `7e3a7ed4b459e82b5c1b97128e1654b5dbd105f838a8b01dcdec6e0a909c2510`；变更文档的 `git diff --check` 通过。完整 diff 仅报告原始最终答复中保留的 1 处行末空白，未篡改原文。没有因证据补齐重复运行整套产品回归，也没有人工、真机或其他浏览器验收。
 - Git：E012 的功能提交为 `4b117292176d36c9d6fe6b5edaea66131ec21a2b`；本轮仅做证据归档与索引修正，显式暂存，不外发、不推送、不改权限。当前新聊天最终答复在真实记录落盘前仍待下一轮补齐；C01/C02/C03 的真实用户引导修复材料仍不完整。
+
+## E014：地图直接预测与有限动效（2026-10-17）
+
+- Prompt：prompts/sessions/2026-10-17-motion-interaction.{md,jsonl}，真实需求为选择性参考 MotionSites 丰富可玩性；现为 4 条可见消息，最终答复尚未落盘、待下一轮补齐。旧 motion-playability 草稿误含内部摘要，不提交也不计证据。
+- 实现：GridCanvas + LearningWorkbench 增加地图候选点选/键盘作答与卡片双向草稿同步，提交门控不变；globals.css 引入有限短动效、精确指针 hover、减少动态覆盖，删除中间版无限装饰与格子缩放。共享源码重新生成完整离线 HTML，不增加依赖或新关卡。
+- 验证：最终类型/lint/102 Node 通过；生产构建通过；四视口离线 204/204、HTTP 192/192，均零失败/跳过/不稳定，每套含 12 项正常动效 + 4 项 reduce 专项；静态查看桌面/手机尺寸共四图。这些均为 AI、本机 Edge 检查，不是人类/真机验收。命令、产物 hash、范围及原始日志见 verification-motion-interaction.md 与 evidence/motion-*。
+- 真实问题：Prompt 导出器仅过滤英文内部摘要，中文摘要被误当最终答复；新增合成夹具先失败再修复，PowerShell 7/5.1 各 19/19。不复制内部摘要到正式证据，也不把合成测试计作用户修复对话。旧误生成文件及四张临时图删除被工具拒绝，仍在 D 盘、排除提交。
+- 参考边界：实际打开免费 Portfolio Cosmic 页面，但完整提示词复制要求登录；未获取全文、未登录/付费，借鉴公开视觉方向自行实现。不宣称复制套用了模板。
+- 三链：本轮是 C02 增强；C01/C02/C03 既有功能/测试/历史提交均存在，人类引导修复材料仍不齐。未补造缺陷、未修改历史、未外发。E013 真实提交为 6ba6bacec0061ac7f578535fd6dad46d2184eae6。
+- Git：本轮待创建经验证的本地功能提交；只显式暂存相关源码/测试/产物/文档/证据，既有临时 spec、状态咨询快照、旧错误草稿不夹带。功能提交后以独立证据索引记录真实哈希，不 amend。

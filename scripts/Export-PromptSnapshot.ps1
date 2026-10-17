@@ -55,7 +55,7 @@ foreach ($entry in $entries) {
     if ($entry.sourceLine -lt $start) { continue }
     if ($selected.Count -gt 0 -and $entry.role -eq 'user') { break }
     # Some logs contain internal handoff material as assistant messages; never export it.
-    if ($entry.role -eq 'assistant' -and ($entry.text.TrimStart().StartsWith('# Handoff Summary', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# Handoff —', [StringComparison]::Ordinal))) { continue }
+    if ($entry.role -eq 'assistant' -and ($entry.text.TrimStart().StartsWith('# Handoff Summary', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# Handoff —', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# 交接摘要', [StringComparison]::Ordinal))) { continue }
     $selected.Add($entry)
     if ($entry.role -eq 'assistant' -and $entry.phase -in @('final_answer', 'final')) { break }
 }

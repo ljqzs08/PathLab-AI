@@ -1,0 +1,29 @@
+
+Running 16 tests using 1 worker
+
+(node:24624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop-1440] › tests\browser\motion.spec.ts:9:3 › motion and map prediction › normal motion is finite and keeps map geometry stable (821ms)
+  ok  2 [desktop-1440] › tests\browser\motion.spec.ts:29:3 › motion and map prediction › map and candidate cards share a draft without bypassing prediction gate (1.4s)
+  ok  3 [desktop-1440] › tests\browser\motion.spec.ts:65:3 › motion and map prediction › normal-motion replay completes with no overflow or active decorative loop (2.5s)
+  ok  4 [desktop-1440] › tests\browser\motion.spec.ts:75:1 › reduced motion disables animation but keeps map prediction usable (417ms)
+(node:3576) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  5 [mobile-390] › tests\browser\motion.spec.ts:9:3 › motion and map prediction › normal motion is finite and keeps map geometry stable (824ms)
+  ok  6 [mobile-390] › tests\browser\motion.spec.ts:29:3 › motion and map prediction › map and candidate cards share a draft without bypassing prediction gate (1.3s)
+  ok  7 [mobile-390] › tests\browser\motion.spec.ts:65:3 › motion and map prediction › normal-motion replay completes with no overflow or active decorative loop (2.3s)
+  ok  8 [mobile-390] › tests\browser\motion.spec.ts:75:1 › reduced motion disables animation but keeps map prediction usable (382ms)
+(node:8632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [narrow-320] › tests\browser\motion.spec.ts:9:3 › motion and map prediction › normal motion is finite and keeps map geometry stable (805ms)
+  ok 10 [narrow-320] › tests\browser\motion.spec.ts:29:3 › motion and map prediction › map and candidate cards share a draft without bypassing prediction gate (1.3s)
+  ok 11 [narrow-320] › tests\browser\motion.spec.ts:65:3 › motion and map prediction › normal-motion replay completes with no overflow or active decorative loop (2.2s)
+  ok 12 [narrow-320] › tests\browser\motion.spec.ts:75:1 › reduced motion disables animation but keeps map prediction usable (367ms)
+(node:11032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 13 [tablet-768] › tests\browser\motion.spec.ts:9:3 › motion and map prediction › normal motion is finite and keeps map geometry stable (846ms)
+  ok 14 [tablet-768] › tests\browser\motion.spec.ts:29:3 › motion and map prediction › map and candidate cards share a draft without bypassing prediction gate (1.3s)
+  ok 15 [tablet-768] › tests\browser\motion.spec.ts:65:3 › motion and map prediction › normal-motion replay completes with no overflow or active decorative loop (2.2s)
+  ok 16 [tablet-768] › tests\browser\motion.spec.ts:75:1 › reduced motion disables animation but keeps map prediction usable (383ms)
+
+  16 passed (22.5s)

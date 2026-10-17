@@ -133,6 +133,30 @@ h1 > span { color: var(--mint); }
 .site-footer { max-width: 1560px; margin: 0 auto; padding: 22px 48px max(22px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 10px; line-height: 1.8; }
 .site-footer > span:first-child > span { margin: 0 10px; color: #7a8b9d; }
 
+
+/* Interaction motion: finite cues only; grid geometry never moves relative to Canvas. */
+@keyframes pathlab-rise-in { from { opacity: .45; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pathlab-node-reveal { from { box-shadow: inset 0 0 0 2px var(--mint); } to { box-shadow: inset 0 0 0 1px transparent; } }
+@keyframes pathlab-scan { from { transform: translateX(-110%); } to { transform: translateX(230%); } }
+.intro { position: relative; isolation: isolate; }
+.intro::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 20% 40%, rgba(133,227,205,.1), transparent 60%); }
+.intro-copy, .learning-loop { animation: pathlab-rise-in .55s ease-out both; }
+.learning-loop { animation-delay: .08s; position: relative; overflow: hidden; }
+.learning-loop::after { content: ''; position: absolute; bottom: 0; left: 0; height: 1px; width: 45%; background: linear-gradient(90deg, transparent, var(--mint), transparent); opacity: .4; animation: pathlab-scan 1.8s ease-out both; pointer-events: none; }
+.primary-link, .action-primary, .action-secondary, .action-quiet, .mission-card, .candidate-list button { transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
+.mission-card[aria-pressed='true'] { box-shadow: inset 3px 0 0 var(--mint); }
+.mission-content, .prediction-panel, .prediction-feedback, .run-summary, .reflection-panel, .report-snapshot { animation: pathlab-rise-in .32s ease-out both; }
+.learning-map .map-cell[data-search='已发现'], .learning-map .map-cell[data-search='已扩展'], .learning-map .map-cell[data-search='有效前沿'] { animation: pathlab-node-reveal .35s ease-out; }
+.learning-map .map-cell.map-cell--current { border-color: var(--peach); }
+.learning-map .map-cell[data-prediction-candidate='true']::after { content: '◇'; position: absolute; top: 0; right: 1px; color: var(--mint); font-size: 10px; line-height: 1; pointer-events: none; }
+.learning-map .map-cell[data-prediction-selected='true'] { outline: 2px solid var(--peach); outline-offset: 1px; z-index: 3; }
+.candidate-list button[aria-pressed='true'] { box-shadow: 0 0 0 3px rgba(133,227,205,.15); }
+@media (hover: hover) and (pointer: fine) {
+  .primary-link:hover, .action-primary:not(:disabled):hover, .action-secondary:not(:disabled):hover, .action-quiet:not(:disabled):hover, .candidate-list button:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.16); }
+  .mission-card:not(:disabled):hover { transform: translateY(-3px); }
+}
+.primary-link:active, .action-primary:not(:disabled):active, .action-secondary:not(:disabled):active, .action-quiet:not(:disabled):active, .candidate-list button:not(:disabled):active { transform: scale(.98); }
+
 @media (min-width: 1441px) {
   .map-surface { min-height: 375px; }
 }
@@ -221,4 +245,5 @@ h1 > span { color: var(--mint); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+  .primary-link, .action-primary, .action-secondary, .action-quiet, .mission-card, .candidate-list button { transform: none !important; }
 }

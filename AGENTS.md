@@ -2,6 +2,8 @@
 
 适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前阶段 6：独立 BFS/A*、二叉堆、私有门控会话、Canvas/DOM、单因素实验、本地规则反馈与引用解释报告均已接入；已增加版本化本机存档、JSON 备份/预览/确认与安全恢复。两版 PowerShell 类型/lint/102 项测试、生产构建、四视口 176 项 Edge 检查通过；已将误做的 HTML 入口替换为 PathLab-AI/PathLab AI.html 完整离线单文件（共享现有组件/算法/样式），四视口离线 188 项通过，可单独复制，无需 localhost。不是人工或真机验收，详见 docs/verification-standalone-html.md。远程 AI 与自由地图编辑未实现，正式交付仍缺证据/访问/材料；当前状态见 docs/progress-status.md。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
 
+最新 E014 增量：地图候选可直接点选/键盘选择，与候选卡同步但不越过显式提交；有限动效与减少动态适配已接入。最终离线 204/204、HTTP 192/192（均含 16 项专项）通过；中文内部摘要导出过滤修复，两版 PowerShell 各 19 项通过。当前产物/Prompt/清理限制见 docs/verification-motion-interaction.md；本轮最终答复待下一轮补齐。
+
 ## 工作区与真实性
 
 - 所有新建、下载、生成、保存的项目文件、依赖缓存、截图和录屏只能放在本工作区及其 D 盘项目子目录；不得写入 C 盘或其他盘符。可以只读既有配置和本聊天原始记录。

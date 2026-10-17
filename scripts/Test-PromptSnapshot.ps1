@@ -46,6 +46,11 @@ try {
     Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'dash-style handoff is not a real final answer'
     $payload = [IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)
     Assert-True (-not $payload.Contains('SYNTHETIC_INTERNAL_BODY')) 'dash-style internal body is not exported'
+    Save-Fixture ($base + @((Message 'assistant' 'final_answer' '# 交接摘要：SYNTHETIC_CN_INTERNAL_BODY')))
+    $result = & $exporter @args -Refresh
+    Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'Chinese handoff is not a real final answer'
+    $payload = [IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)
+    Assert-True (-not $payload.Contains('SYNTHETIC_CN_INTERNAL_BODY')) 'Chinese internal body is not exported'
     $full = $base + @((Message 'assistant' 'final_answer' '# Handoff Summary internal'), (Message 'assistant' 'final_answer' '# Handoff — SYNTHETIC_INTERNAL_BODY'), (Message 'assistant' 'final_answer' '已验证，最终说明'), (Message 'user' '' 'NEXT-USER'), (Message 'assistant' 'final_answer' 'NEXT-ANSWER'))
     Save-Fixture $full
     $result = & $exporter @args -Refresh

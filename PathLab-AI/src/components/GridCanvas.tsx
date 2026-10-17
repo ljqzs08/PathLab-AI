@@ -1,9 +1,10 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
+import type { Position } from '../../contracts/types';
 import type { LearningView } from '../domain/learning/session';
 
 const key = (node: {x: number; y: number}) => node.x + ',' + node.y;
 
-export function GridCanvas({ view, title, inspected, onInspect }: { view: LearningView; title: string; inspected: string | null; onInspect: (key: string) => void }) {
+export function GridCanvas({ view, title, inspected, onInspect, selectedPrediction, onSelectPrediction }: { view: LearningView; title: string; inspected: string | null; onInspect: (key: string) => void; selectedPrediction: Position | null; onSelectPrediction: (node: Position) => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const { grid, start, goal } = view.input;
@@ -11,6 +12,7 @@ export function GridCanvas({ view, title, inspected, onInspect }: { view: Learni
   const expanded = new Set(view.expanded.map(key));
   const frontier = new Set(view.frontier.map(n => key(n.node)));
   const path = new Set(view.path.map(key));
+  const candidates = new Set(view.checkpoint?.candidates.map(candidate => key(candidate.node)) ?? []);
 
   useEffect(() => {
     const canvas = canvasRef.current, element = gridRef.current;
@@ -69,8 +71,10 @@ export function GridCanvas({ view, title, inspected, onInspect }: { view: Learni
             const id = x + ',' + y;
             const kind = id === key(start) ? 'start' : id === key(goal) ? 'goal' : cell === '#' ? 'wall' : 'road';
             const state = id === (view.current && key(view.current.node)) ? '当前选中' : frontier.has(id) ? '有效前沿' : expanded.has(id) ? '已扩展' : discovered.has(id) ? '已发现' : '未发现';
+            const isCandidate = candidates.has(id);
+            const isDraft = selectedPrediction !== null && key(selectedPrediction) === id;
             const name = { start: '起点', goal: '终点', wall: '障碍', road: '可通行' }[kind];
-            return <button key={id} type="button" className={'map-cell map-cell--' + kind} aria-label={'查看坐标 (' + x + ', ' + y + ')，' + name + '，' + state} tabIndex={(inspected ?? key(start)) === id ? 0 : -1} aria-pressed={inspected === id} data-cell={id} data-kind={kind} data-search={state} data-on-path={path.has(id)} onClick={() => onInspect(id)}>
+            return <button key={id} type="button" className={'map-cell map-cell--' + kind + (view.current && key(view.current.node) === id ? ' map-cell--current' : '')} aria-label={'查看坐标 (' + x + ', ' + y + ')，' + name + '，' + state + (isCandidate ? '，预测候选，点击可选择' : '') + (isDraft ? '，待提交的预测' : '')} tabIndex={(inspected ?? key(start)) === id ? 0 : -1} aria-pressed={inspected === id} data-prediction-candidate={isCandidate} data-prediction-selected={isDraft} data-cell={id} data-kind={kind} data-search={state} data-on-path={path.has(id)} onClick={() => { onInspect(id); if (isCandidate) onSelectPrediction({ x, y }); }}>
               <span aria-hidden="true">{kind === 'start' ? 'S' : kind === 'goal' ? 'G' : cell === '#' ? '−' : expanded.has(id) ? '×' : discovered.has(id) ? '·' : ''}</span>
             </button>;
           }))}
@@ -79,7 +83,7 @@ export function GridCanvas({ view, title, inspected, onInspect }: { view: Learni
       </div>
       <figcaption>
         <span><i className="legend-swatch legend-swatch--start" aria-hidden="true" />S 起点</span><span><i className="legend-swatch legend-swatch--goal" aria-hidden="true" />G 终点</span><span><i className="legend-swatch legend-swatch--wall" aria-hidden="true" />− 障碍</span>
-        <span>○ 前沿</span><span>× 已扩展</span><span>虚线：当前回溯前缀</span><span>实线：已揭示最终路径</span>
+        <span>◇ 预测候选（可点选）</span><span>○ 前沿</span><span>× 已扩展</span><span>虚线：当前回溯前缀</span><span>实线：已揭示最终路径</span>
       </figcaption>
     </figure>
   );
