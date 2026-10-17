@@ -1,0 +1,38 @@
+
+> pathlab-ai@0.1.0 test:browser
+> playwright test --project=mobile-390 --grep new reflection states
+
+[WebServer] (node:5036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:18304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [mobile-390] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport (5.5s)
+
+
+  1) [mobile-390] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      111 |       const rect = element.getBoundingClientRect();
+      112 |       return rect.top >= 0 && rect.bottom <= innerHeight;
+    > 113 |     })).toBe(true);
+          |         ^
+      114 |   };
+      115 |   await launch(page, level, 'bfs'); await finish(page, level, 'bfs'); await visibleFocus();
+      116 |   await page.getByTestId('open-condition').click(); await visibleFocus();
+        at visibleFocus (D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:113:9)
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:115:71
+
+    Error Context: ..\.cache\browser-results\reflection-new-reflection--20f9c-d-focus-within-the-viewport-mobile-390\error-context.md
+
+  1 failed
+    [mobile-390] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport 

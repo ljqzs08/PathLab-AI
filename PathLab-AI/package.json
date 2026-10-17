@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "PathLab learning shell with independently verified deterministic BFS/A*; prediction UI and remote AI not yet connected",
+  "description": "Deterministic BFS/A* learning workbench with gated predictions, controlled experiments and local evidence-based reflection; no remote model calls",
   "engines": {
     "node": ">=22.13.0"
   },

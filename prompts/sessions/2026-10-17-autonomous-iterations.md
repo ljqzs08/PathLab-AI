@@ -2,8 +2,8 @@
 
 - Session ID: `01a146d1-cc80-7722-a40f-28321250bcce`
 - Source file: `rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl` (read-only)
-- Captured at: 2026-10-17T10:15:09.3413244+08:00
-- Visible messages captured: 6
+- Captured at: 2026-10-17T10:48:58.7482683+08:00
+- Visible messages captured: 8
 - Final assistant answer captured: False
 - Incomplete source tail skipped: False
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -47,3 +47,16 @@ Source line: 2405; Timestamp: 2026-10-17T01:59:22.105Z; Text SHA256: `260500b03a
 Source line: 2537; Timestamp: 2026-10-17T02:09:51.872Z; Text SHA256: `a53e6d2d9b526e6dd349b917882de7f190432b57ac86f25ca3a1471b8320d68b`
 
 现在最需要补强的不是继续堆页面效果，而是学习闭环：改一次条件，重新预测和运行，再用两次真实结果解释差异。我会把报告限定为可核对的观察，不把“预测正确”或“填完复盘”包装成已经掌握算法。
+
+## 7. assistant / commentary
+
+Source line: 2839; Timestamp: 2026-10-17T02:31:37.813Z; Text SHA256: `1e1525c2214d2ced1b460ad206e8b1bc4c32035e6b4af9293fac364cb8c57606`
+
+条件实验和证据报告已接入工作台：修改条件后必须重新预测、重新运行，再比较两次真实结果。我也修正了“应用条件后不能立即重置”的交互问题；接下来继续核验小屏布局、键盘操作和 Canvas 像素对齐。报告会明确区分“记录齐备”和“已经掌握”，不夸大学习效果。
+
+
+## 8. assistant / commentary
+
+Source line: 3023; Timestamp: 2026-10-17T02:46:22.308Z; Text SHA256: `386ed504a329a30ce53bf2934923c0c61541a1487fb166ee6da83f863cdd77a0`
+
+最新一轮 120 项浏览器检查全部通过。不过额外检查发现一个测试尚未覆盖的问题：搜索结束后，键盘焦点会落到屏幕外的复盘标题。我会先补回归测试再修复，并把报告历史、验证证据和真实对话记录一起归档。

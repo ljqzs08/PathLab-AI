@@ -51,8 +51,8 @@ export function PathLabShell() {
             <p className="intro-description">成为校园配送调度员，把“会背算法”变成“能解释选择”。<br className="desktop-break" />从一个固定任务开始，逐步建立可验证的推理。</p>
             <a className="primary-link" href="#mission-workspace">选择一项任务 <Arrow /></a>
           </div>
-          <div className="learning-loop" aria-label="学习闭环：预测与回放已接入，条件复盘开发中">
-            <div className="loop-caption"><span>THE LEARNING LOOP</span><span>预测与回放 · 已接入</span></div>
+          <div className="learning-loop" aria-label="学习闭环：预测、回放、条件实验与证据报告已接入">
+            <div className="loop-caption"><span>THE LEARNING LOOP</span><span>本地学习闭环 · 已接入</span></div>
             <ol>
               <li><span className="loop-number">01</span><div><strong>先作预测</strong><p>下一次，算法会选择哪个节点？</p></div><span className="loop-symbol" aria-hidden="true">?</span></li>
               <li><span className="loop-number">02</span><div><strong>用证据解释</strong><p>查看队列、代价与真实事件。</p></div><span className="loop-symbol" aria-hidden="true">≡</span></li>
@@ -85,12 +85,12 @@ export function PathLabShell() {
           <div><p className="eyebrow">BUILD IN THE OPEN</p><h2 id="development-title">完成到哪里，就展示到哪里。</h2><p>默认本地运行，不需要账号、API Key 或远程服务。</p></div>
           <ul>
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
-            <li><span className="status-label">待接入</span><span>条件实验 / 证据复盘 / 本地诊断</span></li>
+            <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈</span></li>
             <li><span className="status-label">未连接</span><span>远程 AI / 进度保存 / JSON 导入导出</span></li>
           </ul>
         </section>
       </main>
-      <footer className="site-footer"><span>PathLab AI <span aria-hidden="true">/</span> 让每一步，都有理由。</span><span>阶段 4 · 预测与证据回放</span></footer>
+      <footer className="site-footer"><span>PathLab AI <span aria-hidden="true">/</span> 让每一步，都有理由。</span><span>阶段 5 · 条件实验与证据复盘</span></footer>
     </>
   );
 }

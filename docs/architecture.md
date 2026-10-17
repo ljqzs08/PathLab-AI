@@ -3,7 +3,7 @@
 ## 当前仓库事实
 
 Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
-阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，阶段 4 已通过私有学习会话接入页面；还未实现条件实验/诊断/报告，不等于完整教育闭环。
+阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，阶段 4 已通过私有学习会话接入页面；阶段 5 已接入单因素条件实验、本地证据反馈与报告界面；这是本地闭环，不等于完整参赛交付或教学效果证明。
 版本精确锁定于 package-lock.json；核验来源与 ESLint 兼容取舍见 dependencies-stage-1.md。
 
 ## 当前已落地
@@ -39,7 +39,6 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 
 ## 后续模块（尚未实现）
 
-- 条件实验与新 gridRevision/run；本地证据诊断及复盘报告。
 - 版本化本地存储、JSON 导入导出与安全恢复。
 - 可选远程反馈与严格校验/回退；不能输出或覆写算法路径。
 - 继续复用 Node 内置测试、Playwright 与已安装 Edge，不为目录规划引入状态框架或依赖。
@@ -56,4 +55,13 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 
 ## 下一阶段边界
 
-用户已授权自主连续推进；阶段 3 的 A*/二叉堆已验证。阶段 4 门控学习 UI 已验证，后续按独立里程碑接入条件实验、诊断与报告；仍不接远程 AI。
+用户已授权自主连续推进；阶段 5B 条件实验与证据复盘已通过本机检查。下一模块优先考虑版本化本地存储/安全导入导出与恢复；不得在未实现前声称刷新可恢复。远程 AI 仍未接入，不把本地模板营销为模型调用。
+
+## 阶段 5 的实际数据流
+
+reflection/report → experiment → counterfactual → apply_valid_change → briefing → 显式 start → 新 run/预测门控 → reflection → complete_reflection → report。
+条件修改由领域层原子验证；算法固定、相同地图复用 revision，reset 恢复 fixture revision0，不清首次记录/完成摘要/报告历史。旧运行不被新实验覆写。
+
+已完成 run → diagnose.ts 确定性事实模板与引用解析 → report.ts 同算法比较/纯文本解释 → ReflectionPanel。请求形状只留内存，无远程调用。解释不拼入 fact.description；报告引用须来自当前已揭示事实。齐备只说明预测、条件运行、引用解释均有记录，不保证解释正确或掌握。
+
+界面支持直接从已修改 briefing 重置、取消实验/Escape、保留同次运行草稿与报告快照；已生成报告随当前页会话跨关卡保留；重置后仍可通过“本页报告历史”查阅快照，刷新仍丢失。浏览器 Canvas 探针仅在测试脚本注入，无应用调试全局/额外依赖。

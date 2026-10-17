@@ -1,0 +1,64 @@
+{
+  "executor": "AI synthetic browser inspection",
+  "productionOrigin": "http://127.0.0.1:3211",
+  "beforeFix": true,
+  "observations": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stage": "finished-run",
+      "focus": "reflection-title",
+      "rect": {
+        "top": 1728,
+        "bottom": 1756.796875
+      },
+      "scrollY": 1501,
+      "fullyVisible": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stage": "opened-condition",
+      "focus": "reflection-title",
+      "rect": {
+        "top": 250.046875,
+        "bottom": 278.84375
+      },
+      "scrollY": 2811,
+      "fullyVisible": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stage": "finished-run",
+      "focus": "reflection-title",
+      "rect": {
+        "top": 1255.671875,
+        "bottom": 1287.671875
+      },
+      "scrollY": 553,
+      "fullyVisible": false
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stage": "opened-condition",
+      "focus": "reflection-title",
+      "rect": {
+        "top": 564.671875,
+        "bottom": 596.671875
+      },
+      "scrollY": 1244,
+      "fullyVisible": true
+    }
+  ],
+  "boundary": "Observed browser geometry, not a human usability study or screen-reader acceptance."
+}

@@ -1,0 +1,243 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\竞赛\\PathLab-AI\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=mobile-390",
+      "--grep",
+      "new reflection states"
+    ],
+    "configFile": "D:\\竞赛\\PathLab-AI\\playwright.config.ts",
+    "rootDir": "D:/竞赛/PathLab-AI/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/竞赛/.cache/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "D:/竞赛/PathLab-AI/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "D:/竞赛/PathLab-AI/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-320",
+        "name": "narrow-320",
+        "testDir": "D:/竞赛/PathLab-AI/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "D:/竞赛/PathLab-AI/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\竞赛\\.cache\\browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile-390",
+        "testDir": "D:\\竞赛\\PathLab-AI\\tests\\browser",
+        "snapshotDir": "D:\\竞赛\\PathLab-AI\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3210",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "locale": "zh-CN",
+          "reducedMotion": "reduce",
+          "colorScheme": "dark",
+          "screenshot": "off",
+          "video": "off",
+          "trace": "off",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../.cache/stage-1-browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --port 3210",
+      "url": "http://127.0.0.1:3210",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "reflection.spec.ts",
+      "file": "reflection.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "new reflection states keep keyboard focus within the viewport",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5510,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at visibleFocus (D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts:113:9)\n    at D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts:115:71",
+                    "location": {
+                      "file": "D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts",
+                      "column": 9,
+                      "line": 113
+                    },
+                    "snippet": "  111 |       const rect = element.getBoundingClientRect();\n  112 |       return rect.top >= 0 && rect.bottom <= innerHeight;\n> 113 |     })).toBe(true);\n      |         ^\n  114 |   };\n  115 |   await launch(page, level, 'bfs'); await finish(page, level, 'bfs'); await visibleFocus();\n  116 |   await page.getByTestId('open-condition').click(); await visibleFocus();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts",
+                        "column": 9,
+                        "line": 113
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  111 |       const rect = element.getBoundingClientRect();\n  112 |       return rect.top >= 0 && rect.bottom <= innerHeight;\n> 113 |     })).toBe(true);\n      |         ^\n  114 |   };\n  115 |   await launch(page, level, 'bfs'); await finish(page, level, 'bfs'); await visibleFocus();\n  116 |   await page.getByTestId('open-condition').click(); await visibleFocus();\n    at visibleFocus (D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts:113:9)\n    at D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts:115:71"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T02:47:11.368Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\竞赛\\.cache\\browser-results\\reflection-new-reflection--20f9c-d-focus-within-the-viewport-mobile-390\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\竞赛\\PathLab-AI\\tests\\browser\\reflection.spec.ts",
+                    "column": 9,
+                    "line": 113
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e274c0c1aa7d66a7fe8c-f1dadd4a8028c29b76cf",
+          "file": "reflection.spec.ts",
+          "line": 106,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T02:47:09.973Z",
+    "duration": 7543.160999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

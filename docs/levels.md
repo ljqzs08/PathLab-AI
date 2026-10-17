@@ -1,6 +1,6 @@
 # 固定关卡 v1
 
-机器事实源：PathLab-AI/fixtures/levels.json；schema：contracts/level.schema.json。坐标零基，x 向右、y 向下，rows[y][x]；点号可通行、井号固定障碍。当前已通过 BFS/A* 独立核验四图及默认反事实；阶段 4 学习门控与六种允许的算法组合已从真实浏览器控件完成。固定条件修改 UI 尚未实现；不要将开发者答案提前呈现。
+机器事实源：PathLab-AI/fixtures/levels.json；schema：contracts/level.schema.json。坐标零基，x 向右、y 向下，rows[y][x]；点号可通行、井号固定障碍。当前已通过 BFS/A* 独立核验四图及默认反事实；阶段 4 学习门控与六种允许的算法组合已从真实浏览器控件完成。阶段 5B 已接入固定单因素条件实验、重新预测与真实前后指标；不要将开发者答案提前呈现。
 
 | 编号 | 任务 / 算法 | 尺寸 | 起点 → 终点 | 默认反事实 | 学习重点 |
 |---|---|---|---|---|---|
@@ -42,4 +42,4 @@ beforeSelectionOrdinal 从 1 开始，指有效 node_selected 序号，不是所
 
 八次运行均可达、路径改变；16 个 checkpoint 槽均无需延后。L03 的 (4,2) 位于 BFS 原路径且不在新路径，新路线增加 4 步。L03 的预定教学算法仍是 A*；此表不宣称其 A* 指标或预测点已经验证。L02 封路后步数增加但扩展节点减少，是区分路径长度与搜索范围的可复现实例，不推广为一般规律。
 
-预测点分析只说明轨迹中存在候选；未实现“提交后揭示”的 reducer/Canvas/DOM 门控。教师提问、证据说明和避免提前泄露的用语见 teaching-guide.md。
+以上阶段 2 的预测点分析只说明静态轨迹存在候选；当前门控/Canvas 与条件实验已经接入，实际交互验收另见 verification-stage-4-learning.md 与 verification-stage-5-reflection.md。教师提问、证据说明和避免提前泄露的用语见 teaching-guide.md。

@@ -120,6 +120,9 @@ test('unreachable and equal endpoints can generate honest partial reports withou
   const fixture=structuredClone(levels[0]);fixture.grid={width:3,height:3,rows:['.##','###','##.']};fixture.start={x:0,y:0};fixture.goal={x:2,y:2};
   const s=new LearningSession(fixture,'bfs'),v=run(s,'edge');assert.equal(v.outcome,'unreachable');assert.equal(v.predictions.length,0);
   const r=report(s);assert.equal(r.report.completion.recordComplete,false);assert.equal(r.report.feedback.insufficientEvidence,true);assert.equal(r.report.feedback.primaryErrorType,null);
+  fixture.goal={...fixture.start};
+  const same=new LearningSession(fixture,'bfs'),equal=run(same,'equal');assert.equal(equal.outcome,'found');assert.equal(equal.metrics.pathLength,0);assert.equal(equal.predictions.length,0);
+  const partial=report(same);assert.equal(partial.report.completion.predictionsAttempted,false);assert.equal(partial.report.completion.recordComplete,false);assert.equal(partial.report.feedback.primaryErrorType,null);
 });
 
 test('run metadata uses schema-compatible bounded IDs before any mutation',()=>{
