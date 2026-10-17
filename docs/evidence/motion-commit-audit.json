@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-17",
+  "executor": "AI",
+  "featureCommit": "16138c27cbc9239d1818fce481ecfee634169ee1",
+  "committedFiles": [
+    "AGENTS.md",
+    "PathLab-AI/PathLab AI.html",
+    "PathLab-AI/src/app/globals.css",
+    "PathLab-AI/src/components/GridCanvas.tsx",
+    "PathLab-AI/src/components/LearningWorkbench.tsx",
+    "PathLab-AI/tests/browser/motion.spec.ts",
+    "README.md",
+    "docs/evidence/motion-check-final.txt",
+    "docs/evidence/motion-check.txt",
+    "docs/evidence/motion-export-after-ps51.json",
+    "docs/evidence/motion-export-after.json",
+    "docs/evidence/motion-export-before.txt",
+    "docs/evidence/motion-first-browser.txt",
+    "docs/evidence/motion-html-build.txt",
+    "docs/evidence/motion-http-final.json",
+    "docs/evidence/motion-http-final.txt",
+    "docs/evidence/motion-production-build.txt",
+    "docs/evidence/motion-standalone-final.json",
+    "docs/evidence/motion-standalone-final.txt",
+    "docs/evolution-log.md",
+    "docs/progress-status.md",
+    "docs/verification-motion-interaction.md",
+    "docs/verification-standalone-html.md",
+    "prompts/sessions/2026-10-17-motion-interaction.jsonl",
+    "prompts/sessions/2026-10-17-motion-interaction.md",
+    "scripts/Export-PromptSnapshot.ps1",
+    "scripts/Test-PromptSnapshot.ps1"
+  ],
+  "html": {
+    "path": "PathLab-AI/PathLab AI.html",
+    "bytes": 334424,
+    "sha256": "a41fe0208e845155064d9c6da7910ba4f17adf00a1e16c75336dc5c6683181c7"
+  },
+  "http": {
+    "startTime": "2026-10-17T06:35:39.781Z",
+    "duration": 272276.564,
+    "expected": 192,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "standalone": {
+    "startTime": "2026-10-17T06:33:53.4Z",
+    "duration": 277334.076,
+    "expected": 204,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "promptSnapshot": "prompts/sessions/2026-10-17-motion-interaction.jsonl",
+  "promptVisibleMessages": 4,
+  "finalCaptured": false,
+  "limitations": [
+    "Final visible response pending next-turn extraction",
+    "AI local Edge checks, not human or real-device acceptance",
+    "Temporary screenshot and invalid draft cleanup denied; excluded from commit",
+    "No remote push or publication"
+  ]
+}
