@@ -1,3 +1,4 @@
+import { appUrl } from './helpers';
 /** AI-executed synthetic browser interactions; never presented as human learner evidence. */
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
@@ -30,7 +31,7 @@ async function noOverflow(page: Page) {
 }
 
 test('prediction gates DOM Canvas aria timeline and controls until an actual single submission', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(appUrl);
   await expect(page.getByTestId('path-length')).toHaveText('未揭示');
   await page.getByRole('button', { name: '开始预测' }).click();
   await expect(workbench(page)).toHaveAttribute('data-state', 'prediction');
@@ -58,7 +59,7 @@ test('prediction gates DOM Canvas aria timeline and controls until an actual sin
 for (const [index, level] of levels.entries()) for (const algorithm of level.algorithms as Algorithm[]) {
   test(level.id + ' ' + algorithm + ' completes from gated browser controls with exact engine metrics', async ({ page }) => {
     const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
-    await page.goto('/'); await page.getByTestId('mission-' + level.id).click();
+    await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
     await page.getByLabel('本关算法').selectOption(algorithm);
     await page.getByRole('button', { name: '开始预测' }).click();
     await expect(page.getByLabel('本关算法')).toBeDisabled();
@@ -77,7 +78,7 @@ for (const [index, level] of levels.entries()) for (const algorithm of level.alg
 }
 
 test('replay keyboard shortcuts are scoped and timer stops before the next checkpoint', async ({ page }) => {
-  await page.goto('/'); await page.getByRole('button', { name: '开始预测' }).click();
+  await page.goto(appUrl); await page.getByRole('button', { name: '开始预测' }).click();
   await answer(page, 0, 'bfs');
   await page.getByLabel('回放速度').selectOption('0.5');
   const controls = page.getByRole('group', { name: '回放快捷键' });
@@ -97,7 +98,7 @@ test('replay keyboard shortcuts are scoped and timer stops before the next check
 });
 
 test('first-attempt statistics and completed summaries survive resets and mission switching', async ({ page }) => {
-  await page.goto('/'); await page.getByRole('button', { name: '开始预测' }).click();
+  await page.goto(appUrl); await page.getByRole('button', { name: '开始预测' }).click();
   await answer(page, 0, 'bfs', true); await finish(page, 0, 'bfs');
   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
   await page.getByRole('button', { name: '重置当前任务' }).click();
@@ -113,7 +114,7 @@ test('first-attempt statistics and completed summaries survive resets and missio
 });
 
 test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(appUrl);
   await page.getByTestId('map-grid').locator('[data-kind="goal"]').click();
   await expect(page.getByTestId('node-inspector')).toContainText('尚无已揭示的代价');
   await page.getByRole('button', { name: '开始预测' }).click();
@@ -131,8 +132,8 @@ test('map inspector has keyboard parity and does not fabricate costs for undisco
 test('prediction paused and terminal views pass automated WCAG checks and remain local-only', async ({ page }) => {
   const external: string[] = [], errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
-  await page.route('**/*', route => { const url=new URL(route.request().url()); if(url.origin==='http://127.0.0.1:3210') return route.continue(); external.push(url.origin); return route.abort(); });
-  await page.goto('/'); await page.getByRole('button', { name: '开始预测' }).click();
+  await page.route('**/*', route => { const url=new URL(route.request().url()); if(url.origin==='http://127.0.0.1:3210'||(process.env.PATHLAB_TEST_URL&&url.protocol==='file:')) return route.continue(); external.push(url.origin); return route.abort(); });
+  await page.goto(appUrl); await page.getByRole('button', { name: '开始预测' }).click();
   for (const state of ['prediction','paused','reflection']) {
     if (state === 'paused') await answer(page, 0, 'bfs');
     if (state === 'reflection') await finish(page, 0, 'bfs');

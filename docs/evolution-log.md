@@ -264,3 +264,15 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - Prompt：补齐上一地址咨询快照 `2026-10-17-preview-address`（2 条，含实际最终答复）；上一证据纠正轮 `2026-10-17-evidence-correction-storage` 已补为 6 条且含最终答复。本轮 `2026-10-17-local-html-entry` 为 2 条真实可见消息，最终答复尚待落盘，下轮必须追加；三个快照共 10 条的原文来源行、角色与 SHA256 均已核对一致。均位于 `prompts/sessions/`，不把内部摘要导出或补写成真实对话。
 - Git：本条与 HTML、README、专项验证结果和上述真实 Prompt 更新一起作有意义的本地细粒度提交；提交后真实哈希在下一次演进索引登记，不改写历史。显式暂存，既有 `tests/browser/stage6-review.temp.spec.ts` 不纳入；无 remote/外发/权限更改。
 - 边界：HTML 是可独立打开的访问卡片，完整网站仍需本机 3000 服务；不计为新的 C01/C02/C03 核心迭代，三核心功能已有实现，真实人类引导 Bug 修复材料仍待据实补全。
+
+## E012：将错误访问入口纠正为真正完整的离线 HTML（2026-10-17）
+
+- 真实用户纠正：“我的意思是让你把这个网站制作成HTML文件，不是建一个HTML 的访问入口 ，重新修改”。此前 E011 实际提交为 `5e369b54349c5812b296c03f7800732d2bac1dd7`，它只证明入口卡片可用，不能满足本次明确需求；保留当时历史，当前交付取代它。
+- 实现：删除旧入口卡片路径，交付 `PathLab-AI/PathLab AI.html`。新增独立 React 入口、TypeScript loader、单文件构建脚本、离线 Playwright 配置与 3 项专项测试；共用既有 PathLabShell/领域算法/fixtures/两份 CSS，不复制重写逻辑，不改原 Next 配置、contracts 或关卡。JS/CSS/icon/运行时许可证均内联，没有外链资源、iframe、CDN、服务依赖或新包。
+- 可复用：`build:html` 在 D 盘唯一临时目录构建并清理确切产物；`test:standalone` 先重新生成再对 file:// 执行共享产品检查。共享测试仅增加运行地址选择/严格本地 file: 允许规则，Canvas 的手动 DPR 上下文在该模式显式 offline；原 HTTP 检查仍使用原方式。
+- 真实失败与修复：修改前卡片无应用脚本/学习工作台（standalone-before.json）；首次默认 minimizer 缺 Next 内部插件，使用现有 compiled Terser 修复（standalone-first-build.txt）。烟测 3/3 后首次全量是 180/188，不冒充全量通过：4 项顶部说明缺 landmark、4 项旧测试拦 file:；增加有名称 aside 与明确测试守卫后重跑。许可证完整文本已内联。日志相对路径曾被 npm 包装器的临时 cwd 影响，后续均用绝对路径；这是命令留证错误，不冒充产品 Bug。
+- 最终验证：两版 PowerShell 类型、零告警 lint、102/102 Node 测试；原 Next 生产构建；四视口断网单文件 188/188；原 HTTP 四视口 176/176，全部无跳过/失败/不稳定。专项实际只复制一个 HTML 到独立 D 盘文件夹及中文文件名，完成 A*；禁用 file-origin 存储仍可预测和 JSON 导出。全部为本机已有 Edge 的 AI 检查，不是用户/真机/其他浏览器验收。
+- 产物：330771 bytes；SHA256 `7e3a7ed4b459e82b5c1b97128e1654b5dbd105f838a8b01dcdec6e0a909c2510`；最终重复构建哈希一致。README、AGENTS、progress-status 与 verification-standalone-html 同步真实使用方式和边界。原 HTTP/file 存档不保证互通，移动/改名/换浏览器前应 JSON 备份；Next 内部编译器路径升级需重新验证。
+- 证据：`docs/evidence/standalone-*` 保留前态、首次构建失败、首次全量失败、最终构建/两版检查/两套全量原始日志与 JSON。standalone-final-audit.json 保留 15 个原始证据哈希、报告真实计数与产物核对。没有新截图/录屏；本次唯一新建构建/复制临时目录全部清空，归档后清理本轮两个测试输出目录/重复报告，历史拒绝清理项未重试/绕过；原 HTTP 检查改用独立 output 目录避免接触历史拒绝项，未跟踪临时 spec 排除且不提交。
+- Prompt：上一 `2026-10-17-local-html-entry` 补齐到 3 条含真实最终答复；本轮 `2026-10-17-standalone-html-correction` 为 3 条真实用户/AI 可见消息，6 条角色/来源/原文 SHA256 均核对一致。当前合计十轮 48 条文字快照，九轮有最终答复，本轮最终答复尚未实际落盘、下一轮先补齐；不导出内部摘要、不预写最终答复。这是真实的包装交付纠正，不复制计作 C01/C02/C03 三条人类功能修复链；三核心实现已有，所需人类修复材料仍有缺口。
+- Git：上述相关代码、产物、文档、原始证据与 Prompt 快照显式暂存，作正常本地有意义提交；本条真实哈希由下一次索引登记，不自引用、不 amend/rebase/squash。作者沿用用户已确认身份；无 remote、无外发、未发布或改变权限。`tests/browser/stage6-review.temp.spec.ts` 为既有无关未跟踪文件，保持原状，不纳入提交。

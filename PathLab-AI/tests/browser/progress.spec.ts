@@ -4,7 +4,7 @@ import AxeBuilder from '@axe-core/playwright';
 import fixtures from '../../fixtures/levels.json' with { type: 'json' };
 import type { LevelDefinition } from '../../contracts/types';
 import { PROGRESS_KEY } from '../../src/domain/learning/progress-store';
-import { launch, answer, finish, noOverflow, workbench } from './helpers';
+import { appUrl, launch, answer, finish, noOverflow, workbench } from './helpers';
 const levels = fixtures as LevelDefinition[];
 const raw = (page: Page) => page.evaluate(key => localStorage.getItem(key)!, PROGRESS_KEY);
 const openTools = (page: Page) => page.getByTestId('progress-panel').locator('summary').click();
@@ -61,7 +61,7 @@ test('invalid/oversized/versioned/forged imports leave current memory and browse
 
 test('corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing', async ({page}) => {
   await page.addInitScript(key=>{localStorage.setItem(key,'{original-corrupt');localStorage.setItem('unrelated','keep');},PROGRESS_KEY);
-  await page.goto('/'); await expect(page.getByTestId('save-status')).toContainText('原始数据已保留');
+  await page.goto(appUrl); await expect(page.getByTestId('save-status')).toContainText('原始数据已保留');
   await page.getByTestId('mission-L02').click(); expect(await raw(page)).toBe('{original-corrupt'); await openTools(page);
   const downloadEvent=page.waitForEvent('download'); await page.getByRole('button',{name:'下载浏览器原始存档'}).click(); expect(await downloaded(await downloadEvent)).toBe('{original-corrupt');
   await page.getByRole('button',{name:'用当前进度覆盖存档'}).click(); await page.getByRole('button',{name:'取消，保留现状'}).click(); expect(await raw(page)).toBe('{original-corrupt');
@@ -83,7 +83,7 @@ test('quota failure retains core interactions and the old browser value', async 
 });
 
 test('a second tab cannot be silently overwritten and reloading its version requires confirmation', async ({page,context}) => {
-  await page.goto('/'); await page.getByTestId('mission-L02').click(); const second=await context.newPage(); await second.goto('/'); await second.getByTestId('mission-L03').click();
+  await page.goto(appUrl); await page.getByTestId('mission-L02').click(); const second=await context.newPage(); await second.goto(appUrl); await second.getByTestId('mission-L03').click();
   const other=await raw(second); await page.getByTestId('mission-L04').click(); await expect(page.getByTestId('save-status')).toContainText('其他页面修改'); expect(await raw(page)).toBe(other);
   await openTools(page); await page.getByRole('button',{name:'重新读取浏览器存档'}).click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[2]!.title); expect(await raw(page)).toBe(other); await second.close();

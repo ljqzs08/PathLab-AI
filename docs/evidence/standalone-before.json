@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-17T05:04:30.865Z",
+  "source": "D:\\竞赛\\PathLab-AI\\打开 PathLab AI.html",
+  "sha256": "8d35327e7441c531111fc556995a22ed10aaf9c0bf043750c20c8821cc0cd255",
+  "scriptTags": 0,
+  "pointsAtLocalhost": true,
+  "containsLearningWorkbench": false,
+  "requirement": "The HTML must contain the runnable application, not a link to a running server.",
+  "satisfiesRequirement": false,
+  "classification": "Real user correction of the prior deliverable; not a manufactured algorithm bug."
+}

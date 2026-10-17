@@ -1,0 +1,563 @@
+
+> pathlab-ai@0.1.0 test:standalone
+> npm run build:html && playwright test --config playwright.standalone.config.ts
+
+
+> pathlab-ai@0.1.0 build:html
+> node scripts/build-standalone.mjs
+
+{
+  "target": "D:\\竞赛\\PathLab-AI\\PathLab AI.html",
+  "bytes": 327381,
+  "sha256": "c0f2eebc32cf093b3a589409e06c1cb873601143fac8a923ae21d76c075417ca",
+  "embedded": "production React runtime, shared components/domain, fixtures, both stylesheets and SVG icon",
+  "externalAssets": 0,
+  "serverRequired": false
+}
+
+Running 188 tests using 1 worker
+
+(node:11172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (745ms)
+  ok   2 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (612ms)
+  ok   3 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (746ms)
+  ok   4 [desktop-1440] › tests\browser\learning.spec.ts:33:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (490ms)
+  ok   5 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.3s)
+  ok   6 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.5s)
+  ok   7 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L02 astar completes from gated browser controls with exact engine metrics (1.4s)
+  ok   8 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L03 astar completes from gated browser controls with exact engine metrics (847ms)
+  ok   9 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L04 bfs completes from gated browser controls with exact engine metrics (2.3s)
+  ok  10 [desktop-1440] › tests\browser\learning.spec.ts:60:3 › L04 astar completes from gated browser controls with exact engine metrics (947ms)
+  ok  11 [desktop-1440] › tests\browser\learning.spec.ts:80:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.5s)
+  ok  12 [desktop-1440] › tests\browser\learning.spec.ts:100:1 › first-attempt statistics and completed summaries survive resets and mission switching (2.4s)
+  ok  13 [desktop-1440] › tests\browser\learning.spec.ts:116:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (432ms)
+  ok  14 [desktop-1440] › tests\browser\learning.spec.ts:132:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (3.5s)
+  ok  15 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (655ms)
+  ok  16 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (706ms)
+  ok  17 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (599ms)
+  ok  18 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (602ms)
+  ok  19 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (595ms)
+  ok  20 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (633ms)
+  ok  21 [desktop-1440] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  x   22 [desktop-1440] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.5s)
+(node:25556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  23 [desktop-1440] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (649ms)
+  ok  24 [desktop-1440] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (676ms)
+  ok  25 [desktop-1440] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (403ms)
+  ok  26 [desktop-1440] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (413ms)
+  ok  27 [desktop-1440] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (720ms)
+  ok  28 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.7s)
+  ok  29 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.6s)
+  ok  30 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (3.1s)
+  ok  31 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  32 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.4s)
+  ok  33 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  34 [desktop-1440] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  ok  35 [desktop-1440] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (1.8s)
+  x   36 [desktop-1440] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic (1.2s)
+(node:4648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  37 [desktop-1440] › tests\browser\reflection.spec.ts:107:1 › new reflection states keep keyboard focus within the viewport (1.5s)
+  ok  38 [desktop-1440] › tests\browser\shell.spec.ts:6:1 › renders an honest local workbench without claiming results before a run (258ms)
+  ok  39 [desktop-1440] › tests\browser\shell.spec.ts:18:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (450ms)
+  ok  40 [desktop-1440] › tests\browser\shell.spec.ts:38:1 › keyboard selection and skip navigation work without pointer input (363ms)
+  ok  41 [desktop-1440] › tests\browser\shell.spec.ts:54:1 › every fixed map and panel stays within the viewport (459ms)
+  ok  42 [desktop-1440] › tests\browser\shell.spec.ts:67:1 › default and final mission pass automated WCAG A and AA checks (1.9s)
+  ok  43 [desktop-1440] › tests\browser\shell.spec.ts:76:1 › default usage makes no remote requests and saves only its scoped progress key (720ms)
+  ok  44 [desktop-1440] › tests\browser\shell.spec.ts:97:1 › reduced motion disables smooth scrolling and decorative transitions (293ms)
+  ok  45 [desktop-1440] › tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (517ms)
+  ok  46 [desktop-1440] › tests\standalone\offline.spec.ts:37:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.6s)
+  ok  47 [desktop-1440] › tests\standalone\offline.spec.ts:66:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (612ms)
+(node:24372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  48 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (804ms)
+  ok  49 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (788ms)
+  ok  50 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (859ms)
+  ok  51 [mobile-390] › tests\browser\learning.spec.ts:33:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (500ms)
+  ok  52 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.4s)
+  ok  53 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.9s)
+  ok  54 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L02 astar completes from gated browser controls with exact engine metrics (1.6s)
+  ok  55 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L03 astar completes from gated browser controls with exact engine metrics (756ms)
+  ok  56 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L04 bfs completes from gated browser controls with exact engine metrics (2.4s)
+  ok  57 [mobile-390] › tests\browser\learning.spec.ts:60:3 › L04 astar completes from gated browser controls with exact engine metrics (1.2s)
+  ok  58 [mobile-390] › tests\browser\learning.spec.ts:80:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.5s)
+  ok  59 [mobile-390] › tests\browser\learning.spec.ts:100:1 › first-attempt statistics and completed summaries survive resets and mission switching (2.4s)
+  ok  60 [mobile-390] › tests\browser\learning.spec.ts:116:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (390ms)
+  ok  61 [mobile-390] › tests\browser\learning.spec.ts:132:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (3.3s)
+  ok  62 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (601ms)
+  ok  63 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (621ms)
+  ok  64 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (641ms)
+  ok  65 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (588ms)
+  ok  66 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (639ms)
+  ok  67 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (691ms)
+  ok  68 [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.7s)
+  x   69 [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.8s)
+(node:16264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  70 [mobile-390] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (703ms)
+  ok  71 [mobile-390] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (632ms)
+  ok  72 [mobile-390] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (371ms)
+  ok  73 [mobile-390] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (398ms)
+  ok  74 [mobile-390] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (716ms)
+  ok  75 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (3.1s)
+  ok  76 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (6.1s)
+  ok  77 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (3.5s)
+  ok  78 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (2.0s)
+  ok  79 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.9s)
+  ok  80 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.9s)
+  ok  81 [mobile-390] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.5s)
+  ok  82 [mobile-390] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (1.7s)
+  x   83 [mobile-390] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic (193ms)
+(node:16984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  84 [mobile-390] › tests\browser\reflection.spec.ts:107:1 › new reflection states keep keyboard focus within the viewport (1.5s)
+  ok  85 [mobile-390] › tests\browser\shell.spec.ts:6:1 › renders an honest local workbench without claiming results before a run (256ms)
+  ok  86 [mobile-390] › tests\browser\shell.spec.ts:18:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (444ms)
+  ok  87 [mobile-390] › tests\browser\shell.spec.ts:38:1 › keyboard selection and skip navigation work without pointer input (316ms)
+  ok  88 [mobile-390] › tests\browser\shell.spec.ts:54:1 › every fixed map and panel stays within the viewport (413ms)
+  ok  89 [mobile-390] › tests\browser\shell.spec.ts:67:1 › default and final mission pass automated WCAG A and AA checks (2.0s)
+  ok  90 [mobile-390] › tests\browser\shell.spec.ts:76:1 › default usage makes no remote requests and saves only its scoped progress key (735ms)
+  ok  91 [mobile-390] › tests\browser\shell.spec.ts:97:1 › reduced motion disables smooth scrolling and decorative transitions (294ms)
+  ok  92 [mobile-390] › tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (517ms)
+  ok  93 [mobile-390] › tests\standalone\offline.spec.ts:37:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.7s)
+  ok  94 [mobile-390] › tests\standalone\offline.spec.ts:66:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (590ms)
+(node:11552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  95 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (725ms)
+  ok  96 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (637ms)
+  ok  97 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (695ms)
+  ok  98 [narrow-320] › tests\browser\learning.spec.ts:33:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (506ms)
+  ok  99 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.3s)
+  ok 100 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.5s)
+  ok 101 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L02 astar completes from gated browser controls with exact engine metrics (1.6s)
+  ok 102 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L03 astar completes from gated browser controls with exact engine metrics (883ms)
+  ok 103 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L04 bfs completes from gated browser controls with exact engine metrics (2.4s)
+  ok 104 [narrow-320] › tests\browser\learning.spec.ts:60:3 › L04 astar completes from gated browser controls with exact engine metrics (1.2s)
+  ok 105 [narrow-320] › tests\browser\learning.spec.ts:80:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.5s)
+  ok 106 [narrow-320] › tests\browser\learning.spec.ts:100:1 › first-attempt statistics and completed summaries survive resets and mission switching (2.5s)
+  ok 107 [narrow-320] › tests\browser\learning.spec.ts:116:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (402ms)
+  ok 108 [narrow-320] › tests\browser\learning.spec.ts:132:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (3.3s)
+  ok 109 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (623ms)
+  ok 110 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (629ms)
+  ok 111 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (627ms)
+  ok 112 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (684ms)
+  ok 113 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (655ms)
+  ok 114 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (638ms)
+  ok 115 [narrow-320] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  x  116 [narrow-320] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.8s)
+(node:6824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 117 [narrow-320] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (744ms)
+  ok 118 [narrow-320] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (654ms)
+  ok 119 [narrow-320] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (377ms)
+  ok 120 [narrow-320] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (423ms)
+  ok 121 [narrow-320] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (752ms)
+  ok 122 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (3.2s)
+  ok 123 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.6s)
+  ok 124 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (3.0s)
+  ok 125 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.8s)
+  ok 126 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok 127 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok 128 [narrow-320] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  ok 129 [narrow-320] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (1.6s)
+  x  130 [narrow-320] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic (1.2s)
+(node:13660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 131 [narrow-320] › tests\browser\reflection.spec.ts:107:1 › new reflection states keep keyboard focus within the viewport (1.4s)
+  ok 132 [narrow-320] › tests\browser\shell.spec.ts:6:1 › renders an honest local workbench without claiming results before a run (276ms)
+  ok 133 [narrow-320] › tests\browser\shell.spec.ts:18:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (461ms)
+  ok 134 [narrow-320] › tests\browser\shell.spec.ts:38:1 › keyboard selection and skip navigation work without pointer input (315ms)
+  ok 135 [narrow-320] › tests\browser\shell.spec.ts:54:1 › every fixed map and panel stays within the viewport (432ms)
+  ok 136 [narrow-320] › tests\browser\shell.spec.ts:67:1 › default and final mission pass automated WCAG A and AA checks (1.5s)
+  ok 137 [narrow-320] › tests\browser\shell.spec.ts:76:1 › default usage makes no remote requests and saves only its scoped progress key (693ms)
+  ok 138 [narrow-320] › tests\browser\shell.spec.ts:97:1 › reduced motion disables smooth scrolling and decorative transitions (257ms)
+  ok 139 [narrow-320] › tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (458ms)
+  ok 140 [narrow-320] › tests\standalone\offline.spec.ts:37:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.4s)
+  ok 141 [narrow-320] › tests\standalone\offline.spec.ts:66:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (547ms)
+(node:5464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 142 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (753ms)
+  ok 143 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (758ms)
+  ok 144 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (733ms)
+  ok 145 [tablet-768] › tests\browser\learning.spec.ts:33:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (535ms)
+  ok 146 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.2s)
+  ok 147 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.2s)
+  ok 148 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L02 astar completes from gated browser controls with exact engine metrics (1.3s)
+  ok 149 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L03 astar completes from gated browser controls with exact engine metrics (705ms)
+  ok 150 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L04 bfs completes from gated browser controls with exact engine metrics (2.0s)
+  ok 151 [tablet-768] › tests\browser\learning.spec.ts:60:3 › L04 astar completes from gated browser controls with exact engine metrics (899ms)
+  ok 152 [tablet-768] › tests\browser\learning.spec.ts:80:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.4s)
+  ok 153 [tablet-768] › tests\browser\learning.spec.ts:100:1 › first-attempt statistics and completed summaries survive resets and mission switching (2.2s)
+  ok 154 [tablet-768] › tests\browser\learning.spec.ts:116:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (387ms)
+  ok 155 [tablet-768] › tests\browser\learning.spec.ts:132:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (2.8s)
+  ok 156 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (565ms)
+  ok 157 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (578ms)
+  ok 158 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (583ms)
+  ok 159 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (568ms)
+  ok 160 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (583ms)
+  ok 161 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (588ms)
+  ok 162 [tablet-768] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  x  163 [tablet-768] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.6s)
+(node:17144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 164 [tablet-768] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (654ms)
+  ok 165 [tablet-768] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (644ms)
+  ok 166 [tablet-768] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (401ms)
+  ok 167 [tablet-768] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (436ms)
+  ok 168 [tablet-768] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (711ms)
+  ok 169 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.7s)
+  ok 170 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.6s)
+  ok 171 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (3.0s)
+  ok 172 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok 173 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok 174 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok 175 [tablet-768] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  ok 176 [tablet-768] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (1.7s)
+  x  177 [tablet-768] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic (1.2s)
+(node:3452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 178 [tablet-768] › tests\browser\reflection.spec.ts:107:1 › new reflection states keep keyboard focus within the viewport (1.4s)
+  ok 179 [tablet-768] › tests\browser\shell.spec.ts:6:1 › renders an honest local workbench without claiming results before a run (253ms)
+  ok 180 [tablet-768] › tests\browser\shell.spec.ts:18:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (460ms)
+  ok 181 [tablet-768] › tests\browser\shell.spec.ts:38:1 › keyboard selection and skip navigation work without pointer input (294ms)
+  ok 182 [tablet-768] › tests\browser\shell.spec.ts:54:1 › every fixed map and panel stays within the viewport (444ms)
+  ok 183 [tablet-768] › tests\browser\shell.spec.ts:67:1 › default and final mission pass automated WCAG A and AA checks (1.5s)
+  ok 184 [tablet-768] › tests\browser\shell.spec.ts:76:1 › default usage makes no remote requests and saves only its scoped progress key (688ms)
+  ok 185 [tablet-768] › tests\browser\shell.spec.ts:97:1 › reduced motion disables smooth scrolling and decorative transitions (308ms)
+  ok 186 [tablet-768] › tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (465ms)
+  ok 187 [tablet-768] › tests\standalone\offline.spec.ts:37:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.4s)
+  ok 188 [tablet-768] › tests\standalone\offline.spec.ts:66:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (572ms)
+
+
+  1) [desktop-1440] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 39
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure all page content is contained by landmarks",
+    +     "help": "All page content should be contained by landmarks",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+    +     "id": "region",
+    +     "impact": "moderate",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "isIframe": false,
+    +             },
+    +             "id": "region",
+    +             "impact": "moderate",
+    +             "message": "Some page content is not contained by landmarks",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Some page content is not contained by landmarks",
+    +         "html": "<p class=\"standalone-notice\" role=\"note\">完整 HTML 单文件版 · 无需服务器，可断网使用 · 本机存档受浏览器策略影响，请定期导出 JSON 备份。</p>",
+    +         "impact": "moderate",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".standalone-notice",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.keyboard",
+    +       "best-practice",
+    +       "RGAAv4",
+    +       "RGAA-9.2.1",
+    +     ],
+    +   },
+    + ]
+
+      45 |   expect(JSON.parse(exported).schemaVersion).toBe(1); await page.getByTestId('mission-L02').click(); await upload(page, exported);
+      46 |   await expect(page.getByTestId('progress-preview')).toContainText('校验通过，尚未导入'); await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
+    > 47 |   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]); await noOverflow(page);
+         |                                                               ^
+      48 |   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+      49 |   await page.reload(); await page.getByTestId('report-history').locator('summary').click(); await expect(page.getByTestId('historical-explanation')).toHaveText('合成恢复检查：报告解释保存为纯文本。');
+      50 | });
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:47:63
+
+    Error Context: ..\.cache\standalone-browser-results\browser-progress-report-hi-241eb-hen-deliberately-reimported-desktop-1440\error-context.md
+
+  2) [desktop-1440] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+
+    Error: page.goto: net::ERR_FAILED at file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html
+    Call log:
+      - navigating to "file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html", waiting until "load"
+
+
+       at browser\helpers.ts:34
+
+      32 | }
+      33 | export async function launch(page: Page, level: LevelDefinition, algorithm: Algorithm) {
+    > 34 |   await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
+         |              ^
+      35 |   await page.getByLabel('本关算法').selectOption(algorithm);
+      36 |   await page.getByRole('button', { name: '开始预测' }).click();
+      37 | }
+        at launch (D:\竞赛\PathLab-AI\tests\browser\helpers.ts:34:14)
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:97:32
+
+    Error Context: ..\.cache\standalone-browser-results\browser-reflection-reflect-f61a0-abled-and-no-remote-traffic-desktop-1440\error-context.md
+
+  3) [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 39
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure all page content is contained by landmarks",
+    +     "help": "All page content should be contained by landmarks",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+    +     "id": "region",
+    +     "impact": "moderate",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "isIframe": false,
+    +             },
+    +             "id": "region",
+    +             "impact": "moderate",
+    +             "message": "Some page content is not contained by landmarks",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Some page content is not contained by landmarks",
+    +         "html": "<p class=\"standalone-notice\" role=\"note\">完整 HTML 单文件版 · 无需服务器，可断网使用 · 本机存档受浏览器策略影响，请定期导出 JSON 备份。</p>",
+    +         "impact": "moderate",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".standalone-notice",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.keyboard",
+    +       "best-practice",
+    +       "RGAAv4",
+    +       "RGAA-9.2.1",
+    +     ],
+    +   },
+    + ]
+
+      45 |   expect(JSON.parse(exported).schemaVersion).toBe(1); await page.getByTestId('mission-L02').click(); await upload(page, exported);
+      46 |   await expect(page.getByTestId('progress-preview')).toContainText('校验通过，尚未导入'); await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
+    > 47 |   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]); await noOverflow(page);
+         |                                                               ^
+      48 |   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+      49 |   await page.reload(); await page.getByTestId('report-history').locator('summary').click(); await expect(page.getByTestId('historical-explanation')).toHaveText('合成恢复检查：报告解释保存为纯文本。');
+      50 | });
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:47:63
+
+    Error Context: ..\.cache\standalone-browser-results\browser-progress-report-hi-241eb-hen-deliberately-reimported-mobile-390\error-context.md
+
+  4) [mobile-390] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+
+    Error: page.goto: net::ERR_FAILED at file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html
+    Call log:
+      - navigating to "file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html", waiting until "load"
+
+
+       at browser\helpers.ts:34
+
+      32 | }
+      33 | export async function launch(page: Page, level: LevelDefinition, algorithm: Algorithm) {
+    > 34 |   await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
+         |              ^
+      35 |   await page.getByLabel('本关算法').selectOption(algorithm);
+      36 |   await page.getByRole('button', { name: '开始预测' }).click();
+      37 | }
+        at launch (D:\竞赛\PathLab-AI\tests\browser\helpers.ts:34:14)
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:97:32
+
+    Error Context: ..\.cache\standalone-browser-results\browser-reflection-reflect-f61a0-abled-and-no-remote-traffic-mobile-390\error-context.md
+
+  5) [narrow-320] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 39
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure all page content is contained by landmarks",
+    +     "help": "All page content should be contained by landmarks",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+    +     "id": "region",
+    +     "impact": "moderate",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "isIframe": false,
+    +             },
+    +             "id": "region",
+    +             "impact": "moderate",
+    +             "message": "Some page content is not contained by landmarks",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Some page content is not contained by landmarks",
+    +         "html": "<p class=\"standalone-notice\" role=\"note\">完整 HTML 单文件版 · 无需服务器，可断网使用 · 本机存档受浏览器策略影响，请定期导出 JSON 备份。</p>",
+    +         "impact": "moderate",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".standalone-notice",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.keyboard",
+    +       "best-practice",
+    +       "RGAAv4",
+    +       "RGAA-9.2.1",
+    +     ],
+    +   },
+    + ]
+
+      45 |   expect(JSON.parse(exported).schemaVersion).toBe(1); await page.getByTestId('mission-L02').click(); await upload(page, exported);
+      46 |   await expect(page.getByTestId('progress-preview')).toContainText('校验通过，尚未导入'); await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
+    > 47 |   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]); await noOverflow(page);
+         |                                                               ^
+      48 |   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+      49 |   await page.reload(); await page.getByTestId('report-history').locator('summary').click(); await expect(page.getByTestId('historical-explanation')).toHaveText('合成恢复检查：报告解释保存为纯文本。');
+      50 | });
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:47:63
+
+    Error Context: ..\.cache\standalone-browser-results\browser-progress-report-hi-241eb-hen-deliberately-reimported-narrow-320\error-context.md
+
+  6) [narrow-320] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+
+    Error: page.goto: net::ERR_FAILED at file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html
+    Call log:
+      - navigating to "file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html", waiting until "load"
+
+
+       at browser\helpers.ts:34
+
+      32 | }
+      33 | export async function launch(page: Page, level: LevelDefinition, algorithm: Algorithm) {
+    > 34 |   await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
+         |              ^
+      35 |   await page.getByLabel('本关算法').selectOption(algorithm);
+      36 |   await page.getByRole('button', { name: '开始预测' }).click();
+      37 | }
+        at launch (D:\竞赛\PathLab-AI\tests\browser\helpers.ts:34:14)
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:97:32
+
+    Error Context: ..\.cache\standalone-browser-results\browser-reflection-reflect-f61a0-abled-and-no-remote-traffic-narrow-320\error-context.md
+
+  7) [tablet-768] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 39
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure all page content is contained by landmarks",
+    +     "help": "All page content should be contained by landmarks",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+    +     "id": "region",
+    +     "impact": "moderate",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "isIframe": false,
+    +             },
+    +             "id": "region",
+    +             "impact": "moderate",
+    +             "message": "Some page content is not contained by landmarks",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Some page content is not contained by landmarks",
+    +         "html": "<p class=\"standalone-notice\" role=\"note\">完整 HTML 单文件版 · 无需服务器，可断网使用 · 本机存档受浏览器策略影响，请定期导出 JSON 备份。</p>",
+    +         "impact": "moderate",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".standalone-notice",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.keyboard",
+    +       "best-practice",
+    +       "RGAAv4",
+    +       "RGAA-9.2.1",
+    +     ],
+    +   },
+    + ]
+
+      45 |   expect(JSON.parse(exported).schemaVersion).toBe(1); await page.getByTestId('mission-L02').click(); await upload(page, exported);
+      46 |   await expect(page.getByTestId('progress-preview')).toContainText('校验通过，尚未导入'); await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
+    > 47 |   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]); await noOverflow(page);
+         |                                                               ^
+      48 |   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+      49 |   await page.reload(); await page.getByTestId('report-history').locator('summary').click(); await expect(page.getByTestId('historical-explanation')).toHaveText('合成恢复检查：报告解释保存为纯文本。');
+      50 | });
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:47:63
+
+    Error Context: ..\.cache\standalone-browser-results\browser-progress-report-hi-241eb-hen-deliberately-reimported-tablet-768\error-context.md
+
+  8) [tablet-768] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+
+    Error: page.goto: net::ERR_FAILED at file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html
+    Call log:
+      - navigating to "file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/PathLab%20AI.html", waiting until "load"
+
+
+       at browser\helpers.ts:34
+
+      32 | }
+      33 | export async function launch(page: Page, level: LevelDefinition, algorithm: Algorithm) {
+    > 34 |   await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
+         |              ^
+      35 |   await page.getByLabel('本关算法').selectOption(algorithm);
+      36 |   await page.getByRole('button', { name: '开始预测' }).click();
+      37 | }
+        at launch (D:\竞赛\PathLab-AI\tests\browser\helpers.ts:34:14)
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:97:32
+
+    Error Context: ..\.cache\standalone-browser-results\browser-reflection-reflect-f61a0-abled-and-no-remote-traffic-tablet-768\error-context.md
+
+  8 failed
+    [desktop-1440] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+    [desktop-1440] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+    [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+    [mobile-390] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+    [narrow-320] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+    [narrow-320] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+    [tablet-768] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+    [tablet-768] › tests\browser\reflection.spec.ts:92:1 › reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic 
+  180 passed (4.3m)

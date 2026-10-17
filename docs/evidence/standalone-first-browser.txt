@@ -1,0 +1,26 @@
+
+> pathlab-ai@0.1.0 test:standalone
+> npm run build:html && playwright test --config playwright.standalone.config.ts --project=desktop-1440 offline.spec.ts
+
+
+> pathlab-ai@0.1.0 build:html
+> node scripts/build-standalone.mjs
+
+{
+  "target": "D:\\竞赛\\PathLab-AI\\PathLab AI.html",
+  "bytes": 327381,
+  "sha256": "c0f2eebc32cf093b3a589409e06c1cb873601143fac8a923ae21d76c075417ca",
+  "embedded": "production React runtime, shared components/domain, fixtures, both stylesheets and SVG icon",
+  "externalAssets": 0,
+  "serverRequired": false
+}
+
+Running 3 tests using 1 worker
+
+(node:19684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [desktop-1440] › tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (719ms)
+  ok 2 [desktop-1440] › tests\standalone\offline.spec.ts:37:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.6s)
+  ok 3 [desktop-1440] › tests\standalone\offline.spec.ts:66:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (635ms)
+
+  3 passed (4.0s)

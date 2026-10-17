@@ -91,7 +91,7 @@ test('partial report is honest, free text is inert, drafts survive experiment ca
 
 test('reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic', async ({ page }) => {
   const external:string[]=[],errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.route('**/*',route=>{const origin=new URL(route.request().url()).origin;if(origin==='http://127.0.0.1:3210')return route.continue();external.push(origin);return route.abort();});
+  await page.route('**/*',route=>{const origin=new URL(route.request().url()).origin;if(origin==='http://127.0.0.1:3210'||(process.env.PATHLAB_TEST_URL&&new URL(route.request().url()).protocol==='file:'))return route.continue();external.push(origin);return route.abort();});
   await page.addInitScript(()=>{Storage.prototype.setItem=function(key){throw new Error('Unexpected storage write: '+key);};});
   const check=async()=>{await expect(page.getByTestId('save-status')).toContainText('本机保存失败');const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();expect(result.violations).toEqual([]);await noOverflow(page);};
   const level=levels[2]!;await launch(page,level,'astar');await finish(page,level,'astar');await check();

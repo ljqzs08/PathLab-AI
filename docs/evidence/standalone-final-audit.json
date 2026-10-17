@@ -1,0 +1,183 @@
+{
+  "checkedAt": "2026-10-17T13:23:28.4794045+08:00",
+  "executor": "AI automated verification on existing Microsoft Edge; not human or real-device acceptance",
+  "artifact": {
+    "path": "PathLab-AI/PathLab AI.html",
+    "bytes": 330771,
+    "sha256": "7e3a7ed4b459e82b5c1b97128e1654b5dbd105f838a8b01dcdec6e0a909c2510",
+    "repeatedBuildSameBytes": true,
+    "oldEntryAbsent": true,
+    "newBuildAndCopyTemporaryDirectoriesRemaining": 0,
+    "newPerRunOutputsAndDuplicateReportRemovedAfterArchival": true
+  },
+  "checks": {
+    "powershell7": "typecheck + zero-warning lint + 102/102 Node tests",
+    "powershell51": "typecheck + zero-warning lint + 102/102 Node tests",
+    "nextBuild": "passed",
+    "initialOffline": {
+      "startTime": "2026-10-17T05:12:00.454Z",
+      "duration": 259072.092,
+      "expected": 180,
+      "skipped": 0,
+      "unexpected": 8,
+      "flaky": 0
+    },
+    "finalOffline": {
+      "startTime": "2026-10-17T05:17:43.021Z",
+      "duration": 265266.47900000005,
+      "expected": 188,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "httpRegression": {
+      "startTime": "2026-10-17T05:17:40.869Z",
+      "duration": 259675.69100000002,
+      "expected": 176,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "prompts": [
+    {
+      "stem": "2026-10-17-local-html-entry",
+      "messages": 3,
+      "finalCaptured": true,
+      "sourceRoleTextSha256Match": true
+    },
+    {
+      "stem": "2026-10-17-standalone-html-correction",
+      "messages": 3,
+      "finalCaptured": false,
+      "sourceRoleTextSha256Match": true
+    }
+  ],
+  "evidence": [
+    {
+      "file": "standalone-before.json",
+      "bytes": 511,
+      "sha256": "ecd07b6787afc1853e8dd1d6a99473cde494c37c5f5eba12d33ef97d69bcb201"
+    },
+    {
+      "file": "standalone-first-build.txt",
+      "bytes": 1550,
+      "sha256": "5b1049e6fd3d4cba868b83f0137a65a5c086970480380d098b68ee8d6670908a"
+    },
+    {
+      "file": "standalone-build.txt",
+      "bytes": 396,
+      "sha256": "6e5592255ae8c320bd96ac7a68ea77427dfe8b3f951fb3769ea849a29f05ade6"
+    },
+    {
+      "file": "standalone-build-final.txt",
+      "bytes": 396,
+      "sha256": "0e097e24576cd0011ce444e93969fed17f77bcec6e59fca6df5c050fa61faa94"
+    },
+    {
+      "file": "standalone-first-check.txt",
+      "bytes": 10162,
+      "sha256": "260643dbf63799b53ad82c010ec17d6b01b2f6fadab24179994f981fa9f7264f"
+    },
+    {
+      "file": "standalone-check-ps7.txt",
+      "bytes": 10167,
+      "sha256": "e06bf9ad0221d41d8002dd2e26c6fc52cd06c49705410565a83c3935ccf12a58"
+    },
+    {
+      "file": "standalone-check-ps51.txt",
+      "bytes": 10165,
+      "sha256": "d2b428ac294fddb8625841c0c8d90ab54e16822e9f03d123f5429e397552795f"
+    },
+    {
+      "file": "standalone-first-browser.txt",
+      "bytes": 1276,
+      "sha256": "393938bae13e8524e8e259de0ccb6c0bbccc7689593d8ec47bfa95e253038feb"
+    },
+    {
+      "file": "standalone-browser-initial.txt",
+      "bytes": 50226,
+      "sha256": "7aacabcb4913cabcfc80fd98196e1e0649dfb5a7a844dc20187a0a1923de21d6"
+    },
+    {
+      "file": "standalone-browser-initial.json",
+      "bytes": 270162,
+      "sha256": "5c35edc006ffd751a42d6b665459797f2e80476b7b67297e8a55d1ce2ca3f7aa"
+    },
+    {
+      "file": "standalone-browser.txt",
+      "bytes": 31279,
+      "sha256": "d6b4fd30041aef2ed61a62fdc640c4600fd8814ce031bef8186d502495621fc3"
+    },
+    {
+      "file": "standalone-browser.json",
+      "bytes": 215346,
+      "sha256": "4f6c83c5fc71d5d2d58163c3ffc4b2ab5b984581eaffcff01f6b60848d401e18"
+    },
+    {
+      "file": "standalone-next-build.txt",
+      "bytes": 722,
+      "sha256": "727f0a9afeee87c528f6845ab5967da3b4ce24d55c6004a4399207b8d7b26726"
+    },
+    {
+      "file": "standalone-next-browser.txt",
+      "bytes": 29118,
+      "sha256": "c66854c5edb918bb748a320d3994a82a7fd64d8ebf040751b2f582894e7cf573"
+    },
+    {
+      "file": "standalone-next-browser.json",
+      "bytes": 199955,
+      "sha256": "dd15d09ed1bae649ec3619a927ac0d14064800db2bb20e3cf8c33eac3544e4c1"
+    }
+  ],
+  "remaining": "Current final answer not yet persisted; refresh from real source next turn. Three core human-guided repair evidence chains remain incomplete. No remote/publish performed.",
+  "stagedScope": {
+    "explicitPaths": [
+      "AGENTS.md",
+      "PathLab-AI/PathLab AI.html",
+      "PathLab-AI/package.json",
+      "PathLab-AI/playwright.standalone.config.ts",
+      "PathLab-AI/scripts/build-standalone.mjs",
+      "PathLab-AI/scripts/standalone-typescript-loader.mjs",
+      "PathLab-AI/src/standalone.tsx",
+      "PathLab-AI/tests/browser/canvas.spec.ts",
+      "PathLab-AI/tests/browser/helpers.ts",
+      "PathLab-AI/tests/browser/learning.spec.ts",
+      "PathLab-AI/tests/browser/progress.spec.ts",
+      "PathLab-AI/tests/browser/reflection.spec.ts",
+      "PathLab-AI/tests/browser/shell.spec.ts",
+      "PathLab-AI/tests/standalone/offline.spec.ts",
+      "PathLab-AI/tsconfig.json",
+      "PathLab-AI/打开 PathLab AI.html",
+      "README.md",
+      "docs/evidence/standalone-before.json",
+      "docs/evidence/standalone-browser-initial.json",
+      "docs/evidence/standalone-browser-initial.txt",
+      "docs/evidence/standalone-browser.json",
+      "docs/evidence/standalone-browser.txt",
+      "docs/evidence/standalone-build-final.txt",
+      "docs/evidence/standalone-build.txt",
+      "docs/evidence/standalone-check-ps51.txt",
+      "docs/evidence/standalone-check-ps7.txt",
+      "docs/evidence/standalone-final-audit.json",
+      "docs/evidence/standalone-first-browser.txt",
+      "docs/evidence/standalone-first-build.txt",
+      "docs/evidence/standalone-first-check.txt",
+      "docs/evidence/standalone-next-browser.json",
+      "docs/evidence/standalone-next-browser.txt",
+      "docs/evidence/standalone-next-build.txt",
+      "docs/evolution-log.md",
+      "docs/progress-status.md",
+      "docs/verification-standalone-html.md",
+      "prompts/sessions/2026-10-17-local-html-entry.jsonl",
+      "prompts/sessions/2026-10-17-local-html-entry.md",
+      "prompts/sessions/2026-10-17-standalone-html-correction.jsonl",
+      "prompts/sessions/2026-10-17-standalone-html-correction.md"
+    ],
+    "count": 40,
+    "unrelatedTempSpecExcluded": true,
+    "commonCredentialPatternScan": "No matched patterns; not a comprehensive security audit",
+    "sourceWhitespaceCheck": "passed",
+    "rawEvidenceWhitespace": "Only existing end-of-line/end-of-file whitespace exempted to preserve real text"
+  }
+}

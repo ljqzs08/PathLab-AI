@@ -1,6 +1,6 @@
 # 项目执行规则
 
-适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前阶段 6：独立 BFS/A*、二叉堆、私有门控会话、Canvas/DOM、单因素实验、本地规则反馈与引用解释报告均已接入；已增加版本化本机存档、JSON 备份/预览/确认与安全恢复。两版 PowerShell 类型/lint/102 项测试、生产构建、四视口 176 项 Edge 检查通过；不是人工或真机验收。远程 AI 与自由地图编辑未实现，正式交付仍缺证据/访问/材料；当前状态见 docs/progress-status.md。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
+适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前阶段 6：独立 BFS/A*、二叉堆、私有门控会话、Canvas/DOM、单因素实验、本地规则反馈与引用解释报告均已接入；已增加版本化本机存档、JSON 备份/预览/确认与安全恢复。两版 PowerShell 类型/lint/102 项测试、生产构建、四视口 176 项 Edge 检查通过；已将误做的 HTML 入口替换为 PathLab-AI/PathLab AI.html 完整离线单文件（共享现有组件/算法/样式），四视口离线 188 项通过，可单独复制，无需 localhost。不是人工或真机验收，详见 docs/verification-standalone-html.md。远程 AI 与自由地图编辑未实现，正式交付仍缺证据/访问/材料；当前状态见 docs/progress-status.md。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
 
 ## 工作区与真实性
 

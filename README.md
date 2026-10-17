@@ -4,7 +4,26 @@
 
 **当前状态：阶段 6，本地学习闭环 + 本机进度与安全恢复已接通。** 四关支持真实 BFS/A* 预测、受门控回放、Canvas/DOM、单因素条件实验、前后真实指标与引用解释报告。完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。本地反馈是规则模板，没有调用模型；“记录齐备”不代表掌握，也不判定自由文本解释正确。已支持本机自动存档、版本化 JSON 备份和安全导入，远程 AI 尚未实现。功能检查与参赛证据分别列在 docs/progress-status.md；当前仍不是可直接提交的完整参赛交付。
 
-## 启动与检查（Windows）
+## 直接打开完整 HTML（无需安装或启动服务）
+
+**实际网站文件：`PathLab-AI/PathLab AI.html`。** 在本工作区为 `D:\竞赛\PathLab-AI\PathLab AI.html`。双击文件，或在已安装的 Edge 中打开即可；不需要 Node.js、终端、API Key、网络或 localhost 服务。也可只复制这一个文件到其他文件夹再打开。
+
+这不是访问卡片、网页截图、iframe 或跳转页：四关、BFS/A*、预测门控、Canvas/文字回放、条件实验、证据报告和 JSON 导入/导出均在 HTML 内运行，使用与工程版相同的组件、算法和关卡数据。原先的 `打开 PathLab AI.html` 入口已被替换，避免误用。
+
+- 建议先在本机 Edge 中使用；已验证范围和实际结果见 `docs/verification-standalone-html.md`，不宣称所有浏览器或真实手机均已通过。
+- 本地文件的自动存档受浏览器策略影响；移动/重命名文件、换浏览器或从 HTTP 版切换到 HTML 版时，不应假定存档会自动跟随。请先导出 JSON，再到目标版本预览并确认导入。存储被禁用时仍可学习和导出备份。
+- “完整 HTML”指当前已实现的阶段 6 网站能力，不代表远程 AI、自由地图编辑或参赛交付材料已经完成。
+
+源码修改后可在仓库根目录重新生成并检查单文件版：
+
+~~~powershell
+.\scripts\Invoke-ProjectNpm.ps1 -NpmArguments @('run','build:html')
+.\scripts\Invoke-ProjectNpm.ps1 -NpmArguments @('run','test:standalone')
+~~~
+
+`test:standalone` 会先生成实际 HTML，再以 `file://` 执行四视口回归，无 webServer、不启动 Next 服务。构建脚本复用已锁定 Next 包内的编译器，不新增依赖；它使用内部模块路径，升级 Next 时需重新验证，不视为稳定公共 API。
+
+## 开发与工程检查（Windows）
 
 需要已安装 Node.js 22.13+ 与 npm；本机已验证 Node 24.19.0、npm 11.17.0。无需 API Key，不需要账号。推荐使用 Node 24 LTS；未测试其他 Node 主版本。
 在仓库根目录使用 Windows PowerShell 5.1 或 PowerShell 7：
@@ -16,7 +35,7 @@
 ~~~
 
 开发预览为 http://127.0.0.1:3000，Ctrl+C 退出。仅绑定回环地址，不向局域网开放。
-独立 HTML 入口：双击 `D:\竞赛\PathLab-AI\打开 PathLab AI.html`，再点击“打开 PathLab AI”。入口无外部依赖，但完整网站仍需上方启动命令运行；它不是离线版应用。
+上方为开发服务；日常直接使用完整网站可打开前述单文件 HTML，无需运行这些命令。
 生产构建与浏览器检查：
 
 ~~~powershell
@@ -55,13 +74,14 @@ node_modules、.next 与类型增量文件用于复用或本地预览，不入 G
 
 ## 仓库布局
 
+- PathLab-AI/PathLab AI.html：完整可离线运行的单文件产物；src/standalone.tsx 与 scripts/build-standalone.mjs 复用现有应用生成它。
 - PathLab-AI/src/app/：App Router 页面、元数据、系统字体与响应式 CSS。
 - PathLab-AI/src/components/PathLabShell.tsx：经 ProgressStore 保留/恢复每关会话；LearningWorkbench 连接预测/回放/条件实验，GridCanvas、EvidenceInspector 与 ReflectionPanel 仅消费受门控投影。
 - PathLab-AI/src/domain/learning/{progress,progress-store}.ts 与 components/ProgressPanel.tsx：受限命令日志、存档保护、JSON 预览/确认与备份。
 - PathLab-AI/src/data/missions.ts：复用原有固定 JSON；不生成轨迹、统计或答案。
 - PathLab-AI/contracts/、fixtures/：阶段 0 契约与数据，继续保留。
 - PathLab-AI/src/domain/grid.ts、algorithms/{bfs,astar,priorityQueue}.ts：独立网格边界、FIFO BFS、f/h/sequence 二叉堆 A*、回溯、确定性事件与由事件汇总的统计；不依赖 React/DOM/AI。
-- PathLab-AI/tests/：契约、网格/BFS、128 种固定端点的 3×3 障碍布局、四关原图/反事实与可复现证据；tests/browser/：生产页面自动检查。
+- PathLab-AI/tests/：契约、网格/BFS、128 种固定端点的 3×3 障碍布局、四关原图/反事实与可复现证据；tests/browser/：共享产品回归；tests/standalone/：单文件离线、独立复制和存储受限检查。
 - PathLab-AI/scripts/inspect-bfs.mjs：仅开发者核验，输出路径、指标、轨迹 SHA256 与 checkpoint 可用性，不是预测门控或用户学习记录。
 - docs/：产品/架构/验收/演进/依赖核验/各阶段实际验证。
 - prompts/sessions/：带来源行号和原文哈希的真实可见对话快照。
@@ -80,7 +100,7 @@ JSON 先校验再确认导入；恢复不自动播放、不跳预测。1 MiB、4
 
 ## 阅读与下一阶段
 
-规格基线见 docs/product-spec.md；算法结果见 docs/verification-stage-3-astar.md；门控 UI 结果见 docs/verification-stage-4-learning.md，条件/报告与像素历史见 docs/verification-stage-5-reflection.md；最新存档回归见 docs/verification-stage-6-storage.md；教师内容见 docs/teaching-guide.md；剩余验收见 docs/acceptance.md；过程索引见 docs/evolution-log.md。
+规格基线见 docs/product-spec.md；算法结果见 docs/verification-stage-3-astar.md；门控 UI 结果见 docs/verification-stage-4-learning.md，条件/报告与像素历史见 docs/verification-stage-5-reflection.md；最新存档回归见 docs/verification-stage-6-storage.md，单文件交付见 docs/verification-standalone-html.md；教师内容见 docs/teaching-guide.md；剩余验收见 docs/acceptance.md；过程索引见 docs/evolution-log.md。
 
 ## 可复核的关卡结果（BFS/A* 步数一致，完成各运行后显示；条件修改 UI 已实现）
 
