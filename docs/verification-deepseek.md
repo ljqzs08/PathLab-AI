@@ -53,3 +53,5 @@ HTML：486959 bytes；SHA256 `288b8e219bdac5e1410ccc9aa8d4168282e60e88e36f69ff47
 ## 暂存检查说明
 
 首次提交前的 diff-check 因原始生产构建日志带行末空格/末尾空行而停止，没有创建提交；随后全量 diff-check 也保留了真实 Prompt 的原始空白告警。日志见 `evidence/deepseek-diff-whitespace.txt`。没有修饰原始日志/Prompt 来消除告警；排除这两类原文目录后的代码与说明文档检查通过。这是证据文本格式告警，不是应用测试失败或人类引导修复。
+
+实际功能提交：`d235a91514014c10ed4ef68733f8a6536080c0ee`（43 文件）。提交范围/私有配置忽略/无 remote 已复核，见 `evidence/deepseek-commit-audit.json`。最终答复仍须下一轮按真实来源补齐。
