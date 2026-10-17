@@ -6,6 +6,7 @@ import { missions } from '../data/missions';
 import { ProgressStore } from '../domain/learning/progress-store';
 import { ProgressPanel } from './ProgressPanel';
 import { LearningWorkbench } from './LearningWorkbench';
+import { Playground } from './Playground';
 
 const algorithmNames: Record<Algorithm, string> = { bfs: 'BFS', astar: 'A*' };
 
@@ -46,7 +47,7 @@ export function PathLabShell() {
         </a>
         <nav className="header-nav" aria-label="页面导航">
           <a href="#mission-workspace">任务工作台</a>
-          <a href="#development-status">开发边界</a>
+          <a href="#free-playground">自由实验</a>
         </nav>
         <span className="mode-badge"><span className="status-dot" aria-hidden="true" />本地模式<span className="mode-detail"> · 无需密钥</span></span>
       </header>
@@ -91,12 +92,15 @@ export function PathLabShell() {
           {progress.ready ? <LearningWorkbench key={mission.id + ":" + progress.generation} mission={mission} session={sessions.get(mission.id)!} onProgress={saveProgress} /> : <p role="status">正在检查本机进度…</p>}
         </section>
 
+        <Playground />
+
         <section id="development-status" className="development-status" aria-labelledby="development-title">
           <div><p className="eyebrow">BUILD IN THE OPEN</p><h2 id="development-title">完成到哪里，就展示到哪里。</h2><p>默认本地运行，不需要账号、API Key 或远程服务。</p></div>
           <ul>
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈 / 本机存档 / JSON 备份</span></li>
-            <li><span className="status-label">未连接</span><span>远程 AI / 自由地图编辑</span></li>
+            <li><span className="status-label status-label--ready">已就绪</span><span>自由地图编辑 / 撤销 / 双算法预测对比 / 搜索回放</span></li>
+            <li><span className="status-label">未接入</span><span>远程 AI（可选）；当前反馈由本地规则生成，不影响离线玩法</span></li>
           </ul>
         </section>
       </main>

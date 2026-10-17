@@ -2,7 +2,7 @@
 
 核对日期：2026-10-17。执行者：AI 自动化；不是用户人工、真实手机或全部浏览器验收。
 
-> 本文保留 E012/E013 打包修复的历史验收与当时 hash。E014 已加入地图预测与有限动效，当前产物 hash、204/204 离线回归和 192/192 HTTP 回归以 `verification-motion-interaction.md` 为准，不把下方历史 hash 当作最新文件。
+> 本文保留 E012/E013 打包修复的历史验收与当时 hash。E014 的地图预测与有限动效验收见 `verification-motion-interaction.md`；E015 已增加自由地图，当前产物 hash 与回归以 `verification-playground.md` 为准，不把下方历史 hash 当作最新文件。
 
 ## 真实需求纠正与交付物
 

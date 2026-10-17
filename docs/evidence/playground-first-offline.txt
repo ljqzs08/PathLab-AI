@@ -1,0 +1,33 @@
+
+Running 20 tests using 1 worker
+
+(node:23844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop-1440] › tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (566ms)
+  ok  2 [desktop-1440] › tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.3s)
+  ok  3 [desktop-1440] › tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (492ms)
+  ok  4 [desktop-1440] › tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.1s)
+  ok  5 [desktop-1440] › tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (520ms)
+(node:10280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [mobile-390] › tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (553ms)
+  ok  7 [mobile-390] › tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.9s)
+  ok  8 [mobile-390] › tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (628ms)
+  ok  9 [mobile-390] › tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.1s)
+  ok 10 [mobile-390] › tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (463ms)
+(node:29420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 11 [narrow-320] › tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (545ms)
+  ok 12 [narrow-320] › tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.9s)
+  ok 13 [narrow-320] › tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (586ms)
+  ok 14 [narrow-320] › tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.1s)
+  ok 15 [narrow-320] › tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (505ms)
+(node:27936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 16 [tablet-768] › tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (616ms)
+  ok 17 [tablet-768] › tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.9s)
+  ok 18 [tablet-768] › tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (597ms)
+  ok 19 [tablet-768] › tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.1s)
+  ok 20 [tablet-768] › tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (482ms)
+
+  20 passed (29.2s)

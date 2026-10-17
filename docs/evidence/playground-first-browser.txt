@@ -1,0 +1,19 @@
+npm warn "playwright.standalone.config.ts" is being parsed as a normal command line argument.
+npm warn Unknown cli config "--config". This will stop working in the next major version of npm.
+[WebServer] npm warn Unknown env config "config". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:23376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:26916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 [desktop-1440] › tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (5.3s)
+(node:21976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   2 [desktop-1440] › tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (30.1s)
+(node:4772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   3 [desktop-1440] › tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (30.1s)
+(node:26004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
