@@ -1,0 +1,79 @@
+
+> pathlab-ai@0.1.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> pathlab-ai@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+
+> pathlab-ai@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+> pathlab-ai@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.mjs
+
+✔ L01 baseline and fixed counterfactual match pinned shortest distances and independent oracle (7.5253ms)
+✔ L02 baseline and fixed counterfactual match pinned shortest distances and independent oracle (8.775ms)
+✔ L03 baseline and fixed counterfactual match pinned shortest distances and independent oracle (2.6777ms)
+✔ L04 baseline and fixed counterfactual match pinned shortest distances and independent oracle (4.8759ms)
+✔ every generated event in all eight mission runs fits the frozen envelope schema (91.7971ms)
+✔ all 16 fixture checkpoint slots have multiple candidates at requested effective selections 2 and 4 (0.3427ms)
+✔ checkpoint evidence defers single-candidate selections and consumes only one pending checkpoint per selection (0.2917ms)
+✔ same-start-goal and unreachable traces do not fabricate checkpoint submissions (0.2535ms)
+✔ L03 blockage is on the old route, invalidates it and changes the shortest route from 8 to 12 (0.5658ms)
+✔ evidence generation is deterministic nonmutating and contains no fabricated user history (3.8047ms)
+✔ checked-in BFS evidence is exactly reproducible from the current code and fixed inputs (0.76ms)
+✔ pinned tiny BFS trace freezes event order costs sequence and terminal statistics (2.7061ms)
+✔ FIFO wins over goal proximity and finding a goal does not stop on enqueue (1.2579ms)
+✔ same-length paths use up right down left with first parent retained (0.5503ms)
+✔ start equals goal selects once and never expands, with zero path length (0.2074ms)
+✔ unreachable is a valid run with empty path null length and an empty final frontier (0.284ms)
+✔ cycles never enqueue discover select or expand a node twice (0.7694ms)
+✔ BFS rejects invalid input instead of returning unreachable (0.4716ms)
+✔ identical frozen input produces identical paths events and metrics over 20 runs (6.7896ms)
+✔ returned paths metrics and snapshots do not alias input or each other (0.5496ms)
+✔ all 128 obstacle layouts on 3x3 with fixed open endpoints agree with independent relaxation (13.9748ms)
+✔ maximum supported 25x25 open grid has a 48-step valid deterministic path (64.8245ms)
+✔ exactly four unique fixed missions validate structurally and relationally (3.5973ms)
+✔ reject unknown level fields (0.2186ms)
+✔ reject malformed map widths (0.8865ms)
+✔ reject blocked or out-of-bounds endpoints (0.3383ms)
+✔ reject blocking start and unchanged goal (0.2614ms)
+✔ checkpoints have stable increasing ordinals (0.2223ms)
+✔ state table has known states and unique state/action pairs (0.2549ms)
+✔ prediction submission cannot bypass directly to reflection/report (0.1635ms)
+✔ running has no map editing transition and restore pauses playback (0.1327ms)
+✔ valid event and signed out-of-bounds skip payload validate (6.1174ms)
+✔ wrong event payload and unknown event type are rejected (0.2344ms)
+✔ prediction requested cannot include the hidden actual answer (0.1673ms)
+✔ synthetic feedback request/response validate and evidence resolves (1.3166ms)
+✔ unknown output fields or fabricated error labels fail schema validation (0.1685ms)
+✔ nonexistent or mismatched evidence is rejected (0.8207ms)
+✔ remote feedback before prediction reveal is rejected (0.2386ms)
+✔ insufficient evidence may not assign an error (0.212ms)
+✔ reject unrequested hint escalation and unsupported error inference (0.2004ms)
+✔ all sixteen event branches accept their payload and reject missing/unknown fields (2.7792ms)
+✔ schema rejects private identity in feedback request and invalid versions (0.3441ms)
+✔ evidence IDs are unique and correct count cannot exceed total (0.6378ms)
+✔ README preserves the executable PowerShell wrapper path (0.4719ms)
+✔ grid accepts read-only input without modifying it, including the 1x1 kernel case (1.3012ms)
+✔ four-neighbor order is up right down left and retains out-of-bounds coordinates (0.8495ms)
+✔ bounds and walls are separate from valid open cells (0.2702ms)
+✔ rejects missing or non-object search input and grid (1.0334ms)
+✔ rejects invalid or oversized dimensions before allocation (0.5503ms)
+✔ rejects bad row count width characters sparse rows and non-string rows (0.3008ms)
+✔ rejects fractional non-finite or malformed endpoints with a stable code (1.4575ms)
+✔ out-of-bounds endpoints are input errors, not an unreachable search (0.303ms)
+✔ blocked start goal or coincident blocked endpoints are rejected (0.3286ms)
+ℹ tests 53
+ℹ suites 0
+ℹ pass 53
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 314.0651

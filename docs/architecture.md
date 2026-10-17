@@ -3,7 +3,7 @@
 ## 当前仓库事实
 
 Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
-阶段 0 已保留规格、契约和固定 JSON。阶段 1 已建立 Next.js App Router + React + TypeScript 的最小本地应用；不等于已实现教育闭环。
+阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2（BFS）实现独立纯搜索模块，但不接入页面，不等于已实现教育闭环。
 版本精确锁定于 package-lock.json；核验来源与 ESLint 兼容取舍见 dependencies-stage-1.md。
 
 ## 当前已落地
@@ -20,15 +20,26 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 - scripts/Test-ProjectNpm.ps1：成功、预期失败、缺失/既有/PS7 空字符串与工作目录恢复回归。
 - scripts/Export-PromptSnapshot.ps1：真实可见消息提取，排除两种已观测内部摘要标题；不是全量原生导出。
 
-## 运行数据流（阶段 1）
+## 阶段 2 新增的独立内核
+
+- src/domain/grid.ts：只读 SearchInput、运行时输入边界、稳定错误码、上右下左四邻域。内核接受 1—25 格尺寸；1/2 格仅供数学边界测试，关卡 schema 仍要求 3—25，未扩大关卡编辑规格。
+- src/domain/algorithms/bfs.ts：FIFO 头索引队列；入队即 discovered；首个 parent 保持不变；终点有效选中后结束；每次调用创建全新状态；事件不带时间、ID 或用户数据。
+- events.md 固化 BFS 1.0.0 的事件顺序。前沿快照是独立副本；path_updated 的非 final 路径是搜索回溯前缀，不代表机器人实际行走。最终路径与 metrics 不共享终止事件对象。
+- 统计从纯算法事件汇总；无路为 path=[] / pathLength=null，起终点相同为 pathLength=0。非法/阻塞端点抛 GridInputError，不能伪装成无路。
+- tests/grid、bfs、bfs-missions 与 helpers/search-checks：31 项新测试，加原 22 项共 53 项。独立同步距离松弛 oracle 不使用生产队列；检查 128 种固定端点的 3×3 障碍布局，以及 25×25 上限。
+- scripts/inspect-bfs.mjs 与 docs/evidence/stage-2-bfs.json：开发者证据，含八次运行的路径/指标/轨迹哈希/16 个 checkpoint 可用性。分析器不是学习 reducer；不会提交预测或包装真实用户事件。L03 的 BFS 仅作核验。
+- Node 原生去类型直接运行 .ts，使用显式扩展名与 allowImportingTsExtensions；tsc 独立检查，noEmit/strict 不变，无新增依赖。Node 22 的最低声明版本本轮未实测。
+- BFS 队列搜索本身按边/点处理；完整事件还复制前沿和回溯前缀，日志体积最坏可达平方级。不把带完整轨迹的总成本宣称为严格 O(V+E)，目前只支持至 25×25。
+
+## 页面数据流（维持阶段 1）
 
 固定关卡 JSON → missions 只读类型边界 → 所选关卡 ID → 简报、目标、静态地图投影。
-不存在搜索引擎调用、学习状态转移、生成事件、远程路由、localStorage 或模型 SDK。
+页面不存在搜索引擎调用、学习状态转移、生成事件、远程路由、localStorage 或模型 SDK。独立内核只由测试/开发者核验脚本调用，完整轨迹与答案 JSON 未导入客户端。
 地图只表达墙/路/S/G，不伪造搜索路径、待处理集合或指标；禁用按钮旁写明后续开放。
 
 ## 后续目录（规划，尚未实现）
 
-- src/domain/grid.ts、algorithms/{bfs,astar,priorityQueue}.ts：纯确定性内核。
+- src/domain/algorithms/{astar,priorityQueue}.ts：下一阶段的纯确定性 A*；grid.ts 与 bfs.ts 已落地，不列为未来功能。
 - src/domain/{events,levels}.ts：读取/校验规格，生成事件。
 - src/domain/learning/{diagnose,report}.ts：本地规则与复盘。
 - src/state/：受控状态转移、回放游标与预测门控。

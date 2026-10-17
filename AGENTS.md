@@ -1,6 +1,6 @@
 # 项目执行规则
 
-适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；未来应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前已进入阶段 1：已建立可运行的 Next/React/TypeScript 应用壳、四关简报与静态地图。尚无搜索内核、预测/Canvas、诊断、存储或真实 AI。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
+适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；未来应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前已进入阶段 2（BFS）：保留 Next/React/TypeScript 应用壳、四关简报与静态地图；新增独立纯网格/BFS、确定性事件及四关反事实验证，尚未接入 UI。A*、预测/Canvas、诊断、存储或真实 AI 均未实现。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
 
 ## 工作区与真实性
 

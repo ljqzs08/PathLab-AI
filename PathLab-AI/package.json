@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Stage 1 runnable local learning shell; algorithms and AI are not connected",
+  "description": "Local PathLab learning shell with independently verified deterministic BFS; no prediction UI or remote AI",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -13,9 +13,10 @@
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check": "npm run typecheck && npm run lint && npm test",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "inspect:bfs": "node --experimental-strip-types scripts/inspect-bfs.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

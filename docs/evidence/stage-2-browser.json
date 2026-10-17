@@ -1,0 +1,393 @@
+{
+  "stage": "stage-2-bfs",
+  "executor": "AI automated local installed Edge, not human acceptance",
+  "stats": {
+    "startTime": "2026-10-17T00:58:29.585Z",
+    "duration": 18991.441,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "projects": [
+    {
+      "name": "desktop-1440"
+    },
+    {
+      "name": "mobile-390"
+    },
+    {
+      "name": "narrow-320"
+    },
+    {
+      "name": "tablet-768"
+    }
+  ],
+  "errors": [],
+  "tests": [
+    {
+      "project": "desktop-1440",
+      "title": "renders an honest local shell without claiming algorithm or AI results",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 385,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "all four mission buttons project the unchanged fixed fixture, never a generated path",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 423,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "keyboard selection and skip navigation work without pointer input",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 274,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "every fixed map and panel stays within the viewport",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 437,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "default and final mission pass automated WCAG A and AA checks",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1076,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "default usage makes no remote requests or learning-storage writes",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 814,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "desktop-1440",
+      "title": "reduced motion disables smooth scrolling and decorative transitions",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 250,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "renders an honest local shell without claiming algorithm or AI results",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 365,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "all four mission buttons project the unchanged fixed fixture, never a generated path",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 420,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "keyboard selection and skip navigation work without pointer input",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 284,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "every fixed map and panel stays within the viewport",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 437,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "default and final mission pass automated WCAG A and AA checks",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1083,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "default usage makes no remote requests or learning-storage writes",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 826,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "mobile-390",
+      "title": "reduced motion disables smooth scrolling and decorative transitions",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "renders an honest local shell without claiming algorithm or AI results",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 362,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "all four mission buttons project the unchanged fixed fixture, never a generated path",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 411,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "keyboard selection and skip navigation work without pointer input",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 275,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "every fixed map and panel stays within the viewport",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 422,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "default and final mission pass automated WCAG A and AA checks",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1055,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "default usage makes no remote requests or learning-storage writes",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 837,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "narrow-320",
+      "title": "reduced motion disables smooth scrolling and decorative transitions",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "renders an honest local shell without claiming algorithm or AI results",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 358,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "all four mission buttons project the unchanged fixed fixture, never a generated path",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 412,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "keyboard selection and skip navigation work without pointer input",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 274,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "every fixed map and panel stays within the viewport",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 479,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "default and final mission pass automated WCAG A and AA checks",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1079,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "default usage makes no remote requests or learning-storage writes",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 816,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "project": "tablet-768",
+      "title": "reduced motion disables smooth scrolling and decorative transitions",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 266,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

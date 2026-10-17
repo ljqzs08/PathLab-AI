@@ -37,3 +37,17 @@ ID 唯一且引用同一会话/相关旧运行；g+h=f；prediction correct 与�
 A* 更小 g 更新须有单独 node_relaxed 事件（见 schema），携带旧 g、新 g、parent 和新入堆序号；不能重复把已发现节点记作新发现。所有比较与更新最终由独立算法测试核对。
 
 schemaVersion 与 algorithmVersion 独立演进；旧导入版本不兼容时明确拒绝或使用有测试的迁移，不偷偷按新规则重放。
+
+
+## BFS 1.0.0 的具体顺序（阶段 2 已实现）
+
+1. 起点 node_discovered（g=0、h=0、f=0、parent=null、entrySequence=0），再输出包含起点的 frontier_snapshot。
+2. FIFO 出队一个节点，node_selected 后立即输出出队后的 frontier_snapshot。预测候选只能取该 node_selected 之前最后一个快照，不能取出队后的快照。
+3. 若节点为终点，直接输出 final=true 的 path_updated 与 run_finished，不输出 node_expanded，不检查终点邻居。
+4. 非终点依次输出 final=false 的回溯前缀 path_updated、node_expanded，再按上右下左逐一输出 node_discovered 或 node_skipped。
+5. 邻居拒绝顺序为越界 → 障碍 → 已发现；入队即标记已发现，首次 parent 不再改变。每个已扩展节点恰有四个邻居处理事件。扩展结束再输出 frontier_snapshot。
+6. 队列耗尽仍未选中终点时，输出 final=true / nodes=[] 的 path_updated，再输出 unreachable 的 run_finished；pathLength=null。
+7. step 从 0 无空洞递增；entrySequence 从 0 按首次发现顺序递增。BFS 不发 node_relaxed/not_better/stale_entry 或会话/预测事件。
+8. discovered/selected/expanded 计数与 frontierPeak 由事件汇总。快照、回溯、最终路径和终止事件为独立数据副本；同一输入重复运行路径、全部事件与统计深度相等。
+
+以上顺序由固定 15 事件的 2×1 测试锁定，并以四关八次运行共 2,532 个实际算法事件逐项通过原 envelope schema（测试包装使用明确标注的合成 ID/时间，不冒充学习会话）。若未来改变纯算法发事件的顺序或含义，须同时处理 algorithmVersion 与对应测试/导入兼容性。
