@@ -1,19 +1,36 @@
 {
   "name": "pathlab-ai",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Stage 0 specification contracts; not a runnable application",
+  "description": "Stage 1 runnable local learning shell; algorithms and AI are not connected",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.13.0"
   },
   "scripts": {
-    "check": "npm run typecheck && npm test",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test tests/*.test.mjs"
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "test:browser": "playwright test"
   },
   "devDependencies": {
     "ajv": "8.20.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.2"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   }
 }

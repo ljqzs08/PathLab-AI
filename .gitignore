@@ -13,3 +13,5 @@ prompts/private/
 **/.cache/
 **/coverage/
 .evidence-checks/
+# Next.js regenerates ambient types before the standalone type check
+**/next-env.d.ts

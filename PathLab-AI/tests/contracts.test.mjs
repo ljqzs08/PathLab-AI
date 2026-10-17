@@ -35,7 +35,7 @@ test('reject unrequested hint escalation and unsupported error inference',()=>{a
 
 // Synthetic payload representatives cover every schema branch, not production runs.
 const c={node:{x:0,y:1},entrySequence:1,distanceFromStart:1,g:1,h:0,f:1};
-const {distanceFromStart,...entry}=c;
+const entry={node:c.node,entrySequence:c.entrySequence,g:c.g,h:c.h,f:c.f};
 const payloads={
   mission_started:{gridRevision:0},
   prediction_requested:{checkpointId:'p1',candidates:[c]},

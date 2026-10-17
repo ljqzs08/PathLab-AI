@@ -7,7 +7,7 @@
 - Git 仓库根目录：本工作区；应用目录：`PathLab-AI/`，不另建嵌套仓库。
 - 分支为 `main`；文档/工具基线已真实提交：`30523e1622322bd44592b87f3c550cb8a88ef279`，只包含当时已有规格、规则与归档工具，不包含未来应用功能。没有远程仓库。
 - 2026-10-17 用户提供作者名称 `LJQZS08` 与邮箱；已仅在本仓库配置 `user.name` / `user.email`，并核对实际作者与提交者身份。保留仓库级 `user.useConfigOnly=true`；未更改全局配置、伪造身份或倒填时间。
-- 已启动阶段 0：产品规格、固定关卡、状态机、事件/AI 契约和检查工具；尚无可运行应用。E000/E001 最终答复均已从真实记录补齐；E002 当前轮次最终答复待下一轮补齐。
+- 阶段 0 已冻结规格；阶段 1 已建立可运行 Next/React/TypeScript 应用壳、四关简报切换和静态地图，并通过本机 AI 检查。没有算法、Canvas、诊断、存储或真实 AI，不是最终参赛作品。E000/E001/E002 最终答复均已补齐；E003 本轮最终答复待下一轮补齐。
 - 未创建或推送 GitHub 仓库，未更改 Public 或评审权限；这些操作需用户明确确认。
 
 ## 本轮 E000：强制演进与留证规则
@@ -99,7 +99,8 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 
 - [x] 补齐 E000 规则更新轮次的真实最终答复。
 - [x] 补齐 E001 作者确认轮次的真实最终答复。
-- [ ] 下一轮补齐 E002 阶段 0 最终答复。
+- [x] 已补齐 E002 阶段 0 最终答复，5 条真实可见消息，finalCaptured=True。
+- [ ] 下一轮补齐 E003 阶段 1 最终答复。
 - [x] 用户提供 Git 作者信息，仅配置本仓库并创建首个真实文档/工具基线：`30523e1622322bd44592b87f3c550cb8a88ef279`。
 - [ ] 第一轮应用开发起持续进行细粒度提交与同步证据归档。
 - [ ] 应用核心链实际达到 3/3，含真实用户引导、验证与提交。
@@ -109,7 +110,7 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 
 - 用户真实要求：专家，请用你的提示词来开始工作。
 - 范围：按总控第 16 节只做规格、四个关卡、状态机、事件结构、AI JSON 契约、验收与目录规划。不自动进入完整应用/Canvas/算法阶段。
-- 原始证据：prompts/sessions/2026-10-17-stage-0.md 与同名 JSONL；当前 4 条真实可见消息，finalCaptured=False；只读提取，本轮最终答复待下一轮补齐。
+- 原始证据：prompts/sessions/2026-10-17-stage-0.md 与同名 JSONL；已在 E003 开始补齐至 5 条真实可见消息，finalCaptured=True；只读提取，含真实最终答复。
 - 已补齐 E001：3 条消息，finalCaptured=True；上一轮归档提交为 eb8f05e（从当前 git log 可核对）。
 - 变更：README；docs 下产品/架构/关卡/状态机/事件/AI/验收/评分证据/验证文档；PathLab-AI 的类型、schema、固定关卡、合成测试、package/lock；本地 npm 环境包装脚本；AGENTS 当前阶段说明与总控提示词中 BFS/封路/A* 事件用语纠正。
 - 关键决定：无 UI 不提前安装 Next/React；阶段 0 只使用开发期 TypeScript/Ajv 与 Node 内置测试；新增 A* node_relaxed；算法轨迹与用户会话事件分层；AI 预测后才请求；旧运行只读保留但不适用新地图。
@@ -120,8 +121,32 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 - 风险：无网页/算法/真实 AI/浏览器或人工验收；图可达性/预测点效果待算法实现核对；赛事细则本轮未复核；未推送远程。工具策略拒绝缓存删除，.cache/npm 与 .cache/tmp 仍在仓库内且被忽略，不能声称已清空。
 - 下一阶段：由用户确认后搭建最小 Next/React/TS 应用壳；当前按规则停止。
 
-下一轮先从原始会话刷新 E002：
+E002 最终答复现已补齐；不改写阶段 0 提交或其当时的验证范围。
+
+## E003：检查阶段 0 并落地阶段 1 应用壳（2026-10-17）
+
+| 字段 | 真实记录 |
+|---|---|
+| 用户真实 Prompt | 检查并进行下一阶段 |
+| 范围判定 | 依总控分阶段规则，从已提交阶段 0 推进到可运行壳；不擅自扩展算法、Canvas、诊断、存储或远程 AI |
+| 上一轮补齐 | E002 已刷新为 5 条真实可见消息，finalCaptured=True；已保留阶段 0 真实提交 d870a9f 与后续证据提交 d4b7e54 |
+| 本轮 Prompt 证据 | prompts/sessions/2026-10-17-stage-1.md 与同名 JSONL；当前 6 条真实可见消息，finalCaptured=False；不是原生全量导出，本轮最后答复待落盘后补齐 |
+| 应用变更 | src/app/ 页面/CSS/元数据/图标；PathLabShell.tsx；固定 missions 数据边界；Next/ESLint/Playwright 配置、精确依赖和严格 TS；四关切换、原始网格、状态边界、键盘与窄屏布局 |
+| 保持不变 | contracts/ 与 fixtures/ 无差异；没有搜索结果、用户学习统计、网络 AI 或 local/sessionStorage 持久化；唯一 UI 状态为选择任务，刷新回 L01 |
+| 工具与文档变更 | npm 包装器的 D 盘运行边界/严格环境恢复与独立回归；Prompt 内部摘要过滤与回归；README、架构、验收、评分证据、依赖核验和 verification-stage-1.md |
+| 验证 | 两版 shell 的 typecheck/lint/原 22 项测试均通过；build 成功；dev/start 首页 HTTP 200；4 视口 × 7 = 28 项生产 Edge 检查通过；Prompt 工具各 17 项、环境恢复 37/49 项通过 |
+| 真实问题与修复 | 未用夹具字段的 lint 告警；Node 24 JSON 导入属性缺失；内部摘要误作 final；PS7 缺失变量变空串；快照生成标题末尾空格；均有实际失败/修复/复测；另记录启动参数与收尾检查命令的编写错误，不伪装成用户报告 |
+| 发现/引导/执行者 | 均为 AI 自查、自修和自动检查；用户只授权下一阶段，未实际引导 Bug 修复，不计作完整核心链 |
+| 视觉与清理 | 三张 D 盘临时图已查看；删除尝试被安全策略拒绝，仍在忽略目录，未绕过；npm/tmp 旧缓存同样保留；node_modules/.next 为运行复用保留 |
+| Git 状态 | 工具修复与真实快照已提交：90e64270ae54efa26ab720b5ee2e521717b780a6，fix: preserve prompt boundaries and npm process environment；应用壳已实现并验证，按明确范围单独提交；其真实哈希由后续证据提交登记，不 amend |
+| 证据等级与剩余缺口 | 仅本机 AI 检查；没有真实手机/屏幕阅读器/其他浏览器/用户人工验收；本轮最终答复待补；完整安全审计与最终赛事条款复核未做 |
+| 远程与隐私 | 无 GitHub remote、未 push、未更改公开/访问权限；作者邮箱与 Prompt 的公开范围需发布前确认 |
+| 核心链与下一步 | C01/C02/C03 为 0/3。本阶段停止；下阶段先独立网格/BFS 确定性与边界测试，验证四图/预测点，不自动接入 UI 回放与 AI |
+
+下一轮先补齐 E003 的真实最终答复：
 
 ~~~powershell
-.\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '专家，请用你的提示词来开始工作' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-stage-0' -Refresh
+.\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '检查并进行下一阶段' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-stage-1' -Refresh
 ~~~
+
+确认 finalCaptured=True、原文哈希与来源，不能用本索引或内部摘要代替实际最终答复。

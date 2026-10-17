@@ -7,9 +7,9 @@
 | 教育价值 | product-spec.md、levels.md、固定关卡数据 | 真实用户完成预测与反事实的观察；不虚构效果百分比 | 规格 |
 | 意图控制 | 总控提示词、阶段边界、schema/类型、真实本轮 Prompt | 用户实际纠偏与完整修复链 | 进行中 |
 | 算法可信度 | events.md、确定性与指标定义 | BFS/A* 实现、单测、重复运行事件对比 | 未实现 |
-| 高交互可视化 | state-machine.md、移动/键盘约束 | Canvas/DOM 可见证据、浏览器测试、演示时间点 | 未实现 |
+| 高交互可视化 | 静态地图/简报、四视口浏览器检查、键盘与 axe 自动检查 | Canvas/预测/回放/受门控 DOM、真实手机与演示时间点 | 仅应用壳 |
 | AI 反馈可信度 | AI schema、引用合法性检查、失败策略规格 | 本地诊断实现、真实远程状态/回退测试 | 契约 |
-| 工程复现 | package-lock、README、check 命令 | 干净机器启动、lint/test/build、部署 | 阶段 0 检查 |
+| 工程复现 | 精确锁文件、README、type/lint/22 测试/build、28 浏览器检查；verification-stage-1.md | 干净机器启动、跨浏览器与实际部署 | 阶段 1 本机 AI 检查 |
 | 演进完整性 | Git 历史、docs/evolution-log.md、可见 Prompt 快照 | C01/C02/C03 完整链、最终答复、原始附件 | 0/3 核心链 |
 | 交付完整性 | acceptance.md 的待办 | 经授权的评审访问、视频/PDF/截止日核实 | 未开始 |
 
