@@ -53,3 +53,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Test-ReviewPac
 - 清理解压浏览器临时目录 `.cache/review-packet-check` 的命令被工具策略拒绝，未绕过；该目录仍在 D 盘且被 Git 忽略。正式 ZIP 是交付物，保留。既有被拒清理内容和旧错误 Prompt 草稿未重试/未夹带提交。
 - 本轮无 remote；不创建/推送仓库、不改 Public 或访问权限、不打开公网隧道。需要明确发布授权，且之后才能实际验证评审访问。
 - 人工模板全部待测；必须有人使用真实设备，发现问题后才能形成新的真实用户修复链。未独立取得官方条款，不能保证参赛材料合规或结果。
+
+## Git 收尾
+
+实现/材料提交：`c15d4a02757825ff96bc41e247756c1d92e29940`（35 个文件，显式暂存且范围一致）；复核见 `evidence/review-readiness-commit-audit.json`。应用源码/HTML 没有变更，既有未跟踪文件未夹带。限定代码/说明文档 diff-check 通过；全量检查保留了原始快照中的行末空格/空行及实际临时配置末尾空行，没有为消警告篡改证据。当前最终答复仍待下一轮从真实来源提取。
