@@ -10,7 +10,7 @@ test('renders an honest local workbench without claiming results before a run', 
   await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
   await expect(page.getByRole('button', { name: '开始预测' })).toBeEnabled();
   await expect(page.getByText('尚未运行；选择算法后先预测，再查看搜索证据。', { exact: false })).toBeVisible();
-  await expect(page.getByText('远程 AI / 进度保存 / JSON 导入导出')).toBeVisible();
+  await expect(page.getByText('远程 AI / 自由地图编辑')).toBeVisible();
   await expect(page.locator('canvas')).toHaveCount(1);
 });
 
@@ -46,7 +46,7 @@ test('keyboard selection and skip navigation work without pointer input', async 
   await page.getByTestId('mission-L04').focus();
   await page.keyboard.press('Enter');
   await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
-  await expect(page.getByRole('status')).toContainText('已选择 L04');
+  await expect(page.getByTestId('learning-workbench').getByRole('status')).toContainText('已选择 L04');
   await expect(page.getByTestId('mission-L04')).toBeFocused();
 });
 
@@ -72,7 +72,7 @@ test('default and final mission pass automated WCAG A and AA checks', async ({ p
   }
 });
 
-test('default usage makes no remote requests or learning-storage writes', async ({ page }) => {
+test('default usage makes no remote requests and saves only its scoped progress key', async ({ page }) => {
   const external: string[] = [];
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
@@ -88,9 +88,9 @@ test('default usage makes no remote requests or learning-storage writes', async 
   await page.waitForLoadState('networkidle');
   expect(external).toEqual([]);
   expect(errors).toEqual([]);
-  expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 });
+  expect(await page.evaluate(() => ({ local: Object.keys(localStorage), session: sessionStorage.length }))).toEqual({ local: ['pathlab.progress.v1'], session: 0 });
   await page.reload();
-  await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+  await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
 });
 
 test('reduced motion disables smooth scrolling and decorative transitions', async ({ page }) => {

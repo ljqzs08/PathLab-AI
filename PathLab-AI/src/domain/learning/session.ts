@@ -13,9 +13,11 @@ export type LearningAction =
   | { type: 'start_valid_run'; runId: string; sessionId: string }
   | { type: 'submit_valid_choice'; selected: Candidate['node']; elapsedBucket: Prediction['elapsedBucket'] }
   | { type: 'request_hint' } | { type: 'step' } | { type: 'tick' }
-  | { type: 'play'; speed: Speed } | { type: 'pause' } | { type: 'reset_task' }
+  | { type: 'play'; speed: Speed } | { type: 'pause'; reason?: 'user' | 'restore' } | { type: 'reset_task' }
   | { type: 'experiment' } | { type: 'cancel' } | { type: 'apply_valid_change'; change: Counterfactual }
   | { type: 'complete_reflection'; explanation: string; evidenceEventIds: string[] };
+export type SessionCommand = { kind: 'configure'; algorithm: Algorithm } | { kind: 'action'; action: LearningAction; at: string };
+export interface SessionCheckpoint { levelId: string; initialAlgorithm: Algorithm; commands: SessionCommand[] }
 export interface CompletedRun {
   runId: string; gridRevision: number; algorithm: Algorithm; input: SearchInput;
   outcome: 'found' | 'unreachable'; metrics: Metrics; predictions: Prediction[]; events: SearchEvent[];
@@ -46,6 +48,8 @@ const hints: Record<Algorithm, readonly string[]> = {
 export class LearningSession {
   #level: LevelDefinition;
   #algorithm: Algorithm;
+  #initialAlgorithm: Algorithm;
+  #commands: SessionCommand[] = [];
   #input: SearchInput;
   #state: LearningState = 'briefing';
   #trace: DeterministicEvent[] = [];
@@ -73,6 +77,7 @@ export class LearningSession {
     if (!level.algorithms.includes(algorithm)) throw new SessionError('本关不支持该算法。');
     this.#level = copy(level);
     this.#algorithm = algorithm;
+    this.#initialAlgorithm = algorithm;
     this.#input = copy({ grid: level.grid, start: level.start, goal: level.goal });
     this.#revisions.set(JSON.stringify(this.#input), 0);
   }
@@ -82,6 +87,7 @@ export class LearningSession {
     if (this.#change && algorithm !== this.#algorithm) throw new SessionError('单一条件实验需保持同一算法；重置后可重新选择。');
     if (!this.#level.algorithms.includes(algorithm)) throw new SessionError('本关不支持该算法。');
     this.#algorithm = algorithm;
+    this.#commands.push({ kind: 'configure', algorithm });
     return this.view();
   }
 
@@ -139,8 +145,10 @@ export class LearningSession {
         this.#append({ type: 'run_resumed', payload: { speed: action.speed } }, at);
         break;
       case 'pause':
-        this.#require('running'); this.#state = 'paused';
-        this.#append({ type: 'run_paused', payload: { reason: 'user' } }, at);
+        this.#require('running');
+        if (action.reason !== undefined && action.reason !== 'user' && action.reason !== 'restore') throw new SessionError('无效暂停原因。');
+        this.#state = 'paused';
+        this.#append({ type: 'run_paused', payload: { reason: action.reason ?? 'user' } }, at);
         break;
       case 'step':
       case 'tick':
@@ -196,7 +204,13 @@ export class LearningSession {
         break;
       default: throw new SessionError('未列出的操作被拒绝。');
     }
+    this.#commands.push({ kind: 'action', action: copy(action), at });
     return this.view();
+  }
+
+  /** Only successful, already-issued commands; no private trace or computed answers. */
+  checkpoint(): SessionCheckpoint {
+    return copy({ levelId: this.#level.id, initialAlgorithm: this.#initialAlgorithm, commands: this.#commands });
   }
 
   #clearActive(): void {

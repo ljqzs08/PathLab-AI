@@ -1,4 +1,4 @@
-# 学习状态机 v1（规格 + 阶段 5B 本地学习闭环）
+# 学习状态机 v1（规格 + 阶段 6 本机进度恢复）
 
 机器转移表：PathLab-AI/fixtures/state-machine.json。默认拒绝未列出的 state/action 组合，不吞掉非法操作；reset_task 是明确列出的统一例外。
 
@@ -30,7 +30,7 @@ running 恢复为 paused，避免后台自动推进；prediction 保持未提交
 所有操作提供文字按钮、可见焦点和禁用原因；Space/箭头快捷键仅作用于聚焦的回放控件，不拦截文本输入；关键反馈 aria-live=polite。
 Canvas 有同等 DOM 候选、节点详情与事件列表。390px 模式不依赖悬停；底部控制避开 safe-area；降低动态效果不改变逻辑步数。
 
-阶段 0 检查：转移表引用合法、state/action 唯一、运行中无编辑入口、预测不直接跳报告、恢复不自动播放。运行态 reducer 与浏览器交互仍待后续实现。
+阶段 0 的历史检查只覆盖转移表引用合法、state/action 唯一、运行中无编辑入口、预测不直接跳报告等规格；运行态 reducer、浏览器与恢复的后续实现见各阶段边界，不倒填阶段 0 验收。
 
 ## 阶段 4A 历史已实现边界（后续进展见下文）
 
@@ -47,3 +47,7 @@ start_valid_run 在内部先消耗初始化及首个真实预测前的批次；�
 reflection/report → experiment → counterfactual；cancel 固定回 reflection 并保留报告；应用合法单一条件 → briefing → 显式 start → 新 run，必须重新预测。变更事件只在新 run 建立后追加，引用旧已完成 run，旧摘要不被污染。条件实验冻结算法，保证同算法单因素比较。
 
 已实现 complete_reflection → report；缺条件运行/证据解释只产生部分记录，不盖掌握证明。引用必须属于当前已揭示事实；自由解释不进入反馈事实摘要。reset 恢复原 fixture 与 revision=0，保留首次统计、摘要与报告历史；相同地图复用修订身份，重复实验仍为重试。editing/存储恢复未实现。阶段 5B 已接通条件/报告 UI，取消支持 Escape；改完尚未启动可直接 reset，报告在同页会话内保留并可在 reset 后通过报告历史查阅。进入复盘、条件实验或报告时标题接收键盘焦点，原生聚焦滚动保证当前标题可见；不拦截自由文本输入。
+
+## 阶段 6 已实现边界
+
+每次成功动作记录命令，非法动作不入档。导入通过同一守卫重放而非赋值 activeState/cursor/统计；恢复 running 为 paused 并记录 reason=restore，prediction 保留未答与提示，counterfactual 回 reflection。重置与恢复均不覆盖首次预测结果，报告与完成历史重建。初次载入不自动写旧档；损坏、未知版本与检测到跨页改变时保护旧值。JSON 须先预览再确认，取消不替换；未保存的候选/解释/实验草稿不恢复。editing 仍未实现。格式、容量与非防作弊边界见 storage.md，当前证据见 verification-stage-6-storage.md。

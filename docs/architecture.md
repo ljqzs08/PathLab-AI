@@ -3,7 +3,7 @@
 ## 当前仓库事实
 
 Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
-阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，阶段 4 已通过私有学习会话接入页面；阶段 5 已接入单因素条件实验、本地证据反馈与报告界面；这是本地闭环，不等于完整参赛交付或教学效果证明。
+阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，阶段 4 已通过私有学习会话接入页面；阶段 5 已接入单因素条件实验、本地证据反馈与报告界面；阶段 6 已接入本机存档、JSON 备份与安全恢复；这是本地闭环，不等于完整参赛交付或教学效果证明。
 版本精确锁定于 package-lock.json；核验来源与 ESLint 兼容取舍见 dependencies-stage-1.md。
 
 ## 当前已落地
@@ -11,7 +11,7 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 - docs/：产品、关卡、状态机、事件、AI 契约、验收、验证与演进证据。
 - PathLab-AI/contracts/、fixtures/：原有类型/schema/固定四关，未改动定义与地图。
 - src/app/{layout,page}.tsx、globals.css、icon.svg：服务端页面入口、中文元数据、系统字体、响应式框架与代码原生图标；无字体 CDN、图片下载或视觉依赖库。
-- src/components/PathLabShell.tsx：持有 selectedId 和稳定的每关 LearningSession；工作台只保存 view() 投影，组件不实现搜索；播放定时器在隐藏/切关/卸载时暂停与清理，无存储。
+- src/components/PathLabShell.tsx：通过 ProgressStore 与 useSyncExternalStore 持有 selectedId 和稳定的每关 LearningSession；工作台只保存 view() 投影，组件不实现搜索；播放定时器在隐藏/切关/卸载时暂停与清理。初次存档读取后才开放工作台，重建时替换会话并卸载旧定时器。
 - src/data/missions.ts：同一 JSON 数据源；JSON → LevelDefinition 类型断言的边界由现有 schema/跨字段测试检查，不宣称运行时已验证算法。
 - tests/contracts.test.mjs：22 项原有契约检查；只将未使用的测试夹具解构改为显式字段，保持测试语义。
 - tests/browser/shell.spec.ts：四视口生产页面检查，含固定格子逐项比对、键盘、溢出、axe、页面网络和存储边界。
@@ -39,7 +39,7 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 
 ## 后续模块（尚未实现）
 
-- 版本化本地存储、JSON 导入导出与安全恢复。
+- 自由地图编辑；当前只支持预设单因素实验。
 - 可选远程反馈与严格校验/回退；不能输出或覆写算法路径。
 - 继续复用 Node 内置测试、Playwright 与已安装 Edge，不为目录规划引入状态框架或依赖。
 
@@ -48,14 +48,15 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 二叉堆按 f、h、entrySequence 比较；更小 g 才更新 parent；lazy duplicate 的旧条目弹出时记录 stale_entry 并跳过。有效候选快照仅保留当前最优条目。
 邻居上、右、下、左；曼哈顿 h；单位非负步长；终点有效选中即结束。一致启发式下不重开已展开节点；更换启发式须先更新规格与测试。
 
-## 存储与恢复（规划）
+## 存储与恢复（阶段 6 已实现）
 
-学习会话含 schemaVersion、algorithmVersion、gridRevision、map、activeState、cursor、predictions、aggregates 与只读已完成摘要。导入上限建议 1 MiB，先解析与校验再替换；未知版本拒绝，不静默丢数据。损坏数据提示重置/导出原始数据，不执行输入中的代码/HTML。
-恢复 running → paused；未提交预测恢复 prediction；编辑草稿丢弃回 briefing；仅恢复已验证地图；不得恢复凭证。
+实际格式没有保存私有游标/轨迹/计算结果，而是版本字段、关卡目录标识、选中任务与每关合法命令日志。progress.ts 先白名单/容量校验，再通过正常领域守卫重建新会话，成功后才原子替换内存引用。1 MiB、4096 条总命令、每关 32 次开始运行；超限明确失败，不偷偷裁剪历史。目录标识非密码学签名，合法 JSON 也不是人类证据。
+
+progress-store.ts 只写 pathlab.progress.v1，失败/损坏旧档保留；ProgressPanel 提供导出、预览再确认导入、原始备份与显式替换。恢复 running → paused、prediction 保留未答、counterfactual → reflection；临时草稿不保存。跨页采用写前乐观比较，不保证原子锁。完整边界见 storage.md。
 
 ## 下一阶段边界
 
-用户已授权自主连续推进；阶段 5B 条件实验与证据复盘已通过本机检查。下一模块优先考虑版本化本地存储/安全导入导出与恢复；不得在未实现前声称刷新可恢复。远程 AI 仍未接入，不把本地模板营销为模型调用。
+用户已授权自主连续推进；阶段 6 已加入本机存档。接下来补足真实使用验收与参赛交付证据；若接远程 AI，必须先实现现有证据契约下的严格校验和失败回退。不把本地模板营销为模型调用，也不把功能完成视为交付完成。
 
 ## 阶段 5 的实际数据流
 
@@ -64,4 +65,4 @@ reflection/report → experiment → counterfactual → apply_valid_change → b
 
 已完成 run → diagnose.ts 确定性事实模板与引用解析 → report.ts 同算法比较/纯文本解释 → ReflectionPanel。请求形状只留内存，无远程调用。解释不拼入 fact.description；报告引用须来自当前已揭示事实。齐备只说明预测、条件运行、引用解释均有记录，不保证解释正确或掌握。
 
-界面支持直接从已修改 briefing 重置、取消实验/Escape、保留同次运行草稿与报告快照；已生成报告随当前页会话跨关卡保留；重置后仍可通过“本页报告历史”查阅快照，刷新仍丢失。浏览器 Canvas 探针仅在测试脚本注入，无应用调试全局/额外依赖。
+界面支持直接从已修改 briefing 重置、取消实验/Escape、保留同次运行草稿与报告快照；已生成报告跨关卡与重置保留，可通过“报告历史”查阅快照；阶段 6 成功保存后可在刷新时重建，存储失败时须导出备份。浏览器 Canvas 探针仅在测试脚本注入，无应用调试全局/额外依赖。

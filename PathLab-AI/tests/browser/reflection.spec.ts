@@ -84,15 +84,16 @@ test('partial report is honest, free text is inert, drafts survive experiment ca
   await expect(page.getByTestId('local-feedback')).not.toContainText(text);
   await page.getByTestId('mission-L01').click();await page.getByTestId('mission-L02').click();
   await expect(workbench(page)).toHaveAttribute('data-state','report');await expect(page.getByTestId('report-explanation')).toHaveText(text);
-  await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','briefing');
-  await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+  await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','report');
+  await expect(page.getByTestId('report-explanation')).toHaveText(text);
+  await expect(page.getByTestId('first-attempt-stats')).toContainText('2/2');
 });
 
-test('reflection condition and report pass automated WCAG checks without remote traffic or storage writes', async ({ page }) => {
+test('reflection condition and report pass automated WCAG checks with storage disabled and no remote traffic', async ({ page }) => {
   const external:string[]=[],errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',route=>{const origin=new URL(route.request().url()).origin;if(origin==='http://127.0.0.1:3210')return route.continue();external.push(origin);return route.abort();});
   await page.addInitScript(()=>{Storage.prototype.setItem=function(key){throw new Error('Unexpected storage write: '+key);};});
-  const check=async()=>{const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();expect(result.violations).toEqual([]);await noOverflow(page);};
+  const check=async()=>{await expect(page.getByTestId('save-status')).toContainText('本机保存失败');const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();expect(result.violations).toEqual([]);await noOverflow(page);};
   const level=levels[2]!;await launch(page,level,'astar');await finish(page,level,'astar');await check();
   await page.getByTestId('open-condition').click();await check();await page.getByTestId('apply-condition').click();
   await page.getByRole('button',{name:'开始预测'}).click();await finish(page,changedInput(level),'astar');await check();

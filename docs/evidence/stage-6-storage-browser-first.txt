@@ -1,0 +1,119 @@
+
+> pathlab-ai@0.1.0 test:browser
+> playwright test progress.spec.ts --project=mobile-390
+
+[WebServer] (node:13612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:25856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (731ms)
+  ok  2 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (597ms)
+  ok  3 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (594ms)
+  ok  4 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (589ms)
+  ok  5 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (603ms)
+  ok  6 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (604ms)
+  x   7 [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (5.5s)
+(node:25652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   8 [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.6s)
+(node:27924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [mobile-390] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (637ms)
+  ok 10 [mobile-390] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (604ms)
+  ok 11 [mobile-390] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (384ms)
+  ok 12 [mobile-390] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (415ms)
+  ok 13 [mobile-390] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (744ms)
+
+
+  1) [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator: getByLabel('播放速度')
+    Expected: "2"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('播放速度') with timeout 5000ms
+      - waiting for getByLabel('播放速度')
+
+
+      33 |   await page.evaluate(({key, value}) => localStorage.setItem(key, value), {key:PROGRESS_KEY, value:JSON.stringify(saved)});
+      34 |   await page.reload(); await expect(workbench(page)).toHaveAttribute('data-state', 'paused');
+    > 35 |   await expect(page.getByLabel('播放速度')).toHaveValue('2'); await page.waitForTimeout(1100);
+         |                                         ^
+      36 |   await expect(page.getByTestId('selection-count')).toHaveText(selected); await expect(workbench(page)).toHaveAttribute('data-state', 'paused');
+      37 | });
+      38 |
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:35:41
+
+    Error Context: ..\.cache\browser-results\progress-running-checkpoin-003ba-ix-including-playback-speed-mobile-390\error-context.md
+
+  2) [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 40
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+    +     "help": "Elements must have their visible text as part of their accessible name",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+    +     "id": "label-content-name-mismatch",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": null,
+    +             "id": "label-content-name-mismatch",
+    +             "impact": "serious",
+    +             "message": "Text inside the element is not included in the accessible name",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Text inside the element is not included in the accessible name",
+    +         "html": "<a class=\"brand\" href=\"#top\" aria-label=\"PathLab AI 首页\">",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".brand",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.semantics",
+    +       "wcag21a",
+    +       "wcag253",
+    +       "EN-301-549",
+    +       "EN-9.2.5.3",
+    +       "RGAAv4",
+    +       "RGAA-6.1.5",
+    +     ],
+    +   },
+    + ]
+
+      45 |   expect(JSON.parse(exported).schemaVersion).toBe(1); await page.getByTestId('mission-L02').click(); await upload(page, exported);
+      46 |   await expect(page.getByTestId('progress-preview')).toContainText('校验通过，尚未导入'); await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
+    > 47 |   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]); await noOverflow(page);
+         |                                                               ^
+      48 |   await page.getByTestId('confirm-progress').click(); await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
+      49 |   await page.reload(); await page.getByTestId('report-history').locator('summary').click(); await expect(page.getByTestId('historical-explanation')).toHaveText('合成恢复检查：报告解释保存为纯文本。');
+      50 | });
+        at D:\竞赛\PathLab-AI\tests\browser\progress.spec.ts:47:63
+
+    Error Context: ..\.cache\browser-results\progress-report-history-su-9684a-hen-deliberately-reimported-mobile-390\error-context.md
+
+  2 failed
+    [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed 
+    [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported 
+  11 passed (18.4s)

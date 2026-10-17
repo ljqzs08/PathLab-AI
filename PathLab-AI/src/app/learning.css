@@ -115,3 +115,17 @@
   .node-values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .node-values > div:last-child { grid-column: 1 / -1; }
 }
+
+/* Versioned local progress: one scoped block, sharing existing control tokens. */
+.progress-panel { margin: 0 0 24px; padding: clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 12px; background: #101e29; min-width: 0; }
+.progress-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.progress-heading h2 { font-size: clamp(17px, 2vw, 23px); margin: 8px 0; }
+.progress-panel p { color: var(--muted); font-size: 12px; line-height: 1.9; overflow-wrap: anywhere; }
+.progress-panel summary { cursor: pointer; color: var(--mint); font-size: 12px; padding: 10px 0; min-height: 44px; }
+.progress-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.progress-file { display: grid; gap: 7px; font-size: 12px; color: var(--text); max-width: 100%; min-width: 0; }
+.progress-file input { max-width: 100%; min-height: 44px; font: inherit; color: var(--muted); }
+.progress-file input::file-selector-button { min-height: 44px; padding: 8px; margin-right: 8px; color: var(--text); background: #20362f; border: 1px solid #49685b; border-radius: 6px; }
+.progress-preview, .progress-recovery { margin-top: 16px; padding: 14px; border: 1px solid #526a77; border-radius: 8px; }
+.progress-preview h3 { font-size: 15px; line-height: 1.6; }
+.progress-panel .progress-error { color: #ffc2ab; }

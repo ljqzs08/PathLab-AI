@@ -107,7 +107,9 @@ test('first-attempt statistics and completed summaries survive resets and missio
   await page.getByTestId('mission-L02').click(); await page.getByTestId('mission-L01').click();
   await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
-  await page.reload(); await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+  await page.reload(); await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
+  await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
+  await expect(page.getByTestId('first-attempt-stats')).toContainText('2 次完整运行');
 });
 
 test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
@@ -138,5 +140,5 @@ test('prediction paused and terminal views pass automated WCAG checks and remain
     expect(result.violations).toEqual([]); await noOverflow(page);
   }
   expect(external).toEqual([]); expect(errors).toEqual([]);
-  expect(await page.evaluate(() => ({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
+  expect(await page.evaluate(() => ({keys:Object.keys(localStorage),session:sessionStorage.length}))).toEqual({keys:['pathlab.progress.v1'],session:0});
 });

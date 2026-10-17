@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-17T12:31:32.3904168+08:00",
+  "source": "read-only original session",
+  "snapshots": [
+    {
+      "file": "2026-10-17-autonomous-iterations.jsonl",
+      "messages": 9,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-codex-policy-update.jsonl",
+      "messages": 4,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-evidence-correction-storage.jsonl",
+      "messages": 5,
+      "finalCaptured": false,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-git-author-baseline.jsonl",
+      "messages": 3,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-stage-0.jsonl",
+      "messages": 5,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-stage-1.jsonl",
+      "messages": 7,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    },
+    {
+      "file": "2026-10-17-stage-2-bfs.jsonl",
+      "messages": 6,
+      "finalCaptured": true,
+      "hashesMatch": true,
+      "originalLinesMatch": true
+    }
+  ],
+  "totalMessages": 39.0,
+  "scope": "visible text only; no hidden reasoning, tools, system/developer messages, or handoff summaries",
+  "currentFinal": "pending actual future persistence, not fabricated"
+}

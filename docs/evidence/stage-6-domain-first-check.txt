@@ -1,0 +1,11 @@
+
+> pathlab-ai@0.1.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> pathlab-ai@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+src/domain/learning/progress.ts(49,24): error TS18046: 'a.evidenceEventIds' is of type 'unknown'.

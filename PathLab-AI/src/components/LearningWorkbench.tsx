@@ -33,15 +33,15 @@ function PredictionPanel({ view, onAction }: { view: LearningView; onAction: (ac
   </section>;
 }
 
-export function LearningWorkbench({ mission, session }: { mission: LevelDefinition; session: LearningSession }) {
+export function LearningWorkbench({ mission, session, onProgress }: { mission: LevelDefinition; session: LearningSession; onProgress: () => void }) {
   const [view, setView] = useState(() => session.view());
   const [inspected, setInspected] = useState<string | null>(null);
-  const [speed, setSpeed] = useState<0.5 | 1 | 2 | 4>(1);
+  const [speed, setSpeed] = useState<0.5 | 1 | 2 | 4>(() => session.view().speed);
   const [error, setError] = useState('');
   const act = useCallback((action: LearningAction) => {
-    try { setView(session.dispatch(action, new Date().toISOString())); setError(''); }
+    try { setView(session.dispatch(action, new Date().toISOString())); setError(''); onProgress(); }
     catch (cause) { setError(cause instanceof Error ? cause.message : '操作未成功，请重试。'); }
-  }, [session]);
+  }, [session, onProgress]);
 
   useEffect(() => {
     if (view.state !== 'running') return;
@@ -82,8 +82,8 @@ export function LearningWorkbench({ mission, session }: { mission: LevelDefiniti
       <section className="briefing-panel" id="mission-briefing" aria-labelledby="briefing-title">
         <p className="eyebrow">YOUR REASONING</p><h3 id="briefing-title">这一关，要弄懂什么？</h3>
         <ul className="objectives">{mission.learningObjectives.map((objective, index) => <li key={objective}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><p>{objective}</p></li>)}</ul>
-        <div className="algorithm-summary"><label htmlFor="algorithm-choice">本关算法</label><select id="algorithm-choice" value={view.algorithm} disabled={view.state !== 'briefing' || view.conditionChange !== null} onChange={event => { try { setView(session.configureAlgorithm(event.target.value as Algorithm)); } catch (cause) { setError(String(cause)); } }}>{mission.algorithms.map(algorithm => <option key={algorithm} value={algorithm}>{names[algorithm]}</option>)}</select><p>{view.algorithm === 'bfs' ? 'FIFO 先入先出；h=0 不参与选择。' : '按 f、h、入队序号选择；h 为曼哈顿距离。'}<br />运行中冻结输入，结果来自本地确定性内核。{view.conditionChange && <>条件实验固定算法，仅改变一项地图条件。</>}</p></div>
-        {view.state === 'briefing' && <div className="launch-state"><span className="neutral-badge">预测 → 事件 → 解释</span><p>{view.conditionChange ? '条件已改变，需重新预测。旧运行已保留，但不是本次答案。' : '先读任务，再作判断。提交前不会揭示实际答案。'}</p><button type="button" className="action-primary" onClick={() => act({type:'start_valid_run', runId:'run-' + crypto.randomUUID(), sessionId:view.sessionId ?? 'session-' + crypto.randomUUID()})}>开始预测 <span aria-hidden="true">→</span></button><small>数据仅保留在当前页面，刷新会丢失。无远程 AI 调用。</small></div>}
+        <div className="algorithm-summary"><label htmlFor="algorithm-choice">本关算法</label><select id="algorithm-choice" value={view.algorithm} disabled={view.state !== 'briefing' || view.conditionChange !== null} onChange={event => { try { setView(session.configureAlgorithm(event.target.value as Algorithm)); onProgress(); } catch (cause) { setError(String(cause)); } }}>{mission.algorithms.map(algorithm => <option key={algorithm} value={algorithm}>{names[algorithm]}</option>)}</select><p>{view.algorithm === 'bfs' ? 'FIFO 先入先出；h=0 不参与选择。' : '按 f、h、入队序号选择；h 为曼哈顿距离。'}<br />运行中冻结输入，结果来自本地确定性内核。{view.conditionChange && <>条件实验固定算法，仅改变一项地图条件。</>}</p></div>
+        {view.state === 'briefing' && <div className="launch-state"><span className="neutral-badge">预测 → 事件 → 解释</span><p>{view.conditionChange ? '条件已改变，需重新预测。旧运行已保留，但不是本次答案。' : '先读任务，再作判断。提交前不会揭示实际答案。'}</p><button type="button" className="action-primary" onClick={() => act({type:'start_valid_run', runId:'run-' + crypto.randomUUID(), sessionId:view.sessionId ?? 'session-' + crypto.randomUUID()})}>开始预测 <span aria-hidden="true">→</span></button><small>操作后尝试保存到本机；请以上方存档状态为准。无远程 AI 调用。</small></div>}
         {view.checkpoint && <PredictionPanel key={view.runId + ':' + view.checkpoint.id} view={view} onAction={act} />}
         {prediction && <section className={'prediction-feedback' + (prediction.correct ? ' is-correct' : '')} aria-labelledby="prediction-feedback-title" data-testid="prediction-feedback"><h4 id="prediction-feedback-title">{prediction.correct ? '这一步，符合规则。' : '不同选择，正好用证据比较。'}</h4><p>你选择 {coordinate(prediction.selected)}；实际选择 {coordinate(prediction.actual)}。</p><p>{view.algorithm === 'bfs' ? '把两个候选的入队序号放回队列，按先入先出解释。' : '对照两个候选的 f，再看 h、入队序号，逐项解释。'}</p><small>{prediction.checkpointId} · 提示 {prediction.hintLevel}/3 · {prediction.retryCount === 0 ? '首次作答' : '新的重跑尝试，保留首次结果'}</small></section>}
         {view.state === 'reflection' && <section className="run-summary" data-testid="run-summary"><p className="eyebrow">SEARCH IS NOT THE WHOLE STORY</p><h4>{view.outcome === 'found' ? '路径已找到，解释才刚开始。' : '不可达，也是有效的搜索结论。'}</h4><p>路径步数和搜索范围不是同一指标。已扩展 {view.metrics.expandedCount} 个节点，前沿峰值 {view.metrics.frontierPeak}。</p><p>继续到下方改变一次条件，再引用真实事件写解释。不以完成运行证明已经掌握。</p>{view.skippedCheckpoints.length > 0 && <p>因候选不足跳过 {view.skippedCheckpoints.length} 个预测点，不计入正确率。</p>}</section>}

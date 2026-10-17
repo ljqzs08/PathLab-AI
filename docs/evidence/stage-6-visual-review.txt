@@ -1,0 +1,17 @@
+
+> pathlab-ai@0.1.0 test:browser
+> playwright test stage6-review.temp.spec.ts --project=desktop-1440 --project=mobile-390
+
+[WebServer] (node:22764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:12632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [desktop-1440] › tests\browser\stage6-review.temp.spec.ts:2:1 › temporary stage 6 visual review only (588ms)
+(node:14196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [mobile-390] › tests\browser\stage6-review.temp.spec.ts:2:1 › temporary stage 6 visual review only (547ms)
+
+  2 passed (3.7s)

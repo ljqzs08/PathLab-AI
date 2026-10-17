@@ -37,7 +37,7 @@ function ReportSnapshot({ report, historical = false }: { report: ReflectionRepo
     <ul className="report-checks">{checks.map(([done,label]) => <li key={label}><span aria-hidden="true">{done ? '✓' : '○'}</span>{done ? label : label.replace(/^已/, '尚未')}</li>)}</ul>
     <p>“记录齐备”仅表示预测、条件运行与引用解释都有记录，不代表已掌握，也不代表自由文本解释已被验证正确。</p>
     {report.explanation ? <><h5>你的解释（本地纯文本）</h5><blockquote data-testid={historical ? 'historical-explanation' : 'report-explanation'}>{report.explanation}</blockquote><p className="report-citations">引用：{report.evidenceEventIds.join(' · ')}</p></> : <p>尚无证据解释；没有补写或替你作答。</p>}
-    <small>报告仅在当前页面保留，刷新会丢失；没有保存到云端或发送给模型。</small>
+    <small>报告随进度尝试保存到本机，请以上方存档状态为准；不上传云端或模型。</small>
   </section>;
 }
 
@@ -73,5 +73,5 @@ export function ReflectionPanel({ mission, view, onAction }: { mission: LevelDef
 
 export function ReportHistory({ reports }: { reports: ReflectionReport[] }) {
   if (reports.length === 0) return null;
-  return <details className="saved-report report-history" data-testid="report-history"><summary>本页报告历史（{reports.length}）</summary><p>按生成顺序保留；重置当前任务不会删除这里的快照。仅限当前页面，刷新会丢失。</p>{reports.map((report,index)=><div key={index}><p className="eyebrow">报告 {index+1} · {report.algorithm === 'bfs' ? 'BFS' : 'A*'} · 修订 {report.gridRevision}</p><ReportSnapshot report={report} historical /></div>)}</details>;
+  return <details className="saved-report report-history" data-testid="report-history"><summary>报告历史（{reports.length}）</summary><p>按生成顺序保留；重置当前任务不会删除这里的快照。存档成功后可在刷新后恢复；建议导出 JSON 备份。</p>{reports.map((report,index)=><div key={index}><p className="eyebrow">报告 {index+1} · {report.algorithm === 'bfs' ? 'BFS' : 'A*'} · 修订 {report.gridRevision}</p><ReportSnapshot report={report} historical /></div>)}</details>;
 }

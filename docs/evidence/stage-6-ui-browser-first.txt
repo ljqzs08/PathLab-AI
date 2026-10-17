@@ -1,0 +1,657 @@
+
+> pathlab-ai@0.1.0 test:browser
+> playwright test --grep-invert temporary stage 6 visual review only
+
+[WebServer] (node:28116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 176 tests using 1 worker
+
+(node:29496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (897ms)
+  ok   2 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (756ms)
+  ok   3 [desktop-1440] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (638ms)
+  ok   4 [desktop-1440] › tests\browser\learning.spec.ts:32:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (476ms)
+  ok   5 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.2s)
+  ok   6 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.2s)
+  ok   7 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L02 astar completes from gated browser controls with exact engine metrics (1.4s)
+  ok   8 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L03 astar completes from gated browser controls with exact engine metrics (700ms)
+  ok   9 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L04 bfs completes from gated browser controls with exact engine metrics (1.9s)
+  ok  10 [desktop-1440] › tests\browser\learning.spec.ts:59:3 › L04 astar completes from gated browser controls with exact engine metrics (909ms)
+  ok  11 [desktop-1440] › tests\browser\learning.spec.ts:79:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.4s)
+  x   12 [desktop-1440] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching (7.1s)
+(node:19800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  13 [desktop-1440] › tests\browser\learning.spec.ts:113:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (455ms)
+  x   14 [desktop-1440] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (2.9s)
+(node:6884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  15 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (720ms)
+  ok  16 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (616ms)
+  ok  17 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (607ms)
+  ok  18 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (610ms)
+  ok  19 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (574ms)
+  ok  20 [desktop-1440] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (609ms)
+  ok  21 [desktop-1440] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  ok  22 [desktop-1440] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.5s)
+  ok  23 [desktop-1440] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (530ms)
+  ok  24 [desktop-1440] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (575ms)
+  ok  25 [desktop-1440] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (387ms)
+  ok  26 [desktop-1440] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (427ms)
+  ok  27 [desktop-1440] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (778ms)
+  ok  28 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.7s)
+  ok  29 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.5s)
+  ok  30 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (2.9s)
+  ok  31 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  32 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok  33 [desktop-1440] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  34 [desktop-1440] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  x   35 [desktop-1440] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (6.6s)
+(node:25652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  36 [desktop-1440] › tests\browser\reflection.spec.ts:91:1 › reflection condition and report pass automated WCAG checks without remote traffic or storage writes (4.0s)
+  ok  37 [desktop-1440] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport (1.3s)
+  ok  38 [desktop-1440] › tests\browser\shell.spec.ts:5:1 › renders an honest local workbench without claiming results before a run (268ms)
+  ok  39 [desktop-1440] › tests\browser\shell.spec.ts:17:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (448ms)
+  x   40 [desktop-1440] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input (320ms)
+(node:6032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  41 [desktop-1440] › tests\browser\shell.spec.ts:53:1 › every fixed map and panel stays within the viewport (524ms)
+  ok  42 [desktop-1440] › tests\browser\shell.spec.ts:66:1 › default and final mission pass automated WCAG A and AA checks (1.6s)
+  ok  43 [desktop-1440] › tests\browser\shell.spec.ts:75:1 › default usage makes no remote requests and saves only its scoped progress key (847ms)
+  ok  44 [desktop-1440] › tests\browser\shell.spec.ts:96:1 › reduced motion disables smooth scrolling and decorative transitions (255ms)
+(node:22160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  45 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (820ms)
+  ok  46 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (711ms)
+  ok  47 [mobile-390] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (847ms)
+  ok  48 [mobile-390] › tests\browser\learning.spec.ts:32:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (453ms)
+  ok  49 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.2s)
+  ok  50 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.2s)
+  ok  51 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L02 astar completes from gated browser controls with exact engine metrics (1.4s)
+  ok  52 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L03 astar completes from gated browser controls with exact engine metrics (706ms)
+  ok  53 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L04 bfs completes from gated browser controls with exact engine metrics (1.9s)
+  ok  54 [mobile-390] › tests\browser\learning.spec.ts:59:3 › L04 astar completes from gated browser controls with exact engine metrics (905ms)
+  ok  55 [mobile-390] › tests\browser\learning.spec.ts:79:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.4s)
+  x   56 [mobile-390] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching (7.1s)
+(node:13556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  57 [mobile-390] › tests\browser\learning.spec.ts:113:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (482ms)
+  x   58 [mobile-390] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (2.8s)
+(node:12548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  59 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (683ms)
+  ok  60 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (620ms)
+  ok  61 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (589ms)
+  ok  62 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (562ms)
+  ok  63 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (607ms)
+  ok  64 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (566ms)
+  ok  65 [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  ok  66 [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.6s)
+  ok  67 [mobile-390] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (531ms)
+  ok  68 [mobile-390] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (575ms)
+  ok  69 [mobile-390] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (376ms)
+  ok  70 [mobile-390] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (412ms)
+  ok  71 [mobile-390] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (748ms)
+  ok  72 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.7s)
+  ok  73 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.5s)
+  ok  74 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (2.9s)
+  ok  75 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  76 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok  77 [mobile-390] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok  78 [mobile-390] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  x   79 [mobile-390] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (6.6s)
+(node:22856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  80 [mobile-390] › tests\browser\reflection.spec.ts:91:1 › reflection condition and report pass automated WCAG checks without remote traffic or storage writes (4.0s)
+  ok  81 [mobile-390] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport (1.3s)
+  ok  82 [mobile-390] › tests\browser\shell.spec.ts:5:1 › renders an honest local workbench without claiming results before a run (257ms)
+  ok  83 [mobile-390] › tests\browser\shell.spec.ts:17:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (455ms)
+  x   84 [mobile-390] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input (330ms)
+(node:28100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  85 [mobile-390] › tests\browser\shell.spec.ts:53:1 › every fixed map and panel stays within the viewport (546ms)
+  ok  86 [mobile-390] › tests\browser\shell.spec.ts:66:1 › default and final mission pass automated WCAG A and AA checks (1.5s)
+  ok  87 [mobile-390] › tests\browser\shell.spec.ts:75:1 › default usage makes no remote requests and saves only its scoped progress key (838ms)
+  ok  88 [mobile-390] › tests\browser\shell.spec.ts:96:1 › reduced motion disables smooth scrolling and decorative transitions (263ms)
+(node:25352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  89 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (813ms)
+  ok  90 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (621ms)
+  ok  91 [narrow-320] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (697ms)
+  ok  92 [narrow-320] › tests\browser\learning.spec.ts:32:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (461ms)
+  ok  93 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.2s)
+  ok  94 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.2s)
+  ok  95 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L02 astar completes from gated browser controls with exact engine metrics (1.3s)
+  ok  96 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L03 astar completes from gated browser controls with exact engine metrics (705ms)
+  ok  97 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L04 bfs completes from gated browser controls with exact engine metrics (2.0s)
+  ok  98 [narrow-320] › tests\browser\learning.spec.ts:59:3 › L04 astar completes from gated browser controls with exact engine metrics (936ms)
+  ok  99 [narrow-320] › tests\browser\learning.spec.ts:79:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.4s)
+  x  100 [narrow-320] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching (7.1s)
+(node:20336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 101 [narrow-320] › tests\browser\learning.spec.ts:113:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (462ms)
+  x  102 [narrow-320] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (2.9s)
+(node:24760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 103 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (734ms)
+  ok 104 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (596ms)
+  ok 105 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (566ms)
+  ok 106 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (572ms)
+  ok 107 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (576ms)
+  ok 108 [narrow-320] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (589ms)
+  ok 109 [narrow-320] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  ok 110 [narrow-320] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.5s)
+  ok 111 [narrow-320] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (536ms)
+  ok 112 [narrow-320] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (599ms)
+  ok 113 [narrow-320] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (391ms)
+  ok 114 [narrow-320] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (414ms)
+  ok 115 [narrow-320] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (705ms)
+  ok 116 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.7s)
+  ok 117 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.5s)
+  ok 118 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (2.9s)
+  ok 119 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.8s)
+  ok 120 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok 121 [narrow-320] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok 122 [narrow-320] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  x  123 [narrow-320] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (6.6s)
+(node:28616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 124 [narrow-320] › tests\browser\reflection.spec.ts:91:1 › reflection condition and report pass automated WCAG checks without remote traffic or storage writes (4.1s)
+  ok 125 [narrow-320] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport (1.3s)
+  ok 126 [narrow-320] › tests\browser\shell.spec.ts:5:1 › renders an honest local workbench without claiming results before a run (256ms)
+  ok 127 [narrow-320] › tests\browser\shell.spec.ts:17:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (433ms)
+  x  128 [narrow-320] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input (323ms)
+(node:7784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 129 [narrow-320] › tests\browser\shell.spec.ts:53:1 › every fixed map and panel stays within the viewport (555ms)
+  ok 130 [narrow-320] › tests\browser\shell.spec.ts:66:1 › default and final mission pass automated WCAG A and AA checks (1.5s)
+  ok 131 [narrow-320] › tests\browser\shell.spec.ts:75:1 › default usage makes no remote requests and saves only its scoped progress key (851ms)
+  ok 132 [narrow-320] › tests\browser\shell.spec.ts:96:1 › reduced motion disables smooth scrolling and decorative transitions (267ms)
+(node:23564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 133 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 1 including responsive resize (895ms)
+  ok 134 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 2 including responsive resize (759ms)
+  ok 135 [tablet-768] › tests\browser\canvas.spec.ts:44:26 › Canvas matches DOM cells and actual current-node pixels at DPR 3 including responsive resize (719ms)
+  ok 136 [tablet-768] › tests\browser\learning.spec.ts:32:1 › prediction gates DOM Canvas aria timeline and controls until an actual single submission (490ms)
+  ok 137 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L01 bfs completes from gated browser controls with exact engine metrics (1.2s)
+  ok 138 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L02 bfs completes from gated browser controls with exact engine metrics (2.2s)
+  ok 139 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L02 astar completes from gated browser controls with exact engine metrics (1.3s)
+  ok 140 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L03 astar completes from gated browser controls with exact engine metrics (701ms)
+  ok 141 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L04 bfs completes from gated browser controls with exact engine metrics (1.9s)
+  ok 142 [tablet-768] › tests\browser\learning.spec.ts:59:3 › L04 astar completes from gated browser controls with exact engine metrics (905ms)
+  ok 143 [tablet-768] › tests\browser\learning.spec.ts:79:1 › replay keyboard shortcuts are scoped and timer stops before the next checkpoint (2.4s)
+  x  144 [tablet-768] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching (7.2s)
+(node:24032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 145 [tablet-768] › tests\browser\learning.spec.ts:113:1 › map inspector has keyboard parity and does not fabricate costs for undiscovered nodes (461ms)
+  x  146 [tablet-768] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only (2.9s)
+(node:12060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 147 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (729ms)
+  ok 148 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (618ms)
+  ok 149 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (623ms)
+  ok 150 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (597ms)
+  ok 151 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (586ms)
+  ok 152 [tablet-768] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (594ms)
+  ok 153 [tablet-768] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  ok 154 [tablet-768] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.6s)
+  ok 155 [tablet-768] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (548ms)
+  ok 156 [tablet-768] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (571ms)
+  ok 157 [tablet-768] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (390ms)
+  ok 158 [tablet-768] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (431ms)
+  ok 159 [tablet-768] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (732ms)
+  ok 160 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L01 bfs changes one real condition, gates a new run and cites exact before/after results (2.8s)
+  ok 161 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L02 bfs changes one real condition, gates a new run and cites exact before/after results (4.5s)
+  ok 162 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L02 astar changes one real condition, gates a new run and cites exact before/after results (3.0s)
+  ok 163 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L03 astar changes one real condition, gates a new run and cites exact before/after results (1.8s)
+  ok 164 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L04 bfs changes one real condition, gates a new run and cites exact before/after results (3.3s)
+  ok 165 [tablet-768] › tests\browser\reflection.spec.ts:10:3 › L04 astar changes one real condition, gates a new run and cites exact before/after results (1.7s)
+  ok 166 [tablet-768] › tests\browser\reflection.spec.ts:61:1 › changed briefing can reset without starting a forced extra run (1.3s)
+  x  167 [tablet-768] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching (6.6s)
+(node:27552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 168 [tablet-768] › tests\browser\reflection.spec.ts:91:1 › reflection condition and report pass automated WCAG checks without remote traffic or storage writes (4.0s)
+  ok 169 [tablet-768] › tests\browser\reflection.spec.ts:106:1 › new reflection states keep keyboard focus within the viewport (1.3s)
+  ok 170 [tablet-768] › tests\browser\shell.spec.ts:5:1 › renders an honest local workbench without claiming results before a run (255ms)
+  ok 171 [tablet-768] › tests\browser\shell.spec.ts:17:1 › all four mission buttons project the unchanged fixed fixture, never a generated path (437ms)
+  x  172 [tablet-768] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input (327ms)
+(node:21704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 173 [tablet-768] › tests\browser\shell.spec.ts:53:1 › every fixed map and panel stays within the viewport (546ms)
+  ok 174 [tablet-768] › tests\browser\shell.spec.ts:66:1 › default and final mission pass automated WCAG A and AA checks (1.5s)
+  ok 175 [tablet-768] › tests\browser\shell.spec.ts:75:1 › default usage makes no remote requests and saves only its scoped progress key (875ms)
+  ok 176 [tablet-768] › tests\browser\shell.spec.ts:96:1 › reduced motion disables smooth scrolling and decorative transitions (267ms)
+
+
+  1) [desktop-1440] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('first-attempt-stats')
+    Expected substring: "0/0"
+    Received string:    "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('first-attempt-stats') with timeout 5000ms
+      - waiting for getByTestId('first-attempt-stats')
+        14 × locator resolved to <p class="learning-stats" data-testid="first-attempt-stats">…</p>
+           - unexpected value "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+
+
+      108 |   await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
+      109 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
+    > 110 |   await page.reload(); await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+          |                                                                              ^
+      111 | });
+      112 |
+      113 | test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:110:78
+
+    Error Context: ..\.cache\browser-results\learning-first-attempt-sta-8e5b6-esets-and-mission-switching-desktop-1440\error-context.md
+
+  2) [desktop-1440] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "local": 0,
+    +   "local": 1,
+        "session": 0,
+      }
+
+      139 |   }
+      140 |   expect(external).toEqual([]); expect(errors).toEqual([]);
+    > 141 |   expect(await page.evaluate(() => ({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
+          |                                                                                                  ^
+      142 | });
+      143 |
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:141:98
+
+    Error Context: ..\.cache\browser-results\learning-prediction-paused-a74e4-hecks-and-remain-local-only-desktop-1440\error-context.md
+
+  3) [desktop-1440] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('learning-workbench')
+    Expected: "briefing"
+    Received: "report"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('learning-workbench') with timeout 5000ms
+      - waiting for getByTestId('learning-workbench')
+        13 × locator resolved to <div data-state="report" id="mission-content" class="mission-content" data-testid="learning-workbench">…</div>
+           - unexpected value "report"
+
+
+      85 |   await page.getByTestId('mission-L01').click();await page.getByTestId('mission-L02').click();
+      86 |   await expect(workbench(page)).toHaveAttribute('data-state','report');await expect(page.getByTestId('report-explanation')).toHaveText(text);
+    > 87 |   await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','briefing');
+         |                                                     ^
+      88 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+      89 | });
+      90 |
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:87:53
+
+    Error Context: ..\.cache\browser-results\reflection-partial-report--5bf5c-orts-survive-task-switching-desktop-1440\error-context.md
+
+  4) [desktop-1440] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "已选择 L04"
+    Error: strict mode violation: getByRole('status') resolved to 2 elements:
+        1) <p role="status" data-testid="save-status">已自动保存到此浏览器；建议另行导出 JSON 备份。</p> aka getByTestId('save-status')
+        2) <p role="status" class="sr-only">…</p> aka getByText('已选择 L04 调度员复盘。任务简报。已选中 0 个节点。')
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      47 |   await page.keyboard.press('Enter');
+      48 |   await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
+    > 49 |   await expect(page.getByRole('status')).toContainText('已选择 L04');
+         |                                          ^
+      50 |   await expect(page.getByTestId('mission-L04')).toBeFocused();
+      51 | });
+      52 |
+        at D:\竞赛\PathLab-AI\tests\browser\shell.spec.ts:49:42
+
+    Error Context: ..\.cache\browser-results\shell-keyboard-selection-a-05ac4--work-without-pointer-input-desktop-1440\error-context.md
+
+  5) [mobile-390] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('first-attempt-stats')
+    Expected substring: "0/0"
+    Received string:    "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('first-attempt-stats') with timeout 5000ms
+      - waiting for getByTestId('first-attempt-stats')
+        14 × locator resolved to <p class="learning-stats" data-testid="first-attempt-stats">…</p>
+           - unexpected value "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+
+
+      108 |   await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
+      109 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
+    > 110 |   await page.reload(); await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+          |                                                                              ^
+      111 | });
+      112 |
+      113 | test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:110:78
+
+    Error Context: ..\.cache\browser-results\learning-first-attempt-sta-8e5b6-esets-and-mission-switching-mobile-390\error-context.md
+
+  6) [mobile-390] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "local": 0,
+    +   "local": 1,
+        "session": 0,
+      }
+
+      139 |   }
+      140 |   expect(external).toEqual([]); expect(errors).toEqual([]);
+    > 141 |   expect(await page.evaluate(() => ({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
+          |                                                                                                  ^
+      142 | });
+      143 |
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:141:98
+
+    Error Context: ..\.cache\browser-results\learning-prediction-paused-a74e4-hecks-and-remain-local-only-mobile-390\error-context.md
+
+  7) [mobile-390] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('learning-workbench')
+    Expected: "briefing"
+    Received: "report"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('learning-workbench') with timeout 5000ms
+      - waiting for getByTestId('learning-workbench')
+        14 × locator resolved to <div data-state="report" id="mission-content" class="mission-content" data-testid="learning-workbench">…</div>
+           - unexpected value "report"
+
+
+      85 |   await page.getByTestId('mission-L01').click();await page.getByTestId('mission-L02').click();
+      86 |   await expect(workbench(page)).toHaveAttribute('data-state','report');await expect(page.getByTestId('report-explanation')).toHaveText(text);
+    > 87 |   await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','briefing');
+         |                                                     ^
+      88 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+      89 | });
+      90 |
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:87:53
+
+    Error Context: ..\.cache\browser-results\reflection-partial-report--5bf5c-orts-survive-task-switching-mobile-390\error-context.md
+
+  8) [mobile-390] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "已选择 L04"
+    Error: strict mode violation: getByRole('status') resolved to 2 elements:
+        1) <p role="status" data-testid="save-status">已自动保存到此浏览器；建议另行导出 JSON 备份。</p> aka getByTestId('save-status')
+        2) <p role="status" class="sr-only">…</p> aka getByText('已选择 L04 调度员复盘。任务简报。已选中 0 个节点。')
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      47 |   await page.keyboard.press('Enter');
+      48 |   await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
+    > 49 |   await expect(page.getByRole('status')).toContainText('已选择 L04');
+         |                                          ^
+      50 |   await expect(page.getByTestId('mission-L04')).toBeFocused();
+      51 | });
+      52 |
+        at D:\竞赛\PathLab-AI\tests\browser\shell.spec.ts:49:42
+
+    Error Context: ..\.cache\browser-results\shell-keyboard-selection-a-05ac4--work-without-pointer-input-mobile-390\error-context.md
+
+  9) [narrow-320] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('first-attempt-stats')
+    Expected substring: "0/0"
+    Received string:    "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('first-attempt-stats') with timeout 5000ms
+      - waiting for getByTestId('first-attempt-stats')
+        14 × locator resolved to <p class="learning-stats" data-testid="first-attempt-stats">…</p>
+           - unexpected value "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+
+
+      108 |   await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
+      109 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
+    > 110 |   await page.reload(); await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+          |                                                                              ^
+      111 | });
+      112 |
+      113 | test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:110:78
+
+    Error Context: ..\.cache\browser-results\learning-first-attempt-sta-8e5b6-esets-and-mission-switching-narrow-320\error-context.md
+
+  10) [narrow-320] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "local": 0,
+    +   "local": 1,
+        "session": 0,
+      }
+
+      139 |   }
+      140 |   expect(external).toEqual([]); expect(errors).toEqual([]);
+    > 141 |   expect(await page.evaluate(() => ({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
+          |                                                                                                  ^
+      142 | });
+      143 |
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:141:98
+
+    Error Context: ..\.cache\browser-results\learning-prediction-paused-a74e4-hecks-and-remain-local-only-narrow-320\error-context.md
+
+  11) [narrow-320] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('learning-workbench')
+    Expected: "briefing"
+    Received: "report"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('learning-workbench') with timeout 5000ms
+      - waiting for getByTestId('learning-workbench')
+        13 × locator resolved to <div data-state="report" id="mission-content" class="mission-content" data-testid="learning-workbench">…</div>
+           - unexpected value "report"
+
+
+      85 |   await page.getByTestId('mission-L01').click();await page.getByTestId('mission-L02').click();
+      86 |   await expect(workbench(page)).toHaveAttribute('data-state','report');await expect(page.getByTestId('report-explanation')).toHaveText(text);
+    > 87 |   await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','briefing');
+         |                                                     ^
+      88 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+      89 | });
+      90 |
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:87:53
+
+    Error Context: ..\.cache\browser-results\reflection-partial-report--5bf5c-orts-survive-task-switching-narrow-320\error-context.md
+
+  12) [narrow-320] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "已选择 L04"
+    Error: strict mode violation: getByRole('status') resolved to 2 elements:
+        1) <p role="status" data-testid="save-status">已自动保存到此浏览器；建议另行导出 JSON 备份。</p> aka getByTestId('save-status')
+        2) <p role="status" class="sr-only">…</p> aka getByText('已选择 L04 调度员复盘。任务简报。已选中 0 个节点。')
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      47 |   await page.keyboard.press('Enter');
+      48 |   await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
+    > 49 |   await expect(page.getByRole('status')).toContainText('已选择 L04');
+         |                                          ^
+      50 |   await expect(page.getByTestId('mission-L04')).toBeFocused();
+      51 | });
+      52 |
+        at D:\竞赛\PathLab-AI\tests\browser\shell.spec.ts:49:42
+
+    Error Context: ..\.cache\browser-results\shell-keyboard-selection-a-05ac4--work-without-pointer-input-narrow-320\error-context.md
+
+  13) [tablet-768] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('first-attempt-stats')
+    Expected substring: "0/0"
+    Received string:    "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('first-attempt-stats') with timeout 5000ms
+      - waiting for getByTestId('first-attempt-stats')
+        14 × locator resolved to <p class="learning-stats" data-testid="first-attempt-stats">…</p>
+           - unexpected value "本任务已记录 2 次完整运行。首次预测符合规则 1/2；重跑不覆盖首次结果。"
+
+
+      108 |   await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
+      109 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('1/2');
+    > 110 |   await page.reload(); await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+          |                                                                              ^
+      111 | });
+      112 |
+      113 | test('map inspector has keyboard parity and does not fabricate costs for undiscovered nodes', async ({ page }) => {
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:110:78
+
+    Error Context: ..\.cache\browser-results\learning-first-attempt-sta-8e5b6-esets-and-mission-switching-tablet-768\error-context.md
+
+  14) [tablet-768] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "local": 0,
+    +   "local": 1,
+        "session": 0,
+      }
+
+      139 |   }
+      140 |   expect(external).toEqual([]); expect(errors).toEqual([]);
+    > 141 |   expect(await page.evaluate(() => ({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
+          |                                                                                                  ^
+      142 | });
+      143 |
+        at D:\竞赛\PathLab-AI\tests\browser\learning.spec.ts:141:98
+
+    Error Context: ..\.cache\browser-results\learning-prediction-paused-a74e4-hecks-and-remain-local-only-tablet-768\error-context.md
+
+  15) [tablet-768] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('learning-workbench')
+    Expected: "briefing"
+    Received: "report"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('learning-workbench') with timeout 5000ms
+      - waiting for getByTestId('learning-workbench')
+        14 × locator resolved to <div data-state="report" id="mission-content" class="mission-content" data-testid="learning-workbench">…</div>
+           - unexpected value "report"
+
+
+      85 |   await page.getByTestId('mission-L01').click();await page.getByTestId('mission-L02').click();
+      86 |   await expect(workbench(page)).toHaveAttribute('data-state','report');await expect(page.getByTestId('report-explanation')).toHaveText(text);
+    > 87 |   await page.reload();await expect(workbench(page)).toHaveAttribute('data-state','briefing');
+         |                                                     ^
+      88 |   await expect(page.getByTestId('first-attempt-stats')).toContainText('0/0');
+      89 | });
+      90 |
+        at D:\竞赛\PathLab-AI\tests\browser\reflection.spec.ts:87:53
+
+    Error Context: ..\.cache\browser-results\reflection-partial-report--5bf5c-orts-survive-task-switching-tablet-768\error-context.md
+
+  16) [tablet-768] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "已选择 L04"
+    Error: strict mode violation: getByRole('status') resolved to 2 elements:
+        1) <p role="status" data-testid="save-status">已自动保存到此浏览器；建议另行导出 JSON 备份。</p> aka getByTestId('save-status')
+        2) <p role="status" class="sr-only">…</p> aka getByText('已选择 L04 调度员复盘。任务简报。已选中 0 个节点。')
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      47 |   await page.keyboard.press('Enter');
+      48 |   await expect(page.getByTestId('mission-title')).toHaveText(levels[3]!.title);
+    > 49 |   await expect(page.getByRole('status')).toContainText('已选择 L04');
+         |                                          ^
+      50 |   await expect(page.getByTestId('mission-L04')).toBeFocused();
+      51 | });
+      52 |
+        at D:\竞赛\PathLab-AI\tests\browser\shell.spec.ts:49:42
+
+    Error Context: ..\.cache\browser-results\shell-keyboard-selection-a-05ac4--work-without-pointer-input-tablet-768\error-context.md
+
+  16 failed
+    [desktop-1440] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+    [desktop-1440] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+    [desktop-1440] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+    [desktop-1440] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+    [mobile-390] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+    [mobile-390] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+    [mobile-390] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+    [mobile-390] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+    [narrow-320] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+    [narrow-320] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+    [narrow-320] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+    [narrow-320] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+    [tablet-768] › tests\browser\learning.spec.ts:99:1 › first-attempt statistics and completed summaries survive resets and mission switching 
+    [tablet-768] › tests\browser\learning.spec.ts:129:1 › prediction paused and terminal views pass automated WCAG checks and remain local-only 
+    [tablet-768] › tests\browser\reflection.spec.ts:71:1 › partial report is honest, free text is inert, drafts survive experiment cancel and reports survive task switching 
+    [tablet-768] › tests\browser\shell.spec.ts:37:1 › keyboard selection and skip navigation work without pointer input 
+  160 passed (4.9m)

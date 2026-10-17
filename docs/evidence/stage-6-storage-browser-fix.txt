@@ -1,0 +1,26 @@
+
+> pathlab-ai@0.1.0 test:browser
+> playwright test progress.spec.ts --project=mobile-390
+
+[WebServer] (node:4372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:9496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L01 bfs refresh preserves the unanswered gate, hint and first result without a future answer (728ms)
+  ok  2 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 bfs refresh preserves the unanswered gate, hint and first result without a future answer (599ms)
+  ok  3 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L02 astar refresh preserves the unanswered gate, hint and first result without a future answer (590ms)
+  ok  4 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L03 astar refresh preserves the unanswered gate, hint and first result without a future answer (594ms)
+  ok  5 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 bfs refresh preserves the unanswered gate, hint and first result without a future answer (593ms)
+  ok  6 [mobile-390] › tests\browser\progress.spec.ts:14:3 › L04 astar refresh preserves the unanswered gate, hint and first result without a future answer (593ms)
+  ok  7 [mobile-390] › tests\browser\progress.spec.ts:29:1 › running checkpoint restores paused at the same revealed prefix, including playback speed (1.6s)
+  ok  8 [mobile-390] › tests\browser\progress.spec.ts:39:1 › report history survives reset/refresh and JSON export can be previewed then deliberately reimported (2.5s)
+  ok  9 [mobile-390] › tests\browser\progress.spec.ts:52:1 › invalid/oversized/versioned/forged imports leave current memory and browser save unchanged (529ms)
+  ok 10 [mobile-390] › tests\browser\progress.spec.ts:62:1 › corrupt browser save is retained and can be backed up before explicit replacement; cancellation changes nothing (563ms)
+  ok 11 [mobile-390] › tests\browser\progress.spec.ts:73:1 › disabled storage remains usable in memory and gives a backup warning instead of success (388ms)
+  ok 12 [mobile-390] › tests\browser\progress.spec.ts:79:1 › quota failure retains core interactions and the old browser value (397ms)
+  ok 13 [mobile-390] › tests\browser\progress.spec.ts:85:1 › a second tab cannot be silently overwritten and reloading its version requires confirmation (693ms)
+
+  13 passed (12.5s)
