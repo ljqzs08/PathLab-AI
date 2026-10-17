@@ -1,0 +1,109 @@
+
+> pathlab-ai@0.1.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> pathlab-ai@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+
+> pathlab-ai@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+> pathlab-ai@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.mjs
+
+✔ Manhattan heuristic measures orthogonal distance, not cost already travelled (1.0157ms)
+✔ tiny A* trace pins event order, costs, sequence and goal-not-expanded (2.7605ms)
+✔ A* uses f/h/sequence and retains first parent for equal g (0.5581ms)
+✔ all 128 obstacle layouts agree with independent distance relaxation and BFS (26.5444ms)
+✔ 25 by 25 open grid has shortest 48 steps and goal is selected, never expanded (1.1703ms)
+✔ unreachable, same endpoints and input errors retain the shared runtime boundary (0.889ms)
+✔ frozen input repeats exactly and all outputs are independent copies (4.1948ms)
+✔ all 16384 four-by-four layouts match an independent shortest-distance oracle (272.5326ms)
+✔ better g replaces parent without rediscovery and final route uses the improved parent (0.7012ms)
+✔ lazy stale entries produce skip evidence but never inflate unique frontier or selection metrics (0.4641ms)
+✔ L01 baseline and fixed counterfactual match pinned shortest distances and independent oracle (7.5402ms)
+✔ L02 baseline and fixed counterfactual match pinned shortest distances and independent oracle (9.0311ms)
+✔ L03 baseline and fixed counterfactual match pinned shortest distances and independent oracle (2.7416ms)
+✔ L04 baseline and fixed counterfactual match pinned shortest distances and independent oracle (4.9136ms)
+✔ every generated event in all eight mission runs fits the frozen envelope schema (92.7546ms)
+✔ all 16 fixture checkpoint slots have multiple candidates at requested effective selections 2 and 4 (0.2927ms)
+✔ checkpoint evidence defers single-candidate selections and consumes only one pending checkpoint per selection (0.2928ms)
+✔ same-start-goal and unreachable traces do not fabricate checkpoint submissions (0.4081ms)
+✔ L03 blockage is on the old route, invalidates it and changes the shortest route from 8 to 12 (0.3637ms)
+✔ evidence generation is deterministic nonmutating and contains no fabricated user history (4.1048ms)
+✔ checked-in BFS evidence is exactly reproducible from the current code and fixed inputs (1.5579ms)
+✔ pinned tiny BFS trace freezes event order costs sequence and terminal statistics (3.3394ms)
+✔ FIFO wins over goal proximity and finding a goal does not stop on enqueue (2.1644ms)
+✔ same-length paths use up right down left with first parent retained (0.7057ms)
+✔ start equals goal selects once and never expands, with zero path length (0.2408ms)
+✔ unreachable is a valid run with empty path null length and an empty final frontier (0.3285ms)
+✔ cycles never enqueue discover select or expand a node twice (1.0815ms)
+✔ BFS rejects invalid input instead of returning unreachable (1.1143ms)
+✔ identical frozen input produces identical paths events and metrics over 20 runs (6.7715ms)
+✔ returned paths metrics and snapshots do not alias input or each other (0.6124ms)
+✔ all 128 obstacle layouts on 3x3 with fixed open endpoints agree with independent relaxation (16.2378ms)
+✔ maximum supported 25x25 open grid has a 48-step valid deterministic path (59.8013ms)
+✔ all eight A* mission runs pass independent event replay and match BFS shortest steps (14.7854ms)
+✔ four fixed comparisons pin A* baseline and counterfactual expanded/discovered counts (0.2755ms)
+✔ all 3651 comparison events satisfy original strict schema using explicitly synthetic envelopes (93.6401ms)
+✔ all 16 A* checkpoint slots have more than one candidate and the first priority is the next selected node (0.2959ms)
+✔ comparison evidence is deterministic, nonmutating and labels verification-only algorithms (4.2825ms)
+✔ checked-in comparison report exactly reproduces from frozen fixtures and both algorithms (0.8888ms)
+✔ exactly four unique fixed missions validate structurally and relationally (2.6383ms)
+✔ reject unknown level fields (0.184ms)
+✔ reject malformed map widths (0.862ms)
+✔ reject blocked or out-of-bounds endpoints (0.2733ms)
+✔ reject blocking start and unchanged goal (0.2493ms)
+✔ checkpoints have stable increasing ordinals (0.167ms)
+✔ state table has known states and unique state/action pairs (0.1524ms)
+✔ prediction submission cannot bypass directly to reflection/report (0.1182ms)
+✔ running has no map editing transition and restore pauses playback (0.1228ms)
+✔ valid event and signed out-of-bounds skip payload validate (5.4209ms)
+✔ wrong event payload and unknown event type are rejected (0.214ms)
+✔ prediction requested cannot include the hidden actual answer (0.2039ms)
+✔ synthetic feedback request/response validate and evidence resolves (1.4148ms)
+✔ unknown output fields or fabricated error labels fail schema validation (0.1742ms)
+✔ nonexistent or mismatched evidence is rejected (1.0171ms)
+✔ remote feedback before prediction reveal is rejected (0.2303ms)
+✔ insufficient evidence may not assign an error (0.2425ms)
+✔ reject unrequested hint escalation and unsupported error inference (0.1793ms)
+✔ all sixteen event branches accept their payload and reject missing/unknown fields (2.6008ms)
+✔ schema rejects private identity in feedback request and invalid versions (0.1538ms)
+✔ evidence IDs are unique and correct count cannot exceed total (0.3ms)
+✔ README preserves the executable PowerShell wrapper path (0.6128ms)
+✔ grid accepts read-only input without modifying it, including the 1x1 kernel case (1.1515ms)
+✔ four-neighbor order is up right down left and retains out-of-bounds coordinates (0.7019ms)
+✔ bounds and walls are separate from valid open cells (0.3717ms)
+✔ rejects missing or non-object search input and grid (0.5673ms)
+✔ rejects invalid or oversized dimensions before allocation (0.3749ms)
+✔ rejects bad row count width characters sparse rows and non-string rows (0.3574ms)
+✔ rejects fractional non-finite or malformed endpoints with a stable code (1.5723ms)
+✔ out-of-bounds endpoints are input errors, not an unreachable search (0.3003ms)
+✔ blocked start goal or coincident blocked endpoints are rejected (0.3355ms)
+✔ briefing exposes no precomputed result; input and projections are independent copies (5.8468ms)
+✔ every planned mission gates a genuine prefix, candidates are coordinate-ordered and no actual is exposed (158.7626ms)
+✔ invalid actions, invisible choices, repeated submits and invalid metadata cannot mutate a session (1.2514ms)
+✔ playback stops before the second checkpoint; each tick/step is one effective selection batch (1.7483ms)
+✔ three pre-answer hint levels reveal rules only and submission records actual support used (0.7753ms)
+✔ reset preserves completed summaries and first-attempt accuracy; later attempts cannot overwrite it (31.9975ms)
+✔ unreachable and equal endpoints finish without a fake prediction or bypass control (0.4578ms)
+✔ algorithm whitelist and active-run freeze are enforced, not just disabled UI buttons (0.3973ms)
+✔ same supplied actions and context are reproducible; controller does not require browser or clock (8.9934ms)
+✔ all 128 tiny fixed-endpoint layouts terminate and expose no future terminal facts at checkpoints (90.2385ms)
+✔ binary heap returns undefined while empty and is reusable after draining (1.3364ms)
+✔ fixed priority uses f first, h second, insertion sequence third (0.2219ms)
+✔ heap handles 625 immutable entries in reverse and alternating insertion orders (1.6938ms)
+✔ interleaved insertions preserve heap ordering (0.2553ms)
+ℹ tests 83
+ℹ suites 0
+ℹ pass 83
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 606.3232

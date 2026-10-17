@@ -1,4 +1,4 @@
-# 学习状态机 v1（规格，非已实现 reducer）
+# 学习状态机 v1（规格 + 阶段 4A 会话控制器）
 
 机器转移表：PathLab-AI/fixtures/state-machine.json。默认拒绝未列出的 state/action 组合，不吞掉非法操作；reset_task 是明确列出的统一例外。
 
@@ -31,3 +31,13 @@ running 恢复为 paused，避免后台自动推进；prediction 保持未提交
 Canvas 有同等 DOM 候选、节点详情与事件列表。390px 模式不依赖悬停；底部控制避开 safe-area；降低动态效果不改变逻辑步数。
 
 阶段 0 检查：转移表引用合法、state/action 唯一、运行中无编辑入口、预测不直接跳报告、恢复不自动播放。运行态 reducer 与浏览器交互仍待后续实现。
+
+## 阶段 4A 已实现边界
+
+src/domain/learning/session.ts 持有私有预计算轨迹；view() 只返回已揭示事件、候选与由这些事实推导的统计副本。已实现 briefing、prediction、paused、running、reflection 的学习主线及 reset_task；editing、counterfactual、report 和恢复仍是后续规格，不宣称完整转移表均已实现。
+
+start_valid_run 在内部先消耗初始化及首个真实预测前的批次；候选不足则延后，运行结束后才登记跳过点。没有用户可触发的 no_checkpoint_available/finish/checkpoint_due 绕过入口。每个 step/tick 恰好揭示一个有效选中及邻居处理批次，并在下一预测前停止。速度仅由 UI 定时器决定，不改逻辑步数。
+
+最多取有效前沿的前四个候选，再按 y/x 坐标展示；不把内部下一选择另附到 view、aria 或请求事件。提交只接受可见候选且仅一次；提交后才记录 actual、揭示一个批次。提示 1–3 仅讲规则，没有提前答案；第四层解释限揭示后。reset 后同算法/地图修订/预测点再次作答记 retryCount，首次统计永不覆盖。已完成摘要只读保留。
+
+83 项 Node 测试包含全部六种关卡/算法组合、128 种小图、事件 schema、可见轨迹前缀、非法动作无副作用、重复提交、播放门控、单步与首次率保护。UI/Canvas 尚未接入，不把这些领域测试当浏览器验收。

@@ -196,6 +196,17 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 | 验证 | 73 项，两版 shell type/lint/test 通过；128 种 3×3 与 16,384 种 4×4 障碍图；真实 relaxation/stale 地图；四关对照 3,651 事件/32 checkpoint 槽；生产 build 通过 |
 | 内容 | 四关对照 JSON、教师 A* 对照修订、事件具体顺序、验证报告；不把较少节点数当耗时或普遍优越性 |
 | 真实工具问题 | Tee-Object 相对输出路径受包装器 Push-Location 影响而指向应用子目录，不存在则失败；改为已验证的 D 盘绝对证据路径后重跑通过；AI 自查自修，不是用户引导缺陷 |
-| Git | 功能变更待按已核验范围提交，真实哈希随后登记，不 amend |
+| Git | 功能已提交 5ade0e82ad41cc867ae36f4ccfae8eb755998958；feat: add deterministic A-star heap and verified algorithm comparisons；在下一里程碑登记，不 amend |
 | 下一里程碑 | 在当前连续授权下继续学习状态机、门控预测和回放，独立验证后再提交；不接远程 AI |
 | 核心链 | C01 算法部分已落地但缺真实用户引导修复；C02/C03 尚未实现；完整链 0/3；不捏造交互或验收 |
+
+## E006：自主连续迭代 — 预测门控与学习会话（2026-10-17）
+
+- 同一真实用户 Prompt；autonomous-iterations 快照持续追加真实可见消息，最终答复尚待落盘；内部交接不归档。
+- 实现：LearningSession 私有轨迹、只读复制投影、有效候选最多四个、单次提交/三层规则提示、单步与播放门控、首次统计保护、已完成运行摘要；不依赖 React/DOM/时钟生成/远程 AI。
+- 验证：typecheck/零告警 lint/83 项测试在 PowerShell 7 与 5.1 均通过；覆盖六种预定算法组合、128 小图及真实 envelope schema。UI 未改，浏览器未重跑。
+- 真实失败：先测试时缺模块是待实现红态；首次 schema 测试错误使用默认 draft-07 Ajv，编译原 2020-12 schema 抛错；改用项目既有 ajv/dist/2020.js 后回归通过。均为 AI 自查自修，不算用户实际引导链。
+- 证据：docs/evidence/stage-4-session-{red,check,check-ps51}.txt、stage-4-schema-validator-failure.txt；docs/verification-stage-4-learning.md。
+- Git：本里程碑按显式清单提交，真实哈希在下一有意义提交登记；不 amend。
+- 下一步：将只读投影接到 DOM/Canvas、预测控件、证据检查器与时间线，重新构建并测试四视口；诊断/反事实/存储尚未实现。
+- 核心链：C02 已有领域门控实现但无真实用户引导修复；C01 同样缺该证据；C03 未实现，完整链仍 0/3。

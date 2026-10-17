@@ -1,0 +1,224 @@
+import type { Algorithm, Candidate, DeterministicEvent, EventPayloadMap, LearningState, LevelDefinition, Metrics, SearchEvent } from '../../../contracts/types.ts';
+import { runBfs } from '../algorithms/bfs.ts';
+import { runAstar } from '../algorithms/astar.ts';
+import { assertSearchInput } from '../grid.ts';
+import type { SearchInput } from '../grid.ts';
+
+type Speed = 0.5 | 1 | 2 | 4;
+type Prediction = EventPayloadMap['prediction_submitted'];
+type EnvelopeInput = { [K in keyof EventPayloadMap]: { type: K; payload: EventPayloadMap[K] } }[keyof EventPayloadMap];
+export type LearningAction =
+  | { type: 'start_valid_run'; runId: string; sessionId: string }
+  | { type: 'submit_valid_choice'; selected: Candidate['node']; elapsedBucket: Prediction['elapsedBucket'] }
+  | { type: 'request_hint' } | { type: 'step' } | { type: 'tick' }
+  | { type: 'play'; speed: Speed } | { type: 'pause' } | { type: 'reset_task' };
+export interface CompletedRun {
+  runId: string; gridRevision: number; algorithm: Algorithm; input: SearchInput;
+  outcome: 'found' | 'unreachable'; metrics: Metrics; predictions: Prediction[]; events: SearchEvent[];
+}
+export interface LearningView {
+  state: LearningState; levelId: string; algorithm: Algorithm; runId: string | null; gridRevision: number;
+  input: SearchInput; events: SearchEvent[]; frontier: EventPayloadMap['frontier_snapshot']['nodes'];
+  nodes: EventPayloadMap['node_discovered'][]; expanded: Candidate['node'][];
+  current: EventPayloadMap['node_selected'] | null; path: Candidate['node'][]; pathFinal: boolean;
+  metrics: Metrics; outcome: 'found' | 'unreachable' | null;
+  checkpoint: { id: string; prompt: string; candidates: Candidate[]; hintLevel: 0 | 1 | 2 | 3; hint: string | null } | null;
+  lastPrediction: Prediction | null; predictions: Prediction[]; skippedCheckpoints: string[];
+  firstAttempts: { total: number; correct: number }; completedRuns: CompletedRun[]; speed: Speed;
+}
+export class SessionError extends Error {
+  constructor(message: string) { super(message); this.name = 'SessionError'; }
+}
+const key = (node: Candidate['node']): string => node.x + ',' + node.y;
+const copy = <T>(value: T): T => structuredClone(value);
+const hints: Record<Algorithm, readonly string[]> = {
+  bfs: ['BFS 按层搜索，而不是直接冲向终点。', '比较候选的入队序号。队列遵循先入先出。', '先读队列证据，再比较最早入队的候选。g 表示从起点已走的步数；h=0 不表示离终点为零。'],
+  astar: ['A* 同时考虑已走代价与到终点的估计代价。', '先比较 f=g+h；h 是四方向单位网格的曼哈顿距离。', '若 f 相同，比较 h；若 h 也相同，比较入队序号。按这个顺序逐项比较，不只看离终点远近。'],
+};
+
+/** Owns the private precomputed trace. UI receives only a copied, revealed projection. */
+export class LearningSession {
+  #level: LevelDefinition;
+  #algorithm: Algorithm;
+  #input: SearchInput;
+  #state: LearningState = 'briefing';
+  #trace: DeterministicEvent[] = [];
+  #cursor = 0;
+  #events: SearchEvent[] = [];
+  #runId: string | null = null;
+  #sessionId = '';
+  #gridRevision = 0;
+  #checkpointIndex = 0;
+  #checkpoint: LearningView['checkpoint'] = null;
+  #predictions: Prediction[] = [];
+  #skipped: string[] = [];
+  #completed: CompletedRun[] = [];
+  #first = new Map<string, boolean>();
+  #attempts = new Map<string, number>();
+  #usedIds = new Set<string>();
+  #speed: Speed = 1;
+
+  constructor(level: LevelDefinition, algorithm: Algorithm) {
+    assertSearchInput(level);
+    if (!level.algorithms.includes(algorithm)) throw new SessionError('本关不支持该算法。');
+    this.#level = copy(level);
+    this.#algorithm = algorithm;
+    this.#input = copy({ grid: level.grid, start: level.start, goal: level.goal });
+  }
+
+  configureAlgorithm(algorithm: Algorithm): LearningView {
+    this.#require('briefing');
+    if (!this.#level.algorithms.includes(algorithm)) throw new SessionError('本关不支持该算法。');
+    this.#algorithm = algorithm;
+    return this.view();
+  }
+
+  dispatch(action: LearningAction, at: string): LearningView {
+    if (!Number.isFinite(Date.parse(at)) || new Date(at).toISOString() !== at) throw new SessionError('事件时间必须为 UTC ISO 字符串。');
+    switch (action.type) {
+      case 'start_valid_run': {
+        this.#require('briefing');
+        if (!action.runId?.trim() || !action.sessionId?.trim() || this.#usedIds.has(action.runId)) throw new SessionError('运行标识必须非空且不重复。');
+        const result = (this.#algorithm === 'bfs' ? runBfs : runAstar)(this.#input);
+        this.#trace = result.events;
+        this.#runId = action.runId; this.#sessionId = action.sessionId;
+        this.#usedIds.add(action.runId);
+        this.#state = 'paused';
+        this.#append({ type: 'mission_started', payload: { gridRevision: this.#gridRevision } }, at);
+        this.#revealPrelude(at);
+        // Initialization may reveal several batches only until a genuine first checkpoint exists.
+        while (this.#state === 'paused' && !this.#gate(at)) this.#revealBatch(at);
+        break;
+      }
+      case 'submit_valid_choice': {
+        this.#require('prediction');
+        const checkpoint = this.#checkpoint!;
+        if (!checkpoint.candidates.some(c => key(c.node) === key(action.selected))) throw new SessionError('必须选择当前可见候选。');
+        if (!['under_10s', '10_to_30s', 'over_30s'].includes(action.elapsedBucket)) throw new SessionError('无效耗时区间。');
+        const event = this.#trace[this.#cursor];
+        if (event?.type !== 'node_selected') throw new SessionError('预测点与轨迹不一致。');
+        const attemptKey = this.#algorithm + ':' + this.#gridRevision + ':' + checkpoint.id;
+        const retryCount = this.#attempts.get(attemptKey) ?? 0;
+        const prediction: Prediction = {
+          checkpointId: checkpoint.id, selected: copy(action.selected), actual: copy(event.payload.node), candidates: copy(checkpoint.candidates),
+          correct: key(action.selected) === key(event.payload.node), hintLevel: checkpoint.hintLevel, elapsedBucket: action.elapsedBucket, retryCount,
+        };
+        if (!this.#first.has(attemptKey)) this.#first.set(attemptKey, prediction.correct);
+        this.#attempts.set(attemptKey, retryCount + 1);
+        this.#predictions.push(prediction);
+        this.#append({ type: 'prediction_submitted', payload: copy(prediction) }, at);
+        this.#checkpoint = null; this.#checkpointIndex++; this.#state = 'paused';
+        this.#revealBatch(at); this.#gate(at);
+        break;
+      }
+      case 'request_hint': {
+        this.#require('prediction');
+        const checkpoint = this.#checkpoint!;
+        if (checkpoint.hintLevel === 3) throw new SessionError('提交前最多使用三层规则提示。');
+        checkpoint.hintLevel = (checkpoint.hintLevel + 1) as 1 | 2 | 3;
+        checkpoint.hint = hints[this.#algorithm][checkpoint.hintLevel - 1]!;
+        break;
+      }
+      case 'play':
+        this.#require('paused');
+        if (![0.5, 1, 2, 4].includes(action.speed)) throw new SessionError('无效播放速度。');
+        this.#speed = action.speed; this.#state = 'running';
+        this.#append({ type: 'run_resumed', payload: { speed: action.speed } }, at);
+        break;
+      case 'pause':
+        this.#require('running'); this.#state = 'paused';
+        this.#append({ type: 'run_paused', payload: { reason: 'user' } }, at);
+        break;
+      case 'step':
+      case 'tick':
+        this.#require(action.type === 'step' ? 'paused' : 'running');
+        if (!this.#gate(at)) { this.#revealBatch(at); this.#gate(at); }
+        break;
+      case 'reset_task':
+        this.#state = 'briefing'; this.#trace = []; this.#cursor = 0; this.#events = [];
+        this.#runId = null; this.#checkpoint = null; this.#checkpointIndex = 0;
+        this.#predictions = []; this.#skipped = [];
+        break;
+      default: throw new SessionError('未列出的操作被拒绝。');
+    }
+    return this.view();
+  }
+
+  #require(state: LearningState): void {
+    if (this.#state !== state) throw new SessionError('当前状态不允许此操作：' + this.#state + '。');
+  }
+
+  #append(event: EnvelopeInput, at: string, step = Math.max(0, this.#cursor - 1)): void {
+    this.#events.push({
+      schemaVersion: 1, eventId: this.#runId + ':' + this.#events.length, sessionId: this.#sessionId,
+      runId: this.#runId!, levelId: this.#level.id as SearchEvent['levelId'], gridRevision: this.#gridRevision,
+      algorithm: this.#algorithm, algorithmVersion: '1.0.0', step, ...copy(event), createdAt: at,
+    } as SearchEvent);
+  }
+
+  #revealEvent(at: string): void {
+    const event = this.#trace[this.#cursor++]!;
+    this.#append(event, at, event.step);
+    if (event.type === 'run_finished') {
+      this.#state = 'reflection';
+      this.#skipped = this.#level.checkpoints.slice(this.#checkpointIndex).map(c => c.id);
+      this.#checkpoint = null;
+      this.#completed.push({
+        runId: this.#runId!, gridRevision: this.#gridRevision, algorithm: this.#algorithm, input: copy(this.#input),
+        outcome: event.payload.status, metrics: copy(event.payload.metrics), predictions: copy(this.#predictions), events: copy(this.#events),
+      });
+    }
+  }
+
+  #revealPrelude(at: string): void {
+    while (this.#cursor < this.#trace.length && this.#trace[this.#cursor]!.type !== 'node_selected') this.#revealEvent(at);
+  }
+
+  #revealBatch(at: string): void {
+    if (this.#cursor >= this.#trace.length) return;
+    this.#revealEvent(at); // One effective selected node; never one animation frame.
+    this.#revealPrelude(at);
+  }
+
+  #gate(at: string): boolean {
+    if (this.#state === 'reflection') return true;
+    const requested = this.#level.checkpoints[this.#checkpointIndex];
+    if (!requested) return false;
+    const visible = this.view();
+    if (visible.metrics.selectionCount + 1 < requested.beforeSelectionOrdinal || visible.frontier.length < requested.minCandidates) return false;
+    // The effective frontier already contains all evidence; do not annotate the private next selected node.
+    const candidates = visible.frontier.slice(0, 4).map(c => ({ ...c, distanceFromStart: c.g }))
+      .sort((a, b) => a.node.y - b.node.y || a.node.x - b.node.x);
+    this.#checkpoint = { id: requested.id, prompt: requested.prompt, candidates, hintLevel: 0, hint: null };
+    this.#state = 'prediction';
+    this.#append({ type: 'run_paused', payload: { reason: 'checkpoint' } }, at);
+    this.#append({ type: 'prediction_requested', payload: { checkpointId: requested.id, candidates } }, at);
+    return true;
+  }
+
+  view(): LearningView {
+    const nodes = new Map<string, EventPayloadMap['node_discovered']>();
+    let frontier: LearningView['frontier'] = [], current: LearningView['current'] = null;
+    let path: LearningView['path'] = [], pathFinal = false, outcome: LearningView['outcome'] = null;
+    const expanded: Candidate['node'][] = [];
+    const metrics: Metrics = { discoveredCount: 0, expandedCount: 0, selectionCount: 0, frontierPeak: 0, pathLength: null };
+    for (const event of this.#events) {
+      switch (event.type) {
+        case 'node_discovered': nodes.set(key(event.payload.node), event.payload); metrics.discoveredCount++; break;
+        case 'node_relaxed': nodes.set(key(event.payload.node), event.payload); break;
+        case 'frontier_snapshot': frontier = event.payload.nodes; metrics.frontierPeak = Math.max(metrics.frontierPeak, frontier.length); break;
+        case 'node_selected': current = event.payload; metrics.selectionCount++; break;
+        case 'node_expanded': expanded.push(event.payload.node); metrics.expandedCount++; break;
+        case 'path_updated': path = event.payload.nodes; pathFinal = event.payload.final; break;
+        case 'run_finished': outcome = event.payload.status; metrics.pathLength = event.payload.metrics.pathLength; break;
+      }
+    }
+    return copy({
+      state: this.#state, levelId: this.#level.id, algorithm: this.#algorithm, runId: this.#runId, gridRevision: this.#gridRevision,
+      input: this.#input, events: this.#events, frontier, nodes: [...nodes.values()], expanded, current, path, pathFinal,
+      metrics, outcome, checkpoint: this.#checkpoint, lastPrediction: this.#predictions.at(-1) ?? null,
+      predictions: this.#predictions, skippedCheckpoints: this.#skipped,
+      firstAttempts: { total: this.#first.size, correct: [...this.#first.values()].filter(Boolean).length }, completedRuns: this.#completed, speed: this.#speed,
+    });
+  }
+}
