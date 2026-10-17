@@ -71,7 +71,7 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File 'D:\竞赛\scrip
 - 阶段 1 已补齐真实最终答复：7 条可见消息，finalCaptured=True；逐条 textSha256 重新计算一致。
 - 本轮快照：prompts/sessions/2026-10-17-stage-2-bfs.md / .jsonl，当前 5 条可见消息，finalCaptured=False。来源原记录，哈希一致，内部交接摘要未归档。当前最终答复仍待下一轮或最终提交前补齐，不能提前写成完整导出。
 - C01 已有网格/BFS 核心实现与自动验证，但本轮没有真实用户追加约束并引导 Bug 修复。C02/C03 未实现；完整链仍为 0/3。不为凑链制造缺陷或补造用户对话。
-- 功能提交哈希在提交后由独立证据索引登记；不 amend/rebase/squash，避免哈希自引用。
+- 功能已真实提交 `5c3eec624249ddfe149cf1768658ceabf62ef2ce`（`feat: implement deterministic BFS and evidence-based mission lessons`）；本记录与演进索引在其后以独立证据提交归档，不 amend/rebase/squash，不自引索引提交的哈希。
 
 ## 清理、限制与下一阶段
 

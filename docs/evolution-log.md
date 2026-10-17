@@ -7,8 +7,8 @@
 - Git 仓库根目录：本工作区；应用目录：`PathLab-AI/`，不另建嵌套仓库。
 - 分支为 `main`；文档/工具基线已真实提交：`30523e1622322bd44592b87f3c550cb8a88ef279`，只包含当时已有规格、规则与归档工具，不包含未来应用功能。没有远程仓库。
 - 2026-10-17 用户提供作者名称 `LJQZS08` 与邮箱；已仅在本仓库配置 `user.name` / `user.email`，并核对实际作者与提交者身份。保留仓库级 `user.useConfigOnly=true`；未更改全局配置、伪造身份或倒填时间。
-- 阶段 0 已冻结规格；阶段 1 已建立可运行 Next/React/TypeScript 应用壳、四关简报切换和静态地图，并通过本机 AI 检查。没有算法、Canvas、诊断、存储或真实 AI，不是最终参赛作品。E000/E001/E002 最终答复均已补齐；E003 本轮最终答复待下一轮补齐。
-- 阶段 1 应用提交：`ca4aa7ddeba2c5dd44c6322c1af4f42975e48c26`；工具修复：`90e64270ae54efa26ab720b5ee2e521717b780a6`。本轮收尾将用独立证据提交登记，不改写既有历史。
+- 阶段 0 已冻结规格；阶段 1 应用壳继续保留；阶段 2（BFS）新增独立纯网格/BFS、可复现事件与四关反事实/教学证据并通过本机 AI 检查，尚未接入页面。A*、预测/Canvas、诊断、存储或真实 AI 未实现，不是最终参赛作品。E000—E003 最终答复均已补齐；E004 的本轮最终答复待下一轮补齐。
+- 阶段 1 应用提交：`ca4aa7ddeba2c5dd44c6322c1af4f42975e48c26`；工具修复：`90e64270ae54efa26ab720b5ee2e521717b780a6`；阶段 1 证据索引：`f6994513aa362fd0152a92babdfdfb5275e78f60`。阶段 2 提交按 E004 登记，不改写历史。
 - 未创建或推送 GitHub 仓库，未更改 Public 或评审权限；这些操作需用户明确确认。
 
 ## 本轮 E000：强制演进与留证规则
@@ -131,7 +131,7 @@ E002 最终答复现已补齐；不改写阶段 0 提交或其当时的验证范
 | 用户真实 Prompt | 检查并进行下一阶段 |
 | 范围判定 | 依总控分阶段规则，从已提交阶段 0 推进到可运行壳；不擅自扩展算法、Canvas、诊断、存储或远程 AI |
 | 上一轮补齐 | E002 已刷新为 5 条真实可见消息，finalCaptured=True；已保留阶段 0 真实提交 d870a9f 与后续证据提交 d4b7e54 |
-| 本轮 Prompt 证据 | prompts/sessions/2026-10-17-stage-1.md 与同名 JSONL；当前 6 条真实可见消息，finalCaptured=False；不是原生全量导出，本轮最后答复待落盘后补齐 |
+| 本轮 Prompt 证据 | prompts/sessions/2026-10-17-stage-1.md 与同名 JSONL；本轮开始补齐为 7 条真实可见消息，finalCaptured=True；原文字段哈希复算一致，仍不是原生全量媒体导出 |
 | 应用变更 | src/app/ 页面/CSS/元数据/图标；PathLabShell.tsx；固定 missions 数据边界；Next/ESLint/Playwright 配置、精确依赖和严格 TS；四关切换、原始网格、状态边界、键盘与窄屏布局 |
 | 保持不变 | contracts/ 与 fixtures/ 无差异；没有搜索结果、用户学习统计、网络 AI 或 local/sessionStorage 持久化；唯一 UI 状态为选择任务，刷新回 L01 |
 | 工具与文档变更 | npm 包装器的 D 盘运行边界/严格环境恢复与独立回归；Prompt 内部摘要过滤与回归；README、架构、验收、评分证据、依赖核验和 verification-stage-1.md |
@@ -140,14 +140,45 @@ E002 最终答复现已补齐；不改写阶段 0 提交或其当时的验证范
 | 发现/引导/执行者 | 均为 AI 自查、自修和自动检查；用户只授权下一阶段，未实际引导 Bug 修复，不计作完整核心链 |
 | 视觉与清理 | 三张 D 盘临时图已查看；删除尝试被安全策略拒绝，仍在忽略目录，未绕过；npm/tmp 旧缓存同样保留；node_modules/.next 为运行复用保留 |
 | Git 状态 | 工具修复与真实快照：90e64270ae54efa26ab720b5ee2e521717b780a6，fix: preserve prompt boundaries and npm process environment；阶段 1 应用壳：ca4aa7ddeba2c5dd44c6322c1af4f42975e48c26，feat: add responsive PathLab learning shell and fixed mission previews；均为已存在的真实本地提交，本索引由后续证据提交登记，不 amend |
-| 证据等级与剩余缺口 | 仅本机 AI 检查；没有真实手机/屏幕阅读器/其他浏览器/用户人工验收；本轮最终答复待补；完整安全审计与最终赛事条款复核未做 |
+| 证据等级与剩余缺口 | 仅本机 AI 检查；没有真实手机/屏幕阅读器/其他浏览器/用户人工验收；最终答复已由 E004 轮补齐；完整安全审计与最终赛事条款复核未做 |
 | 远程与隐私 | 无 GitHub remote、未 push、未更改公开/访问权限；作者邮箱与 Prompt 的公开范围需发布前确认 |
 | 核心链与下一步 | C01/C02/C03 为 0/3。本阶段停止；下阶段先独立网格/BFS 确定性与边界测试，验证四图/预测点，不自动接入 UI 回放与 AI |
 
-下一轮先补齐 E003 的真实最终答复：
+E004 开始时已用以下命令补齐 E003 的真实最终答复：
 
 ~~~powershell
 .\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '检查并进行下一阶段' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-stage-1' -Refresh
 ~~~
 
-确认 finalCaptured=True、原文哈希与来源，不能用本索引或内部摘要代替实际最终答复。
+已确认 finalCaptured=True、7 条原文哈希与来源；不以本索引或内部摘要代替实际最终答复。
+
+
+## E004：独立网格/BFS 与证据型教学内容（2026-10-17）
+
+| 字段 | 真实记录 |
+|---|---|
+| 用户真实 Prompt | 专家，请继续完成并丰富内容优化 |
+| 范围判定 | 按总控 Prompt 2 和上一轮约定，只做纯网格/BFS、路径回溯、确定性事件、四关核验和教学备稿；不提前接 A*/Canvas/预测门控/诊断/存储/远程 AI |
+| 上一轮补齐 | E003 刷新为 7 条可见消息，finalCaptured=True；逐条 textSha256 复算一致，不改写既有功能历史 |
+| 本轮 Prompt | prompts/sessions/2026-10-17-stage-2-bfs.md / .jsonl；5 条真实可见消息，finalCaptured=False，原文哈希一致；真实最终答复待落盘补齐，不归档内部交接摘要 |
+| 核心实现 | src/domain/grid.ts、algorithms/bfs.ts；运行时输入错误、上右下左、FIFO/入队发现、首次 parent、终点选中结束、事件与统计、输出副本 |
+| 测试与证据 | grid/bfs/bfs-missions 与独立同步松弛 oracle；inspect-bfs.mjs；docs/evidence/stage-2-bfs.json、stage-2-browser.json、两版 shell 的 check 原始输出；verification-stage-2-bfs.md |
+| 内容优化 | teaching-guide.md 的四关提问/提交后解释/反事实复盘/证据不足措辞；README、架构/关卡/事件/验收/评审证据及根规则当前状态 |
+| 保持不变 | contracts、fixtures、所有页面/组件/CSS/任务数据入口与 lockfile；无新包/浏览器下载，BFS 与答案 JSON 不导入学习页面 |
+| 先测试与真实问题 | 先建测试后执行，原 22 通过，2 个新测试文件因尚无模块而 ERR_MODULE_NOT_FOUND；实现后全部通过。这是待实现能力的红态，不是用户报告的缺陷；未编造 Bug 或用户引导 |
+| 算法验证 | 两版 shell 的 typecheck/lint/53 项均通过；128 种 3×3 固定端点障碍布局、25×25 边界；四关八次运行、2,532 个事件 schema 与语义核对；16 个静态 checkpoint 槽可用 |
+| 页面回归 | 生产构建通过；4 视口 × 7 = 28/28 Edge 检查，零 skipped/unexpected/flaky，duration=18991.441 ms；不是人工/真机/跨浏览器验收 |
+| 教学发现 | L02 封路后最短路径 14→16、扩展 53→52，说明两指标不能混称；L03 8→12 且避开封锁格，仅为 BFS 核验，不冒称 A* 结果 |
+| 清理 | 本轮无新检查图。旧 npm/tmp/三张图片的策略拒绝未重试；新生成 .last-run.json 的一次精确删除也被工具策略拒绝，保留于 D 盘忽略目录，不绕过或谎称已清空 |
+| Git 状态 | 功能已真实提交 `5c3eec624249ddfe149cf1768658ceabf62ef2ce`；消息 `feat: implement deterministic BFS and evidence-based mission lessons`；本索引在该功能提交之后以独立证据提交归档，不 amend 或哈希自引用 |
+| 远程 / 隐私 | 无 remote、未 push/发布/改权限；作者邮箱未来公开与赛事细则、视频/PDF规格仍需另行确认/核实 |
+| 核心链 | C01 已有 BFS 核心实现，仍缺真实用户追加约束/引导修复与本轮最终答复；C02/C03 未实现，完整链仍 0/3 |
+| 下一阶段 | 本阶段收口后停止；下次按 Prompt 3 做 A*/确定性优先队列及 BFS 对照，再验证 A* 的 checkpoint；不自动接 UI 或 AI |
+
+下轮先用真实记录补齐 E004 最终答复：
+
+~~~powershell
+.\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '专家，请继续完成并丰富内容优化' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-stage-2-bfs' -Refresh
+~~~
+
+只有实际记录中的最后答复及必要附件齐全，才能将该轮对话标为已补齐；本阶段自动检查不能计作人工验收或完整用户引导链。
