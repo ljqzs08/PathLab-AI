@@ -46,7 +46,7 @@
 | 原 Next 生产构建 | 通过，未更改 Next 配置或页面/领域逻辑 | standalone-next-build.txt |
 | 原 HTTP 产品回归 | 176/176；4 视口 × 44 项，零失败/跳过/不稳定 | standalone-next-browser.{txt,json} |
 | 最终 HTML 再次构建 | 330771 bytes，重复构建哈希一致 | standalone-build-final.txt |
-| Prompt 原文核对 | 上一入口轮 3 条含最终答复；本轮 3 条，角色/来源/文本 SHA256 均一致，最终答复待捕获 | standalone-final-audit.json |
+| Prompt 原文核对 | 上一入口轮 3 条含最终答复；本轮 4 条，角色/来源/文本 SHA256 均一致，最终答复已捕获 | standalone-final-audit.json |
 
 离线全量 startTime=`2026-10-17T05:17:43.021Z`，duration=`265266.479 ms`；HTTP 回归 startTime=`2026-10-17T05:17:40.869Z`，duration=`259675.691 ms`。JSON 报告的 expected 分别为 188/176，unexpected/skipped/flaky 均为 0；不是重试后忽略失败的统计。
 
@@ -72,4 +72,4 @@
 - Node/Edge 均使用本机已有安装。没有新增依赖、浏览器下载、外发、GitHub remote、发布或权限变更；没有生成截图/录屏，未把历史遗留检查图当作本次证据。
 - 构建/独立复制仅在 D 盘本次新建的唯一临时目录中进行，最后只删本次产生的确切文件和空目录。归档后已清理本轮两个测试输出目录内的运行摘要与重复单文件 JSON 报告；历史拒绝清理项未重试/绕过，不能宣称历史缓存已全部清空。
 - 原 HTTP 产品回归使用独立 `--output=../.cache/standalone-next-browser-results`，避免接触历史拒绝清理的 `browser-results/.last-run.json`；现有未跟踪 `stage6-review.temp.spec.ts` 明确排除且不纳入 Git。
-- 原始 Prompt 为 `prompts/sessions/2026-10-17-standalone-html-correction.{md,jsonl}`；上一错误入口轮补齐实际最终答复。本轮最终答复在其真实落盘前仍待补齐，不能预写成已经完成的对话证据。
+- 原始 Prompt 为 `prompts/sessions/2026-10-17-standalone-html-correction.{md,jsonl}`；上一错误入口轮和本轮最终答复均已从真实来源补齐。本轮新聊天的最终答复尚未落盘，不能预写成已经完成的对话证据。

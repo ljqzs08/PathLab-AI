@@ -47,8 +47,8 @@
 
 - 每轮提取真实用户与 AI 可见文字，保留角色、先后、来源行号与原文 SHA256；不包含隐藏推理、系统/开发者消息或内部交接摘要。
 - 上一自主迭代轮最终答复已补齐：9 条可见消息，finalCaptured=True。
-- 当前来源：prompts/sessions/2026-10-17-standalone-html-correction.{md,jsonl}（3 条）；上一入口轮已补齐实际最终答复。本轮最终答复尚未落盘，不能提前伪造，下一轮先补齐。两轮合计 6 条原文角色/来源/文本哈希已再次核对，见 evidence/standalone-final-audit.json。
-- 当前共十轮文字快照（48 条可见消息），九轮含实际最终答复、一轮待收尾。快照是从原始记录提取的可见文字，**不是工具原生全量导出，也不等于缺失附件已经补齐**。
+- 已补齐 `prompts/sessions/2026-10-17-standalone-html-correction.{md,jsonl}`（4 条）；上一入口轮已补齐实际最终答复。接续快照 `prompts/sessions/2026-10-17-new-chat-continuity.{md,jsonl}`（2 条）也已从真实来源提取，并明确不作为核心功能 Prompt；本轮新聊天的最终答复尚未落盘，不能提前伪造，下一轮先补齐。两轮 HTML 交付快照合计 7 条原文角色/来源/文本哈希已再次核对，见 `evidence/standalone-final-audit.json`。
+- 已归档的 11 轮文字快照共 51 条可见消息，均含实际最终答复；本轮新聊天尚未写入快照，收尾后下一轮从真实来源补齐。快照是从原始记录提取的可见文字，**不是工具原生全量导出，也不等于缺失附件已经补齐**。
 - 模块实现与验证后做正常本地细粒度提交，真实哈希写入 evolution-log.md；不 amend、squash、倒填时间、改写对话或把多个模块重打包成 initial commit。
 
 阶段 6 存档功能提交：`14a7881`（本机存档/备份/恢复，45 个相关文件）。已复核提交内七轮共 39 条 Prompt 原文哈希；提交复核见 evidence/stage-6-commit-audit.json，完整历史见 evolution-log.md。没有推送或发布。

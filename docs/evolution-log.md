@@ -274,5 +274,13 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 最终验证：两版 PowerShell 类型、零告警 lint、102/102 Node 测试；原 Next 生产构建；四视口断网单文件 188/188；原 HTTP 四视口 176/176，全部无跳过/失败/不稳定。专项实际只复制一个 HTML 到独立 D 盘文件夹及中文文件名，完成 A*；禁用 file-origin 存储仍可预测和 JSON 导出。全部为本机已有 Edge 的 AI 检查，不是用户/真机/其他浏览器验收。
 - 产物：330771 bytes；SHA256 `7e3a7ed4b459e82b5c1b97128e1654b5dbd105f838a8b01dcdec6e0a909c2510`；最终重复构建哈希一致。README、AGENTS、progress-status 与 verification-standalone-html 同步真实使用方式和边界。原 HTTP/file 存档不保证互通，移动/改名/换浏览器前应 JSON 备份；Next 内部编译器路径升级需重新验证。
 - 证据：`docs/evidence/standalone-*` 保留前态、首次构建失败、首次全量失败、最终构建/两版检查/两套全量原始日志与 JSON。standalone-final-audit.json 保留 15 个原始证据哈希、报告真实计数与产物核对。没有新截图/录屏；本次唯一新建构建/复制临时目录全部清空，归档后清理本轮两个测试输出目录/重复报告，历史拒绝清理项未重试/绕过；原 HTTP 检查改用独立 output 目录避免接触历史拒绝项，未跟踪临时 spec 排除且不提交。
-- Prompt：上一 `2026-10-17-local-html-entry` 补齐到 3 条含真实最终答复；本轮 `2026-10-17-standalone-html-correction` 为 3 条真实用户/AI 可见消息，6 条角色/来源/原文 SHA256 均核对一致。当前合计十轮 48 条文字快照，九轮有最终答复，本轮最终答复尚未实际落盘、下一轮先补齐；不导出内部摘要、不预写最终答复。这是真实的包装交付纠正，不复制计作 C01/C02/C03 三条人类功能修复链；三核心实现已有，所需人类修复材料仍有缺口。
-- Git：上述相关代码、产物、文档、原始证据与 Prompt 快照显式暂存，作正常本地有意义提交；本条真实哈希由下一次索引登记，不自引用、不 amend/rebase/squash。作者沿用用户已确认身份；无 remote、无外发、未发布或改变权限。`tests/browser/stage6-review.temp.spec.ts` 为既有无关未跟踪文件，保持原状，不纳入提交。
+- Prompt：上一 `2026-10-17-local-html-entry` 补齐到 3 条含真实最终答复；本轮 `2026-10-17-standalone-html-correction` 已刷新为 4 条真实用户/AI 可见消息，`finalCaptured=True`，两轮共 7 条角色/来源/原文 SHA256 均核对一致，见 `evidence/standalone-final-audit.json`。已归档的 11 轮快照共 51 条可见消息均有实际最终答复；当前新聊天的最终答复尚未落盘，下一轮先补齐。不导出内部摘要、不预写最终答复。这是真实的包装交付纠正，不复制计作 C01/C02/C03 三条人类功能修复链；三核心实现已有，所需人类修复材料仍有缺口。
+- Git：上述相关代码、产物、文档、原始证据与 Prompt 快照的 HTML 功能提交真实哈希为 `4b117292176d36c9d6fe6b5edaea66131ec21a2b`；本轮只补齐真实 Prompt 终态与索引证据，显式暂存并另作有意义的本地证据提交。新证据提交哈希不在本条自引用，将在后续有意义提交中登记；不 amend/rebase/squash。作者沿用用户已确认身份；无 remote、无外发、未发布或改变权限。`tests/browser/stage6-review.temp.spec.ts` 为既有无关未跟踪文件，保持原状，不纳入提交。
+
+## E013：补齐 E012 真实 Prompt 终态与新聊天接续证据（2026-10-17）
+
+- 触发：E012 提交时真实来源尚未写入最终答复，不能把当时的 `finalCaptured=False` 永久当作当前事实；本轮使用 `scripts/Export-PromptSnapshot.ps1` 按唯一真实前缀和只读源文件刷新，未补写原文。
+- 证据：`prompts/sessions/2026-10-17-standalone-html-correction.{md,jsonl}` 现为 4 条可见消息、`finalCaptured=True`；`2026-10-17-new-chat-continuity.{md,jsonl}` 现为 2 条真实接续消息、`finalCaptured=True`，后者只是聊天连续性材料，不计作核心功能链。
+- 同步：更新 `docs/evidence/standalone-final-audit.json`、`docs/verification-standalone-html.md`、`docs/progress-status.md` 与 E012 索引；未修改应用源码、完整 HTML、算法、测试逻辑或历史证据，既有 `PathLab-AI/tests/browser/stage6-review.temp.spec.ts` 保持未跟踪。
+- 验证：刷新脚本返回 2 条/`finalCaptured=True`；JSON 快照与审计文件可解析；HTML 仍为 330771 bytes、SHA256 `7e3a7ed4b459e82b5c1b97128e1654b5dbd105f838a8b01dcdec6e0a909c2510`；变更文档的 `git diff --check` 通过。完整 diff 仅报告原始最终答复中保留的 1 处行末空白，未篡改原文。没有因证据补齐重复运行整套产品回归，也没有人工、真机或其他浏览器验收。
+- Git：E012 的功能提交为 `4b117292176d36c9d6fe6b5edaea66131ec21a2b`；本轮仅做证据归档与索引修正，显式暂存，不外发、不推送、不改权限。当前新聊天最终答复在真实记录落盘前仍待下一轮补齐；C01/C02/C03 的真实用户引导修复材料仍不完整。

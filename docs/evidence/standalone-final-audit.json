@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-17T13:23:28.4794045+08:00",
+  "checkedAt": "2026-10-17T13:47:01.7248030+08:00",
   "executor": "AI automated verification on existing Microsoft Edge; not human or real-device acceptance",
   "artifact": {
     "path": "PathLab-AI/PathLab AI.html",
@@ -48,8 +48,8 @@
     },
     {
       "stem": "2026-10-17-standalone-html-correction",
-      "messages": 3,
-      "finalCaptured": false,
+      "messages": 4,
+      "finalCaptured": true,
       "sourceRoleTextSha256Match": true
     }
   ],
@@ -130,7 +130,7 @@
       "sha256": "dd15d09ed1bae649ec3619a927ac0d14064800db2bb20e3cf8c33eac3544e4c1"
     }
   ],
-  "remaining": "Current final answer not yet persisted; refresh from real source next turn. Three core human-guided repair evidence chains remain incomplete. No remote/publish performed.",
+  "remaining": "The E012 final answer is captured in the real source and prompt snapshot. Three core human-guided repair evidence chains remain incomplete; the current new-chat final answer is not yet persisted and must be refreshed from its real source next turn. No remote/publish performed.",
   "stagedScope": {
     "explicitPaths": [
       "AGENTS.md",
