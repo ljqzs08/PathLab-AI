@@ -129,3 +129,11 @@
 .progress-preview, .progress-recovery { margin-top: 16px; padding: 14px; border: 1px solid #526a77; border-radius: 8px; }
 .progress-preview h3 { font-size: 15px; line-height: 1.6; }
 .progress-panel .progress-error { color: #ffc2ab; }
+
+/* Optional remote review shares the existing panel layout; no motion or score changes. */
+.remote-feedback { margin-block: 1rem; }
+.remote-facts { max-height: 18rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .78rem; }
+.remote-token { display: block; width: 100%; min-height: 44px; padding: .65rem; background: var(--surface); color: inherit; border: 1px solid var(--line); border-radius: .65rem; }
+.remote-consent { display: flex; align-items: flex-start; gap: .65rem; margin-block: 1rem; }
+.remote-consent input { flex: none; margin-top: .3rem; }
+.remote-feedback small { overflow-wrap: anywhere; }

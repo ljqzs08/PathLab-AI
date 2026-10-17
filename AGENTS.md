@@ -1,12 +1,14 @@
 # 项目执行规则
 
-适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前阶段 6：独立 BFS/A*、二叉堆、私有门控会话、Canvas/DOM、单因素实验、本地规则反馈与引用解释报告均已接入；已增加版本化本机存档、JSON 备份/预览/确认与安全恢复。两版 PowerShell 类型/lint/102 项测试、生产构建、四视口 176 项 Edge 检查通过；已将误做的 HTML 入口替换为 PathLab-AI/PathLab AI.html 完整离线单文件（共享现有组件/算法/样式），四视口离线 188 项通过，可单独复制，无需 localhost。不是人工或真机验收，详见 docs/verification-standalone-html.md。远程 AI 未实现；自由地图于 E015 接入独立练习区，正式交付仍缺证据/访问/材料；当前状态见 docs/progress-status.md。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
+适用范围：本目录及其子目录。Git 仓库根目录与证据目录为本目录；应用位于 PathLab-AI/ 子目录，不另建嵌套仓库。当前阶段 6：独立 BFS/A*、二叉堆、私有门控会话、Canvas/DOM、单因素实验、本地规则反馈与引用解释报告均已接入；已增加版本化本机存档、JSON 备份/预览/确认与安全恢复。两版 PowerShell 类型/lint/102 项测试、生产构建、四视口 176 项 Edge 检查通过；已将误做的 HTML 入口替换为 PathLab-AI/PathLab AI.html 完整离线单文件（共享现有组件/算法/样式），四视口离线 188 项通过，可单独复制，无需 localhost。不是人工或真机验收，详见 docs/verification-standalone-html.md。远程 DeepSeek 于 E017 接入可选服务端适配（默认关闭，未真实联调）；自由地图于 E015 接入独立练习区，正式交付仍缺证据/访问/材料；当前状态见 docs/progress-status.md。阶段规格以 docs/ 与 PathLab-AI/contracts/、fixtures/ 为准。
 
 最新 E014 增量：地图候选可直接点选/键盘选择，与候选卡同步但不越过显式提交；有限动效与减少动态适配已接入。最终离线 204/204、HTTP 192/192（均含 16 项专项）通过；中文内部摘要导出过滤修复，两版 PowerShell 各 19 项通过。当前产物/Prompt/清理限制见 docs/verification-motion-interaction.md；E014 最终答复已于 E015 补齐。
 
-最新 E015：独立 9×7 自由编辑、端点保护、撤销、固定预设、先预测再双算法对比与搜索回放。实验区不改四关/存档，仅页面内存。类型/lint/108 Node、生产构建、离线 224/224、HTTP 212/212 通过（AI Edge，非人工/真机）。规格见 docs/playground-spec.md，最终验证/Prompt/提交见 docs/verification-playground.md 与演进索引；远程 AI 仍可选且未接入。
+历史 E015：独立 9×7 自由编辑、端点保护、撤销、固定预设、先预测再双算法对比与搜索回放。实验区不改四关/存档，仅页面内存。类型/lint/108 Node、生产构建、离线 224/224、HTTP 212/212 通过（AI Edge，非人工/真机）。规格见 docs/playground-spec.md，最终验证/Prompt/提交见 docs/verification-playground.md 与演进索引；远程 AI 仍可选且未接入。
 
 最新 E016：核心链与真实用户 HTML 纠正索引、白名单体验包和人工验收模板已准备；两版 PowerShell 包工具各 11 项、解压包四视口离线专项 32/32 通过。11 份快照 44 条原文及 9 个历史提交已核对。不是公开发布或真机验收，最终答复/中止轮范围及清理限制见 docs/verification-review-readiness.md。
+
+最新 E017：可选 DeepSeek 证据复盘接口与 UI、双端 schema/引用校验、独立口令/主动同意、进程级限流/取消/超时/本地回退已实现。完整 HTML 仍纯本地；不发送自由文本、不修改评分和存档。未使用真实密钥或发起付费调用。配置见 docs/deepseek-setup.md，验证及边界见 docs/verification-deepseek.md。E016 最终答复已补齐。
 
 ## 工作区与真实性
 

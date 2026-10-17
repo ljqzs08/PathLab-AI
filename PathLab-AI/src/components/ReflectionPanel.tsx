@@ -1,3 +1,4 @@
+import { RemoteFeedback } from './RemoteFeedback';
 import { useEffect, useRef, useState } from 'react';
 import type { LevelDefinition } from '../../contracts/types';
 import type { LearningAction, LearningView } from '../domain/learning/session';
@@ -61,6 +62,7 @@ export function ReflectionPanel({ mission, view, onAction }: { mission: LevelDef
   return <section className="reflection-panel" aria-labelledby="reflection-title" data-testid="reflection-panel">
     <div className="reflection-heading"><div><p className="eyebrow">EXPLAIN WITH EVIDENCE</p><h3 id="reflection-title" ref={heading} tabIndex={-1}>{view.state === 'report' ? '这次推理，留下了什么证据？' : '搜索结束，不等于理解结束。'}</h3></div><button type="button" className="action-secondary" data-testid="open-condition" onClick={() => onAction({type:'experiment'})}>{view.state === 'report' ? '再做条件实验' : '改变一次条件'}</button></div>
     <div className="reflection-columns"><LocalFeedback result={result} />{view.comparison ? <Comparison comparison={view.comparison} /> : <section className="comparison-card"><p className="eyebrow">THE NEXT QUESTION</p><h4>还缺一次条件实验。</h4><p>仅完成当前搜索，还不能比较变化。选择“改变一次条件”，保留本次结果，并用新运行检验预期；不需要预测全对。</p></section>}</div>
+    <RemoteFeedback key={result.request.runId + ':' + result.request.gridRevision} result={result} />
     {view.state === 'reflection' ? <form className="reflection-form" onSubmit={e => {e.preventDefault();onAction({type:'complete_reflection',explanation,evidenceEventIds:selected});}}>
       <fieldset><legend>1. 引用本次已揭示的事实</legend><p id="evidence-help">选择支持你解释的事件。条件复盘至少应引用条件变更和本次终止结果；上次结果可从对照表核对。</p><div className="reflection-facts">{facts.map(fact => <label key={fact.eventId}><input type="checkbox" checked={selected.includes(fact.eventId)} data-fact-type={fact.type} data-event-id={fact.eventId} aria-describedby="evidence-help" onChange={e => setSelected(e.target.checked ? [...selected,fact.eventId] : selected.filter(id=>id!==fact.eventId))} /><span>{fact.description}<small>{fact.eventId}</small></span></label>)}</div></fieldset>
       <label className="explanation-label" htmlFor="reflection-explanation">2. 用自己的话解释</label><textarea id="reflection-explanation" rows={5} maxLength={500} value={explanation} onChange={e=>setExplanation(e.target.value)} aria-describedby="reflection-help" placeholder="改变了哪个条件？两次实际结果有什么差别？你的证据是什么？" />

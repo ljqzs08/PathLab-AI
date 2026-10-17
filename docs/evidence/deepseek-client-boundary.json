@@ -1,0 +1,14 @@
+{
+  "executor": "AI local static check",
+  "fileCount": 11,
+  "checkedPatterns": [
+    "server environment variable names",
+    "synthetic provider key",
+    "direct provider endpoint"
+  ],
+  "matches": 0,
+  "htmlBytes": 486959,
+  "htmlSha256": "288b8e219bdac5e1410ccc9aa8d4168282e60e88e36f69ff4745b9568efc37ae",
+  "envLocalIgnored": true,
+  "realProviderCalls": 0
+}

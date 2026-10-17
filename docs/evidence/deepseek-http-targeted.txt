@@ -1,0 +1,31 @@
+[WebServer] (node:26764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:5588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop-1440] › tests\browser\deepseek.spec.ts:32:1 › DeepSeek explicit consent, minimal payload, local fallback, no secret persistence and accessible layout (1.9s)
+  ok  2 [desktop-1440] › tests\browser\deepseek.spec.ts:62:1 › DeepSeek invalid citations, stale run and quota failures retain local result (1.7s)
+  ok  3 [desktop-1440] › tests\browser\deepseek.spec.ts:82:1 › DeepSeek cancellation and condition changes discard in-flight results (1.5s)
+  ok  4 [desktop-1440] › tests\browser\deepseek.spec.ts:107:1 › DeepSeek actual local route remains disabled; offline build has no remote controls (1.4s)
+(node:27964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  5 [mobile-390] › tests\browser\deepseek.spec.ts:32:1 › DeepSeek explicit consent, minimal payload, local fallback, no secret persistence and accessible layout (1.9s)
+  ok  6 [mobile-390] › tests\browser\deepseek.spec.ts:62:1 › DeepSeek invalid citations, stale run and quota failures retain local result (1.7s)
+  ok  7 [mobile-390] › tests\browser\deepseek.spec.ts:82:1 › DeepSeek cancellation and condition changes discard in-flight results (1.5s)
+  ok  8 [mobile-390] › tests\browser\deepseek.spec.ts:107:1 › DeepSeek actual local route remains disabled; offline build has no remote controls (1.4s)
+(node:27868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [narrow-320] › tests\browser\deepseek.spec.ts:32:1 › DeepSeek explicit consent, minimal payload, local fallback, no secret persistence and accessible layout (2.0s)
+  ok 10 [narrow-320] › tests\browser\deepseek.spec.ts:62:1 › DeepSeek invalid citations, stale run and quota failures retain local result (1.6s)
+  ok 11 [narrow-320] › tests\browser\deepseek.spec.ts:82:1 › DeepSeek cancellation and condition changes discard in-flight results (1.6s)
+  ok 12 [narrow-320] › tests\browser\deepseek.spec.ts:107:1 › DeepSeek actual local route remains disabled; offline build has no remote controls (1.4s)
+(node:15672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 13 [tablet-768] › tests\browser\deepseek.spec.ts:32:1 › DeepSeek explicit consent, minimal payload, local fallback, no secret persistence and accessible layout (1.9s)
+  ok 14 [tablet-768] › tests\browser\deepseek.spec.ts:62:1 › DeepSeek invalid citations, stale run and quota failures retain local result (1.6s)
+  ok 15 [tablet-768] › tests\browser\deepseek.spec.ts:82:1 › DeepSeek cancellation and condition changes discard in-flight results (1.5s)
+  ok 16 [tablet-768] › tests\browser\deepseek.spec.ts:107:1 › DeepSeek actual local route remains disabled; offline build has no remote controls (1.4s)
+
+  16 passed (30.6s)

@@ -100,7 +100,7 @@ export function PathLabShell() {
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈 / 本机存档 / JSON 备份</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>自由地图编辑 / 撤销 / 双算法预测对比 / 搜索回放</span></li>
-            <li><span className="status-label">未接入</span><span>远程 AI（可选）；当前反馈由本地规则生成，不影响离线玩法</span></li>
+            <li><span className="status-label">可选配置</span><span>DeepSeek 证据复盘：服务端配置后主动调用；离线版始终使用本地反馈</span></li>
           </ul>
         </section>
       </main>

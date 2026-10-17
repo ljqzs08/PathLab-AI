@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Deterministic BFS/A* learning workbench with gated predictions, controlled experiments and local evidence-based reflection; no remote model calls",
+  "description": "Deterministic BFS/A* learning with local evidence reflection and optional server-side DeepSeek review",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -22,7 +22,6 @@
     "inspect:compare": "node --experimental-strip-types scripts/inspect-comparison.mjs"
   },
   "devDependencies": {
-    "ajv": "8.20.0",
     "typescript": "5.9.3",
     "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
@@ -35,6 +34,7 @@
   "dependencies": {
     "next": "16.4.2",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "ajv": "8.20.0"
   }
 }

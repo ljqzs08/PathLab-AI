@@ -4,4 +4,5 @@ import { PathLabShell } from './components/PathLabShell';
 
 const container = document.getElementById('pathlab-root');
 if (!container) throw new Error('PathLab HTML 缺少应用容器。');
+document.documentElement.dataset.pathlabStandalone = 'true';
 createRoot(container).render(<PathLabShell />);

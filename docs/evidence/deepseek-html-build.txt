@@ -1,0 +1,12 @@
+
+> pathlab-ai@0.1.0 build:html
+> node scripts/build-standalone.mjs
+
+{
+  "target": "D:\\竞赛\\PathLab-AI\\PathLab AI.html",
+  "bytes": 486959,
+  "sha256": "288b8e219bdac5e1410ccc9aa8d4168282e60e88e36f69ff4745b9568efc37ae",
+  "embedded": "production React runtime, shared components/domain, fixtures, both stylesheets and SVG icon",
+  "externalAssets": 0,
+  "serverRequired": false
+}

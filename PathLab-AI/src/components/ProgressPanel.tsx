@@ -20,7 +20,7 @@ export function ProgressPanel({ store, progress, missions }: { store: ProgressSt
     <div className="progress-heading"><div><p className="eyebrow">YOUR PROGRESS, ON THIS DEVICE</p><h2 id="progress-title">让推理，不因刷新中断。</h2></div><span className="neutral-badge">{progress.saveState === 'saved' ? '本机已保存' : progress.saveState === 'memory' ? '仅内存 · 请备份' : progress.saveState === 'loading' ? '读取中' : '本机存档'}</span></div>
     <p role="status" data-testid="save-status">{progress.notice}</p>
     <details className="progress-tools"><summary>备份、恢复与数据边界</summary>
-      <p>进度、已提交的预测与报告解释只保存到此浏览器，不上传云端、不调用模型。未提交的候选选择、实验选项和解释草稿不保存；恢复不会自动播放。浏览器清理数据会删除存档，请另存 JSON。</p>
+      <p>存档与报告解释只保存到此浏览器；保存、导出和恢复不上传云端、不调用模型。只有你主动确认的 DeepSeek 复盘会发送所预览的最小事实，绝不包含自由文本解释。未提交的候选选择、实验选项和解释草稿不保存；恢复不会自动播放。浏览器清理数据会删除存档，请另存 JSON。</p>
       <div className="progress-actions">
         <button type="button" className="action-secondary" disabled={!progress.ready} data-testid="export-progress" onClick={() => attempt(() => download(store.export(new Date().toISOString()), 'pathlab-progress-v1.json'))}>导出当前进度 JSON</button>
         <label className="progress-file">选择 JSON 存档<input aria-label="选择 JSON 存档" type="file" accept=".json,application/json" disabled={!progress.ready || reading} onChange={async event => {

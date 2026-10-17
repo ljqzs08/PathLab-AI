@@ -1,0 +1,17 @@
+{
+  "executor": "AI / headless Edge; synthetic response; not real-device or human acceptance",
+  "results": [
+    {
+      "width": 1440,
+      "remoteMockRendered": true,
+      "scrollWidth": 1440,
+      "viewport": 1440
+    },
+    {
+      "width": 320,
+      "remoteMockRendered": true,
+      "scrollWidth": 320,
+      "viewport": 320
+    }
+  ]
+}

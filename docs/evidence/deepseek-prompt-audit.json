@@ -1,0 +1,17 @@
+{
+  "executor": "AI read-only source audit; no internal messages exported",
+  "snapshots": [
+    {
+      "messages": 2,
+      "exactTextAndHashMatch": true,
+      "snapshot": "2026-10-17-review-rules-continuation",
+      "finalCaptured": true
+    },
+    {
+      "messages": 4,
+      "exactTextAndHashMatch": true,
+      "snapshot": "2026-10-17-deepseek-integration",
+      "finalCaptured": false
+    }
+  ]
+}
