@@ -17,6 +17,7 @@ async function ready(page: Page) {
   await expect(page.getByTestId('request-remote')).toHaveCount(0);
   await finish(page, level, 'bfs');
   await expect(page.getByTestId('local-feedback')).toBeVisible();
+  await page.getByTestId('api-review-options').locator('summary').first().click();
   if (offline()) {
     await expect(page.getByTestId('remote-offline')).toBeVisible();
     await expect(page.getByTestId('request-remote')).toHaveCount(0);
@@ -101,6 +102,7 @@ test('DeepSeek cancellation and condition changes discard in-flight results', as
   release(); await expect(page.getByTestId('remote-feedback')).toHaveCount(0);
   await page.getByRole('button', { name: '取消，返回复盘', exact: true }).click();
   await expect(page.getByTestId('remote-result')).toHaveCount(0);
+  await page.getByTestId('api-review-options').locator('summary').first().click();
   await expect(page.getByTestId('request-remote')).toBeDisabled();
 });
 

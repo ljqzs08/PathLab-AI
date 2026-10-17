@@ -1,0 +1,16 @@
+{
+  "actor": "AI source/build inspection, not a real provider call",
+  "browserFiles": 11,
+  "violations": [],
+  "html": {
+    "bytes": 501852,
+    "sha256": "18d04356474a4e3e9dbe2901669bcc77592e336084be83943ce98d2ff4c67e63"
+  },
+  "newModule": {
+    "networkCall": false,
+    "storageWrite": false,
+    "embed": false,
+    "fixedExternalLink": true,
+    "timers": false
+  }
+}

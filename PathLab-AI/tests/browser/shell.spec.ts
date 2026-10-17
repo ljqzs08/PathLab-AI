@@ -11,7 +11,7 @@ test('renders an honest local workbench without claiming results before a run', 
   await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
   await expect(page.getByRole('button', { name: '开始预测' })).toBeEnabled();
   await expect(page.getByText('尚未运行；选择算法后先预测，再查看搜索证据。', { exact: false })).toBeVisible();
-  await expect(page.getByText('DeepSeek 证据复盘：服务端配置后主动调用；离线版始终使用本地反馈')).toBeVisible();
+  await expect(page.getByText('DeepSeek 网页辅助：本机整理、手动复制提问；站内 API 复盘仍为可选')).toBeVisible();
   await expect(page.locator('canvas')).toHaveCount(1);
 });
 

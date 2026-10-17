@@ -2,9 +2,9 @@
 
 - Session ID: `01a1485a-c92c-7a61-871a-ffbeddc795c4`
 - Source file: `rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl` (read-only)
-- Captured at: 2026-10-17T16:05:01.5932225+08:00
-- Visible messages captured: 4
-- Final assistant answer captured: False
+- Captured at: 2026-10-17T16:15:10.1644729+08:00
+- Visible messages captured: 5
+- Final assistant answer captured: True
 - Incomplete source tail skipped: False
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
 - 这是从真实本地记录提取的可见文字，不是工具原生全量导出，也不是截图或录屏。最终答复未写入时，该轮证据仍待补齐；缺失附件不视为已导出。本快照是否属于核心功能链以演进索引为准，策略讨论不能计作核心功能迭代。
@@ -50,3 +50,46 @@ Source line: 1645; Timestamp: 2026-10-17T07:59:16.256Z; Text SHA256: `5ba071b657
 另外加了独立的复盘访问口令，避免接口变成任何人都能调用的付费通道。它与 DeepSeek API Key 分开，不能混用。
 
 
+
+## 5. assistant / final_answer
+
+Source line: 1780; Timestamp: 2026-10-17T08:09:42.520Z; Text SHA256: `28db1e7440c1ffdda07b7dc7fdbc882ea28175c7c9d6058f36219700977d5495`
+
+## 完成结果
+
+**DeepSeek 的接入代码已经完成，但尚未使用你的账号进行真实调用。** 按你选定的方案，只增加“有证据的 AI 复盘”，不做通用聊天。:codex-annotation{index="1"}
+
+已实现：
+- 搜索完成后，可预览发送内容、确认授权，再请求 DeepSeek 复盘。
+- 只发送最小学习事实，**不发送你的自由文本解释、完整存档或聊天记录**。
+- 严格检查返回格式、事件引用和提示等级；超时、错误或取消时保留本地反馈。
+- 密钥仅在服务端使用；另设独立访问口令及请求次数限制。
+- 原算法、评分、存档和自由地图玩法不变；完整离线 HTML 继续独立运行，不调用远程 AI。
+
+## 验证结果
+
+以下均为 **AI 执行、模拟模型响应**，不冒充真实 DeepSeek 或人工验收：
+
+| 检查 | 结果 |
+|---|---:|
+| 两版 PowerShell 类型检查、lint、Node 测试 | 各 **147/147** |
+| HTTP 四视口完整回归 | **228/228** |
+| 离线 HTML 四视口完整回归 | **240/240** |
+| 最终接口专项复测 | **16/16** |
+
+生产构建通过；桌面和窄屏已检查，本轮临时检查图片已删除。
+
+本地提交：`d235a91`（功能）、`6b32341`（证据归档）。  
+[验证记录](D:/竞赛/docs/verification-deepseek.md) · [本轮真实 Prompt](D:/竞赛/prompts/sessions/2026-10-17-deepseek-integration.md)（最终答复待下一轮补齐）。
+
+## 剩余事项
+
+**真正启用还需要你在本机配置凭证与确认费用：**
+
+1. 打开已准备的 [`.env.local`](D:/竞赛/PathLab-AI/.env.local)，填写自己的 `AI_API_KEY` 和另一个独立的 `AI_ACCESS_TOKEN`。
+2. 确认预算后，将 `AI_ENABLED=false` 改成 `true`，重启服务。
+3. 完成一关，在复盘区确认发送，进行第一次真实联调。**不用把密钥发给我。**
+
+具体步骤与可复用检查流程已写入 [DeepSeek 配置说明](D:/竞赛/docs/deepseek-setup.md)。默认每进程最多尝试 20 次，**这是次数限制，不是金额封顶**。
+
+C01/C02 保持原实现，C03 新增可选远程复盘；GitHub 评审访问、真实设备验收及人类引导修复材料的既有缺口，仍未因此变成“已通过”。

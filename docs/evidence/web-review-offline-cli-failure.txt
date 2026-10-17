@@ -1,0 +1,4 @@
+npm warn "playwright.standalone.config.ts" is being parsed as a normal command line argument.
+npm warn Unknown cli config "--config". This will stop working in the next major version of npm.
+Error: http://127.0.0.1:3210 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.
+

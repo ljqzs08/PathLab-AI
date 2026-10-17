@@ -1,0 +1,28 @@
+
+> pathlab-ai@0.1.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> pathlab-ai@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+
+> pathlab-ai@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+D:\竞赛\PathLab-AI\src\components\WebReview.tsx
+  17:95  warning  The ref value 'operation.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'operation.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+✖ 1 problem (0 errors, 1 warning)
+
+ESLint found too many warnings (maximum: 0).
+npm failed with exit code 1
+At D:\竞赛\scripts\Invoke-ProjectNpm.ps1:41 char:24
++ if ($exitCode -ne 0) { throw "npm failed with exit code $exitCode" }
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (npm failed with exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : npm failed with exit code 1
+ 

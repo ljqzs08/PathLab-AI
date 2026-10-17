@@ -1,0 +1,307 @@
+
+> pathlab-ai@0.1.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> pathlab-ai@0.1.0 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+
+> pathlab-ai@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+> pathlab-ai@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.mjs
+
+✔ Manhattan heuristic measures orthogonal distance, not cost already travelled (0.9681ms)
+✔ tiny A* trace pins event order, costs, sequence and goal-not-expanded (2.0691ms)
+✔ A* uses f/h/sequence and retains first parent for equal g (0.47ms)
+✔ all 128 obstacle layouts agree with independent distance relaxation and BFS (20.3695ms)
+✔ 25 by 25 open grid has shortest 48 steps and goal is selected, never expanded (1.2351ms)
+✔ unreachable, same endpoints and input errors retain the shared runtime boundary (0.841ms)
+✔ frozen input repeats exactly and all outputs are independent copies (3.4553ms)
+✔ all 16384 four-by-four layouts match an independent shortest-distance oracle (238.4879ms)
+✔ better g replaces parent without rediscovery and final route uses the improved parent (0.5939ms)
+✔ lazy stale entries produce skip evidence but never inflate unique frontier or selection metrics (0.3974ms)
+✔ L01 baseline and fixed counterfactual match pinned shortest distances and independent oracle (6.8535ms)
+✔ L02 baseline and fixed counterfactual match pinned shortest distances and independent oracle (11.0443ms)
+✔ L03 baseline and fixed counterfactual match pinned shortest distances and independent oracle (4.6291ms)
+✔ L04 baseline and fixed counterfactual match pinned shortest distances and independent oracle (5.8722ms)
+✔ every generated event in all eight mission runs fits the frozen envelope schema (73.0723ms)
+✔ all 16 fixture checkpoint slots have multiple candidates at requested effective selections 2 and 4 (0.2227ms)
+✔ checkpoint evidence defers single-candidate selections and consumes only one pending checkpoint per selection (0.2158ms)
+✔ same-start-goal and unreachable traces do not fabricate checkpoint submissions (0.3244ms)
+✔ L03 blockage is on the old route, invalidates it and changes the shortest route from 8 to 12 (0.2447ms)
+✔ evidence generation is deterministic nonmutating and contains no fabricated user history (2.6565ms)
+✔ checked-in BFS evidence is exactly reproducible from the current code and fixed inputs (1.7099ms)
+✔ pinned tiny BFS trace freezes event order costs sequence and terminal statistics (2.4483ms)
+✔ FIFO wins over goal proximity and finding a goal does not stop on enqueue (1.6175ms)
+✔ same-length paths use up right down left with first parent retained (0.5822ms)
+✔ start equals goal selects once and never expands, with zero path length (0.2121ms)
+✔ unreachable is a valid run with empty path null length and an empty final frontier (0.3083ms)
+✔ cycles never enqueue discover select or expand a node twice (0.6741ms)
+✔ BFS rejects invalid input instead of returning unreachable (0.3603ms)
+✔ identical frozen input produces identical paths events and metrics over 20 runs (7.5205ms)
+✔ returned paths metrics and snapshots do not alias input or each other (0.4985ms)
+✔ all 128 obstacle layouts on 3x3 with fixed open endpoints agree with independent relaxation (15.4936ms)
+✔ maximum supported 25x25 open grid has a 48-step valid deterministic path (70.4693ms)
+✔ all eight A* mission runs pass independent event replay and match BFS shortest steps (14.6613ms)
+✔ four fixed comparisons pin A* baseline and counterfactual expanded/discovered counts (0.2076ms)
+✔ all 3651 comparison events satisfy original strict schema using explicitly synthetic envelopes (80.6996ms)
+✔ all 16 A* checkpoint slots have more than one candidate and the first priority is the next selected node (0.2444ms)
+✔ comparison evidence is deterministic, nonmutating and labels verification-only algorithms (3.0116ms)
+✔ checked-in comparison report exactly reproduces from frozen fixtures and both algorithms (0.7631ms)
+✔ exactly four unique fixed missions validate structurally and relationally (2.0217ms)
+✔ reject unknown level fields (0.1221ms)
+✔ reject malformed map widths (0.5044ms)
+✔ reject blocked or out-of-bounds endpoints (0.1817ms)
+✔ reject blocking start and unchanged goal (0.1908ms)
+✔ checkpoints have stable increasing ordinals (0.1183ms)
+✔ state table has known states and unique state/action pairs (0.1032ms)
+✔ prediction submission cannot bypass directly to reflection/report (0.0806ms)
+✔ running has no map editing transition and restore pauses playback (0.0816ms)
+✔ valid event and signed out-of-bounds skip payload validate (4.9207ms)
+✔ wrong event payload and unknown event type are rejected (0.1767ms)
+✔ prediction requested cannot include the hidden actual answer (0.1135ms)
+✔ synthetic feedback request/response validate and evidence resolves (0.8711ms)
+✔ unknown output fields or fabricated error labels fail schema validation (0.1122ms)
+✔ nonexistent or mismatched evidence is rejected (0.589ms)
+✔ remote feedback before prediction reveal is rejected (0.1451ms)
+✔ insufficient evidence may not assign an error (0.13ms)
+✔ reject unrequested hint escalation and unsupported error inference (0.134ms)
+✔ all sixteen event branches accept their payload and reject missing/unknown fields (1.3151ms)
+✔ schema rejects private identity in feedback request and invalid versions (0.0974ms)
+✔ evidence IDs are unique and correct count cannot exceed total (0.1888ms)
+✔ README preserves the executable PowerShell wrapper path (0.3019ms)
+✔ disabled and incomplete config fail closed without using provider (18.0188ms)
+✔ reject missing token (0.5262ms)
+✔ reject wrong token (0.2373ms)
+✔ reject cross origin (0.2124ms)
+✔ reject opaque origin (0.3266ms)
+✔ reject cross site (0.2627ms)
+✔ reject no consent (2.6124ms)
+✔ reject not json (0.8327ms)
+✔ success uses fixed HTTPS, bounded non-thinking JSON, minimum facts, and trusted provenance (2.8327ms)
+✔ request validation: unrevealed (1.0113ms)
+✔ request validation: unknown credential (0.3001ms)
+✔ request validation: free text (0.3058ms)
+✔ request validation: unbounded identifier (0.3201ms)
+✔ request validation: invalid counts (0.288ms)
+✔ request validation: no completed run (0.2542ms)
+✔ request validation: duplicate events (0.2888ms)
+✔ request validation: reflection text event (0.3041ms)
+✔ response validation: invented event (0.6085ms)
+✔ response validation: mismatched index (0.3553ms)
+✔ response validation: arbitrary path (0.3415ms)
+✔ response validation: invented diagnosis (0.5268ms)
+✔ response validation: missing evidence for claim (0.469ms)
+✔ response validation: unknown field (0.4298ms)
+✔ response validation: invalid hint (0.4412ms)
+✔ response validation: oversized prose (0.4759ms)
+✔ hint escalation and insufficient-evidence label are rejected (0.1179ms)
+✔ provider failure safely falls back: http error (0.5328ms)
+✔ provider failure safely falls back: bad envelope (0.4206ms)
+✔ provider failure safely falls back: empty content (0.292ms)
+✔ provider failure safely falls back: malformed content (0.2369ms)
+✔ provider failure safely falls back: truncated output (0.2308ms)
+✔ provider failure safely falls back: oversized response (0.3232ms)
+✔ provider failure safely falls back: oversized multibyte response (0.3072ms)
+✔ limits request bytes even without content-length (0.5133ms)
+✔ single in-flight slot, cooldown, and process budget include failed attempts (0.7133ms)
+✔ provider timeout aborts without retry or provider details (1016.0772ms)
+✔ timeout also bounds a stalled response stream (1018.4333ms)
+✔ caller abort releases slot, and no real network is used (1.5495ms)
+✔ network exception is unavailable, not a validated answer; details stay server-side (0.7836ms)
+✔ grid accepts read-only input without modifying it, including the 1x1 kernel case (0.8226ms)
+✔ four-neighbor order is up right down left and retains out-of-bounds coordinates (0.5561ms)
+✔ bounds and walls are separate from valid open cells (0.1589ms)
+✔ rejects missing or non-object search input and grid (0.3056ms)
+✔ rejects invalid or oversized dimensions before allocation (0.2354ms)
+✔ rejects bad row count width characters sparse rows and non-string rows (0.1536ms)
+✔ rejects fractional non-finite or malformed endpoints with a stable code (1.1899ms)
+✔ out-of-bounds endpoints are input errors, not an unreachable search (0.2147ms)
+✔ blocked start goal or coincident blocked endpoints are rejected (0.1777ms)
+✔ briefing exposes no precomputed result; input and projections are independent copies (3.7509ms)
+✔ every planned mission gates a genuine prefix, candidates are coordinate-ordered and no actual is exposed (135.0568ms)
+✔ invalid actions, invisible choices, repeated submits and invalid metadata cannot mutate a session (1.2074ms)
+✔ playback stops before the second checkpoint; each tick/step is one effective selection batch (1.6089ms)
+✔ three pre-answer hint levels reveal rules only and submission records actual support used (0.7633ms)
+✔ reset preserves completed summaries and first-attempt accuracy; later attempts cannot overwrite it (31.779ms)
+✔ unreachable and equal endpoints finish without a fake prediction or bypass control (0.5245ms)
+✔ algorithm whitelist and active-run freeze are enforced, not just disabled UI buttons (0.4527ms)
+✔ same supplied actions and context are reproducible; controller does not require browser or clock (10.4266ms)
+✔ all 128 tiny fixed-endpoint layouts terminate and expose no future terminal facts at checkpoints (90.0063ms)
+✔ playground presets are independent, deterministic, reachable and share shortest lengths (11.8079ms)
+✔ wall and eraser edits preserve source and protect endpoints (0.2695ms)
+✔ moving endpoints opens a wall but refuses overlapping endpoints (0.1264ms)
+✔ out of bounds and fractional edits are rejected without changing the source (0.3122ms)
+✔ unreachable custom maps compare honestly without fabricated paths (0.4418ms)
+✔ comparison winner is derived from actual expansion events, not assumed A-star superiority (2.5247ms)
+✔ binary heap returns undefined while empty and is reusable after draining (1.2743ms)
+✔ fixed priority uses f first, h second, insertion sequence third (0.2885ms)
+✔ heap handles 625 immutable entries in reverse and alternating insertion orders (1.4998ms)
+✔ interleaved insertions preserve heap ordering (0.1471ms)
+✔ all six task/algorithm combinations restore unanswered gates and hints without private future answers (14.5169ms)
+✔ running restores paused with a restore-reason event; counterfactual restores reflection (41.6922ms)
+✔ reports, changed-map briefing, first attempts and revision/retry identities survive reconstruction and reset (148.7926ms)
+✔ checkpoint copies are isolated and rejected actions are not recorded (0.2326ms)
+✔ rejects malformed, oversized, unknown-version and incompatible inputs before replacing live sessions (3.4012ms)
+✔ rejects fabricated outcomes, credentials, invalid timestamps and illegal replay, not just malformed JSON (2.0995ms)
+✔ browser store loads once, autosaves one isolated key and retains a corrupt original without overwriting (0.6751ms)
+✔ storage unavailable and quota errors keep actions usable in memory and do not report a successful save (0.5598ms)
+✔ cross-tab changes cannot be silently overwritten; explicit replacement and reload are deliberate (0.6739ms)
+✔ validated import is atomic and does not silently replace protected browser data (1.768ms)
+✔ all six allowed combinations preserve baseline and require a fresh gated condition run with linked evidence (377.2004ms)
+✔ condition edits are domain-validated atomically; active runs cannot edit and experiment keeps algorithm fixed (69.664ms)
+✔ experiment cancellation returns reflection even from report and preserves the report snapshot and history (9.0873ms)
+✔ reset restores fixture revision identity; repeating identical condition cannot inflate first-attempt accuracy (132.5946ms)
+✔ local diagnoses report observable FIFO mismatch only, never infer A-star mental causes or mastery (142.5762ms)
+✔ report requires real current-run references; partial text cannot masquerade as evidence and is never put in fact descriptions (70.6098ms)
+✔ feedback resolver rejects fabricated paths, IDs, labels and hint escalation (6.4232ms)
+✔ unreachable and equal endpoints can generate honest partial reports without invented predictions (0.932ms)
+✔ run metadata uses schema-compatible bounded IDs before any mutation (0.304ms)
+✖ web review deterministic revealed facts: L01/bfs (98.3938ms)
+✖ web review deterministic revealed facts: L02/bfs (275.8587ms)
+✖ web review deterministic revealed facts: L02/astar (91.6131ms)
+✖ web review deterministic revealed facts: L03/astar (16.6882ms)
+✖ web review deterministic revealed facts: L04/bfs (106.0174ms)
+✖ web review deterministic revealed facts: L04/astar (16.5533ms)
+✔ web review excludes unselected free text and arbitrary metadata; does not mutate reports (11.7871ms)
+✔ web review accurately handles zero predictions and missing path length without inventing a percentage (12.1185ms)
+ℹ tests 155
+ℹ suites 0
+ℹ pass 149
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2280.8375
+
+✖ failing tests:
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L01/bfs (98.3938ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L02/bfs (275.8587ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L02/astar (91.6131ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L03/astar (16.6882ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L04/bfs (106.0174ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\web-review.test.mjs:25:3
+✖ web review deterministic revealed facts: L04/astar (16.5533ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!stale.includes('[C1]'))
+  
+      at TestContext.<anonymous> (file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/tests/web-review.test.mjs:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

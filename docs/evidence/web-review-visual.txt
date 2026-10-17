@@ -1,0 +1,20 @@
+
+Running 2 tests using 1 worker
+
+(node:6024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [desktop-1440] › tests\browser\web-review-visual.temp.spec.ts:5:1 › AI visual capture of local web review, not real-device acceptance
+[desktop-1440] › tests\browser\web-review-visual.temp.spec.ts:5:1 › AI visual capture of local web review, not real-device acceptance
+{"actor":"AI Playwright Edge","viewport":"desktop-1440","screenshot":"web-review-desktop-1440.png","measurements":{"panelWidth":1020,"windowWidth":1440,"documentWidth":1440,"animations":0,"frames":0}}
+
+
+(node:26028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2/2] [narrow-320] › tests\browser\web-review-visual.temp.spec.ts:5:1 › AI visual capture of local web review, not real-device acceptance
+[narrow-320] › tests\browser\web-review-visual.temp.spec.ts:5:1 › AI visual capture of local web review, not real-device acceptance
+{"actor":"AI Playwright Edge","viewport":"narrow-320","screenshot":"web-review-narrow-320.png","measurements":{"panelWidth":246,"windowWidth":320,"documentWidth":320,"animations":0,"frames":0}}
+
+  2 passed (4.3s)
