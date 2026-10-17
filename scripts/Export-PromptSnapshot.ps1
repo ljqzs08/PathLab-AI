@@ -55,7 +55,7 @@ foreach ($entry in $entries) {
     if ($entry.sourceLine -lt $start) { continue }
     if ($selected.Count -gt 0 -and $entry.role -eq 'user') { break }
     # Some logs contain internal handoff material as assistant messages; never export it.
-    if ($entry.role -eq 'assistant' -and $entry.text.TrimStart().StartsWith('# Handoff Summary', [StringComparison]::Ordinal)) { continue }
+    if ($entry.role -eq 'assistant' -and ($entry.text.TrimStart().StartsWith('# Handoff Summary', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# Handoff —', [StringComparison]::Ordinal))) { continue }
     $selected.Add($entry)
     if ($entry.role -eq 'assistant' -and $entry.phase -in @('final_answer', 'final')) { break }
 }
@@ -94,7 +94,8 @@ $md = [Text.StringBuilder]::new()
 [void]$md.AppendLine('- 这是从真实本地记录提取的可见文字，不是工具原生全量导出，也不是截图或录屏。最终答复未写入时，该轮证据仍待补齐；缺失附件不视为已导出。本快照是否属于核心功能链以演进索引为准，策略讨论不能计作核心功能迭代。')
 foreach ($record in $records) {
     [void]$md.AppendLine('')
-    [void]$md.AppendLine("## $($record.sequence). $($record.role) / $($record.phase)")
+    $phaseSuffix = if ($record.phase) { ' / ' + $record.phase } else { '' }
+    [void]$md.AppendLine("## $($record.sequence). $($record.role)$phaseSuffix")
     [void]$md.AppendLine('')
     [void]$md.AppendLine("Source line: $($record.sourceLine); Timestamp: $($record.timestamp); Text SHA256: ``$($record.textSha256)``")
     [void]$md.AppendLine('')

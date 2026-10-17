@@ -35,10 +35,18 @@ try {
     Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'open turn exported without claiming final answer'
     $records = @(Get-Content -LiteralPath $result.jsonl -Encoding UTF8 | ForEach-Object { $_ | ConvertFrom-Json })
     Assert-True ($records[1].text -ceq '真实建议：先验证') 'Chinese original text preserved'
+    $headings = @([IO.File]::ReadAllLines($result.markdown, [Text.Encoding]::UTF8) | Where-Object { $_ -match '^## [0-9]+\. (user|assistant)' })
+    Assert-True (@($headings | Where-Object { $_ -match '[\t ]$' }).Count -eq 0) 'generated headings have no trailing whitespace'
     $payload = [IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)
     Assert-True (-not $payload.Contains('PRIVATE_SYSTEM') -and -not $payload.Contains('PRIVATE_ANALYSIS')) 'hidden/system messages excluded'
     Expect-Failure { & $exporter @args } 'existing snapshot not overwritten implicitly'
-    $full = $base + @((Message 'assistant' 'final_answer' '# Handoff Summary internal'), (Message 'assistant' 'final_answer' '已验证，最终说明'), (Message 'user' '' 'NEXT-USER'), (Message 'assistant' 'final_answer' 'NEXT-ANSWER'))
+    # This is synthetic internal material, never a human Prompt or competition evidence.
+    Save-Fixture ($base + @((Message 'assistant' 'final_answer' '# Handoff — SYNTHETIC_INTERNAL_BODY')))
+    $result = & $exporter @args -Refresh
+    Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'dash-style handoff is not a real final answer'
+    $payload = [IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)
+    Assert-True (-not $payload.Contains('SYNTHETIC_INTERNAL_BODY')) 'dash-style internal body is not exported'
+    $full = $base + @((Message 'assistant' 'final_answer' '# Handoff Summary internal'), (Message 'assistant' 'final_answer' '# Handoff — SYNTHETIC_INTERNAL_BODY'), (Message 'assistant' 'final_answer' '已验证，最终说明'), (Message 'user' '' 'NEXT-USER'), (Message 'assistant' 'final_answer' 'NEXT-ANSWER'))
     Save-Fixture $full
     $result = & $exporter @args -Refresh
     Assert-True ($result.messages -eq 3 -and $result.finalCaptured) 'refresh appends real final answer'
