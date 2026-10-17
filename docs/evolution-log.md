@@ -80,8 +80,8 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\Export
 | 链编号 | 对应核心功能 | 人类初始 Prompt | AI 建议/修改 | 真实问题与复现 | 用户实际引导修复 | 回归验证 | 对应提交 | 状态 |
 |---|---|---|---|---|---|---|---|---|
 | C01 | 算法内核与确定性 | 阶段 2 与自主继续原文已归档 | BFS/A*/二叉堆已实现 | AI 自测失败与脚手架纠正已留原文；非人类引导 | 尚无真实用户引导修复 | 独立 oracle、schema、两版 shell；当前 92 项测试 | 5c3eec6 / 5ade0e8 | 功能已验证；完整链缺用户实际引导，不能计入完成数 |
-| C02 | 预测交互、Canvas 与回放 | autonomous-iterations 原文已归档 | 私有轨迹、门控 UI、Canvas/DOM/回放已实现 | AI 自测与工具问题已留证；阶段 5 补充实际屏外焦点回归 | 尚无真实用户引导修复 | 四视口浏览器、DPR/像素/axe、键盘门控 | 572e15d / fd82d8f；阶段 5B 提交后登记 | 功能已验证；完整链缺用户实际引导，不能计入完成数 |
-| C03 | 学习诊断或反事实复盘 | autonomous-iterations 原文已归档 | 单因素条件实验、本地规则反馈、证据报告已实现 | AI 自测发现两项测试假设错误，另有检查发现 reset 禁用和实际焦点缺陷；角色已区分 | 尚无真实用户引导修复 | 六组合原图/新条件、引用边界、报告历史、四视口流程 | 3b2e9f3；阶段 5B 提交后登记 | 功能已验证；完整链缺用户实际引导，不能计入完成数 |
+| C02 | 预测交互、Canvas 与回放 | autonomous-iterations 原文已归档 | 私有轨迹、门控 UI、Canvas/DOM/回放已实现 | AI 自测与工具问题已留证；阶段 5 补充实际屏外焦点回归 | 尚无真实用户引导修复 | 四视口浏览器、DPR/像素/axe、键盘门控 | 572e15d / fd82d8f / f4a43ca | 功能已验证；完整链缺用户实际引导，不能计入完成数 |
+| C03 | 学习诊断或反事实复盘 | autonomous-iterations 原文已归档 | 单因素条件实验、本地规则反馈、证据报告已实现 | AI 自测发现两项测试假设错误，另有检查发现 reset 禁用和实际焦点缺陷；角色已区分 | 尚无真实用户引导修复 | 六组合原图/新条件、引用边界、报告历史、四视口流程 | 3b2e9f3 / f4a43ca | 功能已验证；完整链缺用户实际引导，不能计入完成数 |
 
 完整链可以跨多个真实对话与提交，不要求单轮凑齐。AI 自测自修有价值，但不能代替用户真实引导。没有实际 Bug 时不制造 Bug；可以围绕实际失败或明确验收偏差记录迭代，最终是否满足赛事条款须按真实材料核对。
 
@@ -241,5 +241,5 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 验证：两版 PowerShell 类型/lint/92 项测试、生产 build；最终 Edge 4×31=124/124，零 skipped/unexpected/flaky，startTime=2026-10-17T02:48:20.383Z，duration=264089.577 ms。Canvas DPR1/2/3 的几何/实际橙色像素、响应式重绘，axe/键盘作用域/报告历史/纯文本/无外部请求与存储写入均纳入。
 - 证据：verification-stage-5-reflection.md；evidence/stage-5-ui-{first-check,check,check-ps51,build,browser}.txt、stage-5-ui-browser.json、stage-5-focus-{observation,red}.json / red.txt / error-context.md、stage-5-prompt-tools.json（两版 shell 各 17 项导出工具回归）。新查看的 390px 检查图已删除，无新增依赖/浏览器下载；既有拒绝清理项未重试。
 - 关键边界：“记录齐备”仅为过程记录，不证明掌握或解释正确；本地规则模板不是远程模型；headless 检查不等于真实手机、屏幕阅读器或人工学习效果。
-- Git：阶段 5B 功能验证完成，待本地提交后在独立证据索引登记实际哈希；不 amend/发布。C01/C02/C03 功能已实现，但仍缺用户实际引导修复；完整链 0/3。
+- Git：阶段 5B 已真实本地提交 f4a43cac7346689d33307e1d8b96d7166979f222；feat: connect condition experiments and evidence reflection reports to the learning workbench。显式暂存 33 个相关文件、暂存范围与清单一致；源码/文档 diff 检查通过，原始证据仅放宽尾空白检查；未匹配到所检查的私钥/GitHub/API token 模式，但不等于全面安全认证。已对实际提交中的 8 条 Prompt 重新计算原文 SHA256，全部一致，保留用户末尾空白。本索引在后续证据提交登记，不 amend/发布。C01/C02/C03 功能已实现，但仍缺用户实际引导修复；完整链 0/3。
 - 下一模块优先版本化本地存储、导入导出和安全恢复；远程反馈按证据契约另行评估。对外发布/权限变更仍先确认，最终赛事条款与视频/PDF 待复核。

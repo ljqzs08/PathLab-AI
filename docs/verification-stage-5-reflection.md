@@ -68,5 +68,5 @@ powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "& 'D:\竞赛
 
 - Prompt 快照：prompts/sessions/2026-10-17-autonomous-iterations.md / .jsonl；当前 8 条真实可见消息，finalCaptured=False；最终答复写入原始记录后须下一轮补齐，不预写本轮答复或内部摘要。
 - C01/C02/C03 的对应功能已落地并有 AI 验证，但仍缺真实用户引导修复环节；完整链保持 0/3，不以 AI 自修或多视口重复执行冒充三条人类引导链。
-- 阶段 5A 实际提交 3b2e9f353f55c5d5a303afa8a445b42dbb0e4c94；阶段 5B 功能提交完成后在 evolution-log 登记真实哈希，不 amend/改写历史。
+- 阶段 5A 实际提交 3b2e9f353f55c5d5a303afa8a445b42dbb0e4c94；阶段 5B 实际功能提交 f4a43cac7346689d33307e1d8b96d7166979f222。已独立核对实际 Git blob 中 8 条原文 SHA256 全部一致，用户尾部空白保留；显式暂存清单与实际 33 文件一致，未匹配到所检查的常见凭证模式（不代表全面安全审计）。真实哈希由随后证据索引提交登记，不 amend/改写历史。
 - 持久化/安全导入导出与恢复、自由地图编辑、远程反馈、真机/人工测试、干净机器复现、最终视频/PDF 和 GitHub 评审访问仍未完成。未对外发送或发布，所有新增产物在 D 盘工作区，既有清理拒绝项未重试。
