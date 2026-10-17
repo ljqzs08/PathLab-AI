@@ -1,0 +1,2746 @@
+{
+  "schemaVersion": 1,
+  "algorithmVersion": "1.0.0",
+  "purpose": "developer_verification_only_not_learning_history",
+  "comparisonScope": "same_grid_unit_steps_not_runtime_benchmark",
+  "missions": [
+    {
+      "levelId": "L01",
+      "plannedAlgorithms": [
+        "bfs"
+      ],
+      "change": {
+        "type": "move_goal",
+        "cell": {
+          "x": 6,
+          "y": 4
+        }
+      },
+      "algorithmRoles": {
+        "bfs": "planned_learning_algorithm",
+        "astar": "verification_oracle_only"
+      },
+      "baseline": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 27,
+            "expandedCount": 22,
+            "selectionCount": 23,
+            "frontierPeak": 5,
+            "pathLength": 6
+          },
+          "eventCount": 204,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "1d09075b97054fce0c03beff7129b73f5a4cd14f4b0bb3c3d9ad42e51bb72333",
+          "checkpoints": [
+            {
+              "checkpointId": "L01-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L01-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 3
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 7
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 3
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 15,
+            "expandedCount": 6,
+            "selectionCount": 7,
+            "frontierPeak": 9,
+            "pathLength": 6
+          },
+          "eventCount": 60,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "cb173e639e6b846ac4a823914026f53f2e5a0cb1bd296c850dea3d1f6be9a710",
+          "checkpoints": [
+            {
+              "checkpointId": "L01-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 5,
+                  "f": 6,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            },
+            {
+              "checkpointId": "L01-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 3,
+                  "f": 6,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 3
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -16
+      },
+      "counterfactual": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 3
+            },
+            {
+              "x": 6,
+              "y": 4
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 31,
+            "expandedCount": 30,
+            "selectionCount": 31,
+            "frontierPeak": 5,
+            "pathLength": 8
+          },
+          "eventCount": 276,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "491dd68f0d6c2e6db6cffb03e0ae37c130d5013cc6e0a183651abd5fbec19a33",
+          "checkpoints": [
+            {
+              "checkpointId": "L01-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L01-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 3
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 7
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 3
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 3
+            },
+            {
+              "x": 6,
+              "y": 4
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 18,
+            "expandedCount": 8,
+            "selectionCount": 9,
+            "frontierPeak": 10,
+            "pathLength": 8
+          },
+          "eventCount": 78,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "2ee17425880ed9bb8b75aa39120dc9a9403a6978af1de3726da3149f47706b6e",
+          "checkpoints": [
+            {
+              "checkpointId": "L01-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            },
+            {
+              "checkpointId": "L01-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 3
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 8,
+                  "f": 10,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -22
+      }
+    },
+    {
+      "levelId": "L02",
+      "plannedAlgorithms": [
+        "bfs",
+        "astar"
+      ],
+      "change": {
+        "type": "block_cell",
+        "cell": {
+          "x": 4,
+          "y": 5
+        }
+      },
+      "algorithmRoles": {
+        "bfs": "planned_learning_algorithm",
+        "astar": "planned_learning_algorithm"
+      },
+      "baseline": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 4,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 3
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 1
+            },
+            {
+              "x": 6,
+              "y": 1
+            },
+            {
+              "x": 7,
+              "y": 1
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 56,
+            "expandedCount": 53,
+            "selectionCount": 54,
+            "frontierPeak": 7,
+            "pathLength": 14
+          },
+          "eventCount": 483,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "2880d38f5f675ee4781b5c5193161b5d8518cf9f8c823d1971617de898657e9e",
+          "checkpoints": [
+            {
+              "checkpointId": "L02-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L02-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 8
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 4,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 3
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 1
+            },
+            {
+              "x": 6,
+              "y": 1
+            },
+            {
+              "x": 7,
+              "y": 1
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 40,
+            "expandedCount": 27,
+            "selectionCount": 28,
+            "frontierPeak": 13,
+            "pathLength": 14
+          },
+          "eventCount": 249,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "8f0435231212fff07ab935fdce26d96f6e79b5b32c478168433c6344ec339de8",
+          "checkpoints": [
+            {
+              "checkpointId": "L02-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 5,
+                  "f": 6,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 2,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L02-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 0
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 8
+                },
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 9
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -26
+      },
+      "counterfactual": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 6
+            },
+            {
+              "x": 4,
+              "y": 6
+            },
+            {
+              "x": 5,
+              "y": 6
+            },
+            {
+              "x": 5,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 3
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 1
+            },
+            {
+              "x": 6,
+              "y": 1
+            },
+            {
+              "x": 7,
+              "y": 1
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 55,
+            "expandedCount": 52,
+            "selectionCount": 53,
+            "frontierPeak": 7,
+            "pathLength": 16
+          },
+          "eventCount": 474,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "327ae0043f06dc6ae9a2d2d97d29fd548d11fb1b4cf904eca233e199234f6cf6",
+          "checkpoints": [
+            {
+              "checkpointId": "L02-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L02-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 6
+                },
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 1
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 8
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 6
+            },
+            {
+              "x": 4,
+              "y": 6
+            },
+            {
+              "x": 5,
+              "y": 6
+            },
+            {
+              "x": 5,
+              "y": 5
+            },
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 3
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 1
+            },
+            {
+              "x": 6,
+              "y": 1
+            },
+            {
+              "x": 7,
+              "y": 1
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 43,
+            "expandedCount": 32,
+            "selectionCount": 33,
+            "frontierPeak": 11,
+            "pathLength": 16
+          },
+          "eventCount": 294,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "5213432c2b5bf13b897741da32828184db034b28d96fad5fb6fe19e5cadd7516",
+          "checkpoints": [
+            {
+              "checkpointId": "L02-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 5,
+                  "f": 6,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 2,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L02-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 0
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 8
+                },
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 9
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 6,
+                  "f": 8,
+                  "entrySequence": 7
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -20
+      }
+    },
+    {
+      "levelId": "L03",
+      "plannedAlgorithms": [
+        "astar"
+      ],
+      "change": {
+        "type": "block_cell",
+        "cell": {
+          "x": 4,
+          "y": 2
+        }
+      },
+      "algorithmRoles": {
+        "bfs": "verification_oracle_only",
+        "astar": "planned_learning_algorithm"
+      },
+      "baseline": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 2
+            },
+            {
+              "x": 8,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 26,
+            "expandedCount": 23,
+            "selectionCount": 24,
+            "frontierPeak": 3,
+            "pathLength": 8
+          },
+          "eventCount": 213,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "d6e071a0153d6568c01b459b3d0820618d75f4502c15201422c29996ffcf9c7c",
+          "checkpoints": [
+            {
+              "checkpointId": "L03-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L03-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 3
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 2
+            },
+            {
+              "x": 8,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 11,
+            "expandedCount": 8,
+            "selectionCount": 9,
+            "frontierPeak": 3,
+            "pathLength": 8
+          },
+          "eventCount": 78,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "4853f95328113f3bee1bf7c531714a0fc5f2944cb80cd1355060c9588d17d002",
+          "checkpoints": [
+            {
+              "checkpointId": "L03-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            },
+            {
+              "checkpointId": "L03-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -15
+      },
+      "counterfactual": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 1
+            },
+            {
+              "x": 8,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 27,
+            "expandedCount": 26,
+            "selectionCount": 27,
+            "frontierPeak": 3,
+            "pathLength": 12
+          },
+          "eventCount": 240,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "72bbd29cd5cdfd1d0680264be94deac6cae8705e87cd91544ef53c25214490b8",
+          "checkpoints": [
+            {
+              "checkpointId": "L03-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 1
+              }
+            },
+            {
+              "checkpointId": "L03-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 5
+                }
+              ],
+              "nextNode": {
+                "x": 0,
+                "y": 3
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 1
+            },
+            {
+              "x": 8,
+              "y": 2
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 18,
+            "expandedCount": 16,
+            "selectionCount": 17,
+            "frontierPeak": 3,
+            "pathLength": 12
+          },
+          "eventCount": 150,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "e4cbfce55c19352da82f6888f5c45655ea804fa13cab9a1dcc0ec4d8b8e4d472",
+          "checkpoints": [
+            {
+              "checkpointId": "L03-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 2
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 2
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 2
+              }
+            },
+            {
+              "checkpointId": "L03-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 2
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 5
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 3
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 3
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 2
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -10
+      }
+    },
+    {
+      "levelId": "L04",
+      "plannedAlgorithms": [
+        "bfs",
+        "astar"
+      ],
+      "change": {
+        "type": "move_goal",
+        "cell": {
+          "x": 8,
+          "y": 0
+        }
+      },
+      "algorithmRoles": {
+        "bfs": "planned_learning_algorithm",
+        "astar": "planned_learning_algorithm"
+      },
+      "baseline": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 1
+            },
+            {
+              "x": 8,
+              "y": 2
+            },
+            {
+              "x": 8,
+              "y": 3
+            },
+            {
+              "x": 8,
+              "y": 4
+            },
+            {
+              "x": 8,
+              "y": 5
+            },
+            {
+              "x": 8,
+              "y": 6
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 46,
+            "expandedCount": 45,
+            "selectionCount": 46,
+            "frontierPeak": 6,
+            "pathLength": 14
+          },
+          "eventCount": 411,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "5ca4ef3512bad29a4de0f6a1d9d5247073d32a52548bdb052895226779f5fb62",
+          "checkpoints": [
+            {
+              "checkpointId": "L04-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L04-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 2,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 1
+            },
+            {
+              "x": 8,
+              "y": 2
+            },
+            {
+              "x": 8,
+              "y": 3
+            },
+            {
+              "x": 8,
+              "y": 4
+            },
+            {
+              "x": 8,
+              "y": 5
+            },
+            {
+              "x": 8,
+              "y": 6
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 19,
+            "expandedCount": 14,
+            "selectionCount": 15,
+            "frontierPeak": 5,
+            "pathLength": 14
+          },
+          "eventCount": 132,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "6d98c298e5869a4bba80776d1f53e921c44af826da2410b32f9df0cf41283fa2",
+          "checkpoints": [
+            {
+              "checkpointId": "L04-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 13,
+                  "f": 14,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 13,
+                  "f": 14,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L04-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 0
+                  },
+                  "g": 3,
+                  "h": 11,
+                  "f": 14,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 13,
+                  "f": 14,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -31
+      },
+      "counterfactual": {
+        "bfs": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 29,
+            "expandedCount": 25,
+            "selectionCount": 26,
+            "frontierPeak": 6,
+            "pathLength": 8
+          },
+          "eventCount": 231,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "da917078afe18b4261a3a332f96982c0762f4ad58ddf05ae53bf19c916d5411b",
+          "checkpoints": [
+            {
+              "checkpointId": "L04-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 0,
+                  "f": 1,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L04-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 2,
+                    "y": 0
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 3
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 2
+                  },
+                  "g": 2,
+                  "h": 0,
+                  "f": 2,
+                  "entrySequence": 4
+                }
+              ],
+              "nextNode": {
+                "x": 2,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "astar": {
+          "status": "found",
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 4,
+              "y": 0
+            },
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 7,
+              "y": 0
+            },
+            {
+              "x": 8,
+              "y": 0
+            }
+          ],
+          "metrics": {
+            "discoveredCount": 11,
+            "expandedCount": 8,
+            "selectionCount": 9,
+            "frontierPeak": 3,
+            "pathLength": 8
+          },
+          "eventCount": 78,
+          "relaxationCount": 0,
+          "staleEntryCount": 0,
+          "traceSha256": "edb35221ae53fcdca18c790543d67f441a9d59de2a7cc7ec058dfa6bf85c7dc1",
+          "checkpoints": [
+            {
+              "checkpointId": "L04-P1",
+              "status": "available_in_trace",
+              "requestedOrdinal": 2,
+              "selectionOrdinal": 2,
+              "snapshotStep": 10,
+              "selectionStep": 11,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 1,
+                    "y": 0
+                  },
+                  "g": 1,
+                  "h": 7,
+                  "f": 8,
+                  "entrySequence": 1
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "checkpointId": "L04-P2",
+              "status": "available_in_trace",
+              "requestedOrdinal": 4,
+              "selectionOrdinal": 4,
+              "snapshotStep": 28,
+              "selectionStep": 29,
+              "candidates": [
+                {
+                  "node": {
+                    "x": 3,
+                    "y": 0
+                  },
+                  "g": 3,
+                  "h": 5,
+                  "f": 8,
+                  "entrySequence": 4
+                },
+                {
+                  "node": {
+                    "x": 0,
+                    "y": 1
+                  },
+                  "g": 1,
+                  "h": 9,
+                  "f": 10,
+                  "entrySequence": 2
+                }
+              ],
+              "nextNode": {
+                "x": 3,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "sameShortestLength": true,
+        "samePath": true,
+        "astarMinusBfsExpanded": -17
+      }
+    }
+  ]
+}

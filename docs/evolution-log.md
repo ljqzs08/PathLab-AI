@@ -7,7 +7,7 @@
 - Git 仓库根目录：本工作区；应用目录：`PathLab-AI/`，不另建嵌套仓库。
 - 分支为 `main`；文档/工具基线已真实提交：`30523e1622322bd44592b87f3c550cb8a88ef279`，只包含当时已有规格、规则与归档工具，不包含未来应用功能。没有远程仓库。
 - 2026-10-17 用户提供作者名称 `LJQZS08` 与邮箱；已仅在本仓库配置 `user.name` / `user.email`，并核对实际作者与提交者身份。保留仓库级 `user.useConfigOnly=true`；未更改全局配置、伪造身份或倒填时间。
-- 阶段 0 已冻结规格；阶段 1 应用壳继续保留；阶段 2（BFS）新增独立纯网格/BFS、可复现事件与四关反事实/教学证据并通过本机 AI 检查，尚未接入页面。A*、预测/Canvas、诊断、存储或真实 AI 未实现，不是最终参赛作品。E000—E003 最终答复均已补齐；E004 的本轮最终答复待下一轮补齐。
+- 阶段 0 已冻结规格；阶段 1 应用壳继续保留；阶段 2 的 BFS 与阶段 3 的 A*/二叉堆、可复现事件与四关对照已通过本机 AI 检查，尚未接入页面。预测/Canvas、诊断、存储或真实 AI 未实现，不是最终参赛作品。E000—E004 最终答复均已补齐；E005 的本轮最终答复待下一轮补齐。
 - 阶段 1 应用提交：`ca4aa7ddeba2c5dd44c6322c1af4f42975e48c26`；工具修复：`90e64270ae54efa26ab720b5ee2e521717b780a6`；阶段 1 证据索引：`f6994513aa362fd0152a92babdfdfb5275e78f60`。阶段 2 提交按 E004 登记，不改写历史。
 - 未创建或推送 GitHub 仓库，未更改 Public 或评审权限；这些操作需用户明确确认。
 
@@ -160,7 +160,7 @@ E004 开始时已用以下命令补齐 E003 的真实最终答复：
 | 用户真实 Prompt | 专家，请继续完成并丰富内容优化 |
 | 范围判定 | 按总控 Prompt 2 和上一轮约定，只做纯网格/BFS、路径回溯、确定性事件、四关核验和教学备稿；不提前接 A*/Canvas/预测门控/诊断/存储/远程 AI |
 | 上一轮补齐 | E003 刷新为 7 条可见消息，finalCaptured=True；逐条 textSha256 复算一致，不改写既有功能历史 |
-| 本轮 Prompt | prompts/sessions/2026-10-17-stage-2-bfs.md / .jsonl；5 条真实可见消息，finalCaptured=False，原文哈希一致；真实最终答复待落盘补齐，不归档内部交接摘要 |
+| 本轮 Prompt | prompts/sessions/2026-10-17-stage-2-bfs.md / .jsonl；本轮从原记录补齐为 6 条真实可见消息，finalCaptured=True，原文哈希一致；不归档内部交接摘要 |
 | 核心实现 | src/domain/grid.ts、algorithms/bfs.ts；运行时输入错误、上右下左、FIFO/入队发现、首次 parent、终点选中结束、事件与统计、输出副本 |
 | 测试与证据 | grid/bfs/bfs-missions 与独立同步松弛 oracle；inspect-bfs.mjs；docs/evidence/stage-2-bfs.json、stage-2-browser.json、两版 shell 的 check 原始输出；verification-stage-2-bfs.md |
 | 内容优化 | teaching-guide.md 的四关提问/提交后解释/反事实复盘/证据不足措辞；README、架构/关卡/事件/验收/评审证据及根规则当前状态 |
@@ -172,13 +172,30 @@ E004 开始时已用以下命令补齐 E003 的真实最终答复：
 | 清理 | 本轮无新检查图。旧 npm/tmp/三张图片的策略拒绝未重试；新生成 .last-run.json 的一次精确删除也被工具策略拒绝，保留于 D 盘忽略目录，不绕过或谎称已清空 |
 | Git 状态 | 功能已真实提交 `5c3eec624249ddfe149cf1768658ceabf62ef2ce`；消息 `feat: implement deterministic BFS and evidence-based mission lessons`；本索引在该功能提交之后以独立证据提交归档，不 amend 或哈希自引用 |
 | 远程 / 隐私 | 无 remote、未 push/发布/改权限；作者邮箱未来公开与赛事细则、视频/PDF规格仍需另行确认/核实 |
-| 核心链 | C01 已有 BFS 核心实现，仍缺真实用户追加约束/引导修复与本轮最终答复；C02/C03 未实现，完整链仍 0/3 |
+| 核心链 | C01 已有 BFS 核心实现，仍缺真实用户追加约束/引导修复，本轮最终答复已补齐；C02/C03 未实现，完整链仍 0/3 |
 | 下一阶段 | 本阶段收口后停止；下次按 Prompt 3 做 A*/确定性优先队列及 BFS 对照，再验证 A* 的 checkpoint；不自动接 UI 或 AI |
 
-下轮先用真实记录补齐 E004 最终答复：
+E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 
 ~~~powershell
 .\scripts\Export-PromptSnapshot.ps1 -PromptPrefix '专家，请继续完成并丰富内容优化' -SessionId '01a146d1-cc80-7722-a40f-28321250bcce' -OutputStem '2026-10-17-stage-2-bfs' -Refresh
 ~~~
 
 只有实际记录中的最后答复及必要附件齐全，才能将该轮对话标为已补齐；本阶段自动检查不能计作人工验收或完整用户引导链。
+
+
+## E005：自主连续迭代 — A* 与算法对照（2026-10-17）
+
+| 字段 | 真实记录 |
+|---|---|
+| 用户真实 Prompt | AI专家继续，有什么问题自行优化，必须确保我的作品优秀，你接下来一直工作就行，不用跟我一一确定 |
+| 执行边界 | 最新直接授权覆盖旧阶段停止约定；仍按阶段验收/留证/提交；公开、外发、权限与重要数据删除保留确认 |
+| 上轮补齐 | 阶段 2 快照 6 条，finalCaptured=True；保留真实最终答复和原文哈希，不改写既有历史 |
+| 本轮证据 | prompts/sessions/2026-10-17-autonomous-iterations.md / .jsonl，当前 3 条可见消息，finalCaptured=False；后续刷新追加真实消息 |
+| 范围与实现 | A*/二叉堆、固定 f/h/sequence、Manhattan、strict smaller-g parent 更新、lazy stale 跳过、有效唯一 open 快照；BFS/契约/固定地图不改 |
+| 验证 | 73 项，两版 shell type/lint/test 通过；128 种 3×3 与 16,384 种 4×4 障碍图；真实 relaxation/stale 地图；四关对照 3,651 事件/32 checkpoint 槽；生产 build 通过 |
+| 内容 | 四关对照 JSON、教师 A* 对照修订、事件具体顺序、验证报告；不把较少节点数当耗时或普遍优越性 |
+| 真实工具问题 | Tee-Object 相对输出路径受包装器 Push-Location 影响而指向应用子目录，不存在则失败；改为已验证的 D 盘绝对证据路径后重跑通过；AI 自查自修，不是用户引导缺陷 |
+| Git | 功能变更待按已核验范围提交，真实哈希随后登记，不 amend |
+| 下一里程碑 | 在当前连续授权下继续学习状态机、门控预测和回放，独立验证后再提交；不接远程 AI |
+| 核心链 | C01 算法部分已落地但缺真实用户引导修复；C02/C03 尚未实现；完整链 0/3；不捏造交互或验收 |

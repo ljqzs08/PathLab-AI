@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Local PathLab learning shell with independently verified deterministic BFS; no prediction UI or remote AI",
+  "description": "PathLab learning shell with independently verified deterministic BFS/A*; prediction UI and remote AI not yet connected",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -16,7 +16,8 @@
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check": "npm run typecheck && npm run lint && npm test",
     "test:browser": "playwright test",
-    "inspect:bfs": "node --experimental-strip-types scripts/inspect-bfs.mjs"
+    "inspect:bfs": "node --experimental-strip-types scripts/inspect-bfs.mjs",
+    "inspect:compare": "node --experimental-strip-types scripts/inspect-comparison.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

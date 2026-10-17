@@ -3,7 +3,7 @@
 ## 当前仓库事实
 
 Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
-阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2（BFS）实现独立纯搜索模块，但不接入页面，不等于已实现教育闭环。
+阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，但不接入页面，不等于已实现教育闭环。
 版本精确锁定于 package-lock.json；核验来源与 ESLint 兼容取舍见 dependencies-stage-1.md。
 
 ## 当前已落地
@@ -39,7 +39,7 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 
 ## 后续目录（规划，尚未实现）
 
-- src/domain/algorithms/{astar,priorityQueue}.ts：下一阶段的纯确定性 A*；grid.ts 与 bfs.ts 已落地，不列为未来功能。
+- src/domain/learning/session.ts：下一阶段的确定性学习编排与预测门控；grid.ts 与 bfs/astar/priorityQueue.ts 已落地，不列为未来功能。
 - src/domain/{events,levels}.ts：读取/校验规格，生成事件。
 - src/domain/learning/{diagnose,report}.ts：本地规则与复盘。
 - src/state/：受控状态转移、回放游标与预测门控。
@@ -53,7 +53,7 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 冻结输入（levelId、grid、start、goal、algorithm、algorithmVersion）→ 纯算法事件 → 会话编排增加 runId、时间与预测 → 受门控可见投影 → React/Canvas → 本地诊断 → 可选远程解释。
 Canvas 不持有业务真值，React 不直接实现搜索，AI 不输出或覆写路径。未来 UI 即便内部预先计算轨迹，也不得在候选检查器、时间线、屏幕阅读器或提示中暴露尚未揭示事件。
 
-## A* 更新语义（冻结，尚未实现）
+## A* 更新语义（阶段 3 已实现）
 
 二叉堆按 f、h、entrySequence 比较；更小 g 才更新 parent；lazy duplicate 的旧条目弹出时记录 stale_entry 并跳过。有效候选快照仅保留当前最优条目。
 邻居上、右、下、左；曼哈顿 h；单位非负步长；终点有效选中即结束。一致启发式下不重开已展开节点；更换启发式须先更新规格与测试。
@@ -65,4 +65,4 @@ Canvas 不持有业务真值，React 不直接实现搜索，AI 不输出或覆�
 
 ## 下一阶段边界
 
-阶段 1 收口后停止。下一阶段先做独立网格/BFS 与确定性、边界检查；图可达性/最短长度/预测点效果仍待算法实测，不从静态地图或 schema 结果推断。
+用户已授权自主连续推进；阶段 3 的 A*/二叉堆已验证。后续按独立里程碑接入学习状态机、门控预测和回放，再接 Canvas；仍不接远程 AI。

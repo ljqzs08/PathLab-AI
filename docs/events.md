@@ -51,3 +51,15 @@ schemaVersion 与 algorithmVersion 独立演进；旧导入版本不兼容时明
 8. discovered/selected/expanded 计数与 frontierPeak 由事件汇总。快照、回溯、最终路径和终止事件为独立数据副本；同一输入重复运行路径、全部事件与统计深度相等。
 
 以上顺序由固定 15 事件的 2×1 测试锁定，并以四关八次运行共 2,532 个实际算法事件逐项通过原 envelope schema（测试包装使用明确标注的合成 ID/时间，不冒充学习会话）。若未来改变纯算法发事件的顺序或含义，须同时处理 algorithmVersion 与对应测试/导入兼容性。
+
+## A* 1.0.0 的具体顺序（阶段 3 已实现）
+
+1. 初始发现/快照、有效选中后的快照、路径前缀、扩展/四邻居、扩展后快照、终止，与 BFS 的位置一致；数值为 g / Manhattan h / f=g+h。
+2. 真正的二叉最小堆按 f、h、entrySequence 依次比较；每次首次发现或更小 g 更新都取得新序号。邻居上右下左；相等 g 保留原 parent。
+3. 更小 g 替换 parent 与有效 open 记录，输出 node_relaxed（含 previousG），不重复 discovered。原堆项惰性保留，弹出时输出 stale_entry，不能变成 node_selected。
+4. 快照由有效 open 唯一节点生成并按 f/h/sequence 排序，不含过期堆项。排序只用于证据快照；堆选择不全量排序。frontierPeak 依有效快照汇总。
+5. 越界 → 障碍 → 已关闭或 g 不更优，依次拒绝；后者为 not_better。一致 Manhattan 下不重开已展开节点；不接受自定义启发式或权重。
+6. 终点有效选中即结束，不扩展终点；过期堆项不增加 selectionCount/expandedCount/discoveredCount。不可达与同端点语义保持不变。
+7. 固定 tiny 15 事件、真实更小 g/过期项地图、独立数组优先级回放、16,384 种 4×4 障碍最短距离共同核验；四关两算法共 3,651 事件通过原 schema。
+
+完整日志包含有效前沿排序及回溯副本，因此不把整次带证据运行的总成本宣称为单纯堆搜索复杂度。
