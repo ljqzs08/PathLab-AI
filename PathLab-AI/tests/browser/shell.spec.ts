@@ -2,16 +2,16 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import levels from '../../fixtures/levels.json' with { type: 'json' };
 
-test('renders an honest local shell without claiming algorithm or AI results', async ({ page }) => {
+test('renders an honest local workbench without claiming results before a run', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('PathLab AI · 路径学习实验室');
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('先解释下一步');
   await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
-  await expect(page.getByRole('button', { name: '开始预测' })).toBeDisabled();
-  await expect(page.getByText('仅展示原始关卡；没有计算路径、扩展节点或预测答案。')).toBeVisible();
+  await expect(page.getByRole('button', { name: '开始预测' })).toBeEnabled();
+  await expect(page.getByText('尚未运行；选择算法后先预测，再查看搜索证据。', { exact: false })).toBeVisible();
   await expect(page.getByText('远程 AI / 进度保存 / JSON 导入导出')).toBeVisible();
-  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('canvas')).toHaveCount(1);
 });
 
 test('all four mission buttons project the unchanged fixed fixture, never a generated path', async ({ page }) => {

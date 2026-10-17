@@ -3,7 +3,7 @@
 ## 当前仓库事实
 
 Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
-阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，但不接入页面，不等于已实现教育闭环。
+阶段 0 已保留规格、契约和固定 JSON；阶段 1 已建立 Next.js App Router + React + TypeScript 最小本地应用。阶段 2 的 BFS 与阶段 3 的 A*/二叉堆已实现并交叉核验，阶段 4 已通过私有学习会话接入页面；还未实现条件实验/诊断/报告，不等于完整教育闭环。
 版本精确锁定于 package-lock.json；核验来源与 ESLint 兼容取舍见 dependencies-stage-1.md。
 
 ## 当前已落地
@@ -11,7 +11,7 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 - docs/：产品、关卡、状态机、事件、AI 契约、验收、验证与演进证据。
 - PathLab-AI/contracts/、fixtures/：原有类型/schema/固定四关，未改动定义与地图。
 - src/app/{layout,page}.tsx、globals.css、icon.svg：服务端页面入口、中文元数据、系统字体、响应式框架与代码原生图标；无字体 CDN、图片下载或视觉依赖库。
-- src/components/PathLabShell.tsx：客户端仅保存 selectedId，切换简报与 CSS 静态地图；无搜索业务、计时、动画循环或存储。
+- src/components/PathLabShell.tsx：持有 selectedId 和稳定的每关 LearningSession；工作台只保存 view() 投影，组件不实现搜索；播放定时器在隐藏/切关/卸载时暂停与清理，无存储。
 - src/data/missions.ts：同一 JSON 数据源；JSON → LevelDefinition 类型断言的边界由现有 schema/跨字段测试检查，不宣称运行时已验证算法。
 - tests/contracts.test.mjs：22 项原有契约检查；只将未使用的测试夹具解构改为显式字段，保持测试语义。
 - tests/browser/shell.spec.ts：四视口生产页面检查，含固定格子逐项比对、键盘、溢出、axe、页面网络和存储边界。
@@ -31,27 +31,18 @@ Git 根目录为本工作区；应用子目录为 PathLab-AI；无嵌套 Git。
 - Node 原生去类型直接运行 .ts，使用显式扩展名与 allowImportingTsExtensions；tsc 独立检查，noEmit/strict 不变，无新增依赖。Node 22 的最低声明版本本轮未实测。
 - BFS 队列搜索本身按边/点处理；完整事件还复制前沿和回溯前缀，日志体积最坏可达平方级。不把带完整轨迹的总成本宣称为严格 O(V+E)，目前只支持至 25×25。
 
-## 页面数据流（维持阶段 1）
+## 页面数据流（阶段 4 已实现）
 
-固定关卡 JSON → missions 只读类型边界 → 所选关卡 ID → 简报、目标、静态地图投影。
-页面不存在搜索引擎调用、学习状态转移、生成事件、远程路由、localStorage 或模型 SDK。独立内核只由测试/开发者核验脚本调用，完整轨迹与答案 JSON 未导入客户端。
-地图只表达墙/路/S/G，不伪造搜索路径、待处理集合或指标；禁用按钮旁写明后续开放。
+固定 JSON → 稳定 LearningSession → 私有 BFS/A* 轨迹 → 检查点门控 → 已揭示 LearningView → LearningWorkbench / GridCanvas / EvidenceInspector。
+算法选项白名单、候选有效性、单次提交、播放停止与首次统计在领域层强制执行；完整轨迹不进入 React state、DOM 或序列化页面。Canvas 不持有真值，DOM 提供可键盘检查的同源格子/成本/路径与事件。
+只读投影包含当前 run/session ID、输入、已揭示事件/前沿/节点/前缀、提交后的反馈、首次记录与已完成运行；终止前不提供 outcome 或最终步数。
 
-## 后续目录（规划，尚未实现）
+## 后续模块（尚未实现）
 
-- src/domain/learning/session.ts：下一阶段的确定性学习编排与预测门控；grid.ts 与 bfs/astar/priorityQueue.ts 已落地，不列为未来功能。
-- src/domain/{events,levels}.ts：读取/校验规格，生成事件。
-- src/domain/learning/{diagnose,report}.ts：本地规则与复盘。
-- src/state/：受控状态转移、回放游标与预测门控。
-- src/components/：GridCanvas、PredictionPanel、EventTimeline、InspectorPanel、ReflectionReport。
-- src/ai/feedbackAdapter.ts 与可选服务端路由：受约束请求、校验、超时、回退。
-- src/storage/：版本化 localStorage、JSON 导入导出。
-- 后续按实际模块需要再决定是否引入 Vitest；当前契约使用 Node 内置测试，浏览器使用 Playwright + 已安装 Edge。
-
-## 完整数据流与隔离（规划）
-
-冻结输入（levelId、grid、start、goal、algorithm、algorithmVersion）→ 纯算法事件 → 会话编排增加 runId、时间与预测 → 受门控可见投影 → React/Canvas → 本地诊断 → 可选远程解释。
-Canvas 不持有业务真值，React 不直接实现搜索，AI 不输出或覆写路径。未来 UI 即便内部预先计算轨迹，也不得在候选检查器、时间线、屏幕阅读器或提示中暴露尚未揭示事件。
+- 条件实验与新 gridRevision/run；本地证据诊断及复盘报告。
+- 版本化本地存储、JSON 导入导出与安全恢复。
+- 可选远程反馈与严格校验/回退；不能输出或覆写算法路径。
+- 继续复用 Node 内置测试、Playwright 与已安装 Edge，不为目录规划引入状态框架或依赖。
 
 ## A* 更新语义（阶段 3 已实现）
 
@@ -65,4 +56,4 @@ Canvas 不持有业务真值，React 不直接实现搜索，AI 不输出或覆�
 
 ## 下一阶段边界
 
-用户已授权自主连续推进；阶段 3 的 A*/二叉堆已验证。后续按独立里程碑接入学习状态机、门控预测和回放，再接 Canvas；仍不接远程 AI。
+用户已授权自主连续推进；阶段 3 的 A*/二叉堆已验证。阶段 4 门控学习 UI 已验证，后续按独立里程碑接入条件实验、诊断与报告；仍不接远程 AI。

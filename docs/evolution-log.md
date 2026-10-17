@@ -207,6 +207,15 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 验证：typecheck/零告警 lint/83 项测试在 PowerShell 7 与 5.1 均通过；覆盖六种预定算法组合、128 小图及真实 envelope schema。UI 未改，浏览器未重跑。
 - 真实失败：先测试时缺模块是待实现红态；首次 schema 测试错误使用默认 draft-07 Ajv，编译原 2020-12 schema 抛错；改用项目既有 ajv/dist/2020.js 后回归通过。均为 AI 自查自修，不算用户实际引导链。
 - 证据：docs/evidence/stage-4-session-{red,check,check-ps51}.txt、stage-4-schema-validator-failure.txt；docs/verification-stage-4-learning.md。
-- Git：本里程碑按显式清单提交，真实哈希在下一有意义提交登记；不 amend。
+- Git：已真实提交 572e15d8205eb881563459a78804d23c872ed1d5；feat: gate learning predictions and replay behind private search traces；本索引随后登记，不 amend。
 - 下一步：将只读投影接到 DOM/Canvas、预测控件、证据检查器与时间线，重新构建并测试四视口；诊断/反事实/存储尚未实现。
 - 核心链：C02 已有领域门控实现但无真实用户引导修复；C01 同样缺该证据；C03 未实现，完整链仍 0/3。
+
+## E007：自主连续迭代 — Canvas 与门控学习工作台（2026-10-17）
+
+- 同一真实 Prompt；快照 5 条可见消息、finalCaptured=False，内部摘要不归档。
+- LearningWorkbench / GridCanvas / EvidenceInspector / learning.css：预测、规则提示、门控播放/单步、重置、键盘节点检查、已揭示前沿/路径/事件；shell 稳定保留每关会话，刷新丢失诚实提示。
+- 本机 AI 验证：两版 PowerShell typecheck/lint/83 项通过、生产 build；Edge 4 视口 × 18 = 72/72，零 skipped/unexpected/flaky，2026-10-17T01:56:47.062Z，105961.264 ms。证据 stage-4-ui-{check,check-ps51,build,browser}.txt / browser.json。
+- 未验证真实手机、人工 UX、屏幕阅读器实用性或 Canvas 像素/DPR；不承诺性能/FPS。条件实验/诊断/报告/存储/远程 AI 尚未实现。
+- 真实工具失误：PowerShell Write 别名优先于同名函数，文档批处理只打印没有保存；核对 Git 状态后改用明确 UTF-8 文件 API 实际写入并复核。非产品缺陷/用户引导。
+- Git：本里程碑按显式范围提交；哈希由下一有意义提交登记；没有远程发布。C01/C02 缺真实用户引导修复，C03 未实现；完整链仍 0/3。

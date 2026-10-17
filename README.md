@@ -2,7 +2,7 @@
 
 让算法初学者先预测，再通过确定性搜索与证据反馈理解“为什么这样走”。
 
-**当前状态：阶段 4A，独立 BFS/A*、二叉堆与门控学习会话已通过本机 AI 检查。** 页面仍是四个固定任务的简报与静态地图，领域层预测/回放已实现但尚未接 UI；Canvas、诊断、存储及真实 AI 未实现。当前不是可以直接提交的完整参赛作品。
+**当前状态：阶段 4B，真实 BFS/A* 预测、受门控回放、Canvas/DOM 与证据检查器已通过本机 AI 检查。** 四关可实际运行；完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。反事实、诊断/报告、持久存储及远程 AI 尚未实现，当前不是可直接提交的完整参赛作品。
 
 ## 启动与检查（Windows）
 
@@ -25,7 +25,7 @@
 ~~~
 
 - check = 生成 Next 路由类型 + TypeScript 严格检查 + ESLint 零告警 + 83 项测试（原 73、门控学习会话 10）。Node 原生去类型只负责执行；独立 tsc 仍负责类型检查，未增加测试依赖。
-- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。当前为 4 视口 × 7 项 = 28 项 AI 自动检查，不代表真实手机/人工验收。
+- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。当前为 4 视口 × 18 项 = 72 项 AI 自动检查，不代表真实手机/人工验收。
 - 浏览器检查之外的工程工具回归：
 
 ~~~powershell
@@ -49,7 +49,7 @@ node_modules、.next 与类型增量文件用于复用或本地预览，不入 G
 ## 仓库布局
 
 - PathLab-AI/src/app/：App Router 页面、元数据、系统字体与响应式 CSS。
-- PathLab-AI/src/components/PathLabShell.tsx：本轮唯一 UI 状态是所选关卡，不是学习状态机。
+- PathLab-AI/src/components/PathLabShell.tsx：保留每关当前页内会话；LearningWorkbench 连接预测/回放，GridCanvas 与 EvidenceInspector 仅消费受门控投影。
 - PathLab-AI/src/data/missions.ts：复用原有固定 JSON；不生成轨迹、统计或答案。
 - PathLab-AI/contracts/、fixtures/：阶段 0 契约与数据，继续保留。
 - PathLab-AI/src/domain/grid.ts、algorithms/{bfs,astar,priorityQueue}.ts：独立网格边界、FIFO BFS、f/h/sequence 二叉堆 A*、回溯、确定性事件与由事件汇总的统计；不依赖 React/DOM/AI。
@@ -61,17 +61,17 @@ node_modules、.next 与类型增量文件用于复用或本地预览，不入 G
 
 ## 真实性、隐私与证据
 
-页面只显示固定地图，不展示虚构路径、预测正确率或学习效果；“开始预测”明确禁用。刷新后回到 L01，不声称进度已保存。浏览器测试覆盖的默认页面操作没有外部请求或 local/sessionStorage 写入；这不是对所有系统进程或未来服务的网络保证。
+页面展示真实搜索已揭示轨迹、预测与统计，不伪造学习效果。重置与关卡切换保留当前页首次统计/完成摘要；刷新后丢失，明确不声称已持久保存。浏览器测试覆盖的默认页面操作没有外部请求或 local/sessionStorage 写入；这不是对所有系统进程或未来服务的网络保证。
 
 本仓库没有 GitHub remote；创建/推送/公开与评审授权需另行确认。作者邮箱可能随未来公开历史曝光，发布前复核。
-合成 fixtures 和工具回归不是用户对话、模型实测或人工验收。AI 自查不代替用户引导 Bug 修复；C01 已有 BFS/A* 核心实现，C02/C03 尚未实现，三条核心完整链仍为 **0/3**。
+合成 fixtures 和工具回归不是用户对话、模型实测或人工验收。AI 自查不代替用户引导 Bug 修复；C01 已有 BFS/A* 核心实现，C02 已有门控/界面，C03 尚未实现，三条核心完整链仍为 **0/3**。
 每轮最后答复尚未落盘时，标明待补齐，下一轮只读提取真实记录；不把内部交接摘要归档为最终答复。
 
 ## 阅读与下一阶段
 
-规格基线见 docs/product-spec.md；本轮算法结果见 docs/verification-stage-3-astar.md；教师内容见 docs/teaching-guide.md；剩余验收见 docs/acceptance.md；过程索引见 docs/evolution-log.md。
+规格基线见 docs/product-spec.md；算法结果见 docs/verification-stage-3-astar.md；当前学习 UI 结果见 docs/verification-stage-4-learning.md；教师内容见 docs/teaching-guide.md；剩余验收见 docs/acceptance.md；过程索引见 docs/evolution-log.md。
 
-## 可复核的关卡结果（BFS/A* 步数一致，尚未显示在学习页面）
+## 可复核的关卡结果（BFS/A* 步数一致，完成各运行后显示；条件修改 UI 尚未实现）
 
 | 关卡 | 原图最短步数 | 默认条件修改后 | 说明 |
 |---|---:|---:|---|
@@ -84,6 +84,6 @@ node_modules、.next 与类型增量文件用于复用或本地预览，不入 G
 .\scripts\Invoke-ProjectNpm.ps1 -NpmArguments @('run', '--silent', 'inspect:bfs')
 ~~~
 
-输出含答案，仅供开发者核验，不得提前显示给学习者。机器证据见 docs/evidence/stage-2-bfs.json；测试逐项核对其可复现性。16 个 checkpoint 槽在 BFS 轨迹中均有多候选，不代表预测交互已实现。
+输出含答案，仅供开发者核验，不得提前显示给学习者。机器证据见 docs/evidence/stage-2-bfs.json；测试逐项核对其可复现性。16 个 checkpoint 槽在 BFS 轨迹中均有多候选，门控交互另见阶段 4 实测，不将静态分析器当作学习记录。
 
-用户已授权自主连续推进，仍逐阶段验证与提交；下一里程碑为预测状态机、受门控回放与可访问界面，不接远程 AI。对照证据用 inspect:compare 生成，见 docs/evidence/stage-3-comparison.json；不把节点数差异叫作运行耗时差异。
+用户已授权自主连续推进，仍逐阶段验证与提交；下一里程碑为条件修改、新运行、证据诊断与复盘，不接远程 AI。对照证据用 inspect:compare 生成，见 docs/evidence/stage-3-comparison.json；不把节点数差异叫作运行耗时差异。

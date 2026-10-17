@@ -6,11 +6,11 @@
 |---|---|---|---|
 | 教育价值 | product-spec.md、levels.md、teaching-guide.md；四关实测反事实指标 | 真实用户完成预测与反事实的观察；不虚构效果百分比 | 规格 |
 | 意图控制 | 总控提示词、阶段边界、schema/类型、真实本轮 Prompt | 用户实际纠偏与完整修复链 | 进行中 |
-| 算法可信度 | 独立 grid/BFS、53 项测试含距离 oracle/边界/确定性；八次运行与 2,532 个事件；evidence/stage-2-bfs.json | A*、跨算法对照、学习状态接入 | BFS 本机 AI 检查 |
-| 高交互可视化 | 静态地图/简报、四视口浏览器检查、键盘与 axe 自动检查 | Canvas/预测/回放/受门控 DOM、真实手机与演示时间点 | 仅应用壳 |
+| 算法可信度 | BFS/A*、二叉堆、独立距离 oracle；四关对照 evidence/stage-3-comparison.json；私有门控 | 条件修改与新运行证据 | 阶段 4 本机 AI 检查 |
+| 高交互可视化 | 预测/回放、Canvas/受门控 DOM、检查器/事件；4 视口 72 项 Edge 与 axe 检查 | Canvas 像素对齐/DPR、真实手机/屏幕阅读器与演示时间点 | 学习工作台 |
 | AI 反馈可信度 | AI schema、引用合法性检查、失败策略规格 | 本地诊断实现、真实远程状态/回退测试 | 契约 |
-| 工程复现 | 精确锁文件、README、type/lint/53 测试/build、28 页面回归；verification-stage-2-bfs.md | 干净机器启动、跨浏览器与实际部署 | 阶段 2 本机 AI 检查 |
-| 演进完整性 | Git 历史、docs/evolution-log.md、可见 Prompt 快照；C01 已有 BFS 核心实现 | C01 用户真实引导修复；C02/C03 完整链、本轮最终答复、原始附件 | 0/3 完整链 |
+| 工程复现 | 精确锁文件、README、type/lint/83 测试/build、72 页面回归；verification-stage-4-learning.md | 干净机器启动、跨浏览器与实际部署 | 阶段 4 本机 AI 检查 |
+| 演进完整性 | Git 历史、docs/evolution-log.md、可见 Prompt 快照；C01 算法与 C02 门控/界面已实现 | C01 用户真实引导修复；C02 用户真实引导、C03 完整链、本轮最终答复、原始附件 | 0/3 完整链 |
 | 交付完整性 | acceptance.md 的待办 | 经授权的评审访问、视频/PDF/截止日核实 | 未开始 |
 
 阶段 0 合成测试数据仅用于校验，不列为真实交互证据。后续每行需定位到实际 commit、文件、测试输出与演示时间点；未知信息保留“未完成”，不填示例当事实。

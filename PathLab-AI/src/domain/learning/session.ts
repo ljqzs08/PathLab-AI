@@ -17,7 +17,7 @@ export interface CompletedRun {
   outcome: 'found' | 'unreachable'; metrics: Metrics; predictions: Prediction[]; events: SearchEvent[];
 }
 export interface LearningView {
-  state: LearningState; levelId: string; algorithm: Algorithm; runId: string | null; gridRevision: number;
+  state: LearningState; levelId: string; algorithm: Algorithm; runId: string | null; sessionId: string | null; gridRevision: number;
   input: SearchInput; events: SearchEvent[]; frontier: EventPayloadMap['frontier_snapshot']['nodes'];
   nodes: EventPayloadMap['node_discovered'][]; expanded: Candidate['node'][];
   current: EventPayloadMap['node_selected'] | null; path: Candidate['node'][]; pathFinal: boolean;
@@ -214,7 +214,7 @@ export class LearningSession {
       }
     }
     return copy({
-      state: this.#state, levelId: this.#level.id, algorithm: this.#algorithm, runId: this.#runId, gridRevision: this.#gridRevision,
+      state: this.#state, levelId: this.#level.id, algorithm: this.#algorithm, runId: this.#runId, sessionId: this.#sessionId || null, gridRevision: this.#gridRevision,
       input: this.#input, events: this.#events, frontier, nodes: [...nodes.values()], expanded, current, path, pathFinal,
       metrics, outcome, checkpoint: this.#checkpoint, lastPrediction: this.#predictions.at(-1) ?? null,
       predictions: this.#predictions, skippedCheckpoints: this.#skipped,

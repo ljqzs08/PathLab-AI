@@ -20,6 +20,17 @@
 
 ## 限制与证据状态
 
-本里程碑未改页面，未重跑 build/browser；上次构建属于阶段 3，28 项浏览器回归属于阶段 2。Canvas/学习 UI、反事实/报告、存储和远程 AI 仍未实现。所有产物在 D 盘工作区，无新包/浏览器/截图下载。既有被拒绝清理的缓存与图片未重试。
+阶段 4A 当时未改页面、未重跑 build/browser；上次构建属于阶段 3，28 项浏览器回归属于阶段 2。Canvas/学习 UI、反事实/报告、存储和远程 AI 仍未实现。所有产物在 D 盘工作区，无新包/浏览器/截图下载。既有被拒绝清理的缓存与图片未重试。
 
 Prompt 使用本轮 autonomous-iterations 原始消息快照，finalCaptured=False，最终答复落盘后下一轮补齐。完整用户引导 Bug 链仍 0/3；本地提交不等于 GitHub 已公开或评审可访问。
+
+## 阶段 4B：工作台接入（2026-10-17，AI 执行）
+
+新增 LearningWorkbench、GridCanvas、EvidenceInspector、独立 learning.css 与浏览器学习流程；shell 稳定保存每关控制器，view() 增加 sessionId。组件只消费揭示投影，不持有完整轨迹；无新增包或地图/契约改动。
+
+- 两版 shell：typecheck、ESLint 零告警、83/83 测试。生产 build 成功。原始输出 stage-4-ui-check.txt / check-ps51.txt / build.txt。
+- Edge：1440×1000、390×844、320×860、768×1024；18 项各 4 视口 = 72/72。startTime=2026-10-17T01:56:47.062Z，duration=105961.264 ms；skipped/unexpected/flaky 均 0。原始 browser.txt / browser.json。
+- 六种允许任务/算法从控件实际完成，指标与内核一致；提交前无最终步数/终止事件；单次提交/提示/第二预测点门控；播放暂停；首次统计与摘要在重置/切关后保留、刷新丢失。
+- 地图键盘/检查器、溢出、预测/暂停/终止状态 axe、测试流程无外部请求/存储写入。Canvas 无持续帧循环，尺寸与 DPR 上限由组件处理。
+- 尚未验证实际 Canvas 像素/DPR、真实手机/人工 UX/屏幕阅读器或跨浏览器 FPS。条件实验/诊断/报告/存储/远程 AI 待实现；不把完成运行叫作掌握。
+- 本轮未生成截图；旧被拒绝清理项未重试。Prompt 5 条真实可见消息、finalCaptured=False，完整用户引导链 0/3。

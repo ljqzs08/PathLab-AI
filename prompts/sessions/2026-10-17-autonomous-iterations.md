@@ -2,8 +2,8 @@
 
 - Session ID: `01a146d1-cc80-7722-a40f-28321250bcce`
 - Source file: `rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl` (read-only)
-- Captured at: 2026-10-17T09:46:53.8141846+08:00
-- Visible messages captured: 4
+- Captured at: 2026-10-17T10:01:04.7109784+08:00
+- Visible messages captured: 5
 - Final assistant answer captured: False
 - Incomplete source tail skipped: False
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -33,4 +33,11 @@ A* 已通过首轮验证，四关及默认条件变更的最短步数都与 BFS 
 Source line: 2238; Timestamp: 2026-10-17T01:41:32.317Z; Text SHA256: `451a71cd59fa4d09ad5b7c81016c59384b1a7365b90080efc265cd2a771b4156`
 
 算法内核已完成并保留了独立提交。接下来重点接通“先预测、再揭示、用事件回放解释”的真实交互，并测试是否存在跳过预测、提前泄露答案或重复作答抬高正确率的问题；这些比单纯增加页面装饰更关键。
+
+
+## 5. assistant / commentary
+
+Source line: 2405; Timestamp: 2026-10-17T01:59:22.105Z; Text SHA256: `260500b03a54191d66bb8321b87ce9c65b1e446c971914b452b4af0fa4c3bcb6`
+
+预测、单步/播放/暂停、Canvas 地图、节点检查器和事件时间线已经接通，四种视口的 72 项浏览器检查全部通过。重跑不会覆盖首次作答结果，播放也会在下一个预测点前停住。接下来继续做“改变条件—重新预测—对照证据—生成本地复盘”，让作品形成学习闭环；这些自动检查还不能替代真实手机和人工验收。
 
