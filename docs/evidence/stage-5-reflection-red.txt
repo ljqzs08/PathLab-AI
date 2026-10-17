@@ -1,0 +1,122 @@
+
+> pathlab-ai@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.mjs
+
+✔ Manhattan heuristic measures orthogonal distance, not cost already travelled (1.1891ms)
+✔ tiny A* trace pins event order, costs, sequence and goal-not-expanded (2.7624ms)
+✔ A* uses f/h/sequence and retains first parent for equal g (0.4842ms)
+✔ all 128 obstacle layouts agree with independent distance relaxation and BFS (22.6332ms)
+✔ 25 by 25 open grid has shortest 48 steps and goal is selected, never expanded (1.2786ms)
+✔ unreachable, same endpoints and input errors retain the shared runtime boundary (0.6941ms)
+✔ frozen input repeats exactly and all outputs are independent copies (3.6661ms)
+✔ all 16384 four-by-four layouts match an independent shortest-distance oracle (262.2426ms)
+✔ better g replaces parent without rediscovery and final route uses the improved parent (0.6981ms)
+✔ lazy stale entries produce skip evidence but never inflate unique frontier or selection metrics (0.4245ms)
+✔ L01 baseline and fixed counterfactual match pinned shortest distances and independent oracle (8.7024ms)
+✔ L02 baseline and fixed counterfactual match pinned shortest distances and independent oracle (8.8136ms)
+✔ L03 baseline and fixed counterfactual match pinned shortest distances and independent oracle (2.7394ms)
+✔ L04 baseline and fixed counterfactual match pinned shortest distances and independent oracle (4.1908ms)
+✔ every generated event in all eight mission runs fits the frozen envelope schema (92.0053ms)
+✔ all 16 fixture checkpoint slots have multiple candidates at requested effective selections 2 and 4 (0.2952ms)
+✔ checkpoint evidence defers single-candidate selections and consumes only one pending checkpoint per selection (0.2926ms)
+✔ same-start-goal and unreachable traces do not fabricate checkpoint submissions (0.2406ms)
+✔ L03 blockage is on the old route, invalidates it and changes the shortest route from 8 to 12 (0.3402ms)
+✔ evidence generation is deterministic nonmutating and contains no fabricated user history (3.8502ms)
+✔ checked-in BFS evidence is exactly reproducible from the current code and fixed inputs (0.8208ms)
+✔ pinned tiny BFS trace freezes event order costs sequence and terminal statistics (2.8372ms)
+✔ FIFO wins over goal proximity and finding a goal does not stop on enqueue (1.3507ms)
+✔ same-length paths use up right down left with first parent retained (0.773ms)
+✔ start equals goal selects once and never expands, with zero path length (0.3141ms)
+✔ unreachable is a valid run with empty path null length and an empty final frontier (0.3746ms)
+✔ cycles never enqueue discover select or expand a node twice (0.9763ms)
+✔ BFS rejects invalid input instead of returning unreachable (0.5853ms)
+✔ identical frozen input produces identical paths events and metrics over 20 runs (7.7346ms)
+✔ returned paths metrics and snapshots do not alias input or each other (0.6408ms)
+✔ all 128 obstacle layouts on 3x3 with fixed open endpoints agree with independent relaxation (14.8543ms)
+✔ maximum supported 25x25 open grid has a 48-step valid deterministic path (63.074ms)
+✔ all eight A* mission runs pass independent event replay and match BFS shortest steps (12.5393ms)
+✔ four fixed comparisons pin A* baseline and counterfactual expanded/discovered counts (0.2593ms)
+✔ all 3651 comparison events satisfy original strict schema using explicitly synthetic envelopes (95.7472ms)
+✔ all 16 A* checkpoint slots have more than one candidate and the first priority is the next selected node (0.2685ms)
+✔ comparison evidence is deterministic, nonmutating and labels verification-only algorithms (4.1216ms)
+✔ checked-in comparison report exactly reproduces from frozen fixtures and both algorithms (0.8949ms)
+✔ exactly four unique fixed missions validate structurally and relationally (3.0454ms)
+✔ reject unknown level fields (0.1847ms)
+✔ reject malformed map widths (0.7508ms)
+✔ reject blocked or out-of-bounds endpoints (0.2813ms)
+✔ reject blocking start and unchanged goal (0.2696ms)
+✔ checkpoints have stable increasing ordinals (0.1723ms)
+✔ state table has known states and unique state/action pairs (0.1544ms)
+✔ prediction submission cannot bypass directly to reflection/report (0.1131ms)
+✔ running has no map editing transition and restore pauses playback (0.1254ms)
+✔ valid event and signed out-of-bounds skip payload validate (5.8053ms)
+✔ wrong event payload and unknown event type are rejected (0.1951ms)
+✔ prediction requested cannot include the hidden actual answer (0.1624ms)
+✔ synthetic feedback request/response validate and evidence resolves (1.2109ms)
+✔ unknown output fields or fabricated error labels fail schema validation (0.1481ms)
+✔ nonexistent or mismatched evidence is rejected (0.7838ms)
+✔ remote feedback before prediction reveal is rejected (0.1875ms)
+✔ insufficient evidence may not assign an error (0.1898ms)
+✔ reject unrequested hint escalation and unsupported error inference (0.1449ms)
+✔ all sixteen event branches accept their payload and reject missing/unknown fields (1.9317ms)
+✔ schema rejects private identity in feedback request and invalid versions (0.1285ms)
+✔ evidence IDs are unique and correct count cannot exceed total (0.2491ms)
+✔ README preserves the executable PowerShell wrapper path (0.3748ms)
+✔ grid accepts read-only input without modifying it, including the 1x1 kernel case (2.1396ms)
+✔ four-neighbor order is up right down left and retains out-of-bounds coordinates (0.8645ms)
+✔ bounds and walls are separate from valid open cells (0.2702ms)
+✔ rejects missing or non-object search input and grid (0.5781ms)
+✔ rejects invalid or oversized dimensions before allocation (0.3688ms)
+✔ rejects bad row count width characters sparse rows and non-string rows (0.235ms)
+✔ rejects fractional non-finite or malformed endpoints with a stable code (1.3358ms)
+✔ out-of-bounds endpoints are input errors, not an unreachable search (0.2513ms)
+✔ blocked start goal or coincident blocked endpoints are rejected (0.2285ms)
+✔ briefing exposes no precomputed result; input and projections are independent copies (4.127ms)
+✔ every planned mission gates a genuine prefix, candidates are coordinate-ordered and no actual is exposed (149.9333ms)
+✔ invalid actions, invisible choices, repeated submits and invalid metadata cannot mutate a session (1.2491ms)
+✔ playback stops before the second checkpoint; each tick/step is one effective selection batch (1.6849ms)
+✔ three pre-answer hint levels reveal rules only and submission records actual support used (0.8168ms)
+✔ reset preserves completed summaries and first-attempt accuracy; later attempts cannot overwrite it (29.8681ms)
+✔ unreachable and equal endpoints finish without a fake prediction or bypass control (0.4269ms)
+✔ algorithm whitelist and active-run freeze are enforced, not just disabled UI buttons (0.4114ms)
+✔ same supplied actions and context are reproducible; controller does not require browser or clock (7.8113ms)
+✔ all 128 tiny fixed-endpoint layouts terminate and expose no future terminal facts at checkpoints (83.5056ms)
+✔ binary heap returns undefined while empty and is reusable after draining (1.3913ms)
+✔ fixed priority uses f first, h second, insertion sequence third (0.2491ms)
+✔ heap handles 625 immutable entries in reverse and alternating insertion orders (2.4403ms)
+✔ interleaved insertions preserve heap ordering (0.3897ms)
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\竞赛\PathLab-AI\src\domain\learning\diagnose.ts' imported from D:\竞赛\PathLab-AI\tests\reflection.test.mjs
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:865:10)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///D:/%E7%AB%9E%E8%B5%9B/PathLab-AI/src/domain/learning/diagnose.ts'
+}
+
+Node.js v24.19.0
+✖ tests\reflection.test.mjs (131.1384ms)
+ℹ tests 84
+ℹ suites 0
+ℹ pass 83
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 587.8243
+
+✖ failing tests:
+
+test at tests\reflection.test.mjs:1:1
+✖ tests\reflection.test.mjs (131.1384ms)
+  'test failed'

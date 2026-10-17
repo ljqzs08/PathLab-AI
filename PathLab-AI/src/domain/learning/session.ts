@@ -1,7 +1,9 @@
-import type { Algorithm, Candidate, DeterministicEvent, EventPayloadMap, LearningState, LevelDefinition, Metrics, SearchEvent } from '../../../contracts/types.ts';
+import type { Algorithm, Candidate, Counterfactual, DeterministicEvent, EventPayloadMap, LearningState, LevelDefinition, Metrics, SearchEvent } from '../../../contracts/types.ts';
 import { runBfs } from '../algorithms/bfs.ts';
 import { runAstar } from '../algorithms/astar.ts';
-import { assertSearchInput } from '../grid.ts';
+import { assertSearchInput, isWalkable } from '../grid.ts';
+import { buildLocalFeedback, type LocalFeedbackResult } from './diagnose.ts';
+import { compareRuns, createReflectionReport, type ReflectionReport, type RunComparison } from './report.ts';
 import type { SearchInput } from '../grid.ts';
 
 type Speed = 0.5 | 1 | 2 | 4;
@@ -11,7 +13,9 @@ export type LearningAction =
   | { type: 'start_valid_run'; runId: string; sessionId: string }
   | { type: 'submit_valid_choice'; selected: Candidate['node']; elapsedBucket: Prediction['elapsedBucket'] }
   | { type: 'request_hint' } | { type: 'step' } | { type: 'tick' }
-  | { type: 'play'; speed: Speed } | { type: 'pause' } | { type: 'reset_task' };
+  | { type: 'play'; speed: Speed } | { type: 'pause' } | { type: 'reset_task' }
+  | { type: 'experiment' } | { type: 'cancel' } | { type: 'apply_valid_change'; change: Counterfactual }
+  | { type: 'complete_reflection'; explanation: string; evidenceEventIds: string[] };
 export interface CompletedRun {
   runId: string; gridRevision: number; algorithm: Algorithm; input: SearchInput;
   outcome: 'found' | 'unreachable'; metrics: Metrics; predictions: Prediction[]; events: SearchEvent[];
@@ -25,6 +29,8 @@ export interface LearningView {
   checkpoint: { id: string; prompt: string; candidates: Candidate[]; hintLevel: 0 | 1 | 2 | 3; hint: string | null } | null;
   lastPrediction: Prediction | null; predictions: Prediction[]; skippedCheckpoints: string[];
   firstAttempts: { total: number; correct: number }; completedRuns: CompletedRun[]; speed: Speed;
+  conditionChange: EventPayloadMap['counterfactual_applied'] | null; comparison: RunComparison | null;
+  diagnosis: LocalFeedbackResult | null; report: ReflectionReport | null; reports: ReflectionReport[];
 }
 export class SessionError extends Error {
   constructor(message: string) { super(message); this.name = 'SessionError'; }
@@ -57,6 +63,10 @@ export class LearningSession {
   #attempts = new Map<string, number>();
   #usedIds = new Set<string>();
   #speed: Speed = 1;
+  #change: EventPayloadMap['counterfactual_applied'] | null = null;
+  #revisions = new Map<string, number>();
+  #report: ReflectionReport | null = null;
+  #reports: ReflectionReport[] = [];
 
   constructor(level: LevelDefinition, algorithm: Algorithm) {
     assertSearchInput(level);
@@ -64,10 +74,12 @@ export class LearningSession {
     this.#level = copy(level);
     this.#algorithm = algorithm;
     this.#input = copy({ grid: level.grid, start: level.start, goal: level.goal });
+    this.#revisions.set(JSON.stringify(this.#input), 0);
   }
 
   configureAlgorithm(algorithm: Algorithm): LearningView {
     this.#require('briefing');
+    if (this.#change && algorithm !== this.#algorithm) throw new SessionError('单一条件实验需保持同一算法；重置后可重新选择。');
     if (!this.#level.algorithms.includes(algorithm)) throw new SessionError('本关不支持该算法。');
     this.#algorithm = algorithm;
     return this.view();
@@ -78,13 +90,14 @@ export class LearningSession {
     switch (action.type) {
       case 'start_valid_run': {
         this.#require('briefing');
-        if (!action.runId?.trim() || !action.sessionId?.trim() || this.#usedIds.has(action.runId)) throw new SessionError('运行标识必须非空且不重复。');
+        if (typeof action.runId !== 'string' || typeof action.sessionId !== 'string' || !/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,89}$/.test(action.runId) || !/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,99}$/.test(action.sessionId) || this.#usedIds.has(action.runId)) throw new SessionError('运行标识必须合法、长度受限且不重复。');
         const result = (this.#algorithm === 'bfs' ? runBfs : runAstar)(this.#input);
         this.#trace = result.events;
         this.#runId = action.runId; this.#sessionId = action.sessionId;
         this.#usedIds.add(action.runId);
         this.#state = 'paused';
         this.#append({ type: 'mission_started', payload: { gridRevision: this.#gridRevision } }, at);
+        if (this.#change) this.#append({ type: 'counterfactual_applied', payload: this.#change }, at);
         this.#revealPrelude(at);
         // Initialization may reveal several batches only until a genuine first checkpoint exists.
         while (this.#state === 'paused' && !this.#gate(at)) this.#revealBatch(at);
@@ -134,14 +147,61 @@ export class LearningSession {
         this.#require(action.type === 'step' ? 'paused' : 'running');
         if (!this.#gate(at)) { this.#revealBatch(at); this.#gate(at); }
         break;
+      case 'experiment':
+        if (this.#state !== 'reflection' && this.#state !== 'report') throw new SessionError('完成当前搜索后才能改变条件。');
+        this.#state = 'counterfactual';
+        break;
+      case 'cancel':
+        this.#require('counterfactual'); this.#state = 'reflection';
+        break;
+      case 'apply_valid_change': {
+        this.#require('counterfactual');
+        const change = action.change;
+        if (!change || Object.keys(change).some(k => k !== 'type' && k !== 'cell') || !['block_cell', 'move_goal'].includes(change.type) || !change.cell || Object.keys(change.cell).some(k => k !== 'x' && k !== 'y') || !isWalkable(this.#input.grid, change.cell)) throw new SessionError('条件目标必须为地图内可通行的整数坐标。');
+        if (change.type === 'block_cell' && (key(change.cell) === key(this.#input.start) || key(change.cell) === key(this.#input.goal))) throw new SessionError('不能封锁起点或终点。');
+        if (change.type === 'move_goal' && key(change.cell) === key(this.#input.goal)) throw new SessionError('新终点必须不同于当前终点。');
+        const base = this.#completed.find(r => r.runId === this.#runId)!;
+        const input = copy(this.#input);
+        if (change.type === 'move_goal') Object.assign(input, { goal: copy(change.cell) });
+        else {
+          const rows = [...input.grid.rows], { x, y } = change.cell;
+          rows[y] = rows[y]!.slice(0, x) + '#' + rows[y]!.slice(x + 1);
+          Object.assign(input, { grid: { ...input.grid, rows } });
+        }
+        assertSearchInput(input);
+        // Identical maps share revision identity, including revisiting the fixture after reset.
+        const identity = JSON.stringify(input), revision = this.#revisions.get(identity) ?? this.#revisions.size;
+        this.#revisions.set(identity, revision);
+        this.#change = { previousRunId: base.runId, previousGridRevision: base.gridRevision, newGridRevision: revision, change: copy(change) };
+        this.#input = input; this.#gridRevision = revision;
+        this.#clearActive(); this.#state = 'briefing';
+        break;
+      }
+      case 'complete_reflection': {
+        this.#require('reflection');
+        const index = this.#completed.findIndex(r => r.runId === this.#runId), run = this.#completed[index]!;
+        let report: ReflectionReport;
+        try { report = createReflectionReport(run, this.#completed, action.explanation, action.evidenceEventIds); }
+        catch (cause) { throw new SessionError(cause instanceof Error ? cause.message : '复盘证据无效。'); }
+        this.#append({ type: 'diagnosis_generated', payload: { feedbackId: this.#runId + ':feedback', mode: 'local', evidenceEventIds: report.feedback.evidence.map(e => e.eventId) } }, at);
+        if (report.explanation) this.#append({ type: 'reflection_completed', payload: { explanation: report.explanation, evidenceEventIds: report.evidenceEventIds } }, at);
+        this.#completed[index] = { ...run, events: copy(this.#events) };
+        this.#report = report; this.#reports.push(copy(report)); this.#state = 'report';
+        break;
+      }
       case 'reset_task':
-        this.#state = 'briefing'; this.#trace = []; this.#cursor = 0; this.#events = [];
-        this.#runId = null; this.#checkpoint = null; this.#checkpointIndex = 0;
-        this.#predictions = []; this.#skipped = [];
+        this.#input = copy({ grid: this.#level.grid, start: this.#level.start, goal: this.#level.goal });
+        this.#gridRevision = 0; this.#change = null;
+        this.#clearActive(); this.#state = 'briefing';
         break;
       default: throw new SessionError('未列出的操作被拒绝。');
     }
     return this.view();
+  }
+
+  #clearActive(): void {
+    this.#trace = []; this.#cursor = 0; this.#events = []; this.#runId = null;
+    this.#checkpoint = null; this.#checkpointIndex = 0; this.#predictions = []; this.#skipped = []; this.#report = null;
   }
 
   #require(state: LearningState): void {
@@ -213,12 +273,15 @@ export class LearningSession {
         case 'run_finished': outcome = event.payload.status; metrics.pathLength = event.payload.metrics.pathLength; break;
       }
     }
+    const completed = this.#completed.find(r => r.runId === this.#runId);
     return copy({
       state: this.#state, levelId: this.#level.id, algorithm: this.#algorithm, runId: this.#runId, sessionId: this.#sessionId || null, gridRevision: this.#gridRevision,
       input: this.#input, events: this.#events, frontier, nodes: [...nodes.values()], expanded, current, path, pathFinal,
       metrics, outcome, checkpoint: this.#checkpoint, lastPrediction: this.#predictions.at(-1) ?? null,
       predictions: this.#predictions, skippedCheckpoints: this.#skipped,
       firstAttempts: { total: this.#first.size, correct: [...this.#first.values()].filter(Boolean).length }, completedRuns: this.#completed, speed: this.#speed,
+      conditionChange: this.#change, comparison: completed ? compareRuns(completed, this.#completed) : null,
+      diagnosis: completed ? buildLocalFeedback(completed) : null, report: this.#report, reports: this.#reports,
     });
   }
 }

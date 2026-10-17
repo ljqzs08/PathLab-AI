@@ -218,4 +218,15 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 本机 AI 验证：两版 PowerShell typecheck/lint/83 项通过、生产 build；Edge 4 视口 × 18 = 72/72，零 skipped/unexpected/flaky，2026-10-17T01:56:47.062Z，105961.264 ms。证据 stage-4-ui-{check,check-ps51,build,browser}.txt / browser.json。
 - 未验证真实手机、人工 UX、屏幕阅读器实用性或 Canvas 像素/DPR；不承诺性能/FPS。条件实验/诊断/报告/存储/远程 AI 尚未实现。
 - 真实工具失误：PowerShell Write 别名优先于同名函数，文档批处理只打印没有保存；核对 Git 状态后改用明确 UTF-8 文件 API 实际写入并复核。非产品缺陷/用户引导。
-- Git：本里程碑按显式范围提交；哈希由下一有意义提交登记；没有远程发布。C01/C02 缺真实用户引导修复，C03 未实现；完整链仍 0/3。
+- Git：已提交 fd82d8f1abdca0dbfcd54c8fbb1773e27467ca9c；feat: connect gated predictions Canvas and evidence replay to the learning workbench；没有远程发布。C01/C02 缺真实用户引导修复，C03 未实现；完整链仍 0/3。
+
+
+## E008：自主连续迭代 — 条件实验与本地证据报告领域层（2026-10-17）
+
+- C03；同一真实 Prompt，快照 6 条可见消息、finalCaptured=False。
+- session.ts 扩展 experiment/apply/cancel/report；diagnose.ts 确定性行为反馈与引用校验；report.ts 同算法单因素比较/解释证据；reflection.test.mjs 新增 9 项。
+- 验证：两版 PowerShell typecheck/零告警 lint/92 项全部通过；六种允许组合原图/新条件的真实内核结果与事件 schema、引用路径、不可达、首次记录和旧摘要保留。未重跑 build/browser，UI 仍属阶段 4B。
+- 真实自测：缺新模块的预期红态；初次实现后两项测试假设错误（把可通行格当墙、把“不能证明已经掌握”误作肯定承诺）。用实际 fixture 墙与明确否定断言修复，原失败保留 stage-5-domain-first-check.txt；非用户引导产品缺陷。
+- 关键决定：相同地图复用修订身份，重置恢复 fixture revision0，防止重复条件刷首次率；条件实验锁定算法；空解释可出部分报告，有解释必须引用真实当前事实。自由文本不入反馈事实请求，报告不声称掌握/解释正确。
+- 证据：verification-stage-5-reflection.md、evidence/stage-5-reflection-red.txt / stage-5-domain-{first-check,check,check-ps51}.txt。无新依赖/图片/浏览器下载。
+- Git：领域层验证后独立提交，哈希下个有意义里程碑登记；不改写历史/外发。C01/C02/C03 均仍缺用户实际引导修复，完整链 0/3。

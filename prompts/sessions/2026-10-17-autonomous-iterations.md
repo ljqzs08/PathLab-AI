@@ -2,8 +2,8 @@
 
 - Session ID: `01a146d1-cc80-7722-a40f-28321250bcce`
 - Source file: `rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl` (read-only)
-- Captured at: 2026-10-17T10:01:04.7109784+08:00
-- Visible messages captured: 5
+- Captured at: 2026-10-17T10:15:09.3413244+08:00
+- Visible messages captured: 6
 - Final assistant answer captured: False
 - Incomplete source tail skipped: False
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -41,3 +41,9 @@ Source line: 2405; Timestamp: 2026-10-17T01:59:22.105Z; Text SHA256: `260500b03a
 
 预测、单步/播放/暂停、Canvas 地图、节点检查器和事件时间线已经接通，四种视口的 72 项浏览器检查全部通过。重跑不会覆盖首次作答结果，播放也会在下一个预测点前停住。接下来继续做“改变条件—重新预测—对照证据—生成本地复盘”，让作品形成学习闭环；这些自动检查还不能替代真实手机和人工验收。
 
+
+## 6. assistant / commentary
+
+Source line: 2537; Timestamp: 2026-10-17T02:09:51.872Z; Text SHA256: `a53e6d2d9b526e6dd349b917882de7f190432b57ac86f25ca3a1471b8320d68b`
+
+现在最需要补强的不是继续堆页面效果，而是学习闭环：改一次条件，重新预测和运行，再用两次真实结果解释差异。我会把报告限定为可核对的观察，不把“预测正确”或“填完复盘”包装成已经掌握算法。
