@@ -1,0 +1,1402 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\竞赛\\PathLab-AI\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".cache/review-packet-check/playwright.config.ts"
+    ],
+    "configFile": "D:\\竞赛\\.cache\\review-packet-check\\playwright.config.ts",
+    "rootDir": "D:/竞赛/PathLab-AI/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/竞赛/.cache/review-packet-check/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "D:/竞赛/PathLab-AI/tests",
+        "testIgnore": [
+          "**/stage6-review.temp.spec.ts"
+        ],
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/review-packet-check/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "D:/竞赛/PathLab-AI/tests",
+        "testIgnore": [
+          "**/stage6-review.temp.spec.ts"
+        ],
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/review-packet-check/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-320",
+        "name": "narrow-320",
+        "testDir": "D:/竞赛/PathLab-AI/tests",
+        "testIgnore": [
+          "**/stage6-review.temp.spec.ts"
+        ],
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/竞赛/.cache/review-packet-check/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "D:/竞赛/PathLab-AI/tests",
+        "testIgnore": [
+          "**/stage6-review.temp.spec.ts"
+        ],
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\竞赛\\.cache\\review-packet-check\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop-1440",
+        "testDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "snapshotDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "testIgnore": "**/stage6-review.temp.spec.ts",
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000,
+        "use": {
+          "baseURL": "file:///D:/%E7%AB%9E%E8%B5%9B/.cache/review-packet-check/package/PathLab%20AI.html",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "locale": "zh-CN",
+          "reducedMotion": "reduce",
+          "colorScheme": "dark",
+          "offline": true,
+          "screenshot": "off",
+          "video": "off",
+          "trace": "off",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop-1440"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\竞赛\\.cache\\review-packet-check\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile-390",
+        "testDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "snapshotDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "testIgnore": "**/stage6-review.temp.spec.ts",
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000,
+        "use": {
+          "baseURL": "file:///D:/%E7%AB%9E%E8%B5%9B/.cache/review-packet-check/package/PathLab%20AI.html",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "locale": "zh-CN",
+          "reducedMotion": "reduce",
+          "colorScheme": "dark",
+          "offline": true,
+          "screenshot": "off",
+          "video": "off",
+          "trace": "off",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile-390"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\竞赛\\.cache\\review-packet-check\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-320",
+        "testDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "snapshotDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "testIgnore": "**/stage6-review.temp.spec.ts",
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000,
+        "use": {
+          "baseURL": "file:///D:/%E7%AB%9E%E8%B5%9B/.cache/review-packet-check/package/PathLab%20AI.html",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "locale": "zh-CN",
+          "reducedMotion": "reduce",
+          "colorScheme": "dark",
+          "offline": true,
+          "screenshot": "off",
+          "video": "off",
+          "trace": "off",
+          "viewport": {
+            "width": 320,
+            "height": 860
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-320"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\竞赛\\.cache\\review-packet-check\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "tablet-768",
+        "testDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "snapshotDir": "D:\\竞赛\\PathLab-AI\\tests",
+        "testIgnore": "**/stage6-review.temp.spec.ts",
+        "testMatch": [
+          "**/standalone/*.spec.ts",
+          "**/browser/playground.spec.ts"
+        ],
+        "timeout": 30000,
+        "use": {
+          "baseURL": "file:///D:/%E7%AB%9E%E8%B5%9B/.cache/review-packet-check/package/PathLab%20AI.html",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "locale": "zh-CN",
+          "reducedMotion": "reduce",
+          "colorScheme": "dark",
+          "offline": true,
+          "screenshot": "off",
+          "video": "off",
+          "trace": "off",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "tablet-768"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../../docs/evidence/review-packet-browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser\\playground.spec.ts",
+      "file": "browser/playground.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "playground protects endpoints, supports keyboard paint and undo without touching missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:33.311Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-9978e268144cb04ca1a5",
+          "file": "browser/playground.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "predicted comparison uses actual metrics and replay clears on map changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:34.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-fe387a07b13cec5cc30a",
+          "file": "browser/playground.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unreachable map has no fake path and presets are undoable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:36.001Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-f50c4351d8acf4d03274",
+          "file": "browser/playground.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "playground replay reaches exact path, retries and survives reduced motion access checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:36.543Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-e9498150febe5cebe2e2",
+          "file": "browser/playground.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "playground never saves practice into learning progress or generates network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 433,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:39.750Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-f6ea8469cf42f6cbe4e2",
+          "file": "browser/playground.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "playground protects endpoints, supports keyboard paint and undo without touching missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:43.568Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-b21d11086b93d40bd0af",
+          "file": "browser/playground.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "predicted comparison uses actual metrics and replay clears on map changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:44.333Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-cf16c1021f4c9f65b4a3",
+          "file": "browser/playground.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unreachable map has no fake path and presets are undoable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:46.214Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-2cae163241bc7bfe36a3",
+          "file": "browser/playground.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "playground replay reaches exact path, retries and survives reduced motion access checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3181,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:46.814Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-892d39c50d5827533f40",
+          "file": "browser/playground.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "playground never saves practice into learning progress or generates network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 457,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:50.002Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-d9a918d0cc0713104a0e",
+          "file": "browser/playground.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "playground protects endpoints, supports keyboard paint and undo without touching missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 571,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:54.128Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-e643ccb51fdcad89a88d",
+          "file": "browser/playground.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "predicted comparison uses actual metrics and replay clears on map changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:54.936Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-5bdd2743532b8d5a7396",
+          "file": "browser/playground.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unreachable map has no fake path and presets are undoable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:56.775Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-56e17b1e1037ccd9013d",
+          "file": "browser/playground.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "playground replay reaches exact path, retries and survives reduced motion access checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3096,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:57.407Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-a487fbc5d4f7da7b4b52",
+          "file": "browser/playground.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "playground never saves practice into learning progress or generates network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 459,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:00.512Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-3c76205b3ad0b3c2d2af",
+          "file": "browser/playground.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "playground protects endpoints, supports keyboard paint and undo without touching missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:04.439Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-3855e5f225cd655bf36e",
+          "file": "browser/playground.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "predicted comparison uses actual metrics and replay clears on map changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1906,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:05.222Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-1b7275f88a2e31d9196c",
+          "file": "browser/playground.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unreachable map has no fake path and presets are undoable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:07.138Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-ca204bfb7aab5b769c3c",
+          "file": "browser/playground.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "playground replay reaches exact path, retries and survives reduced motion access checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:07.755Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-7f67ccf8886370ee72ca",
+          "file": "browser/playground.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "playground never saves practice into learning progress or generates network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:10.915Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4a12ea30490071f216d-000ed37dafedbbe7953e",
+          "file": "browser/playground.spec.ts",
+          "line": 106,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "standalone\\offline.spec.ts",
+      "file": "standalone/offline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "the complete single HTML loads offline without localhost, network or sidecar resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 574,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:40.201Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-ff9d5592f91626fdf303",
+          "file": "standalone/offline.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "copying only the HTML to a different folder still runs a complete A-star learning session offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1584,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:40.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-89ecad47ac7f46534b1b",
+          "file": "standalone/offline.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "a denied file-origin storage accessor does not prevent prediction or JSON backup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:42.379Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-aedccc640406c2745c61",
+          "file": "standalone/offline.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "the complete single HTML loads offline without localhost, network or sidecar resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:50.487Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-fd2eb0ce41dc21675638",
+          "file": "standalone/offline.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "copying only the HTML to a different folder still runs a complete A-star learning session offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1927,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:51.030Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-a83b6eb2c6f4f69d2ee1",
+          "file": "standalone/offline.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "a denied file-origin storage accessor does not prevent prediction or JSON backup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:32:52.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-a4c866ceba7f2d91cc06",
+          "file": "standalone/offline.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "the complete single HTML loads offline without localhost, network or sidecar resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:01.000Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-b738e8be173721cc00b6",
+          "file": "standalone/offline.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "copying only the HTML to a different folder still runs a complete A-star learning session offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1689,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:01.557Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-deeb6b6f9f84ba93aefe",
+          "file": "standalone/offline.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "a denied file-origin storage accessor does not prevent prediction or JSON backup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-320",
+              "projectName": "narrow-320",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:03.251Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-491a557d0ddce25fe2fe",
+          "file": "standalone/offline.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "the complete single HTML loads offline without localhost, network or sidecar resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 447,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:11.410Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-a43ca0b45490a4a9f8fa",
+          "file": "standalone/offline.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "copying only the HTML to a different folder still runs a complete A-star learning session offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:11.863Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-e429792e40874d931daa",
+          "file": "standalone/offline.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "a denied file-origin storage accessor does not prevent prediction or JSON backup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 626,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T07:33:13.530Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad15e25233feefc8f934-4161f6adf9edbea21adf",
+          "file": "standalone/offline.spec.ts",
+          "line": 68,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T07:32:32.930Z",
+    "duration": 41536.175,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

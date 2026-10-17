@@ -1,0 +1,14 @@
+import base from '../../PathLab-AI/playwright.standalone.config.ts';
+import { pathToFileURL, fileURLToPath } from 'node:url';
+
+const html = fileURLToPath(new URL('./package/PathLab AI.html', import.meta.url));
+process.env.PATHLAB_TEST_URL = pathToFileURL(html).href;
+export default {
+  ...base,
+  testDir: '../../PathLab-AI/tests',
+  testMatch: ['**/standalone/*.spec.ts', '**/browser/playground.spec.ts'],
+  outputDir: './results',
+  reporter: [['list'], ['json', { outputFile: '../../docs/evidence/review-packet-browser.json' }]],
+  use: { ...base.use, baseURL: process.env.PATHLAB_TEST_URL },
+};
+

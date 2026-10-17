@@ -15,3 +15,6 @@ prompts/private/
 .evidence-checks/
 # Next.js regenerates ambient types before the standalone type check
 **/next-env.d.ts
+
+# Locally generated review packets (not uploaded)
+/delivery/

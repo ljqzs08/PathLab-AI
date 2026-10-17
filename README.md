@@ -143,3 +143,13 @@ JSON 先校验再确认导入；恢复不自动播放、不跳预测。1 MiB、4
 6. 报告显示过程齐备/部分记录，文本不执行。留意上方本机存档状态；可导出 JSON、预览并确认导入。刷新恢复时播放暂停，未答预测仍需作答。未保存草稿不会恢复，不以浏览器存档替代独立备份。
 
 Canvas 检查覆盖四视口、DPR1/2/3、响应式重绘、前沿/路径几何与当前节点真实像素；阶段 6 另查看了桌面与手机视口截图，但临时图清理被拒绝；不代表已做真实手机、屏幕阅读器或人工体验验收。
+
+## 评审与真实设备收尾（E016）
+
+- 三条核心功能与真实用户纠正的可核对导航：`docs/core-chain-evidence.md`。
+- 发布授权、原始历史隐私与实际访问验证：`docs/review/access-checklist.md`；当前没有远程仓库/评审 URL。
+- 本地体验包：根目录执行 `scripts/Build-ReviewPacket.ps1`，输出到 `delivery/`，不上传且不包含原始会话。
+- 人工/真机记录：`docs/review/manual-acceptance.md`（全部待测，不是已通过清单）。
+- 包校验：`scripts/Test-ReviewPacket.ps1 -Path <实际 ZIP 路径>`；工具合成回归：`scripts/Test-ReviewPacketTools.ps1`。
+- 证据原文只读复核：`scripts/Test-CoreEvidence.ps1`，需要本机原始会话文件；这不是公开体验包的运行前置条件。
+- 本轮验证范围与剩余边界：`docs/verification-review-readiness.md`。

@@ -1,0 +1,30 @@
+(node:22932) Warning: Failed to load the ES module: D:\竞赛\PathLab-AI\playwright.standalone.config.ts. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+D:\竞赛\PathLab-AI\playwright.standalone.config.ts:9
+process.env.PATHLAB_TEST_URL = (0, _nodeUrl.pathToFileURL)((0, _nodeUrl.fileURLToPath)(new URL('./PathLab AI.html', import.meta.url))).href;
+                                                                                                                           ^^^^
+
+SyntaxError: Cannot use 'import.meta' outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1804:18)
+    at Module._compile (node:internal/modules/cjs/loader:1846:20)
+    at Object.<anonymous> (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1617:12)
+    at require (node:internal/modules/helpers:153:16)
+    at Object.<anonymous> (D:\竞赛\.cache\review-packet-check\playwright.config.ts:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object.<anonymous> (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1617:12)
+    at require (node:internal/modules/helpers:153:16)
+    at requireOrImport (D:\竞赛\PathLab-AI\node_modules\playwright\lib\common\index.js:1098:18)
+    at loadUserConfig (D:\竞赛\PathLab-AI\node_modules\playwright\lib\common\index.js:1283:52)
+    at loadConfig (D:\竞赛\PathLab-AI\node_modules\playwright\lib\common\index.js:1290:28)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.loadConfigFromFile (D:\竞赛\PathLab-AI\node_modules\playwright\lib\common\index.js:1508:10)
+    at runTests (D:\竞赛\PathLab-AI\node_modules\playwright\lib\cli\testActions.js:44:18)
+    at _Command.<anonymous> (D:\竞赛\PathLab-AI\node_modules\playwright\lib\program.js:55:7)

@@ -1,0 +1,45 @@
+
+Running 32 tests using 1 worker
+
+(node:19328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop-1440] › PathLab-AI\tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (609ms)
+  ok  2 [desktop-1440] › PathLab-AI\tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.8s)
+  ok  3 [desktop-1440] › PathLab-AI\tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (535ms)
+  ok  4 [desktop-1440] › PathLab-AI\tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.2s)
+  ok  5 [desktop-1440] › PathLab-AI\tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (433ms)
+  ok  6 [desktop-1440] › PathLab-AI\tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (574ms)
+  ok  7 [desktop-1440] › PathLab-AI\tests\standalone\offline.spec.ts:39:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.6s)
+  ok  8 [desktop-1440] › PathLab-AI\tests\standalone\offline.spec.ts:68:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (591ms)
+(node:26732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [mobile-390] › PathLab-AI\tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (535ms)
+  ok 10 [mobile-390] › PathLab-AI\tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.9s)
+  ok 11 [mobile-390] › PathLab-AI\tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (595ms)
+  ok 12 [mobile-390] › PathLab-AI\tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.2s)
+  ok 13 [mobile-390] › PathLab-AI\tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (457ms)
+  ok 14 [mobile-390] › PathLab-AI\tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (528ms)
+  ok 15 [mobile-390] › PathLab-AI\tests\standalone\offline.spec.ts:39:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.9s)
+  ok 16 [mobile-390] › PathLab-AI\tests\standalone\offline.spec.ts:68:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (595ms)
+(node:28876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 17 [narrow-320] › PathLab-AI\tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (571ms)
+  ok 18 [narrow-320] › PathLab-AI\tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.8s)
+  ok 19 [narrow-320] › PathLab-AI\tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (627ms)
+  ok 20 [narrow-320] › PathLab-AI\tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.1s)
+  ok 21 [narrow-320] › PathLab-AI\tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (459ms)
+  ok 22 [narrow-320] › PathLab-AI\tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (551ms)
+  ok 23 [narrow-320] › PathLab-AI\tests\standalone\offline.spec.ts:39:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.7s)
+  ok 24 [narrow-320] › PathLab-AI\tests\standalone\offline.spec.ts:68:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (613ms)
+(node:22960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 25 [tablet-768] › PathLab-AI\tests\browser\playground.spec.ts:8:1 › playground protects endpoints, supports keyboard paint and undo without touching missions (548ms)
+  ok 26 [tablet-768] › PathLab-AI\tests\browser\playground.spec.ts:36:1 › predicted comparison uses actual metrics and replay clears on map changes (1.9s)
+  ok 27 [tablet-768] › PathLab-AI\tests\browser\playground.spec.ts:65:1 › unreachable map has no fake path and presets are undoable (609ms)
+  ok 28 [tablet-768] › PathLab-AI\tests\browser\playground.spec.ts:85:1 › playground replay reaches exact path, retries and survives reduced motion access checks (3.2s)
+  ok 29 [tablet-768] › PathLab-AI\tests\browser\playground.spec.ts:106:1 › playground never saves practice into learning progress or generates network requests (469ms)
+  ok 30 [tablet-768] › PathLab-AI\tests\standalone\offline.spec.ts:13:1 › the complete single HTML loads offline without localhost, network or sidecar resources (447ms)
+  ok 31 [tablet-768] › PathLab-AI\tests\standalone\offline.spec.ts:39:1 › copying only the HTML to a different folder still runs a complete A-star learning session offline (1.7s)
+  ok 32 [tablet-768] › PathLab-AI\tests\standalone\offline.spec.ts:68:1 › a denied file-origin storage accessor does not prevent prediction or JSON backup (626ms)
+
+  32 passed (41.5s)

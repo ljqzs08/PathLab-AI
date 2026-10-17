@@ -1,0 +1,18 @@
+{
+  "executor": "AI synthetic tool checks",
+  "shell": "7.6.5",
+  "passed": 11,
+  "checks": [
+    "build and verify allowlisted packet",
+    "output stays in workspace delivery",
+    "does not claim publishing or human acceptance",
+    "read-only verification preserves packet bytes",
+    "reject wrong expected HTML hash",
+    "reject tampered bytes",
+    "reject non-allowlisted entry",
+    "reject missing entry",
+    "reject duplicate archive names",
+    "reject path traversal entry without extraction",
+    "reject invalid manifest JSON"
+  ]
+}
