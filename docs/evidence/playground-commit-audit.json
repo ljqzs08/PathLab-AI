@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-17",
+  "executor": "AI",
+  "featureCommit": "c51334d001fb7a5a3c67e0f072f09e4eff392a6a",
+  "committedFiles": [
+    "AGENTS.md",
+    "PathLab-AI/PathLab AI.html",
+    "PathLab-AI/src/app/globals.css",
+    "PathLab-AI/src/components/PathLabShell.tsx",
+    "PathLab-AI/src/components/Playground.tsx",
+    "PathLab-AI/src/domain/playground.ts",
+    "PathLab-AI/tests/browser/playground.spec.ts",
+    "PathLab-AI/tests/browser/shell.spec.ts",
+    "PathLab-AI/tests/playground.test.mjs",
+    "README.md",
+    "docs/evidence/playground-before.txt",
+    "docs/evidence/playground-check.txt",
+    "docs/evidence/playground-command-mismatch.md",
+    "docs/evidence/playground-first-browser.txt",
+    "docs/evidence/playground-first-offline.json",
+    "docs/evidence/playground-first-offline.txt",
+    "docs/evidence/playground-html-build.txt",
+    "docs/evidence/playground-http-final.json",
+    "docs/evidence/playground-http-final.txt",
+    "docs/evidence/playground-offline-final.json",
+    "docs/evidence/playground-offline-final.txt",
+    "docs/evidence/playground-production-build.txt",
+    "docs/evidence/playground-user-status.png",
+    "docs/evolution-log.md",
+    "docs/playground-spec.md",
+    "docs/progress-status.md",
+    "docs/verification-playground.md",
+    "docs/verification-standalone-html.md",
+    "prompts/sessions/2026-10-17-free-playground.jsonl",
+    "prompts/sessions/2026-10-17-free-playground.md",
+    "prompts/sessions/2026-10-17-motion-interaction.jsonl",
+    "prompts/sessions/2026-10-17-motion-interaction.md"
+  ],
+  "html": {
+    "path": "PathLab-AI/PathLab AI.html",
+    "bytes": 346204,
+    "sha256": "5e5f14e830e51324b5a6fa5e2b3a90c24ab486d64cb367db0919a17c2f8cd437"
+  },
+  "nodeTests": 108,
+  "http": {
+    "startTime": "2026-10-17T07:02:04.733Z",
+    "duration": 320359.338,
+    "expected": 212,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "offline": {
+    "startTime": "2026-10-17T07:02:04.722Z",
+    "duration": 325731.123,
+    "expected": 224,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "prompts": [
+    {
+      "path": "prompts/sessions/2026-10-17-motion-interaction.jsonl",
+      "messages": 5,
+      "finalCaptured": true,
+      "textHashesChecked": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-free-playground.jsonl",
+      "messages": 3,
+      "finalCaptured": false,
+      "textHashesChecked": true
+    }
+  ],
+  "temporaryReviewImagesRemoved": true,
+  "newTestResidueRemoved": true,
+  "limitations": [
+    "Practice map is memory-only and excluded from learning backup",
+    "Remote AI not connected; no credentials used or data sent",
+    "AI local Edge checks are not human or physical-device acceptance",
+    "Current final response awaits next-turn extraction",
+    "Old denied cleanup residue remains untracked",
+    "No GitHub push, publication or permissions changed"
+  ]
+}

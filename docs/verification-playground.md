@@ -37,3 +37,5 @@ node node_modules/@playwright/test/cli.js test --grep-invert 'temporary stage 6 
 - Git 提交及核对见 evolution-log.md E015。无推送、远程发布或权限变更。
 - 原先被拒绝清理的错误草稿/临时图不重试、不入库；既有 stage6-review.temp.spec.ts、status-update 快照不夹带。本轮用完的专项/回归临时缓存已按已核对的确切路径清理，原始日志/JSON 留在 evidence；依赖/构建产物保留用于复用。
 - 可复用：自由练习与正式关卡隔离；每次改图失效旧预测/结果；真实计数不等同计时；正常/减少动态回归分别保留；npm 的额外参数必须显式数组传递。
+
+提交后核对：功能提交 c51334d001fb7a5a3c67e0f072f09e4eff392a6a（32 个文件）；见 evidence/playground-commit-audit.json。源码/测试/说明文档 diff-check 通过；全量检查仅报告保留原样的工具诊断/生产日志空白，不改写原始输出。暂存凭证模式扫描未命中（不是全面安全审计）。两个选定 Prompt 快照共 8 条原文文本哈希均核对一致。
