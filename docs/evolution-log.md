@@ -255,3 +255,12 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - 证据：verification-stage-6-storage.md、storage.md、progress-status.md 与 evidence/stage-6-* 原始失败/通过日志；不只保留成功结果。JSON 是受限操作备份，不是签名、防作弊或人类证据；跨页检测不保证原子锁；上限 1 MiB/4096 总命令/每关 32 次开始运行，超限不静默裁剪。
 - 清理：本轮查看的两张临时图与 stage6-review.temp.spec.ts 删除被工具策略拒绝，仍在 D 盘、未重试绕过；临时 spec 未提交，产品回归明确 grep-invert 排除。既有拒绝清理项仍未动，不报告工作区全清空。
 - Git：已真实本地提交 14a7881b685cb420de27ae45dd98d8ea3e0554b2；feat: persist learning progress with validated backups and safe recovery。45 个显式暂存文件与预期清单一致，临时 spec 未入库。源码/文档严格 diff 检查通过；原始证据只豁免行末空白和末尾空行以保留原文，未匹配所检查的常见凭证模式（非全面安全认证）。提交内七轮 39 条 Prompt 的 SHA256 与已核对原文再次一致，见 stage-6-commit-audit.json。本证据索引正常独立提交，不 amend/rebase/squash/发布；无 GitHub remote，未外发/改权限；三核心模块的人类引导 Bug 修复材料仍待据实补全。
+
+## E011：独立 HTML 网站入口（2026-10-17）
+
+- 真实请求：把现有网站地址单独放入 PathLab-AI 文件夹并制作 HTML。只做本机入口整理，不改算法、Next 应用或启动流程，不扩张为离线应用/公网发布。
+- 产物：`PathLab-AI/打开 PathLab AI.html`；单文件、UTF-8、中文语义结构与内联样式，无脚本、无外部资源。明确展示 `http://127.0.0.1:3000`，原生链接打开工作台，并给出既有 PowerShell 启动命令；不自动启动服务、不误报连接状态。README 启动部分增加入口位置。
+- 本机 AI 验证：`Invoke-WebRequest` 确认现有 3000 服务 HTTP 200/PathLab 标题；在应用目录以 `node --input-type=module -` 使用已有 Playwright、Edge 与 axe 运行入口专项检查。1440/768/390/320 四视口均无页面横向溢出，Tab 焦点和可见焦点框通过，axe 违规 0，入口无外部 HTTP 请求和脚本错误，点击后真实进入 PathLab 应用且 HTTP 200。结果见 `docs/evidence/local-html-entry-check.json`。未重跑完整产品构建/回归，未进行人工、真机或像素视觉验收；本轮未生成截图、下载或新依赖。
+- Prompt：补齐上一地址咨询快照 `2026-10-17-preview-address`（2 条，含实际最终答复）；上一证据纠正轮 `2026-10-17-evidence-correction-storage` 已补为 6 条且含最终答复。本轮 `2026-10-17-local-html-entry` 为 2 条真实可见消息，最终答复尚待落盘，下轮必须追加；三个快照共 10 条的原文来源行、角色与 SHA256 均已核对一致。均位于 `prompts/sessions/`，不把内部摘要导出或补写成真实对话。
+- Git：本条与 HTML、README、专项验证结果和上述真实 Prompt 更新一起作有意义的本地细粒度提交；提交后真实哈希在下一次演进索引登记，不改写历史。显式暂存，既有 `tests/browser/stage6-review.temp.spec.ts` 不纳入；无 remote/外发/权限更改。
+- 边界：HTML 是可独立打开的访问卡片，完整网站仍需本机 3000 服务；不计为新的 C01/C02/C03 核心迭代，三核心功能已有实现，真实人类引导 Bug 修复材料仍待据实补全。

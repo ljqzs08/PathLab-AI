@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>打开 PathLab AI · 本机入口</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 48px 20px;
+      background: #0b111b;
+      color: #edf3fc;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    main { width: 100%; max-width: 720px; margin: 0 auto; }
+    .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #6edfc0;
+      border-radius: 14px;
+      color: #6edfc0;
+      font-weight: 800;
+    }
+    .brand p { margin: 0; color: #b4c3d8; font-size: 14px; }
+    .card {
+      padding: clamp(24px, 6vw, 48px);
+      border: 1px solid #33445c;
+      border-radius: 24px;
+      background: #131e2e;
+    }
+    .eyebrow { margin: 0 0 12px; color: #82e4c8; font-size: 14px; font-weight: 700; }
+    h1 { margin: 0 0 16px; font-size: clamp(28px, 5vw, 40px); line-height: 1.25; }
+    .intro { margin: 0 0 28px; color: #bdcbe0; }
+    .address { margin: 0 0 24px; }
+    .address span { display: block; margin-bottom: 6px; color: #bdcbe0; font-size: 14px; }
+    a { color: #82e4c8; text-underline-offset: 4px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid #fbd878; outline-offset: 6px; }
+    .address a { font-family: Consolas, monospace; font-size: clamp(16px, 4vw, 21px); }
+    .launch {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 50px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: #82e4c8;
+      color: #10231d;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .launch:hover { background: #a0f0d9; }
+    .notice { margin: 24px 0 0; color: #bdcbe0; font-size: 14px; }
+    .help { margin-top: 28px; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    .help p, footer { color: #bdcbe0; font-size: 14px; }
+    pre {
+      padding: 18px;
+      border: 1px solid #33445c;
+      border-radius: 12px;
+      background: #0b111b;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+    }
+    code { font-family: Consolas, "Microsoft YaHei", monospace; }
+    footer { margin-top: 24px; }
+    @media (max-width: 400px) {
+      body { padding: 24px 14px; }
+      .launch { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="brand">
+      <span class="mark" aria-hidden="true">PL</span>
+      <div><strong>PathLab AI</strong><p>路径学习实验室</p></div>
+    </header>
+    <section class="card" aria-labelledby="entry-title">
+      <p class="eyebrow">本机网站入口</p>
+      <h1 id="entry-title">从这里，打开你的实验室。</h1>
+      <p class="intro">先预测，再探索。进入 BFS / A* 路径学习与实验工作台。</p>
+      <p class="address"><span>网站地址</span><a href="http://127.0.0.1:3000/">http://127.0.0.1:3000</a></p>
+      <a class="launch" href="http://127.0.0.1:3000/">打开 PathLab AI <span aria-hidden="true">↗</span></a>
+      <p class="notice">这是本机预览地址，只能在运行项目的这台电脑上使用。请先启动网站服务，再点击打开；本入口不会自动启动服务。</p>
+    </section>
+    <section class="help" aria-labelledby="help-title">
+      <h2 id="help-title">如果打不开</h2>
+      <p>在 Windows PowerShell 中依次执行以下两行，并保持该终端运行：</p>
+      <pre><code>Set-Location 'D:\竞赛'
+.\scripts\Invoke-ProjectNpm.ps1 run dev</code></pre>
+      <p>终端显示服务已就绪后，再点击上方按钮。若提示端口被占用或显示其他地址，请先检查终端信息；此文件固定指向 3000 端口。</p>
+    </section>
+    <footer>此 HTML 文件仅保存访问入口，不包含完整应用，也不是离线可运行的比赛作品。</footer>
+  </main>
+</body>
+</html>

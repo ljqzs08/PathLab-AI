@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-10-17T04:48:10.454Z",
+  "executor": "AI automated checks; not human or real-device acceptance",
+  "file": "D:\\竞赛\\PathLab-AI\\打开 PathLab AI.html",
+  "standaloneEntryOnly": true,
+  "staticChecks": "doctype, Chinese language, UTF-8, no scripts or external assets passed",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "entryTitle": "打开 PathLab AI · 本机入口",
+      "layout": {
+        "scrollWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "keyboardFocus": "passed with visible outline",
+      "accessibilityViolations": 0,
+      "externalEntryRequests": 0,
+      "entryJavaScriptErrors": 0,
+      "navigationStatus": 200,
+      "applicationTitle": "PathLab AI · 路径学习实验室"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "entryTitle": "打开 PathLab AI · 本机入口",
+      "layout": {
+        "scrollWidth": 768,
+        "viewportWidth": 768
+      },
+      "keyboardFocus": "passed with visible outline",
+      "accessibilityViolations": 0,
+      "externalEntryRequests": 0,
+      "entryJavaScriptErrors": 0,
+      "navigationStatus": 200,
+      "applicationTitle": "PathLab AI · 路径学习实验室"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "entryTitle": "打开 PathLab AI · 本机入口",
+      "layout": {
+        "scrollWidth": 390,
+        "viewportWidth": 390
+      },
+      "keyboardFocus": "passed with visible outline",
+      "accessibilityViolations": 0,
+      "externalEntryRequests": 0,
+      "entryJavaScriptErrors": 0,
+      "navigationStatus": 200,
+      "applicationTitle": "PathLab AI · 路径学习实验室"
+    },
+    {
+      "width": 320,
+      "height": 860,
+      "entryTitle": "打开 PathLab AI · 本机入口",
+      "layout": {
+        "scrollWidth": 320,
+        "viewportWidth": 320
+      },
+      "keyboardFocus": "passed with visible outline",
+      "accessibilityViolations": 0,
+      "externalEntryRequests": 0,
+      "entryJavaScriptErrors": 0,
+      "navigationStatus": 200,
+      "applicationTitle": "PathLab AI · 路径学习实验室"
+    }
+  ],
+  "result": "passed"
+}
