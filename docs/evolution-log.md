@@ -254,4 +254,4 @@ E005 开始时已用下列命令从真实记录补齐 E004 最终答复：
 - Prompt：上一自主轮补齐 9 条可见消息和真实最终答复。七轮快照共 39 条原文 SHA256 与只读来源行逐一一致，当前轮最终答复仍缺；stage-6-prompt-integrity.json 留存核对。共享同一自主轮的 C01/C02/C03 不冒充三次独立人类追问。
 - 证据：verification-stage-6-storage.md、storage.md、progress-status.md 与 evidence/stage-6-* 原始失败/通过日志；不只保留成功结果。JSON 是受限操作备份，不是签名、防作弊或人类证据；跨页检测不保证原子锁；上限 1 MiB/4096 总命令/每关 32 次开始运行，超限不静默裁剪。
 - 清理：本轮查看的两张临时图与 stage6-review.temp.spec.ts 删除被工具策略拒绝，仍在 D 盘、未重试绕过；临时 spec 未提交，产品回归明确 grep-invert 排除。既有拒绝清理项仍未动，不报告工作区全清空。
-- Git：本轮实现/验证/Prompt 与相关文档以正常本地功能提交归档；真实哈希在随后证据索引登记，不 amend/rebase/squash/发布。没有 GitHub remote，未授权外发/改权限；C01/C02/C03 的人类引导 Bug 修复材料仍待据实补全。
+- Git：已真实本地提交 14a7881b685cb420de27ae45dd98d8ea3e0554b2；feat: persist learning progress with validated backups and safe recovery。45 个显式暂存文件与预期清单一致，临时 spec 未入库。源码/文档严格 diff 检查通过；原始证据只豁免行末空白和末尾空行以保留原文，未匹配所检查的常见凭证模式（非全面安全认证）。提交内七轮 39 条 Prompt 的 SHA256 与已核对原文再次一致，见 stage-6-commit-audit.json。本证据索引正常独立提交，不 amend/rebase/squash/发布；无 GitHub remote，未外发/改权限；三核心模块的人类引导 Bug 修复材料仍待据实补全。

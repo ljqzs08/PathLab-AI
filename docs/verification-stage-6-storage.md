@@ -63,3 +63,5 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Invoke-Project
 ## Prompt 与 Git
 
 本轮原文见 prompts/sessions/2026-10-17-evidence-correction-storage.{md,jsonl}；上一自主迭代轮已补齐实际最终答复（9 条可见消息）。本轮最终答复待后续只读捕获，不把此验证报告或内部摘要冒充对话。模块通过后进行正常本地提交，真实哈希在 evolution-log.md 登记，不重写既有提交。
+
+已完成本地功能提交：14a7881b685cb420de27ae45dd98d8ea3e0554b2；45 个相关文件显式暂存。提交内 39 条真实 Prompt 哈希再次核对通过，记录在 evidence/stage-6-commit-audit.json；源码/文档严格差异检查，原始日志的行末空白与末尾空行保持不变。该哈希由后续独立证据索引提交记录，不改写功能提交。

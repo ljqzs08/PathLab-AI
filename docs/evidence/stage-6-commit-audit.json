@@ -1,0 +1,65 @@
+{
+  "auditedAt": "2026-10-17T12:35:35.0076718+08:00",
+  "featureCommit": "14a7881b685cb420de27ae45dd98d8ea3e0554b2",
+  "featureSubject": "feat: persist learning progress with validated backups and safe recovery",
+  "featureFiles": 45,
+  "branch": "main",
+  "author": "LJQZS08 <1400989449@qq.com>",
+  "gitRemoteCount": 0,
+  "committedPromptMessages": 39,
+  "snapshots": [
+    {
+      "path": "prompts/sessions/2026-10-17-autonomous-iterations.jsonl",
+      "messages": 9,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-codex-policy-update.jsonl",
+      "messages": 4,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-evidence-correction-storage.jsonl",
+      "messages": 5,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-git-author-baseline.jsonl",
+      "messages": 3,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-stage-0.jsonl",
+      "messages": 5,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-stage-1.jsonl",
+      "messages": 7,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-stage-2-bfs.jsonl",
+      "messages": 6,
+      "committedHashAndOriginalText": "match working snapshots already checked against source lines"
+    }
+  ],
+  "reviewScope": "strict source/docs diff check; raw evidence trailing spaces and terminal blank lines intentionally retained; selected credential patterns had no matches, not full security audit",
+  "temporaryReviewSpecCommitted": false,
+  "cleanupRefusedArtifacts": [
+    {
+      "path": "D:\\竞赛\\.cache\\review-stage-6\\desktop-1440.png",
+      "exists": true
+    },
+    {
+      "path": "D:\\竞赛\\.cache\\review-stage-6\\mobile-390.png",
+      "exists": true
+    },
+    {
+      "path": "D:\\竞赛\\PathLab-AI\\tests\\browser\\stage6-review.temp.spec.ts",
+      "exists": true
+    }
+  ],
+  "publication": "not performed",
+  "currentFinal": "pending next actual source capture"
+}
