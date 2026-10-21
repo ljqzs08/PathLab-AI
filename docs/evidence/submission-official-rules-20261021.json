@@ -1,0 +1,107 @@
+{
+  "checkedDate": "2026-10-21",
+  "sourceUrl": "https://www.boxuegu.com/matchTrack/detail/?id=10039",
+  "pageTitle": "传智杯大赛-赛道详情",
+  "track": "AI创新应用挑战赛",
+  "method": "AI read-only live in-app browser: rendered accessibility tree and document.body.innerText; public page, no login",
+  "scope": "Paraphrased requirements and structured values, not full-page export or submission-portal inspection",
+  "provincial": {
+    "workSubmissionDateShown": "2026-11-18",
+    "submissionEntrance": "Paid entrant personal-center registered event; account not inspected",
+    "hourNotSpecified": true,
+    "guidanceSubmissionDateShown": "2026-11-18",
+    "registrationDeadline": "2026-11-18"
+  },
+  "national": {
+    "registrationRangeShown": [
+      "2026-12-10",
+      "2026-12-21"
+    ],
+    "workSubmissionDateShown": "2026-12-27"
+  },
+  "requirements": [
+    {
+      "section": "参赛规则1-2",
+      "summary": "Full-time registered graduate/undergraduate/vocational student; individual event; correct school-based group",
+      "type": "Eligibility"
+    },
+    {
+      "section": "命题范围2",
+      "summary": "Original work solving a real problem; no repackaging an existing open-source project; development trace reproducible",
+      "type": "Originality"
+    },
+    {
+      "section": "省赛/国赛2.1",
+      "history": "Fine-grained, retained history; no complete app as a single initial commit",
+      "visibility": "Public or reviewers granted access",
+      "platforms": [
+        "GitHub",
+        "Gitee"
+      ],
+      "type": "Repository"
+    },
+    {
+      "type": "PromptEvidence",
+      "fallback": "Screenshots or recording if export unavailable",
+      "section": "省赛/国赛2.1",
+      "contents": [
+        "User prompts",
+        "AI change suggestions",
+        "How the entrant guided bug fixes"
+      ],
+      "interpretationLimit": "Page does not separately mandate exactly one user bug report per C01/C02/C03; current local per-chain checklist is stricter",
+      "minimumCoreIterations": 3
+    },
+    {
+      "section": "省赛/国赛2.2",
+      "contents": [
+        "README environment setup",
+        "Dependency list",
+        "Environment variable template"
+      ],
+      "guideMinutes": 10,
+      "type": "Reproduction"
+    },
+    {
+      "type": "Video",
+      "minimumAICollaborationMinutes": 2,
+      "section": "省赛/国赛2.3",
+      "container": "MP4",
+      "resolution": "1080p",
+      "durationMinutes": [
+        5,
+        8
+      ]
+    },
+    {
+      "section": "省赛/国赛2.3",
+      "format": "PDF",
+      "topics": [
+        "Intent and context / prompt strategy",
+        "Architecture and constraints on AI-generated code",
+        "Reproducibility argument"
+      ],
+      "maximumPages": 30,
+      "type": "TechnicalDocument"
+    }
+  ],
+  "scoring": {
+    "engineering": 15,
+    "processAndReproducibility": 25,
+    "experience": 15,
+    "usefulness": 25,
+    "innovationAndIntentControl": 20
+  },
+  "notExplicitRequirements": [
+    "Product must call a paid or remote LLM API",
+    "Mandatory public live deployment",
+    "Specified count of device tests",
+    "Mandatory streaming LLM output",
+    "Every core chain must contain an independent new user-reported defect"
+  ],
+  "ambiguities": [
+    "Page calls November 18 both submission and guidance deadline; says guidance feedback expected late January 2027 and later final provincial entry, while national deadline shown December 27 2026. Do not infer an extension or exact cutoff hour; confirm with personal-center notice or organizer.",
+    "Recommended-topic table includes mismatched/repeated descriptions; use topic 5 actual description, not unrelated labels."
+  ],
+  "noAccountOrExternalStateChanged": true
+}

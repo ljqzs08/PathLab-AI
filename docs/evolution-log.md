@@ -337,3 +337,14 @@ E017 实现提交已核对：`d235a91514014c10ed4ef68733f8a6536080c0ee`，43 个
 - Git：验证通过后显式暂存本轮文件并创建本地功能提交；实际哈希由后续证据索引提交登记，不自引用、不 amend、不发布，既有无关临时 spec/错误 Prompt/旧状态快照不入库。
 
 E018 实现提交已核对：`ce566d2c877f11f1ae29a8fb7e7a98ff517c477a`，44 个显式暂存文件；两版 shell 类型/lint/155 Node、HTTP 260/260、离线 272/272 均通过。复核与本轮冗余检查缓存清理记录见 `docs/evidence/web-review-commit-audit.json`。不含私有配置、旧临时 spec、错误草稿或旧状态快照；无推送。本段与复核另作证据索引提交，不自引用、不 amend；当前最终答复仍待下轮真实捕获。
+
+## E019：官方赛道规则与提交缺口审计
+
+- 用户真实要求：按 `https://www.boxuegu.com/matchTrack/detail/?id=10039` 规则检查当前还有哪些缺项；Prompt `prompts/sessions/2026-10-21-official-submission-audit.{md,jsonl}`，本轮最后答复待下一轮补齐。E018 最终答复已从真实来源补齐为 5 条可见消息。
+- 实际核对：AI 只读浏览公开页面的渲染文本，确认托管平台/历史、三次核心完整 Prompt、10 分钟指南、MP4 5–8 分钟/1080p/至少 2 分钟协同、PDF 至多 30 页及主题；保留官网阶段/时间表述待澄清，不编造截止时刻或登录个人中心。
+- 本地事实：审计前 30 个细粒度提交，初始基线不含完整应用；remote 为 0；工作区排除生成/依赖后未找到视频/PDF；旧体验 ZIP 哈希与当前 HTML 不同。重跑 Test-CoreEvidence：11 份/45 条真实可见消息、9 个祖先提交核对通过；不是原生完整导出，也不证明逐链人类 Bug 材料齐备。
+- 产出：`docs/submission-audit-2026-10-21.md`、三份 `docs/evidence/submission-*-20261021.json`；README 增加可演练但未计时的 10 分钟源码流程与模板说明，纠正过期测试数量；progress-status/core-chain/access-checklist/AGENTS 同步官方核验状态。
+- 边界：C01/C02/C03 实现状态保持，未改源码/HTML/私有配置，未重新执行功能回归，未登录/付款/上传/发布。官网不统一强制接 API、公开网站部署或固定次数真机；不把内部各链独立新报 Bug 口径冒充原文。账号资格/缴费/组别、最终阶段通知、材料实际上传回执仍未知。
+- Git：文档和真实 Prompt/证据验证后显式暂存提交；真实哈希随后登记，不自引用、不 amend，不夹带旧临时 spec/错误草稿。
+
+E019 收尾验证（AI，2026-10-21）：两版 PowerShell Prompt 工具各 19/19，E018 与本轮新增快照原文/角色/哈希匹配；14 项文档证据一致性检查通过，结果存于 docs/evidence/submission-validation-20261021.json。本轮最终答复尚待写入后补齐。

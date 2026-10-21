@@ -1,0 +1,76 @@
+{
+  "checkedDate": "2026-10-21",
+  "executor": "AI read-only repository/material audit, not a fresh application test or human acceptance",
+  "baselineCommit": "83a6dee0593cebb1404e6e1777f9e045b9dca21b",
+  "root": "D:\\竞赛",
+  "remoteCount": 0,
+  "commitCount": 30,
+  "initialCommit": "30523e1622322bd44592b87f3c550cb8a88ef279",
+  "initialCommitFiles": [
+    ".gitignore",
+    "AGENTS.md",
+    "PathLab_AI_参赛级完整提示词.md",
+    "docs/evolution-log.md",
+    "prompts/sessions/2026-10-17-codex-policy-update.jsonl",
+    "prompts/sessions/2026-10-17-codex-policy-update.md",
+    "scripts/Export-PromptSnapshot.ps1",
+    "scripts/Test-PromptSnapshot.ps1"
+  ],
+  "selectedCoreSnapshots": 11,
+  "selectedCoreVisibleMessages": 45.0,
+  "coreSourceAndHashesVerified": true,
+  "selectedHistoricalCommitsVerified": 9,
+  "webReviewSnapshot": {
+    "visibleMessages": 5,
+    "finalCaptured": true
+  },
+  "currentHtml": {
+    "sha256": "18d04356474a4e3e9dbe2901669bcc77592e336084be83943ce98d2ff4c67e63",
+    "bytes": 501852
+  },
+  "reviewPackets": [
+    {
+      "matchesCurrent": false,
+      "file": "delivery/PathLab-review-20261017-153048-9ccbd0.zip",
+      "htmlSha256": "5e5f14e830e51324b5a6fa5e2b3a90c24ab486d64cb367db0919a17c2f8cd437",
+      "htmlBytes": 346204,
+      "entries": [
+        "PathLab AI.html",
+        "START-HERE.md",
+        "manual-acceptance.md",
+        "manifest.json"
+      ]
+    }
+  ],
+  "mediaSearch": {
+    "scope": "Project recursively, excluding .git/node_modules/.next/.cache/.evidence-checks and directory links; no account/cloud search",
+    "found": []
+  },
+  "envTemplateExists": true,
+  "privateEnvRead": false,
+  "privateEnvIgnored": true,
+  "dependencyManifestExists": true,
+  "dependencyLockExists": true,
+  "historicalVerification": {
+    "newlyRerun": false,
+    "sourceAndHtmlUnchanged": true,
+    "date": "2026-10-17",
+    "http": 260,
+    "offline": 272,
+    "nodePerShell": 155
+  },
+  "pending": [
+    "Reviewer-accessible hosted repository URL",
+    "Submission video meeting duration/resolution/AI-process segment requirements",
+    "Technical PDF at most 30 pages",
+    "Consolidated complete Prompt evidence with genuine entrant-guided bug-fix process",
+    "Clean-checkout timed source reproduction",
+    "Account eligibility/payment/group/submission-portal requirements confirmation"
+  ],
+  "limits": [
+    "No public upload, no login, no account/payment verification",
+    "No verdict by the organizer",
+    "Three core implementations exist; do not infer zero functional completion",
+    "No physical-device or new performance guarantee"
+  ]
+}

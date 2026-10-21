@@ -45,6 +45,23 @@
 
 此区不计入四关成绩、不改变关卡算法/规则/存档，刷新不保留，不进入 JSON 备份。不是任意尺寸/随机地图生成器。无需远程 AI、账号或密钥；自由地图不接入远程 AI。范围与实测见 `docs/playground-spec.md`、`docs/verification-playground.md`。
 
+## 官方要求核对与 10 分钟源码复现指南（2026-10-21）
+
+官方规则、必交材料和当前缺口见 `docs/submission-audit-2026-10-21.md`。仓库托管/评审访问、完整 Prompt 材料、MP4 和 PDF 尚未全部就绪；单个 HTML 或体验 ZIP 不替代正式材料。
+
+以下是供评审演练的**目标流程，不是已在干净机器计时通过的结论**。前提：Windows 已安装 Node.js 22.13+ / npm；从经授权的托管仓库取得完整检出并记录实际 commit，位于 D 盘项目目录；安装依赖需要联网。当前没有可提供的公开仓库 URL，不虚构 clone 地址。
+
+| 目标时段 | 操作 | 检查点 |
+| --- | --- | --- |
+| 0–2 分钟 | 在仓库根确认 `node --version`、`npm --version`、`git rev-parse HEAD`；阅读 `PathLab-AI/.env.example` | 使用实际修订和锁文件；无需真实密钥 |
+| 2–5 分钟 | `scripts/Invoke-ProjectNpm.ps1 ci` | 安装锁定依赖；缓存/临时文件留在本仓库 D 盘 |
+| 5–7 分钟 | `scripts/Invoke-ProjectNpm.ps1 run dev` | 打开 `http://127.0.0.1:3000`，仅本机访问 |
+| 7–10 分钟 | 开始一关、预测并提交、推进搜索、查看本地复盘 | 验证产品闭环；不要用 API 响应代替本地事实 |
+
+环境模板为 `PathLab-AI/.env.example`，列出各环境变量；默认 `AI_ENABLED=false`。本地学习/网页提示整理无需创建 `.env.local`，也不要求付费 Key。确需启用 API 时按 `docs/deepseek-setup.md` 配置独立服务端凭证和口令；不要覆盖已有私有配置、把密钥交给评审或放入仓库。环境受限时可先直接打开完整 HTML 体验，再单独完成源码复现。
+
+依赖清单/精确版本见 `PathLab-AI/package.json` 与 `package-lock.json`，取舍见 `docs/dependencies-stage-1.md`。生产构建、类型/lint/全套测试在下文单独执行，不把它们全塞入 10 分钟目标，也不保证首次网络安装耗时。程序复现锚定提交与依赖，AI 生成过程通过真实 Prompt/修改/提交审计，不承诺同一模型再次生成逐字相同代码。
+
 ## 开发与工程检查（Windows）
 
 需要已安装 Node.js 22.13+ 与 npm；本机已验证 Node 24.19.0、npm 11.17.0。无需 API Key，不需要账号。推荐使用 Node 24 LTS；未测试其他 Node 主版本。
@@ -66,8 +83,8 @@
 .\scripts\Invoke-ProjectNpm.ps1 run start
 ~~~
 
-- check = 生成 Next 路由类型 + TypeScript 严格检查 + ESLint 零告警 + 108 项测试（原 73、门控会话 10、条件/报告 9、存档/恢复 10、自由地图 6）。Node 原生去类型只负责执行；独立 tsc 仍负责类型检查，未增加测试依赖。
-- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。E015 当前为 4 视口 × 53 项 = 212 项 AI 自动检查（最终结果见验证报告），不代表真实手机/人工验收。
+- check = 生成 Next 路由类型 + TypeScript 严格检查 + ESLint 零告警 + 155 项测试（E018 在 2026-10-17 的最终历史结果，本轮仅材料审计，未重跑功能测试）。Node 原生去类型只负责执行；独立 tsc 仍负责类型检查，未增加测试依赖。
+- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。E018 在 2026-10-17 的最终历史结果为 HTTP 260/260、离线 272/272 项 AI 自动检查（见 docs/verification-web-review.md，本轮未重跑），不代表真实手机/人工验收。
 - 浏览器检查之外的工程工具回归：
 
 ~~~powershell
