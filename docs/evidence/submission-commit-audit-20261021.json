@@ -1,0 +1,33 @@
+{
+  "checkedDate": "2026-10-21",
+  "executor": "AI local Git scope verification",
+  "auditedCommit": "06fd98aacd0430d276e91a37cd0cce377f6786b4",
+  "baselineCommit": "83a6dee0593cebb1404e6e1777f9e045b9dca21b",
+  "baselineIsAncestor": true,
+  "changedFiles": [
+    "AGENTS.md",
+    "README.md",
+    "docs/core-chain-evidence.md",
+    "docs/evidence/submission-core-evidence-20261021.json",
+    "docs/evidence/submission-local-audit-20261021.json",
+    "docs/evidence/submission-official-rules-20261021.json",
+    "docs/evidence/submission-prompt-tools-ps51-20261021.txt",
+    "docs/evidence/submission-prompt-tools-pwsh-20261021.txt",
+    "docs/evidence/submission-validation-20261021.json",
+    "docs/evolution-log.md",
+    "docs/progress-status.md",
+    "docs/review/access-checklist.md",
+    "docs/submission-audit-2026-10-21.md",
+    "prompts/sessions/2026-10-17-web-review-workbench.jsonl",
+    "prompts/sessions/2026-10-17-web-review-workbench.md",
+    "prompts/sessions/2026-10-21-official-submission-audit.jsonl",
+    "prompts/sessions/2026-10-21-official-submission-audit.md"
+  ],
+  "changedFileCount": 17,
+  "applicationSourceCommitted": false,
+  "privateConfigCommitted": false,
+  "remoteCount": 0,
+  "published": false,
+  "unrelatedUntrackedFilesNotStaged": true,
+  "currentFinalAnswerPendingCapture": true
+}

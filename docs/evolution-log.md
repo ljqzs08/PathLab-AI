@@ -348,3 +348,5 @@ E018 实现提交已核对：`ce566d2c877f11f1ae29a8fb7e7a98ff517c477a`，44 个
 - Git：文档和真实 Prompt/证据验证后显式暂存提交；真实哈希随后登记，不自引用、不 amend，不夹带旧临时 spec/错误草稿。
 
 E019 收尾验证（AI，2026-10-21）：两版 PowerShell Prompt 工具各 19/19，E018 与本轮新增快照原文/角色/哈希匹配；14 项文档证据一致性检查通过，结果存于 docs/evidence/submission-validation-20261021.json。本轮最终答复尚待写入后补齐。
+
+E019 实际文档提交：`06fd98aacd0430d276e91a37cd0cce377f6786b4`（`docs: audit official competition submission requirements`），17 个规则/审计/README/证据/Prompt 文件，未提交应用源码、私有配置或既有 5 个无关未跟踪文件。基线 83a6dee 为其祖先；本地提交不代表上传，remote 仍为 0。提交范围复核见 docs/evidence/submission-commit-audit-20261021.json。该索引由后续独立归档提交纳入，不改写已有提交。
