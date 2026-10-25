@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-25T17:49:08.4498345+08:00",
+  "scope": "Four new E026 static-navigation AI visual-inspection screenshots only",
+  "cleanupAttempt": "Native PowerShell exact-path Remove-Item, non-recursive; entire command rejected by tool policy before execution",
+  "deletedPaths": [],
+  "remainingPaths": [
+    "D:\\竞赛\\.cache\\e026-github-submission-1440.png",
+    "D:\\竞赛\\.cache\\e026-github-submission-390.png",
+    "D:\\竞赛\\.cache\\e026-github-review-1440.png",
+    "D:\\竞赛\\.cache\\e026-github-review-390.png"
+  ],
+  "cleanupCompleted": false,
+  "retryViaAnotherShellOrRuntime": false,
+  "olderDeniedCleanupDirectoriesUntouched": true,
+  "formalEvidenceScreenshotsUntouched": true
+}

@@ -25,6 +25,19 @@ BASENAME = "PathLab-AI-参赛整理-20261025"
 PACKET = "PathLab-AI-完整作品材料-不含视频.zip"
 PROMPT_ZIP = "PathLab-AI-Prompt-evidence-20261025-093233.zip"
 HTML_FILE = "PathLab-AI/PathLab AI.html"
+GITHUB_REPOSITORY = "https://github.com/ljqzs08/PathLab-AI"
+GITHUB_PROFILE = "https://github.com/ljqzs08"
+GITHUB_LINK_NAME = "GitHub作品仓库地址.txt"
+GITHUB_LINK_TEXT = (
+    "PathLab AI（路径学习实验室）｜GitHub 作品链接\n\n"
+    f"作品仓库（评审主入口）：{GITHUB_REPOSITORY}\n"
+    f"作者 GitHub 主页（补充）：{GITHUB_PROFILE}\n\n"
+    "请优先打开作品仓库，查看源码、README、真实 Git 演进和已公开 Prompt。\n"
+    f"本包源码资料基线：{SOURCE}（完整 38 个提交）。\n"
+    "这是代码托管地址，不是在线运行网站；离线体验请打开包内 03-离线体验/PathLab AI.html。\n"
+    "两份 PDF 另随本地材料包提供；本轮仅增补链接，没有再次上传或推送 GitHub。\n"
+    "GitHub 链接不替代表单第 5 项要求的网盘完整作品分享链接。\n"
+).encode("utf-8")
 PDFS = (("作品介绍文档", "01-作品介绍", 15), ("技术文档", "02-技术文档", 24))
 FORBIDDEN_PARTS = {".git", "node_modules", ".next", ".cache", "__pycache__", "private"}
 
@@ -92,6 +105,14 @@ def verify_zip(path: Path) -> dict:
             name = f"{folder}/PathLab-AI-{title}.pdf"
             if z.read(name) != read(f"output/pdf/PathLab-AI-{title}.pdf"):
                 raise ValueError(f"PDF copy changed: {title}")
+        if "github" in manifest:
+            expected_links = {"repository": GITHUB_REPOSITORY, "profile": GITHUB_PROFILE, "linkFile": GITHUB_LINK_NAME}
+            if manifest["github"] != expected_links or z.read(GITHUB_LINK_NAME) != GITHUB_LINK_TEXT:
+                raise ValueError("GitHub repository/profile link mismatch")
+            for name in ("00-评审入口.html", "00-评审入口.md"):
+                content = text(z.read(name))
+                if GITHUB_REPOSITORY not in content or GITHUB_PROFILE not in content:
+                    raise ValueError(f"Missing visible GitHub links: {name}")
         if z.read("03-离线体验/PathLab AI.html") != git("show", f"{SOURCE}:{HTML_FILE}"):
             raise ValueError("Offline HTML differs from source commit")
     return {"archive": str(path), "bytes": path.stat().st_size, "sha256": digest(path.read_bytes()),
@@ -106,11 +127,16 @@ def page(title: str, subtitle: str, cards: list[tuple[str, str, str]], note: str
             f'<title>{html.escape(title)}</title><style>body{{font:16px/1.7 system-ui,"Microsoft YaHei",sans-serif;background:#f0f4f8;color:#182c43;margin:0}}'
             'main{max-width:980px;margin:40px auto;padding:28px}h1{font-size:32px;line-height:1.3}p{color:#40546b}.alert{background:#fff4d5;border-left:5px solid #b66d00;padding:18px;border-radius:8px}'
             '.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:24px 0}.card{background:white;padding:22px;border-radius:12px;border:1px solid #d6e0ec;text-decoration:none;color:inherit;display:block}'
-            '.card:hover{border-color:#2364cc}.card:focus-visible{outline:3px solid #2364cc;outline-offset:3px}.card b{display:block;font-size:20px}.card span{display:block;color:#4e6176;margin-top:8px}small{color:#52677f}code{overflow-wrap:anywhere}'
+            '.github{background:#fff;border:2px solid #2364cc;border-radius:12px;padding:20px;margin-top:24px}.github h2{font-size:22px;margin:0}.github a{overflow-wrap:anywhere}.card:hover{border-color:#2364cc}.card:focus-visible{outline:3px solid #2364cc;outline-offset:3px}.card b{display:block;font-size:20px}.card span{display:block;color:#4e6176;margin-top:8px}small{color:#52677f}code{overflow-wrap:anywhere}'
             '@media(max-width:600px){main{margin:0;padding:20px}h1{font-size:27px}}</style><main>'
             f'<small>PathLab AI · 本地材料导航 · 2026-10-25</small><h1>{html.escape(title)}</h1><p>{html.escape(subtitle)}</p>'
-            f'<div class="alert">{html.escape(note)}</div><div class="grid">{sections}</div>'
-            '<p>GitHub 已公开上传。本页不会联网、上传、填表或提交；所有文件操作仍由本人决定。</p></main></html>\n').encode("utf-8")
+            f'<div class="alert">{html.escape(note)}</div>'
+            '<section class="github" aria-labelledby="github-title"><h2 id="github-title">GitHub：已上传的作品</h2>'
+            f'<p><strong>作品仓库 · 评审主入口（源码与真实演进）</strong><br><a href="{GITHUB_REPOSITORY}" target="_blank" rel="noopener noreferrer">{GITHUB_REPOSITORY}</a></p>'
+            f'<p>作者个人主页（补充）：<a href="{GITHUB_PROFILE}" target="_blank" rel="noopener noreferrer">{GITHUB_PROFILE}</a></p>'
+            '<small>仓库是代码托管地址，不是在线演示网站；两份 PDF 另随本地材料提供，本轮未重新上传。</small></section>'
+            f'<div class="grid">{sections}</div>'
+            '<p>本页不会自动联网、上传、填表或提交。只有点击 GitHub 外链时才访问 GitHub；所有发送操作由本人决定。</p></main></html>\n').encode("utf-8")
 
 
 def build(output: Path) -> dict:
@@ -215,8 +241,11 @@ def build(output: Path) -> dict:
         "预期计数 38、HEAD 等于上述完整哈希；然后按 `README.md` 执行环境安装和学习闭环。"
         "首次安装依赖需联网，bundle 本身恢复历史不需要 GitHub 登录。没有携带 node_modules、.next、私人 env、凭证或浏览器缓存。\n"
     ).encode("utf-8")
+    payload[GITHUB_LINK_NAME] = GITHUB_LINK_TEXT
     payload["00-评审入口.md"] = (
         "# PathLab AI：作品材料（不含视频）\n\n"
+        f"**GitHub 作品仓库（评审主入口）：[{GITHUB_REPOSITORY}]({GITHUB_REPOSITORY})**\n\n"
+        f"作者主页（补充）：[{GITHUB_PROFILE}]({GITHUB_PROFILE})。仓库是源码托管地址，不是在线运行网站；两份 PDF 另随本地材料提供，本轮未再次上传。\n\n"
         "1. 读 `01-作品介绍/PathLab-AI-作品介绍文档.pdf`（15 页，七项介绍）。\n"
         "2. 直接打开 `03-离线体验/PathLab AI.html`，完成一轮 L01。\n"
         "3. 读 `02-技术文档/PathLab-AI-技术文档.pdf`（24 页，三项技术论证）。\n"
@@ -250,6 +279,7 @@ def build(output: Path) -> dict:
                 "pdfs": [{"title": title, "pages": pages, "rewritten": False} for title, _, pages in PDFS],
                 "screenshots": {"count": 9, "newCaptureThisRound": False, "physicalDevice": False},
                 "publicationPerformed": False, "formSubmitted": False,
+                "github": {"repository": GITHUB_REPOSITORY, "profile": GITHUB_PROFILE, "linkFile": GITHUB_LINK_NAME},
                 "files": [{"path": name, "bytes": len(data), "sha256": digest(data)} for name, data in sorted(payload.items())]}
     payload["manifest.json"] = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     for name, data in payload.items():
@@ -270,6 +300,7 @@ def build(output: Path) -> dict:
         for suffix in (".pdf", ".pdf.sha256"):
             filename = "PathLab-AI-" + title + suffix
             (dst / filename).write_bytes(read("output/pdf/" + filename))
+    (output / GITHUB_LINK_NAME).write_bytes(GITHUB_LINK_TEXT)
     (output / "00-提交说明.md").write_bytes(read("docs/submission-handoff-20261025.md"))
     (output / "表单填写草稿.txt").write_text(
         "仅本人填写，不要把私人报名信息放入公开作品包。\n\n1. UID：\n2. 姓名：\n3. 学校：\n4. 联系手机号：\n\n"
@@ -294,6 +325,7 @@ def build(output: Path) -> dict:
     result["pdfsCopiedWithoutRewrite"] = True
     result["sourceArchiveFileCount"] = sum(name.startswith("04-源码与演进/源码/") for name in payload)
     result["publicationPerformed"] = False
+    result["github"] = {"repository": GITHUB_REPOSITORY, "profile": GITHUB_PROFILE, "linkFile": GITHUB_LINK_NAME}
     (output / "packet-build-verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return result
 

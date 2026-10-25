@@ -58,3 +58,9 @@ JSONL 与 Markdown 同名；JSONL 每条包含来源行号、textSha256、角色
 - [继续与真实收尾快照](sessions/2026-10-25-project-introduction-continue.md)：2 条真实可见消息，`finalCaptured=True`；包含当前用户“继续”和上一条助手可见收尾摘要。它只证明本轮留证已补齐，不是新增核心功能迭代。
 - [本地验证记录](../docs/verification-project-introduction.md)：列出截图、PDF 构建、结构/视觉检查与剩余边界。
 - 作品介绍材料没有替代 C01/C02/C03 的真实性边界，也没有把 AI 自动化检查写成用户或真机验收。
+
+## E026：材料 GitHub 链接与上轮真实最终答复（2026-10-25）
+
+- [E025 真正最终答复补件](sessions/2026-10-25-submission-organize-completion-final.md)：来源第 491 行，真实收尾，最终答复已捕获；不作为新增核心轮。
+- [本轮 GitHub 链接要求与可见说明](sessions/2026-10-25-submission-github-links.md)：3 条真实消息，明确排除内部交接，最终答复待下一轮落盘补齐。
+- [本轮实际验证](../docs/verification-submission-github-links.md)：纯本地链接 / 归档更新，不新增 C01/C02/C03 用户 Bug 材料，不改变 9 轮 / 38 条核心选编范围。

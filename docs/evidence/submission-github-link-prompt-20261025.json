@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-10-25T17:47:45.139795+08:00",
+  "sourceSession": "01a1723a-adcd-7f81-bc01-35b2b8c24154",
+  "extraction": "Exact original visible-message supplements; standard exporter is unchanged",
+  "snapshots": [
+    {
+      "stem": "2026-10-25-submission-organize-completion-final",
+      "sourceLines": [
+        491
+      ],
+      "messages": 1,
+      "finalCaptured": true,
+      "sourceHashesVerified": true
+    },
+    {
+      "stem": "2026-10-25-submission-github-links",
+      "sourceLines": [
+        499,
+        504,
+        601
+      ],
+      "messages": 3,
+      "finalCaptured": false,
+      "sourceHashesVerified": true
+    }
+  ],
+  "internalHandoffSourceLinesExcluded": [
+    512
+  ],
+  "coreSelectedRoundsUnchanged": 9,
+  "coreVisibleMessagesUnchanged": 38,
+  "hiddenContentExported": false
+}

@@ -40,12 +40,25 @@ class PacketSafetyTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             builder.build(ROOT / "delivery")
 
-    def test_html_navigation_is_local_and_scriptless(self):
+    def test_html_navigation_links_github_without_automatic_requests(self):
         data = builder.page("作品", "说明", [("文档", "打开", "01-作品介绍/a.pdf")], "视频待补").decode()
         self.assertNotIn("<script", data)
-        self.assertNotIn("https://", data)
+        self.assertEqual(data.count('href="' + builder.GITHUB_REPOSITORY + '"'), 1)
+        self.assertEqual(data.count('href="' + builder.GITHUB_PROFILE + '"'), 1)
+        self.assertEqual(data.count('rel="noopener noreferrer"'), 2)
+        self.assertNotIn("<iframe", data)
+        self.assertNotIn("<img", data)
+        self.assertIn("本页不会自动联网", data)
         self.assertIn("lang=\"zh-CN\"", data)
         self.assertIn("%E4%BD%9C", data)
+
+    def test_copyable_link_file_distinguishes_repository_and_profile(self):
+        data = builder.GITHUB_LINK_TEXT.decode("utf-8")
+        self.assertIn("作品仓库（评审主入口）：" + builder.GITHUB_REPOSITORY, data)
+        self.assertIn("作者 GitHub 主页（补充）：" + builder.GITHUB_PROFILE, data)
+        self.assertIn(builder.SOURCE, data)
+        self.assertIn("不是在线运行网站", data)
+        self.assertIn("没有再次上传或推送", data)
 
     def test_digest_is_sha256(self):
         self.assertEqual(builder.digest(b"PathLab"), hashlib.sha256(b"PathLab").hexdigest())

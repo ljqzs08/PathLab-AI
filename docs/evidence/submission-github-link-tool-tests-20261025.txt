@@ -1,0 +1,16 @@
+test_c_drive_output_rejected (__main__.PacketSafetyTests.test_c_drive_output_rejected) ... ok
+test_copyable_link_file_distinguishes_repository_and_profile (__main__.PacketSafetyTests.test_copyable_link_file_distinguishes_repository_and_profile) ... ok
+test_digest_is_sha256 (__main__.PacketSafetyTests.test_digest_is_sha256) ... ok
+test_existing_output_is_not_overwritten (__main__.PacketSafetyTests.test_existing_output_is_not_overwritten) ... ok
+test_generated_page_escapes_untrusted_text (__main__.PacketSafetyTests.test_generated_page_escapes_untrusted_text) ... ok
+test_html_navigation_links_github_without_automatic_requests (__main__.PacketSafetyTests.test_html_navigation_links_github_without_automatic_requests) ... ok
+test_only_env_template_is_allowed (__main__.PacketSafetyTests.test_only_env_template_is_allowed) ... ok
+test_outside_project_rejected (__main__.PacketSafetyTests.test_outside_project_rejected) ... ok
+test_project_path_accepted (__main__.PacketSafetyTests.test_project_path_accepted) ... ok
+test_unsafe_and_private_paths_rejected (__main__.PacketSafetyTests.test_unsafe_and_private_paths_rejected) ... ok
+test_valid_unicode_names (__main__.PacketSafetyTests.test_valid_unicode_names) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK

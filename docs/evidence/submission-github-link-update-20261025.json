@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-25T17:43:38.509764+08:00",
+  "executor": "AI",
+  "scope": "Local GitHub link additions only; no application/PDF rewrite or product regression",
+  "previousArchive": {
+    "archive": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\01-上传网盘\\PathLab-AI-完整作品材料-不含视频.zip",
+    "bytes": 7695581,
+    "sha256": "69ae06d8129189b807b1f7606947c335b3239e331ab813bdb30fe294129dc3d6",
+    "entries": 425,
+    "filesVerified": 424,
+    "sourceCommit": "e438363692762398117756ceb7f72a3fb415e5ad",
+    "sourceHistoryCount": 38,
+    "containsVideo": false,
+    "verified": true,
+    "preservedCopy": "D:\\竞赛\\delivery\\.history\\PathLab-AI-参赛整理-20261025-E025\\PathLab-AI-完整作品材料-不含视频.zip"
+  },
+  "updatedArchive": {
+    "archive": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\01-上传网盘\\PathLab-AI-完整作品材料-不含视频.zip",
+    "bytes": 7697227,
+    "sha256": "375ab8b4702235034f3cc065d9374f0fc6da6f435cbb3a36d1f94ae153d53a24",
+    "entries": 426,
+    "filesVerified": 425,
+    "sourceCommit": "e438363692762398117756ceb7f72a3fb415e5ad",
+    "sourceHistoryCount": 38,
+    "containsVideo": false,
+    "verified": true,
+    "outputDirectory": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025",
+    "unpackedDirectory": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版",
+    "pdfsCopiedWithoutRewrite": true,
+    "sourceArchiveFileCount": 384,
+    "publicationPerformed": false,
+    "github": {
+      "repository": "https://github.com/ljqzs08/PathLab-AI",
+      "profile": "https://github.com/ljqzs08",
+      "linkFile": "GitHub作品仓库地址.txt"
+    },
+    "materialRevision": "E026 GitHub direct links"
+  },
+  "changedExistingPayloadFiles": [
+    "00-评审入口.html",
+    "00-评审入口.md",
+    "08-规则与提交说明/submission-handoff-20261025.md",
+    "manifest.json"
+  ],
+  "addedPayloadFiles": [
+    "GitHub作品仓库地址.txt"
+  ],
+  "unchangedPreviousPayloadFiles": 421,
+  "allUnpackedPayloadBytesMatchArchive": true,
+  "outerPdfBytesUnchanged": true,
+  "sourceFilesUnchanged": 384,
+  "offlineHtmlUnchanged": true,
+  "gitBundleUnchanged": true,
+  "promptArchiveUnchanged": true,
+  "githubAccessEvidence": "docs/evidence/submission-github-link-readonly-20261025.json",
+  "publicationPerformed": false,
+  "formSubmitted": false,
+  "finalAnswerStillPending": true,
+  "sha256SidecarReopenedAndMatched": true,
+  "outerAndZippedLinkFileBytesMatch": true
+}

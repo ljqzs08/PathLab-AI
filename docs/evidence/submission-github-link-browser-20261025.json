@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-25T09:45:10.934Z",
+  "executor": "AI automated Edge; not human/device acceptance",
+  "scope": "Two static material navigation pages only; no app functionality rerun",
+  "results": [
+    {
+      "name": "submission",
+      "file": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\00-提交说明.html",
+      "width": 1440,
+      "externalLinks": [
+        {
+          "href": "https://github.com/ljqzs08/PathLab-AI",
+          "text": "https://github.com/ljqzs08/PathLab-AI",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        },
+        {
+          "href": "https://github.com/ljqzs08",
+          "text": "https://github.com/ljqzs08",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        }
+      ],
+      "localLinksChecked": 6,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "automaticExternalRequests": [],
+      "keyboardLinkFocus": true,
+      "inspectionScreenshot": "D:\\竞赛\\.cache\\e026-github-submission-1440.png"
+    },
+    {
+      "name": "submission",
+      "file": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\00-提交说明.html",
+      "width": 390,
+      "externalLinks": [
+        {
+          "href": "https://github.com/ljqzs08/PathLab-AI",
+          "text": "https://github.com/ljqzs08/PathLab-AI",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        },
+        {
+          "href": "https://github.com/ljqzs08",
+          "text": "https://github.com/ljqzs08",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        }
+      ],
+      "localLinksChecked": 6,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "automaticExternalRequests": [],
+      "keyboardLinkFocus": true,
+      "inspectionScreenshot": "D:\\竞赛\\.cache\\e026-github-submission-390.png"
+    },
+    {
+      "name": "review",
+      "file": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版\\00-评审入口.html",
+      "width": 1440,
+      "externalLinks": [
+        {
+          "href": "https://github.com/ljqzs08/PathLab-AI",
+          "text": "https://github.com/ljqzs08/PathLab-AI",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        },
+        {
+          "href": "https://github.com/ljqzs08",
+          "text": "https://github.com/ljqzs08",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        }
+      ],
+      "localLinksChecked": 6,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "automaticExternalRequests": [],
+      "keyboardLinkFocus": true,
+      "inspectionScreenshot": "D:\\竞赛\\.cache\\e026-github-review-1440.png"
+    },
+    {
+      "name": "review",
+      "file": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版\\00-评审入口.html",
+      "width": 390,
+      "externalLinks": [
+        {
+          "href": "https://github.com/ljqzs08/PathLab-AI",
+          "text": "https://github.com/ljqzs08/PathLab-AI",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        },
+        {
+          "href": "https://github.com/ljqzs08",
+          "text": "https://github.com/ljqzs08",
+          "rel": "noopener noreferrer",
+          "target": "_blank"
+        }
+      ],
+      "localLinksChecked": 6,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "automaticExternalRequests": [],
+      "keyboardLinkFocus": true,
+      "inspectionScreenshot": "D:\\竞赛\\.cache\\e026-github-review-390.png"
+    }
+  ],
+  "passed": true,
+  "externalLinkClicksOrSubmissionsPerformed": false,
+  "visualInspection": {
+    "executor": "AI",
+    "screenshotsViewed": 4,
+    "scope": "Both static navigation pages at 1440px and 390px; repository/profile links legible; no clipping observed",
+    "physicalDevice": false,
+    "humanAcceptance": false,
+    "temporaryImagesCleanup": "Attempt rejected by tool policy; four files remain on D drive; see cleanup evidence"
+  }
+}

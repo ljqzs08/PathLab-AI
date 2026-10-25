@@ -430,3 +430,12 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - E024 真实最终答复从原始第4804行另附 `2026-10-25-project-introduction-completion-final`；旧继续快照误抓的内部交接不作为最终答复、不改历史，不在本包公开源码基线内。C01/C02/C03 与 U01 的真实边界不变，不把共享轮变成三次人类Bug。
 - 两个本轮临时验证目录清理命令被当前工具策略拒绝，约24.53MB仍在D盘，需后续手动清理；证据 `submission-cleanup-20261025.json`，未删正式截图或旧残留。
 - 本地正常细粒度提交，不 push、不 amend/rebase/squash；真实提交哈希在产生后报告，避免自引用。此前 E024 归档提交为 `650eb914a15240b44772444cb4d06f57ab0f2dfa`。本轮不夹带旧 HTML 假脏、1个旧测试草稿与4个旧Prompt文件。
+
+## E026：为评委增补 GitHub 链接（2026-10-25）
+
+- 真实要求：`prompts/sessions/2026-10-25-submission-github-links.md`；用户给作者主页，实际材料将具体 PathLab-AI 仓库作为主入口，主页补充。前轮 E025 真正最终答复另附 `submission-organize-completion-final`。内部交接明确排除，本轮最终答复待落盘。
+- 修改：构建脚本、11 项工具测试、提交字段说明；现有 delivery 内新增包内外链接 TXT，更新两个 HTML、两个 Markdown、ZIP / manifest / 校验记录。不改两 PDF 或应用。
+- 实际验证：426 ZIP 条目 / 425 内容文件 SHA / CRC 与解压版一致、旁置 SHA、421 旧条目原字节、11/11 单测、两入口 × 两宽度导航 / 键盘 / 布局 / AI 看图通过。匿名 API 只读确认 Public；不发布、不 push、不填表提交，不称产品全套 / 人工 / 真机回归。
+- 当前 ZIP SHA：`375ab8b4702235034f3cc065d9374f0fc6da6f435cbb3a36d1f94ae153d53a24`。原 E025 ZIP 与根入口留在 D 盘 `delivery/.history/`；旧证据不覆写。4 张新检查图精确清理命令被工具策略拒绝，仍在 D 盘，无绕过。
+- 验证与边界：`docs/verification-submission-github-links.md`、`docs/evidence/submission-github-link-*-20261025.*`。C01/C02/C03 / U01 原文与人工引导边界不变，不复制共享会话增加计数。
+- 前轮真实本地提交为 `687c58ba74a37b3b6c863bd8711f23194dd59e12`；本轮正常本地细粒度提交，哈希产生后最终报告，不 amend / rebase / squash，不暂存既有无关残留。

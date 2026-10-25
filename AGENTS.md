@@ -73,3 +73,5 @@
 
 最新 E024（2026-10-25）：作品介绍 PDF 已完成本地视觉收尾：15 页 A4、9 张离线 HTML 实际截图、4 张联系表均由 AI 渲染/查看；校验记录已将 visualInspection 改为带范围和边界的真实对象。新增 docs/verification-project-introduction.md，保留本轮真实 Prompt 快照（含续答），并明确未完成人工/真机验收、视频、正式赛事提交、DeepSeek 真实付费联调和三条核心链完整人工引导材料。未上传本轮新文档。
 最新 E025（2026-10-25）：已按官网/WPS预指导表在 D 盘 delivery 整理非视频材料：7.70MB ZIP（425条目/424内容文件）、15页介绍PDF、24页技术PDF、离线HTML、384源码文件、公开e438363完整38历史、原已公开9轮/38原文Prompt包与9正式截图。GitHub已上传，本轮只匿名核对、不重复push、不填表/提交。ZIP/源码/新仓库恢复/PDF结构/截图/12链接/10工具单测/双PS Prompt重验通过；解压HTML四模拟视口L01（6步/22扩展）与两入口布局AI检查通过，非全套回归/人工/真机。预指导截止2026-10-31 15:00:00，视频亦必填，不能承诺先交后补；后续另交正式省赛。E024真正final另附补件，旧误抓内部交接不当final、不在公开包基线内。本轮末答复待落盘；两临时验收目录清理被工具策略拒绝、尚留D盘，见 docs/verification-submission-handoff.md 与 submission-cleanup证据。三链/U01真实性边界不变。
+
+最新 E026（2026-10-25）：现有参赛材料目录与 ZIP 根目录新增 GitHub作品仓库地址.txt，两个 HTML 顶部可直接进入具体仓库（作者主页另列）；同步构建脚本与包校验。新版 426 条目/425内容、7,697,227字节，421原条目不变，PDF/源码/HTML/bundle/Prompt/9正式截图不改。SHA/CRC/11项工具单测/两入口双宽度导航与AI看图通过；匿名API只读确认Public，无再次上传/push/提交。E025真实final已补，本轮final待落盘，三链/U01边界不变。4张新检查图精确删除被工具策略拒绝仍留D盘，不绕过；验证见 docs/verification-submission-github-links.md。E025本地提交687c58b；旧ZIP保留delivery/.history，当前发件路径不变。
