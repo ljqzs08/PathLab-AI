@@ -1,0 +1,31 @@
+{
+  "verifiedAt": "2026-10-25T09:49:17.6297659+08:00",
+  "executor": "AI",
+  "url": "https://github.com/ljqzs08/PathLab-AI/releases/tag/prompt-evidence-20261025",
+  "tag": "prompt-evidence-20261025",
+  "target": "9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7",
+  "isDraft": false,
+  "isPrerelease": false,
+  "assets": [
+    {
+      "name": "PathLab-AI-Prompt-evidence-20261025-093233.zip",
+      "url": "https://github.com/ljqzs08/PathLab-AI/releases/download/prompt-evidence-20261025/PathLab-AI-Prompt-evidence-20261025-093233.zip",
+      "size": 241976,
+      "sha256": "8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c",
+      "githubDigest": "sha256:8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c",
+      "anonymousDownloaded": true,
+      "matchesLocal": true
+    },
+    {
+      "name": "PathLab-AI-Prompt-evidence-20261025-093233.zip.sha256",
+      "url": "https://github.com/ljqzs08/PathLab-AI/releases/download/prompt-evidence-20261025/PathLab-AI-Prompt-evidence-20261025-093233.zip.sha256",
+      "size": 113,
+      "sha256": "2f15e36a09ea9ab63ee510e343a63e07f64d9ff4521970ad7a31fb4c75393d8b",
+      "githubDigest": "sha256:2f15e36a09ea9ab63ee510e343a63e07f64d9ff4521970ad7a31fb4c75393d8b",
+      "anonymousDownloaded": true,
+      "matchesLocal": true
+    }
+  ],
+  "downloadMethod": "Unauthenticated HTTPS requests without Authorization/Cookie; bytes checked in memory, not saved to another drive",
+  "limits": "Public artifact availability and byte integrity only; not official competition acceptance or native full conversation export"
+}

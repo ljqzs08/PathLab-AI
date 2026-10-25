@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-10-25T09:52:02.1972632+08:00",
+  "executor": "AI",
+  "sourceFile": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+  "snapshots": [
+    {
+      "path": "prompts/sessions/2026-10-25-prompt-chain-package-supplement.jsonl",
+      "messages": 4,
+      "originalsAndHashesMatch": true,
+      "finalCaptured": true,
+      "assistantOnlySupplement": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-25-prompt-upload-authorization.jsonl",
+      "messages": 3,
+      "originalsAndHashesMatch": true,
+      "finalCaptured": true,
+      "assistantOnlySupplement": false
+    },
+    {
+      "path": "prompts/sessions/2026-10-25-prompt-upload-completion.jsonl",
+      "messages": 3,
+      "originalsAndHashesMatch": true,
+      "finalCaptured": false,
+      "assistantOnlySupplement": false
+    }
+  ],
+  "newOriginalMessages": 10,
+  "unique": true,
+  "documentationFiles": 7,
+  "localLinksChecked": 44,
+  "localLinksBroken": 0,
+  "limits": [
+    "Selected visible messages only; assistant supplement is not a new complete user round",
+    "Current authorization-completion final answer not yet persisted",
+    "No hidden reasoning, system/developer, tools, internal handoff/control or credential payloads exported",
+    "Core selection remains 9 rounds and 38 messages; publication is not official competition acceptance"
+  ]
+}

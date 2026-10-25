@@ -392,3 +392,12 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 内容里程碑已正常提交：`9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7`（30 个显式暂存文件）；未夹带旧 HTML 假脏或未跟踪残留。
 - 基于该提交生成最终 `delivery/PathLab-AI-Prompt-evidence-20261025-093233.zip`，SHA256 `8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c`。57 个内容文件 / 58 个 ZIP 条目，双 PowerShell 重开一致性通过，包内 67 个导引链接均存在，禁用路径/常见凭证模式无匹配。真实最终报告独立归档，不以旧的 09:27 测试包结果代替。
 - 本轮新增材料没有执行推送；既有 D 盘 GitHub CLI 配置现场检查未登录，不能把旧公开仓库的访问证据冒充为这些新文件已经上线。归档提交只记录此内容提交与最终 ZIP 结果，不进行哈希自引用。
+
+## E022：Prompt 材料实际上传与匿名访问（2026-10-25）
+
+- 用户要求“在github上传”，随后通过真实响应批注“已授权”确认。官方 CLI 设备登录后核对账号 ljqzs08/既有 Public 仓库 push 权限；未读出凭证，未改仓库可见性、协作者或分支保护。
+- 正常 push 将 main 从 4fa3f0d 更新为 `ae91aa4abbf022bb26279f5486fb95f567745873`，保留 `9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7` 与 ae91aa4 的全部既有父历史。不 squash/amend/rebase/force，不夹带未提交 HTML/旧草稿。
+- 无凭证 fetch 的 37 次主材料历史逐个匹配；25 个关键文件 blob 一致，匿名 API private=false。证据 `docs/evidence/prompt-github-publication-20261025.json`。
+- 发布 prompt-evidence-20261025 Release，将已冻结 ZIP 与 .sha256 一并上传，来源锚定 9ca1ffc；两附件无授权重新下载后字节 SHA256 与本地/GitHub digest 均一致。证据 `docs/evidence/prompt-release-assets-20261025.json`；完整边界 `docs/verification-prompt-upload.md`。
+- E021 真实助手续答/最终答复四条补充已提取；前次授权轮三条含最终答复，本轮“已授权”快照如实待最后答复落盘。均不算新增核心迭代，不扩大 9 轮/38 条选编、不导出内部控制/交接信息。
+- 此次仅更新材料导航/状态/来源与上传核验，未修改应用或重跑产品功能。收尾归档另作正常有意义提交，自己的哈希不写入自身；完成推送与匿名核验后再退出临时本机登录，不提前声称结束。

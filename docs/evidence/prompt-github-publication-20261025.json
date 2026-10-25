@@ -1,0 +1,138 @@
+{
+  "verifiedAt": "2026-10-25T09:47:29.2982534+08:00",
+  "executor": "AI",
+  "repository": "https://github.com/ljqzs08/PathLab-AI",
+  "private": false,
+  "materialHead": "ae91aa4abbf022bb26279f5486fb95f567745873",
+  "historyCount": 37,
+  "historyMatchesLocal": true,
+  "authentication": "No Authorization/Cookie headers on repository API; git credential.helper and http.extraHeader explicitly empty; terminal prompting disabled",
+  "checkedFiles": [
+    {
+      "path": "README.md",
+      "gitBlob": "0febd85fe3d72214709027944c592d4a018865ce",
+      "matches": true
+    },
+    {
+      "path": "prompts/submission/README.md",
+      "gitBlob": "434dd008ebe44e1f450c68e0d8680f8081e115c2",
+      "matches": true
+    },
+    {
+      "path": "prompts/submission/chain-map.json",
+      "gitBlob": "6e002f461fab6c46f9e4120829aed37ab453a877",
+      "matches": true
+    },
+    {
+      "path": "prompts/submission/attachments/project-brief.txt",
+      "gitBlob": "1fb4363c7de5b887397b0ada0d6ae810af713d26",
+      "matches": true
+    },
+    {
+      "path": "docs/verification-prompt-evidence.md",
+      "gitBlob": "fd9ef7f27e7323160cd34962a6baf093d95a7cae",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/prompt-package-archive-20261025.json",
+      "gitBlob": "8b9765dbadb6e90a0cbaf8c3b3a92be8ca321b03",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/prompt-package-scan-20261025.json",
+      "gitBlob": "cee28a7658d2340b2a4a88ff1b642bb73089585e",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-project-brief.md",
+      "gitBlob": "4b8cb08f3b9e39f07ad62a55b7b2779cd57b5736",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-project-brief.jsonl",
+      "gitBlob": "24d23127d74473bbe701b97ed357da52647a1e8a",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-stage-2-bfs.md",
+      "gitBlob": "16e4b01e1ab60778bc52922d8f255ddd7a50a504",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-stage-2-bfs.jsonl",
+      "gitBlob": "9578f94fa472a2e0eb3c50bc1b96b0bee558cd8a",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-autonomous-iterations.md",
+      "gitBlob": "c8d6aee16fd8863ea617029ecb6771b48b6a95fd",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-autonomous-iterations.jsonl",
+      "gitBlob": "ad80b5774953f0b1d2f6f261f9b7c9eb8dc2359a",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-local-html-entry.md",
+      "gitBlob": "3a0ebd933d865eb427654ad2f7d647ae991bea78",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-local-html-entry.jsonl",
+      "gitBlob": "d9c9cff846c1e5bea86ce47da2ce9e1f5ac81012",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-standalone-html-correction.md",
+      "gitBlob": "f58cf866a3f0204414a5dc2d15828a30c24360de",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-standalone-html-correction.jsonl",
+      "gitBlob": "5f553db175913e390ab28fa7dcff12334bee64a5",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-integration.md",
+      "gitBlob": "bac4f3c9d9884b03376345c90fed39321079fe64",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-integration.jsonl",
+      "gitBlob": "6af17d72e66a51e18cfc5239a0f350757cce8082",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-configuration-guide.md",
+      "gitBlob": "265a5755bea8431bfa210a1cf595d33642ffa9c6",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-configuration-guide.jsonl",
+      "gitBlob": "39891962fa2f7eab8f53d495c8c246ae768852ff",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-web-alternative.md",
+      "gitBlob": "d7c1f6703b7343270fce322e895e018740f5b183",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-web-alternative.jsonl",
+      "gitBlob": "90d8b5047319562b854b7e0958add341183918a2",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-web-review-workbench.md",
+      "gitBlob": "882ef01132e1dd555dc3dd7ee0a8134e2c211238",
+      "matches": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-web-review-workbench.jsonl",
+      "gitBlob": "ee65d56b7e0d2cc1d71072959be87ea8a5963906",
+      "matches": true
+    }
+  ],
+  "limits": "Publication and file/history verification only; not website deployment, native full chat export, human/device acceptance or official competition submission"
+}

@@ -2,11 +2,18 @@
 
 本目录保存真实用户/AI 可见文字快照，按原始来源行号、角色、时间和 SHA256 核对。它们是从本机原始会话只读提取的可见消息，**不是工具原生全量导出**；隐藏推理、系统/开发者提示、工具载荷、内部交接、凭证和无关聊天不纳入。缺失附件或中止轮最终答复不假称已经齐备；未发生的用户追问/缺陷不得补写。
 
+## E022：已发布的 Prompt 附件（2026-10-25）
+
+[GitHub Release 下载 ZIP 与校验文件](https://github.com/ljqzs08/PathLab-AI/releases/tag/prompt-evidence-20261025)；[上传与匿名核验](../docs/verification-prompt-upload.md)。原文与导引已正常推送，主材料提交为 `ae91aa4`，附件内容锚定 `9ca1ffc`，不倒填包内来源哈希。
+
+- [E021 助手续答与最终答复补充](sessions/2026-10-25-prompt-chain-package-supplement.md)：4 条真实可见助手消息，补齐控制边界后的续答，不伪称独立用户轮、不计入 9 轮/38 条选编。
+- [上传授权轮](sessions/2026-10-25-prompt-upload-authorization.md)：3 条原文，保留真实未授权完成/工具安全停止的当时答复。
+- [授权后实际上传轮](sessions/2026-10-25-prompt-upload-completion.md)：当前真实原文；最终答复须真实落盘后补齐，不能预写，不作为核心功能新增。
 ## E021：可直接阅读的 Prompt 选编（2026-10-25）
 
 请先看 [评审材料入口](submission/README.md)。已按 C01/C02/C03 三个核心模块、U01 真实用户 HTML 纠正及 S02 网页复盘方案迭代整理，白名单包含 **9 份完成轮快照、38 条去重原文、10 个历史功能/修复提交**。补提取最早产品方案轮，并恢复其原粘贴附件（不是把最初方案所有愿景宣称已实现）。连续开发原文共享关系明确，不将其重复计为三次独立用户对话。
 
-原文与来源行/哈希/选定轮完整性已核对；包内 Markdown/JSONL 可读、可校验，不是工具原生全量导出或聊天截图。真实作者引导修复见 U01；AI 自测与用户报告分开。`scripts/Export-PromptEvidencePackage.ps1` 可从 D 盘工作区重复生成 ZIP，逐文件校验、不复制凭证/缓存。当前整理轮 finalCaptured=False，不放进“完成轮”选编，待真实最终答复落盘后补齐。
+原文与来源行/哈希/选定轮完整性已核对；包内 Markdown/JSONL 可读、可校验，不是工具原生全量导出或聊天截图。真实作者引导修复见 U01；AI 自测与用户报告分开。`scripts/Export-PromptEvidencePackage.ps1` 可从 D 盘工作区重复生成 ZIP，逐文件校验、不复制凭证/缓存。原整理轮因控制边界而保留 finalCaptured=False；[续答补充](sessions/2026-10-25-prompt-chain-package-supplement.md) 已核对真实最终答复，不改原件，也不放进“完成轮”核心选编。
 
 ## 三个已实现核心模块
 
