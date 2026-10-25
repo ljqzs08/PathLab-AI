@@ -1,0 +1,256 @@
+{
+  "executor": "AI evidence audit; not human acceptance",
+  "checkedAt": "2026-10-25T09:28:47.6616936+08:00",
+  "snapshots": [
+    {
+      "path": "prompts/sessions/2026-10-17-stage-2-bfs.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 6,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-autonomous-iterations.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 9,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-evidence-correction-storage.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 6,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-local-html-entry.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 3,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-standalone-html-correction.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 4,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-motion-interaction.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 5,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-free-playground.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 4,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-remote-ai-advice.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 2,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-remote-ai-interrupted.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 1,
+      "finalCaptured": false,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": false
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-review-readiness.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 3,
+      "finalCaptured": false,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": false
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-review-rules-continuation.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 2,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-project-brief.jsonl",
+      "source": "rollout-2026-10-17T06-25-16-01a146d1-cc80-7722-a40f-28321250bcce.jsonl",
+      "messages": 2,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-integration.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 5,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-configuration-guide.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 2,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-deepseek-web-alternative.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 2,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    },
+    {
+      "path": "prompts/sessions/2026-10-17-web-review-workbench.jsonl",
+      "source": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 5,
+      "finalCaptured": true,
+      "originalsAndHashesMatch": true,
+      "completeSelectedVisibleRound": true
+    }
+  ],
+  "commits": [
+    {
+      "short": "5c3eec6",
+      "hash": "5c3eec624249ddfe149cf1768658ceabf62ef2ce",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "5ade0e8",
+      "hash": "5ade0e82ad41cc867ae36f4ccfae8eb755998958",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "572e15d",
+      "hash": "572e15d8205eb881563459a78804d23c872ed1d5",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "fd82d8f",
+      "hash": "fd82d8f1abdca0dbfcd54c8fbb1773e27467ca9c",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "3b2e9f3",
+      "hash": "3b2e9f353f55c5d5a303afa8a445b42dbb0e4c94",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "f4a43ca",
+      "hash": "f4a43cac7346689d33307e1d8b96d7166979f222",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "5e369b5",
+      "hash": "5e369b54349c5812b296c03f7800732d2bac1dd7",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "4b11729",
+      "hash": "4b117292176d36c9d6fe6b5edaea66131ec21a2b",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "c51334d",
+      "hash": "c51334d001fb7a5a3c67e0f072f09e4eff392a6a",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "d235a91",
+      "hash": "d235a91514014c10ed4ef68733f8a6536080c0ee",
+      "ancestorOfHead": true
+    },
+    {
+      "short": "ce566d2",
+      "hash": "ce566d2c877f11f1ae29a8fb7e7a98ff517c477a",
+      "ancestorOfHead": true
+    }
+  ],
+  "historicalBrowserResults": [
+    {
+      "file": "standalone-browser-initial.json",
+      "historicalStats": {
+        "startTime": "2026-10-17T05:12:00.454Z",
+        "duration": 259072.092,
+        "expected": 180,
+        "skipped": 0,
+        "unexpected": 8,
+        "flaky": 0
+      }
+    },
+    {
+      "file": "standalone-browser.json",
+      "historicalStats": {
+        "startTime": "2026-10-17T05:17:43.021Z",
+        "duration": 265266.47900000005,
+        "expected": 188,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "file": "standalone-next-browser.json",
+      "historicalStats": {
+        "startTime": "2026-10-17T05:17:40.869Z",
+        "duration": 259675.69100000002,
+        "expected": 176,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "file": "playground-offline-final.json",
+      "historicalStats": {
+        "startTime": "2026-10-17T07:02:04.722Z",
+        "duration": 325731.123,
+        "expected": 224,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "file": "playground-http-final.json",
+      "historicalStats": {
+        "startTime": "2026-10-17T07:02:04.733Z",
+        "duration": 320359.338,
+        "expected": 212,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "remoteCount": 1,
+  "htmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+  "limits": [
+    "Selected source lines verified; not native full conversation export",
+    "Interrupted rounds have no invented final answer",
+    "No claim of three independent human bug reports",
+    "This audit performs no publication or physical-device acceptance"
+  ]
+}

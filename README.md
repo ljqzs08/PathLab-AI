@@ -4,7 +4,7 @@
 
 **GitHub：[`ljqzs08/PathLab-AI`](https://github.com/ljqzs08/PathLab-AI)**（Public；仓库是源码与历史，不是已部署的网站）。
 
-评审导航：[10 分钟源码复现](#10分钟源码复现) · [复现性声明与本轮实测](docs/reproducibility.md) · [真实 Prompt 索引](prompts/README.md) · [演进记录](docs/evolution-log.md) · [三条核心链](docs/core-chain-evidence.md) · [剩余提交材料](docs/progress-status.md)。
+评审导航：[10 分钟源码复现](#10分钟源码复现) · [复现性声明与本轮实测](docs/reproducibility.md) · [Prompt 评审材料入口](prompts/submission/README.md) · [真实 Prompt 总索引](prompts/README.md) · [演进记录](docs/evolution-log.md) · [三条核心链](docs/core-chain-evidence.md) · [剩余提交材料](docs/progress-status.md)。
 
 **当前状态：阶段 6，本地学习闭环 + 本机进度与安全恢复已接通。** 四关支持真实 BFS/A* 预测、受门控回放、Canvas/DOM、单因素条件实验、前后真实指标与引用解释报告。完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。本地反馈是规则模板，没有调用模型；“记录齐备”不代表掌握，也不判定自由文本解释正确。已支持本机自动存档、版本化 JSON 备份和安全导入。E017 已增加可选的 DeepSeek 服务端证据复盘，默认关闭，模拟协议测试通过不代表真实账号联调已完成。功能检查与参赛证据分别列在 docs/progress-status.md；当前仍不是可直接提交的完整参赛交付。
 

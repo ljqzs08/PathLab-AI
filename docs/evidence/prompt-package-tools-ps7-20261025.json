@@ -1,0 +1,47 @@
+{
+  "executor": "AI synthetic packaging checks; not human Prompt evidence",
+  "checkedAt": "2026-10-25T09:28:42.8449571+08:00",
+  "shell": "7.6.5",
+  "passed": 9,
+  "checks": [
+    {
+      "name": "whitelisted complete rounds and actual commits verified",
+      "passed": true
+    },
+    {
+      "name": "build and immediate ZIP verification succeed",
+      "passed": true
+    },
+    {
+      "name": "independent reopen matches archive SHA256",
+      "passed": true
+    },
+    {
+      "name": "output outside selected workspace child refused",
+      "passed": true
+    },
+    {
+      "name": "altered file bytes refused",
+      "passed": true
+    },
+    {
+      "name": "unlisted ZIP content refused",
+      "passed": true
+    },
+    {
+      "name": "unsafe ZIP entry refused without extraction",
+      "passed": true
+    },
+    {
+      "name": "duplicate archive entry refused",
+      "passed": true
+    },
+    {
+      "name": "hidden assistant phase refused even after manifest hash is updated",
+      "passed": true
+    }
+  ],
+  "fixturesCleaned": true,
+  "applicationTestsRerun": false,
+  "publicationPerformed": false
+}

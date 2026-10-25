@@ -1,0 +1,344 @@
+{
+  "checkedAt": "2026-10-25T09:25:31.1553957+08:00",
+  "executor": "AI",
+  "guides": 6,
+  "checkedLinks": 67,
+  "brokenLinks": 0,
+  "links": [
+    {
+      "file": "C01-algorithms.md",
+      "link": "../sessions/2026-10-17-project-brief.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../sessions/2026-10-17-stage-2-bfs.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../sessions/2026-10-17-stage-2-bfs.jsonl",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.jsonl",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../../docs/verification-stage-2-bfs.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../../docs/evidence/stage-2-check-ps7.txt",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../../docs/verification-stage-3-astar.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../../docs/evidence/stage-3-check-ps7.txt",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "../../docs/evidence/stage-3-comparison.json",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "README.md",
+      "exists": true
+    },
+    {
+      "file": "C01-algorithms.md",
+      "link": "C02-prediction-replay.md",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.md",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.jsonl",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../../docs/evidence/stage-4-session-red.txt",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../../docs/evidence/stage-4-schema-validator-failure.txt",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../../docs/evidence/stage-4-session-check.txt",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../../docs/evidence/stage-4-ui-browser.json",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "../../docs/verification-stage-4-learning.md",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "U01-human-html-correction.md",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "README.md",
+      "exists": true
+    },
+    {
+      "file": "C02-prediction-replay.md",
+      "link": "C03-reflection.md",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.md",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../sessions/2026-10-17-autonomous-iterations.jsonl",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/verification-stage-5-reflection.md",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/evidence/stage-5-ui-check.txt",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/evidence/stage-5-ui-browser.json",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/evidence/stage-5-focus-observation.json",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/evidence/stage-5-focus-red.txt",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "../../docs/evidence/stage-5-focus-red.json",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "U01-human-html-correction.md",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "S02-web-review-iteration.md",
+      "exists": true
+    },
+    {
+      "file": "C03-reflection.md",
+      "link": "README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "C01-algorithms.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "C02-prediction-replay.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "C03-reflection.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "U01-human-html-correction.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "S02-web-review-iteration.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "../sessions/2026-10-17-project-brief.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "attachments/project-brief.txt",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "link": "chain-map.json",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-integration.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-integration.jsonl",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-configuration-guide.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-configuration-guide.jsonl",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-web-alternative.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-deepseek-web-alternative.jsonl",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-web-review-workbench.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../sessions/2026-10-17-web-review-workbench.jsonl",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/verification-web-review.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/verification-deepseek.md",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/evidence/web-review-before.txt",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/evidence/web-review-check-pwsh.txt",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/evidence/web-review-http-full.json",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "../../docs/evidence/web-review-offline-full.json",
+      "exists": true
+    },
+    {
+      "file": "S02-web-review-iteration.md",
+      "link": "README.md",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../sessions/2026-10-17-local-html-entry.md",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../sessions/2026-10-17-local-html-entry.jsonl",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/evidence/standalone-before.json",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../sessions/2026-10-17-standalone-html-correction.md",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../sessions/2026-10-17-standalone-html-correction.jsonl",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/evidence/standalone-first-build.txt",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/evidence/standalone-browser-initial.json",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/evidence/standalone-browser.json",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/evidence/standalone-next-browser.json",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "../../docs/verification-standalone-html.md",
+      "exists": true
+    },
+    {
+      "file": "U01-human-html-correction.md",
+      "link": "README.md",
+      "exists": true
+    }
+  ]
+}

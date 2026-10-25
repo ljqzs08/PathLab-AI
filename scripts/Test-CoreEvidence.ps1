@@ -3,7 +3,7 @@
 $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot)).TrimEnd('\')
 $homeRoot = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $env:USERPROFILE '.codex' }
-$stems = @('stage-2-bfs','autonomous-iterations','evidence-correction-storage','local-html-entry','standalone-html-correction','motion-interaction','free-playground','remote-ai-advice','remote-ai-interrupted','review-readiness','review-rules-continuation')
+$stems = @('stage-2-bfs','autonomous-iterations','evidence-correction-storage','local-html-entry','standalone-html-correction','motion-interaction','free-playground','remote-ai-advice','remote-ai-interrupted','review-readiness','review-rules-continuation','project-brief','deepseek-integration','deepseek-configuration-guide','deepseek-web-alternative','web-review-workbench')
 $sourceCache = @{}
 $results = @()
 $sha = [Security.Cryptography.SHA256]::Create()
@@ -41,11 +41,28 @@ try {
         }
         $final = @($records | Where-Object { $_.role -eq 'assistant' -and $_.phase -in @('final','final_answer') }).Count -gt 0
         if ($stem -notin @('remote-ai-interrupted','review-readiness','review-rules-continuation') -and -not $final) { throw "Expected completed snapshot: $stem" }
-        $results += [ordered]@{ path = $relative + '.jsonl'; source = $sourceName; messages = $records.Count; finalCaptured = $final; originalsAndHashesMatch = $true }
+        $completeVisibleRound = $false
+        if ($final) {
+            $expected = @()
+            for ($index = $records[0].sourceLine - 1; $index -lt $records[-1].sourceLine; $index++) {
+                $item = $lines[$index] | ConvertFrom-Json
+                if ($item.type -ne 'response_item' -or $item.payload.type -ne 'message') { continue }
+                $message = $item.payload
+                if ($message.role -notin @('user','assistant')) { continue }
+                if ($message.role -eq 'assistant' -and $message.phase -notin @('commentary','final','final_answer')) { continue }
+                $text = @($message.content | Where-Object { $_.type -in @('input_text','output_text','text') } | ForEach-Object { $_.text }) -join "`n"
+                if (-not $text -or ($message.role -eq 'assistant' -and $text.TrimStart() -match '^# (Handoff Summary|Handoff —|交接摘要)')) { continue }
+                if ($expected.Count -gt 0 -and $message.role -eq 'user') { throw "Unexpected user boundary in complete round: $stem" }
+                $expected += $index + 1
+            }
+            if (Compare-Object $expected @($records | ForEach-Object { $_.sourceLine })) { throw "Visible messages omitted from selected complete round: $stem" }
+            $completeVisibleRound = $true
+        }
+        $results += [ordered]@{ path = $relative + '.jsonl'; source = $sourceName; messages = $records.Count; finalCaptured = $final; originalsAndHashesMatch = $true; completeSelectedVisibleRound = $completeVisibleRound }
     }
 } finally { $sha.Dispose() }
 $commits = @()
-foreach ($ref in @('5c3eec6','5ade0e8','572e15d','fd82d8f','3b2e9f3','f4a43ca','5e369b5','4b11729','c51334d')) {
+foreach ($ref in @('5c3eec6','5ade0e8','572e15d','fd82d8f','3b2e9f3','f4a43ca','5e369b5','4b11729','c51334d','d235a91','ce566d2')) {
     $hash = git -C $root rev-parse --verify "$ref^{commit}"
     if ($LASTEXITCODE -ne 0) { throw "Missing commit: $ref" }
     git -C $root merge-base --is-ancestor $hash HEAD
@@ -65,5 +82,5 @@ foreach ($name in @('standalone-browser-initial','standalone-browser','standalon
     historicalBrowserResults = $stats
     remoteCount = @(git -C $root remote).Count
     htmlSha256 = (Get-FileHash -LiteralPath (Join-Path $root 'PathLab-AI/PathLab AI.html')).Hash.ToLowerInvariant()
-    limits = @('Selected source lines verified; not native full conversation export', 'Interrupted rounds have no invented final answer', 'No claim of three independent human bug reports', 'No publication or physical-device acceptance')
+    limits = @('Selected source lines verified; not native full conversation export', 'Interrupted rounds have no invented final answer', 'No claim of three independent human bug reports', 'This audit performs no publication or physical-device acceptance')
 } | ConvertTo-Json -Depth 8

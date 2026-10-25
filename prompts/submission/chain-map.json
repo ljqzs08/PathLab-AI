@@ -1,0 +1,99 @@
+{
+  "format": "pathlab-prompt-chain-map/v1",
+  "editedAt": "2026-10-25",
+  "executor": "AI",
+  "rawTranscriptDirectory": "prompts/sessions",
+  "sourceScope": "Selected complete visible rounds only; not native full conversation export",
+  "snapshots": [
+    "2026-10-17-project-brief",
+    "2026-10-17-stage-2-bfs",
+    "2026-10-17-autonomous-iterations",
+    "2026-10-17-local-html-entry",
+    "2026-10-17-standalone-html-correction",
+    "2026-10-17-deepseek-integration",
+    "2026-10-17-deepseek-configuration-guide",
+    "2026-10-17-deepseek-web-alternative",
+    "2026-10-17-web-review-workbench"
+  ],
+  "sharedSnapshot": "2026-10-17-autonomous-iterations",
+  "attachment": {
+    "source": "Original user pasted attachment referenced by project-brief source line 9",
+    "sha256": "c309d39c71dfda49f5be5f4550bef6b781c798961cc763c4291a9b6635fa0d85",
+    "scope": "Historical product proposal, not implementation status",
+    "path": "prompts/submission/attachments/project-brief.txt"
+  },
+  "chains": [
+    {
+      "id": "C01",
+      "dossier": "C01-algorithms.md",
+      "snapshots": [
+        "2026-10-17-stage-2-bfs",
+        "2026-10-17-autonomous-iterations"
+      ],
+      "commits": [
+        "5c3eec6",
+        "5ade0e8"
+      ],
+      "repairOrigin": "AI validation; no independent user algorithm defect report"
+    },
+    {
+      "id": "C02",
+      "dossier": "C02-prediction-replay.md",
+      "snapshots": [
+        "2026-10-17-autonomous-iterations"
+      ],
+      "commits": [
+        "572e15d",
+        "fd82d8f"
+      ],
+      "repairOrigin": "AI test development and schema tooling fix"
+    },
+    {
+      "id": "C03",
+      "dossier": "C03-reflection.md",
+      "snapshots": [
+        "2026-10-17-autonomous-iterations"
+      ],
+      "commits": [
+        "3b2e9f3",
+        "f4a43ca"
+      ],
+      "repairOrigin": "AI-observed reset and focus issues"
+    },
+    {
+      "id": "U01",
+      "dossier": "U01-human-html-correction.md",
+      "snapshots": [
+        "2026-10-17-local-html-entry",
+        "2026-10-17-standalone-html-correction"
+      ],
+      "commits": [
+        "5e369b5",
+        "4b11729"
+      ],
+      "repairOrigin": "Real user delivery correction; subsequent accessibility/test fixes by AI"
+    },
+    {
+      "id": "S02",
+      "dossier": "S02-web-review-iteration.md",
+      "snapshots": [
+        "2026-10-17-deepseek-integration",
+        "2026-10-17-deepseek-configuration-guide",
+        "2026-10-17-deepseek-web-alternative",
+        "2026-10-17-web-review-workbench"
+      ],
+      "commits": [
+        "d235a91",
+        "ce566d2"
+      ],
+      "repairOrigin": "Real user design redirection; implementation fixes by AI"
+    }
+  ],
+  "limits": [
+    "Shared messages counted once",
+    "No invented user defect reports",
+    "Historical automated results, not new product tests or human acceptance",
+    "Current packaging round excluded until final answer is persisted",
+    "Public repository upload and formal competition submission are separate actions"
+  ]
+}
