@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-25T17:15:34.5378469+08:00",
+  "scope": "Unmodified frozen Prompt ZIP inside final non-video packet",
+  "archive": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版\\05-Prompt证据\\PathLab-AI-Prompt-evidence-20261025-093233.zip",
+  "PowerShell7": "\narchive        : D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版\\05-Prompt证据\\PathLab-AI-Prompt-eviden\n                 ce-20261025-093233.zip\nsha256         : 8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c\nfiles          : 57\nsnapshots      : 9\nuniqueMessages : 38\ncommits        : 10\nverified       : True\nscope          : Archive integrity and snapshot structure; original-source coverage audited separately; not native expo\n                 rt or human acceptance\n",
+  "WindowsPowerShell51": "\n\narchive        : D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版\\05-Prompt证据\\PathLab-AI-Prompt-evidence-20261025-093\n                 233.zip\nsha256         : 8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c\nfiles          : 57\nsnapshots      : 9\nuniqueMessages : 38\ncommits        : 10\nverified       : True\nscope          : Archive integrity and snapshot structure; original-source coverage audited separately; not native expo\n                 rt or human acceptance\n\n\n",
+  "bothPassed": true,
+  "productRegressionRerun": false
+}

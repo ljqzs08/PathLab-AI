@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-25T17:23:53.519926+08:00",
+  "executor": "AI read-only source-text comparison",
+  "snapshots": [
+    {
+      "stem": "2026-10-25-submission-organize",
+      "sourceFile": "rollout-2026-10-25T16-43-30-01a1723a-adcd-7f81-bc01-35b2b8c24154.jsonl",
+      "messages": 2,
+      "allTextHashesAndSourceLocationsMatch": true,
+      "finalCaptured": false,
+      "sourceLines": [
+        9,
+        14
+      ]
+    },
+    {
+      "stem": "2026-10-25-submission-github-clarification",
+      "sourceFile": "rollout-2026-10-25T16-43-30-01a1723a-adcd-7f81-bc01-35b2b8c24154.jsonl",
+      "messages": 5,
+      "allTextHashesAndSourceLocationsMatch": true,
+      "finalCaptured": false,
+      "sourceLines": [
+        41,
+        117,
+        190,
+        261,
+        392
+      ]
+    },
+    {
+      "stem": "2026-10-25-project-introduction-completion-final",
+      "sourceFile": "rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl",
+      "messages": 1,
+      "allTextHashesAndSourceLocationsMatch": true,
+      "finalCaptured": true,
+      "sourceLines": [
+        4804
+      ]
+    }
+  ],
+  "internalHandoffContentsExported": false,
+  "currentOverallFinalAnswerPending": true,
+  "newCoreSnapshotsAdded": 0,
+  "previousContaminatedContinueNotUsedAsFinal": true,
+  "nativeFullExport": false
+}

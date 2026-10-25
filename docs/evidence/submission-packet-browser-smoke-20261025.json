@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-25T09:15:11.177Z",
+  "executor": "AI via Playwright / headless Microsoft Edge",
+  "source": "D:\\竞赛\\.cache\\submission-validation-20261025-2e93ed28\\extracted\\03-离线体验\\PathLab AI.html",
+  "sourceSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+  "scope": "Four simulated viewports, L01 first-candidate prediction to reflection; two local navigation layouts",
+  "cases": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "finalState": "reflection",
+      "pathLength": "6",
+      "expandedCount": "22",
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "finalState": "reflection",
+      "pathLength": "6",
+      "expandedCount": "22",
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "finalState": "reflection",
+      "pathLength": "6",
+      "expandedCount": "22",
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "finalState": "reflection",
+      "pathLength": "6",
+      "expandedCount": "22",
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  ],
+  "navigation": [
+    {
+      "width": 1440,
+      "horizontalOverflow": false,
+      "links": 6,
+      "screenshot": "D:\\竞赛\\.cache\\submission-smoke-20261025\\landing-1440.png"
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false,
+      "links": 6,
+      "screenshot": "D:\\竞赛\\.cache\\submission-smoke-20261025\\landing-390.png"
+    }
+  ],
+  "passed": true,
+  "humanOrPhysicalDeviceAcceptance": false,
+  "fullProductRegressionRerun": false,
+  "externalDeepSeekUsed": false,
+  "publicationOrSubmission": false,
+  "temporaryScreenshotPolicy": "Inspect only, then delete; official archived evidence images are retained"
+}

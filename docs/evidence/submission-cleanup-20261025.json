@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-25T17:19:30.4278908+08:00",
+  "executor": "AI",
+  "cleanupCompleted": false,
+  "reason": "Native PowerShell recursive cleanup command was rejected by current tool policy before execution; not retried through another shell or runtime",
+  "remainingTemporaryDirectories": [
+    {
+      "path": "D:\\竞赛\\.cache\\submission-validation-20261025-2e93ed28",
+      "files": 835,
+      "bytes": 24365653.0,
+      "stillExists": true
+    },
+    {
+      "path": "D:\\竞赛\\.cache\\submission-smoke-20261025",
+      "files": 3,
+      "bytes": 162905.0,
+      "stillExists": true
+    }
+  ],
+  "temporaryLandingScreenshots": {
+    "count": 2,
+    "visuallyInspectedByAI": true,
+    "desktop": "Three-column cards, readable text, no clipping",
+    "mobile": "Single-column cards, readable text, no clipping",
+    "deleted": false
+  },
+  "officialArchivedScreenshotsRetained": 9,
+  "existingOtherCachesOrDraftsDeleted": false
+}

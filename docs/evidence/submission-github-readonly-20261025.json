@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-25T16:54:48.2267620+08:00",
+  "executor": "AI anonymous read-only HTTPS and Git",
+  "repository": "https://github.com/ljqzs08/PathLab-AI",
+  "private": false,
+  "remoteMain": "e438363692762398117756ceb7f72a3fb415e5ad",
+  "localHead": "650eb914a15240b44772444cb4d06f57ab0f2dfa",
+  "localCommitCount": 41,
+  "packagedSourceRef": "e438363692762398117756ceb7f72a3fb415e5ad",
+  "packagedHistoryCount": 38,
+  "codeAndReadmeDiffBetweenSourceAndLocalHead": [],
+  "credentialsUsed": false,
+  "pushPerformed": false,
+  "notes": [
+    "Existing GitHub publication is not a new task or incomplete upload",
+    "Three newer local document commits were not pushed; their final PDFs will be supplied separately in the local submission packet",
+    "The source baseline is exactly the public commit cited by both PDFs; all 38 ancestor commits are retained"
+  ]
+}

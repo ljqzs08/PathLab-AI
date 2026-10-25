@@ -1,0 +1,109 @@
+{
+  "schema": "pathlab-submission-rules/v1",
+  "checkedAt": "2026-10-25T16:54:46.5729670+08:00",
+  "executor": "AI read-only browser inspection",
+  "browser": "Codex in-app browser, rendered DOM and accessibility tree",
+  "sources": [
+    {
+      "url": "https://www.boxuegu.com/matchTrack/detail/?id=10039",
+      "title": "传智杯大赛-赛道详情 / AI创新应用挑战赛",
+      "scope": "public track page, provincial submission requirements",
+      "requirements": [
+        "GitHub/Gitee Public or effective reviewer access",
+        "Complete fine-grained Git history; no all-feature initial commit",
+        "At least three core iteration Prompt chains including user prompts, AI suggestions and actual human-guided Bug repair process",
+        "README: 10-minute reproduction guide, environment, dependencies, environment template",
+        "Video: 5-8 minutes, MP4 1080p, including at least two minutes of AI collaboration demonstration",
+        "Technical document: PDF, not more than 30 pages; intent control, architecture and reproducibility"
+      ],
+      "provincialDate": "2026-11-18",
+      "provincialExactTimeSpecified": false,
+      "timingAmbiguity": "Public page also calls Nov 18 the guidance deadline, gives feedback expected late Jan 2027 and says final submission will be notified separately; do not infer an extension.",
+      "submissionAccess": "Official page says provincial entry is viewed in registered subject in personal center after payment; actual account and registration not inspected"
+    },
+    {
+      "url": "https://f.kdocs.cn/ksform/w/write/GZcCLbBV#routePromt",
+      "title": "全国计算机应用能力与数字素养大赛&第九届传智杯AI创新应用挑战赛省赛作品预指导提交地址",
+      "scope": "publicly visible form fields; no login, filling, upload or submission",
+      "deadlineDisplayed": "2026-10-31 15:00:00",
+      "timezoneNote": "Page does not label a time zone; this project interprets mainland event time as Asia/Shanghai, to be confirmed by organizer if needed",
+      "preGuidanceOnly": true,
+      "subsequentFormalSubmissionRequired": true,
+      "oneSubmissionPerContestant": true,
+      "loginRequired": true,
+      "fields": [
+        {
+          "number": 1,
+          "label": "UID",
+          "required": true,
+          "providedBy": "user"
+        },
+        {
+          "number": 2,
+          "label": "姓名",
+          "required": true,
+          "providedBy": "user"
+        },
+        {
+          "number": 3,
+          "label": "您的学校",
+          "required": true,
+          "providedBy": "user"
+        },
+        {
+          "number": 4,
+          "label": "提交作品联系人手机号",
+          "required": true,
+          "providedBy": "user"
+        },
+        {
+          "number": 5,
+          "label": "完整作品文件链接（作品文档、作品源码等作品内容）",
+          "required": true,
+          "destination": "百度网盘、夸克网盘、阿里云盘等主流网盘",
+          "access": "有效可访问，建议长期有效，含提取码"
+        },
+        {
+          "number": 6,
+          "label": "作品介绍文档",
+          "required": true,
+          "maxFiles": 1,
+          "maxSizeDisplayed": "单个文件100MB以内",
+          "coverage": [
+            "项目详情及使用方式",
+            "项目亮点",
+            "AI测试技术落地使用情况概述",
+            "关键技术",
+            "相关图片/照片",
+            "之前是否发表过或获奖",
+            "基于其他项目优化时说明优化部分"
+          ]
+        },
+        {
+          "number": 7,
+          "label": "演示视频地址",
+          "required": true,
+          "destination": "B站、抖音等可公开访问的视频平台",
+          "prohibited": "百度网盘视频链接",
+          "urlFormat": "https://..."
+        }
+      ],
+      "differences": [
+        "Track page describes individual competition while general form says submission by team; keep true individual participant information, do not invent teammates",
+        "Form deadline is earlier than public track page; use the specific pre-guidance deadline for this link"
+      ]
+    }
+  ],
+  "actionsPerformed": {
+    "login": false,
+    "fillForm": false,
+    "upload": false,
+    "submit": false,
+    "githubPush": false
+  },
+  "limits": [
+    "Rendered public pages inspected on the stated date; rules and account-specific notices may change",
+    "Field 7 is required in visible accessibility tree; no tested or promised submit-now/add-video-later workflow",
+    "No author UID, legal name, school or phone inferred from repository metadata"
+  ]
+}
