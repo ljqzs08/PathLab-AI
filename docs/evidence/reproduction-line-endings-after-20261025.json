@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-25T08:37:32.5319211+08:00",
+  "executor": "AI",
+  "status": "passed",
+  "workingSourceEndings": "mixed LF/CRLF",
+  "cleanCloneSourceEndings": "CRLF",
+  "canonicalHtmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+  "cleanCloneHtmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+  "canonicalMatchesExistingGitArtifact": true,
+  "changedScope": [
+    ".gitattributes",
+    "PathLab-AI/scripts/build-standalone.mjs"
+  ],
+  "applicationAlgorithmsOrRulesChanged": false,
+  "screenshotsCreated": false
+}

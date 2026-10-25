@@ -1,0 +1,2 @@
+# Canonical text checkouts keep source and standalone HTML reproducible across Git clients.
+* text=auto eol=lf

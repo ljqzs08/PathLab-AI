@@ -350,3 +350,15 @@ E018 实现提交已核对：`ce566d2c877f11f1ae29a8fb7e7a98ff517c477a`，44 个
 E019 收尾验证（AI，2026-10-21）：两版 PowerShell Prompt 工具各 19/19，E018 与本轮新增快照原文/角色/哈希匹配；14 项文档证据一致性检查通过，结果存于 docs/evidence/submission-validation-20261021.json。本轮最终答复尚待写入后补齐。
 
 E019 实际文档提交：`06fd98aacd0430d276e91a37cd0cce377f6786b4`（`docs: audit official competition submission requirements`），17 个规则/审计/README/证据/Prompt 文件，未提交应用源码、私有配置或既有 5 个无关未跟踪文件。基线 83a6dee 为其祖先；本地提交不代表上传，remote 仍为 0。提交范围复核见 docs/evidence/submission-commit-audit-20261021.json。该索引由后续独立归档提交纳入，不改写已有提交。
+
+## E020：GitHub 发布与源码复现（2026-10-25）
+
+### E020a：先复现并修复 Windows 单文件构建字节差异
+
+- 用户真实要求：完成 GitHub 创建/上传、演进与 10 分钟复现材料；原始 Prompt 见 prompts/sessions/2026-10-25-github-{publication,upload-retry,create-reproduce}.{md,jsonl}。前三轮审计/上传最终答复已补齐；本轮最终答复未写入前不伪造。
+- 基线：main 的 44b4ef24f39158c50229e96dd7ef048922dc1025，32 个真实提交，初始 30523e1 仅 8 个规则/Prompt/工具文件、不含完整应用。用户通过官方设备授权后核对 ljqzs08，创建 Public ljqzs08/PathLab-AI 并配置 origin；此子阶段尚未推送。此前原生浏览器安全停止不绕过，未提取浏览器会话。
+- 复现：仅在 D 盘工作区新建独立 Git 检出，无复制依赖/.next/.env.local，使用新 npm 缓存；ci 44.611 秒；计时开始至 L01 预测→20 次推进→本地复盘为 342.113 秒（含等待，不含事前本地 clone/环境安装/公网下载），AI 无头 Edge，不是人工或干净电脑验收。类型/lint/155 Node、生产构建和 HTTP260/260 均重新通过。
+- 实际失败：Windows Git 检出 CRLF 导致重新生成 HTML 为 730cdf...，与既有 Git blob 8f481d... 不同；AI 发现而非用户报告 Bug。旧工作副本 18d043... 也含两字节换行差异，历史报告保留原测量，不重写。
+- 最小修复：.gitattributes 固定文本检出 LF；build-standalone.mjs 只对嵌入 CSS/SVG 换行归一化。混合换行工作区与 CRLF 检出均生成同一 501850 字节 HTML，SHA256 8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0，与既有 Git blob 完全一致。没有修改算法/界面/存档或私有配置，不新增依赖。
+- 验证证据：docs/evidence/reproduction-line-endings-{before,after}-20261025.json；reproduction-html-{,crlf-}build-20261025.txt。修复前离线 272/272 已通过，修复后的完整四视口回归独立执行，结果完成后再归档，不提前填写。
+- Git：本子阶段仅显式暂存构建/LF、失败与修复证据、真实 Prompt 和演进记录；不夹带既有临时 spec/错误草稿，不 amend 或改写历史。实际哈希由后续文档提交登记。

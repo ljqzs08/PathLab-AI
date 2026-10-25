@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-25T00:31:06.386Z",
+  "executor": "AI",
+  "sourceCommit": "44b4ef24f39158c50229e96dd7ef048922dc1025",
+  "issue": "Fresh Windows checkout converts CSS and SVG to CRLF under existing Git core.autocrlf; raw text is embedded without newline normalization, changing the standalone HTML bytes.",
+  "freshCheckoutBuildSha256": "730cdfd0305879526fbcc5280cb72d3288dd53749ac2ff29fe52d7ca25ab3de1",
+  "sourceIndexEndings": "LF",
+  "freshCheckoutSourceEndings": "CRLF",
+  "detectedBy": "AI reproduction audit, not user-reported application defect",
+  "applicationBehaviourClaim": "No functional failure claimed; byte-level build reproducibility issue only",
+  "workingHtmlSha256": "18d04356474a4e3e9dbe2901669bcc77592e336084be83943ce98d2ff4c67e63",
+  "indexedHtmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+  "normalizedBuildEqualsIndexed": true,
+  "normalizedWorkingEqualsNormalizedBuild": true,
+  "expectedFix": "Normalize raw CSS/SVG newlines in the standalone builder and pin Git text checkout newlines to LF. Preserve the existing canonical Git HTML artifact and all history."
+}

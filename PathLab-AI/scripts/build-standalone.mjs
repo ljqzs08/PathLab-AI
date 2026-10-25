@@ -62,9 +62,10 @@ try {
   const compressed = await minify(uncompressed, { ecma: 2022, format: { comments: /@license|@preserve|^!/ } });
   if (!compressed.code) throw new Error('No browser bundle emitted.');
   const javascript = compressed.code.replace(/<\/script/gi, '<\\/script');
-  const styles = (await Promise.all(['globals.css', 'learning.css'].map(name => readFile(join(app, 'src/app', name), 'utf8')))).join('\n');
+  const styles = (await Promise.all(['globals.css', 'learning.css'].map(name => readFile(join(app, 'src/app', name), 'utf8')))).join('\n').replace(/\r\n?/g, '\n');
   if (/@import\b|url\(|<\/style/i.test(styles)) throw new Error('Inline styles must not depend on external assets.');
-  const icon = await readFile(join(app, 'src/app/icon.svg'), 'utf8');
+  // Canonical raw text keeps the single-file bytes stable across Windows Git checkouts.
+  const icon = (await readFile(join(app, 'src/app/icon.svg'), 'utf8')).replace(/\r\n?/g, '\n');
   const notices = await Promise.all(['react', 'react-dom', 'scheduler'].map(async name => {
     const root = dirname(require.resolve(name + '/package.json'));
     const license = await readFile(join(root, 'LICENSE'), 'utf8');
