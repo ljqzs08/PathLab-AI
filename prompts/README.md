@@ -71,3 +71,10 @@ JSONL 与 Markdown 同名；JSONL 每条包含来源行号、textSha256、角色
 - [十张照片原要求与当时暂停结果](sessions/2026-10-25-prompt-photos.md)：来源 709 / 714 / 822 行，3 条；明确非连续提取，末条仅是当时暂停，不冒充纳包已完成；内部交接排除。
 - [继续与实际执行说明](sessions/2026-10-25-prompt-photos-continue.md)：来源 829 / 832 / 931 行，3 条真实可见消息；本轮末答复仍待落盘，finalCaptured=False，不预写。
 - [原始照片与来源边界](../Prompt历史快照/README.md)、[本轮材料验证](../docs/verification-prompt-photos.md)：十图仅为局部历史补充，按原文件名 / 原字节单独纳包，不改冻结 Prompt ZIP 的 9 轮 / 38 条，也不重复计作三条用户 Bug 链。
+
+## E028：视频录制指导（2026-10-25）
+
+- [本轮用户要求与可见说明](sessions/2026-10-25-video-recording-guide.md)：原始源行1039/1042，2条真实可见消息；本轮最终答复待真实落盘，内部交接排除。因当前标准提取器的压缩边界限制，以来源行白名单摘录，不冒充原生全量导出。
+- [E027 真正最终答复补充](sessions/2026-10-25-prompt-photos-completion-final.md)：源1032，独立补件，不改旧继续轮快照、不计新核心轮。
+- [可照录的分镜与 Prompt](../docs/video-recording-guide.md)：两段 Prompt 是本次新拟的录像复现脚本，不是历史原话或已发生的对话。视频与复现代码尚未生成。
+- [验证与边界](../docs/verification-video-recording-guide.md)：既有 BFS 11/11，文档静态检查；C01/C02/C03 / U01 与冻结9轮38条边界不变。

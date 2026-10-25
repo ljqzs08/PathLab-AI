@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-25",
+  "milestone": "E028",
+  "baseCommit": "06a8ace1514593b464c80dd3c31edc7a173a8629",
+  "scope": "Recording guidance only; no video or new reproduction module created.",
+  "executor": "AI via local tools",
+  "existingBfsCheck": {
+    "nodeVersion": "v24.19.0",
+    "cwd": "D:/竞赛/PathLab-AI",
+    "command": "node --experimental-strip-types --test tests/bfs.test.mjs",
+    "exitCode": 0,
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "note": "Existing production BFS tests only, not the proposed live reproduction or a full application regression."
+  },
+  "guideTimeline": {
+    "targetSeconds": 420,
+    "plannedLiveCollaborationStart": "02:35",
+    "plannedLiveCollaborationEnd": "05:15",
+    "plannedLiveCollaborationSeconds": 160,
+    "recommendedFinalSubstantiveCollaborationMinimumSeconds": 140,
+    "status": "Proposed only; actual video not recorded or inspected."
+  },
+  "protectedFileSha256": {
+    "PathLab-AI/PathLab AI.html": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+    "delivery/PathLab-AI-参赛整理-20261025/01-上传网盘/PathLab-AI-完整作品材料-不含视频.zip": "ae55c7320027cf7b7cd2450ec1441ff60cc771f195c433758e87416d7bc02010",
+    "output/pdf/PathLab-AI-技术文档.pdf": "ead851bb3c7f9417837376fc440219572526472c76c4ac5a5dd0b97dfac1dd2e",
+    "output/pdf/PathLab-AI-作品介绍文档.pdf": "9af5d3182881c005775e6139e8d18dce855389dbb3e7cc91574b4b28b3cb2339"
+  },
+  "sources": [
+    "https://obsproject.com/kb/portable-mode",
+    "https://obsproject.com/kb/standard-recording-output-guide",
+    "https://obsproject.com/kb/quick-start-guide"
+  ],
+  "notDone": [
+    "No video recording",
+    "No OBS download or installation",
+    "No new BFS reproduction code",
+    "No delivery ZIP change",
+    "No upload or push",
+    "No full product/human/real-device verification"
+  ],
+  "staticValidation": {
+    "executedAt": "2026-10-25T22:13:25.137715+08:00",
+    "passed": 27,
+    "failed": 0,
+    "checks": [
+      "7 contiguous scenes target 420 seconds",
+      "Timeline has no gap or overlap",
+      "Proposed AI scene is 160 seconds; not actual recorded duration",
+      "Guidance measures edited playback, with buffer beyond 120 seconds",
+      "New prompts clearly distinguished from historical originals",
+      "Existing tests and genuine failures clearly distinguished",
+      "Markdown code fences balanced",
+      "All 12 existing local recording references resolve",
+      "No proposed live-reproduction code pre-generated",
+      "Protected SHA unchanged: PathLab-AI/PathLab AI.html",
+      "Protected SHA unchanged: delivery/PathLab-AI-参赛整理-20261025/01-上传网盘/PathLab-AI-完整作品材料-不含视频.zip",
+      "Protected SHA unchanged: output/pdf/PathLab-AI-技术文档.pdf",
+      "Protected SHA unchanged: output/pdf/PathLab-AI-作品介绍文档.pdf",
+      "Frozen E027 delivery ZIP unchanged",
+      "Historical commit exists: 5c3eec6",
+      "Historical commit exists: 5ade0e8",
+      "Historical commit exists: 5e369b5",
+      "Historical commit exists: 4b11729",
+      "Exact visible-source-line whitelist: 2026-10-25-prompt-photos-completion-final",
+      "Original text / role / SHA: 1032",
+      "Internal handoff not archived: 1032",
+      "Exact visible-source-line whitelist: 2026-10-25-video-recording-guide",
+      "Original text / role / SHA: 1039",
+      "Internal handoff not archived: 1039",
+      "Original text / role / SHA: 1042",
+      "Internal handoff not archived: 1042",
+      "Common credential patterns not found in 11 selected text files; not a security guarantee"
+    ]
+  },
+  "conversationEvidence": {
+    "sourceSession": "01a1723a-adcd-7f81-bc01-35b2b8c24154",
+    "previousGenuineFinalSourceLine": 1032,
+    "currentSourceLines": [
+      1039,
+      1042
+    ],
+    "currentFinalCaptured": false,
+    "method": "Exact source-line whitelisted extraction; internal compaction handoff excluded; not native full export."
+  }
+}
