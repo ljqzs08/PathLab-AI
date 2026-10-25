@@ -371,3 +371,12 @@ E020a 实际提交：6455c846fb543f537cdf725cff88a4b80d70f94c（fix: make offlin
 - 验证：独立源码类型/lint/155 Node、build、HTTP 260/260、修复后离线 272/272；Prompt 工具双 PS 各 19；npm 工具 PS7 49/PS5.1 37。实测与边界均按真实日志归档，无人工/真机冒称。
 - 本地初始并非全功能一次提交；完整细粒度历史将正常推送到已获授权的 Public ljqzs08/PathLab-AI。实际材料提交、推送和匿名访问在完成后按 docs/evidence/github-publication-20261025.json 登记，不提前称成功、不自引用、不改写历史。
 - 三链功能/证据索引存在，部分共享连续会话；人类引导修复材料及视频/PDF/正式提交仍分列。最终答复须下一轮实际补齐。
+
+E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: publish reproducible setup and authentic AI evolution evidence），36 个文件。完整 34 次历史已正常推送至 Public https://github.com/ljqzs08/PathLab-AI ，无凭证 clone 与匿名 API/网页验证通过，远端 main 与本地材料提交一致，源码/Prompt/模板/锁文件/HTML 存在。
+
+### E020c：真实发布结果归档
+
+- 补录主材料提交与匿名访问快照：不带 Authorization/Cookie；clone 清空 helper/extraHeader、禁止交互；34 次历史逐个匹配，9 个关键阶段加本轮换行修复均保留。实际证据 docs/evidence/github-publication-20261025.json。
+- 上传前重扫全部 34 次历史与本轮材料，无启发式凭证/私有路径/内部摘要匹配；此结论不等于正式安全审计。原 Prompt/真实工具日志空白原样保留，非证据文件无空白问题。文档/JSON/本地链接、6 份快照原文/哈希已核对，最后答复仍待真实落盘。
+- 本归档是有实际验证内容的独立提交，不为凑演进次数，不自写自身哈希。归档后正常推送并再次核验远端，不 amend 或 force；三条核心链真实边界与视频/PDF/正式提交未完成状态保留。
+- 清理本轮临时克隆和下载归档被工具策略拒绝，未绕过；均在 D 盘被忽略缓存且未上传。官方 CLI 的临时凭证退出安排在最后推送后，结果另按实际执行报告，不提前称完成。

@@ -1,13 +1,72 @@
 {
-  "checkedAt": "2026-10-25T08:27:27.5713772+08:00",
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-25T00:57:18.947Z",
   "executor": "AI",
-  "authorizedUserPrompt": "你帮我创建并完成",
+  "authorizedUserPrompts": [
+    "LJQZS08 已经打开了帮我继续上传",
+    "你帮我创建并完成",
+    "你先帮我把这些任务上传到GitHub，完成"
+  ],
   "account": "ljqzs08",
   "repository": "ljqzs08/PathLab-AI",
   "url": "https://github.com/ljqzs08/PathLab-AI",
   "visibility": "PUBLIC",
   "emptyBeforePush": true,
-  "status": "created-and-verified-empty-not-yet-pushed",
+  "status": "pushed-and-anonymously-verified",
+  "originalBaseline": "44b4ef24f39158c50229e96dd7ef048922dc1025",
+  "implementationFixCommit": "6455c846fb543f537cdf725cff88a4b80d70f94c",
+  "materialsCommit": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
+  "pushedCommit": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
+  "remoteBranch": "main",
+  "anonymousVerification": {
+    "checkedAt": "2026-10-25T00:57:18.947Z",
+    "authentication": "No Authorization or Cookie in HTTP requests; Git credential.helper and http.extraHeader cleared; non-interactive clone",
+    "repositoryApiStatus": 200,
+    "repositoryPrivate": false,
+    "refApiStatus": 200,
+    "remoteHead": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
+    "webStatus": 200,
+    "webVisibleSignIn": true,
+    "cloneDestination": "D:\\竞赛\\.cache\\github-publish\\anonymous-source-20261025",
+    "cloneHead": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
+    "commitCount": 34,
+    "allLocalMainHistoryPreserved": true,
+    "initialCommit": "30523e1622322bd44592b87f3c550cb8a88ef279",
+    "requiredFilesPresent": [
+      "README.md",
+      "docs/reproducibility.md",
+      "docs/evolution-log.md",
+      "docs/core-chain-evidence.md",
+      "prompts/README.md",
+      "PathLab-AI/.env.example",
+      "PathLab-AI/package-lock.json",
+      "PathLab-AI/PathLab AI.html",
+      "prompts/sessions/2026-10-17-stage-2-bfs.jsonl",
+      "prompts/sessions/2026-10-17-autonomous-iterations.jsonl",
+      "prompts/sessions/2026-10-17-standalone-html-correction.jsonl"
+    ],
+    "coreCommitsPreserved": true,
+    "htmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+    "privateEnvPresent": false,
+    "dependenciesPresent": false
+  },
+  "push": {
+    "command": "git push -u origin main",
+    "exitCode": 0,
+    "force": false,
+    "existingHistoryRewritten": false
+  },
   "credentialStorage": "temporary owner-restricted ignored directory on D:; never read into logs",
-  "existingHistoryRewritten": false
+  "cleanup": {
+    "status": "temporary clone/archive deletion attempt blocked by tool policy; no alternate deletion attempted; temporary credential logout pending final evidence push",
+    "residueRoot": "D:/竞赛/.cache",
+    "privateAuthWillNotBeCommitted": true
+  },
+  "limitations": [
+    "Source repository is not a deployed interactive website",
+    "GitHub upload is not official competition submission",
+    "Three core modules and real snapshots exist; full human-guided bug evidence remains incomplete",
+    "Current uploading round final answer not yet persisted"
+  ],
+  "verificationSnapshotOf": "Primary material publication at 1c10e32; this report is archived by a later ordinary evidence commit. Not a self-reference to the archive commit."
 }

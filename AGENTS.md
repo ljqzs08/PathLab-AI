@@ -14,7 +14,7 @@
 
 最新 E019（2026-10-21）：已核对官方赛道公开规则并完成提交材料审计，见 docs/submission-audit-2026-10-21.md。GitHub/Gitee 均获官网允许，项目仍用已选 GitHub；当前无可核验远程/评审访问，未找到视频/PDF，完整 Prompt 与源码计时复现仍需收尾。官网未强制接模型 API/公网部署/固定真机次数，不采用内部逐链各新报一 Bug 的额外口径。E018 最终答复已补齐；本轮未改源码或重跑功能检查。
 
-最新 E020（2026-10-25）：已获 Public ljqzs08/PathLab-AI 创建/上传授权并绑定 origin；推送与匿名访问须以 docs/evidence/github-publication-20261025.json 实际状态为准，不能把空仓库当上传。独立源码检出安装 44.611 秒，计时至 L01 闭环 342.113 秒（不含提前本地 clone/公网下载/环境安装），类型/lint/155 Node、生产构建、HTTP 260/260、修复后离线 272/272 均 AI 自动化通过。6455c84 修复 Windows 换行的 HTML 字节复现差异；README/复现声明/Prompt 索引已补齐，细节见 docs/verification-github-publication.md。保留三链人工修复材料、视频/PDF、正式提交与真机验收的真实边界，不改写既有历史。
+最新 E020（2026-10-25）：已按授权上传至 Public ljqzs08/PathLab-AI；材料 1c10e32 经无凭证 clone 确认 34 次完整历史与匿名访问，证据归档后正常推送，不改写历史；具体快照见 docs/evidence/github-publication-20261025.json，不把仓库当网站部署或正式参赛提交。独立源码检出安装 44.611 秒，计时至 L01 闭环 342.113 秒（不含提前本地 clone/公网下载/环境安装），类型/lint/155 Node、生产构建、HTTP 260/260、修复后离线 272/272 均 AI 自动化通过。6455c84 修复 Windows 换行的 HTML 字节复现差异；README/复现声明/Prompt 索引已补齐，细节见 docs/verification-github-publication.md。保留三链人工修复材料、视频/PDF、正式提交与真机验收的真实边界，不改写既有历史。
 
 ## 工作区与真实性
 

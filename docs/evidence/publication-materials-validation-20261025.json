@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25T00:54:04.230Z",
+  "checkedAt": "2026-10-25T01:00:47.316Z",
   "executor": "AI",
-  "headBeforeMaterialsCommit": "6455c846fb543f537cdf725cff88a4b80d70f94c",
+  "headBeforeMaterialsCommit": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
   "checks": {
     "localLinks": 39,
     "jsonFiles": 6,
@@ -24,7 +24,7 @@
       },
       {
         "file": "prompts/sessions/2026-10-25-github-final-upload.jsonl",
-        "messages": 3,
+        "messages": 5,
         "finalCaptured": false
       },
       {
@@ -38,12 +38,12 @@
         "finalCaptured": true
       }
     ],
-    "sourceMessages": 19,
+    "sourceMessages": 21,
     "directDependencyVersions": 12,
     "http": 260,
     "offline": 272,
     "htmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
-    "explicitStagedFileCount": 36,
+    "explicitStagedFileCount": 11,
     "stagedFilesWithinAllowlist": true,
     "diffCheck": {
       "nonEvidenceWhitespaceIssues": 0,

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25T00:54:51.968Z",
+  "checkedAt": "2026-10-25T01:00:48.709Z",
   "executor": "AI",
-  "head": "6455c846fb543f537cdf725cff88a4b80d70f94c",
-  "commitCount": 33,
-  "allHistoricalPaths": 325,
-  "historicalBlobCount": 548,
+  "head": "1c10e32fb1a28bd56b72ac864f5ca648635743a8",
+  "commitCount": 34,
+  "allHistoricalPaths": 352,
+  "historicalBlobCount": 584,
   "publicationCandidateFiles": 37,
   "checkedScopes": "all reachable local refs; every commit tree; every historical blob; explicit publication candidates",
   "detectors": [

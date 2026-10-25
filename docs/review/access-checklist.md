@@ -1,6 +1,6 @@
 # 评审访问准备与发布边界
 
-2026-10-25：Git 根为本工作区，main 分支；用户已明确授权并创建 Public 仓库 https://github.com/ljqzs08/PathLab-AI ，origin 已绑定。推送及未登录访问的最终结果以 ../evidence/github-publication-20261025.json 与 ../verification-github-publication.md 为准；本清单不把创建空仓库当作上传或正式参赛提交。
+2026-10-25：Git 根为本工作区，main 分支；用户已明确授权并创建 Public 仓库 https://github.com/ljqzs08/PathLab-AI ，origin 已绑定。已正常上传材料提交 1c10e32fb1a28bd56b72ac864f5ca648635743a8；无凭证 clone 验证完整 34 次历史、匿名 API private=false/网页200。证据归档随后普通提交/推送，精确访问快照以 ../evidence/github-publication-20261025.json 与 ../verification-github-publication.md 为准；这不是正式参赛提交回执。
 
 ## 已准备
 

@@ -2,8 +2,8 @@
 
 - Session ID: `01a1485a-c92c-7a61-871a-ffbeddc795c4`
 - Source file: `rollout-2026-10-17T13-34-31-01a1485a-c92c-7a61-871a-ffbeddc795c4.jsonl` (read-only)
-- Captured at: 2026-10-25T08:50:18.9890512+08:00
-- Visible messages captured: 3
+- Captured at: 2026-10-25T08:57:49.2155341+08:00
+- Visible messages captured: 5
 - Final assistant answer captured: False
 - Incomplete source tail skipped: False
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -35,4 +35,18 @@ Source line: 2959; Timestamp: 2026-10-25T00:46:11.978Z; Text SHA256: `b5b217849a
 Source line: 2981; Timestamp: 2026-10-25T00:48:26.843Z; Text SHA256: `113e80c065dc37bb1abb38a3896acc829be5b43b0d2c61bfe499180d927fc38d`
 
 我继续完成实际上传：先核对待发布材料和敏感信息，再保留现有提交历史推送到 GitHub，最后验证未登录状态下能否访问。尚缺的人工修复证据会如实标注，不会写成已完成。
+
+
+## 4. assistant / commentary
+
+Source line: 3056; Timestamp: 2026-10-25T00:53:15.431Z; Text SHA256: `cca9c972bde54c121972e5ea01b327cbaad5bfa4d13d587b192b6d5bddec0386`
+
+复现指南和证据索引已整理好；本次 AI 自动化检查记录为 155 项测试、HTTP 260 项、离线 272 项通过。另发现并修复了 Windows 换行导致单文件重建哈希不同的问题，已单独提交，原有历史未改写。接下来进行发布前检查和实际推送。
+
+
+## 5. assistant / commentary
+
+Source line: 3107; Timestamp: 2026-10-25T00:57:39.728Z; Text SHA256: `232c1c5b6208974e72ade9a07f30766e8b3f4f344de58a4fd336f877853d2477`
+
+源码和材料已成功推送。我又在不使用 GitHub 登录凭证的情况下重新克隆，确认 Public 仓库可访问，34 个提交及关键历史均已保留。现在只剩把这次访问验证结果归档，并清理本轮临时授权与下载文件。
 

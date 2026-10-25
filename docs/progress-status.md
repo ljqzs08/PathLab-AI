@@ -4,7 +4,7 @@
 
 ## 当前增量：GitHub 与源码复现（E020）
 
-用户已明确授权账号 ljqzs08 的 Public PathLab-AI 仓库创建与上传；origin 已设置为 https://github.com/ljqzs08/PathLab-AI.git。是否推送成功、匿名可见和远端提交一致，以本轮发布验证报告与 evidence/github-publication-20261025.json 的实际记录为准，不把空仓库创建当上传。
+已按明确授权正常推送至 Public https://github.com/ljqzs08/PathLab-AI 。材料提交 1c10e32fb1a28bd56b72ac864f5ca648635743a8 已经无凭证重新克隆，34 个提交与本地 main 全历史一致；匿名 API private=false、网页 200、关键文件齐备。此后普通归档提交保存本次验证结果，不改写历史。精确访问时刻与被验证哈希见 evidence/github-publication-20261025.json，不把材料快照误当最新归档哈希。
 
 README 已补齐环境、精确依赖、变量模板、源码克隆/启动/门控闭环、复现性声明和故障处理；独立同机源码检出实测安装 44.611 秒，安装计时开始至 L01 闭环 342.113 秒（约 5 分 42 秒，不含提前完成的本地 clone、公网下载或环境安装）。AI 发现并修复 Windows 换行造成的 HTML 字节差异，功能提交 6455c846fb543f537cdf725cff88a4b80d70f94c；没有改写历史。
 

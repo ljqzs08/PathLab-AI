@@ -50,6 +50,7 @@
 此区不计入四关成绩、不改变关卡算法/规则/存档，刷新不保留，不进入 JSON 备份。不是任意尺寸/随机地图生成器。无需远程 AI、账号或密钥；自由地图不接入远程 AI。范围与实测见 `docs/playground-spec.md`、`docs/verification-playground.md`。
 
 <a id="10分钟源码复现"></a>
+<a id="10分钟源码复现"></a>
 ## 10 分钟源码复现指南（2026-10-25）
 
 官方规则与提交材料审计见 [E019 报告](docs/submission-audit-2026-10-21.md)。GitHub 已按用户授权创建为 Public；推送提交、未登录访问与远端历史的实际核对记录见 [发布证据](docs/evidence/github-publication-20261025.json)。视频/PDF、完整人类引导修复材料与最终比赛提交回执仍单独跟踪，不把上传仓库等同于完成参赛提交。
