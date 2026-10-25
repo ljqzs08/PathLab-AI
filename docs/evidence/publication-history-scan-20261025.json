@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-25T00:54:51.968Z",
+  "executor": "AI",
+  "head": "6455c846fb543f537cdf725cff88a4b80d70f94c",
+  "commitCount": 33,
+  "allHistoricalPaths": 325,
+  "historicalBlobCount": 548,
+  "publicationCandidateFiles": 37,
+  "checkedScopes": "all reachable local refs; every commit tree; every historical blob; explicit publication candidates",
+  "detectors": [
+    "GitHub OAuth/PAT token formats",
+    "provider sk- token format",
+    "PEM private-key headers",
+    "private env/cache/dependency/SSH credential paths",
+    "internal handoff and non-user roles in Prompt snapshots"
+  ],
+  "secretMatchFiles": [],
+  "privateHistoricalPaths": [],
+  "internalPromptMatchFiles": [],
+  "initialCommit": "30523e1622322bd44592b87f3c550cb8a88ef279",
+  "initialFileCount": 8,
+  "initialContainsAppImplementation": false,
+  "privacyRetained": [
+    "configured author identity and email in existing Git history",
+    "workspace/session/attachment provenance and local paths in original visible prompts",
+    "original user-provided project instructions"
+  ],
+  "excludedUntracked": [
+    "PathLab-AI/tests/browser/stage6-review.temp.spec.ts",
+    "prompts/sessions/2026-10-17-motion-playability.{md,jsonl}",
+    "prompts/sessions/2026-10-17-status-update.{md,jsonl}"
+  ],
+  "limitations": "Heuristic disclosure check, not proof of no secrets or a formal security audit. No private .env.local or browser credentials opened. No existing history rewritten.",
+  "result": "passed"
+}

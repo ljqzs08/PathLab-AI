@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "executor": "AI",
+  "startedAt": "2026-10-25T08:23:07.7134268+08:00",
+  "sourceCommit": "44b4ef24f39158c50229e96dd7ef048922dc1025",
+  "method": "clean local Git clone (--no-local --no-hardlinks), no copied node_modules or private env; fresh per-clone npm cache; same Windows host, not a clean machine or GitHub download",
+  "workspace": "D:\\竞赛\\.cache\\reproduce-20261025",
+  "nodeVersion": "v24.19.0",
+  "npmVersion": "11.17.0",
+  "privateEnvPresent": false,
+  "dependenciesPresentAtStart": false,
+  "status": "passed",
+  "installSeconds": 44.611,
+  "devLaunchAt": "2026-10-25T08:27:51.7963769+08:00",
+  "smokeSeconds": 3.571,
+  "completedAt": "2026-10-25T00:28:49.826Z",
+  "wallSecondsIncludingOperatorWaits": 342.113,
+  "devLaunchToClosureSeconds": 58.031,
+  "test": {
+    "executor": "AI",
+    "engine": "headless Microsoft Edge",
+    "viewport": "1440x1000",
+    "url": "http://127.0.0.1:3235",
+    "level": "L01",
+    "checks": [
+      "HTTP 200",
+      "answer hidden before prediction",
+      "explicit prediction submissions: 2",
+      "stepped to completed search: 20",
+      "metrics match independent engine execution",
+      "local reflection visible without API key"
+    ],
+    "pageErrors": [],
+    "remoteRequests": [],
+    "screenshotsCreated": false,
+    "isHumanOrRealDeviceAcceptance": false
+  },
+  "timingNote": "Wall time includes agent work and OAuth coordination between installation and launch; this is one same-host source-only rehearsal, not a ten-minute guarantee on a clean machine."
+}

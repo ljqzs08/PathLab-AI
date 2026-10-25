@@ -1,0 +1,13 @@
+
+> pathlab-ai@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3235
+
+▲ Next.js 16.4.2 (Turbopack)
+- Local:         http://127.0.0.1:3235
+- Network:       http://127.0.0.1:3235
+✓ Ready in 378ms
+✓ Running next.config.ts took 34ms
+
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (0.5s elapsed so far; last modified: "\\\\?\\D:\\竞赛\\.cache\\reproduce-20261025\\PathLab-AI\\node_modules\\fast-uri\\lib").
+ GET / 200 in 301ms (next.js: 128ms, application-code: 173ms)
+[?25h

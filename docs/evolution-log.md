@@ -362,3 +362,12 @@ E019 实际文档提交：`06fd98aacd0430d276e91a37cd0cce377f6786b4`（`docs: au
 - 最小修复：.gitattributes 固定文本检出 LF；build-standalone.mjs 只对嵌入 CSS/SVG 换行归一化。混合换行工作区与 CRLF 检出均生成同一 501850 字节 HTML，SHA256 8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0，与既有 Git blob 完全一致。没有修改算法/界面/存档或私有配置，不新增依赖。
 - 验证证据：docs/evidence/reproduction-line-endings-{before,after}-20261025.json；reproduction-html-{,crlf-}build-20261025.txt。修复前离线 272/272 已通过，修复后的完整四视口回归独立执行，结果完成后再归档，不提前填写。
 - Git：本子阶段仅显式暂存构建/LF、失败与修复证据、真实 Prompt 和演进记录；不夹带既有临时 spec/错误草稿，不 amend 或改写历史。实际哈希由后续文档提交登记。
+E020a 实际提交：6455c846fb543f537cdf725cff88a4b80d70f94c（fix: make offline HTML reproducible across Windows checkouts）。修复后的完整离线回归已实际完成：272/272，零失败/跳过/波动，见 docs/evidence/publication-offline-20261025.json。
+
+### E020b：README、真实演进索引与 GitHub 上传材料
+
+- 用户本轮再次明确要求完成 2.1/2.2 上传；真实快照 prompts/sessions/2026-10-25-github-final-upload.{md,jsonl}，最后答复尚未落盘，不伪造。创建轮的中止后暂停答复单独补录并核对源行，原 5 条快照不改写。
+- 材料：README 的 D 盘 clone/环境/锁定依赖/变量模板/10 分钟流程、docs/reproducibility.md、prompts/README.md、三链与进度/访问/规则说明、本轮真实日志与 docs/verification-github-publication.md；纠正旧“本轮未重跑”的过期表述，不夹带既有 5 个无关残留。
+- 验证：独立源码类型/lint/155 Node、build、HTTP 260/260、修复后离线 272/272；Prompt 工具双 PS 各 19；npm 工具 PS7 49/PS5.1 37。实测与边界均按真实日志归档，无人工/真机冒称。
+- 本地初始并非全功能一次提交；完整细粒度历史将正常推送到已获授权的 Public ljqzs08/PathLab-AI。实际材料提交、推送和匿名访问在完成后按 docs/evidence/github-publication-20261025.json 登记，不提前称成功、不自引用、不改写历史。
+- 三链功能/证据索引存在，部分共享连续会话；人类引导修复材料及视频/PDF/正式提交仍分列。最终答复须下一轮实际补齐。

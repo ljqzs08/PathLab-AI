@@ -1,0 +1,7 @@
+
+shell                : 7.6.5
+casesPassed          : 3
+checksPassed         : 49
+failurePathChecked   : True
+emptyStringSupported : True
+

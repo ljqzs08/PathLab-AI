@@ -2,6 +2,10 @@
 
 让算法初学者先预测，再通过确定性搜索与证据反馈理解“为什么这样走”。
 
+**GitHub：[`ljqzs08/PathLab-AI`](https://github.com/ljqzs08/PathLab-AI)**（Public；仓库是源码与历史，不是已部署的网站）。
+
+评审导航：[10 分钟源码复现](#10分钟源码复现) · [复现性声明与本轮实测](docs/reproducibility.md) · [真实 Prompt 索引](prompts/README.md) · [演进记录](docs/evolution-log.md) · [三条核心链](docs/core-chain-evidence.md) · [剩余提交材料](docs/progress-status.md)。
+
 **当前状态：阶段 6，本地学习闭环 + 本机进度与安全恢复已接通。** 四关支持真实 BFS/A* 预测、受门控回放、Canvas/DOM、单因素条件实验、前后真实指标与引用解释报告。完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。本地反馈是规则模板，没有调用模型；“记录齐备”不代表掌握，也不判定自由文本解释正确。已支持本机自动存档、版本化 JSON 备份和安全导入。E017 已增加可选的 DeepSeek 服务端证据复盘，默认关闭，模拟协议测试通过不代表真实账号联调已完成。功能检查与参赛证据分别列在 docs/progress-status.md；当前仍不是可直接提交的完整参赛交付。
 
 ## 直接打开完整 HTML（无需安装或启动服务）
@@ -45,26 +49,81 @@
 
 此区不计入四关成绩、不改变关卡算法/规则/存档，刷新不保留，不进入 JSON 备份。不是任意尺寸/随机地图生成器。无需远程 AI、账号或密钥；自由地图不接入远程 AI。范围与实测见 `docs/playground-spec.md`、`docs/verification-playground.md`。
 
-## 官方要求核对与 10 分钟源码复现指南（2026-10-21）
+<a id="10分钟源码复现"></a>
+## 10 分钟源码复现指南（2026-10-25）
 
-官方规则、必交材料和当前缺口见 `docs/submission-audit-2026-10-21.md`。仓库托管/评审访问、完整 Prompt 材料、MP4 和 PDF 尚未全部就绪；单个 HTML 或体验 ZIP 不替代正式材料。
+官方规则与提交材料审计见 [E019 报告](docs/submission-audit-2026-10-21.md)。GitHub 已按用户授权创建为 Public；推送提交、未登录访问与远端历史的实际核对记录见 [发布证据](docs/evidence/github-publication-20261025.json)。视频/PDF、完整人类引导修复材料与最终比赛提交回执仍单独跟踪，不把上传仓库等同于完成参赛提交。
 
-以下是供评审演练的**目标流程，不是已在干净机器计时通过的结论**。前提：Windows 已安装 Node.js 22.13+ / npm；从经授权的托管仓库取得完整检出并记录实际 commit，位于 D 盘项目目录；安装依赖需要联网。当前没有可提供的公开仓库 URL，不虚构 clone 地址。
+**环境前提：** Windows 10/11，Git、Windows PowerShell 5.1 或 PowerShell 7、Node.js **22.13+** 与 npm；建议使用本次实际测试的 **Node 24.19.0 / npm 11.17.0**。首次安装需要联网；不需要 Python、数据库、Docker、模型账号或 API Key。浏览器建议使用已安装的 Microsoft Edge。不要全局安装项目依赖。
 
-| 目标时段 | 操作 | 检查点 |
-| --- | --- | --- |
-| 0–2 分钟 | 在仓库根确认 `node --version`、`npm --version`、`git rev-parse HEAD`；阅读 `PathLab-AI/.env.example` | 使用实际修订和锁文件；无需真实密钥 |
-| 2–5 分钟 | `scripts/Invoke-ProjectNpm.ps1 ci` | 安装锁定依赖；缓存/临时文件留在本仓库 D 盘 |
-| 5–7 分钟 | `scripts/Invoke-ProjectNpm.ps1 run dev` | 打开 `http://127.0.0.1:3000`，仅本机访问 |
-| 7–10 分钟 | 开始一关、预测并提交、推进搜索、查看本地复盘 | 验证产品闭环；不要用 API 响应代替本地事实 |
+### 1. 获取源码并记录版本（目标 0–2 分钟）
 
-环境模板为 `PathLab-AI/.env.example`，列出各环境变量；默认 `AI_ENABLED=false`。本地学习/网页提示整理无需创建 `.env.local`，也不要求付费 Key。确需启用 API 时按 `docs/deepseek-setup.md` 配置独立服务端凭证和口令；不要覆盖已有私有配置、把密钥交给评审或放入仓库。环境受限时可先直接打开完整 HTML 体验，再单独完成源码复现。
+以下示例将源码、依赖和缓存都留在本项目的 D 盘环境，目标目录必须尚不存在；已有仓库不要再次覆盖或执行 reset。使用 Git clone，而不是下载 ZIP，才能取得细粒度历史。
 
-依赖清单/精确版本见 `PathLab-AI/package.json` 与 `package-lock.json`，取舍见 `docs/dependencies-stage-1.md`。生产构建、类型/lint/全套测试在下文单独执行，不把它们全塞入 10 分钟目标，也不保证首次网络安装耗时。程序复现锚定提交与依赖，AI 生成过程通过真实 Prompt/修改/提交审计，不承诺同一模型再次生成逐字相同代码。
+~~~powershell
+New-Item -ItemType Directory -Path 'D:\竞赛\.cache' -Force | Out-Null
+git clone https://github.com/ljqzs08/PathLab-AI.git 'D:\竞赛\.cache\review-source'
+Set-Location -LiteralPath 'D:\竞赛\.cache\review-source'
+git rev-parse HEAD
+git log --oneline -10
+node --version
+npm.cmd --version
+~~~
+
+后续命令都从仓库根执行，而不是从应用子目录执行。PowerShell 若阻止本地脚本，只对本次进程运行 `Set-ExecutionPolicy -Scope Process Bypass`，无需修改系统级策略。
+
+### 2. 安装锁定依赖（目标 2–5 分钟）
+
+~~~powershell
+.\scripts\Invoke-ProjectNpm.ps1 ci
+~~~
+
+包装器使用 package-lock.json，将 npm/TEMP/TMP/运行缓存限制到当前仓库；禁用安装钩子、遥测及浏览器下载。准确依赖清单见下表，完整传递依赖见锁文件。
+
+| 用途 | 固定版本 |
+| --- | --- |
+| Next.js / React / React DOM | 16.4.2 / 19.3.1 / 19.3.1 |
+| JSON Schema 校验 | ajv 8.20.0 |
+| TypeScript / ESLint / eslint-config-next | 5.9.3 / 9.39.5 / 16.4.2 |
+| Playwright / axe | @playwright/test 1.64.1 / @axe-core/playwright 4.14.0 |
+| 类型声明 | @types/node 24.19.2；@types/react 19.3.0；@types/react-dom 19.3.0 |
+
+ESLint 9 的已停止支持提示是已知工具链风险；本轮保留锁文件，不通过临时升级破坏复现。安装失败先检查 Node 版本、网络和跨平台可选包，不直接放开所有安装脚本。
+
+### 3. 默认不接模型，启动网站（目标 5–7 分钟）
+
+模板为 [PathLab-AI/.env.example](PathLab-AI/.env.example)。本地学习与网页辅助复盘**不需要创建 .env.local**；AI_ENABLED 默认关闭，密钥和独立口令默认留空。需要站内 API 时再按 [DeepSeek 配置](docs/deepseek-setup.md) 手工配置，不覆盖已有私有文件。
+
+~~~powershell
+.\scripts\Invoke-ProjectNpm.ps1 run dev
+~~~
+
+打开 **http://127.0.0.1:3000**，只绑定本机；Ctrl+C 停止。若端口被占用，使用：
+
+~~~powershell
+.\scripts\Invoke-ProjectNpm.ps1 -NpmArguments @('run','dev','--','--port','3001')
+~~~
+
+核心流程不依赖 AI_ALLOWED_ORIGIN；只有启用 API 时才需同步实际端口对应的 AI_ALLOWED_ORIGIN。全部环境变量的默认值、敏感性与作用见 [复现性声明](docs/reproducibility.md#环境变量)。
+
+### 4. 验证本地学习闭环（目标 7–10 分钟）
+
+1. 选择第一关，确认路径步数仍为“未揭示”。
+2. 点击“开始预测”，点选地图候选或候选卡，再点击“提交预测”。未提交不能越过门控。
+3. 使用“单步”或播放推进，遇到下一个预测点再次显式提交。
+4. 搜索结束检查真实步数/扩展量和“规则模板 · 未调用模型”的本地复盘。需要更完整体验再做一次条件变化与引用报告，不把远程聊天响应代替本地事实。
+
+**本次实测：** 在同一 Windows 主机的全新 Git 检出中，不复制 node_modules 或私有环境文件，使用新 npm 缓存，安装耗时 **44.611 秒**；从计时开始至一关闭环 **342.113 秒（约 5 分 42 秒，含中途操作等待）**。Git 本地克隆在计时前完成，不包含公网下载/环境安装；本机 AI 无头 Edge 自动执行，不是全新电脑、人工或真机验收。它验证了本次 10 分钟内演练，不保证所有网络/电脑均达标。来源修订、实际日志和边界见 [复现实测](docs/reproducibility.md)。
+
+## 复现性声明
+
+程序复现以 **实际 Git commit + package-lock.json +固定输入** 为锚点。BFS/A*、评分和本地证据不依赖远程模型；同样输入/操作的领域结果由确定性测试核对。独立 HTML 构建已修复 Windows 换行差异，并固定文本检出 LF；这是字节级构建修正，不改变算法、规则、存档或 UI。AI 开发过程通过真实可见 Prompt、实际失败/修复与提交来审计，**不保证相同 Prompt 再生成逐字相同源码**。
+
+全套 typecheck/lint/测试、生产构建和浏览器回归在下文单独运行，不全部塞进 10 分钟体验目标。最终材料并未因此自动齐备。
 
 ## 开发与工程检查（Windows）
 
-需要已安装 Node.js 22.13+ 与 npm；本机已验证 Node 24.19.0、npm 11.17.0。无需 API Key，不需要账号。推荐使用 Node 24 LTS；未测试其他 Node 主版本。
+需要已安装 Node.js 22.13+ 与 npm；本机已验证 Node 24.19.0、npm 11.17.0。无需 API Key，不需要账号。建议复用本轮实测的 Node 24.19.0；未测试其他 Node 主版本。
 在仓库根目录使用 Windows PowerShell 5.1 或 PowerShell 7：
 
 ~~~powershell
@@ -83,8 +142,8 @@
 .\scripts\Invoke-ProjectNpm.ps1 run start
 ~~~
 
-- check = 生成 Next 路由类型 + TypeScript 严格检查 + ESLint 零告警 + 155 项测试（E018 在 2026-10-17 的最终历史结果，本轮仅材料审计，未重跑功能测试）。Node 原生去类型只负责执行；独立 tsc 仍负责类型检查，未增加测试依赖。
-- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。E018 在 2026-10-17 的最终历史结果为 HTTP 260/260、离线 272/272 项 AI 自动检查（见 docs/verification-web-review.md，本轮未重跑），不代表真实手机/人工验收。
+- check = 生成 Next 路由类型 + TypeScript 严格检查 + ESLint 零告警 + 155 项测试（2026-10-25 在干净源码检出中重新通过，日志见 docs/evidence/reproduction-check-20261025.txt）。Node 原生去类型只负责执行；独立 tsc 仍负责类型检查，未增加测试依赖。
+- test:browser 使用本机**已经安装**的 Microsoft Edge，无浏览器下载命令；从生产构建启动专用 3210 端口。测试前须先 build 且该端口空闲。2026-10-25 在独立源码检出中重跑：HTTP **260/260**、换行修复后的离线 **272/272**，均为四视口 AI 自动检查、零失败/跳过，不代表真实手机/人工验收；本轮证据见 docs/verification-github-publication.md。
 - 浏览器检查之外的工程工具回归：
 
 ~~~powershell
@@ -172,7 +231,7 @@ Canvas 检查覆盖四视口、DPR1/2/3、响应式重绘、前沿/路径几何�
 ## 评审与真实设备收尾（E016）
 
 - 三条核心功能与真实用户纠正的可核对导航：`docs/core-chain-evidence.md`。
-- 发布授权、原始历史隐私与实际访问验证：`docs/review/access-checklist.md`；当前没有远程仓库/评审 URL。
+- 发布授权、原始历史隐私与实际访问验证：`docs/review/access-checklist.md`；实际仓库为 https://github.com/ljqzs08/PathLab-AI ，是否已推送和核验以当次发布证据为准。
 - 本地体验包：根目录执行 `scripts/Build-ReviewPacket.ps1`，输出到 `delivery/`，不上传且不包含原始会话。
 - 人工/真机记录：`docs/review/manual-acceptance.md`（全部待测，不是已通过清单）。
 - 包校验：`scripts/Test-ReviewPacket.ps1 -Path <实际 ZIP 路径>`；工具合成回归：`scripts/Test-ReviewPacketTools.ps1`。

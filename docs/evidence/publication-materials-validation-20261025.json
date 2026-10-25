@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-25T00:54:04.230Z",
+  "executor": "AI",
+  "headBeforeMaterialsCommit": "6455c846fb543f537cdf725cff88a4b80d70f94c",
+  "checks": {
+    "localLinks": 39,
+    "jsonFiles": 6,
+    "sourceSnapshots": [
+      {
+        "file": "prompts/sessions/2026-10-21-official-submission-audit.jsonl",
+        "messages": 4,
+        "finalCaptured": true
+      },
+      {
+        "file": "prompts/sessions/2026-10-25-github-create-reproduce.jsonl",
+        "messages": 5,
+        "finalCaptured": false
+      },
+      {
+        "file": "prompts/sessions/2026-10-25-github-create-interrupted-final.jsonl",
+        "messages": 1,
+        "finalCaptured": true
+      },
+      {
+        "file": "prompts/sessions/2026-10-25-github-final-upload.jsonl",
+        "messages": 3,
+        "finalCaptured": false
+      },
+      {
+        "file": "prompts/sessions/2026-10-25-github-publication.jsonl",
+        "messages": 3,
+        "finalCaptured": true
+      },
+      {
+        "file": "prompts/sessions/2026-10-25-github-upload-retry.jsonl",
+        "messages": 3,
+        "finalCaptured": true
+      }
+    ],
+    "sourceMessages": 19,
+    "directDependencyVersions": 12,
+    "http": 260,
+    "offline": 272,
+    "htmlSha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+    "explicitStagedFileCount": 36,
+    "stagedFilesWithinAllowlist": true,
+    "diffCheck": {
+      "nonEvidenceWhitespaceIssues": 0,
+      "rawEvidenceWhitespacePreserved": true,
+      "note": "git diff --cached --check reports original Prompt trailing spaces and unedited tool-log trailing/EOF blank lines; source text is deliberately retained, not silently trimmed."
+    }
+  },
+  "failures": [],
+  "result": "passed",
+  "limitations": [
+    "Visible message source matching is not native full conversation export",
+    "Current uploading round final answer not yet persisted",
+    "No human or physical-device acceptance claim",
+    "Full-history heuristic disclosure scan is a separate report"
+  ]
+}
