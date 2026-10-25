@@ -417,4 +417,4 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 新增 `docs/verification-project-introduction.md`；更新作品介绍构建脚本，使每次重建都记录 15 页、4 张联系表、9 个嵌入截图对象的 AI 视觉检查范围，并保持人工/真机/上传字段为 false。
 - 作品介绍 PDF 已完成：15 页 A4，9 张截图来自 `PathLab-AI/PathLab AI.html` 的本地实际运行；页面异常和外部请求均为 0；PDF 结构和 SHA256 已核对，哈希为 `9af5d3182881c005775e6139e8d18dce855389dbb3e7cc91574b4b28b3cb2339`。
 - 本轮没有重跑完整产品回归，没有真实 DeepSeek 调用，没有人工或真机验收，没有上传新材料；不宣称三条核心链已经具备完整独立人类引导修复证据。
-- 待本轮相关文件显式暂存后创建本地细粒度提交；不修改既有历史、不 amend、不 squash、不 push。
+- 相关文件已显式暂存并创建本地细粒度提交 `e30dfcd`（`docs: add project introduction PDF and verification`）；不修改既有历史、不 amend、不 squash、不 push。该哈希在本次独立证据归档提交中登记，避免自引用。
