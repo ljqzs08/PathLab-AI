@@ -1,0 +1,170 @@
+{
+  "edition": "2026-10-25",
+  "capturedAt": "2026-10-25T03:29:00.869Z",
+  "executor": "AI via Playwright + headless Microsoft Edge",
+  "source": {
+    "file": "PathLab-AI/PathLab AI.html",
+    "sha256": "8f481dcdd4870ee9d9ab11b024f0d20d030c27cefcf89ce8f657efa83111a1d0",
+    "bytes": 501850
+  },
+  "purpose": "真实作品介绍图片；界面为实际 HTML 渲染，不是设计稿；预测/解释为 AI 演示数据。",
+  "humanOrRealDeviceAcceptance": false,
+  "productRegressionSuiteRerun": false,
+  "externalDeepSeekUsed": false,
+  "apiPaidCalls": 0,
+  "actions": [
+    "L01: AI chose first displayed candidate for each checkpoint (not an optimal learner policy)."
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "screenshots": [
+    {
+      "id": "01-overview",
+      "file": "docs/assets/project-introduction/01-overview.png",
+      "caption": "完整离线 HTML 首页，桌面 1440×1000 模拟视口；初始状态。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual viewport",
+      "workbenchState": "briefing",
+      "sha256": "e5ddef1e2f8452058486b5b2dbf4c0f921eff6cb49e935907ecfbef1e2e807d1",
+      "bytes": 569901
+    },
+    {
+      "id": "02-prediction",
+      "file": "docs/assets/project-introduction/02-prediction.png",
+      "caption": "L01 先选候选、再显式提交；此图尚未揭示下一步。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "prediction",
+      "sha256": "c756e65596ab092c7ea87bf9bf1f970ef8929a64e9c5669d4851f10e2f6a064b",
+      "bytes": 207991,
+      "clipHeight": 760
+    },
+    {
+      "id": "03-search-result",
+      "file": "docs/assets/project-introduction/03-search-result.png",
+      "caption": "L01 BFS 运行结束后的实际路径、计数与回放控制。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "reflection",
+      "sha256": "ff2f25f873525891a1c4db399c39025754095df0dc024c3b58c013eb777bb9e8",
+      "bytes": 94880,
+      "clipHeight": 700,
+      "pathLength": "6",
+      "expandedCount": "22"
+    },
+    {
+      "id": "04-condition-comparison",
+      "file": "docs/assets/project-introduction/04-condition-comparison.png",
+      "caption": "L01 同一算法、一次条件修改后的真实前后比较；不保证指标必然改善。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "reflection",
+      "sha256": "883212421a11b423ef65d871ccf059096ecf9f453248cdae28b75470e6e74f63",
+      "bytes": 143771,
+      "beforePath": "6",
+      "afterPath": "8",
+      "beforeExpanded": "22",
+      "afterExpanded": "30"
+    },
+    {
+      "id": "05-web-review",
+      "file": "docs/assets/project-introduction/05-web-review.png",
+      "caption": "本地已揭示事实生成网页复盘内容；未点击复制、未打开 DeepSeek、未发送。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "reflection",
+      "sha256": "10f4d428b917b857c37a7d4da7fba63630004b219aad62fd94347a860cfcd74d",
+      "bytes": 726602,
+      "promptLength": 737,
+      "remoteSent": false
+    },
+    {
+      "id": "06-evidence-report",
+      "file": "docs/assets/project-introduction/06-evidence-report.png",
+      "caption": "带事件引用的报告快照；解释已明确标为 AI 自动演示，不是学习者实测。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "report",
+      "sha256": "1b428c6d7f7dc03cc2ab87a22dbd3384b62fb541b2863d48ffc39568dd8cde55",
+      "bytes": 153793
+    },
+    {
+      "id": "07-playground",
+      "file": "docs/assets/project-introduction/07-playground.png",
+      "caption": "9×7 岔路预设上添加障碍、先预测，再双算法真实对比与 A* 回放完成。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "report",
+      "sha256": "c25067aadb0948b7f880c0ab66f8ef27e7b6fd425349cf93d581f016d724d0c1",
+      "bytes": 238623,
+      "bfs": "BFS\n路径步数\n14\n扩展节点\n39\n前沿峰值\n6",
+      "astar": "A*\n路径步数\n14\n扩展节点\n14\n前沿峰值\n5",
+      "replay": "已选择 15 / 15 个节点 · 回放完成"
+    },
+    {
+      "id": "08-storage",
+      "file": "docs/assets/project-introduction/08-storage.png",
+      "caption": "本机进度与 JSON 备份恢复面板；本次没有触发下载或导入。",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual UI element crop",
+      "workbenchState": "report",
+      "sha256": "1ed7a17a5337c0369b2316a894cf2c5caf33deaeb50dc64d8d0f819847f7ffa4",
+      "bytes": 109789
+    },
+    {
+      "id": "09-mobile",
+      "file": "docs/assets/project-introduction/09-mobile.png",
+      "caption": "390×844 Edge 模拟移动视口，非手机真机照片；同一离线文件。",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2,
+      "reducedMotion": "reduce",
+      "capture": "actual viewport",
+      "workbenchState": "briefing",
+      "sha256": "6a428b23507cc50365e6be6da9cfd34360e1a0b25be3761a613ed271f94a6d6c",
+      "bytes": 296252
+    }
+  ]
+}

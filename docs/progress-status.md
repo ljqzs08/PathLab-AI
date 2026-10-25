@@ -132,3 +132,12 @@ E016 规则接续快照已从原会话补齐真实最终答复（现 2 条，fin
 ## 当前保留的工程边界
 
 JSON：1 MiB、4096 条总命令、每关 32 次开始运行；未提交草稿不保存，JSON 非签名/非防作弊。工具拒绝清理的旧缓存、阶段 6 遗留两张检查图与未跟踪临时截图 spec 仍在 D 盘，未绕过删除；临时 spec 不提交，实际产品回归用明确 grep-invert 排除。完整边界见 storage.md 与验证报告。不得报告“工作区全清空”或“已经人工验收”。
+
+
+## E024：作品介绍文档 PDF 本地收尾（2026-10-25）
+
+已完成用户要求的七项内容与 HTML 图片材料：`docs/project-introduction.md`、`scripts/build-project-introduction.py`、`scripts/capture-project-introduction.cjs`、`docs/assets/project-introduction/` 和 `output/pdf/PathLab-AI-作品介绍文档.pdf`。PDF 为 15 页 A4，包含 9 张本地离线 HTML 实际截图；技术文档仍为 24 页，二者均只保存在 D 盘，本轮不上传新文档。
+
+已用 Poppler 将作品介绍 PDF 15 页渲染并由 AI 查看 4 张联系表；版式、中文字体、表格、图片边界和页码通过。SHA256 与 sidecar 一致：`9af5d3182881c005775e6139e8d18dce855389dbb3e7cc91574b4b28b3cb2339`。校验记录中的 `visualInspection` 已改为带页码、联系表和检查结果的对象；`productRegressionSuiteRerun=false`、`humanOrRealDeviceAcceptance=false`、`uploadPerformed=false` 保持真实。
+
+本轮续答已从当前原始会话提取至 `prompts/sessions/2026-10-25-project-introduction-continue.{md,jsonl}`，含真实用户“继续”和上一条可见助手收尾摘要；它是留证，不是新增核心功能链。仍未完成人工/真机验收、作品视频、正式赛事提交回执、DeepSeek 真实付费联调，以及 C01/C02/C03 各自独立的用户引导 Bug 修复材料。详见 `docs/verification-project-introduction.md`。

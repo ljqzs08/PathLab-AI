@@ -1,0 +1,51 @@
+{
+  "executor": "AI",
+  "date": "2026-10-25",
+  "pdfFile": "PathLab-AI-作品介绍文档.pdf",
+  "pdfSha256": "9af5d3182881c005775e6139e8d18dce855389dbb3e7cc91574b4b28b3cb2339",
+  "pdfBytes": 2430023,
+  "pages": 15,
+  "realHtmlScreenshots": 9,
+  "imageHashesMatch": true,
+  "pageErrors": [],
+  "externalRequests": [],
+  "historicalEvidenceChecks": {
+    "executor": "AI",
+    "productTestsRerun": false,
+    "dependencyVersionsMatch": true,
+    "sourceOnlyTimingMatches": true,
+    "historicalBrowserReportsMatch": true,
+    "htmlRebuildEvidenceMatches": true,
+    "coreSelectedRounds": 9,
+    "uniqueVisibleMessages": 38,
+    "linkedCommitsAreAncestors": true
+  },
+  "visualInspection": {
+    "executor": "AI",
+    "method": "All 15 pages rendered at 100 dpi and reviewed in four contact sheets; the 9 embedded screenshot placements and final page transitions were checked.",
+    "pagesReviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "contactSheetsReviewed": 4,
+    "embeddedScreenshotObjectsChecked": 9,
+    "result": "No clipping, overlap, missing Chinese glyphs, black blocks, broken tables or illegible screenshot placement observed.",
+    "isHumanAcceptance": false
+  },
+  "productRegressionSuiteRerun": false,
+  "humanOrRealDeviceAcceptance": false,
+  "uploadPerformed": false
+}

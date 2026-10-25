@@ -1,0 +1,173 @@
+{
+  "format": "pathlab-project-introduction-sources/v1",
+  "date": "2026-10-25",
+  "codeAndHistoricalEvidenceBaseline": "e438363692762398117756ceb7f72a3fb415e5ad",
+  "manuscript": "docs/project-introduction.md",
+  "manuscriptSha256": "e0eb124fa747bea3d29323ff2703996f7239796f33b3688791226542f97a26ca",
+  "screenshotManifest": "docs/assets/project-introduction/capture-manifest.json",
+  "screenshotManifestSha256": "0ab75af14bc4b6a5f014d1f84d47bb2149fa9b0c615388789fedc3f4c7c8ef43",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "baselineBlobSha256": "17d0e4f50f62ba53f6702c05948829a9f5ea257308ccf02930124c98391c1300",
+      "baselineBytes": 21540
+    },
+    {
+      "path": "docs/product-spec.md",
+      "baselineBlobSha256": "18f1be51afc8ca226a5b020ba200f220b092dfcd1ade6e29eca9c02be7048557",
+      "baselineBytes": 3005
+    },
+    {
+      "path": "docs/levels.md",
+      "baselineBlobSha256": "1243ed353f2f5ec4b2f5e463469bf99d8e5a946ae4e986493ba14c9f87fea582",
+      "baselineBytes": 4269
+    },
+    {
+      "path": "docs/architecture.md",
+      "baselineBlobSha256": "958d2a47e38c92d0c1f89ffd0daa6a62e079d8067a38040376f6f3ae6d548285",
+      "baselineBytes": 8022
+    },
+    {
+      "path": "docs/storage.md",
+      "baselineBlobSha256": "df8273d3716697f36dc6a45bad4c556dab642ee60243f0dd8d7acdbf66206005",
+      "baselineBytes": 4745
+    },
+    {
+      "path": "docs/playground-spec.md",
+      "baselineBlobSha256": "31e4a3dc734981330939801786b862c144fd46d6be8f9e2e8c82c886025c7160",
+      "baselineBytes": 2118
+    },
+    {
+      "path": "docs/verification-web-review.md",
+      "baselineBlobSha256": "232b77a1f419bc2d396313869f9cd27e5a62331dc054164a15fa61f4705786f2",
+      "baselineBytes": 6618
+    },
+    {
+      "path": "docs/verification-stage-5-reflection.md",
+      "baselineBlobSha256": "ba203868285428d30a6bd661c3955f0bf4bec96e529160f5ff2102f409c4cb75",
+      "baselineBytes": 8355
+    },
+    {
+      "path": "docs/verification-github-publication.md",
+      "baselineBlobSha256": "8f9d9aa8f1d92fd1abfb1d326937d32440f8d4f61ad6558933b2e07f5d22a9f5",
+      "baselineBytes": 6934
+    },
+    {
+      "path": "docs/verification-prompt-upload.md",
+      "baselineBlobSha256": "b0048776b2d8c8a15e54984e4cdc59743a5aa789cd780790ee32780071328347",
+      "baselineBytes": 3974
+    },
+    {
+      "path": "docs/evolution-log.md",
+      "baselineBlobSha256": "1e7f3442bd60db798cd38558dfb46cbf0f4320f2580d5ff58557794c795d7b17",
+      "baselineBytes": 65761
+    },
+    {
+      "path": "PathLab-AI/package.json",
+      "baselineBlobSha256": "501c084cdabf28f8b20b8e38ab4994465d29a02a51757c2e70287218a9c4ba6c",
+      "baselineBytes": 1378
+    },
+    {
+      "path": "PathLab-AI/package-lock.json",
+      "baselineBlobSha256": "e40add72ebedcb08a9786a20483cd2e059e33ecb209c7154a20646558440b273",
+      "baselineBytes": 220685
+    },
+    {
+      "path": "PathLab-AI/src/domain/learning/web-review.ts",
+      "baselineBlobSha256": "099d1ed19f3927cb939d2d8ef7fc5cb12b4b69ef99a9743040cb2818b5701630",
+      "baselineBytes": 4952
+    },
+    {
+      "path": "PathLab-AI/src/domain/learning/session.ts",
+      "baselineBlobSha256": "dd40ddfaa8ac45dcde3a9afe72aed4c93c8d43d2e4428d96168abd92aa8d873e",
+      "baselineBytes": 18537
+    },
+    {
+      "path": "PathLab-AI/src/domain/learning/progress.ts",
+      "baselineBlobSha256": "a46cb7be7d953e666933f97dac864401c90696a48c212214b3e12313c919748d",
+      "baselineBytes": 7724
+    },
+    {
+      "path": "PathLab-AI/src/domain/learning/progress-store.ts",
+      "baselineBlobSha256": "527a46bb6a098aba0f46c5dac322f8b665a52db8427743ad0c5583197f0b0fde",
+      "baselineBytes": 5354
+    },
+    {
+      "path": "PathLab-AI/src/domain/learning/report.ts",
+      "baselineBlobSha256": "7309a6868171d8bc5658fe067807502d6e7338d5912c11f1e4ae453849e496a9",
+      "baselineBytes": 3725
+    },
+    {
+      "path": "PathLab-AI/src/components/ProgressPanel.tsx",
+      "baselineBlobSha256": "d813552988068c4192220c6c5f598a4c914dc53a5dbff65185bcdf16c16f09b0",
+      "baselineBytes": 6643
+    },
+    {
+      "path": "PathLab-AI/src/components/Playground.tsx",
+      "baselineBlobSha256": "5b67efb9dfe8e55a7c6e4e1f1bd730289bf48363f8ec51947afae8cab84eb66b",
+      "baselineBytes": 9540
+    },
+    {
+      "path": "PathLab-AI/src/components/ReflectionPanel.tsx",
+      "baselineBlobSha256": "e724afc0a096ad31fd9086912ca9393d0ac3c33d16fbf6040a83d9346b3cb43c",
+      "baselineBytes": 11698
+    },
+    {
+      "path": "PathLab-AI/src/components/GridCanvas.tsx",
+      "baselineBlobSha256": "e6ad4dcdc1167633e2ce9f4e94e551721268215a461171ddc3291dc93a6aea10",
+      "baselineBytes": 6870
+    },
+    {
+      "path": "PathLab-AI/src/domain/algorithms/bfs.ts",
+      "baselineBlobSha256": "32e0863dd5204b70f141d89b0ec8a3e411360452289f71ee80778bd36ff45d27",
+      "baselineBytes": 4396
+    },
+    {
+      "path": "PathLab-AI/src/domain/algorithms/astar.ts",
+      "baselineBlobSha256": "4c955e07ee3140ddf9515dc8deafbd69aac8770d3e0e1aa8a900d1c61cbf38b9",
+      "baselineBytes": 5181
+    },
+    {
+      "path": "PathLab-AI/src/domain/algorithms/priorityQueue.ts",
+      "baselineBlobSha256": "37e076d740a92355b16b7e40eb1c03240d1579d01e8db19d24d1b5dba3122dce",
+      "baselineBytes": 1468
+    },
+    {
+      "path": "docs/evidence/reproduction-20261025.json",
+      "baselineBlobSha256": "16039967005ad52213ef4fc259369d496543f238b108659985581df7301c34cb",
+      "baselineBytes": 1546
+    },
+    {
+      "path": "docs/evidence/publication-http-20261025.json",
+      "baselineBlobSha256": "076143cdd8f482c3bf5449df195047508b64a06f0b5b1ff4b6b6321bd02ff059",
+      "baselineBytes": 293584
+    },
+    {
+      "path": "docs/evidence/publication-offline-20261025.json",
+      "baselineBlobSha256": "d6bb3244dfb16ae2fe684b0ba36a639b3213ec2191a32582cbaac64e53084370",
+      "baselineBytes": 310090
+    },
+    {
+      "path": "prompts/submission/README.md",
+      "baselineBlobSha256": "c6e251065708c9b55473af02b58fe32772e1c3f897379f91d1f24d323bdca7ab",
+      "baselineBytes": 5611
+    },
+    {
+      "path": "prompts/submission/U01-human-html-correction.md",
+      "baselineBlobSha256": "d99ba26d5dee7c535e0096f6be64df41a0b1e6f6db07c8bed59a2c3f359f3480",
+      "baselineBytes": 2758
+    },
+    {
+      "path": "prompts/submission/S02-web-review-iteration.md",
+      "baselineBlobSha256": "3a71dad45e82daa0eda04e5fb10a7255289e01c6336b2088764db640e945f547",
+      "baselineBytes": 3220
+    }
+  ],
+  "authorAwardStatement": {
+    "value": "本作品未获奖",
+    "source": "作者本轮真实用户消息，已存于 prompts/sessions/2026-10-25-project-introduction.jsonl",
+    "independentlyVerified": false
+  },
+  "publicationStatement": "Public repository is not an academic publication; no formal publication record supplied",
+  "scope": "No private env, full personal log, credentials or hidden reasoning included"
+}
