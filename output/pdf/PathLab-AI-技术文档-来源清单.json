@@ -1,0 +1,683 @@
+{
+  "format": "pathlab-technical-report-sources/v1",
+  "date": "2026-10-25",
+  "codeAndEvidenceBaseline": "e438363692762398117756ceb7f72a3fb415e5ad",
+  "measuredReproductionBaseline": "44b4ef24f39158c50229e96dd7ef048922dc1025",
+  "manuscript": "docs/technical-report.md",
+  "manuscriptSha256": "f27da16940a98eb21c909b3d79b6b3c113af5d2c167bd9fcc09bdc3fbf9b70fe",
+  "sourcePathsAreRepositoryRelative": true,
+  "sourceAuthority": "Git blobs at codeAndEvidenceBaseline; worktree hashes are informational, with CRLF/LF equivalence reported separately",
+  "sourceFiles": [
+    {
+      "reference": "R01",
+      "path": "AGENTS.md",
+      "baselineBlobSha256": "32649274a3173bc6273b4d557bd017a1171a2e495188443836bebb5013407c74",
+      "baselineBytes": 11582,
+      "worktreeSha256": "32649274a3173bc6273b4d557bd017a1171a2e495188443836bebb5013407c74",
+      "worktreeBytes": 11582,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R01",
+      "path": "docs/progress-status.md",
+      "baselineBlobSha256": "06f46dead8cb2de34c012be0935a4db26b7b121c86fab18d2e3e01b13a00c166",
+      "baselineBytes": 17901,
+      "worktreeSha256": "06f46dead8cb2de34c012be0935a4db26b7b121c86fab18d2e3e01b13a00c166",
+      "worktreeBytes": 17901,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R02",
+      "path": "docs/product-spec.md",
+      "baselineBlobSha256": "18f1be51afc8ca226a5b020ba200f220b092dfcd1ade6e29eca9c02be7048557",
+      "baselineBytes": 3005,
+      "worktreeSha256": "18f1be51afc8ca226a5b020ba200f220b092dfcd1ade6e29eca9c02be7048557",
+      "worktreeBytes": 3005,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R02",
+      "path": "docs/levels.md",
+      "baselineBlobSha256": "1243ed353f2f5ec4b2f5e463469bf99d8e5a946ae4e986493ba14c9f87fea582",
+      "baselineBytes": 4269,
+      "worktreeSha256": "1243ed353f2f5ec4b2f5e463469bf99d8e5a946ae4e986493ba14c9f87fea582",
+      "worktreeBytes": 4269,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R03",
+      "path": "docs/architecture.md",
+      "baselineBlobSha256": "958d2a47e38c92d0c1f89ffd0daa6a62e079d8067a38040376f6f3ae6d548285",
+      "baselineBytes": 8022,
+      "worktreeSha256": "958d2a47e38c92d0c1f89ffd0daa6a62e079d8067a38040376f6f3ae6d548285",
+      "worktreeBytes": 8022,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R04",
+      "path": "docs/events.md",
+      "baselineBlobSha256": "075863b4fdfce106fd96188014bc39cc399f8bf81490e22a8fdf9205dc72c4c2",
+      "baselineBytes": 6447,
+      "worktreeSha256": "075863b4fdfce106fd96188014bc39cc399f8bf81490e22a8fdf9205dc72c4c2",
+      "worktreeBytes": 6447,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R04",
+      "path": "docs/state-machine.md",
+      "baselineBlobSha256": "a5af2b90f5e406e89040d77ea9da91530e6a4d6fa53662bd3893b1927c7b70b4",
+      "baselineBytes": 6724,
+      "worktreeSha256": "a5af2b90f5e406e89040d77ea9da91530e6a4d6fa53662bd3893b1927c7b70b4",
+      "worktreeBytes": 6724,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R04",
+      "path": "PathLab-AI/contracts/types.ts",
+      "baselineBlobSha256": "4010bb55dc4cb09e7c6879b716c6d89c1dd2c57b545ee26afaa325184dd2a5ae",
+      "baselineBytes": 4794,
+      "worktreeSha256": "4010bb55dc4cb09e7c6879b716c6d89c1dd2c57b545ee26afaa325184dd2a5ae",
+      "worktreeBytes": 4794,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/domain/learning/session.ts",
+      "baselineBlobSha256": "dd40ddfaa8ac45dcde3a9afe72aed4c93c8d43d2e4428d96168abd92aa8d873e",
+      "baselineBytes": 18537,
+      "worktreeSha256": "5830488ca34691cbe6511529eabf1cffb849421316a6966a3fef9b6e6a298d1a",
+      "worktreeBytes": 18538,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/domain/learning/progress-store.ts",
+      "baselineBlobSha256": "527a46bb6a098aba0f46c5dac322f8b665a52db8427743ad0c5583197f0b0fde",
+      "baselineBytes": 5354,
+      "worktreeSha256": "527a46bb6a098aba0f46c5dac322f8b665a52db8427743ad0c5583197f0b0fde",
+      "worktreeBytes": 5354,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/components/PathLabShell.tsx",
+      "baselineBlobSha256": "9eb267c1c1fe903d3e0de9a36a0a98472982eba2bf309b6ee965205b8e650b49",
+      "baselineBytes": 7309,
+      "worktreeSha256": "e69ea8eef7fd106904884e3cd7a52cacc3b9e0f14956f4a0d9678c0626f4457f",
+      "worktreeBytes": 7310,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/components/LearningWorkbench.tsx",
+      "baselineBlobSha256": "782fae4e031d5f540fb0eb497eee58c5c7a738b942f8903d39801965f9d8caaa",
+      "baselineBytes": 13656,
+      "worktreeSha256": "158354841df8de4328712f2db63de697793935c64c6a65a90c515d8be928a7c3",
+      "worktreeBytes": 13657,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/components/GridCanvas.tsx",
+      "baselineBlobSha256": "e6ad4dcdc1167633e2ce9f4e94e551721268215a461171ddc3291dc93a6aea10",
+      "baselineBytes": 6870,
+      "worktreeSha256": "8fcae23ba33acf064b23f3af483157de15f060d5583e1a4f26e807d1a3321e50",
+      "worktreeBytes": 6871,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R05",
+      "path": "PathLab-AI/src/components/EvidenceInspector.tsx",
+      "baselineBlobSha256": "cd042c81d54f1647eb210c98e4c8ae677a872d4a798e5f6230759e778595c0d6",
+      "baselineBytes": 4218,
+      "worktreeSha256": "fa87f51c016d83067fae88e1a2a94edbb12f122cc937e2c76f0aedd10ae39dcb",
+      "worktreeBytes": 4219,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R06",
+      "path": "PathLab-AI/src/domain/grid.ts",
+      "baselineBlobSha256": "0d295794ff92c164cbd739eed6f42073d153f03c98c4aec82dd5099e9b83b586",
+      "baselineBytes": 3154,
+      "worktreeSha256": "0d295794ff92c164cbd739eed6f42073d153f03c98c4aec82dd5099e9b83b586",
+      "worktreeBytes": 3154,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R06",
+      "path": "PathLab-AI/src/domain/algorithms/bfs.ts",
+      "baselineBlobSha256": "32e0863dd5204b70f141d89b0ec8a3e411360452289f71ee80778bd36ff45d27",
+      "baselineBytes": 4396,
+      "worktreeSha256": "32e0863dd5204b70f141d89b0ec8a3e411360452289f71ee80778bd36ff45d27",
+      "worktreeBytes": 4396,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R06",
+      "path": "PathLab-AI/src/domain/algorithms/astar.ts",
+      "baselineBlobSha256": "4c955e07ee3140ddf9515dc8deafbd69aac8770d3e0e1aa8a900d1c61cbf38b9",
+      "baselineBytes": 5181,
+      "worktreeSha256": "4c955e07ee3140ddf9515dc8deafbd69aac8770d3e0e1aa8a900d1c61cbf38b9",
+      "worktreeBytes": 5181,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R06",
+      "path": "PathLab-AI/src/domain/algorithms/priorityQueue.ts",
+      "baselineBlobSha256": "37e076d740a92355b16b7e40eb1c03240d1579d01e8db19d24d1b5dba3122dce",
+      "baselineBytes": 1468,
+      "worktreeSha256": "37e076d740a92355b16b7e40eb1c03240d1579d01e8db19d24d1b5dba3122dce",
+      "worktreeBytes": 1468,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R07",
+      "path": "PathLab-AI/src/domain/learning/diagnose.ts",
+      "baselineBlobSha256": "ebb9935a990591717e7f8c186cabe2ac70b34f3319ded2bae1591fe659480629",
+      "baselineBytes": 5981,
+      "worktreeSha256": "ebb9935a990591717e7f8c186cabe2ac70b34f3319ded2bae1591fe659480629",
+      "worktreeBytes": 5981,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R07",
+      "path": "PathLab-AI/src/domain/learning/report.ts",
+      "baselineBlobSha256": "7309a6868171d8bc5658fe067807502d6e7338d5912c11f1e4ae453849e496a9",
+      "baselineBytes": 3725,
+      "worktreeSha256": "7309a6868171d8bc5658fe067807502d6e7338d5912c11f1e4ae453849e496a9",
+      "worktreeBytes": 3725,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R07",
+      "path": "PathLab-AI/src/domain/learning/feedback-validation.ts",
+      "baselineBlobSha256": "d2dde9768f63e5ad093865f5296b02cef97d7e5ccff3af17e1ccb7c56ca1b328",
+      "baselineBytes": 1334,
+      "worktreeSha256": "d2dde9768f63e5ad093865f5296b02cef97d7e5ccff3af17e1ccb7c56ca1b328",
+      "worktreeBytes": 1334,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R07",
+      "path": "docs/ai-contract.md",
+      "baselineBlobSha256": "4b421fa69d569b059791f8adae16d2d39c03e287accf5e61ad38a73340e2fa4a",
+      "baselineBytes": 6134,
+      "worktreeSha256": "4b421fa69d569b059791f8adae16d2d39c03e287accf5e61ad38a73340e2fa4a",
+      "worktreeBytes": 6134,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R08",
+      "path": "PathLab-AI/src/server/deepseek.ts",
+      "baselineBlobSha256": "2c6e8eb28460577346362e512b783a0e048ea95c69d70b6770f83f1b398a5355",
+      "baselineBytes": 6862,
+      "worktreeSha256": "2c6e8eb28460577346362e512b783a0e048ea95c69d70b6770f83f1b398a5355",
+      "worktreeBytes": 6862,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R08",
+      "path": "PathLab-AI/src/domain/learning/web-review.ts",
+      "baselineBlobSha256": "099d1ed19f3927cb939d2d8ef7fc5cb12b4b69ef99a9743040cb2818b5701630",
+      "baselineBytes": 4952,
+      "worktreeSha256": "3b2de6fd314fdb3dd1be917538969619e40959048a8405cd83b11c52a0f95f92",
+      "worktreeBytes": 4953,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R08",
+      "path": "docs/web-review-guide.md",
+      "baselineBlobSha256": "629a0d9a014cadfe1f0462ac830bbf6d87957939f3eca033b6657ba1b3c159e4",
+      "baselineBytes": 3402,
+      "worktreeSha256": "0c7a3d529cad98eb9c7c5a06e6355c6774b7889678b32190d9ed2cc85963722b",
+      "worktreeBytes": 3403,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R08",
+      "path": "docs/verification-deepseek.md",
+      "baselineBlobSha256": "8ac9be0054d12499b85adea1e0f6f0d7b789f7131dae9a044826d496cee5c8a4",
+      "baselineBytes": 7252,
+      "worktreeSha256": "411e92c1aeb64cff404633df8f737171af55be13a61d9e756dfee867ff9c7799",
+      "worktreeBytes": 7255,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R09",
+      "path": "PathLab-AI/src/domain/learning/progress.ts",
+      "baselineBlobSha256": "a46cb7be7d953e666933f97dac864401c90696a48c212214b3e12313c919748d",
+      "baselineBytes": 7724,
+      "worktreeSha256": "a46cb7be7d953e666933f97dac864401c90696a48c212214b3e12313c919748d",
+      "worktreeBytes": 7724,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R09",
+      "path": "PathLab-AI/src/domain/learning/progress-store.ts",
+      "baselineBlobSha256": "527a46bb6a098aba0f46c5dac322f8b665a52db8427743ad0c5583197f0b0fde",
+      "baselineBytes": 5354,
+      "worktreeSha256": "527a46bb6a098aba0f46c5dac322f8b665a52db8427743ad0c5583197f0b0fde",
+      "worktreeBytes": 5354,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R09",
+      "path": "docs/storage.md",
+      "baselineBlobSha256": "df8273d3716697f36dc6a45bad4c556dab642ee60243f0dd8d7acdbf66206005",
+      "baselineBytes": 4745,
+      "worktreeSha256": "df8273d3716697f36dc6a45bad4c556dab642ee60243f0dd8d7acdbf66206005",
+      "worktreeBytes": 4745,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R09",
+      "path": "docs/playground-spec.md",
+      "baselineBlobSha256": "31e4a3dc734981330939801786b862c144fd46d6be8f9e2e8c82c886025c7160",
+      "baselineBytes": 2118,
+      "worktreeSha256": "527f13afd4a5f71f493ed181a78a07617877ccd80a71346ee73bd825d9469bf4",
+      "worktreeBytes": 2119,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R10",
+      "path": "PathLab-AI/src/standalone.tsx",
+      "baselineBlobSha256": "cbf044b92ed2255ba8c91e8b9198ddb37d3308633dd15b7f198055ae26ceb021",
+      "baselineBytes": 435,
+      "worktreeSha256": "cbf044b92ed2255ba8c91e8b9198ddb37d3308633dd15b7f198055ae26ceb021",
+      "worktreeBytes": 435,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R10",
+      "path": "PathLab-AI/scripts/build-standalone.mjs",
+      "baselineBlobSha256": "9e0d5753ca4a8fe72aa634e79a5cc3dff74e735100c7b1472e009c0121adf5dc",
+      "baselineBytes": 5908,
+      "worktreeSha256": "9e0d5753ca4a8fe72aa634e79a5cc3dff74e735100c7b1472e009c0121adf5dc",
+      "worktreeBytes": 5908,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R10",
+      "path": "docs/verification-standalone-html.md",
+      "baselineBlobSha256": "aa887de25383a9163db97a07a51e540de690f463d3f3d2f60afa6cdeb63bce84",
+      "baselineBytes": 7931,
+      "worktreeSha256": "aa887de25383a9163db97a07a51e540de690f463d3f3d2f60afa6cdeb63bce84",
+      "worktreeBytes": 7931,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R11",
+      "path": "prompts/sessions/2026-10-17-stage-2-bfs.jsonl",
+      "baselineBlobSha256": "51137c71058e56ff78bfca832cf0f62d394dc3a23119d2ae9ed06d5e56a73473",
+      "baselineBytes": 5777,
+      "worktreeSha256": "51137c71058e56ff78bfca832cf0f62d394dc3a23119d2ae9ed06d5e56a73473",
+      "worktreeBytes": 5777,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R11",
+      "path": "prompts/sessions/2026-10-17-autonomous-iterations.jsonl",
+      "baselineBlobSha256": "c1949a34582fb527ca64ca0349f567548b50edf888e1140a1ff65472827ee655",
+      "baselineBytes": 6931,
+      "worktreeSha256": "c1949a34582fb527ca64ca0349f567548b50edf888e1140a1ff65472827ee655",
+      "worktreeBytes": 6931,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "prompts/submission/C01-algorithms.md",
+      "baselineBlobSha256": "23217cb5d6f133930e64751978bb135f949d9ac202bea36953c7990d0eb7e5f9",
+      "baselineBytes": 2683,
+      "worktreeSha256": "23217cb5d6f133930e64751978bb135f949d9ac202bea36953c7990d0eb7e5f9",
+      "worktreeBytes": 2683,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "prompts/submission/C02-prediction-replay.md",
+      "baselineBlobSha256": "aa9ad429a63d01f8688be7aa4ff172bc611b54468ae0ad60489f285df35af22b",
+      "baselineBytes": 2543,
+      "worktreeSha256": "aa9ad429a63d01f8688be7aa4ff172bc611b54468ae0ad60489f285df35af22b",
+      "worktreeBytes": 2543,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "prompts/submission/C03-reflection.md",
+      "baselineBlobSha256": "81817fb2eaec3413c36961fbddd5c8e6a63c3f4cca2f49e195ac8bd89922b64a",
+      "baselineBytes": 2551,
+      "worktreeSha256": "81817fb2eaec3413c36961fbddd5c8e6a63c3f4cca2f49e195ac8bd89922b64a",
+      "worktreeBytes": 2551,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "docs/verification-stage-2-bfs.md",
+      "baselineBlobSha256": "06bc891b290ed7d38400c93bfc791544fb4d1b4d932d8f35e929624bf0aa854f",
+      "baselineBytes": 8427,
+      "worktreeSha256": "06bc891b290ed7d38400c93bfc791544fb4d1b4d932d8f35e929624bf0aa854f",
+      "worktreeBytes": 8427,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "docs/verification-stage-3-astar.md",
+      "baselineBlobSha256": "dbab49bf4737d8f23cfe2b1af5ad27669b35446b9eaa50ff09c2bf4689944f1b",
+      "baselineBytes": 3767,
+      "worktreeSha256": "dbab49bf4737d8f23cfe2b1af5ad27669b35446b9eaa50ff09c2bf4689944f1b",
+      "worktreeBytes": 3767,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "docs/verification-stage-4-learning.md",
+      "baselineBlobSha256": "4b501e8303eeb9c190260c36b632b63add54ecbf252193bcadde544a6ad10ef2",
+      "baselineBytes": 4139,
+      "worktreeSha256": "4b501e8303eeb9c190260c36b632b63add54ecbf252193bcadde544a6ad10ef2",
+      "worktreeBytes": 4139,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R12",
+      "path": "docs/verification-stage-5-reflection.md",
+      "baselineBlobSha256": "ba203868285428d30a6bd661c3955f0bf4bec96e529160f5ff2102f409c4cb75",
+      "baselineBytes": 8355,
+      "worktreeSha256": "ba203868285428d30a6bd661c3955f0bf4bec96e529160f5ff2102f409c4cb75",
+      "worktreeBytes": 8355,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R13",
+      "path": "prompts/submission/U01-human-html-correction.md",
+      "baselineBlobSha256": "d99ba26d5dee7c535e0096f6be64df41a0b1e6f6db07c8bed59a2c3f359f3480",
+      "baselineBytes": 2758,
+      "worktreeSha256": "d99ba26d5dee7c535e0096f6be64df41a0b1e6f6db07c8bed59a2c3f359f3480",
+      "worktreeBytes": 2758,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R13",
+      "path": "prompts/sessions/2026-10-17-local-html-entry.jsonl",
+      "baselineBlobSha256": "e552f01e500ee97ac2bc22f7e9684378a3fbbc1d1fb768518ba2730ce8c76ab9",
+      "baselineBytes": 1653,
+      "worktreeSha256": "e552f01e500ee97ac2bc22f7e9684378a3fbbc1d1fb768518ba2730ce8c76ab9",
+      "worktreeBytes": 1653,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R13",
+      "path": "prompts/sessions/2026-10-17-standalone-html-correction.jsonl",
+      "baselineBlobSha256": "126cf192581254e1fd7d24b7aa21492c89c008041c857692a4587952cb0f9eff",
+      "baselineBytes": 3033,
+      "worktreeSha256": "126cf192581254e1fd7d24b7aa21492c89c008041c857692a4587952cb0f9eff",
+      "worktreeBytes": 3033,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R14",
+      "path": "prompts/submission/S02-web-review-iteration.md",
+      "baselineBlobSha256": "3a71dad45e82daa0eda04e5fb10a7255289e01c6336b2088764db640e945f547",
+      "baselineBytes": 3220,
+      "worktreeSha256": "3a71dad45e82daa0eda04e5fb10a7255289e01c6336b2088764db640e945f547",
+      "worktreeBytes": 3220,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R14",
+      "path": "prompts/sessions/2026-10-17-deepseek-integration.jsonl",
+      "baselineBlobSha256": "837e7bc46791c2ca193b5e931890d6e52e90dc8810aeb9e907d16ddf926eff18",
+      "baselineBytes": 5369,
+      "worktreeSha256": "837e7bc46791c2ca193b5e931890d6e52e90dc8810aeb9e907d16ddf926eff18",
+      "worktreeBytes": 5369,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R14",
+      "path": "prompts/sessions/2026-10-17-deepseek-configuration-guide.jsonl",
+      "baselineBlobSha256": "c25f184898eaf8c8c481299cef64ef4618da3c4204c22d2fa66d7c8579c7c707",
+      "baselineBytes": 10305,
+      "worktreeSha256": "c25f184898eaf8c8c481299cef64ef4618da3c4204c22d2fa66d7c8579c7c707",
+      "worktreeBytes": 10305,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R14",
+      "path": "prompts/sessions/2026-10-17-deepseek-web-alternative.jsonl",
+      "baselineBlobSha256": "e4a37d93017751155cb073768d007935d1b0883bb519b9ac95bb20431ab5973e",
+      "baselineBytes": 5133,
+      "worktreeSha256": "e4a37d93017751155cb073768d007935d1b0883bb519b9ac95bb20431ab5973e",
+      "worktreeBytes": 5133,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R14",
+      "path": "prompts/sessions/2026-10-17-web-review-workbench.jsonl",
+      "baselineBlobSha256": "0bb506b3b3304e38ce8834d0699de7ee12bfda73588bbcb297709d98e77265db",
+      "baselineBytes": 4958,
+      "worktreeSha256": "0bb506b3b3304e38ce8834d0699de7ee12bfda73588bbcb297709d98e77265db",
+      "worktreeBytes": 4958,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R15",
+      "path": "docs/reproducibility.md",
+      "baselineBlobSha256": "f829f207956e9222f98961e23fd52a58421a21e6ee868a3ee7baca2e986b5915",
+      "baselineBytes": 6870,
+      "worktreeSha256": "f829f207956e9222f98961e23fd52a58421a21e6ee868a3ee7baca2e986b5915",
+      "worktreeBytes": 6870,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R15",
+      "path": "README.md",
+      "baselineBlobSha256": "17d0e4f50f62ba53f6702c05948829a9f5ea257308ccf02930124c98391c1300",
+      "baselineBytes": 21540,
+      "worktreeSha256": "17d0e4f50f62ba53f6702c05948829a9f5ea257308ccf02930124c98391c1300",
+      "worktreeBytes": 21540,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R16",
+      "path": "docs/evidence/reproduction-20261025.json",
+      "baselineBlobSha256": "16039967005ad52213ef4fc259369d496543f238b108659985581df7301c34cb",
+      "baselineBytes": 1546,
+      "worktreeSha256": "16039967005ad52213ef4fc259369d496543f238b108659985581df7301c34cb",
+      "worktreeBytes": 1546,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R16",
+      "path": "docs/verification-github-publication.md",
+      "baselineBlobSha256": "8f9d9aa8f1d92fd1abfb1d326937d32440f8d4f61ad6558933b2e07f5d22a9f5",
+      "baselineBytes": 6934,
+      "worktreeSha256": "8f9d9aa8f1d92fd1abfb1d326937d32440f8d4f61ad6558933b2e07f5d22a9f5",
+      "worktreeBytes": 6934,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R17",
+      "path": "prompts/submission/README.md",
+      "baselineBlobSha256": "c6e251065708c9b55473af02b58fe32772e1c3f897379f91d1f24d323bdca7ab",
+      "baselineBytes": 5611,
+      "worktreeSha256": "c6e251065708c9b55473af02b58fe32772e1c3f897379f91d1f24d323bdca7ab",
+      "worktreeBytes": 5611,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R17",
+      "path": "prompts/submission/chain-map.json",
+      "baselineBlobSha256": "6b7dd887bf9f72ab60a25345fd6c8a0da3c7beab8eb57e5d91c2e71660fe9d9d",
+      "baselineBytes": 3016,
+      "worktreeSha256": "88cfc0cbad7aec798bb5843328306b8fbbad0de60c6d25dccf717088d6a350ce",
+      "worktreeBytes": 3114,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R17",
+      "path": "docs/evolution-log.md",
+      "baselineBlobSha256": "1e7f3442bd60db798cd38558dfb46cbf0f4320f2580d5ff58557794c795d7b17",
+      "baselineBytes": 65761,
+      "worktreeSha256": "1e7f3442bd60db798cd38558dfb46cbf0f4320f2580d5ff58557794c795d7b17",
+      "worktreeBytes": 65761,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R18",
+      "path": "PathLab-AI/package.json",
+      "baselineBlobSha256": "501c084cdabf28f8b20b8e38ab4994465d29a02a51757c2e70287218a9c4ba6c",
+      "baselineBytes": 1378,
+      "worktreeSha256": "501c084cdabf28f8b20b8e38ab4994465d29a02a51757c2e70287218a9c4ba6c",
+      "worktreeBytes": 1378,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R18",
+      "path": "PathLab-AI/package-lock.json",
+      "baselineBlobSha256": "e40add72ebedcb08a9786a20483cd2e059e33ecb209c7154a20646558440b273",
+      "baselineBytes": 220685,
+      "worktreeSha256": "e40add72ebedcb08a9786a20483cd2e059e33ecb209c7154a20646558440b273",
+      "worktreeBytes": 220685,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R18",
+      "path": "PathLab-AI/.env.example",
+      "baselineBlobSha256": "e2ec66210780c2ce34c97fcc2ba3b46a1493140a92fcdf658208d8e6fef4bea0",
+      "baselineBytes": 535,
+      "worktreeSha256": "e2ec66210780c2ce34c97fcc2ba3b46a1493140a92fcdf658208d8e6fef4bea0",
+      "worktreeBytes": 535,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R18",
+      "path": "scripts/Invoke-ProjectNpm.ps1",
+      "baselineBlobSha256": "0c10b8224f61704148f51399c561fbba93291687444f226bc7dcad88ba1b11bc",
+      "baselineBytes": 1813,
+      "worktreeSha256": "0c10b8224f61704148f51399c561fbba93291687444f226bc7dcad88ba1b11bc",
+      "worktreeBytes": 1813,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/publication-http-20261025.json",
+      "baselineBlobSha256": "076143cdd8f482c3bf5449df195047508b64a06f0b5b1ff4b6b6321bd02ff059",
+      "baselineBytes": 293584,
+      "worktreeSha256": "076143cdd8f482c3bf5449df195047508b64a06f0b5b1ff4b6b6321bd02ff059",
+      "worktreeBytes": 293584,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/publication-offline-20261025.json",
+      "baselineBlobSha256": "d6bb3244dfb16ae2fe684b0ba36a639b3213ec2191a32582cbaac64e53084370",
+      "baselineBytes": 310090,
+      "worktreeSha256": "d6bb3244dfb16ae2fe684b0ba36a639b3213ec2191a32582cbaac64e53084370",
+      "worktreeBytes": 310090,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/reproduction-line-endings-before-20261025.json",
+      "baselineBlobSha256": "cc1bbe1fbbe870197a4ff627de0556e0b7966a0cfb33d06c4bfc8966760d3d62",
+      "baselineBytes": 1130,
+      "worktreeSha256": "cc1bbe1fbbe870197a4ff627de0556e0b7966a0cfb33d06c4bfc8966760d3d62",
+      "worktreeBytes": 1130,
+      "worktreeByteIdentical": true,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/reproduction-line-endings-after-20261025.json",
+      "baselineBlobSha256": "b898e9d3907758e1f5dc0389af7a143d6115e5b5e002caa9e1a95b840116583f",
+      "baselineBytes": 583,
+      "worktreeSha256": "11ef269175aba03cc5368f99b386856b980292c9d245ca607b7b2ca581d973d3",
+      "worktreeBytes": 599,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/reproduction-check-20261025.txt",
+      "baselineBlobSha256": "0fbfde77b718e5c57e70e22346d0bd8b7d3767149b2d7a66fa347a7c154bf402",
+      "baselineBytes": 13471,
+      "worktreeSha256": "175fb2f448c55e77165b7fe244a557a9cedd64c8b2d0028e12a7e58a85c43335",
+      "worktreeBytes": 13652,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    },
+    {
+      "reference": "R19",
+      "path": "docs/evidence/reproduction-build-20261025.txt",
+      "baselineBlobSha256": "cf02680fec0f4b67bea2631c5cb05cb0f8c2923d875fca5e865ff6d8950cb339",
+      "baselineBytes": 759,
+      "worktreeSha256": "ffb2e551c6b589cffa5b265a8a5ce9235de3676d55935d1d4ea35496073ac06e",
+      "worktreeBytes": 788,
+      "worktreeByteIdentical": false,
+      "worktreeEqualAfterLfNormalization": true
+    }
+  ],
+  "scope": "Project source and recorded evidence only; no private environment files or full personal session logs"
+}

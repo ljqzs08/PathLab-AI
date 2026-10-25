@@ -401,3 +401,11 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 发布 prompt-evidence-20261025 Release，将已冻结 ZIP 与 .sha256 一并上传，来源锚定 9ca1ffc；两附件无授权重新下载后字节 SHA256 与本地/GitHub digest 均一致。证据 `docs/evidence/prompt-release-assets-20261025.json`；完整边界 `docs/verification-prompt-upload.md`。
 - E021 真实助手续答/最终答复四条补充已提取；前次授权轮三条含最终答复，本轮“已授权”快照如实待最后答复落盘。均不算新增核心迭代，不扩大 9 轮/38 条选编、不导出内部控制/交接信息。
 - 此次仅更新材料导航/状态/来源与上传核验，未修改应用或重跑产品功能。收尾归档另作正常有意义提交，自己的哈希不写入自身；完成推送与匿名核验后再退出临时本机登录，不提前声称结束。
+
+## E023：不超过 30 页的技术文档（2026-10-25）
+
+- 用户要求“技术文档:PDF格式，不超过30页”，三重点为意图控制、架构设计与可复现性，明确本地不上传。真实 Prompt：`prompts/sessions/2026-10-25-technical-document.{md,jsonl}`；最终答复前追加作品介绍，未预写 final。上一上传轮最终答复已独立真实补充，不增核心轮计数。
+- 修改 / 产物：`docs/technical-report.md`、`scripts/build-technical-report.py`、`output/pdf/` 下 24 页 PDF / 来源清单 / 校验记录 / SHA256、`docs/verification-technical-report.md` 及进度 / 导航。
+- 实际校验：固定基线 e438363 的 67 条来源、9 轮 / 38 条原文与提交关联；24 页均渲染并由 AI 查看，文字 / TrueType 字体 / 边界 / 页数通过。附录溢出由生成断言捕获并修正；未重跑产品回归。PDF SHA256 `ead851bb3c7f9417837376fc440219572526472c76c4ac5a5dd0b97dfac1dd2e`。
+- C01 / C02 / C03 实现和来源边界不变；AI 视觉复核不是人工 / 真机。视频、正式提交等不因文档完成而宣称齐备。
+- 正常本地独立提交，不改历史，不 push；本提交哈希不自引用，下一有意义归档可登记。

@@ -2,6 +2,12 @@
 
 本目录保存真实用户/AI 可见文字快照，按原始来源行号、角色、时间和 SHA256 核对。它们是从本机原始会话只读提取的可见消息，**不是工具原生全量导出**；隐藏推理、系统/开发者提示、工具载荷、内部交接、凭证和无关聊天不纳入。缺失附件或中止轮最终答复不假称已经齐备；未发生的用户追问/缺陷不得补写。
 
+## 本地技术文档留证（E023）
+
+- [技术文档要求与可见说明](sessions/2026-10-25-technical-document.md)：真实用户原文，未将内部交接或隐藏内容纳入；用户追加作品介绍时尚无最终答复，不预写。
+- [上传完成最终答复补充](sessions/2026-10-25-prompt-upload-completion-final.md)：从原始记录真实补齐 E022 的最后答复，独立补充、不计新核心轮。
+- 技术 PDF 与来源验证见 [本轮校验](../docs/verification-technical-report.md)，只本地交付，没有上传。
+
 ## E022：已发布的 Prompt 附件（2026-10-25）
 
 [GitHub Release 下载 ZIP 与校验文件](https://github.com/ljqzs08/PathLab-AI/releases/tag/prompt-evidence-20261025)；[上传与匿名核验](../docs/verification-prompt-upload.md)。原文与导引已正常推送，主材料提交为 `ae91aa4`，附件内容锚定 `9ca1ffc`，不倒填包内来源哈希。

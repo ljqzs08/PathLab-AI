@@ -20,6 +20,8 @@
 
 最新 E022（2026-10-25）：9ca1ffc/ae91aa4 已正常推送至既有 Public 仓库；匿名 fetch 核对 37 次主材料历史、25 个文件 blob 一致。Prompt ZIP 与校验文件已发布为 prompt-evidence-20261025 Release，匿名下载哈希与本地一致。E021 整理轮真实续答另附补充，上传授权轮已完整提取；本轮末答复真实落盘后再补，不计入核心选编。未改变 C01/C02/C03 实现或共享原文边界，未重跑应用功能，详见 docs/verification-prompt-upload.md。
 
+最新 E023（2026-10-25）：24 页技术文档 PDF 本地制作完成，未上传。基线 e438363；意图控制、架构图与可复现性用真实源码 / Prompt / 历史日志论证。24 页渲染及 AI 视觉复核、字体 / 文本 / 边界 / 来源核对通过，不冒充本轮产品回归。正文 docs/technical-report.md，构建 scripts/build-technical-report.py，验证 docs/verification-technical-report.md；正式产物在 output/pdf/。用户随后要求七项作品介绍与完整 HTML 截图，下一文档里程碑继续；获奖按用户确认“未获奖”，公开托管与正式发表分开。
+
 ## 工作区与真实性
 
 - 所有新建、下载、生成、保存的项目文件、依赖缓存、截图和录屏只能放在本工作区及其 D 盘项目子目录；不得写入 C 盘或其他盘符。可以只读既有配置和本聊天原始记录。

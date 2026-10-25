@@ -1,0 +1,365 @@
+{
+  "executor": "AI",
+  "date": "2026-10-25",
+  "pdfFile": "PathLab-AI-技术文档.pdf",
+  "pages": 24,
+  "within30PageLimit": true,
+  "pdfSha256": "ead851bb3c7f9417837376fc440219572526472c76c4ac5a5dd0b97dfac1dd2e",
+  "pdfBytes": 300297,
+  "metadataCreationDate": "2026-10-25T00:00:00+00:00",
+  "embeddedFonts": true,
+  "textPresentOnEveryPage": true,
+  "replacementGlyphFound": false,
+  "evidenceChecks": {
+    "executor": "AI",
+    "productTestsRerun": false,
+    "dependencyVersionsMatch": true,
+    "sourceOnlyTimingMatches": true,
+    "historicalBrowserReportsMatch": true,
+    "htmlRebuildEvidenceMatches": true,
+    "coreSelectedRounds": 9,
+    "uniqueVisibleMessages": 38,
+    "linkedCommitsAreAncestors": true
+  },
+  "pageLayout": [
+    {
+      "page": 1,
+      "title": "PathLab AI",
+      "kind": "cover"
+    },
+    {
+      "page": 2,
+      "title": "阅读摘要与评审导航",
+      "flowables": 9,
+      "calculatedContentHeight": 483.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 3,
+      "title": "产品目标与当前实现边界",
+      "flowables": 8,
+      "calculatedContentHeight": 419.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 4,
+      "title": "意图控制一：把上下文变成边界",
+      "flowables": 7,
+      "calculatedContentHeight": 449.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 5,
+      "title": "意图控制二：分阶段闭环与验收",
+      "flowables": 8,
+      "calculatedContentHeight": 408.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 6,
+      "title": "意图控制三：把要求写成不变量",
+      "flowables": 7,
+      "calculatedContentHeight": 474.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 7,
+      "title": "意图控制四：真实交付纠偏 U01",
+      "flowables": 10,
+      "calculatedContentHeight": 442.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 8,
+      "title": "意图控制五：S02 从 API 转向网页辅助",
+      "flowables": 7,
+      "calculatedContentHeight": 354.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 9,
+      "title": "架构总览：分层单体，证据贯穿",
+      "flowables": 7,
+      "calculatedContentHeight": 475.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 10,
+      "title": "算法内核：把选择规则固定下来",
+      "flowables": 9,
+      "calculatedContentHeight": 500.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 11,
+      "title": "事件模型：确定性与学习记录分开",
+      "flowables": 8,
+      "calculatedContentHeight": 430.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 12,
+      "title": "受门控会话：答案隔离到领域内部",
+      "flowables": 8,
+      "calculatedContentHeight": 438.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 13,
+      "title": "条件实验与本地诊断：克制地解释",
+      "flowables": 10,
+      "calculatedContentHeight": 399.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 14,
+      "title": "本机存档与独立自由地图",
+      "flowables": 7,
+      "calculatedContentHeight": 414.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 15,
+      "title": "AI 复盘：数据边界先于提示词",
+      "flowables": 9,
+      "calculatedContentHeight": 511.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 16,
+      "title": "双交付：同一领域内核，两种入口",
+      "flowables": 7,
+      "calculatedContentHeight": 445.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 17,
+      "title": "可复现性：先定义证明对象",
+      "flowables": 9,
+      "calculatedContentHeight": 424.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 18,
+      "title": "评审复现路径：默认不需要模型",
+      "flowables": 8,
+      "calculatedContentHeight": 449.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 19,
+      "title": "环境锁定与故障可控",
+      "flowables": 8,
+      "calculatedContentHeight": 491.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 20,
+      "title": "已有实测：证明到哪里为止",
+      "flowables": 9,
+      "calculatedContentHeight": 495.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 21,
+      "title": "可复现缺陷案例：Windows 换行漂移",
+      "flowables": 10,
+      "calculatedContentHeight": 432.0,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 22,
+      "title": "需求、Prompt、代码与提交可追溯",
+      "flowables": 7,
+      "calculatedContentHeight": 401.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 23,
+      "title": "约束生成的可复用方法与限制",
+      "flowables": 8,
+      "calculatedContentHeight": 398.5,
+      "availableHeight": 665.89
+    },
+    {
+      "page": 24,
+      "title": "附录：资料索引与复核方式",
+      "flowables": 7,
+      "calculatedContentHeight": 627.5,
+      "availableHeight": 665.89
+    }
+  ],
+  "visualInspection": {
+    "executor": "AI",
+    "method": "All 24 pages rendered at 100 dpi and reviewed in six four-page sheets; pages 9, 18 and 24 additionally reviewed individually",
+    "pagesReviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "result": "No clipping, overlap, missing Chinese glyphs or broken tables observed",
+    "isHumanAcceptance": false
+  },
+  "limits": [
+    "Document build and evidence checks, not a fresh product regression",
+    "Not human or real-device acceptance",
+    "Current final conversation answer is not yet persisted",
+    "Local-only, no upload performed"
+  ],
+  "fontNames": [
+    "/AAAAAA+Consolas",
+    "/AAAAAA+DengXian-Bold",
+    "/AAAAAA+SimHei",
+    "/AAAAAB+DengXian-Bold",
+    "/AAAAAB+SimHei",
+    "/AAAAAC+SimHei",
+    "/AAAAAD+SimHei",
+    "/Helvetica"
+  ],
+  "trueTypeFontsEmbedded": true,
+  "textBoundsAudit": [
+    {
+      "page": 1,
+      "characters": 299,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 2,
+      "characters": 517,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 3,
+      "characters": 481,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 4,
+      "characters": 572,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 5,
+      "characters": 520,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 6,
+      "characters": 589,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 7,
+      "characters": 544,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 8,
+      "characters": 534,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 9,
+      "characters": 622,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 10,
+      "characters": 619,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 11,
+      "characters": 621,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 12,
+      "characters": 560,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 13,
+      "characters": 593,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 14,
+      "characters": 546,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 15,
+      "characters": 673,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 16,
+      "characters": 614,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 17,
+      "characters": 582,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 18,
+      "characters": 946,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 19,
+      "characters": 654,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 20,
+      "characters": 703,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 21,
+      "characters": 627,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 22,
+      "characters": 663,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 23,
+      "characters": 577,
+      "allTextWithinPage": true
+    },
+    {
+      "page": 24,
+      "characters": 1435,
+      "allTextWithinPage": true
+    }
+  ],
+  "unencrypted": true,
+  "noAutomaticOpenAction": true
+}
