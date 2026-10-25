@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-25T09:33:19.1596012+08:00",
+  "executor": "AI",
+  "archive": "D:\\竞赛\\delivery\\PathLab-AI-Prompt-evidence-20261025-093233.zip",
+  "sha256": "8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c",
+  "sourceHead": "9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7",
+  "entries": 58,
+  "guideLinksChecked": 67,
+  "guideLinksInArchive": true,
+  "excludedPathMatches": [],
+  "credentialPatternMatches": [],
+  "independentVerification": {
+    "windowsPowerShell51": true,
+    "powerShell7": true
+  },
+  "limits": "Heuristic scan of this exact archive, not a formal security audit. Original visible text and historical local paths retained; archive integrity is not source authorship or human acceptance."
+}

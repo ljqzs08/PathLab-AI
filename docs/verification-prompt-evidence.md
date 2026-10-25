@@ -36,6 +36,15 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File D:\竞赛\scripts\Test-P
 
 工具直接从白名单文件的字节写 ZIP（不抽取全日志/浏览器会话），包内 `START-HERE.md` 导航，`manifest.json` 覆盖文件字节 SHA256，`git-history.json` 从真实 Git 获取哈希/原提交时间/变更文件。生成后重开 ZIP，拒绝额外/重复/危险路径、内容篡改和未完成选定轮。只校验自洽性，不构成第三方时间戳或作者鉴定。临时合成损坏包均在独立 D 盘 `.cache` 中生成并按确切文件清理；未触碰历史被拒绝删除项，未生成检查图片。
 
+## 最终交付包与本地提交
+
+- 内容里程碑提交：`9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7`；不重写已有 Git 历史。
+- 最终 ZIP：`D:\竞赛\delivery\PathLab-AI-Prompt-evidence-20261025-093233.zip`；同目录 `.zip.sha256` 可独立校验。
+- ZIP SHA256：`8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c`。
+- 57 个内容文件加 manifest 共 58 个条目；9 轮 / 38 条 / 10 个历史提交。生成后在 PowerShell 7 和 Windows PowerShell 5.1 分别重新打开核验通过，无需解压。
+- 重新读取最终 ZIP，6 份导引的 67 个相对链接在包内均存在；禁用路径与常见凭证模式均无匹配。启发式扫描不构成正式安全审计。
+- 实际结果：`evidence/prompt-package-archive-20261025.json`、`evidence/prompt-package-scan-20261025.json`。manifest 的 sourceHead 对应上述内容提交；随后归档扫描结果的提交不在本包中，不能倒填为包的来源。
+- 本次测试合成包及临时目录已清理；真实交付 ZIP/校验文件保留在 D 盘。没有生成或保留临时检查图片，没有触碰原先未跟踪残留。
 ## 状态与剩余风险
 
 本地导引/原文选编已经完成；不能保证评审一定接受选定范围，也不能声称三条 C 链各有独立用户报错。真实用户引导过程在 U01；S02 是另一真实产品方向调整，AI 自测不冒充人类。原文中的过期进度/未发布/0/3 原样保留，最新解释集中在新导引。

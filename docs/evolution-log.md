@@ -389,3 +389,6 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 变更：`prompts/submission/` 入口/5 项导引/机器映射/附件；`scripts/Export-PromptEvidencePackage.ps1`、`Test-PromptEvidencePackage.ps1`；扩展 `Test-CoreEvidence.ps1` 来源完整性检查；根 README/AGENTS、Prompt/核心/进度导航及 `verification-prompt-evidence.md`。
 - 验证：作者侧 16 份/61 条与 11 个祖先提交通过（选编 9 轮均完整）；两版 PowerShell 包工具各 9 项、提取工具各 19 项通过。包以白名单直接写入 D 盘 delivery，原始失败与通过日志保留；当前轮没有修改应用或重跑产品功能。
 - 临时合成损坏包与生成目录均按确切本轮路径清理，没有生成图像，不碰历史拒绝清理项。旧 HTML stat 假脏与 5 个未跟踪残留不夹带提交；新增材料先本地验证/正常细粒度提交，不改写历史，不把 E020 远端访问快照当作本轮已上传。实际提交哈希在提交后据实登记，不自引用。
+- 内容里程碑已正常提交：`9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7`（30 个显式暂存文件）；未夹带旧 HTML 假脏或未跟踪残留。
+- 基于该提交生成最终 `delivery/PathLab-AI-Prompt-evidence-20261025-093233.zip`，SHA256 `8f9d5e888574bf50f000aef2a762b20b99fbe76ff0e47709dfe3c9d4d36a542c`。57 个内容文件 / 58 个 ZIP 条目，双 PowerShell 重开一致性通过，包内 67 个导引链接均存在，禁用路径/常见凭证模式无匹配。真实最终报告独立归档，不以旧的 09:27 测试包结果代替。
+- 本轮新增材料没有执行推送；既有 D 盘 GitHub CLI 配置现场检查未登录，不能把旧公开仓库的访问证据冒充为这些新文件已经上线。归档提交只记录此内容提交与最终 ZIP 结果，不进行哈希自引用。
