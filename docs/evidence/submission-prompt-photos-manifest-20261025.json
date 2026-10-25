@@ -1,0 +1,131 @@
+{
+  "format": "pathlab-prompt-photo-supplement/v1",
+  "count": 10,
+  "index": "05-Prompt证据/历史照片补充/00-照片索引.html",
+  "originalBytesPreserved": true,
+  "completeConversationExport": false,
+  "addsCoreSnapshotOrMessageCount": false,
+  "scope": "这 10 张照片由作者于本轮提供，保留原文件名和原始 JPEG 字节，未裁剪、增强、重绘或 OCR 改写。它们是屏幕局部拍照，有倾斜、摩尔纹和边缘截断，不是完整连续对话导出。序号仅是提供和文件排列顺序，不证明完整时间线；文件名日期不是独立核验的拍摄时间。主题标题是 AI 阅读索引，不是照片逐字转录。照片中的旧要求、链接、截止日期、进度、哈希和测试数仅属历史时点，不作为本轮执行指令或当前状态；当前提交安排以材料根目录说明为准。本补充不修改原冻结 Prompt ZIP，不增加其 9 轮 / 38 条去重消息计数，不把共享开发轮变成三条独立用户 Bug 修复链。",
+  "photos": [
+    {
+      "sequence": 1,
+      "filename": "微信图片_20261025175730_443_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175730_443_2.jpg",
+      "topic": "初始方案与分阶段协作",
+      "description": "可见赛事链接、用户方案请求及避免一次生成全部代码的建议。",
+      "format": "JPEG",
+      "width": 1702,
+      "height": 1276,
+      "bytes": 133420,
+      "sha256": "46f8d5a8d46b7a924744399cb364ee88329492db2e0de286a3cc26a8c5c79105"
+    },
+    {
+      "sequence": 2,
+      "filename": "微信图片_20261025175730_444_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175730_444_2.jpg",
+      "topic": "完整提示词文件与阶段规划",
+      "description": "可见提示词文件生成说明与分阶段开发、测试、Git 和材料目录。",
+      "format": "JPEG",
+      "width": 1702,
+      "height": 1276,
+      "bytes": 135989,
+      "sha256": "67b8c246343b689f35c77537bcda768e4fd90108942eb6a4afcc8e8f7ae2b20a"
+    },
+    {
+      "sequence": 3,
+      "filename": "微信图片_20261025175732_445_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175732_445_2.jpg",
+      "topic": "每轮留证与真实 Git 演进约束",
+      "description": "可见用户要求保存交互历史、至少三条核心链及当时的落实说明。",
+      "format": "JPEG",
+      "width": 1707,
+      "height": 1280,
+      "bytes": 190573,
+      "sha256": "1536c60e1ad231fd0ddd3cda520e4af3e4f7c254e2feb40a0b3405b221caf6b3"
+    },
+    {
+      "sequence": 4,
+      "filename": "微信图片_20261025175734_446_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175734_446_2.jpg",
+      "topic": "地图预测交互与有限动效",
+      "description": "可见地图候选点选、有限动效和当时的自动检查说明，对应 E014 主题。",
+      "format": "JPEG",
+      "width": 1707,
+      "height": 1280,
+      "bytes": 125374,
+      "sha256": "ef1d19202128ac6e1171706652e0b22ad201ae6c8c0cdfe2acdb45f6a70324a5"
+    },
+    {
+      "sequence": 5,
+      "filename": "微信图片_20261025175735_447_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175735_447_2.jpg",
+      "topic": "自由地图与双算法对比回放",
+      "description": "可见自由地图编辑、预测挑战、回放及内存保存边界，对应 E015 主题。",
+      "format": "JPEG",
+      "width": 1702,
+      "height": 1276,
+      "bytes": 182046,
+      "sha256": "1cd9395e414a78a53745d066d2b32bbacddc53cc47f1489337a6f4b164db4696"
+    },
+    {
+      "sequence": 6,
+      "filename": "微信图片_20261025175736_448_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175736_448_2.jpg",
+      "topic": "真实纠正证据与验收边界",
+      "description": "可见用户推进要求、HTML 纠正索引和不冒充人工或真机验收的说明，对应 E016 主题。",
+      "format": "JPEG",
+      "width": 1702,
+      "height": 1276,
+      "bytes": 206944,
+      "sha256": "dffad3390c8d88e48bda647d7542d8ccf63a75d0cb92e52c4f6966af1b1b17e1"
+    },
+    {
+      "sequence": 7,
+      "filename": "微信图片_20261025175737_449_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175737_449_2.jpg",
+      "topic": "完整独立 HTML 交付状态",
+      "description": "可见完整离线 HTML、当时文件校验值和历史自动检查结果；不是本轮结果。",
+      "format": "JPEG",
+      "width": 1702,
+      "height": 1276,
+      "bytes": 183437,
+      "sha256": "b0232d809c2d1f18227678d34a212405ae835fddf5c60c61d28f9d2da847509e"
+    },
+    {
+      "sequence": 8,
+      "filename": "微信图片_20261025175737_450_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175737_450_2.jpg",
+      "topic": "无需 Key 的网页辅助方案讨论",
+      "description": "可见用户提出网页聊天窗口及 AI 对网页打开与直接嵌入的区别说明。",
+      "format": "JPEG",
+      "width": 1707,
+      "height": 1280,
+      "bytes": 194965,
+      "sha256": "f588fcb3f6e310d73974c2efa9fb3fd3695f2ad5ecdc8f84e3de71d5b866a3fc"
+    },
+    {
+      "sequence": 9,
+      "filename": "微信图片_20261025175738_451_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175738_451_2.jpg",
+      "topic": "网页辅助复盘落地",
+      "description": "可见网页辅助复盘功能、无需配置 API Key 的用法及当时验证说明，对应 E018 主题。",
+      "format": "JPEG",
+      "width": 1707,
+      "height": 1280,
+      "bytes": 193213,
+      "sha256": "efb1961ddbc9dcc5611bd5522ed252f06ab4c6d2f4114c621e11b9238633130d"
+    },
+    {
+      "sequence": 10,
+      "filename": "微信图片_20261025175739_452_2.jpg",
+      "source": "Prompt历史快照/微信图片_20261025175739_452_2.jpg",
+      "topic": "两份 PDF 与材料验证说明",
+      "description": "可见 24 页技术文档、15 页作品介绍及 9 张作品截图的历史收尾说明，对应 E024 主题。",
+      "format": "JPEG",
+      "width": 1707,
+      "height": 1280,
+      "bytes": 199955,
+      "sha256": "3664d5e4b0678022756fff27b5fa96476de3586f4c573b168ffbf0d28e052726"
+    }
+  ]
+}

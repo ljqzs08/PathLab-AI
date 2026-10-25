@@ -1,0 +1,3 @@
+{"sequence":1,"timestamp":"2026-10-25T10:32:52.332Z","role":"user","phase":"","sourceLine":829,"textSha256":"790ce365c093c6985803e513abf11eb5c5a24ed1164a5eab7e78c80f94642969","text":"继续\n"}
+{"sequence":2,"timestamp":"2026-10-25T10:34:47.736Z","role":"assistant","phase":"commentary","sourceLine":832,"textSha256":"4408c68b0acab4de674f22c3f5e702d5828880c051c4fc069dc2dc45efaa985c","text":"我继续把这 10 张原图加入材料包，补上照片浏览入口，并核验复制后的图片与原图一致。本轮只更新本地材料，不上传 GitHub。\n"}
+{"sequence":3,"timestamp":"2026-10-25T10:47:04.389Z","role":"assistant","phase":"commentary","sourceLine":931,"textSha256":"595637f53027a7fbc21c12ba450167abb9e96a32c921e205b4a50911559f475f","text":"10 张原图已加入更新后的 ZIP，材料首页和评审入口也都能进入照片索引。已核验图片原字节一致，桌面与手机宽度下均能加载；两份 PDF、源码、离线 HTML 和原 Prompt 包保持不变。接下来完成留证和本地提交。\n"}

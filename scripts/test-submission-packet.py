@@ -60,6 +60,45 @@ class PacketSafetyTests(unittest.TestCase):
         self.assertIn("不是在线运行网站", data)
         self.assertIn("没有再次上传或推送", data)
 
+    def test_photo_allowlist_and_original_bytes(self):
+        payload, metadata = builder.photo_payload()
+        self.assertEqual(len(builder.PROMPT_PHOTOS), 10)
+        self.assertEqual(metadata["count"], 10)
+        self.assertEqual(len(payload), 13)
+        self.assertEqual(len({r["filename"] for r in metadata["photos"]}), 10)
+        for r in metadata["photos"]:
+            original = (ROOT / r["source"]).read_bytes()
+            self.assertEqual(payload[builder.PHOTO_FOLDER + "/" + r["filename"]], original)
+            self.assertEqual(r["sha256"], builder.digest(original))
+            self.assertEqual(r["format"], "JPEG")
+            self.assertGreater(r["width"], 1600)
+            self.assertGreater(r["height"], 1200)
+        for name in payload:
+            builder.safe_name(name)
+
+    def test_photo_scope_does_not_inflate_core_evidence(self):
+        payload, metadata = builder.photo_payload()
+        self.assertFalse(metadata["completeConversationExport"])
+        self.assertFalse(metadata["addsCoreSnapshotOrMessageCount"])
+        self.assertTrue(metadata["originalBytesPreserved"])
+        self.assertIn("9 轮 / 38 条", metadata["scope"])
+        self.assertIn("旧要求", metadata["scope"])
+        page = payload[builder.PHOTO_INDEX].decode("utf-8")
+        self.assertEqual(page.count("<img "), 10)
+        self.assertNotIn("<script", page)
+        self.assertNotIn("<iframe", page)
+        self.assertNotIn('src="http', page)
+
+    def test_photo_gallery_escapes_titles_and_filenames(self):
+        data = builder.photo_gallery([{"sequence": 1, "filename": '<file>".jpg',
+            "topic": "<unsafe>", "description": "a & b", "width": 1702,
+            "height": 1276, "bytes": 100, "sha256": "a" * 64}]).decode("utf-8")
+        self.assertNotIn("<unsafe>", data)
+        self.assertIn("&lt;unsafe&gt;", data)
+        self.assertIn("a &amp; b", data)
+        self.assertIn("%3Cfile%3E%22.jpg", data)
+        self.assertNotIn('href="<file>', data)
+
     def test_digest_is_sha256(self):
         self.assertEqual(builder.digest(b"PathLab"), hashlib.sha256(b"PathLab").hexdigest())
 

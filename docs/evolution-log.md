@@ -439,3 +439,13 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 当前 ZIP SHA：`375ab8b4702235034f3cc065d9374f0fc6da6f435cbb3a36d1f94ae153d53a24`。原 E025 ZIP 与根入口留在 D 盘 `delivery/.history/`；旧证据不覆写。4 张新检查图精确清理命令被工具策略拒绝，仍在 D 盘，无绕过。
 - 验证与边界：`docs/verification-submission-github-links.md`、`docs/evidence/submission-github-link-*-20261025.*`。C01/C02/C03 / U01 原文与人工引导边界不变，不复制共享会话增加计数。
 - 前轮真实本地提交为 `687c58ba74a37b3b6c863bd8711f23194dd59e12`；本轮正常本地细粒度提交，哈希产生后最终报告，不 amend / rebase / squash，不暂存既有无关残留。
+
+## E027：原始 Prompt 历史照片补充与阅读入口（2026-10-25）
+
+- 用户提供十图，暂停后明确“继续”。照片按原文件名 / 原字节加入现有完整 ZIP / 解压版，附静态 HTML 索引、阅读说明和逐图 JSON；两个材料入口可直接进入。不 OCR 改写、不把图内旧指令当本轮任务、不称完整连续对话。
+- 修改：`scripts/build-submission-packet.py` 十图白名单 / 生成 / 验证、14 项工具测试、图库 Edge 专项、字段说明、`Prompt历史快照/` 原件 / README、验证 / 演进 / 进度与 Prompt 入口。构建拒绝覆盖保护不变，未重建第二份完整目录。
+- 当前 ZIP 9,411,246 字节 / 439 条目，SHA256 `ae55c7320027cf7b7cd2450ec1441ff60cc771f195c433758e87416d7bc02010`；E026 旧版保留 D 盘 history。新增13文件，仅5个旧条目为导航 / 说明 / manifest变化；421旧条目与418保护条目原字节不变，原PDF / 源码 / HTML / bundle / PromptZIP / 9正式图不改。
+- 实测14/14工具单测、全manifest SHA / ZIP CRC / 解压一致、十图原字节；两模拟宽度图库加载 / 原尺寸 / 键盘 / 导航 / 66本地链接通过，页面异常 / 外网请求 / 横溢为0。AI 查看2帧仅内存图库截图，未新落盘临时图；既有Edge自动channel解析失败后用已安装绝对路径通过，未安装 / 不当产品Bug。不是应用全回归或人工 / 真机。
+- 真实Prompt：E026 final第702行补件；照片请求 / 暂停709、714、822行；继续 / 执行说明829、832、931行。内部交接排除，暂停不冒充完成；本轮末final待真实落盘。冻结核心9轮38条不增加，C01/C02/C03 / U01真实性边界不变。
+- 记录：`docs/verification-prompt-photos.md` 与 `docs/evidence/submission-prompt-photos-*-20261025.json`。本轮不上传 / push / 填表，不改旧残留，也不绕过原清理拒绝。
+- 前轮真实本地提交为 `5cb620ef1e5f7365bf0b1dd800c2fba1bcbae01d`。本轮正常细粒度提交，哈希产生后最终报告 / 下轮登记，不自引用、不amend / rebase / squash；只显式暂存本轮文件。

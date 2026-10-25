@@ -1,0 +1,10 @@
+{
+  "executor": "AI",
+  "command": "bundled python -B scripts/test-submission-packet.py",
+  "testsRun": 14,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "output": "test_c_drive_output_rejected (packet_tests.PacketSafetyTests.test_c_drive_output_rejected) ... ok\ntest_copyable_link_file_distinguishes_repository_and_profile (packet_tests.PacketSafetyTests.test_copyable_link_file_distinguishes_repository_and_profile) ... ok\ntest_digest_is_sha256 (packet_tests.PacketSafetyTests.test_digest_is_sha256) ... ok\ntest_existing_output_is_not_overwritten (packet_tests.PacketSafetyTests.test_existing_output_is_not_overwritten) ... ok\ntest_generated_page_escapes_untrusted_text (packet_tests.PacketSafetyTests.test_generated_page_escapes_untrusted_text) ... ok\ntest_html_navigation_links_github_without_automatic_requests (packet_tests.PacketSafetyTests.test_html_navigation_links_github_without_automatic_requests) ... ok\ntest_only_env_template_is_allowed (packet_tests.PacketSafetyTests.test_only_env_template_is_allowed) ... ok\ntest_outside_project_rejected (packet_tests.PacketSafetyTests.test_outside_project_rejected) ... ok\ntest_photo_allowlist_and_original_bytes (packet_tests.PacketSafetyTests.test_photo_allowlist_and_original_bytes) ... ok\ntest_photo_gallery_escapes_titles_and_filenames (packet_tests.PacketSafetyTests.test_photo_gallery_escapes_titles_and_filenames) ... ok\ntest_photo_scope_does_not_inflate_core_evidence (packet_tests.PacketSafetyTests.test_photo_scope_does_not_inflate_core_evidence) ... ok\ntest_project_path_accepted (packet_tests.PacketSafetyTests.test_project_path_accepted) ... ok\ntest_unsafe_and_private_paths_rejected (packet_tests.PacketSafetyTests.test_unsafe_and_private_paths_rejected) ... ok\ntest_valid_unicode_names (packet_tests.PacketSafetyTests.test_valid_unicode_names) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.131s\n\nOK\n"
+}

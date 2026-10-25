@@ -1,0 +1,53 @@
+{
+  "archive": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\01-上传网盘\\PathLab-AI-完整作品材料-不含视频.zip",
+  "bytes": 9411246,
+  "sha256": "ae55c7320027cf7b7cd2450ec1441ff60cc771f195c433758e87416d7bc02010",
+  "entries": 439,
+  "filesVerified": 438,
+  "sourceCommit": "e438363692762398117756ceb7f72a3fb415e5ad",
+  "sourceHistoryCount": 38,
+  "containsVideo": false,
+  "verified": true,
+  "outputDirectory": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025",
+  "unpackedDirectory": "D:\\竞赛\\delivery\\PathLab-AI-参赛整理-20261025\\04-完整材料解压版",
+  "pdfsCopiedWithoutRewrite": true,
+  "sourceArchiveFileCount": 384,
+  "publicationPerformed": false,
+  "formSubmitted": false,
+  "github": {
+    "repository": "https://github.com/ljqzs08/PathLab-AI",
+    "profile": "https://github.com/ljqzs08",
+    "linkFile": "GitHub作品仓库地址.txt"
+  },
+  "materialRevision": "E027 Prompt historical photo supplement",
+  "promptPhotoCount": 10,
+  "previousArchiveSha256": "375ab8b4702235034f3cc065d9374f0fc6da6f435cbb3a36d1f94ae153d53a24",
+  "previousArchiveBackup": "D:\\竞赛\\delivery\\.history\\PathLab-AI-参赛整理-20261025-E026\\01-上传网盘\\PathLab-AI-完整作品材料-不含视频.zip",
+  "oldEntriesUnchanged": 421,
+  "changedExistingEntries": [
+    "00-评审入口.html",
+    "00-评审入口.md",
+    "05-Prompt证据/阅读说明.md",
+    "08-规则与提交说明/submission-handoff-20261025.md",
+    "manifest.json"
+  ],
+  "newEntries": [
+    "05-Prompt证据/历史照片补充/00-照片索引.html",
+    "05-Prompt证据/历史照片补充/00-阅读说明.md",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175730_443_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175730_444_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175732_445_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175734_446_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175735_447_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175736_448_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175737_449_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175737_450_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175738_451_2.jpg",
+    "05-Prompt证据/历史照片补充/微信图片_20261025175739_452_2.jpg",
+    "05-Prompt证据/历史照片补充/照片清单.json"
+  ],
+  "protectedOriginalEntriesUnchanged": 418,
+  "allUnpackedFilesMatchArchive": true,
+  "applicationRegressionRerun": false,
+  "humanOrPhysicalDeviceAcceptance": false
+}

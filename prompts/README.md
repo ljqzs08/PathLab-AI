@@ -64,3 +64,10 @@ JSONL 与 Markdown 同名；JSONL 每条包含来源行号、textSha256、角色
 - [E025 真正最终答复补件](sessions/2026-10-25-submission-organize-completion-final.md)：来源第 491 行，真实收尾，最终答复已捕获；不作为新增核心轮。
 - [本轮 GitHub 链接要求与可见说明](sessions/2026-10-25-submission-github-links.md)：3 条真实消息，明确排除内部交接，最终答复待下一轮落盘补齐。
 - [本轮实际验证](../docs/verification-submission-github-links.md)：纯本地链接 / 归档更新，不新增 C01/C02/C03 用户 Bug 材料，不改变 9 轮 / 38 条核心选编范围。
+
+## E027：Prompt 历史照片与暂停后继续（2026-10-25）
+
+- [E026 真正最终答复补件](sessions/2026-10-25-submission-github-links-completion-final.md)：原始第 702 行，1 条，final 已捕获，不算核心新增轮。
+- [十张照片原要求与当时暂停结果](sessions/2026-10-25-prompt-photos.md)：来源 709 / 714 / 822 行，3 条；明确非连续提取，末条仅是当时暂停，不冒充纳包已完成；内部交接排除。
+- [继续与实际执行说明](sessions/2026-10-25-prompt-photos-continue.md)：来源 829 / 832 / 931 行，3 条真实可见消息；本轮末答复仍待落盘，finalCaptured=False，不预写。
+- [原始照片与来源边界](../Prompt历史快照/README.md)、[本轮材料验证](../docs/verification-prompt-photos.md)：十图仅为局部历史补充，按原文件名 / 原字节单独纳包，不改冻结 Prompt ZIP 的 9 轮 / 38 条，也不重复计作三条用户 Bug 链。

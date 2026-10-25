@@ -1,0 +1,60 @@
+{
+  "executor": "AI / headless installed Edge",
+  "actualBrowserVersion": "156.0.4314.42",
+  "simulatedViewports": [
+    {
+      "width": 1440,
+      "allTenImagesDecoded": true,
+      "naturalSizesMatchOriginal": true,
+      "noHorizontalOverflow": true,
+      "keyboardFirstLink": true,
+      "indexAnchorWorks": true
+    },
+    {
+      "width": 390,
+      "allTenImagesDecoded": true,
+      "naturalSizesMatchOriginal": true,
+      "noHorizontalOverflow": true,
+      "keyboardFirstLink": true,
+      "indexAnchorWorks": true
+    }
+  ],
+  "photoCount": 10,
+  "galleryLocalLinksChecked": 66,
+  "originalImageHashesChecked": 10,
+  "navigation": [
+    {
+      "entry": "00-提交说明.html",
+      "width": 1440,
+      "photoCardCount": 1,
+      "navigatesToLocalGallery": true
+    },
+    {
+      "entry": "04-完整材料解压版\\00-评审入口.html",
+      "width": 1440,
+      "photoCardCount": 1,
+      "navigatesToLocalGallery": true
+    },
+    {
+      "entry": "00-提交说明.html",
+      "width": 390,
+      "photoCardCount": 1,
+      "navigatesToLocalGallery": true
+    },
+    {
+      "entry": "04-完整材料解压版\\00-评审入口.html",
+      "width": 390,
+      "photoCardCount": 1,
+      "navigatesToLocalGallery": true
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "savedCheckImages": 0,
+  "screenshotBuffersOnly": true,
+  "productRegressionRerun": false,
+  "humanOrPhysicalDeviceAcceptance": false,
+  "publicationPerformed": false,
+  "originalSizeLinkOpened": true,
+  "passed": true
+}

@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-25",
+  "executor": "AI",
+  "originalPhotos": {
+    "count": 10,
+    "reviewedInThisConversation": true,
+    "method": "view original JPEGs",
+    "obviousCredentialsObserved": false,
+    "completePrivacyOrSecurityAudit": false
+  },
+  "gallery": {
+    "reviewedFrames": 2,
+    "frames": [
+      {
+        "simulatedViewport": {
+          "width": 1440,
+          "height": 1100
+        },
+        "scope": "gallery first screen: heading, scope note, sequence navigation, first two image cards"
+      },
+      {
+        "simulatedViewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scope": "gallery first image anchor: single-column image, topic, description, original-size link, filename and hash control"
+      }
+    ],
+    "findings": "No clipping, horizontal overflow or unreadable navigation observed within these two frames.",
+    "allTenCardsVisuallyInspectedInGallery": false,
+    "automatedImageDecodeCoverage": 10,
+    "screenshotTransport": "in-memory PNG buffers emitted in this conversation",
+    "savedTemporaryCheckImages": 0
+  },
+  "humanOrPhysicalDeviceAcceptance": false,
+  "applicationRegressionRerun": false,
+  "publicationPerformed": false,
+  "limits": "Visual review is limited to the stated originals and frames, not a full product, accessibility, privacy or device certification."
+}

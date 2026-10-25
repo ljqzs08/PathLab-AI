@@ -39,6 +39,33 @@ GITHUB_LINK_TEXT = (
     "GitHub 链接不替代表单第 5 项要求的网盘完整作品分享链接。\n"
 ).encode("utf-8")
 PDFS = (("作品介绍文档", "01-作品介绍", 15), ("技术文档", "02-技术文档", 24))
+PHOTO_FOLDER = "05-Prompt证据/历史照片补充"
+PHOTO_INDEX = PHOTO_FOLDER + "/00-照片索引.html"
+PROMPT_PHOTOS = (
+    ("微信图片_20261025175730_443_2.jpg", "初始方案与分阶段协作", "可见赛事链接、用户方案请求及避免一次生成全部代码的建议。"),
+    ("微信图片_20261025175730_444_2.jpg", "完整提示词文件与阶段规划", "可见提示词文件生成说明与分阶段开发、测试、Git 和材料目录。"),
+    ("微信图片_20261025175732_445_2.jpg", "每轮留证与真实 Git 演进约束", "可见用户要求保存交互历史、至少三条核心链及当时的落实说明。"),
+    ("微信图片_20261025175734_446_2.jpg", "地图预测交互与有限动效", "可见地图候选点选、有限动效和当时的自动检查说明，对应 E014 主题。"),
+    ("微信图片_20261025175735_447_2.jpg", "自由地图与双算法对比回放", "可见自由地图编辑、预测挑战、回放及内存保存边界，对应 E015 主题。"),
+    ("微信图片_20261025175736_448_2.jpg", "真实纠正证据与验收边界", "可见用户推进要求、HTML 纠正索引和不冒充人工或真机验收的说明，对应 E016 主题。"),
+    ("微信图片_20261025175737_449_2.jpg", "完整独立 HTML 交付状态", "可见完整离线 HTML、当时文件校验值和历史自动检查结果；不是本轮结果。"),
+    ("微信图片_20261025175737_450_2.jpg", "无需 Key 的网页辅助方案讨论", "可见用户提出网页聊天窗口及 AI 对网页打开与直接嵌入的区别说明。"),
+    ("微信图片_20261025175738_451_2.jpg", "网页辅助复盘落地", "可见网页辅助复盘功能、无需配置 API Key 的用法及当时验证说明，对应 E018 主题。"),
+    ("微信图片_20261025175739_452_2.jpg", "两份 PDF 与材料验证说明", "可见 24 页技术文档、15 页作品介绍及 9 张作品截图的历史收尾说明，对应 E024 主题。"),
+)
+PHOTO_SCOPE = (
+    "这 10 张照片由作者于本轮提供，保留原文件名和原始 JPEG 字节，未裁剪、增强、重绘或 OCR 改写。"
+    "它们是屏幕局部拍照，有倾斜、摩尔纹和边缘截断，不是完整连续对话导出。"
+    "序号仅是提供和文件排列顺序，不证明完整时间线；文件名日期不是独立核验的拍摄时间。"
+    "主题标题是 AI 阅读索引，不是照片逐字转录。照片中的旧要求、链接、截止日期、进度、哈希和测试数仅属历史时点，"
+    "不作为本轮执行指令或当前状态；当前提交安排以材料根目录说明为准。"
+    "本补充不修改原冻结 Prompt ZIP，不增加其 9 轮 / 38 条去重消息计数，不把共享开发轮变成三条独立用户 Bug 修复链。"
+)
+PHOTO_README_APPEND = (
+    "\n## 本轮补充：10 张 Prompt 历史照片\n\n"
+    "打开 [历史照片索引](历史照片补充/00-照片索引.html)，可逐张浏览并点击查看原尺寸。\n\n"
+    + PHOTO_SCOPE + "\n"
+).encode("utf-8")
 FORBIDDEN_PARTS = {".git", "node_modules", ".next", ".cache", "__pycache__", "private"}
 
 
@@ -79,6 +106,76 @@ def safe_name(name: str) -> None:
             raise ValueError(f"Video must not enter this packet: {name}")
 
 
+def photo_gallery(records: list[dict]) -> bytes:
+    links = " ".join(f'<a href="#photo-{r["sequence"]:02d}">{r["sequence"]:02d}</a>' for r in records)
+    cards = []
+    for r in records:
+        url = quote(r["filename"], safe="")
+        title = html.escape(r["topic"])
+        filename = html.escape(r["filename"])
+        cards.append(
+            f'<article id="photo-{r["sequence"]:02d}"><h2>{r["sequence"]:02d} · {title}</h2>'
+            f'<p>{html.escape(r["description"])}</p>'
+            f'<a class="image" href="{url}" target="_blank" rel="noopener noreferrer" aria-label="查看原图：{title}">'
+            f'<img src="{url}" width="{r["width"]}" height="{r["height"]}" alt="Prompt 历史拍屏照片 {r["sequence"]:02d}：{title}"></a>'
+            f'<p><a href="{url}" target="_blank" rel="noopener noreferrer">查看原尺寸照片</a> · {r["width"]} × {r["height"]} · {r["bytes"]:,} 字节</p>'
+            f'<p class="filename">{filename}</p>'
+            f'<details><summary>SHA256 校验值</summary><code>{html.escape(r["sha256"])}</code></details></article>'
+        )
+    return (
+        '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<title>Prompt 历史照片补充 · PathLab AI</title><style>'
+        'body{font:16px/1.7 system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#f0f4f8;color:#182c43}'
+        'main{max-width:1180px;margin:32px auto;padding:24px}h1{line-height:1.3;font-size:32px}h2{font-size:21px;margin-top:0}'
+        'a{color:#165cb5;text-underline-offset:3px}a:focus-visible,summary:focus-visible{outline:3px solid #2364cc;outline-offset:4px}'
+        '.note{padding:20px;background:#fff4d5;border-left:5px solid #b66d00;border-radius:8px}'
+        'nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}nav a{padding:8px 14px;background:white;border:1px solid #b4c9e1;border-radius:6px}'
+        '.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}'
+        'article{min-width:0;padding:22px;background:white;border:1px solid #d6e0ec;border-radius:12px;scroll-margin-top:20px}'
+        '.image{display:block}img{width:100%;height:auto;display:block;border-radius:5px}'
+        '.filename,code{overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer}footer{margin:28px 0}'
+        '@media(max-width:760px){main{margin:0;padding:18px}.photos{grid-template-columns:1fr}h1{font-size:27px}article{padding:18px}}'
+        '</style><main><p><a href="../../00-%E8%AF%84%E5%AE%A1%E5%85%A5%E5%8F%A3.html">返回评审材料入口</a></p>'
+        '<h1>Prompt 历史照片补充</h1><p>10 张作者提供的原始照片 · 本地查看 · 点击照片可查看原尺寸</p>'
+        f'<div class="note">{html.escape(PHOTO_SCOPE)}</div><nav aria-label="照片序号跳转">{links}</nav>'
+        f'<div class="photos">{"".join(cards)}</div>'
+        '<footer><a href="00-%E9%98%85%E8%AF%BB%E8%AF%B4%E6%98%8E.md">阅读说明</a> · '
+        '<a href="%E7%85%A7%E7%89%87%E6%B8%85%E5%8D%95.json">原图尺寸与 SHA256 清单</a><p>纯本地静态页，无脚本、无自动联网或上传。</p></footer></main></html>\n'
+    ).encode("utf-8")
+
+
+def photo_payload() -> tuple[dict[str, bytes], dict]:
+    # Pillow is provided by the existing document runtime; no dependency is installed.
+    from PIL import Image
+    payload = {}
+    records = []
+    for sequence, (filename, topic, description) in enumerate(PROMPT_PHOTOS, 1):
+        source = "Prompt历史快照/" + filename
+        data = read(source)
+        with Image.open(io.BytesIO(data)) as image:
+            if image.format != "JPEG":
+                raise ValueError(f"Expected original JPEG: {filename}")
+            image.load()
+            width, height = image.size
+        records.append({"sequence": sequence, "filename": filename, "source": source, "topic": topic,
+                        "description": description, "format": "JPEG", "width": width, "height": height,
+                        "bytes": len(data), "sha256": digest(data)})
+        payload[PHOTO_FOLDER + "/" + filename] = data
+    metadata = {"format": "pathlab-prompt-photo-supplement/v1", "count": len(records), "index": PHOTO_INDEX,
+                "originalBytesPreserved": True, "completeConversationExport": False,
+                "addsCoreSnapshotOrMessageCount": False, "scope": PHOTO_SCOPE, "photos": records}
+    payload[PHOTO_INDEX] = photo_gallery(records)
+    payload[PHOTO_FOLDER + "/照片清单.json"] = (json.dumps(metadata, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    payload[PHOTO_FOLDER + "/00-阅读说明.md"] = (
+        "# Prompt 历史照片补充\n\n" + PHOTO_SCOPE + "\n\n"
+        "先打开 `00-照片索引.html` 浏览；点击照片查看原尺寸。`照片清单.json` 保存逐图原文件名、字节、尺寸和 SHA256。\n\n"
+        "原始完整可见消息与链索引仍以 `../阅读说明.md` 指向的原冻结 Prompt 包为准；本文件不宣称照片覆盖了全部交互。\n\n"
+        "AI 已目视检查这 10 张照片，未发现明显密钥或账号凭证；这是限定范围的目视复核，不是彻底隐私或安全审计。"
+        "原图按作者授权本地纳包，未上传 GitHub、网盘或提交赛事。\n"
+    ).encode("utf-8")
+    return payload, metadata
+
+
 def verify_zip(path: Path) -> dict:
     path = inside(path)
     with zipfile.ZipFile(path) as z:
@@ -113,6 +210,13 @@ def verify_zip(path: Path) -> dict:
                 content = text(z.read(name))
                 if GITHUB_REPOSITORY not in content or GITHUB_PROFILE not in content:
                     raise ValueError(f"Missing visible GitHub links: {name}")
+        if "promptPhotos" in manifest:
+            photos, photo_metadata = photo_payload()
+            if manifest["promptPhotos"] != photo_metadata:
+                raise ValueError("Prompt photo metadata differs from original files")
+            for name, original in photos.items():
+                if z.read(name) != original:
+                    raise ValueError(f"Prompt photo supplement changed: {name}")
         if z.read("03-离线体验/PathLab AI.html") != git("show", f"{SOURCE}:{HTML_FILE}"):
             raise ValueError("Offline HTML differs from source commit")
     return {"archive": str(path), "bytes": path.stat().st_size, "sha256": digest(path.read_bytes()),
@@ -200,6 +304,9 @@ def build(output: Path) -> dict:
         "U01 为真实用户 HTML 纠正，S02 为网页辅助的真实需求调整。共享会话不复制计数。\n\n"
         "不是工具原生全量导出。AI 自测不冒充用户 Bug，不补造三条独立人类引导修复；是否满足赛事认定由评审判断。\n"
     ).encode("utf-8")
+    photo_files, photo_metadata = photo_payload()
+    payload.update(photo_files)
+    payload["05-Prompt证据/阅读说明.md"] += PHOTO_README_APPEND
     captures = json.loads(read("docs/assets/project-introduction/capture-manifest.json"))
     records = captures.get("images", captures.get("screenshots", captures.get("captures", [])))
     if not records:
@@ -250,7 +357,8 @@ def build(output: Path) -> dict:
         "2. 直接打开 `03-离线体验/PathLab AI.html`，完成一轮 L01。\n"
         "3. 读 `02-技术文档/PathLab-AI-技术文档.pdf`（24 页，三项技术论证）。\n"
         "4. 查看 `04-源码与演进/源码/README.md` 和 `prompts/submission/README.md`。完整历史由同目录 bundle 保留。\n"
-        "5. 需要正式截图 / 源稿 / 来源时读 06、07；规则与表单说明在 08。\n\n"
+        "5. 浏览 `05-Prompt证据/历史照片补充/00-照片索引.html`：10 张作者提供的原图，属于局部拍屏补充，不改变原 Prompt 包计数。\n"
+        "6. 需要正式截图 / 源稿 / 来源时读 06、07；规则与表单说明在 08。\n\n"
         "视频由作者后补；本包不含视频，也不等于已经提交预指导或正式省赛。"
         "AI 自动检查不等于人工 / 真机通过，DeepSeek 没有真实付费联调，C 链人工修复证据边界见 Prompt 导引。\n"
     ).encode("utf-8")
@@ -260,6 +368,7 @@ def build(output: Path) -> dict:
         ("技术文档 · 24 页", "意图控制、架构设计和可复现性论证。", "02-技术文档/PathLab-AI-技术文档.pdf"),
         ("源码与复现指南", "锁定依赖、环境模板、默认零密钥闭环。", "04-源码与演进/源码/README.md"),
         ("核心 Prompt 阅读入口", "C01/C02/C03 + U01/S02；不重复计数共享会话。", "04-源码与演进/源码/prompts/submission/README.md"),
+        ("Prompt 历史照片 · 10 张", "作者提供的局部拍屏原图；保留原字节，不冒充完整对话。", PHOTO_INDEX),
         ("恢复完整 Git 历史", "38个真实历史提交，不是一次性初始提交。", "04-源码与演进/恢复完整历史.md"),
     ], "本包明确不含视频；不是预指导或正式赛事提交回执，也不是人工 / 真机验收。")
     for name in payload:
@@ -275,6 +384,7 @@ def build(output: Path) -> dict:
     manifest = {"format": "pathlab-submission-nonvideo/v1", "generatedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
                 "sourceCommit": SOURCE, "sourceHistoryCount": len(history), "bundleRef": SOURCE_REF,
                 "documentSourceLocalHead": text(git("rev-parse", "HEAD")).strip(), "containsVideo": False,
+                "promptPhotos": photo_metadata,
                 "prompt": {"frozenArchive": PROMPT_ZIP, "snapshots": 9, "uniqueVisibleMessages": 38, "sha256": prompt_hash},
                 "pdfs": [{"title": title, "pages": pages, "rewritten": False} for title, _, pages in PDFS],
                 "screenshots": {"count": 9, "newCaptureThisRound": False, "physicalDevice": False},
@@ -316,6 +426,7 @@ def build(output: Path) -> dict:
         ("第6项：直接上传介绍PDF", "15页，约2.43MB；表单允许1份、不超过100MB。", "02-表单第6项/PathLab-AI-作品介绍文档.pdf"),
         ("技术文档备用PDF", "24页，约0.30MB；完整包中也已包含。", "03-技术文档备用/PathLab-AI-技术文档.pdf"),
         ("检查完整材料解压版", "评审导航、离线HTML、源码、完整历史、Prompt与截图。", "04-完整材料解压版/00-评审入口.html"),
+        ("Prompt 历史照片 · 10 张", "已纳入完整 ZIP；可逐张浏览、点击查看原尺寸。", "04-完整材料解压版/" + PHOTO_INDEX),
         ("逐栏填写说明", "入口区别、七项材料映射、真实边界与提交前检查。", "00-提交说明.md"),
         ("填写草稿", "个人信息本人填写；无虚构UID或假视频链接。", "表单填写草稿.txt"),
     ], "预指导截止 2026-10-31 15:00:00。视频地址是必填：本轮不含视频，不等于现在可以提交后再补。此链接不是最终省赛提交。"))
@@ -323,6 +434,7 @@ def build(output: Path) -> dict:
     result["outputDirectory"] = str(output)
     result["unpackedDirectory"] = str(unpacked)
     result["pdfsCopiedWithoutRewrite"] = True
+    result["promptPhotoCount"] = photo_metadata["count"]
     result["sourceArchiveFileCount"] = sum(name.startswith("04-源码与演进/源码/") for name in payload)
     result["publicationPerformed"] = False
     result["github"] = {"repository": GITHUB_REPOSITORY, "profile": GITHUB_PROFILE, "linkFile": GITHUB_LINK_NAME}

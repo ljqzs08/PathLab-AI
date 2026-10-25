@@ -1,0 +1,42 @@
+{
+  "executor": "AI",
+  "sessionId": "01a1723a-adcd-7f81-bc01-35b2b8c24154",
+  "sourceFile": "rollout-2026-10-25T16-43-30-01a1723a-adcd-7f81-bc01-35b2b8c24154.jsonl",
+  "exports": [
+    {
+      "stem": "2026-10-25-submission-github-links-completion-final",
+      "messages": 1,
+      "sourceLines": [
+        702
+      ],
+      "allComparedWithOriginal": true,
+      "finalCaptured": true
+    },
+    {
+      "stem": "2026-10-25-prompt-photos",
+      "messages": 3,
+      "sourceLines": [
+        709,
+        714,
+        822
+      ],
+      "allComparedWithOriginal": true,
+      "finalCaptured": true
+    },
+    {
+      "stem": "2026-10-25-prompt-photos-continue",
+      "messages": 3,
+      "sourceLines": [
+        829,
+        832,
+        931
+      ],
+      "allComparedWithOriginal": true,
+      "finalCaptured": false
+    }
+  ],
+  "internalHandoffExcluded": true,
+  "imagesStoredAsOriginalSeparateFiles": true,
+  "currentFinalAnswerPendingPersistence": true,
+  "addsCoreSnapshots": false
+}
