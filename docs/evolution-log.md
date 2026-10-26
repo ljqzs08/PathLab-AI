@@ -457,3 +457,12 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 实际：既有 Node v24.19.0 执行 BFS 11/11 通过；文档路径 / 时间表与保护文件 SHA 检查见 `docs/evidence/video-recording-guide-20261025.json`。不是完整产品、人工 / 真机或视频验收；录像文件还不存在，须本人录制后核验。
 - C01/C02/C03 / U01 原文与 9轮38条选编不变，没有新造 Bug 或人工报告。仅本地，不 push / 上传 / 代提交。没有本轮临时检查图；此前拒绝清理残留不动。
 - 前轮本地提交为 `06a8ace1514593b464c80dd3c31edc7a173a8629`。本轮显式暂存相关文档 / 索引 / 真实 Prompt，正常细粒度提交；真实哈希产生后报告，不自引用、不改写历史、不夹带旧残留。
+
+## E029：录制指导可编辑 Word 与真实分页核验（2026-10-26）
+
+- 用户原请求“帮我做成word”（2026-10-25），中途打断后在本日收尾；只转换已有 docs/video-recording-guide.md，不改写录制计划或预生成代码 / 视频。
+- 新增 output/docx/PathLab-AI-演示视频录制指导.docx 与 scripts/build-video-recording-guide-word.py：7 页可编辑分镜 / 口播 / 两段新拟 Prompt / 设置 / 检查框，4 个代码块与所有非标题原文保留。
+- 真实 Word 导出 + bundled renderer 的 DPI / Poppler 图像，AI 查看全部7页；原始标准renderer因缺soffice失败、未安装软件。保护 ZIP / PDF / HTML 的 SHA一致；本轮不重跑BFS或产品测试，不当视频 / 人工 / 真机验收。可选综合审计命令被工具拒绝，未计为通过。
+- 真实可见消息：E028真正final第1270行另附；本轮1277/1280两条留证，最终答复待落盘。内部交接排除，不改冻结9轮38条、三链/U01真实性边界。
+- 验证：docs/verification-video-recording-guide-word.md、docs/evidence/video-recording-guide-word-20261026.json。临时QA15文件清理被执行策略拒绝，仍在D盘忽略目录，无绕过；旧拒绝残留不动。
+- 前轮本地提交 ce11fb1d832fb2d1968879601ae994887dcd86b4；本轮正常本地细粒度提交，真实哈希产生后最终答复 / 下轮登记，不自引用、不改写历史、不夹带旧残留、不push / 上传 / 代交。

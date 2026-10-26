@@ -78,3 +78,9 @@ JSONL 与 Markdown 同名；JSONL 每条包含来源行号、textSha256、角色
 - [E027 真正最终答复补充](sessions/2026-10-25-prompt-photos-completion-final.md)：源1032，独立补件，不改旧继续轮快照、不计新核心轮。
 - [可照录的分镜与 Prompt](../docs/video-recording-guide.md)：两段 Prompt 是本次新拟的录像复现脚本，不是历史原话或已发生的对话。视频与复现代码尚未生成。
 - [验证与边界](../docs/verification-video-recording-guide.md)：既有 BFS 11/11，文档静态检查；C01/C02/C03 / U01 与冻结9轮38条边界不变。
+
+## E029：录制指导 Word 与 E028 真正收尾补件（2026-10-26）
+
+- [E028 真正最终答复](sessions/2026-10-26-video-recording-guide-completion-final.md)：原始源行1270，1条，finalCaptured=True；与上一轮用户要求 / 执行说明配合阅读，不覆盖旧快照或计作新核心轮。
+- [Word 请求与可见执行说明](sessions/2026-10-26-video-recording-guide-word.md)：原始源行1277/1280，2条；请求原日期为2026-10-25，收尾为2026-10-26，本轮final待真实落盘。按源行白名单摘录，内部交接排除，不冒充原生全量导出。
+- [Word 制作验证](../docs/verification-video-recording-guide-word.md)：7页可编辑指导、真实Word渲染与AI逐页看图；不是成片，也未新增C01/C02/C03人工引导修复证据，冻结9轮38条不变。没有自动上传或改原交付包。
