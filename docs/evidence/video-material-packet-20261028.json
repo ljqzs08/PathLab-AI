@@ -1,0 +1,41 @@
+{
+  "round": "E030",
+  "date": "2026-10-28",
+  "executor": "AI",
+  "sourceVideo": {
+    "readOnlyInput": "C:\\Users\\LJQ\\Desktop\\视频演示.mp4",
+    "bytes": 401809653,
+    "sha256": "abe1403d4a83eb22b9cb2e080b623c934e7393e76d08041f8d7776ba83893845",
+    "durationSeconds": 323.6333333333333,
+    "duration": "05:23.633",
+    "width": 1906,
+    "height": 1080,
+    "container": "MP4",
+    "videoCodec": "avc1",
+    "audioCodec": "mp4a"
+  },
+  "standaloneCopy": "delivery/PathLab-AI-参赛整理-20261028/03-视频材料/视频演示.mp4",
+  "archive": {
+    "path": "delivery/PathLab-AI-参赛整理-20261028/01-上传网盘/PathLab-AI-完整作品材料-含视频.zip",
+    "bytes": 411236473,
+    "sha256": "bedeed758710132a95429993cb27f8b12cae4fd7b46810a3eb364898160b8b06",
+    "entries": 443,
+    "manifestFiles": 442,
+    "containsVideo": true,
+    "videoEntry": "09-演示视频/视频演示.mp4",
+    "crcVerified": true,
+    "manifestHashesVerified": true
+  },
+  "oldArchivePreserved": {
+    "path": "delivery/PathLab-AI-参赛整理-20261025/01-上传网盘/PathLab-AI-完整作品材料-不含视频.zip",
+    "sha256": "ae55c7320027cf7b7cd2450ec1441ff60cc771f195c433758e87416d7bc02010"
+  },
+  "contentReview": {
+    "performed": false,
+    "aiCollaborationAtLeastTwoMinutes": "not_verified",
+    "manualReviewRequired": true
+  },
+  "publicationPerformed": false,
+  "formSubmitted": false,
+  "promptSnapshot": "prompts/sessions/2026-10-28-video-material.md"
+}

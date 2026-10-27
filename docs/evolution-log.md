@@ -466,3 +466,12 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 真实可见消息：E028真正final第1270行另附；本轮1277/1280两条留证，最终答复待落盘。内部交接排除，不改冻结9轮38条、三链/U01真实性边界。
 - 验证：docs/verification-video-recording-guide-word.md、docs/evidence/video-recording-guide-word-20261026.json。临时QA15文件清理被执行策略拒绝，仍在D盘忽略目录，无绕过；旧拒绝残留不动。
 - 前轮本地提交 ce11fb1d832fb2d1968879601ae994887dcd86b4；本轮正常本地细粒度提交，真实哈希产生后最终答复 / 下轮登记，不自引用、不改写历史、不夹带旧残留、不push / 上传 / 代交。
+
+## E030：演示视频归档并生成含视频提交材料包（2026-10-28）
+
+- 用户真实要求：将作者提供的 `视频演示.mp4` 加入竞赛材料，真实可见 Prompt 见 `prompts/sessions/2026-10-28-video-material.{md,jsonl}`。附件仅作为素材，不含额外指令。
+- 产出：新增 `scripts/build-video-material-packet.py`；在 `delivery/PathLab-AI-参赛整理-20261028/` 生成独立视频、元数据、SHA256、提交说明和含视频 ZIP。ZIP 内新增 `09-演示视频/`，更新评审入口、规则说明和 manifest；旧 20261025 不含视频 ZIP 未覆盖。
+- 文件事实：视频 401,809,653 字节，MP4 / avc1 / mp4a，约 05:23.633，1906×1080，SHA256 `abe1403d4a83eb22b9cb2e080b623c934e7393e76d08041f8d7776ba83893845`。含视频 ZIP 411,236,473 字节、443 条目 / 442 内容文件，SHA256 `bedeed758710132a95429993cb27f8b12cae4fd7b46810a3eb364898160b8b06`。
+- 验证：轻量 ISO-BMFF 元数据解析、独立副本与包内副本哈希、ZIP CRC、manifest 442 文件哈希和旧 ZIP 保留检查通过，见 `docs/verification-video-material-packet-20261028.md` 与 `delivery/PathLab-AI-参赛整理-20261028/packet-build-verification.json`。
+- 边界：5–8 分钟、MP4、1080p 按文件事实通过；是否含至少 2 分钟真实 AI 协同过程无法由元数据判断，仍待作者人工观看确认。未上传视频、未填表、未提交赛事，不把本地整理冒充公开视频或人工 / 真机验收；源码、PDF、Prompt、三链 / U01 未改。
+- Git：本轮只显式暂存本轮脚本、文档、证据和真实 Prompt；不夹带既有源码改动、临时 spec 或旧快照。提交哈希由后续证据索引补记，不自引用、不 amend / rebase / squash、不 push。
