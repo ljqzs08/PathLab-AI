@@ -475,3 +475,13 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 验证：轻量 ISO-BMFF 元数据解析、独立副本与包内副本哈希、ZIP CRC、manifest 442 文件哈希和旧 ZIP 保留检查通过，见 `docs/verification-video-material-packet-20261028.md` 与 `delivery/PathLab-AI-参赛整理-20261028/packet-build-verification.json`。
 - 边界：5–8 分钟、MP4、1080p 按文件事实通过；是否含至少 2 分钟真实 AI 协同过程无法由元数据判断，仍待作者人工观看确认。未上传视频、未填表、未提交赛事，不把本地整理冒充公开视频或人工 / 真机验收；源码、PDF、Prompt、三链 / U01 未改。
 - Git：本轮只显式暂存本轮脚本、文档、证据和真实 Prompt；不夹带既有源码改动、临时 spec 或旧快照。提交哈希由后续证据索引补记，不自引用、不 amend / rebase / squash、不 push。
+
+## E031：按评审意见新增 A* 零基础入门（v2.0.0，2026-11-10）
+
+- 输入：作者提供首次评审截图，总分 68，评语“看完之后还是没有学会A*算法，建议…找一个完全没有学过算法的同学测试一下”。真实 Prompt 见 `prompts/sessions/2026-11-10-reviewer-feedback-astar-primer.md`（人工转录，注明非工具导出）。
+- 判断：问题在教学效果，不在材料或工程；v1 未解释 g/h/f 就要求预测，错误反馈只说“去比较”。不新增 AI 调用或无关功能。
+- 实现：`astar-primer.ts`（消费真实 runAstar/runBfs 事件、复用 comparePriority 解释决胜规则）、`AstarPrimer.tsx`（6 章先猜后看入门）、关卡候选白话标签与数字化错误解释；首页主按钮与导航指向入门。
+- AI 自测自修（不是用户报错）：两轮 AI 模拟零基础学习者走查，第 1 轮 7 问题全部修复，第 2 轮 3 条建议采纳；另修复自身发现的渲染期调用、effect 内 setState、错误提示不可用等问题。不冒充真人测试。
+- 验证（AI，Linux Chrome for Testing 156 headless）：tsc / ESLint 通过，Node 160/160，离线 HTML 四视口 280/280，入门逐章 axe 0 违规；HTML SHA256 `1566c663f160ddc8399ce90c5171896882c575c5a0708c82dd62af88196cd167`。Windows Edge 套件本轮未重跑。详见 `docs/verification-astar-primer.md`。
+- 交付：`delivery/PathLab-AI-参赛文件-v2/`（新 HTML、视频 v2 = 原视频 + 2:27 入门演示、作品介绍/技术文档追加 v2 章节、含视频完整 ZIP）；旧 `PathLab-AI-参赛文件/` 保留不覆盖。
+- Git：功能与文档分开细粒度提交，正常 push，不改写历史；v2.0.0 标签与 Release 的实际状态以最终答复为准，哈希由下一轮补记。
