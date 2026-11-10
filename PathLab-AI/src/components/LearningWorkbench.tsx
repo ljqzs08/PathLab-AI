@@ -4,6 +4,7 @@ import { LearningSession, type LearningAction, type LearningView } from '../doma
 import { GridCanvas } from './GridCanvas';
 import { EvidenceInspector } from './EvidenceInspector';
 import { ReflectionPanel, ReportHistory } from './ReflectionPanel';
+import { explainPrediction } from '../domain/learning/astar-primer';
 
 const names: Record<Algorithm, string> = { bfs: 'BFS', astar: 'A*' };
 const stateNames: Record<LearningView['state'], string> = { idle: '待选任务', briefing: '任务简报', editing: '编辑中', prediction: '先作预测', paused: '回放已暂停', running: '正在回放', reflection: '搜索完成 · 待复盘', counterfactual: '条件实验', report: '学习报告' };
@@ -19,8 +20,11 @@ function PredictionPanel({ view, onAction, selected, onSelect }: { view: Learnin
     <h4 id="prediction-title" ref={title} tabIndex={-1}>{checkpoint.prompt}</h4>
     <p>第 {view.metrics.selectionCount + 1} 次有效选择前 · 候选按坐标排列，不代表处理顺序。可点击地图上的候选节点作答，提交前可改选。</p>
     <div className="candidate-list" role="group" aria-label="选择预测节点">{checkpoint.candidates.map(candidate => <button type="button" key={coordinate(candidate.node)} data-testid={'candidate-' + candidate.node.x + '-' + candidate.node.y} aria-pressed={selected?.x === candidate.node.x && selected?.y === candidate.node.y} onClick={() => onSelect(candidate.node)}>
-      <strong>{coordinate(candidate.node)}</strong><span>g {candidate.g} · h {candidate.h} · f {candidate.f}</span><small>入队序号 {candidate.entrySequence}</small>
+      <strong>{coordinate(candidate.node)}</strong>{view.algorithm === 'astar' ? <span>已走 g {candidate.g} · 估计剩 h {candidate.h} · 合计 f {candidate.f}</span> : <span>离起点 {candidate.g} 步</span>}<small>入队序号 {candidate.entrySequence}（越小越早排队）</small>
     </button>)}</div>
+    <details className="term-help"><summary>看不懂这些数字？</summary>{view.algorithm === 'astar'
+      ? <p>g = 从起点走到这里已经走了几步；h = 不管墙，横向差 + 纵向差，估计还要几步；f = g + h。A* 先挑 f 最小的；f 一样挑 h 小的；还一样挑入队序号小的（先排队的）。完全没学过？先到页面上方的「A* 零基础入门」走一遍。</p>
+      : <p>BFS 像排队：先进入队列（入队序号小）的格子先被处理，不看离终点多远。所以只需比较入队序号。</p>}</details>
     <button type="button" className="action-primary" disabled={!selected} data-testid="submit-prediction" onClick={() => {
       if (!selected) return;
       const seconds = (performance.now() - began.current) / 1000;
@@ -92,7 +96,7 @@ export function LearningWorkbench({ mission, session, onProgress }: { mission: L
         <div className="algorithm-summary"><label htmlFor="algorithm-choice">本关算法</label><select id="algorithm-choice" value={view.algorithm} disabled={view.state !== 'briefing' || view.conditionChange !== null} onChange={event => { try { setView(session.configureAlgorithm(event.target.value as Algorithm)); onProgress(); } catch (cause) { setError(String(cause)); } }}>{mission.algorithms.map(algorithm => <option key={algorithm} value={algorithm}>{names[algorithm]}</option>)}</select><p>{view.algorithm === 'bfs' ? 'FIFO 先入先出；h=0 不参与选择。' : '按 f、h、入队序号选择；h 为曼哈顿距离。'}<br />运行中冻结输入，结果来自本地确定性内核。{view.conditionChange && <>条件实验固定算法，仅改变一项地图条件。</>}</p></div>
         {view.state === 'briefing' && <div className="launch-state"><span className="neutral-badge">预测 → 事件 → 解释</span><p>{view.conditionChange ? '条件已改变，需重新预测。旧运行已保留，但不是本次答案。' : '先读任务，再作判断。提交前不会揭示实际答案。'}</p><button type="button" className="action-primary" onClick={() => act({type:'start_valid_run', runId:'run-' + crypto.randomUUID(), sessionId:view.sessionId ?? 'session-' + crypto.randomUUID()})}>开始预测 <span aria-hidden="true">→</span></button><small>操作后尝试保存到本机；请以上方存档状态为准。无远程 AI 调用。</small></div>}
         {view.checkpoint && <PredictionPanel key={view.runId + ':' + view.checkpoint.id} view={view} onAction={act} selected={selectedPrediction} onSelect={selectPrediction} />}
-        {prediction && <section className={'prediction-feedback' + (prediction.correct ? ' is-correct' : '')} aria-labelledby="prediction-feedback-title" data-testid="prediction-feedback"><h4 id="prediction-feedback-title">{prediction.correct ? '这一步，符合规则。' : '不同选择，正好用证据比较。'}</h4><p>你选择 {coordinate(prediction.selected)}；实际选择 {coordinate(prediction.actual)}。</p><p>{view.algorithm === 'bfs' ? '把两个候选的入队序号放回队列，按先入先出解释。' : '对照两个候选的 f，再看 h、入队序号，逐项解释。'}</p><small>{prediction.checkpointId} · 提示 {prediction.hintLevel}/3 · {prediction.retryCount === 0 ? '首次作答' : '新的重跑尝试，保留首次结果'}</small></section>}
+        {prediction && <section className={'prediction-feedback' + (prediction.correct ? ' is-correct' : '')} aria-labelledby="prediction-feedback-title" data-testid="prediction-feedback"><h4 id="prediction-feedback-title">{prediction.correct ? '这一步，符合规则。' : '不同选择，正好用证据比较。'}</h4><p>你选择 {coordinate(prediction.selected)}；实际选择 {coordinate(prediction.actual)}。</p><p data-testid="prediction-reason">{explainPrediction(view.algorithm, prediction.candidates, prediction.selected, prediction.actual)}</p><small>{prediction.checkpointId} · 提示 {prediction.hintLevel}/3 · {prediction.retryCount === 0 ? '首次作答' : '新的重跑尝试，保留首次结果'}</small></section>}
         {view.state === 'reflection' && <section className="run-summary" data-testid="run-summary"><p className="eyebrow">SEARCH IS NOT THE WHOLE STORY</p><h4>{view.outcome === 'found' ? '路径已找到，解释才刚开始。' : '不可达，也是有效的搜索结论。'}</h4><p>路径步数和搜索范围不是同一指标。已扩展 {view.metrics.expandedCount} 个节点，前沿峰值 {view.metrics.frontierPeak}。</p><p>继续到下方改变一次条件，再引用真实事件写解释。不以完成运行证明已经掌握。</p>{view.skippedCheckpoints.length > 0 && <p>因候选不足跳过 {view.skippedCheckpoints.length} 个预测点，不计入正确率。</p>}</section>}
         <p className="learning-stats" data-testid="first-attempt-stats">本任务已记录 {view.completedRuns.length} 次完整运行。首次预测符合规则 {view.firstAttempts.correct}/{view.firstAttempts.total}；重跑不覆盖首次结果。</p>
       </section>

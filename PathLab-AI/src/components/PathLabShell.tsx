@@ -7,6 +7,7 @@ import { ProgressStore } from '../domain/learning/progress-store';
 import { ProgressPanel } from './ProgressPanel';
 import { LearningWorkbench } from './LearningWorkbench';
 import { Playground } from './Playground';
+import { AstarPrimer } from './AstarPrimer';
 
 const algorithmNames: Record<Algorithm, string> = { bfs: 'BFS', astar: 'A*' };
 
@@ -46,6 +47,7 @@ export function PathLabShell() {
           <span className="brand-wordmark">PathLab<span className="brand-ai">AI</span><small>路径学习实验室</small></span>
         </a>
         <nav className="header-nav" aria-label="页面导航">
+          <a href="#astar-primer">A* 零基础入门</a>
           <a href="#mission-workspace">任务工作台</a>
           <a href="#free-playground">自由实验</a>
         </nav>
@@ -58,7 +60,10 @@ export function PathLabShell() {
             <p className="eyebrow"><span aria-hidden="true">◇</span> THINK FIRST. TRACE NEXT.</p>
             <h1 id="intro-title">别急着找终点。<br /><span>先解释下一步。</span></h1>
             <p className="intro-description">成为校园配送调度员，把“会背算法”变成“能解释选择”。<br className="desktop-break" />从一个固定任务开始，逐步建立可验证的推理。</p>
-            <a className="primary-link" href="#mission-workspace">选择一项任务 <Arrow /></a>
+            <div className="intro-actions">
+              <a className="primary-link" href="#astar-primer">第一次学？先上 6 分钟 A* 入门 <Arrow /></a>
+              <a className="secondary-link" href="#mission-workspace">已经会了，直接选任务</a>
+            </div>
           </div>
           <div className="learning-loop" aria-label="学习闭环：预测、回放、条件实验与证据报告已接入">
             <div className="loop-caption"><span>THE LEARNING LOOP</span><span>本地学习闭环 · 已接入</span></div>
@@ -70,6 +75,12 @@ export function PathLabShell() {
             <p className="loop-note">先预测，再逐步揭示搜索证据。条件实验与证据复盘已接入，但完成记录不等于已经掌握。</p>
           </div>
         </section>
+
+        <AstarPrimer onTryMission={id => {
+          if (progress.ready) store.select(id, new Date().toISOString());
+          document.getElementById('mission-workspace')?.focus({ preventScroll: true });
+          document.getElementById('mission-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }} />
 
         <ProgressPanel store={store} progress={progress} missions={missions} />
 
@@ -97,6 +108,7 @@ export function PathLabShell() {
         <section id="development-status" className="development-status" aria-labelledby="development-title">
           <div><p className="eyebrow">BUILD IN THE OPEN</p><h2 id="development-title">完成到哪里，就展示到哪里。</h2><p>默认本地运行，不需要账号、API Key 或远程服务。</p></div>
           <ul>
+            <li><span className="status-label status-label--ready">已就绪</span><span>A* 零基础入门：6 章，先猜后看，含动手计算与出关小测</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈 / 本机存档 / JSON 备份</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>自由地图编辑 / 撤销 / 双算法预测对比 / 搜索回放</span></li>
