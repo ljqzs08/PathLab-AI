@@ -506,4 +506,5 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - AI 自测自修（不是用户报错）：看截图发现思考流的句子标点重复，结论在思考过程播完之前就已出现，前测页左侧出现与题目无关的空地图，均已修复；React purity lint 指出渲染期调用 `Date.now`，已改到 effect 中。
 - 验证（AI，Linux Chrome Headless Shell 156）：tsc / ESLint 通过，Node 165/165，离线 HTML 四视口 284/284，axe 0 违规；HTML SHA256 `dd786be140bebb245698f920155324763165ac7be479693927cabb8a768d0bff`。详见 `docs/verification-v3-mastery.md`。
 - 交付：`delivery/PathLab-AI-参赛文件-v3/`，由 `scripts/build-delivery-v3.py` 生成。源码快照改用 `git archive HEAD` 导出，历史 bundle 取真实 HEAD，字节数与哈希在最后一步统一写入，修复 E033 指出的三处问题。旧 v1 / v2 包保留。
-- Git：功能与文档分开做本地细粒度提交；按作者要求不 push、不打标签、不发 Release。
+- 视频：v3 入门演示段约 1:14，由 Playwright 自动录制并带字幕；替换 v2 的 2:27 旧界面演示段，成片 `视频演示-v3.mp4` 时长 06:37.852，SHA256 `e2af2f40…2e32`。
+- Git：本地提交 `5571d33`（功能）、`9c24a4f`（文档）、`a20e505`（录制脚本 / 文档增补 / 打包脚本）。按作者要求不 push、不打标签、不发 Release。交付包构建结果由后续证据提交补记。
