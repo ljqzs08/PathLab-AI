@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="addendum.css"><title>PathLab AI 技术文档 v3 增补</title></head>
+<body>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　技术文档</b><span>2026.11.11 | V3 ADDENDUM</span></div>
+  <h1>v3 增补：把“学会了没有”做成可测量的闭环</h1>
+  <h2>意图与约束</h2>
+  <p>作者本轮的指令是“按你的想法把作品做好”，不再针对某条评语。AI 先用第一性原理复盘作品目标——<b>让零基础的人学会 A*</b>——再对照 v2 找差距：能讲，但不能证明讲会了；能给结论，但看不到推理。由此给自己定下四条约束：</p>
+  <ul>
+    <li><b>不加算法、不接模型</b>：改动只发生在入门模块内部，四关、存档与评分不动。</li>
+    <li><b>答案不手写</b>：前后测的每道选格题都由引擎的 <code>comparePriority</code> 判定，讲解与判分走同一条代码路径。</li>
+    <li><b>测量要公平</b>：前后测为平行卷（同知识点、同题型、不同数字）；前测不给解析，以免变成泄题。</li>
+    <li><b>如实标注</b>：报告注明“本机即时自测，不代表长期掌握”；AI 测试不冒充真人。</li>
+  </ul>
+  <div class="flow">
+    <div><b>1 复盘目标</b>教会零基础者</div>
+    <div><b>2 找差距</b>无基线 / 推理不可见 / 错因不明</div>
+    <div><b>3 领域层</b>mastery.ts 纯函数</div>
+    <div><b>4 展示层</b>7 章 + 思考流 + 报告</div>
+    <div><b>5 回归</b>165 单测 / 284 浏览器</div>
+  </div>
+  <h2>领域层：<code>src/domain/learning/mastery.ts</code></h2>
+  <table>
+    <tr><th style="width:30%">函数</th><th>职责与约束</th></tr>
+    <tr><td><code>decisionStages(open)</code></td><td>把待选清单拆成 1–3 关淘汰：比 f → 比 h → 比加入序号。单测断言：对入门 9 轮真实清单，最后一关剩下的唯一格子就是引擎选中的格子，其余每个格子恰好被淘汰一次。</td></tr>
+    <tr><td><code>classifyMistake(open, pick)</code></td><td>f 相同时，按 h 是否相同分为“没比 h”或“没比顺序”；f 更大时，按选中的格子在 h 还是 g 上占优，分为“只看 h”或“只看 g”；其余归为“f 算错或比错”。</td></tr>
+    <tr><td><code>PRE_TEST</code> / <code>POST_TEST</code></td><td>5 个知识点 × 2 卷。单测断言：两卷知识点顺序一致、数字不同；正确选项位置分散；“先比 f”题的正确格子既不是 h 最小也不是 g 最小，只凭直觉一定答错。</td></tr>
+    <tr><td><code>buildReport</code> / <code>reportText</code></td><td>逐知识点给出 kept / learned / review / slipped 四种状态，汇总逐轮预测与学后测的误区，导出纯文本。</td></tr>
+  </table>
+  <div class="foot"><span>源码 / 测试 / 真实 Prompt 论证</span><span>v3 增补 1 / 2</span></div>
+</section>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　技术文档</b><span>2026.11.11 | V3 ADDENDUM</span></div>
+  <h1>v3 增补：思考可视化、自修记录与可复现性</h1>
+  <h2>“思考可视化”的实现</h2>
+  <p>评分表把“AI 响应状态提示友好（如流式、思考可视化）”列为体验项。本作品默认不调用模型，因此可视化的对象是 <b>A* 自己的推理</b>：揭晓后，组件以 0.62 秒为间隔逐关渲染 <code>decisionStages</code>，未完成时显示“正在比较…”占位；结论、误区诊断与“展开邻居”说明要等思考流播完才出现。地图上被淘汰的格子按当前已播放的关数同步变灰。开启“减少动态”时一次显示全部内容，浏览器回归即在此模式下逐轮断言思考条数与变灰格子数。</p>
+  <h2>AI 自测自修（不是用户报错）</h2>
+  <table>
+    <tr><th style="width:34%">发现方式</th><th>问题与修复</th></tr>
+    <tr><td>ESLint react-hooks/purity</td><td>渲染期调用 <code>Date.now()</code> 记录学习起点；改为在章节切换的 effect 中写入 ref。</td></tr>
+    <tr><td>AI 查看 1440 / 390 截图</td><td>思考流句子出现重复标点；结论早于思考流出现，削弱了“逐条推理”；前测页左侧显示与题目无关的空地图。三项均已修复，并重新截图确认。</td></tr>
+    <tr><td>设计自检</td><td>误区分类初版在“所有格子 g 相同”时会把错选误判为“只看 g”；改为与胜者比较 g、h 的大小。</td></tr>
+  </table>
+  <h2>验证结果（AI 执行，2026-11-11）</h2>
+  <table>
+    <tr><th style="width:36%">检查</th><th>结果</th></tr>
+    <tr><td>tsc / ESLint（max-warnings=0）</td><td>通过</td></tr>
+    <tr><td>Node 单元测试</td><td>165/165（v2 的 160 项 + 新增 5 项掌握度测试）</td></tr>
+    <tr><td>离线 HTML <code>file://</code> 回归</td><td>1440 / 768 / 390 / 320 四种视口，每种 71/71，合计 284/284；各状态 axe 0 违规</td></tr>
+    <tr><td>离线单文件</td><td>555,496 字节；SHA256 dd786be1…d0bff；外部资源 0</td></tr>
+  </table>
+  <h2>交付包的可复现性修正</h2>
+  <p>E033 自查发现 v2 交付包的问题：“源码”目录仍是 v1 快照，历史 bundle 比公开仓库少 3 个提交，演进日志里记录的 ZIP 字节数与实物不符。v3 打包脚本 <code>scripts/build-delivery-v3.py</code> 改为：用 <code>git archive HEAD</code> 导出源码；对真实 HEAD 生成 bundle，并在包内重新克隆核对；所有字节数与哈希都在最后一步统一计算写入。</p>
+  <p class="note">环境说明：回归在 Linux 沙箱 Chrome Headless Shell 156 中执行，不是 Windows Edge；真人新手测试仍须作者本人完成。v3 未推送 GitHub。</p>
+  <div class="foot"><span>源码 / 测试 / 真实 Prompt 论证</span><span>v3 增补 2 / 2</span></div>
+</section>
+</body></html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="addendum.css"><title>PathLab AI 作品介绍 v3 增补</title></head>
+<body>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　作品介绍</b><span>2026.11.11 | V3 ADDENDUM</span></div>
+  <h1>v3 更新：先测一遍，再学，再测一遍</h1>
+  <h2>这一版解决什么</h2>
+  <p>v2 补上了“从零讲懂 A*”的 6 章入门。但两件事仍然缺位：</p>
+  <table>
+    <tr><th style="width:34%">v2 的缺口</th><th>后果</th><th>v3 改进</th></tr>
+    <tr><td>只有学完后的 5 道小测，没有学前基线</td><td>答对 5 题可能是本来就会，教学是否有效无法衡量，学习者也不知道自己哪里没懂</td><td>入门开头插入 5 题<b>学前测</b>，结尾的学后测考同样 5 个知识点、换一套数字，生成逐知识点的前后对比</td></tr>
+    <tr><td>揭晓答案时只给一句结论</td><td>看不到 A* 是怎么从一堆格子里筛出一个的，而这正是最难懂的部分</td><td>把 A* 自己的筛选过程做成<b>逐条浮现的思考流</b>：比 f → f 打平比 h → 都平比加入先后，被淘汰的格子在地图上同步变灰</td></tr>
+    <tr><td>猜错只说“真实选择为什么更优先”</td><td>学习者不知道自己属于哪一类误区，也不知道该回看哪里</td><td>每次错选都归到它<b>跳过的那条规则</b>（只看 h、只看 g、f 算错、f 打平没比 h、都平没比顺序），并给出回看第几章</td></tr>
+  </table>
+  <figure class="crop" style="height:78mm"><img src="../assets/astar-primer-v3/1440-1-pretest.png" alt="学前测"></figure>
+  <figcaption>图 v3-1｜第 1 章学前测：选格子的题<b>不直接给 f</b>，必须自己把 g 和 h 加起来；前测不显示答案与解析，避免提前泄题，也可以直接跳过（离线 HTML 实际截图，1440 宽）。</figcaption>
+  <div class="foot"><span>真实 HTML 截图 / AI 辅助编制 / v3 增补</span><span>v3 增补 1 / 2</span></div>
+</section>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　作品介绍</b><span>2026.11.11 | V3 ADDENDUM</span></div>
+  <h1>看见 A* 的思考，拿到一份能对比的结果</h1>
+  <figure class="crop" style="height:92mm"><img src="../assets/astar-primer-v3/1440-3-thinking-done.png" alt="思考过程与误区诊断"></figure>
+  <figcaption>图 v3-2｜第 6 章第 4 轮：学习者猜 (0,1)，A* 选 (2,1)。右侧思考流按关展示“最小的 f 是 8，留下 6 个 → 最小的 h 是 5，留下 2 个 → 最早加入的是 #7”，地图上被淘汰的格子同步变灰；随后指出这次错选属于误区「f 打平时没有再比 h」，并解释 f 为什么从 6 涨到 8。</figcaption>
+  <h2>七章学习路径（约 10 分钟，不需要任何算法基础）</h2>
+  <ol>
+    <li><b>学前测</b>：5 题，考会算 f、h 是估计、先比 f、f 打平比 h、都平比加入顺序。</li>
+    <li><b>要解决什么</b>：配送任务，只能走上下左右，先猜最少几步。</li>
+    <li><b>笨办法：一圈圈试</b>：BFS 像水波扩散，能找到路，但不知道终点在哪个方向。</li>
+    <li><b>给格子打分</b>：g 已走、h 不看墙的估计、f = g + h，学习者亲手算一次。</li>
+    <li><b>挑选规则</b>：整个 A* 只有三句话——挑 f 最小、判断到没到、没到就展开邻居。</li>
+    <li><b>跟着 A* 走一遍</b>：9 轮逐轮预测，每轮看它的思考过程逐条浮现。</li>
+    <li><b>对比 · 学后测 · 掌握度</b>：BFS 处理 29 格、A* 只处理 8 格；学后测逐题讲解，交卷后出报告。</li>
+  </ol>
+  <h2>掌握度报告</h2>
+  <p>报告给三项分数（学前测 / 学后测 / 逐轮预测），逐知识点标注“本来就会 / 学会了 / 还要再看 / 前测对后测错”，按出错原因归类误区，每个薄弱项都带“回看第 N 章”按钮，并可导出一段纯文字记录。</p>
+  <p class="note">真实性与边界：所有正确答案由站内引擎的 <code>comparePriority</code> 求出，单元测试锁定“试卷答案 = 引擎判定”，并检验每道选格题确实需要用到它所考的那条规则（只看“离终点近”或“走得少”都会答错）。报告只在浏览器内生成、不上传、刷新即清空，它说明“此刻能不能按规则做题”，不等于长期掌握；前后测是作者方设计的平行卷，未做真人信度效度检验。真人新手测试仍须作者本人完成，现在可直接导出报告文字作为客观记录。</p>
+  <div class="foot"><span>真实 HTML 截图 / AI 辅助编制 / v3 增补</span><span>v3 增补 2 / 2</span></div>
+</section>
+</body></html>

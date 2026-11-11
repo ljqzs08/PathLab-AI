@@ -1,0 +1,32 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif; color: #152E3B; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { position: relative; width: 210mm; height: 297mm; padding: 34mm 17mm 24mm; page-break-after: always; overflow: hidden; background: #fff; }
+.page:last-child { page-break-after: auto; }
+.bar { position: absolute; top: 0; left: 0; right: 0; height: 2.5mm; background: #007F7A; }
+.head { position: absolute; top: 9mm; left: 17mm; right: 17mm; display: flex; justify-content: space-between; align-items: baseline; }
+.head b { font-size: 10.5pt; }
+.head span { font: 8.5pt 'DejaVu Sans Mono', monospace; color: #526873; letter-spacing: .5pt; }
+.foot { position: absolute; bottom: 10mm; left: 17mm; right: 17mm; display: flex; justify-content: space-between; border-top: .5pt solid #C9D7DC; padding-top: 4mm; font-size: 8pt; color: #526873; }
+h1 { margin: 0 0 8mm; font-size: 21pt; line-height: 1.3; position: relative; }
+h1::after { content: ''; position: absolute; left: 0; bottom: -3.5mm; width: 14mm; height: 1mm; background: #007F7A; }
+h2 { margin: 5mm 0 2mm; font-size: 12.5pt; color: #007F7A; }
+p, li { font-size: 10.2pt; line-height: 1.72; margin: 0 0 2.2mm; }
+ul, ol { margin: 0 0 2mm; padding-left: 5mm; }
+table { width: 100%; border-collapse: collapse; margin: 1mm 0 3mm; font-size: 9.4pt; line-height: 1.55; }
+th { background: #007F7A; color: #fff; text-align: left; padding: 1.6mm 2.2mm; font-weight: 600; }
+td { padding: 1.6mm 2.2mm; border-bottom: .5pt solid #D5E1E5; vertical-align: top; }
+tr:nth-child(even) td { background: #F3F8F9; }
+figure { margin: 2mm 0 3mm; }
+figure img { display: block; width: 100%; border-radius: 1.5mm; border: .5pt solid #C9D7DC; }
+figcaption { font-size: 8.2pt; color: #526873; margin-top: 1.4mm; line-height: 1.5; }
+.crop { overflow: hidden; border-radius: 1.5mm; border: .5pt solid #C9D7DC; }
+.crop img { border: 0; border-radius: 0; }
+.quote { border-left: 1mm solid #007F7A; background: #EEF6F6; padding: 2.5mm 3.5mm; margin: 2mm 0 3mm; font-size: 10.2pt; line-height: 1.7; }
+.note { font-size: 8.6pt; color: #526873; line-height: 1.6; }
+code { font: 8.8pt 'DejaVu Sans Mono', monospace; background: #EEF3F5; padding: 0 1mm; border-radius: .8mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.flow { display: flex; gap: 1.5mm; align-items: stretch; margin: 2mm 0 3mm; }
+.flow div { flex: 1; border: .6pt solid #007F7A; border-radius: 1.5mm; padding: 2mm; font-size: 8.6pt; line-height: 1.45; background: #F3F8F9; }
+.flow div b { display: block; color: #007F7A; font-size: 9pt; margin-bottom: .8mm; }
