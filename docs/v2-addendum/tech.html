@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="addendum.css"><title>PathLab AI 技术文档 v2 增补</title></head>
+<body>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　技术文档</b><span>2026.11.10 | V2 ADDENDUM</span></div>
+  <h1>v2 增补：评审驱动的 AI 协同迭代</h1>
+  <h2>意图与上下文</h2>
+  <p>输入只有两样：评审成绩截图（68 分，评语“看完之后还是没有学会 A* 算法”）和仓库现状。AI 先读取 AGENTS.md、关卡规格与 A* 源码，再判断问题所在：不是功能缺失，而是 <b>“从零到规则”的教学环节缺失</b>。基于这个判断，约束如下：</p>
+  <ul>
+    <li><b>不加东西凑数</b>：不新增模型调用和外部依赖，不改动四关数据与评分。</li>
+    <li><b>不手写答案</b>：入门里的每个数字都来自真实引擎事件，讲解复用引擎的排序函数，从源头杜绝“讲的和算的不一样”。</li>
+    <li><b>先猜后看</b>：延续 v1 的“预测→揭示”门控，入门同样要求学生先作答，再看答案。</li>
+  </ul>
+  <div class="flow">
+    <div><b>1 评审输入</b>68 分 + 评语</div>
+    <div><b>2 定位</b>对照源码找出 3 个新手卡点</div>
+    <div><b>3 实现</b>入门 6 章 + 关卡数字化反馈</div>
+    <div><b>4 AI 模拟新手</b>两轮走查，共 10 条问题</div>
+    <div><b>5 修复回归</b>160 单测 / 280 浏览器</div>
+  </div>
+  <h2>Prompt 策略：让 AI 扮演“完全没学过算法的学生”</h2>
+  <p>评审建议找一位零基础同学来测试。真人测试之前，我们先用独立子代理做低成本的预演。关键约束有三条：</p>
+  <table>
+    <tr><th style="width:28%">约束</th><th>作用</th></tr>
+    <tr><td>只依据页面导出文字学习，不得用已有算法知识补脑</td><td>逼出“文本没讲清”的地方，避免模型凭自身知识替教程补完</td></tr>
+    <tr><td>不回看解析，先独立答小测，再做迁移题</td><td>检验是否真的学会，而不是认出了答案</td></tr>
+    <tr><td>以评审身份按严重程度列问题，附原文和改写文案；不凑数，并说明哪些已经足够好</td><td>得到可以直接执行的修改清单</td></tr>
+  </table>
+  <p>第 1 轮发现 7 个问题，其中 2 个为高。① 规则没讲“已在清单里的邻居不重复放”，学生照规则手算会出错。② 结论说背离终点的格子“f 更大”，与事实不符：实际是 f 打平、h 更大。另有 5 个中低问题，包括小测正确选项全在第一项、9 轮与 8 格的口径不一致等。修复后做第 2 轮：模拟学生独立答对 5/5 小测和 2 道迁移题，能用自己的话复述 A*，逐格重算页面所有数字均无矛盾；它新提的 3 条细化建议也已采纳。</p>
+  <p class="note">边界：AI 模拟只是预演，不能证明真人学会了。真人测试需由作者本人完成，本项目不编造任何真人结果。</p>
+  <div class="foot"><span>源码 / 测试 / 真实 Prompt 论证</span><span>v2 增补 1 / 2</span></div>
+</section>
+<section class="page">
+  <div class="bar"></div>
+  <div class="head"><b>PathLab AI　/　技术文档</b><span>2026.11.10 | V2 ADDENDUM</span></div>
+  <h1>v2 增补：架构、约束与可复现性</h1>
+  <h2>数据流</h2>
+  <div class="flow">
+    <div><b>runAstar / runBfs</b>确定性事件流（selected / discovered / skipped）</div>
+    <div><b>buildPrimerTrace</b>按真实事件重建每轮的待选清单、新加入格子、墙和已处理格子</div>
+    <div><b>explainChoice</b>复用 comparePriority，判定决胜规则：唯一 / f 最小 / f 平手比 h / 按加入先后</div>
+    <div><b>AstarPrimer / 关卡反馈</b>只做展示，不自行计算答案</div>
+  </div>
+  <table>
+    <tr><th style="width:36%">文件</th><th>职责</th></tr>
+    <tr><td><code>src/domain/learning/astar-primer.ts</code></td><td>入门轨迹、决胜规则解释、预测反馈文案、小测题库（纯函数，无 UI）</td></tr>
+    <tr><td><code>src/components/AstarPrimer.tsx</code></td><td>6 章交互、键盘可选的地图格子、减少动态适配</td></tr>
+    <tr><td><code>src/components/LearningWorkbench.tsx</code></td><td>关卡候选卡改成白话标签；猜错时调用 explainPrediction 给出数字化解释</td></tr>
+    <tr><td><code>tests/astar-primer.test.mjs</code>、<code>tests/browser/primer.spec.ts</code></td><td>讲解与引擎一致；每轮胜者符合优先规则；4 种决胜情形都被覆盖；完整走完 6 章（含答错路径）；各章 axe 检查</td></tr>
+  </table>
+  <h2>验证结果（AI 执行，2026-11-10）</h2>
+  <table>
+    <tr><th style="width:36%">检查</th><th>结果</th></tr>
+    <tr><td>tsc / ESLint（max-warnings=0）</td><td>通过</td></tr>
+    <tr><td>Node 单元测试</td><td>160/160（v1 原有 155 项 + 新增 5 项）</td></tr>
+    <tr><td>离线 HTML <code>file://</code> 回归</td><td>1440 / 768 / 390 / 320 四种视口，每种 70/70，合计 280/280</td></tr>
+    <tr><td>离线单文件</td><td>539,350 字节；SHA256 1566c663…cd167；外部资源 0</td></tr>
+  </table>
+  <h2>复现</h2>
+  <p>源码与历史托管在 GitHub <code>ljqzs08/PathLab-AI</code>，标签 <code>v2.0.0</code>。在 Windows 上按 README 执行 <code>scripts/Invoke-ProjectNpm.ps1</code>：先 <code>ci</code>，再 <code>run check</code>、<code>run test:standalone</code>。也可以直接双击 <code>PathLab-AI/PathLab AI.html</code>，无需安装。</p>
+  <p class="note">环境说明：本轮回归在 Linux 沙箱中运行，浏览器为 Chrome for Testing 156 headless；仓库原有的 Windows Edge 套件本轮未重跑。完整记录见 docs/verification-astar-primer.md，以及 prompts/sessions/2026-11-10-reviewer-feedback-astar-primer.md（人工转录，已注明非工具导出）。</p>
+  <div class="foot"><span>源码 / 测试 / 真实 Prompt 论证</span><span>v2 增补 2 / 2</span></div>
+</section>
+</body></html>
