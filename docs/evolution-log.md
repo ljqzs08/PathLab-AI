@@ -508,3 +508,4 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 交付：`delivery/PathLab-AI-参赛文件-v3/`，由 `scripts/build-delivery-v3.py` 生成。源码快照改用 `git archive HEAD` 导出，历史 bundle 取真实 HEAD，字节数与哈希在最后一步统一写入，修复 E033 指出的三处问题。旧 v1 / v2 包保留。
 - 视频：v3 入门演示段约 1:14，由 Playwright 自动录制并带字幕；替换 v2 的 2:27 旧界面演示段，成片 `视频演示-v3.mp4` 时长 06:37.852，SHA256 `e2af2f40…2e32`。
 - Git：本地提交 `5571d33`（功能）、`9c24a4f`（文档）、`a20e505`（录制脚本 / 文档增补 / 打包脚本）。按作者要求不 push、不打标签、不发 Release。交付包构建结果由后续证据提交补记。
+- 交付包实测：源码快照取自 `94915eb`，536 个文件与 HEAD 的 blob 零差异；bundle 重新克隆后共 57 个提交；ZIP 443,128,216 字节、608 个条目，SHA256 `aeee9b5f…517d`；介绍 19 页、技术 28 页。证据见 `docs/evidence/delivery-v3-packet-20261111.json`。

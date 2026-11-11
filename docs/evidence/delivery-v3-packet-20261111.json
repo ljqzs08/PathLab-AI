@@ -1,0 +1,33 @@
+{
+  "executor": "scripts/build-delivery-v3.py (AI-run)",
+  "gitHead": "94915eb4426dfe9acda6e82192c33b789a1e18b9",
+  "commits": 57,
+  "sourceFilesFromGitArchive": 536,
+  "bundle": "PathLab-AI-full-history-v3.0.0-94915eb.bundle",
+  "bundleRecloneVerified": true,
+  "pages": {
+    "intro": 19,
+    "tech": 28
+  },
+  "video": {
+    "duration": "06:37.852",
+    "bytes": 408977462
+  },
+  "zip": {
+    "bytes": 443128216,
+    "entries": 608,
+    "sha256": "aeee9b5f5eeecccb8c8158bbf4e87a5ac569f319a13aae8b43bb40598e48517d",
+    "crcVerified": true
+  },
+  "sha256": {
+    "02-表单第6项/PathLab-AI-作品介绍文档-v3.pdf": "1159e62d1a3dd448a049d75e71a470b362d292b22abab76504f8223f35af1e89",
+    "03-技术文档备用/PathLab-AI-技术文档-v3.pdf": "a93046c1b237ec9c30ada091a58e0132a43e731d4e24025fae49be52953ce6ba",
+    "03-视频材料/视频演示-v3.mp4": "e2af2f406696a6506c4e0e34caab90e8378f63224602f83c56fcb96bec652e32",
+    "04-完整材料解压版/01-作品介绍/PathLab-AI-作品介绍文档-v3.pdf": "1159e62d1a3dd448a049d75e71a470b362d292b22abab76504f8223f35af1e89",
+    "04-完整材料解压版/02-技术文档/PathLab-AI-技术文档-v3.pdf": "a93046c1b237ec9c30ada091a58e0132a43e731d4e24025fae49be52953ce6ba",
+    "04-完整材料解压版/09-演示视频/视频演示-v3.mp4": "e2af2f406696a6506c4e0e34caab90e8378f63224602f83c56fcb96bec652e32",
+    "04-完整材料解压版/04-源码与演进/PathLab-AI-full-history-v3.0.0-94915eb.bundle": "3293a8d30773597c14aa29c8739b6663e05c22795ff166c84909ca1b6038832f"
+  },
+  "uploaded": false,
+  "githubPushed": false
+}
