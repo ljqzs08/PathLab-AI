@@ -117,7 +117,7 @@ def prepare() -> None:
     archive = subprocess.run(["git", "-C", str(ROOT), "archive", "--format=tar", "HEAD"], check=True, capture_output=True).stdout
     with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
         tar.extractall(tree, filter="data")
-    tracked = git("ls-files").splitlines()
+    tracked = [name for name in git("ls-files", "-z").split("\0") if name]  # -z: unquoted non-ASCII paths
     exported = sorted(p.relative_to(tree).as_posix() for p in tree.rglob("*") if p.is_file())
     assert exported == sorted(tracked), "git archive export differs from git ls-files"
     bundle = source_dir / f"PathLab-AI-full-history-v3.0.0-{head[:7]}.bundle"
