@@ -279,6 +279,30 @@
 .primer-summary { padding: 12px 14px; border: 1px solid var(--mint); border-radius: 10px; background: #173430; }
 .primer-result { margin-top: 12px; padding: 12px 14px; border-radius: 10px; background: #1a2f3c; }
 .primer-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 16px; border-top: 1px solid #2f4352; color: #c2d0db; font-size: 13px; }
+/* v3: streamed A* reasoning, eliminated cells, graded pre/post tests and the mastery report. */
+.primer-cell.is-dropped { background: #1a222b; border-color: #3a4855; color: #8494a2; opacity: .55; transition: opacity .35s ease, background-color .35s ease; }
+.primer-stream-title { margin-bottom: 6px !important; color: #c8d6e0; font-size: 13px; }
+.primer-stream { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; }
+.primer-stream-row { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; padding: 8px 10px; border: 1px solid #35505f; border-radius: 9px; background: #14212b; animation: primer-think-in .38s ease both; }
+.primer-stream-row strong { display: block; font-size: 13px; color: #b9f3e2; }
+.primer-stream-row p { margin: 2px 0 0 !important; font-size: 14px; line-height: 1.7; }
+.primer-stream-step { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #253747; color: #fff; font: 600 12px/1 Consolas, monospace; }
+.primer-stream-row.is-thinking { border-style: dashed; color: #c2d0db; }
+.primer-stream-row.is-thinking .primer-stream-step { animation: primer-pulse 1s ease-in-out infinite; }
+@keyframes primer-think-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes primer-pulse { 50% { background: var(--mint); color: #10251f; } }
+.primer-question label.is-picked { background: #22303c; box-shadow: inset 3px 0 0 #9fb3c4; }
+.primer-test { margin-top: 6px; }
+.primer-body--single { grid-template-columns: minmax(0, 760px); justify-content: center; }
+.primer-report { margin-top: 18px; padding: 16px; border: 1px solid var(--mint); border-radius: 12px; background: #12252a; }
+.primer-report h4 { margin-top: 0; font-size: 17px; }
+.primer-report h5 { margin: 12px 0 6px; font-size: 14px; color: #fff; }
+.primer-table--left th[scope='row'], .primer-table--left td:last-child { text-align: left; font-family: inherit; }
+.primer-table tr.is-gap { background: #33212a; }
+.primer-link { padding: 0; border: 0; background: none; color: #b9f3e2; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; min-height: 24px; }
+.primer-export { margin: 10px 0; font-size: 13px; }
+.primer-export summary { cursor: pointer; color: #b9f3e2; min-height: 28px; }
+.primer-export pre { margin: 8px 0 0; padding: 10px 12px; border-radius: 8px; background: #0d1620; color: #e6eef3; white-space: pre-wrap; word-break: break-word; font: 13px/1.7 Consolas, 'Microsoft YaHei', monospace; }
 .term-help { margin: -4px 0 12px; font-size: 12px; color: #d4e1df; }
 .term-help summary { cursor: pointer; color: #b9f3e2; min-height: 28px; }
 .term-help p { margin-top: 6px; line-height: 1.8; }

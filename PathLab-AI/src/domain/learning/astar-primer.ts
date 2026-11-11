@@ -123,13 +123,10 @@ export function explainPrediction<T extends Ranked>(algorithm: Algorithm, candid
   return 'f 和 h 都平手，最后比谁先进清单：' + a + ' 的入队序号 ' + real.entrySequence + ' 早于 ' + m + ' 的 ' + mine.entrySequence + '。';
 }
 
-export interface PrimerQuestion { id: string; stage: 'rules' | 'final'; prompt: string; options: readonly string[]; answer: number; explanation: string }
+/** In-lesson practice questions. The graded pre/post tests live in mastery.ts. */
+export interface PrimerQuestion { id: string; stage: 'rules'; prompt: string; options: readonly string[]; answer: number; explanation: string }
 export const PRIMER_QUIZ: readonly PrimerQuestion[] = [
   { id: 'q-lowest', stage: 'rules', prompt: '待选清单里有三个格子：A（f=6，h=2）、B（f=6，h=4）、C（f=5，h=5）。A* 下一个选谁？', options: ['A，因为它 h 最小', 'B', 'C，因为它 f 最小', '随便选一个'], answer: 2, explanation: '先只看 f：C 的 f=5 最小，直接选 C。只有 f 平手时才去比 h。' },
   { id: 'q-tie', stage: 'rules', prompt: '如果清单里只剩 A（f=6，h=2）和 B（f=6，h=4），A* 选谁？', options: ['A', 'B', '两个一起选'], answer: 0, explanation: 'f 平手，再比 h：A 的 h=2 更小，说明它离终点更近，所以选 A。' },
-  { id: 'q-f', stage: 'final', prompt: '某个格子：从起点走到它已经走了 3 步（g=3），按横竖格数估计离终点还有 4 步（h=4）。它的 f 是多少？', options: ['12', '1', '7', '4'], answer: 2, explanation: 'f = g + h = 3 + 4 = 7，表示“经过这个格子，整趟大约要走 7 步”。' },
-  { id: 'q-order', stage: 'final', prompt: 'A* 每一轮做的事，正确的顺序是？', options: ['先走到离终点最近的格子，撞墙了再换方向', '从待选清单挑 f 最小的 → 若是终点就结束 → 否则把它的邻居算好 g/h/f 放进清单', '把所有格子都试一遍，最后挑最短的'], answer: 1, explanation: 'A* 只有一个循环：挑 f 最小 → 是终点就停 → 不是就展开邻居。它不会“撞墙再换方向”，而是清单里谁的 f 最小就去哪。' },
-  { id: 'q-tie-final', stage: 'final', prompt: '清单里有 M（g=5，h=3）和 N（g=7，h=1）。A* 下一个选谁？', options: ['M，因为它已走的步数少', 'N，因为 f 都是 8，再比 h，N 的 h=1 更小', '两个都不选'], answer: 1, explanation: '先算 f：M=5+3=8，N=7+1=8，平手；再比 h：N 的 h=1 更小，离终点更近，所以选 N。只看 g 或只看 h 都不对。' },
-  { id: 'q-estimate', stage: 'final', prompt: '为什么说 h 只是“估计”？', options: ['它是随机猜的', '它就是已经走过的步数', '它按横竖格数直接数，假装没有墙；真实路线遇到墙会更长'], answer: 2, explanation: 'h = 横向差 + 纵向差，不考虑墙。所以真实剩余步数只会 ≥ h，A* 用它当“乐观的导航预估”。' },
-  { id: 'q-compare', stage: 'final', prompt: '同一张地图上，A* 找到的路线和 BFS 相比？', options: ['一样短，但 A* 少试了很多格子', 'A* 的路线更短', 'A* 的路线更长'], answer: 0, explanation: '在这类每步代价都是 1 的网格上，两者都找到最短路线；区别是 A* 借助 h 朝终点方向找，少处理很多无关格子。' },
+  { id: 'q-order', stage: 'rules', prompt: 'A* 每一轮做的事，正确的顺序是？', options: ['先走到离终点最近的格子，撞墙了再换方向', '从待选清单挑 f 最小的 → 若是终点就结束 → 否则把它的邻居算好 g/h/f 放进清单', '把所有格子都试一遍，最后挑最短的'], answer: 1, explanation: 'A* 只有一个循环：挑 f 最小 → 是终点就停 → 不是就展开邻居。它不会“撞墙再换方向”，而是清单里谁的 f 最小就去哪。' },
 ];

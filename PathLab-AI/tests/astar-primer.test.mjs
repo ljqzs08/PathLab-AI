@@ -56,9 +56,9 @@ test('plain-language explanations name the deciding rule', () => {
 
 test('quiz answers agree with the engine priority rule', () => {
   for (const question of PRIMER_QUIZ) assert.ok(question.answer >= 0 && question.answer < question.options.length);
-  assert.ok(new Set(PRIMER_QUIZ.filter(item => item.stage === 'final').map(item => item.answer)).size > 1, 'final answers must not all sit in one position');
+  assert.ok(new Set(PRIMER_QUIZ.map(item => item.answer)).size > 1, 'practice answers must not all sit in one position');
   const pick = cells => [...cells].sort(comparePriority)[0].name;
   assert.equal(pick([{ name: 'A', f: 6, h: 2, entrySequence: 0 }, { name: 'B', f: 6, h: 4, entrySequence: 1 }, { name: 'C', f: 5, h: 5, entrySequence: 2 }]), 'C');
   assert.equal(pick([{ name: 'A', f: 6, h: 2, entrySequence: 1 }, { name: 'B', f: 6, h: 4, entrySequence: 0 }]), 'A');
-  assert.deepEqual(PRIMER_QUIZ.filter(item => item.stage === 'final').map(item => item.id), ['q-f', 'q-order', 'q-tie-final', 'q-estimate', 'q-compare']);
+  assert.deepEqual(PRIMER_QUIZ.map(item => item.id), ['q-lowest', 'q-tie', 'q-order']);
 });

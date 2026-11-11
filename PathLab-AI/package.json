@@ -1,6 +1,6 @@
 {
   "name": "pathlab-ai",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "description": "Deterministic BFS/A* learning with local evidence reflection and optional server-side DeepSeek review",

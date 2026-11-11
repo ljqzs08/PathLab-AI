@@ -61,7 +61,7 @@ export function PathLabShell() {
             <h1 id="intro-title">别急着找终点。<br /><span>先解释下一步。</span></h1>
             <p className="intro-description">成为校园配送调度员，把“会背算法”变成“能解释选择”。<br className="desktop-break" />从一个固定任务开始，逐步建立可验证的推理。</p>
             <div className="intro-actions">
-              <a className="primary-link" href="#astar-primer">第一次学？先上 6 分钟 A* 入门 <Arrow /></a>
+              <a className="primary-link" href="#astar-primer">第一次学？先测再学，10 分钟 A* 入门 <Arrow /></a>
               <a className="secondary-link" href="#mission-workspace">已经会了，直接选任务</a>
             </div>
           </div>
@@ -108,7 +108,7 @@ export function PathLabShell() {
         <section id="development-status" className="development-status" aria-labelledby="development-title">
           <div><p className="eyebrow">BUILD IN THE OPEN</p><h2 id="development-title">完成到哪里，就展示到哪里。</h2><p>默认本地运行，不需要账号、API Key 或远程服务。</p></div>
           <ul>
-            <li><span className="status-label status-label--ready">已就绪</span><span>A* 零基础入门：6 章，先猜后看，含动手计算与出关小测</span></li>
+            <li><span className="status-label status-label--ready">已就绪</span><span>A* 零基础入门：学前测 → 5 章（先猜后看、思考过程逐条浮现）→ 学后测与掌握度报告</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈 / 本机存档 / JSON 备份</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>自由地图编辑 / 撤销 / 双算法预测对比 / 搜索回放</span></li>
@@ -116,7 +116,7 @@ export function PathLabShell() {
           </ul>
         </section>
       </main>
-      <footer className="site-footer"><span>PathLab AI <span aria-hidden="true">/</span> 让每一步，都有理由。</span><span>阶段 6 · 本机进度与安全恢复</span></footer>
+      <footer className="site-footer"><span>PathLab AI <span aria-hidden="true">/</span> 让每一步，都有理由。</span><span>v3 · 前后测掌握度与思考可视化</span></footer>
     </>
   );
 }

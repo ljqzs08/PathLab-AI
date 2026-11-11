@@ -1,20 +1,26 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { Position } from '../../contracts/types';
 import { PRIMER_QUIZ, buildPrimerTrace, cellName, describeChoice, explainPrediction, manhattan, sameNode, type PrimerCell, type PrimerQuestion } from '../domain/learning/astar-primer';
+import { MISCONCEPTIONS, POST_TEST, PRE_TEST, answerIndex, buildReport, classifyMistake, decisionStages, explainItem, gradeItem, optionLabels, reportText, type DecisionStage, type ItemResult, type MasteryReport, type Misconception, type TestItem } from '../domain/learning/mastery';
 
 const trace = buildPrimerTrace();
 const { grid, start, goal } = trace.input;
-const chapters = ['要解决什么', '笨办法：一圈圈试', '给格子打分', '挑选规则', '跟着 A* 走一遍', '对比与小测'] as const;
+const chapters = ['学前测', '要解决什么', '笨办法：一圈圈试', '给格子打分', '挑选规则', '跟着 A* 走一遍', '对比 · 学后测 · 掌握度'] as const;
 const exercise = { node: { x: 2, y: 1 }, g: 3 } as const;
 const predictable = trace.steps.filter(step => step.reason !== 'only').length;
 
-type CellState = 'open' | 'new' | 'closed' | 'current' | 'path' | 'wave' | 'focus' | 'wrong';
+type CellState = 'open' | 'new' | 'closed' | 'current' | 'path' | 'wave' | 'focus' | 'wrong' | 'dropped';
 interface CellView { state?: CellState; main?: ReactNode; g?: number; h?: number; label?: string }
 
 function kindOf(node: Position) {
   if (sameNode(node, start)) return 'start';
   if (sameNode(node, goal)) return 'goal';
   return grid.rows[node.y]![node.x] === '#' ? 'wall' : 'road';
+}
+
+/** True when the visitor asked the system to reduce motion; streaming then resolves immediately. */
+function prefersReducedMotion() {
+  try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; }
 }
 
 function PrimerGrid({ view, pickable, onPick, caption }: { view: (node: Position) => CellView; pickable: (node: Position) => boolean; onPick: ((node: Position) => void) | undefined; caption: string }) {
@@ -52,6 +58,31 @@ function Choice({ question, onAnswered }: { question: PrimerQuestion; onAnswered
     </label>)}
     {picked !== null && <p className="primer-explain" role="status"><strong>{picked === question.answer ? '答对了。' : '再想想：'}</strong>{question.explanation}</p>}
   </fieldset>;
+}
+
+/** One graded test form. The pre-test withholds feedback so it measures the starting point. */
+function MasteryTest({ id, items, feedback, title, intro, onDone }: { id: string; items: readonly TestItem[]; feedback: boolean; title: string; intro: ReactNode; onDone: (results: ItemResult[]) => void }) {
+  const [picks, setPicks] = useState<Record<string, number>>({});
+  const done = items.every(item => item.id in picks);
+  const results = done ? items.map(item => gradeItem(item, picks[item.id]!)) : [];
+  const correct = results.filter(item => item.correct).length;
+  return <div className="primer-test" data-testid={'primer-test-' + id}>
+    {intro}
+    {items.map((item, index) => {
+      const picked = picks[item.id];
+      const answer = answerIndex(item);
+      return <fieldset key={item.id} className="primer-question" data-testid={'primer-item-' + item.id}>
+        <legend>{index + 1}. {item.prompt}</legend>
+        {optionLabels(item).map((option, option_index) => <label key={option} className={picked === undefined || !feedback ? (picked === option_index ? 'is-picked' : '') : option_index === answer ? 'is-answer' : option_index === picked ? 'is-wrong' : ''}>
+          <input type="radio" name={id + '-' + item.id} disabled={picked !== undefined && feedback} checked={picked === option_index} onChange={() => setPicks(current => (item.id in current && feedback ? current : { ...current, [item.id]: option_index }))} />{option}
+        </label>)}
+        {feedback && picked !== undefined && <p className="primer-explain" role="status"><strong>{picked === answer ? '答对了。' : '答错了：'}</strong>{explainItem(item)}</p>}
+      </fieldset>;
+    })}
+    {done
+      ? <div className="primer-actions"><button type="button" className="action-primary" onClick={() => onDone(results)} data-testid={'primer-finish-' + id}>{feedback ? '生成我的掌握度报告 →' : '交卷（' + title + '）'}</button>{feedback && <span className="primer-aside">本页得分 {correct} / {items.length}</span>}</div>
+      : <p className="primer-aside" role="status">还剩 {items.length - Object.keys(picks).length} 题未作答。{feedback ? '' : '不会就先猜一个，前测只用来和学完后的结果对比，不计分、不展示答案。'}</p>}
+  </div>;
 }
 
 function NumberCheck({ label, answer, clue, success, onSolved }: { label: string; answer: number; clue: string; success: string; onSolved: () => void }) {
@@ -121,31 +152,70 @@ function RulesChapter() {
   </>;
 }
 
-function WalkChapter({ index, revealed, guess, onGuess, onReveal, onNext, onRestart, score }: { index: number; revealed: boolean; guess: Position | null; onGuess: (node: Position | null) => void; onReveal: () => void; onNext: () => void; onRestart: () => void; score: number }) {
+function stageSentence(stage: DecisionStage<PrimerCell>) {
+  const value = (cell: PrimerCell) => stage.rule === 'f' ? 'f=' + cell.f : stage.rule === 'h' ? 'h=' + cell.h : '#' + cell.entrySequence;
+  const best = stage.rule === 'sequence' ? '最早加入的是 #' + stage.best : '最小的 ' + stage.rule + ' 是 ' + stage.best;
+  const out = stage.out.length === 0 ? '' : '；淘汰 ' + stage.out.length + ' 个：' + stage.out.slice(0, 3).map(cell => cellName(cell.node) + ' ' + value(cell)).join('、') + (stage.out.length > 3 ? ' 等' : '');
+  return best + '，留下 ' + stage.keep.map(cell => cellName(cell.node)).join('、') + out + '。';
+}
+
+const ruleTitles: Record<string, string> = { only: '清单里只剩一个格子', f: '第 1 关：比 f（已走 + 估计剩）', h: '第 2 关：f 打平，比 h（离终点远近）', sequence: '第 3 关：f、h 都打平，比加入清单的先后' };
+
+/**
+ * Streams A*'s own decision, one elimination round at a time, so the reasoning is visible as it happens.
+ * `shown` is driven by a timer in the parent; reduced-motion visitors get all rounds at once.
+ */
+function ThinkingStream({ open, shown }: { open: readonly PrimerCell[]; shown: number }) {
+  const stages = decisionStages(open);
+  const live = Math.min(shown, stages.length);
+  return <ol className="primer-stream" data-testid="primer-thinking" aria-live="polite">
+    {stages.slice(0, live).map((stage, index) => <li key={stage.rule} className="primer-stream-row">
+      <span className="primer-stream-step">{index + 1}</span>
+      <div>
+        <strong>{ruleTitles[stage.rule]}</strong>
+        {stage.rule === 'only'
+          ? <p>直接选 {cellName(stage.keep[0]!.node)}。</p>
+          : <p>{stageSentence(stage)}</p>}
+      </div>
+    </li>)}
+    {live < stages.length && <li className="primer-stream-row is-thinking" aria-hidden="true"><span className="primer-stream-step">…</span><div><p>正在比较…</p></div></li>}
+  </ol>;
+}
+
+function WalkChapter({ index, revealed, guess, onGuess, onReveal, onNext, onRestart, score, mistakes, stream }: {
+  index: number; revealed: boolean; guess: Position | null; onGuess: (node: Position | null) => void; onReveal: () => void;
+  onNext: () => void; onRestart: () => void; score: number; mistakes: (Misconception | null)[]; stream: number;
+}) {
   const step = trace.steps[index]!;
   const previous = trace.steps[index - 1];
   const show = revealed || step.reason === 'only';
   const ordered = show ? [...step.open].sort((a, b) => a.f - b.f || a.h - b.h || a.entrySequence - b.entrySequence) : step.open;
+  const wrong = guess && show && !sameNode(guess, step.selected.node) ? classifyMistake(step.open, step.open.find(cell => sameNode(cell.node, guess))!) : null;
+  const thinking = show && stream < decisionStages(step.open).length;
   return <>
-    <p className="primer-progress"><b>第 {index + 1} / {trace.steps.length} 轮</b>　预测对 {score} / {predictable}</p>
+    <p className="primer-progress"><b>第 {index + 1} / {trace.steps.length} 轮</b>　预测对 {score} / {predictable}{mistakes.filter(Boolean).length > 0 ? '　已记录 ' + mistakes.filter(Boolean).length + ' 次误区' : ''}</p>
     {!show && <p>清单里有 {step.open.length} 个待选格子（地图上带数字的格子：大数字是 f，角上是 g 和 h）。<b>你觉得 A* 这一轮会挑哪个？</b>点地图上的格子，或点下表的一行。</p>}
     <table className="primer-table"><caption>待选清单（{show ? '已按挑选规则排好' : '按加入先后'}）</caption>
-      <thead><tr><th scope="col">格子</th><th scope="col">g 已走</th><th scope="col">h 估计剩</th><th scope="col">f 合计</th></tr></thead>
+      <thead><tr><th scope="col">格子</th><th scope="col">g 已走</th><th scope="col">h 估计剩</th><th scope="col">f 合计</th><th scope="col">加入 #</th></tr></thead>
       <tbody>{ordered.map(cell => {
         const chosen = show && sameNode(cell.node, step.selected.node);
         const mine = guess && sameNode(cell.node, guess);
         return <tr key={cellName(cell.node)} className={(chosen ? 'is-chosen' : '') + (mine ? ' is-mine' : '')}>
           <th scope="row">{show ? cellName(cell.node) : <button type="button" className="primer-row-pick" onClick={() => onGuess(cell.node)}>{cellName(cell.node)}</button>}</th>
-          <td>{cell.g}</td><td>{cell.h}</td><td><b>{cell.f}</b></td>
+          <td>{cell.g}</td><td>{cell.h}</td><td><b>{cell.f}</b></td><td>{cell.entrySequence}</td>
         </tr>;
       })}</tbody>
     </table>
     {!show && <div className="primer-actions">
-      <button type="button" className="action-primary" disabled={!guess} onClick={onReveal} data-testid="primer-reveal">{guess ? '我选 ' + cellName(guess) + '，揭晓' : '先选一个格子'}</button>
+      <button type="button" className="action-primary" disabled={!guess} onClick={onReveal} data-testid="primer-reveal">{guess ? '我选 ' + cellName(guess) + '，看 A* 怎么想' : '先选一个格子'}</button>
       <button type="button" className="action-quiet" onClick={() => { onGuess(null); onReveal(); }}>不确定，直接看答案</button>
     </div>}
     {show && <div className="primer-reveal" role="status" data-testid="primer-step-explanation">
+      <p className="primer-stream-title">A* 这一轮的思考过程（逐条浮现）：</p>
+      <ThinkingStream open={step.open} shown={stream} />
+      {!thinking && <>
       {guess && step.reason !== 'only' && <p className={sameNode(guess, step.selected.node) ? 'is-right' : 'is-wrong'}>{sameNode(guess, step.selected.node) ? '' : '没猜中，你选的是 ' + cellName(guess) + '。'}{explainPrediction('astar', step.open, guess, step.selected.node)}</p>}
+      {wrong && <p className="primer-explain" data-testid="primer-walk-misconception"><strong>这类错误叫「{MISCONCEPTIONS[wrong].name}」：</strong>{MISCONCEPTIONS[wrong].advice}（可回看第 {MISCONCEPTIONS[wrong].chapter + 1} 章）</p>}
       <p><b>A* 挑中 {cellName(step.selected.node)}。</b>{describeChoice(step)}</p>
       {previous && step.selected.f > previous.selected.f && <p className="primer-explain"><strong>注意 f 变大了：</strong>从 {previous.selected.f} 涨到 {step.selected.f}。之前的 h 假装没有墙；现在被墙挡住，必须绕路，整趟估计就多了 {step.selected.f - previous.selected.f} 步。</p>}
       {step.isGoal
@@ -154,15 +224,49 @@ function WalkChapter({ index, revealed, guess, onGuess, onReveal, onNext, onRest
       {step.isGoal
         ? <button type="button" className="action-quiet" onClick={onRestart}>从头再走一遍</button>
         : <button type="button" className="action-primary" onClick={onNext} data-testid="primer-next-step">下一轮 →</button>}
+      </>}
     </div>}
   </>;
 }
 
-function FinalChapter({ onTryMission }: { onTryMission: (id: 'L02' | 'L03') => void }) {
-  const finals = PRIMER_QUIZ.filter(item => item.stage === 'final');
-  const [answers, setAnswers] = useState<Record<string, boolean>>({});
-  const done = Object.keys(answers).length;
-  const correct = Object.values(answers).filter(Boolean).length;
+function MasteryReportView({ report, onTryMission, onReview }: { report: MasteryReport; onTryMission: (id: 'L02' | 'L03') => void; onReview: (chapter: number) => void }) {
+  const text = reportText(report);
+  const [copied, setCopied] = useState(false);
+  const gain = report.pre === null ? null : report.post - report.pre;
+  const marks: Record<string, string> = { kept: '本来就会', learned: '学会了', review: '还要再看', slipped: '前测对、后测错' };
+  return <div className="primer-report" data-testid="primer-report">
+    <h4>你的 A* 掌握度</h4>
+    <div className="primer-compare">
+      <div><span>学前测</span><strong>{report.pre === null ? '—' : report.pre + '/' + report.total}</strong></div>
+      <div><span>学后测</span><strong>{report.post}/{report.total}</strong></div>
+      <div><span>逐轮预测</span><strong>{report.walk.correct}/{report.walk.total}</strong></div>
+    </div>
+    <p>{gain === null ? '你跳过了学前测，所以没有对比基线；' : gain > 0 ? '同一组知识点，学前答对 ' + report.pre + ' 题，学完答对 ' + report.post + ' 题，净增 ' + gain + ' 题。' : gain === 0 ? '前后测得分相同（' + report.post + '/' + report.total + '）。' : '后测比前测少 ' + -gain + ' 题，看下面哪一项掉了。'}{report.seconds === null ? '' : '从开始学到交卷用时 ' + Math.floor(report.seconds / 60) + ' 分 ' + report.seconds % 60 + ' 秒。'}</p>
+    <table className="primer-table primer-table--left"><caption>逐知识点对比</caption>
+      <thead><tr><th scope="col">知识点</th><th scope="col">学前</th><th scope="col">学后</th><th scope="col">结论</th></tr></thead>
+      <tbody>{report.concepts.map(item => <tr key={item.concept} className={item.post ? '' : 'is-gap'}>
+        <th scope="row">{item.name}</th>
+        <td>{item.pre === null ? '—' : item.pre ? '✓' : '✗'}</td><td>{item.post ? '✓' : '✗'}</td>
+        <td>{marks[item.status]}{item.post ? '' : <> · <button type="button" className="primer-link" onClick={() => onReview(item.chapter)}>回看第 {item.chapter + 1} 章</button></>}</td>
+      </tr>)}</tbody>
+    </table>
+    {report.misconceptions.length > 0 && <div className="primer-misconceptions">
+      <h5>按出错原因归类（来自逐轮预测和学后测）</h5>
+      <ul className="primer-list">{report.misconceptions.map(item => <li key={item.type}><b>{item.name} ×{item.count}</b>：{item.advice} <button type="button" className="primer-link" onClick={() => onReview(item.chapter)}>回看第 {item.chapter + 1} 章</button></li>)}</ul>
+    </div>}
+    <p className="primer-aside">这份报告只在你这台设备的浏览器内生成，不上传。它说明“此刻能不能按规则做题”，不等于长期掌握。</p>
+    <details className="primer-export"><summary>导出这份记录（可贴进测试表或截图）</summary>
+      <pre data-testid="primer-report-text">{text}</pre>
+      <div className="primer-actions">
+        <button type="button" className="action-secondary" onClick={async () => { try { await navigator.clipboard.writeText(text); setCopied(true); } catch { setCopied(false); } }}>复制文本</button>
+        {copied && <span className="is-right" role="status">已复制。</span>}
+      </div>
+    </details>
+    <div className="primer-actions"><button type="button" className="action-primary" onClick={() => onTryMission('L03')}>去 L03 用 A* 自己预测 →</button><button type="button" className="action-quiet" onClick={() => onTryMission('L02')}>去 L02 对比 BFS 与 A*</button></div>
+  </div>;
+}
+
+function FinalChapter({ onTryMission, report, onPost, onReview }: { onTryMission: (id: 'L02' | 'L03') => void; report: MasteryReport | null; onPost: (results: ItemResult[]) => void; onReview: (chapter: number) => void }) {
   return <>
     <div className="primer-compare">
       <div><span>BFS 处理的格子</span><strong>{trace.bfs.expandedCount}</strong></div>
@@ -173,13 +277,10 @@ function FinalChapter({ onTryMission }: { onTryMission: (id: 'L02' | 'L03') => v
     <p>看左边地图：A* 处理过的 {trace.astar.expandedCount} 个格子全部在最短路线上，一步弯路都没走；BFS 却把整张图几乎都试了一遍。</p>
     <p>路线一样短，A* 却少处理了 {trace.bfs.expandedCount - trace.astar.expandedCount} 个格子：h 把搜索“拉”向终点。背离终点的格子要么 f 更大，要么 f 打平但 h 更大，在清单里一直排在后面，根本轮不到。</p>
     <p className="primer-summary"><b>一句话记住 A*：</b>每次从待选清单里挑 <b>f = g（已走）+ h（估计还剩）</b>最小的格子展开，直到挑中终点。</p>
-    <h4>出关小测（{finals.length} 题）</h4>
-    {finals.map(item => <Choice key={item.id} question={item} onAnswered={ok => setAnswers(current => ({ ...current, [item.id]: ok }))} />)}
-    {done === finals.length && <div className="primer-result" role="status" data-testid="primer-result">
-      <p><b>小测得分 {correct} / {finals.length}。</b>{correct === finals.length ? '你已经能说清 A* 怎么挑格子了。' : '答错的题看一下解析，再回到第 4、5 章走一遍。'}</p>
-      <p>下一步：到真实关卡里自己预测，系统不会提前告诉你答案。</p>
-      <div className="primer-actions"><button type="button" className="action-primary" onClick={() => onTryMission('L03')}>去 L03 用 A* 自己预测 →</button><button type="button" className="action-quiet" onClick={() => onTryMission('L02')}>去 L02 对比 BFS 与 A*</button></div>
-    </div>}
+    {report
+      ? <MasteryReportView report={report} onTryMission={onTryMission} onReview={onReview} />
+      : <MasteryTest id="post" items={POST_TEST} feedback title="学后测" onDone={onPost}
+        intro={<><h4>学后测（{POST_TEST.length} 题）</h4><p>和开头那份前测<b>考同样 5 个知识点、换了数字</b>。答完会逐题讲解，并生成你的掌握度报告。</p></>} />}
   </>;
 }
 
@@ -192,10 +293,18 @@ export function AstarPrimer({ onTryMission }: { onTryMission: (id: 'L02' | 'L03'
   const [revealed, setRevealed] = useState(false);
   const [guess, setGuess] = useState<Position | null>(null);
   const [hits, setHits] = useState<Record<number, boolean>>({});
+  const [mistakes, setMistakes] = useState<Record<number, Misconception | null>>({});
+  const [pre, setPre] = useState<ItemResult[] | null>(null);
+  const [report, setReport] = useState<MasteryReport | null>(null);
+  const [stream, setStream] = useState(0);
+  const startedAt = useRef<number | null>(null);
+
+  // The learning clock starts when the visitor leaves the pre-test for the first lesson.
+  useEffect(() => { if (chapter > 0 && startedAt.current === null) startedAt.current = Date.now(); }, [chapter]);
 
   useEffect(() => {
     if (!playing) return;
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const reduce = prefersReducedMotion();
     const timer = window.setTimeout(() => {
       const next = reduce ? trace.bfsLayers.length : wave + 1;
       setWave(next);
@@ -206,73 +315,103 @@ export function AstarPrimer({ onTryMission }: { onTryMission: (id: 'L02' | 'L03'
 
   const step = trace.steps[stepIndex]!;
   const showStep = revealed || step.reason === 'only';
+  const stages = showStep ? decisionStages(step.open).length : 0;
+  useEffect(() => {
+    if (!showStep || stream >= stages) return;
+    const timer = window.setTimeout(() => setStream(current => current + 1), prefersReducedMotion() ? 0 : 620);
+    return () => window.clearTimeout(timer);
+  }, [showStep, stream, stages]);
+
   const waveDistance = useMemo(() => {
     const map = new Map<string, number>();
     trace.bfsLayers.slice(0, wave).forEach((layer, distance) => layer.forEach(node => map.set(cellName(node), distance)));
     return map;
   }, [wave]);
+  const dropped = useMemo(() => {
+    if (!showStep || stream === 0) return new Set<string>();
+    const names = new Set<string>();
+    for (const stage of decisionStages(step.open).slice(0, stream)) for (const cell of stage.out) names.add(cellName(cell.node));
+    return names;
+  }, [showStep, stream, step]);
 
   const view = (node: Position): CellView => {
     if (kindOf(node) === 'wall') return {};
-    if (chapter === 1) {
+    if (chapter === 2) {
       const distance = waveDistance.get(cellName(node));
       return distance === undefined ? {} : { state: 'wave', main: distance, label: '离起点 ' + distance + ' 步' };
     }
-    if (chapter === 2) {
+    if (chapter === 3) {
       if (sameNode(node, exercise.node)) return { state: 'focus', label: '练习格', ...(solved >= 3 ? { g: exercise.g, h: manhattan(node, goal), main: exercise.g + manhattan(node, goal) } : { main: '?' }) };
       if (solved >= 3 && sameNode(node, { x: 2, y: 2 })) return { g: 2, h: 4, main: 6 };
       return {};
     }
-    if (chapter === 4) {
+    if (chapter === 5) {
       const final = step.isGoal && showStep;
       if (final && trace.path.some(item => sameNode(item, node))) return { state: 'path', label: '最短路线' };
-      if (showStep && sameNode(node, step.selected.node)) return cellView(step.selected, 'current', '本轮挑中');
+      if (showStep && sameNode(node, step.selected.node) && stream >= stages) return cellView(step.selected, 'current', '本轮挑中');
       if (step.closedBefore.some(item => sameNode(item, node))) return { state: 'closed', label: '已处理' };
-      const fresh = showStep && !step.isGoal ? [...step.updated, ...step.added].find(cell => sameNode(cell.node, node)) : undefined;
+      const fresh = showStep && !step.isGoal && stream >= stages ? [...step.updated, ...step.added].find(cell => sameNode(cell.node, node)) : undefined;
       if (fresh) return cellView(fresh, 'new', '刚加入清单');
       const open = step.open.find(cell => sameNode(cell.node, node));
-      if (open) return cellView(open, guess && sameNode(guess, node) ? (showStep && !sameNode(guess, step.selected.node) ? 'wrong' : 'focus') : 'open', '待选');
+      if (open) {
+        const mine = guess && sameNode(guess, node);
+        const state: CellState = mine ? (showStep && !sameNode(guess, step.selected.node) ? 'wrong' : 'focus') : dropped.has(cellName(node)) ? 'dropped' : 'open';
+        return cellView(open, state, state === 'dropped' ? '本轮已被淘汰' : '待选');
+      }
     }
-    if (chapter === 5) {
+    if (chapter === 6) {
       if (trace.path.some(item => sameNode(item, node))) return { state: 'path', label: 'A* 最短路线' };
       if (trace.steps.at(-1)!.closedBefore.some(item => sameNode(item, node))) return { state: 'closed', label: 'A* 处理过' };
     }
     return {};
   };
-  const picking = chapter === 4 && !showStep;
+  const picking = chapter === 5 && !showStep;
 
   const reveal = () => {
     setRevealed(true);
-    if (guess && step.reason !== 'only') setHits(current => (stepIndex in current ? current : { ...current, [stepIndex]: sameNode(guess, step.selected.node) }));
+    setStream(0);
+    if (guess && step.reason !== 'only') {
+      setHits(current => (stepIndex in current ? current : { ...current, [stepIndex]: sameNode(guess, step.selected.node) }));
+      setMistakes(current => (stepIndex in current ? current : { ...current, [stepIndex]: classifyMistake(step.open, step.open.find(cell => sameNode(cell.node, guess))!) }));
+    }
   };
-  const goStep = (index: number) => { setStepIndex(index); setRevealed(false); setGuess(null); };
-  const caption = ['配送地图', 'BFS 水波：数字是离起点几步', '打分练习', '配送地图', 'A* 逐轮演示：大数字 f，角标 g 与 h', 'A* 的最终结果：亮色为最短路线；这张图里 A* 处理过的 ' + trace.astar.expandedCount + ' 个格子全在路线上'][chapter]!;
+  const goStep = (index: number) => { setStepIndex(index); setRevealed(false); setGuess(null); setStream(0); };
+  const goChapter = (index: number) => { setChapter(index); if (index !== 6) setReport(null); };
+  const caption = ['配送地图', '配送地图', 'BFS 水波：数字是离起点几步', '打分练习', '配送地图', 'A* 逐轮演示：大数字 f，角标 g 与 h；灰掉的是本轮已被淘汰的格子', 'A* 的最终结果：亮色为最短路线；这张图里 A* 处理过的 ' + trace.astar.expandedCount + ' 个格子全在路线上'][chapter]!;
 
   return <section id="astar-primer" className="primer" aria-labelledby="primer-title" data-testid="astar-primer" tabIndex={-1}>
     <div className="primer-head">
-      <p className="eyebrow">ZERO TO A* · 约 6 分钟 · 不需要任何算法基础</p>
-      <h2 id="primer-title">零基础 A* 入门：一张小地图，看懂它每一步怎么想</h2>
-      <p>先自己猜，再看答案。所有数字都由站内真实的 A* / BFS 程序算出，不是手写的演示。</p>
+      <p className="eyebrow">ZERO TO A* · 约 10 分钟 · 不需要任何算法基础</p>
+      <h2 id="primer-title">零基础 A* 入门：先测一遍，再学，再测一遍</h2>
+      <p>先自己猜，再看 A* 逐条浮现的思考过程。所有数字都由站内真实的 A* / BFS 程序算出，不是手写的演示；最后给你一份前后对比的掌握度报告。</p>
     </div>
     <ol className="primer-chapters" aria-label="入门章节">
-      {chapters.map((name, index) => <li key={name}><button type="button" aria-current={chapter === index ? 'step' : undefined} onClick={() => setChapter(index)}><span>{index + 1}</span>{name}</button></li>)}
+      {chapters.map((name, index) => <li key={name}><button type="button" aria-current={chapter === index ? 'step' : undefined} onClick={() => goChapter(index)}><span>{index + 1}</span>{name}</button></li>)}
     </ol>
-    <div className="primer-body">
-      <PrimerGrid view={view} caption={caption} pickable={node => step.open.some(cell => sameNode(cell.node, node))} onPick={picking ? setGuess : undefined} />
+    <div className={'primer-body' + (chapter === 0 ? ' primer-body--single' : '')}>
+      {chapter !== 0 && <PrimerGrid view={view} caption={caption} pickable={node => step.open.some(cell => sameNode(cell.node, node))} onPick={picking ? setGuess : undefined} />}
       <div className="primer-text">
         <h3>{chapter + 1}. {chapters[chapter]}</h3>
-        {chapter === 0 && <ProblemChapter />}
-        {chapter === 1 && <WaveChapter shown={wave} playing={playing} onPlay={() => { setWave(0); setPlaying(true); }} />}
-        {chapter === 2 && <ScoreChapter solved={solved} onSolve={setSolved} />}
-        {chapter === 3 && <RulesChapter />}
-        {chapter === 4 && <WalkChapter index={stepIndex} revealed={revealed} guess={guess} onGuess={setGuess} onReveal={reveal} onNext={() => goStep(stepIndex + 1)} onRestart={() => { goStep(0); setHits({}); }} score={Object.values(hits).filter(Boolean).length} />}
-        {chapter === 5 && <FinalChapter onTryMission={onTryMission} />}
+        {chapter === 0 && (pre
+          ? <>
+            <p role="status">前测已交卷：<b>{pre.filter(item => item.correct).length} / {PRE_TEST.length}</b>。先不看答案——学完第 7 章的学后测会考同样的知识点，到时一起对比讲解。</p>
+            <div className="primer-actions"><button type="button" className="action-primary" onClick={() => goChapter(1)} data-testid="primer-start-learning">开始学 →</button><button type="button" className="action-quiet" onClick={() => setPre(null)}>重做前测</button></div>
+          </>
+          : <MasteryTest id="pre" items={PRE_TEST} feedback={false} title="学前测" onDone={setPre}
+            intro={<><p>先花 2 分钟做 5 道题，<b>不会就猜</b>。这不是考试：它只用来和你学完之后的同类题目作对比，让“学会了没有”变成能看见的数据。</p><p className="primer-aside">前测不显示答案，也不解释，避免提前泄题。想直接开始学就点下面的跳过。</p><div className="primer-actions"><button type="button" className="action-quiet" onClick={() => goChapter(1)} data-testid="primer-skip-pre">跳过前测，直接开始学</button></div></>} />)}
+        {chapter === 1 && <ProblemChapter />}
+        {chapter === 2 && <WaveChapter shown={wave} playing={playing} onPlay={() => { setWave(0); setPlaying(true); }} />}
+        {chapter === 3 && <ScoreChapter solved={solved} onSolve={setSolved} />}
+        {chapter === 4 && <RulesChapter />}
+        {chapter === 5 && <WalkChapter index={stepIndex} revealed={revealed} guess={guess} onGuess={setGuess} onReveal={reveal} onNext={() => goStep(stepIndex + 1)} onRestart={() => { goStep(0); setHits({}); setMistakes({}); }} score={Object.values(hits).filter(Boolean).length} mistakes={Object.values(mistakes)} stream={stream} />}
+        {chapter === 6 && <FinalChapter onTryMission={onTryMission} report={report} onReview={goChapter}
+          onPost={results => setReport(buildReport(pre, results, Object.values(mistakes), startedAt.current === null ? null : Math.round((Date.now() - startedAt.current) / 1000)))} />}
       </div>
     </div>
     <div className="primer-nav">
-      <button type="button" className="action-quiet" disabled={chapter === 0} onClick={() => setChapter(chapter - 1)}>← 上一章</button>
+      <button type="button" className="action-quiet" disabled={chapter === 0} onClick={() => goChapter(chapter - 1)}>← 上一章</button>
       <span>{chapter + 1} / {chapters.length}</span>
-      <button type="button" className="action-primary" disabled={chapter === chapters.length - 1} onClick={() => setChapter(chapter + 1)} data-testid="primer-next-chapter">下一章 →</button>
+      <button type="button" className="action-primary" disabled={chapter === chapters.length - 1} onClick={() => goChapter(chapter + 1)} data-testid="primer-next-chapter">下一章 →</button>
     </div>
   </section>;
 }
