@@ -1,0 +1,15 @@
+{
+  "event": "v3.0.0 GitHub publication",
+  "date": "2026-11-11",
+  "head": "1d79054",
+  "commits": 57,
+  "mainPushed": true,
+  "tagCreated": "v3.0.0",
+  "releaseId": 441810427,
+  "releaseUrl": "https://github.com/ljqzs08/PathLab-AI/releases/tag/v3.0.0",
+  "assetId": 735822715,
+  "assetDownloadUrl": "https://github.com/ljqzs08/PathLab-AI/releases/download/v3.0.0/PathLab-AI-v3.0.0.html",
+  "assetSha256_anonymous_verified": "dd786be140bebb245698f920155324763165ac7be479693927cabb8a768d0bff",
+  "assetBytes_anonymous_verified": 555496,
+  "note": "Release body updated via PATCH after asset upload. Token cleared after use."
+}
