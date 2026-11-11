@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-11T06:01:30Z",
+  "executor": "AI",
+  "status": "passed",
+  "round": "E032",
+  "url": "https://github.com/ljqzs08/PathLab-AI",
+  "authentication": "GitHub official device flow, account ljqzs08, authorized by author; token not stored in repo",
+  "push": {"command": "git push origin main", "force": false, "from": "e438363692762398117756ceb7f72a3fb415e5ad", "to": "b17545b88906da821fea9849fcd3034709b5ca68"},
+  "tag": {"name": "v2.0.0", "type": "annotated", "commit": "b17545b88906da821fea9849fcd3034709b5ca68"},
+  "release": {"url": "https://github.com/ljqzs08/PathLab-AI/releases/tag/v2.0.0", "latest": true,
+              "assets": [{"name": "PathLab-AI-v2.0.0.html", "bytes": 539350, "sha256": "1566c663f160ddc8399ce90c5171896882c575c5a0708c82dd62af88196cd167"},
+                         {"name": "PathLab-AI-v2.0.0.html.sha256", "bytes": 89}]},
+  "anonymousVerification": {
+    "cloneHead": "b17545b88906da821fea9849fcd3034709b5ca68", "commitCount": 51, "historyIdenticalToLocalMain": true,
+    "tagCommit": "b17545b88906da821fea9849fcd3034709b5ca68", "offlineHtmlSha256MatchesV2": true, "packageVersion": "2.0.0",
+    "apiPrivate": false, "releaseAssetDownloadSha256Matches": true
+  },
+  "notDone": ["netdisk upload", "video platform upload", "form filling", "competition submission", "real human novice test"]
+}
