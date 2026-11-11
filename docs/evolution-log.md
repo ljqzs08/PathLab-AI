@@ -485,3 +485,12 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 验证（AI，Linux Chrome for Testing 156 headless）：tsc / ESLint 通过，Node 160/160，离线 HTML 四视口 280/280，入门逐章 axe 0 违规；HTML SHA256 `1566c663f160ddc8399ce90c5171896882c575c5a0708c82dd62af88196cd167`。Windows Edge 套件本轮未重跑。详见 `docs/verification-astar-primer.md`。
 - 交付：`delivery/PathLab-AI-参赛文件-v2/`（新 HTML、视频 v2 = 原视频 + 2:27 入门演示、作品介绍/技术文档追加 v2 章节、含视频完整 ZIP）；旧 `PathLab-AI-参赛文件/` 保留不覆盖。
 - Git：功能与文档分开细粒度提交，正常 push，不改写历史；v2.0.0 标签与 Release 的实际状态以最终答复为准，哈希由下一轮补记。
+
+## E032：推送 v2.0.0 到 GitHub（2026-11-11）
+
+- 输入：作者原文“在GitHub上帮我上推送V2版本，修改并保证是最新版”（覆盖 E031 后“GitHub 先不用修改”的暂缓要求）。真实 Prompt 见 `prompts/sessions/2026-11-11-github-v2-push.md`（人工转录）。
+- 本地补记：E031 功能/文档提交 `87874dd`、`6bec799`；v2 交付包构建脚本提交 `3b3010c`（交付包 ZIP 432,459,846 字节、460 条目，介绍 17 页、技术 26 页，视频 7:51）。
+- 修改：README 去除过时“无 remote”说明并加最新版入口；v2 交付包说明（评审入口、GitHub 地址、表单草稿、恢复历史）改为已推送状态。
+- 发布：作者通过 GitHub 官方设备授权（ljqzs08）后正常 `git push origin main`，创建附注标签 `v2.0.0` 与 Release（附 v2 离线 HTML 及 SHA256）；不 force、不改写历史。远端核验结果见 `docs/evidence/github-v2-publication-20261111.json`。
+- 边界：未上传网盘/视频平台、未填表、未提交比赛；真人新手测试仍待作者完成。
+

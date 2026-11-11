@@ -1,8 +1,9 @@
 PathLab AI（路径学习实验室）｜GitHub 作品链接
 
 作品仓库（评审主入口）：https://github.com/ljqzs08/PathLab-AI
+v2.0.0 版本发布页：https://github.com/ljqzs08/PathLab-AI/releases/tag/v2.0.0
 作者 GitHub 主页（补充）：https://github.com/ljqzs08
 
-本包对应版本 v2.0.0（新增「A* 零基础入门」）。按作者要求，v2 暂未推送到 GitHub，仓库当前仍为 v1；推送并发布 v2.0.0 后此链接即对应本包内容。
-这是代码托管地址，不是在线运行网站；离线体验请打开包内 03-离线体验/PathLab AI.html。
+本包对应版本 v2.0.0（新增「A* 零基础入门」），已于 2026-11-11 推送；仓库 main 与 v2.0.0 标签即本包内容。
+这是代码托管地址，不是在线运行网站；离线体验请打开包内 03-离线体验/PathLab AI.html，或在 Release 页面下载 PathLab-AI-v2.0.0.html。
 GitHub 链接不替代表单第 5 项要求的网盘完整作品分享链接。
