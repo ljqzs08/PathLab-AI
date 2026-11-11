@@ -494,3 +494,16 @@ E020b 实际材料提交：**1c10e32fb1a28bd56b72ac864f5ca648635743a8**（docs: 
 - 发布：作者通过 GitHub 官方设备授权（ljqzs08）后正常 `git push origin main`，创建附注标签 `v2.0.0` 与 Release（附 v2 离线 HTML 及 SHA256）；不 force、不改写历史。远端核验结果见 `docs/evidence/github-v2-publication-20261111.json`。
 - 边界：未上传网盘/视频平台、未填表、未提交比赛；真人新手测试仍待作者完成。
 
+## E033：对照官方规则核对交付包与升级方案（2026-11-11）
+
+- 只做核对与方案，未改源码 / 交付包。产出 `docs/review-upgrade-plan-20261111.md`：发现 v2 交付包源码快照仍为 v1、历史 bundle 只到 `6bec799`、ZIP 字节数记录与实物差 170（根因：`build-delivery-v2.py` 用 copytree 继承旧包）。本轮 该文件随 E034 文档提交一并纳入版本控制。
+
+## E034：v3.0.0 前后测掌握度闭环与 A* 思考过程可视化（2026-11-11）
+
+- 输入：作者原文“按照你的想法来帮我重新修改，不用管评委的意见，只要把作品做好，重新生成V3版本，先不上传GitHub”。Prompt 记录见 `prompts/sessions/2026-11-11-v3-mastery.md`（人工转录，注明非工具导出）。
+- 判断：作品目标是让零基础的人学会 A*。v2 缺两样：一是“学会了没有”的可比数据，二是 A* 决策过程的逐步呈现。不加新算法，不接模型 API。
+- 实现：新增 `mastery.ts`（平行前后测、逐关淘汰 `decisionStages`、误区分类 `classifyMistake`、掌握度报告），入门改为 7 章，加入思考过程逐条浮现、淘汰格变灰、学后测与掌握度报告；版本号改为 3.0.0。
+- AI 自测自修（不是用户报错）：看截图发现思考流的句子标点重复，结论在思考过程播完之前就已出现，前测页左侧出现与题目无关的空地图，均已修复；React purity lint 指出渲染期调用 `Date.now`，已改到 effect 中。
+- 验证（AI，Linux Chrome Headless Shell 156）：tsc / ESLint 通过，Node 165/165，离线 HTML 四视口 284/284，axe 0 违规；HTML SHA256 `dd786be140bebb245698f920155324763165ac7be479693927cabb8a768d0bff`。详见 `docs/verification-v3-mastery.md`。
+- 交付：`delivery/PathLab-AI-参赛文件-v3/`，由 `scripts/build-delivery-v3.py` 生成。源码快照改用 `git archive HEAD` 导出，历史 bundle 取真实 HEAD，字节数与哈希在最后一步统一写入，修复 E033 指出的三处问题。旧 v1 / v2 包保留。
+- Git：功能与文档分开做本地细粒度提交；按作者要求不 push、不打标签、不发 Release。
