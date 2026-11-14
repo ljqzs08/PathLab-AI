@@ -85,3 +85,4 @@
 最新 E032（2026-11-11）：作者授权后将 v2.0.0 正常推送至 Public ljqzs08/PathLab-AI，并发布 v2.0.0 标签与 Release（附 v2 离线 HTML）；不改写历史。交付包 v2 说明同步为已推送。核验见 docs/evidence/github-v2-publication-20261111.json。
 最新 E034（2026-11-11）：v3.0.0 本地版：入门改为学前测 → 5 章 → 学后测与掌握度报告；新增 A* 思考过程逐条浮现、淘汰格变灰、按决胜规则归类误区（`src/domain/learning/mastery.ts`）。Node 165/165、离线四视口 284/284（Linux Chrome Headless Shell，非 Edge）。交付包 `delivery/PathLab-AI-参赛文件-v3` 由 `scripts/build-delivery-v3.py` 生成（源码用 git archive 导出，bundle 取真实 HEAD）。按作者要求未 push。详见 docs/verification-v3-mastery.md。
 最新 E035（2026-11-14）：v4.0.0 本地版：网站改为点击式 7 站（生活里的 A* / 图解 / 视频课 / 互动入门课 / 闯关游戏 / 任务工作台 / 自由实验）+ 奶娃向导；作者素材放 `PathLab-AI/public/media/` 并由构建脚本内嵌单文件（视频已由 HEVC 转 H.264）。Node 171/171、离线四视口 308/308（Linux Chrome Headless Shell，非 Edge）。浏览器测试须先进入对应站点（`at('lab')` 等）。素材授权待作者确认；未 push。详见 docs/verification-v4-journey.md。
+最新 E036（2026-11-14）：用户指出 g/h/f 未定义就被使用。首页先解释 A*；新增第 1 站「认识 A*」（9 页，一页一个概念）、常驻名词小词典、右下角可拖动的奶娃桌宠（按站点分级提示）。共 8 站。离线四视口 316/316。原则：任何术语先用白话定义并练习，之后才能使用。
