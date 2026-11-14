@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
 import './learning.css';
+import './journey.css';
 
 export const metadata: Metadata = {
   title: 'PathLab AI · 路径学习实验室',

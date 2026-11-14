@@ -6,6 +6,8 @@ import { runBfs } from '../../src/domain/algorithms/bfs';
 import { runAstar } from '../../src/domain/algorithms/astar';
 
 export const appUrl = process.env.PATHLAB_TEST_URL ?? '/';
+/** v4 splits the site into click-through stations; each spec opens the station it exercises. */
+export const at = (station: string) => appUrl + '#' + station;
 export const workbench = (page: Page) => page.getByTestId('learning-workbench');
 export const engine = (input: SearchInput, algorithm: Algorithm) => (algorithm === 'bfs' ? runBfs : runAstar)(input);
 export function changedInput(level: LevelDefinition): SearchInput {
@@ -31,7 +33,7 @@ export async function finish(page: Page, input: SearchInput, algorithm: Algorith
   throw new Error('Fixed-map browser replay did not terminate');
 }
 export async function launch(page: Page, level: LevelDefinition, algorithm: Algorithm) {
-  await page.goto(appUrl); await page.getByTestId('mission-' + level.id).click();
+  await page.goto(at('lab')); await page.getByTestId('mission-' + level.id).click();
   await page.getByLabel('本关算法').selectOption(algorithm);
   await page.getByRole('button', { name: '开始预测' }).click();
 }

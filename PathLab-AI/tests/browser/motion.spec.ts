@@ -1,7 +1,7 @@
 /** AI checks: normal motion, map-based prediction and reduced-motion parity. */
 import { test, expect } from '@playwright/test';
 import levels from '../../fixtures/levels.json' with { type: 'json' };
-import { appUrl, finish, noOverflow, workbench } from './helpers';
+import { appUrl, at, finish, noOverflow, workbench } from './helpers';
 
 test.describe('motion and map prediction', () => {
   test.use({ reducedMotion: 'no-preference' });
@@ -10,6 +10,7 @@ test.describe('motion and map prediction', () => {
     await page.goto(appUrl);
     await expect(page.locator('.intro-copy')).toHaveCSS('animation-name', 'pathlab-rise-in');
     await expect(page.locator('.learning-loop')).toHaveCSS('animation-duration', '0.55s');
+    await page.getByTestId('nav-lab').click();
     await page.getByRole('button', { name: '开始预测' }).click();
     const candidates = page.locator('[data-prediction-candidate="true"]');
     expect(await candidates.count()).toBeGreaterThan(1);
@@ -27,7 +28,7 @@ test.describe('motion and map prediction', () => {
   });
 
   test('map and candidate cards share a draft without bypassing prediction gate', async ({ page }) => {
-    await page.goto(appUrl);
+    await page.goto(at('lab'));
     await page.getByRole('button', { name: '开始预测' }).click();
     const candidates = page.locator('[data-prediction-candidate="true"]');
     const id = (await candidates.first().getAttribute('data-cell'))!;
@@ -63,7 +64,7 @@ test.describe('motion and map prediction', () => {
   });
 
   test('normal-motion replay completes with no overflow or active decorative loop', async ({ page }) => {
-    await page.goto(appUrl);
+    await page.goto(at('lab'));
     await page.getByRole('button', { name: '开始预测' }).click();
     await finish(page, levels[0]!, 'bfs');
     await expect(workbench(page)).toHaveAttribute('data-state', 'reflection');
@@ -74,7 +75,7 @@ test.describe('motion and map prediction', () => {
 
 test('reduced motion disables animation but keeps map prediction usable', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   await expect(page.locator('.intro-copy')).toHaveCSS('animation-name', 'none');
   await page.getByRole('button', { name: '开始预测' }).click();
   await page.locator('[data-prediction-candidate="true"]').first().click();

@@ -1,12 +1,14 @@
 /** AI browser checks; not human or physical-device acceptance. */
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { appUrl, noOverflow } from './helpers';
+import { at, noOverflow } from './helpers';
 import { comparePlayground, createPlayground } from '../../src/domain/playground';
 
 const scope = (page: import('@playwright/test').Page) => page.getByTestId('playground');
 test('playground protects endpoints, supports keyboard paint and undo without touching missions', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
+  await page.getByTestId('mission-L01').waitFor();
+  await page.getByTestId('nav-playground').click();
   const area = scope(page);
   await expect(area.getByRole('button', {name:'提交预测并对比'})).toBeDisabled();
   await expect(area.getByTestId('playground-results')).toHaveCount(0);
@@ -34,7 +36,7 @@ test('playground protects endpoints, supports keyboard paint and undo without to
 });
 
 test('predicted comparison uses actual metrics and replay clears on map changes', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('playground'));
   const area = scope(page), result = comparePlayground(createPlayground('detour'));
   await area.getByLabel('扩展数量预测').selectOption(result.fewerExpanded);
   await area.getByRole('button', {name:'提交预测并对比'}).click();
@@ -63,7 +65,7 @@ test('predicted comparison uses actual metrics and replay clears on map changes'
 });
 
 test('unreachable map has no fake path and presets are undoable', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('playground'));
   const area = scope(page);
   await area.getByRole('button',{name:'空白地图',exact:true}).click();
   await area.locator('[data-play-cell="1,0"]').click();
@@ -83,7 +85,7 @@ test('unreachable map has no fake path and presets are undoable', async ({ page 
 });
 
 test('playground replay reaches exact path, retries and survives reduced motion access checks', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('playground'));
   const area = scope(page), result = comparePlayground(createPlayground('open'));
   await area.getByRole('button',{name:'空白地图',exact:true}).click();
   await area.getByLabel('扩展数量预测').selectOption('astar');
@@ -104,8 +106,9 @@ test('playground replay reaches exact path, retries and survives reduced motion 
 });
 
 test('playground never saves practice into learning progress or generates network requests', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   await page.getByTestId('mission-L02').click();
+  await page.getByTestId('nav-playground').click();
   const saved = await page.evaluate(()=>localStorage.getItem('pathlab.progress.v1'));
   const external: string[] = [];
   page.on('request',request=>{const url=new URL(request.url()); if(url.protocol!=='file:' && url.hostname!=='127.0.0.1') external.push(request.url());});
@@ -115,8 +118,9 @@ test('playground never saves practice into learning progress or generates networ
   await area.getByRole('button',{name:'提交预测并对比'}).click();
   expect(await page.evaluate(()=>localStorage.getItem('pathlab.progress.v1'))).toBe(saved);
   await page.reload();
-  await expect(page.getByTestId('mission-L02')).toHaveAttribute('aria-pressed','true');
   await expect(area.locator('[data-play-cell="1,0"]')).toHaveAttribute('data-kind','road');
   await expect(area.getByTestId('playground-results')).toHaveCount(0);
+  await page.getByTestId('nav-lab').click();
+  await expect(page.getByTestId('mission-L02')).toHaveAttribute('aria-pressed','true');
   expect(external).toEqual([]);
 });

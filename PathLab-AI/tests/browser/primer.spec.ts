@@ -1,4 +1,4 @@
-import { appUrl } from './helpers';
+import { at } from './helpers';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { buildPrimerTrace } from '../../src/domain/learning/astar-primer';
@@ -17,9 +17,8 @@ const noOverflow = async (page: Page) => {
 };
 
 test('a first-time learner takes the pre-test, learns, watches A* think, and gets a pre/post mastery report', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('primer'));
   const primer = page.getByTestId('astar-primer');
-  await page.getByRole('link', { name: /第一次学/ }).click();
   await expect(primer.getByRole('heading', { level: 3 })).toHaveText('1. 学前测');
   // Pre-test: only the score and estimate items right, no answers revealed.
   for (const item of PRE_TEST) await pick(page, item, item.concept === 'score' || item.concept === 'estimate');
@@ -100,7 +99,7 @@ test('a first-time learner takes the pre-test, learns, watches A* think, and get
 });
 
 test('a learner can skip the pre-test; the report then says there is no baseline and links back to weak chapters', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('primer'));
   const primer = page.getByTestId('astar-primer');
   await primer.getByTestId('primer-skip-pre').click();
   await expect(primer.getByRole('heading', { level: 3 })).toHaveText('2. 要解决什么');
@@ -116,7 +115,7 @@ test('a learner can skip the pre-test; the report then says there is no baseline
 });
 
 test('mission predictions explain the real choice with numbers instead of a generic hint', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   await page.getByTestId('mission-L03').click();
   await page.getByRole('button', { name: '开始预测' }).click();
   await expect(page.getByText('看不懂这些数字？')).toBeVisible();

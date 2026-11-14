@@ -44,7 +44,7 @@ async function verifyDrawing(page: Page, dpr: number) {
 for(const dpr of [1,2,3])test('Canvas matches DOM cells and actual current-node pixels at DPR '+dpr+' including responsive resize',async({browser,page},testInfo)=>{
   const context=await browser.newContext({offline:!!process.env.PATHLAB_TEST_URL,viewport:page.viewportSize()!,deviceScaleFactor:dpr,locale:'zh-CN',reducedMotion:'reduce',isMobile:testInfo.project.use.isMobile??false,hasTouch:testInfo.project.use.hasTouch??false});
   try{
-    const probe=await context.newPage();await instrument(probe);await probe.goto(appUrl === '/' ? 'http://127.0.0.1:3210' : appUrl);
+    const probe=await context.newPage();await instrument(probe);await probe.goto((appUrl === '/' ? 'http://127.0.0.1:3210/' : appUrl) + '#lab');
     await expect.poll(()=>probe.getByTestId('search-canvas').evaluate(c=>!!(c as ProbedCanvas).__probe)).toBe(true);
     expect(await probe.getByTestId('search-canvas').evaluate(c=>{const canvas=c as HTMLCanvasElement;const data=canvas.getContext('2d')!.getImageData(0,0,canvas.width,canvas.height).data;return data.some((value,index)=>index%4===3&&value!==0);})).toBe(false);
     await probe.getByRole('button',{name:'开始预测'}).click();await verifyDrawing(probe,dpr);

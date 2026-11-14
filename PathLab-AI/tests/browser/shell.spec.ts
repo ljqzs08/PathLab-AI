@@ -1,4 +1,4 @@
-import { appUrl } from './helpers';
+import { appUrl, at } from './helpers';
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import levels from '../../fixtures/levels.json' with { type: 'json' };
@@ -7,16 +7,18 @@ test('renders an honest local workbench without claiming results before a run', 
   await page.goto(appUrl);
   await expect(page).toHaveTitle('PathLab AI · 路径学习实验室');
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('先解释下一步');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('再解释下一步');
+  await expect(page.getByText('DeepSeek 网页辅助：本机整理、手动复制提问；站内 API 复盘仍为可选')).toBeVisible();
+  await page.getByTestId('nav-lab').click();
+  await expect(page).toHaveURL(/#lab$/);
   await expect(page.getByTestId('mission-title')).toHaveText(levels[0]!.title);
   await expect(page.getByRole('button', { name: '开始预测' })).toBeEnabled();
   await expect(page.getByText('尚未运行；选择算法后先预测，再查看搜索证据。', { exact: false })).toBeVisible();
-  await expect(page.getByText('DeepSeek 网页辅助：本机整理、手动复制提问；站内 API 复盘仍为可选')).toBeVisible();
   await expect(page.locator('canvas')).toHaveCount(1);
 });
 
 test('all four mission buttons project the unchanged fixed fixture, never a generated path', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   for (const level of levels) {
     await page.getByTestId('mission-' + level.id).click();
     await expect(page.getByTestId('mission-title')).toHaveText(level.title);
@@ -36,11 +38,12 @@ test('all four mission buttons project the unchanged fixed fixture, never a gene
 });
 
 test('keyboard selection and skip navigation work without pointer input', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
+  await page.getByTestId('mission-L01').waitFor();
   await page.keyboard.press('Tab');
-  await expect(page.getByRole('link', { name: '跳到任务工作台' })).toBeFocused();
+  await expect(page.getByRole('link', { name: '跳到本页内容' })).toBeFocused();
   await page.keyboard.press('Enter');
-  await expect(page.locator('#mission-workspace')).toBeFocused();
+  await expect(page.locator('#view-lab')).toBeFocused();
   await page.getByTestId('mission-L02').focus();
   await page.keyboard.press('Space');
   await expect(page.getByTestId('mission-title')).toHaveText(levels[1]!.title);
@@ -52,7 +55,7 @@ test('keyboard selection and skip navigation work without pointer input', async 
 });
 
 test('every fixed map and panel stays within the viewport', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   for (const level of levels) {
     await page.getByTestId('mission-' + level.id).click();
     const dimensions = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }));
@@ -65,7 +68,7 @@ test('every fixed map and panel stays within the viewport', async ({ page }) => 
 });
 
 test('default and final mission pass automated WCAG A and AA checks', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   for (const id of ['L01', 'L04']) {
     await page.getByTestId('mission-' + id).click();
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
@@ -84,7 +87,7 @@ test('default usage makes no remote requests and saves only its scoped progress 
     external.push(url.origin + url.pathname);
     return route.abort();
   });
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   await page.getByTestId('mission-L04').click();
   await page.waitForLoadState('networkidle');
   expect(external).toEqual([]);
@@ -95,7 +98,7 @@ test('default usage makes no remote requests and saves only its scoped progress 
 });
 
 test('reduced motion disables smooth scrolling and decorative transitions', async ({ page }) => {
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');
   const duration = await page.getByTestId('mission-L02').evaluate((item) => getComputedStyle(item).transitionDuration);
   expect(duration).toBe('0s');

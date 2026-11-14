@@ -5,7 +5,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import fixtures from '../../fixtures/levels.json' with { type: 'json' };
 import type { LevelDefinition } from '../../contracts/types';
-import { appUrl, answer, finish, noOverflow, workbench } from '../browser/helpers';
+import { appUrl, answer, at, finish, noOverflow, workbench } from '../browser/helpers';
 
 const html = fileURLToPath(appUrl);
 const levels = fixtures as LevelDefinition[];
@@ -15,7 +15,7 @@ test('the complete single HTML loads offline without localhost, network or sidec
   const attempts: string[] = [], errors: string[] = [];
   page.on('request', request => { if (/^(https?|wss?):/.test(request.url())) attempts.push(request.url()); });
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   expect(new URL(page.url()).protocol).toBe('file:');
   await expect(page.getByTestId('learning-workbench')).toBeVisible();
   await expect(page.getByTestId('search-canvas')).toBeVisible();
@@ -47,7 +47,7 @@ test('copying only the HTML to a different folder still runs a complete A-star l
     await context.setOffline(true);
     const network: string[] = [];
     page.on('request', request => { if (/^https?:/.test(request.url())) network.push(request.url()); });
-    await page.goto(pathToFileURL(copy).href);
+    await page.goto(pathToFileURL(copy).href + '#lab');
     const level = levels.find(item => item.algorithms.includes('astar'))!;
     await page.getByTestId('mission-' + level.id).click();
     await page.getByLabel('本关算法').selectOption('astar');
@@ -69,7 +69,7 @@ test('a denied file-origin storage accessor does not prevent prediction or JSON 
   await page.addInitScript(() => {
     Object.defineProperty(window, 'localStorage', { configurable: true, get() { throw new DOMException('file storage denied', 'SecurityError'); } });
   });
-  await page.goto(appUrl);
+  await page.goto(at('lab'));
   await expect(page.getByTestId('save-status')).toContainText('存储不可用');
   await page.getByRole('button', { name: '开始预测' }).click();
   await answer(page, levels[0]!, 'bfs');

@@ -61,8 +61,15 @@ try {
   const uncompressed = await readFile(join(temporary, 'pathlab.js'), 'utf8');
   const compressed = await minify(uncompressed, { ecma: 2022, format: { comments: /@license|@preserve|^!/ } });
   if (!compressed.code) throw new Error('No browser bundle emitted.');
-  const javascript = compressed.code.replace(/<\/script/gi, '<\\/script');
-  const styles = (await Promise.all(['globals.css', 'learning.css'].map(name => readFile(join(app, 'src/app', name), 'utf8')))).join('\n').replace(/\r\n?/g, '\n');
+  const mime = { '.jpg': 'image/jpeg', '.webp': 'image/webp', '.mp4': 'video/mp4' };
+  const media = {};
+  for (const name of (await readdir(join(app, 'public/media'))).sort()) {
+    const type = mime[name.slice(name.lastIndexOf('.'))];
+    if (!type) throw new Error('Unsupported media file: ' + name);
+    media[name] = 'data:' + type + ';base64,' + (await readFile(join(app, 'public/media', name))).toString('base64');
+  }
+  const javascript = ('window.__PATHLAB_MEDIA__=' + JSON.stringify(media) + ';\n' + compressed.code).replace(/<\/script/gi, '<\\/script');
+  const styles = (await Promise.all(['globals.css', 'learning.css', 'journey.css'].map(name => readFile(join(app, 'src/app', name), 'utf8')))).join('\n').replace(/\r\n?/g, '\n');
   if (/@import\b|url\(|<\/style/i.test(styles)) throw new Error('Inline styles must not depend on external assets.');
   // Canonical raw text keeps the single-file bytes stable across Windows Git checkouts.
   const icon = (await readFile(join(app, 'src/app/icon.svg'), 'utf8')).replace(/\r\n?/g, '\n');
@@ -101,7 +108,7 @@ ${notices.join('\n\n')}
     target,
     bytes: Buffer.byteLength(html, 'utf8'),
     sha256: createHash('sha256').update(html).digest('hex'),
-    embedded: 'production React runtime, shared components/domain, fixtures, both stylesheets and SVG icon',
+    embedded: 'production React runtime, shared components/domain, fixtures, stylesheets, SVG icon and ' + Object.keys(media).length + ' media files',
     externalAssets: 0,
     serverRequired: false,
   }, null, 2));
