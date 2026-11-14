@@ -195,6 +195,55 @@ button.tile:not(:disabled):hover { border-color: var(--naiwa-deep); }
 .certificate { max-width: 720px; margin: 0 auto; padding: 22px; border: 3px double var(--naiwa-deep); border-radius: 18px; background: radial-gradient(circle at top, #2c2710, #15140c 70%); }
 .certificate h3 { font-size: 24px; color: var(--naiwa); }
 
+.glossary-button { flex-shrink: 0; min-height: 40px; padding: 6px 14px; border-radius: 99px; border: 1px dashed var(--naiwa-deep); background: #2a2510; color: var(--naiwa); font-size: 13px; font-weight: 700; }
+.glossary-button:hover { background: #3a3214; }
+.glossary-dialog { width: min(92vw, 620px); max-height: 88vh; padding: 22px; border: 1px solid #4a6276; border-radius: 16px; background: var(--surface); color: var(--text); }
+.glossary-dialog::backdrop { background: rgba(4, 8, 12, .8); }
+.glossary-dialog h2 { font-size: 20px; margin-bottom: 12px; color: var(--naiwa); }
+.glossary-dialog .glossary { margin-bottom: 16px; }
+
+.intro-lesson, .slide-tabs { scroll-margin-top: 130px; }
+.intro-dots { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 14px; }
+.intro-dots button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #44596a; background: #15222d; color: #dbe5ec; font: 700 14px/1 Consolas, monospace; }
+.intro-dots button[aria-current='step'] { background: var(--naiwa); border-color: var(--naiwa); color: #2b2104; }
+.intro-dots button:disabled { opacity: .45; }
+.intro-step { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 26px; align-items: start; }
+.intro-text h2 { margin-top: 4px; font-size: 22px; line-height: 1.4; }
+.intro-text .eyebrow { color: var(--naiwa); }
+.intro-text > p, .intro-text .slide-points { margin-top: 12px; font-size: 15px; line-height: 1.85; }
+.intro-text > .action-primary, .intro-text .journey-check { margin-top: 14px; }
+.intro-text .journey-check small { color: #c4d2dc; font-size: 13px; }
+.intro-lead { font-size: 17px !important; }
+.intro-text b { color: var(--naiwa); }
+.term-cards { display: grid; gap: 10px; margin: 14px 0 0; }
+.term-cards div { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; align-items: center; padding: 12px 14px; border-radius: 12px; background: #142430; border: 1px solid #2f4a5a; }
+.term-cards dt { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 12px; background: var(--naiwa); color: #2b2104; font: 800 28px/1 Consolas, monospace; }
+.term-cards dd { margin: 0; font-size: 15px; line-height: 1.6; }
+.term-cards dd small { display: block; margin-top: 3px; color: #c4d2dc; font-size: 13px; }
+.tile.is-focus { background: #4a3f12; border-color: var(--naiwa); box-shadow: 0 0 0 3px rgba(255, 226, 138, .35); color: #fff3c4; }
+.tile.is-candidate { background: #2c5372; border-color: #7fb4dc; font-size: clamp(14px, 2vw, 18px); }
+.tile.is-wrong-pick { background: #3d1d1c; border-color: var(--bad); }
+@media (max-width: 900px) { .intro-step { grid-template-columns: minmax(0, 1fr); } .station-nav .glossary-button { order: 3; } }
+
+.naiwa-pet { position: fixed; z-index: 20; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; pointer-events: none; }
+.naiwa-pet.is-left { align-items: flex-start; }
+.naiwa-pet.is-high { flex-direction: column-reverse; }
+.naiwa-pet > * { pointer-events: auto; }
+.naiwa-pet-avatar { position: relative; width: 72px; height: 72px; padding: 0; border: 0; border-radius: 50%; background: radial-gradient(circle at 50% 60%, #3a3214, #1d1a0c 70%); box-shadow: 0 8px 22px rgba(0,0,0,.45), 0 0 0 2px var(--naiwa-deep); cursor: grab; touch-action: none; user-select: none; }
+.naiwa-pet-avatar:active { cursor: grabbing; }
+.naiwa-pet-avatar img { width: 62px; height: 62px; object-fit: contain; margin-top: 2px; pointer-events: none; }
+.naiwa-pet-avatar img.is-hop { animation: naiwa-hop .6s ease-out 1; }
+.naiwa-pet-tag { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); padding: 2px 8px; border-radius: 99px; background: var(--naiwa); color: #2b2104; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.naiwa-pet-bubble { width: min(300px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 16px; background: #fff8dc; color: #2d2610; box-shadow: 0 12px 30px rgba(0,0,0,.45); }
+.naiwa-pet-head { display: flex; align-items: center; gap: 8px; }
+.naiwa-pet-head b { color: #8a3b00; font-size: 13px; }
+.naiwa-pet-head span { color: #6b5d2c; font-size: 11px; }
+.naiwa-pet-close { margin-left: auto; width: 32px; height: 32px; border: 0; border-radius: 50%; background: #ffeaa6; color: #3a2d00; font-size: 18px; line-height: 1; }
+.naiwa-pet-bubble p { margin-top: 6px; font-size: 14px; line-height: 1.75; }
+.naiwa-pet-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+@media (max-width: 600px) { .page-shell { padding-bottom: 90px; } .naiwa-pet-avatar { width: 60px; height: 60px; } .naiwa-pet-avatar img { width: 52px; height: 52px; } }
+@media print { .naiwa-pet { display: none; } }
+
 @media (max-width: 1180px) {
   .station-nav { padding-inline: 30px; }
 }

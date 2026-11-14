@@ -7,7 +7,7 @@ test('renders an honest local workbench without claiming results before a run', 
   await page.goto(appUrl);
   await expect(page).toHaveTitle('PathLab AI · 路径学习实验室');
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('再解释下一步');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('A* 是什么');
   await expect(page.getByText('DeepSeek 网页辅助：本机整理、手动复制提问；站内 API 复盘仍为可选')).toBeVisible();
   await page.getByTestId('nav-lab').click();
   await expect(page).toHaveURL(/#lab$/);

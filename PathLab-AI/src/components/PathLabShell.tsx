@@ -9,6 +9,9 @@ import { LearningWorkbench } from './LearningWorkbench';
 import { Playground } from './Playground';
 import { AstarPrimer } from './AstarPrimer';
 import { Naiwa } from './Naiwa';
+import { IntroView } from './journey/IntroView';
+import { GlossaryButton } from './journey/Glossary';
+import { NaiwaPet } from './journey/NaiwaPet';
 import { LifeView } from './journey/LifeView';
 import { PicturesView } from './journey/PicturesView';
 import { VideoView } from './journey/VideoView';
@@ -18,13 +21,14 @@ const algorithmNames: Record<Algorithm, string> = { bfs: 'BFS', astar: 'A*' };
 
 const STATIONS = [
   { id: 'home', nav: '出发', title: '首页', blurb: '', minutes: 0 },
-  { id: 'life', nav: '生活里的 A*', title: '生活里的 A*：导航和游戏都在用', blurb: '从手机导航和游戏“点哪走哪”入手，先玩两个小游戏，找找 A* 藏在哪。', minutes: 5 },
+  { id: 'intro', nav: '认识 A*', title: '认识 A*：从零开始，一步一步', blurb: 'A* 是什么、要解决什么问题、g/h/f 三个字母什么意思、它怎么挑路，一页只讲一件事。', minutes: 8 },
+  { id: 'life', nav: '生活里的 A*', title: '生活里的 A*：导航和游戏都在用', blurb: '用刚学会的 g/h/f 看懂手机导航，再在小镇里点哪走哪，找找 A* 藏在哪。', minutes: 5 },
   { id: 'pictures', nav: '图解 A*', title: '四张图看懂 A*', blurb: '输入输出、基本原理、核心公式、应用场景，一张图讲一件事，看完答一题。', minutes: 6 },
   { id: 'video', nav: '视频课', title: '3 分钟视频 + 亲手算一遍', blurb: '看一段带例题的讲解视频，再把视频里的表格自己填出来。', minutes: 8 },
   { id: 'primer', nav: '互动入门课', title: '互动入门课：先测、再学、再测', blurb: '7 章互动课，逐轮预测 A* 的选择，最后生成前后测掌握度报告。', minutes: 10 },
   { id: 'game', nav: '闯关游戏', title: '奶娃送奶大冒险', blurb: '画最短路、f 值快问快答、当迷宫设计师，在游戏里练熟 A*。', minutes: 10 },
   { id: 'lab', nav: '任务工作台', title: '任务工作台：四个真实关卡', blurb: '校园配送四关，先预测再看证据，支持条件实验、复盘报告与本机存档。', minutes: 15 },
-  { id: 'playground', nav: '自由实验', title: '自由实验室', blurb: '自己画地图，比较 BFS 与 A* 谁处理的格子更少。', minutes: 5 },
+  { id: 'playground', nav: '自由实验', title: '自由实验室', blurb: '自己画地图，比较笨办法（BFS）与 A* 谁试的格子更少。', minutes: 5 },
 ] as const;
 type StationId = typeof STATIONS[number]['id'];
 const ALIASES: Record<string, StationId> = { top: 'home', 'astar-primer': 'primer', 'mission-workspace': 'lab', 'free-playground': 'playground' };
@@ -36,8 +40,8 @@ const stationOf = (hash: string): StationId | null => {
 
 const HOME_LINES = [
   <>嗨！我是<b>奶娃</b>，你的 A* 学习小向导。</>,
-  <>A* 是导航和游戏里最常用的“找路”算法。别怕，不需要任何编程基础。</>,
-  <>我们一站一站走：先玩、再看图、看视频、上手算，最后闯关。点下面的站点就能出发！</>,
+  <><b>A*</b>（读作“A 星”）是一种帮电脑<b>找最短路线</b>的方法。你给它一张地图、起点和终点，它就算出最短的路。</>,
+  <>不用任何编程基础。点“从零开始”，我先一页一页讲清楚 A* 是什么、<b>g、h、f</b> 是什么意思，再带你去玩。</>,
 ];
 
 function BrandMark() {
@@ -133,6 +137,7 @@ export function PathLabShell() {
             </a>
           </li>)}
         </ol>
+        <GlossaryButton />
         <p className="station-progress" aria-live="polite">已到过 {[...visited].filter(id => id !== 'home').length} / {STATIONS.length - 1} 站{index > 0 ? ' · 当前第 ' + index + ' 站' : ''}</p>
       </nav>
 
@@ -140,18 +145,18 @@ export function PathLabShell() {
         {station('home', <>
         <section className="intro intro--journey" aria-labelledby="intro-title">
           <div className="intro-copy">
-            <p className="eyebrow"><span aria-hidden="true">◇</span> PLAY FIRST. THINK NEXT.</p>
-            <h1 id="intro-title">跟着奶娃，玩着学会 A*。<br /><span>先猜，再解释下一步。</span></h1>
-            <p className="intro-description">从手机导航和游戏寻路说起，看图、看视频、亲手算、闯关，<br className="desktop-break" />最后在真实关卡里把“会背算法”变成“能解释每一步选择”。</p>
+            <p className="eyebrow"><span aria-hidden="true">◇</span> 零基础 · 不需要编程知识 · 跟着奶娃一步一步来</p>
+            <h1 id="intro-title">A* 是什么？<br /><span>一种帮电脑找最短路线的方法。</span></h1>
+            <p className="intro-description">手机导航给你规划路线、游戏里角色自己绕开墙走过去、仓库机器人在货架间穿行，背后常常都是 A*。<br className="desktop-break" />它的秘诀是给地图上每个格子打一个分：<b>g</b>（已经走了几步）+ <b>h</b>（估计还要几步）= <b>f</b>（总分），然后总是先试总分最小的格子。<br className="desktop-break" />看不懂也没关系，第 1 站会一页一页讲清楚。</p>
             <div className="intro-actions">
-              <button type="button" className="primary-link" onClick={() => go('life')} data-testid="start-journey">第一次学？从第 1 站出发 <Arrow /></button>
+              <button type="button" className="primary-link" onClick={() => go('intro')} data-testid="start-journey">第一次学？从零开始认识 A* <Arrow /></button>
               <button type="button" className="secondary-link" onClick={() => go('lab')}>已经会了，直接去任务工作台</button>
             </div>
           </div>
           <Naiwa lines={HOME_LINES} size="lg" />
         </section>
         <section className="route" aria-labelledby="route-title">
-          <div className="section-label"><h2 id="route-title">学习路线：7 站，点哪站去哪站</h2><span>建议按顺序走，约 1 小时</span></div>
+          <div className="section-label"><h2 id="route-title">学习路线：{STATIONS.length - 1} 站，点哪站去哪站</h2><span>建议按顺序走，约 1 小时</span></div>
           <ol className="route-list">
             {STATIONS.slice(1).map((item, order) => <li key={item.id}>
               <button type="button" className="route-card" onClick={() => go(item.id)} data-testid={'route-' + item.id}>
@@ -176,6 +181,7 @@ export function PathLabShell() {
         </section>
         </>)}
 
+        {station('intro', <IntroView onFinish={() => go('life')} />)}
         {station('life', <LifeView />)}
         {station('pictures', <PicturesView />)}
         {station('video', <VideoView />)}
@@ -213,7 +219,7 @@ export function PathLabShell() {
         {view === 'home' && <section id="development-status" className="development-status" aria-labelledby="development-title">
           <div><p className="eyebrow">BUILD IN THE OPEN</p><h2 id="development-title">完成到哪里，就展示到哪里。</h2><p>默认本地运行，不需要账号、API Key 或远程服务。</p></div>
           <ul>
-            <li><span className="status-label status-label--ready">已就绪</span><span>点击式 7 站学习路线 / 奶娃向导 / 图解与视频课 / 跟视频算例题 / 三关闯关游戏</span></li>
+            <li><span className="status-label status-label--ready">已就绪</span><span>点击式 8 站学习路线（第 1 站一步一步认识 A* 与 g/h/f）/ 奶娃向导 / 名词小词典 / 图解与视频课 / 跟视频算例题 / 三关闯关游戏</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>A* 零基础入门：学前测 → 5 章（先猜后看、思考过程逐条浮现）→ 学后测与掌握度报告</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>四关简报 / BFS 与 A* / 预测门控 / Canvas 回放</span></li>
             <li><span className="status-label status-label--ready">已就绪</span><span>条件实验 / 证据报告 / 本地规则反馈 / 本机存档 / JSON 备份</span></li>
@@ -223,6 +229,7 @@ export function PathLabShell() {
         </section>}
       </main>
       <footer className="site-footer"><span>PathLab AI <span aria-hidden="true">/</span> 让每一步，都有理由。</span><span>v4 · 点击式学习站 · 奶娃向导 · 闯关游戏</span></footer>
+      <NaiwaPet station={view} />
     </>
   );
 }

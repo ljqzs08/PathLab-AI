@@ -7,9 +7,9 @@ import { Naiwa, Picture, type NaiwaMood } from '../Naiwa';
 import { TileGrid } from './TileGrid';
 
 const INTRO = [
-  <>你用过手机导航吗？输入目的地，几秒钟就给出一条绕开拥堵的路线。</>,
-  <>玩游戏时点一下地面，角色会自己绕开墙和石头走过去。</>,
-  <>这两件事背后，常常是同一个算法——<b>A*（读作“A 星”）</b>。这一站先玩，下一站再讲道理。</>,
+  <>上一站你已经认识了 A*：它给每个格子打分，<b>g</b> = 已经走了几步，<b>h</b> = 估计还要几步，<b>f = g + h</b> 是总分。</>,
+  <>你用过手机导航吗？玩游戏时点一下地面，角色会自己绕开墙走过去。这两件事背后，常常就是 A*。</>,
+  <>这一站用两个小游戏，看看 g、h、f 在生活里长什么样。忘了意思？点顶部的“g/h/f 是什么？”随时查。</>,
 ];
 
 const NAV_PHRASES = [
@@ -24,6 +24,7 @@ function NavMatch() {
   return <div className="journey-card" data-testid="nav-match">
     <h3>小游戏 ①：导航屏幕上的三句话</h3>
     <p>导航 App 一边开车一边告诉你下面三句话。猜猜它们分别对应 A* 里的哪个字母？</p>
+    <p className="journey-tip">复习一下：<b>g</b> = 已经走了多少（走<b>过</b>的），<b>h</b> = 估计还剩多少（<b>还</b>要走的），<b>f</b> = g + h，全程大概多少（总<b>分</b>）。</p>
     <div className="nav-phone" aria-hidden="true"><span className="nav-phone-dot" /><span>导航中 · 前方 200 米右转</span></div>
     <ul className="nav-match">
       {NAV_PHRASES.map(item => {

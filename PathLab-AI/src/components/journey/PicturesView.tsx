@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { mediaUrl, type MediaName } from '../../media';
 import { Naiwa, Picture } from '../Naiwa';
 
@@ -66,11 +66,17 @@ const INTRO = [
 export function PicturesView() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const top = useRef<HTMLOListElement>(null);
+  const turned = useRef(false);
+  useEffect(() => {
+    if (!turned.current) { turned.current = true; return; }
+    if (top.current && top.current.getBoundingClientRect().top < 0) top.current.scrollIntoView({ block: 'start' });
+  }, [index]);
   const slide = SLIDES[index]!;
   const picked = answers[slide.id];
   return <>
     <Naiwa lines={INTRO} />
-    <ol className="slide-tabs" aria-label="图解目录">
+    <ol className="slide-tabs" aria-label="图解目录" ref={top}>
       {SLIDES.map((item, order) => <li key={item.id}>
         <button type="button" aria-current={order === index ? 'step' : undefined} onClick={() => setIndex(order)}>
           <span>{answers[item.id] === item.answer ? '✓' : order + 1}</span>{item.title}

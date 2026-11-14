@@ -11,10 +11,12 @@ const axe = async (page: Page, station: string) => {
 };
 const next = (page: Page, station: string) => page.locator('#view-' + station).getByTestId('station-next').click();
 
-test('home lists seven clickable stations and only the current station is shown', async ({ page }) => {
+test('home explains A* first, lists eight clickable stations and only the current station is shown', async ({ page }) => {
   await page.goto(appUrl);
   await expect(page.getByTestId('naiwa').first()).toBeVisible();
-  await expect(page.locator('.route-card')).toHaveCount(7);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('A* 是什么');
+  await expect(page.locator('.intro-description')).toContainText('g（已经走了几步）');
+  await expect(page.locator('.route-card')).toHaveCount(8);
   await expect(page.getByTestId('learning-workbench')).toHaveCount(0);
   await page.getByTestId('route-video').click();
   await expect(page).toHaveURL(/#video$/);
@@ -124,5 +126,78 @@ test('pager walks every station in order and keeps earlier progress when returni
   }
   await page.getByTestId('nav-pictures').click();
   await expect(page.getByTestId('slide-io')).toContainText('答对了');
-  await expect(page.locator('.station-progress')).toContainText('已到过 6 / 7 站');
+  await expect(page.locator('.station-progress')).toContainText('已到过 6 / 8 站');
+});
+
+test('intro station teaches A* one page at a time and defines g, h and f before using them', async ({ page }) => {
+  await page.goto(appUrl);
+  await page.getByTestId('start-journey').click();
+  await expect(page).toHaveURL(/#intro$/);
+  await expect(page.getByTestId('intro-step-1')).toContainText('算出一条最短的路线');
+  await page.getByTestId('intro-next').click();
+  await expect(page.getByTestId('intro-next')).toBeDisabled();
+  await page.locator('[data-testid="intro-grid"] [data-tile="3,2"]').click();
+  await expect(page.getByTestId('intro-step-2')).toContainText('这是墙');
+  await page.locator('[data-testid="intro-grid"] [data-tile="0,2"]').click();
+  await page.locator('[data-testid="intro-grid"] [data-tile="6,2"]').click();
+  await page.getByTestId('intro-next').click();
+  await page.getByRole('button', { name: '8 步', exact: true }).click();
+  await expect(page.getByTestId('intro-step-3')).toContainText('一格一格地试');
+  await page.getByTestId('intro-next').click();
+  await page.getByTestId('intro-wave').click();
+  await expect(page.getByTestId('intro-step-4')).toContainText('试了 30 个格子');
+  await page.getByTestId('intro-next').click();
+  await expect(page.getByTestId('intro-step-5')).not.toContainText('g =');
+  await page.getByRole('button', { name: '1 步', exact: true }).click();
+  await page.getByRole('button', { name: '5 步', exact: true }).click();
+  await page.getByTestId('intro-next').click();
+  await expect(page.getByTestId('intro-step-6')).toContainText('已经走了几步');
+  await page.getByTestId('intro-f').fill('7');
+  await page.getByRole('button', { name: '检查' }).click();
+  await expect(page.getByTestId('intro-step-6')).toContainText('还不对');
+  await page.getByTestId('intro-f').fill('8');
+  await page.getByRole('button', { name: '检查' }).click();
+  await expect(page.getByTestId('intro-step-6')).toContainText('f = 1 + 7 = 8');
+  await page.getByTestId('intro-next').click();
+  await page.locator('[data-testid="intro-grid"] [data-tile="1,2"]').click();
+  await expect(page.getByTestId('intro-step-7')).toContainText('答对了');
+  await page.getByTestId('intro-next').click();
+  await page.getByTestId('intro-walk').click();
+  await expect(page.getByTestId('intro-step-8')).toContainText('只试了 8 个格子');
+  await page.getByTestId('intro-next').click();
+  await axe(page, 'intro'); await noOverflow(page);
+  await page.getByTestId('glossary-open').click();
+  await expect(page.getByRole('dialog', { name: '名词小词典' })).toContainText('估计还要几步');
+  await page.getByRole('button', { name: '知道了' }).click();
+  await expect(page.getByRole('dialog')).toBeHidden();
+  await page.getByTestId('intro-finish').click();
+  await expect(page).toHaveURL(/#life$/);
+});
+
+test('the Naiwa desktop-pet helper gives station-specific hints, can be dragged and opens the glossary', async ({ page }) => {
+  await page.goto(at('intro'));
+  const pet = page.getByTestId('naiwa-pet-button');
+  await expect(pet).toHaveAttribute('aria-expanded', 'false');
+  await pet.click();
+  const bubble = page.getByTestId('naiwa-pet-bubble');
+  await expect(bubble).toContainText('“下一页”按钮才会亮');
+  await page.getByTestId('naiwa-pet-more').click();
+  await expect(bubble).toContainText('S 是绿色格子');
+  await page.getByTestId('nav-game').click();
+  await expect(bubble).toContainText('画路线');
+  await bubble.getByRole('button', { name: '查名词小词典' }).click();
+  await expect(page.getByRole('dialog', { name: '名词小词典' })).toBeVisible();
+  await page.getByRole('button', { name: '知道了' }).click();
+  await page.getByRole('button', { name: '收起提示', exact: true }).click();
+  await expect(bubble).toHaveCount(0);
+  const before = (await pet.boundingBox())!;
+  await page.mouse.move(before.x + 30, before.y + 30);
+  await page.mouse.down();
+  await page.mouse.move(before.x - 60, before.y - 80, { steps: 6 });
+  await page.mouse.up();
+  const after = (await pet.boundingBox())!;
+  expect(before.x - after.x).toBeGreaterThan(50);
+  expect(before.y - after.y).toBeGreaterThan(50);
+  await expect(pet).toHaveAttribute('aria-expanded', 'false');
+  await axe(page, 'game');
 });
