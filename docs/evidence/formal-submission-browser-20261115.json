@@ -1,0 +1,478 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI automated browser",
+  "browser": "Windows Edge 157.0.4341.46",
+  "mode": "headless file:// offline at 1440/768/390/320 simulated widths",
+  "passed": 109,
+  "checks": [
+    {
+      "name": "1440 portal single current work",
+      "passed": true
+    },
+    {
+      "name": "1440 portal no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 evidence navigation heading",
+      "passed": true
+    },
+    {
+      "name": "1440 evidence has three core and two supplement guides",
+      "passed": true
+    },
+    {
+      "name": "1440 all original gallery photos",
+      "passed": true
+    },
+    {
+      "name": "1440 gallery no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "1440 final HTML no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 station intro",
+      "passed": true
+    },
+    {
+      "name": "1440 station life",
+      "passed": true
+    },
+    {
+      "name": "1440 station pictures",
+      "passed": true
+    },
+    {
+      "name": "1440 station video",
+      "passed": true
+    },
+    {
+      "name": "1440 station primer",
+      "passed": true
+    },
+    {
+      "name": "1440 station game",
+      "passed": true
+    },
+    {
+      "name": "1440 station lab",
+      "passed": true
+    },
+    {
+      "name": "1440 station playground",
+      "passed": true
+    },
+    {
+      "name": "1440 coach opened",
+      "passed": true
+    },
+    {
+      "name": "1440 coach five steps",
+      "passed": true
+    },
+    {
+      "name": "1440 engine comparison visible",
+      "passed": true
+    },
+    {
+      "name": "1440 review opened",
+      "passed": true
+    },
+    {
+      "name": "1440 local learning prompt exists",
+      "passed": true
+    },
+    {
+      "name": "1440 L01 BFS actual reflection",
+      "passed": true
+    },
+    {
+      "name": "1440 original fact preview contains real F1 citation",
+      "passed": true
+    },
+    {
+      "name": "1440 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "1440 no automatic network requests",
+      "passed": true
+    },
+    {
+      "name": "768 portal single current work",
+      "passed": true
+    },
+    {
+      "name": "768 portal no overflow",
+      "passed": true
+    },
+    {
+      "name": "768 evidence navigation heading",
+      "passed": true
+    },
+    {
+      "name": "768 evidence has three core and two supplement guides",
+      "passed": true
+    },
+    {
+      "name": "768 all original gallery photos",
+      "passed": true
+    },
+    {
+      "name": "768 gallery no overflow",
+      "passed": true
+    },
+    {
+      "name": "768 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "768 final HTML no overflow",
+      "passed": true
+    },
+    {
+      "name": "768 station intro",
+      "passed": true
+    },
+    {
+      "name": "768 station life",
+      "passed": true
+    },
+    {
+      "name": "768 station pictures",
+      "passed": true
+    },
+    {
+      "name": "768 station video",
+      "passed": true
+    },
+    {
+      "name": "768 station primer",
+      "passed": true
+    },
+    {
+      "name": "768 station game",
+      "passed": true
+    },
+    {
+      "name": "768 station lab",
+      "passed": true
+    },
+    {
+      "name": "768 station playground",
+      "passed": true
+    },
+    {
+      "name": "768 coach opened",
+      "passed": true
+    },
+    {
+      "name": "768 coach five steps",
+      "passed": true
+    },
+    {
+      "name": "768 engine comparison visible",
+      "passed": true
+    },
+    {
+      "name": "768 review opened",
+      "passed": true
+    },
+    {
+      "name": "768 local learning prompt exists",
+      "passed": true
+    },
+    {
+      "name": "768 L01 BFS actual reflection",
+      "passed": true
+    },
+    {
+      "name": "768 original fact preview contains real F1 citation",
+      "passed": true
+    },
+    {
+      "name": "768 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "768 no automatic network requests",
+      "passed": true
+    },
+    {
+      "name": "390 portal single current work",
+      "passed": true
+    },
+    {
+      "name": "390 portal no overflow",
+      "passed": true
+    },
+    {
+      "name": "390 evidence navigation heading",
+      "passed": true
+    },
+    {
+      "name": "390 evidence has three core and two supplement guides",
+      "passed": true
+    },
+    {
+      "name": "390 all original gallery photos",
+      "passed": true
+    },
+    {
+      "name": "390 gallery no overflow",
+      "passed": true
+    },
+    {
+      "name": "390 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "390 final HTML no overflow",
+      "passed": true
+    },
+    {
+      "name": "390 station intro",
+      "passed": true
+    },
+    {
+      "name": "390 station life",
+      "passed": true
+    },
+    {
+      "name": "390 station pictures",
+      "passed": true
+    },
+    {
+      "name": "390 station video",
+      "passed": true
+    },
+    {
+      "name": "390 station primer",
+      "passed": true
+    },
+    {
+      "name": "390 station game",
+      "passed": true
+    },
+    {
+      "name": "390 station lab",
+      "passed": true
+    },
+    {
+      "name": "390 station playground",
+      "passed": true
+    },
+    {
+      "name": "390 coach opened",
+      "passed": true
+    },
+    {
+      "name": "390 coach five steps",
+      "passed": true
+    },
+    {
+      "name": "390 engine comparison visible",
+      "passed": true
+    },
+    {
+      "name": "390 review opened",
+      "passed": true
+    },
+    {
+      "name": "390 local learning prompt exists",
+      "passed": true
+    },
+    {
+      "name": "390 L01 BFS actual reflection",
+      "passed": true
+    },
+    {
+      "name": "390 original fact preview contains real F1 citation",
+      "passed": true
+    },
+    {
+      "name": "390 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "390 no automatic network requests",
+      "passed": true
+    },
+    {
+      "name": "320 portal single current work",
+      "passed": true
+    },
+    {
+      "name": "320 portal no overflow",
+      "passed": true
+    },
+    {
+      "name": "320 evidence navigation heading",
+      "passed": true
+    },
+    {
+      "name": "320 evidence has three core and two supplement guides",
+      "passed": true
+    },
+    {
+      "name": "320 all original gallery photos",
+      "passed": true
+    },
+    {
+      "name": "320 gallery no overflow",
+      "passed": true
+    },
+    {
+      "name": "320 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "320 final HTML no overflow",
+      "passed": true
+    },
+    {
+      "name": "320 station intro",
+      "passed": true
+    },
+    {
+      "name": "320 station life",
+      "passed": true
+    },
+    {
+      "name": "320 station pictures",
+      "passed": true
+    },
+    {
+      "name": "320 station video",
+      "passed": true
+    },
+    {
+      "name": "320 station primer",
+      "passed": true
+    },
+    {
+      "name": "320 station game",
+      "passed": true
+    },
+    {
+      "name": "320 station lab",
+      "passed": true
+    },
+    {
+      "name": "320 station playground",
+      "passed": true
+    },
+    {
+      "name": "320 coach opened",
+      "passed": true
+    },
+    {
+      "name": "320 coach five steps",
+      "passed": true
+    },
+    {
+      "name": "320 engine comparison visible",
+      "passed": true
+    },
+    {
+      "name": "320 review opened",
+      "passed": true
+    },
+    {
+      "name": "320 local learning prompt exists",
+      "passed": true
+    },
+    {
+      "name": "320 L01 BFS actual reflection",
+      "passed": true
+    },
+    {
+      "name": "320 original fact preview contains real F1 citation",
+      "passed": true
+    },
+    {
+      "name": "320 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "320 no automatic network requests",
+      "passed": true
+    },
+    {
+      "name": "01-产品演示-H264.mp4 dimensions",
+      "passed": true
+    },
+    {
+      "name": "01-产品演示-H264.mp4 native duration",
+      "passed": true
+    },
+    {
+      "name": "01-产品演示-H264.mp4 brief frames decoded",
+      "passed": true
+    },
+    {
+      "name": "02-历史聊天回看-H264.mp4 dimensions",
+      "passed": true
+    },
+    {
+      "name": "02-历史聊天回看-H264.mp4 native duration",
+      "passed": true
+    },
+    {
+      "name": "02-历史聊天回看-H264.mp4 brief frames decoded",
+      "passed": true
+    },
+    {
+      "name": "03-改版聊天回看-H264.mp4 dimensions",
+      "passed": true
+    },
+    {
+      "name": "03-改版聊天回看-H264.mp4 native duration",
+      "passed": true
+    },
+    {
+      "name": "03-改版聊天回看-H264.mp4 brief frames decoded",
+      "passed": true
+    }
+  ],
+  "metadata": [
+    {
+      "file": "01-产品演示-H264.mp4",
+      "width": 960,
+      "height": 544,
+      "duration": 243.1,
+      "playedBriefly": true
+    },
+    {
+      "file": "02-历史聊天回看-H264.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 36.033333,
+      "playedBriefly": true
+    },
+    {
+      "file": "03-改版聊天回看-H264.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 18.933333,
+      "playedBriefly": true
+    }
+  ],
+  "htmlSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "sampledZipSha256": "e61006a7a98b3c3b70c2ea98f27a4d2899f728120bd85efc61504f25b5bd178e",
+  "scope": "Extracted formal packet portal, core guides navigation, seven-photo loading, eight stations, coach/replay, local review prompt, BFS L01 real reflection/fact citations, three H264 metadata+brief frame playback. No full product regression, audio listening, complete video content review, external login/API, human/device or teaching-effect acceptance.",
+  "visualReview": {
+    "executor": "AI",
+    "temporaryScreenshotsViewed": 3,
+    "scope": "desktop and mobile submission portal plus mobile current work; no clipping observed",
+    "notHumanAcceptance": true
+  },
+  "actualHarnessSha256": "951029cda2f668d50259613bfed5cd132928a0d34bab1d93607e5bbd58005325"
+}

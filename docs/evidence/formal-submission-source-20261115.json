@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "head": "955df39c5db78bf07614486018d6b52b6ea07b69",
+  "commitCount": 75,
+  "trackedFiles": 653,
+  "everyGitBlobVerified": true,
+  "bundle": "PathLab-AI-完整历史-955df39.bundle",
+  "bundleSha256": "ca56cc3078393483e6d79a605f3de7e6aa32c46db1f4b144c12080aa1ec84c36",
+  "independentBundleClonePassed": true,
+  "selectedHtmlSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "fullInstallOrProductRegressionThisRound": false
+}

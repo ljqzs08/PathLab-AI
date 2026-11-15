@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "target": "D:\\竞赛\\.cache\\formal-submission-20261115",
+  "resolvedInsideWorkspace": true,
+  "scope": "Only newly generated E040 temporary renders, browser samples and bundle recovery clone; original evidence and old rejected cleanup paths untouched",
+  "attempt": "One exact native PowerShell Remove-Item command rejected by tool policy before process execution",
+  "executionStarted": false,
+  "removed": false,
+  "remainingFiles": 1493,
+  "remainingImages": 154,
+  "remainingBytes": 240383334,
+  "retryOrBypassPerformed": false,
+  "notInFormalDeliveryDirectory": true,
+  "followUp": "Temporary directory remains on D; no retry, shell switch or alternative deletion. User may inspect and clean it manually."
+}

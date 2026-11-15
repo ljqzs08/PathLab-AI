@@ -38,6 +38,10 @@ try{for(const width of [1440,768,390,320]){
  check(width+' local learning prompt exists',(await page.locator('#pl-review-preview').inputValue()).length>40,true);
  await page.keyboard.press('Escape');
  if(width===390)await page.screenshot({path:path.join(TMP,'work-390.png')});
+ await page.getByTestId('mission-L01').click();await page.getByLabel('本关算法').selectOption('bfs');await page.getByRole('button',{name:'开始预测',exact:true}).click();
+ let reached=false;for(let i=0;i<110;i++){const state=await page.getByTestId('learning-workbench').getAttribute('data-state');if(state==='reflection'){reached=true;break}if(state==='prediction'){await page.locator('[data-testid^="candidate-"]').first().click();await page.getByTestId('submit-prediction').click()}else{assert.equal(state,'paused');await page.getByTestId('step').click()}}
+ check(width+' L01 BFS actual reflection',reached,true);check(width+' original fact preview contains real F1 citation',(await page.getByTestId('web-review-preview').inputValue()).includes('[F1]'),true);
+
  check(width+' no JavaScript errors',errors,[]);check(width+' no automatic network requests',requests,[]);await ctx.close();
 }
  const ctx=await browser.newContext({offline:true,viewport:{width:1440,height:1000}}),page=await ctx.newPage();
@@ -52,6 +56,6 @@ try{for(const width of [1440,768,390,320]){
   check(files[i]+' brief frames decoded',await v.evaluate(e=>e.getVideoPlaybackQuality().totalVideoFrames>0),true);metadata.push({file:files[i],...m,playedBriefly:true});
  }
  await ctx.close();
- const result={date:'2026-11-15',executor:'AI automated browser',browser:'Windows Edge '+browser.version(),mode:'headless file:// offline at 1440/768/390/320 simulated widths',passed:checks.length,checks,metadata,htmlSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(SAMPLE,html))).digest('hex'),sampledZipSha256:JSON.parse(fs.readFileSync(path.join(ROOT,'docs/evidence/formal-submission-first-package-20261115.json'),'utf8')).zipSha256,scope:'Extracted formal packet portal, core guides navigation, seven-photo loading, eight stations, coach/replay, local review prompt, three H264 metadata+brief frame playback. No full product regression, audio listening, complete video content review, external login/API, human/device or teaching-effect acceptance.'};
+ const result={date:'2026-11-15',executor:'AI automated browser',browser:'Windows Edge '+browser.version(),mode:'headless file:// offline at 1440/768/390/320 simulated widths',passed:checks.length,checks,metadata,htmlSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(SAMPLE,html))).digest('hex'),sampledZipSha256:JSON.parse(fs.readFileSync(path.join(ROOT,'docs/evidence/formal-submission-first-package-20261115.json'),'utf8')).zipSha256,scope:'Extracted formal packet portal, core guides navigation, seven-photo loading, eight stations, coach/replay, local review prompt, BFS L01 real reflection/fact citations, three H264 metadata+brief frame playback. No full product regression, audio listening, complete video content review, external login/API, human/device or teaching-effect acceptance.'};
  fs.writeFileSync(path.join(ROOT,'docs/evidence/formal-submission-browser-20261115.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({passed:checks.length,browser:browser.version(),metadata}));
 }finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
