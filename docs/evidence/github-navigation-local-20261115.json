@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-15T10:01:13.109182+00:00",
+  "checkedAt": "2026-11-15T10:11:33.024448+00:00",
   "executor": "AI",
   "mode": "local",
   "productRegressionRerun": false,
@@ -952,9 +952,21 @@
     {
       "name": "prompt role github-reorganization:2215",
       "ok": true
+    },
+    {
+      "name": "prompt original text github-reorganization:2271",
+      "ok": true
+    },
+    {
+      "name": "prompt text SHA github-reorganization:2271",
+      "ok": true
+    },
+    {
+      "name": "prompt role github-reorganization:2271",
+      "ok": true
     }
   ],
-  "passed": 236,
+  "passed": 239,
   "failed": 0,
   "ok": true
 }

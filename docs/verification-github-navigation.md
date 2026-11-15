@@ -32,11 +32,36 @@
 ## 对话留证
 
 E041 目录澄清轮真实末答复已补为 6 条 / finalCaptured=true。保留旧版咨询为 2 条 / finalCaptured=true。
-本轮原始要求和真实可见进展另存 `prompts/sessions/2026-11-15-github-reorganization.{md,jsonl}`，不把上传或导航整理当作新核心功能链；本轮最终答复只能在实际落盘后补齐。
+本轮原始要求和真实可见进展另存 `prompts/sessions/2026-11-15-github-reorganization.{md,jsonl}`，当前5条已与源文核对，内部交接明确排除；不把上传或导航整理当作新核心功能链。本轮最终答复只能在实际落盘后补齐，不预写完成记录。
 
 提取命令的第一次复合调用在三份导出均已成功后，因 PowerShell 残留的原生 LASTEXITCODE 被错误判断失败；导出器没有失败。后续以 JSONL、源行与文本 SHA 对照为准，不将残留退出码当成 Prompt 内容失败。
 
 ## 核验与发布状态
+
+### 已实际发布
+
+导航提交 A：`bd2a63e3a5e65ee2a8a04a6be7ae63fa938d8d99`，正常推送 `origin main:main`，不改写历史。About 简介、正式 Release 主页链接、6个 topics 和四个 Release 标题/正文均已发布；`formal-submission-20261115` 继续 Latest。v2、v3 明确为历史版本，早期 Prompt 为历史证据附件，旧正文在新增指引后保留。没有新建 Release、重传附件、改标签或改权限。
+
+2026-11-15 18:07 +08:00，匿名标准库 HTTP/REST 核对 **311/311通过、0失败**（其中本地236项；此为刷新本轮第5条可见进展前的真实时点，不与之后的检查相加）。33个发布文件逐 Git blob 核对、README 原字节、About/topics、Latest、四个 Release 标题/说明、原附件 ID/大小/digest、四个原标签对象、可见性与默认分支均通过；匿名核对不使用 cookie 或 Authorization。
+
+`docs/evidence/github-navigation-tool-checks-20261115.json` 记录9项合成工具检查通过，范围仅是比较器/行尾归一/附件身份判断，不是产品测试。已登录 Edge 只读刷新根目录页面，观察到新 README 正式下载、当前作品、根目录用途和 About；页面观察不作为匿名访问证明，未保存新检查图。
+
+### 真实失败与修正
+
+1. `docs/evidence/github-navigation-public-20261115-failure-100155.json`：元数据发布成功后的首次匿名复核遇到 HTTP403 配额用尽；已通过236项本地检查，没有断言失败。配额重置为2026-11-15 18:02:44 +08:00，等待后重试，未用认证查询冒充匿名。
+2. `docs/evidence/github-navigation-public-20261115-failure-100551.json`：重试已通过272项后，发现本地尚未获取 `prompt-evidence-20261025` 原标签，`git rev-parse` 退出128。这是核验环境前提遗漏，不是发布丢失标签或产品缺陷。
+3. 仅从原远程获取缺少的两个既有标签，未创建新远程标签、未强制覆盖、未修改核验断言，随后完整匿名复核通过。失败回执原样保留。
+
+复用命令（仓库根目录；fetch只补本地原标签，已有时不改对象）：
+
+```powershell
+git fetch --no-tags origin refs/tags/prompt-evidence-20261025:refs/tags/prompt-evidence-20261025 refs/tags/formal-submission-20261115:refs/tags/formal-submission-20261115
+$env:PYTHONDONTWRITEBYTECODE='1'
+$env:PYTHONIOENCODING='utf-8'
+python -B scripts/verify-github-navigation.py --public --expected-main bd2a63e3a5e65ee2a8a04a6be7ae63fa938d8d99
+```
+
+`--expected-main` 须按实际当前 main 替换；发布收尾提交后，用同一模块的只读 `local_checks()` / `public_checks(实际main)` 在内存核对，不反复覆盖已归档回执或制造自引用提交。导航提交A的公开回执保留A时点身份；后续验收/说明/第5条可见进展另作增量提交，不反写冻结源码、bundle或正式包。
 
 以 `docs/evidence/github-navigation-local-20261115.json` 和 `docs/evidence/github-navigation-public-20261115.json` 的实际结果为准。
 发布后逐个核对当前提交相关 Git blob、README 原字节、四个 Release 的标题/说明、About、Latest、附件身份与旧标签对象；人类可读 Release 说明允许 API 的 CRLF / 本地 LF 行尾归一，不放宽任何工件字节校验。

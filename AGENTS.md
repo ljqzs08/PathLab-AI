@@ -127,10 +127,10 @@ README新增唯一正式材料下载入口并纠正当前HTML指向，不将工�
 
 E041发布记录真实提交为 `0a9d1673fb3b7254f9799cadd6d50fc61d5ef4c4`，已正常推送；其19个修改文件的公开Git blob/README、三附件、latest与旧标签经匿名API收尾核对。额外Release说明原始文本比较的CRLF差异已明确仅归一文案行尾后核对，不涉及ZIP或源码字节；见 `docs/evidence/github-formal-closeout-20261115.json`。此回执后置，不反写已有包或哈希时序。
 
-## E042：GitHub 单一正式入口与历史标识整理（2026-11-15，发布准备）
+## E042：GitHub 单一正式入口与历史标识整理（2026-11-15，已发布）
 
-作者确认保留旧版与 Git 历史，同时要求按当前仓库截图重新整理并发布。README 已按正式下载、当前作品、目录用途重排；新增根入口与各目录说明、工程运行/版本历史/历史归档导航；旧 Release 原正文保留，仅前置现行指引与历史标识，正式 Latest 和附件保持冻结。
+作者确认采用“单一当前正式入口＋可追溯历史”。导航提交 `bd2a63e3a5e65ee2a8a04a6be7ae63fa938d8d99` 已正常推送 main；README、根入口、截图各目录说明、工程指南、版本历史与 Prompt 索引已同步。仓库 About/主页/topics 与四个 Release 说明已发布；正式包继续 Latest，v2/v3 标为历史版本，早期 Prompt 标为历史证据，旧说明正文保留。
 
-本轮首次本地只读导航、链接、原 ZIP/HTML 哈希、原文快照229项通过；后续数量以真实回执为准；不修改应用源码、正式 ZIP、旧附件或标签，不重跑产品/真人/真机测试。About/Release 元数据与 main 正常增量发布尚待下阶段实际执行，结果以 E042 核验回执为准，不预写成功。
+匿名核对导航提交311/311通过：33个文件 Git blob、README原字节、About、四个Release及附件身份、Latest和四个原标签对象一致，权限未改；9项合成工具检查通过。真实首轮API配额403与随后本地缺原标签的失败回执保留；配额恢复后仅fetch两个既有原标签（不创建/改写远程），完整重验通过。正式ZIP仍为131747543字节、SHA256 `64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25`；作品HTML/Next源码/旧附件不改，不重压、不重新下载完整附件、不重跑产品或真人/真机验收。已登录Edge只读刷新观察到新首页、目录用途和About，不将其冒充匿名访问证据。
 
-E041 澄清轮真实末答复已补为6条/finalCaptured=true，旧版咨询2条已完整；本轮快照见 `prompts/sessions/2026-11-15-github-reorganization`，最终答复仍待真实落盘。C01/C02/C03共享原文与U01真实性边界不变。原图作为用户提供证据保留，未产生新下载/检查图缓存，旧被拒清理目录不动。详见 `docs/verification-github-navigation.md`。
+E041澄清轮6条/旧版咨询2条真实末答复已补；本轮快照5条，内部交接已排除，末答复仍待实际落盘后补。C01/C02/C03共享原文与U01边界不变；GitHub发布不是网站部署或赛事代交。用户原图作为证据保留，无新增下载/检查图缓存，旧被拒清理目录不动。偏好与流程：只推荐当前版，不删演进；复用 `docs/github-navigation.json` 与 `scripts/verify-github-navigation.py`，不为刷新日期修改原证据。发布后的真实验收回执与说明另作收尾提交，不反写冻结源码/原包。详见 `docs/verification-github-navigation.md`、`docs/evidence/github-navigation-public-20261115.json`。

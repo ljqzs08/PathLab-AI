@@ -2,11 +2,11 @@
 
 - Session ID: `01a1dd07-eb8f-7d00-b249-b50750f5234d`
 - Source file: `rollout-2026-11-15T10-27-26-01a1dd07-eb8f-7d00-b249-b50750f5234d.jsonl` (read-only)
-- Captured at: 2026-11-15T18:01:12.9609110+08:00
-- Visible messages captured: 4
+- Captured at: 2026-11-15T18:09:11.9085350+08:00
+- Visible messages captured: 5
 - Final assistant answer captured: False
 - Incomplete source tail skipped: False
-- Internal handoff source lines excluded: 
+- Internal handoff source lines excluded: 2245
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
 - 这是从真实本地记录提取的可见文字，不是工具原生全量导出，也不是截图或录屏。最终答复未写入时，该轮证据仍待补齐；缺失附件不视为已导出。本快照是否属于核心功能链以演进索引为准，策略讨论不能计作核心功能迭代。
 
@@ -45,3 +45,9 @@ Source line: 2121; Timestamp: 2026-11-15T09:49:04.729Z; Text SHA256: `0d415ebc23
 Source line: 2215; Timestamp: 2026-11-15T10:01:04.127Z; Text SHA256: `bc3176c75be70235466078d71c31384d802f51a108e8777708cd895eb746b7be`
 
 导航和目录说明已整理好，本地链接、正式 ZIP/HTML 哈希、历史正文和对话原文检查均通过。接下来同步发布到 GitHub：新版继续作为 Latest，v2、v3 标为“历史版本”，旧 Prompt 发布标为“历史证据附件”，同时更新仓库右侧简介和链接。
+
+## 5. assistant / commentary
+
+Source line: 2271; Timestamp: 2026-11-15T10:06:06.499Z; Text SHA256: `77089a963e6bd8f0bd79e6f158be78f12e6629590697ab3b02fa47c90e320897`
+
+首页、目录说明和各版本的发布标识已经更新到 GitHub，旧版和历史记录都保留。现在做最后的公开访问核对，重点确认正式版入口清楚、旧版不会被误当成当前参赛版，且原提交包没有被替换。
