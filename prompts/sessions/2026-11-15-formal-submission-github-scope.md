@@ -2,9 +2,9 @@
 
 - Session ID: `01a1dd07-eb8f-7d00-b249-b50750f5234d`
 - Source file: `rollout-2026-11-15T10-27-26-01a1dd07-eb8f-7d00-b249-b50750f5234d.jsonl` (read-only)
-- Captured at: 2026-11-15T17:24:53.4021397+08:00
-- Visible messages captured: 5
-- Final assistant answer captured: False
+- Captured at: 2026-11-15T17:51:49.3928189+08:00
+- Visible messages captured: 6
+- Final assistant answer captured: True
 - Incomplete source tail skipped: False
 - Internal handoff source lines excluded: 1638
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -40,3 +40,41 @@ Source line: 1844; Timestamp: 2026-11-15T09:15:52.445Z; Text SHA256: `c3a6122a02
 Source line: 1935; Timestamp: 2026-11-15T09:23:30.263Z; Text SHA256: `45a7b46d8f590952a86fcf81b5edd438c2dbfe084270db38f339744f1dc54a6c`
 
 匿名下载核验已通过：远端正式 ZIP 与本地原件的 SHA256 完全一致，775 个条目的 CRC 和清单检查也通过。现在正在同步仓库首页的最新版下载入口与核验记录，避免评审误下旧版或 GitHub 自动生成的源码 ZIP。
+
+## 6. assistant / final_answer
+
+Source line: 2027; Timestamp: 2026-11-15T09:37:00.846Z; Text SHA256: `cfd9f1f342f01803d892d09b09aacda4a140627c26630268a886564a27b5604e`
+
+## 已完成
+
+已把你指定的 **`PathLab-AI-正式参赛文件-20261115`** 发布到 **`ljqzs08/PathLab-AI`**，正式包放在最新的 **GitHub Release** 中，没有误传成 v3 或完整历史归档版。**下载入口：正式参赛文件 Release 页面。** 
+
+下载其中的 **`PathLab-AI-formal-submission-20261115.zip`**（约 **131.75 MB**），完整解压后打开 **`00-打开最新参赛材料.html`**。不要下载 GitHub 自动生成的 `Source code (zip)`，那不是完整参赛材料包。下载文件采用英文名，但内容与本地中文名称的原 ZIP 完全一致。
+
+仓库首页已加入最新版下载入口，原有 Git 历史和旧版标签保留；最终推送提交为 **`5ae84a2`**。([github.com](https://github.com/ljqzs08/PathLab-AI/commit/5ae84a24e8f769f8b40d6c60a3e52578b46f69b8))
+
+## 验证结果
+
+- 已在**无登录凭证**的情况下完整下载 ZIP、SHA256 文件和核验回执，三个附件均与本地原件一致。
+- ZIP 的 **775 个条目 CRC、774 个清单内容文件 SHA256** 全部核对通过。([raw.githubusercontent.com](https://raw.githubusercontent.com/ljqzs08/PathLab-AI/5ae84a24e8f769f8b40d6c60a3e52578b46f69b8/docs/evidence/github-formal-publication-20261115.json))
+- 本轮临时 GitHub CLI 登录已注销。
+
+核验与可复用流程已保存于：  
+`D:\竞赛\docs\verification-formal-github-publication.md`
+
+真实 Prompt 留证于：  
+`D:\竞赛\prompts\sessions\2026-11-15-formal-submission-github-scope.md`  
+当前这条末答复将在实际落盘后补齐。([raw.githubusercontent.com](https://raw.githubusercontent.com/ljqzs08/PathLab-AI/5ae84a24e8f769f8b40d6c60a3e52578b46f69b8/docs/verification-formal-github-publication.md))
+
+## 剩余边界
+
+这是 **GitHub 发布完成**，不是赛事平台正式提交或网站部署；三条核心链仍保留真实共享开发证据，不冒充独立人类报错或真人验收。另有三份匿名下载缓存约 132.51 MB，删除被工具策略拒绝，仍留在 D 盘缓存目录，**不在参赛包内，不影响下载使用**。([raw.githubusercontent.com](https://raw.githubusercontent.com/ljqzs08/PathLab-AI/5ae84a24e8f769f8b40d6c60a3e52578b46f69b8/docs/verification-formal-github-publication.md))
+
+<oai-mem-citation>
+<citation_entries>
+MEMORY.md:30-37|note=[reused D-drive evidence and verification workflow]
+</citation_entries>
+<rollout_ids>
+01a146d1-cc80-7722-a40f-28321250bcce
+</rollout_ids>
+</oai-mem-citation>

@@ -608,3 +608,11 @@ README新增唯一正式材料下载入口并纠正当前HTML指向，不将工�
 核验工具首次仓库API尾斜杠404和资产名集合失败均真实记录后修正，不修改产品、不放宽包字节断言。新匿名下载缓存仅一次精确PowerShell清理被工具进程前拒绝，3文件/132512208字节留D盘；不重试、不绕过，旧拒绝目录不动。见 `docs/verification-formal-github-publication.md`、`docs/evidence/github-formal-publication-20261115.json`。本轮发布记录随后形成本地正常提交并推送，不产生哈希自引用；不是网站部署或赛事平台正式提交。
 
 E041发布记录真实提交为 `0a9d1673fb3b7254f9799cadd6d50fc61d5ef4c4`，已正常推送；其19个修改文件的公开Git blob/README、三附件、latest与旧标签经匿名API收尾核对。额外Release说明原始文本比较的CRLF差异已明确仅归一文案行尾后核对，不涉及ZIP或源码字节；见 `docs/evidence/github-formal-closeout-20261115.json`。此回执后置，不反写已有包或哈希时序。
+
+## E042：GitHub 单一正式入口与历史标识整理（2026-11-15，发布准备）
+
+作者确认保留旧版与 Git 历史，同时要求按当前仓库截图重新整理并发布。README 已按正式下载、当前作品、目录用途重排；新增根入口与各目录说明、工程运行/版本历史/历史归档导航；旧 Release 原正文保留，仅前置现行指引与历史标识，正式 Latest 和附件保持冻结。
+
+本轮首次本地只读导航、链接、原 ZIP/HTML 哈希、原文快照229项通过；后续数量以真实回执为准；不修改应用源码、正式 ZIP、旧附件或标签，不重跑产品/真人/真机测试。About/Release 元数据与 main 正常增量发布尚待下阶段实际执行，结果以 E042 核验回执为准，不预写成功。
+
+E041 澄清轮真实末答复已补为6条/finalCaptured=true，旧版咨询2条已完整；本轮快照见 `prompts/sessions/2026-11-15-github-reorganization`，最终答复仍待真实落盘。C01/C02/C03共享原文与U01真实性边界不变。原图作为用户提供证据保留，未产生新下载/检查图缓存，旧被拒清理目录不动。详见 `docs/verification-github-navigation.md`。

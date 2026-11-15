@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-15T09:59:58.740073+00:00",
+  "executor": "AI",
+  "scope": "Synthetic checks of read-only navigation verifier helpers; not product or full GitHub API regression.",
+  "passed": 9,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "same check accepts",
+      "ok": true
+    },
+    {
+      "name": "wrong check rejects",
+      "ok": true
+    },
+    {
+      "name": "LF / CRLF human-readable notes normalize",
+      "ok": true
+    },
+    {
+      "name": "substantive notes changes remain visible",
+      "ok": true
+    },
+    {
+      "name": "download count is not artifact identity",
+      "ok": true
+    },
+    {
+      "name": "asset ID changes detected",
+      "ok": true
+    },
+    {
+      "name": "asset name changes detected",
+      "ok": true
+    },
+    {
+      "name": "asset size changes detected",
+      "ok": true
+    },
+    {
+      "name": "asset digest changes detected",
+      "ok": true
+    }
+  ]
+}

@@ -1,4 +1,8 @@
-# PathLab-AI 正式参赛文件 · 2026-11-15
+# 【当前正式参赛版】PathLab-AI · 2026-11-15
+
+**本次评审推荐下载此版本。** [仓库首页](https://github.com/ljqzs08/PathLab-AI) · [版本历史](https://github.com/ljqzs08/PathLab-AI/blob/main/docs/version-history.md) · [历史归档](https://github.com/ljqzs08/PathLab-AI/blob/main/archive/README.md)
+
+旧 v2 / v3 仅作历史对照；Prompt 旧 Release 仅为证据附件，不是完整最新参赛包。当前正式附件保持原字节和原源码冻结标签不变。
 
 本次发布对应作者选定的 **PathLab-AI-正式参赛文件-20261115**，不是 v3，也不是包含全部旧成品的完整归档版。
 

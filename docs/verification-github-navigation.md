@@ -1,0 +1,51 @@
+# E042：GitHub 导航与历史版本标识整理
+
+日期：2026-11-15。执行者：AI。授权：作者明确要求“重新整理并发布内容”，并提供当前仓库根目录截图。
+
+## 范围与验收目标
+
+- 当前正式包保持唯一推荐入口，README 简化为下载 / 当前作品 / 按目的导航。
+- 截图中的各目录增加或更新 README，明确当前主件、工程生成物、旧文档与原始证据的区别。
+- 原 README 的工程命令与历史功能说明迁入独立指南，不删除真实历史。
+- 旧 v2 / v3 Release 标为“历史版本｜非当前参赛版”；Prompt 旧 Release 标为“历史证据附件”。只在原说明前加导航，不重写当时正文。
+- 正式 Release 继续 Latest，更新推荐标识及版本导航。原附件 ID、大小、digest、标签对象保持不变。
+- About 简介、链接和 topics 同步到当前作品和正式发布入口，不伪称已经部署在线网站。
+
+## 不做什么
+
+不改应用源码或作品 HTML，不重建、重压缩或替换正式 ZIP，不移动原证据目录，不删除旧 Release / 标签 / 提交，不改仓库权限。
+不为让截图里的时间显得“更新”而修改无关文件；目录更新时间来自真正增加的用途说明。
+不重跑产品回归，不把本轮文档整理或历史数字当作新产品/真人/真机验收。
+
+## 文件与工具
+
+- `README.md`：当前下载、作品说明、实际已有首页截图、根目录用途与真实性。
+- `00-正式参赛入口.md`：根目录的单一正式入口。
+- `docs/development-guide.md`、`docs/version-history.md`、`archive/README.md`：工程、版本与历史分离。
+- `PathLab-AI/README.md`、`docs/README.md`、`output/README.md`、`scripts/README.md` 与既有 Prompt 索引：目录内也不误导。
+- `docs/github-navigation.json`：正式包身份、原件哈希及期望公开说明的单一配置。
+- `docs/release-notes/`：旧 Release 导航前缀与原正文；正式说明沿用 `docs/formal-submission-release-notes.md`。
+- `scripts/verify-github-navigation.py`：本地链接、原件、共享历史、Prompt 原文与可选匿名公开核对；不下载完整旧包。
+- `docs/evidence/github-organization-before-20261115.json`：匿名读取的发布前基线。
+- `docs/assets/github-organization-20261115/author-repository-before.png`：用户提供截图原件的 D 盘证据副本，不是本轮生成的检查图。
+
+## 对话留证
+
+E041 目录澄清轮真实末答复已补为 6 条 / finalCaptured=true。保留旧版咨询为 2 条 / finalCaptured=true。
+本轮原始要求和真实可见进展另存 `prompts/sessions/2026-11-15-github-reorganization.{md,jsonl}`，不把上传或导航整理当作新核心功能链；本轮最终答复只能在实际落盘后补齐。
+
+提取命令的第一次复合调用在三份导出均已成功后，因 PowerShell 残留的原生 LASTEXITCODE 被错误判断失败；导出器没有失败。后续以 JSONL、源行与文本 SHA 对照为准，不将残留退出码当成 Prompt 内容失败。
+
+## 核验与发布状态
+
+以 `docs/evidence/github-navigation-local-20261115.json` 和 `docs/evidence/github-navigation-public-20261115.json` 的实际结果为准。
+发布后逐个核对当前提交相关 Git blob、README 原字节、四个 Release 的标题/说明、About、Latest、附件身份与旧标签对象；人类可读 Release 说明允许 API 的 CRLF / 本地 LF 行尾归一，不放宽任何工件字节校验。
+
+本轮不会重新下载 E041 已逐字核验的 131.75 MB 附件，只检查公开 asset ID / 大小 / digest 与发布前一致，且本地原 ZIP SHA 与作品 HTML 不变；不得说成本轮全量匿名下载。
+没有新临时检查图或新附件下载缓存；用户原图作为真实证据保留，旧被拒清理目录不触碰。
+认证复用既有 Git credential helper，仅在当前进程调用 CLI，凭证不输出、不落到仓库、不创建新 OAuth 授权、不修改账号权限。
+
+## 仍需作者确认的事项
+
+C01 / C02 / C03 共享真实开发原文与 Git 证据保留，U01 真实纠正不变；不冒充三次独立人工报错。
+GitHub 导航与 Release 整理不是网站部署或赛事代交；真人学习效果、真机测试、素材授权/隐私、最新赛事条款与正式表单仍分开处理。

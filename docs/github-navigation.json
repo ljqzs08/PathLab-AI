@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "baselineMainSha": "5ae84a24e8f769f8b40d6c60a3e52578b46f69b8",
+  "formalTag": "formal-submission-20261115",
+  "description": "PathLab AI｜A* / BFS 交互学习｜2026-11-15 正式参赛包与真实开发证据；旧版保留供追溯",
+  "homepage": "https://github.com/ljqzs08/PathLab-AI/releases/tag/formal-submission-20261115",
+  "topics": [
+    "ai-assisted-development",
+    "algorithm-visualization",
+    "astar",
+    "bfs",
+    "offline-html",
+    "pathfinding"
+  ],
+  "releases": [
+    {
+      "tag": "formal-submission-20261115",
+      "id": 445933755,
+      "title": "【当前正式参赛版】PathLab-AI · 2026-11-15",
+      "bodyPath": "docs/formal-submission-release-notes.md",
+      "latest": true
+    },
+    {
+      "tag": "v3.0.0",
+      "id": 441810427,
+      "title": "【历史版本｜非当前参赛版】PathLab AI v3.0.0",
+      "bodyPath": "docs/release-notes/v3.0.0.md",
+      "latest": false
+    },
+    {
+      "tag": "v2.0.0",
+      "id": 441293713,
+      "title": "【历史版本｜非当前参赛版】PathLab AI v2.0.0",
+      "bodyPath": "docs/release-notes/v2.0.0.md",
+      "latest": false
+    },
+    {
+      "tag": "prompt-evidence-20261025",
+      "id": 423090464,
+      "title": "【历史证据附件】Prompt 证据 · 2026-10-25",
+      "bodyPath": "docs/release-notes/prompt-evidence-20261025.md",
+      "latest": false
+    }
+  ],
+  "formalZip": "delivery/PathLab-AI-正式参赛文件-20261115/提交压缩包/PathLab-AI-正式参赛材料-20261115.zip",
+  "formalZipSha256": "64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25",
+  "formalZipBytes": 131747543,
+  "currentHtmlSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "navigationFiles": [
+    "README.md",
+    "00-正式参赛入口.md",
+    "PathLab-AI/README.md",
+    "docs/README.md",
+    "docs/development-guide.md",
+    "docs/version-history.md",
+    "archive/README.md",
+    "output/README.md",
+    "scripts/README.md",
+    "Prompt历史快照/README.md",
+    "prompts/README.md",
+    "prompts/submission/README.md",
+    "docs/latest-evidence-guide.md",
+    "docs/verification-github-navigation.md"
+  ],
+  "expectedTagObjects": {
+    "v2.0.0": "35bf49231f4b42a2b7c413c43e00cd26d44dd6d2",
+    "v3.0.0": "c4c218744822945413c0fe9089b1f1d1f3289f72",
+    "prompt-evidence-20261025": "9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7",
+    "formal-submission-20261115": "955df39c5db78bf07614486018d6b52b6ea07b69"
+  }
+}
