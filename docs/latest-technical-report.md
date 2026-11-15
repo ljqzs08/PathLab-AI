@@ -142,8 +142,9 @@ contracts/schema 与 Ajv 校验关卡/反馈输入，远程适配双端检查结
 ## 最短体验路径
 无需 Node：从本包打开指定 HTML 即可离线体验。不要把旧历史区 HTML 或源码目录内其他同名入口误认为当前主件。
 ## 从真实源码检查增强结果
-在可写的 D 盘项目路径解压当前“源码”，安装满足 package.json 的 Node 版本（至少 22.13.0）。以下命令在该源码根目录运行。--check 不会重写当前成品。
+在可写的 D 盘工作副本中恢复源码，安装满足 package.json 的 Node 版本（至少 22.13.0），先执行锁定依赖安装。增强脚本依赖 PostCSS，只有 Node 不足以运行。以下命令在工作副本根目录运行，勿向正式交付的冻结源码目录安装依赖。--check 不会重写当前成品。
 ```powershell
+powershell -NoProfile -File scripts/Invoke-ProjectNpm.ps1 ci
 node --experimental-strip-types `
   scripts/enhance-standalone-ui.mjs --check
 ```
@@ -176,7 +177,7 @@ powershell -NoProfile -File scripts/Invoke-ProjectNpm.ps1 run build
 powershell -NoProfile -File scripts/Invoke-ProjectNpm.ps1 run build:html
 ```
 Node 测试脚本为 node --experimental-strip-types --test tests/*.test.mjs；typecheck 先执行 next typegen，再 tsc --noEmit；lint 为零告警 ESLint。版本和具体命令以 package.json/lock 为准。
-本轮没有重装依赖、重启 Next 或重跑生产构建，因此不能把本章的可执行步骤当成本轮已经执行。CLI 用法参考仓库所带 Next 版本文档，不采用已过时的 next lint 口径。
+本轮在 bundle 独立恢复的副本执行 ci（59.287 秒），再运行增强 --check（0.749 秒），字节一致通过；未重启 Next 或重跑生产构建。这两个耗时不是环境安装、源码下载与产品完整冷启动总时长。CLI 用法参考仓库所带 Next 版本文档，不采用已过时的 next lint 口径。
 本地复现不需要配置真实模型密钥。需要浏览器专项时按现有脚本指定浏览器；自动化用例中的视口并非真实设备。
 
 <!-- page: tests -->
@@ -221,7 +222,7 @@ E037/E038 文字快照从已有会话的可见消息提取，保留来源/范围
 1. 对最新 ZIP 执行 Get-FileHash，与旁边 .sha256 比较；解压后打开本地评审入口。
 2. 查看 v3迁移映射.json，逐项计算 newPath 的 SHA256；每条应与原记录一致。
 3. 查看最新 manifest、源码一致性说明和 Git bundle。用 git clone -b main 对 bundle 恢复，再核对记录的 HEAD 和提交数。
-4. 对源码运行独立增强 --check；需要基础工程时再按上一章安装依赖。本轮未重新执行整个干净环境冷启动计时。
+4. 在可写副本先运行 ci 安装锁定依赖，再运行独立增强 --check；不能只装 Node。本轮未重新执行整个干净环境冷启动计时。
 ## 未替作者完成的外部事项
 不 push、不上传网盘或视频平台、不填写/提交表单、不改变账号权限。GitHub 曾公开的历史核验按原日期保留，本轮不声称远程 HEAD 与此包一致。
 旧规则是历史材料，不是 2026-11-15 官网现行条款核验。当前视频清晰度/时长/协同展示、素材授权、公开隐私、真人教学和真机测试，仍须在正式提交前由本人按真实要求确认。

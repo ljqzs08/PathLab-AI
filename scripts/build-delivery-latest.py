@@ -84,23 +84,28 @@ def prepare():
  write_portal()
  print(json.dumps({'folder':str(NEW),'migratedPaths':len(mapped),'uniqueV3Files':len(set(x['newPath'] for x in mapped))},ensure_ascii=True))
 def write_portal():
- links=[('打开最新离线作品','03-离线体验/'+HTML),('阅读最新版作品介绍 PDF','01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.pdf'),('阅读最新版技术文档 PDF','02-技术文档/PathLab-AI-技术文档-最新版-20261115.pdf'),('作者新产品视频 H264兼容版','09-演示视频/H264兼容播放/新版本mp4-H264.mp4'),('新增Prompt七张原图','05-Prompt证据/20261115新增拍屏原图/00-原图索引.html'),('完整迁移与验收说明','10-最新版更新说明/材料验收报告.html'),('GitHub代码仓库（联网）','https://github.com/ljqzs08/PathLab-AI')]
+ links=[('打开最新离线作品','03-离线体验/'+HTML),('阅读最新版作品介绍 PDF','01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.pdf'),('阅读最新版技术文档 PDF','02-技术文档/PathLab-AI-技术文档-最新版-20261115.pdf'),('作者新产品视频 H264兼容版','09-演示视频/H264兼容播放/新版本mp4-H264.mp4'),('新增Prompt七张原图','05-Prompt证据/20261115新增拍屏原图/00-原图索引.html'),('完整迁移与验收说明','10-最新版更新说明/材料验收报告.html'),('源码恢复与一致性说明','04-源码与演进/源码一致性与恢复说明.md'),('新旧证据阅读导航','07-文档源稿与来源/20261115最新版/latest-evidence-guide.md'),('全部旧记录迁移映射','10-最新版更新说明/v3迁移映射.json'),('GitHub代码仓库（联网）','https://github.com/ljqzs08/PathLab-AI')]
  page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>PathLab AI 最新参赛材料 20261115</title><style>body{font:18px/1.7 system-ui;background:#f4f7f5;color:#18362b;max-width:980px;margin:40px auto;padding:24px}h1{font-size:30px}a{display:block;color:#09583e;background:white;padding:18px;margin:14px 0;border-radius:10px;border:1px solid #d1dfd7}p{color:#40574d}small{display:block}</style><h1>PathLab AI 最新参赛材料</h1><p>2026年11月15日完整迁移版。以作者指定 HTML 为当前体验；旧版源码、文档、视频、Prompt与Git记录已经迁入本文件夹，不需要回到v3找文件。</p>'+''.join(f'<a href="{u}">{n}</a>' for n,u in links)+'<p>视频原件与兼容版均在包内。AI自动检查不等于人工或真机验收；未进行真实DeepSeek发送、付费API联调或正式赛事提交。详见同目录00-评审入口.md。</p></html>'
  put(FULL/'00-评审入口.html',page)
  put(FULL/'00-打开最新参赛材料.html',page)
  # Root-facing entry keeps paths relative to FULL without copying stale v3 HTML.
- put(NEW/'00-打开最新参赛材料.html',page.replace('href="','href="04-完整材料解压版/').replace('href="04-完整材料解压版/https:','href="https:'))
+ put(NEW/'00-打开最新参赛材料.html',page.replace('href="','href="04-完整材料解压版/').replace('href="04-完整材料解压版/https:','href="https:').replace('详见同目录00-评审入口.md。','详见同目录00-提交说明.md。'))
 def write_acceptance():
  proof=json.loads((FULL/'04-源码与演进/source-export-verification.json').read_text(encoding='utf-8'))
+ packed=json.loads((ROOT/'docs/evidence/latest-submission-packed-browser-20261115.json').read_text(encoding='utf-8'))
+ assert packed['passed']==23 and packed['selectedHtmlSha256']==EXPECTED
  sections=[
  ('当前主件',f"{HTML}；7,127,303字节；SHA256 {EXPECTED}。作者指定原文件未修改。"),
  ('完整迁移',"v3的622个原路径均在新文件夹内找到原字节副本；相同内容重复路径可共用保留文件，实际572个唯一保留文件。旧文档/源码/HTML/视频/原ZIP/manifest全部保留在历史区或原证据目录。"),
  ('当前文档',"作品介绍12页、技术文档16页；均提供PDF、可编辑Word与Markdown源稿。Word实际导出PDF，全部28页经Poppler渲染与AI视觉检查，文字边界及嵌图字节检查另见验收JSON。"),
  ('源码与演进',f"真实Git基线 {proof['gitHead']}；{proof['commits']}次完整历史；{proof['trackedFiles']}个源码导出文件逐个与Git blob核对。bundle已独立clone。此后仅整理的验收回执不伪装为该源码基线的内容。"),
+ ('独立源码复现',"在bundle独立恢复副本先运行项目ci安装锁定依赖（含PostCSS），再执行增强--check，指定HTML逐字一致。只有Node不足以运行检查；不要在正式交付的冻结源码中安装依赖。未重跑Next生产构建/完整功能测试。详见本轮验收JSON。"),
  ('本轮浏览器',"Windows Edge157 headless、file://离线、1440/768/390/320模拟宽度，124/124专项通过；11张正式截图由AI查看。历史312/389/316/171/21套件是此前已归档结果，并非本轮全部重跑。"),
+ ('压缩包抽取播放',f"从ZIP抽取指定HTML与三份H264视频，Edge离线1440/390模拟宽度、入口/图库/报告及视频元数据与短时解码播放，共{packed['passed']}/{packed['passed']}项通过。首页内嵌练习舱与跨站弹窗分别验证；初始测试工具错误和修正单独留证。非真人/真实设备或全片主观视听审核。"),
  ('新增证据',"7张Prompt原始照片、3段作者新视频及H264兼容版均入包；原件哈希与迁移映射可复核。E038最终答复已补齐；本轮最终答复尚未真实落盘时明确待补，不编造。"),
  ('视频真实限制',"新视频原生1280×720、1280×720、960×544，时长约36秒、19秒、4分03秒。两段滚动聊天不是实时AI编程；不能用转码、拼接或预期评分声称满足旧1080p/实时协同条款。"),
  ('交付核验',"本目录manifest逐文件列大小与SHA256；ZIP含全部当前材料与历史原件。ZIP字节数、CRC/逐条哈希与最终独立验收见外层packet-build-verification.json、packet-final-verification.json和.zip.sha256，避免ZIP对自身哈希循环引用。"),
+ ('临时缓存边界',"本轮D盘.cache/submission-latest-20261115的精确清理请求被工具策略执行前拒绝，临时检查图/依赖/抽帧仍在工作区；不在本交付目录内，未绕过拒绝。正式11图和全部原件保留。详见本轮cleanup验收JSON。"),
  ('仍需本人确认',"真人新手体验与真实设备、素材授权及旧图/历史作者标识、当前赛事实际规则与视频要求、本人信息和可访问链接。未push、未上传、未调用付费API、未代交。C01/C02/C03实现与共享真实开发轮保留，不制造逐链人类Bug材料。")]
  page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>PathLab AI 最新材料验收报告</title><style>body{font:17px/1.8 system-ui;max-width:1000px;margin:32px auto;padding:20px;color:#18362b}section{background:#f3f7f5;padding:18px;margin:15px 0;border-radius:10px}p{overflow-wrap:anywhere}a{color:#075b40}</style><h1>最新版材料验收报告</h1><p>2026-11-15 · AI执行的材料检查，不是人工、真机或赛事验收。</p>'+''.join('<section><h2>'+html.escape(a)+'</h2><p>'+html.escape(b)+'</p></section>' for a,b in sections)+'<p><a href="../00-评审入口.html">返回材料入口</a> · <a href="v3迁移映射.json">逐路径迁移映射</a> · <a href="../manifest.json">当前manifest</a></p></html>'
  put(FULL/'10-最新版更新说明/材料验收报告.html',page)
@@ -126,7 +131,7 @@ def source():
  rc=int(subprocess.run(['git','-C',str(check),'rev-list','--count','HEAD'],check=True,capture_output=True,text=True).stdout)
  assert (restored,rc)==(head,count)
  put(base/'git-log.txt',git('log','--format=%h %ad %s','--date=short')+'\n')
- put(base/'源码一致性与恢复说明.md',f'''# 最新源码与完整演进\n\n源码目录为真实提交 {head} 的 git archive，逐文件核对 Git blob；共 {len(names)} 文件。完整历史 {count} 个提交，bundle 已独立 clone 并核对 HEAD 和提交数。\n\n主件 {HTML} SHA256 为 {EXPECTED}。Next 页面仅是原八站工程底座，独立 HTML 另含 E037/E038 增强；不要只运行 npm run build:html 就声称生成最新版主件。\n\n## 恢复步骤\n\n在尚不存在的 D 盘项目目录执行：\n\n    git clone --branch main ./{bundle.name} D:/竞赛/复现副本\n    git -C D:/竞赛/复现副本 rev-parse HEAD\n\n应输出上述真实提交。随后按源码中的 README 与复现说明安装依赖（缓存、TEMP、TMP限定D盘）。核验指定独立HTML：\n\n    node --experimental-strip-types scripts/enhance-standalone-ui.mjs --check\n\n本包包含原始HTML底稿与所有增强脚本。--check 读取已有主件，验证增强后的精确字节；不是 Next 页面生产构建。完整原文和工具说明见 源码/docs/latest-technical-report.md。\n\n本轮不 push。旧 v3 的源码与bundle在 12-历史材料/v3，旧提示仍保留作历史，不作当前运行说明。\n''')
+ put(base/'源码一致性与恢复说明.md',f'''# 最新源码与完整演进\n\n源码目录为真实提交 {head} 的 git archive，逐文件核对 Git blob；共 {len(names)} 文件。完整历史 {count} 个提交，bundle 已独立 clone 并核对 HEAD 和提交数。\n\n主件 {HTML} SHA256 为 {EXPECTED}。Next 页面仅是原八站工程底座，独立 HTML 另含 E037/E038 增强；不要只运行 npm run build:html 就声称生成最新版主件。\n\n## 恢复步骤\n\n在尚不存在的 D 盘项目目录执行：\n\n    git clone --branch main ./{bundle.name} D:/竞赛/复现副本\n    git -C D:/竞赛/复现副本 rev-parse HEAD\n\n应输出上述真实提交。随后按源码中的 README 与复现说明安装依赖（缓存、TEMP、TMP限定D盘）。增强脚本依赖PostCSS，只有Node不足。先在恢复的可写副本根目录运行：\n\n    powershell -NoProfile -File scripts/Invoke-ProjectNpm.ps1 ci\n\n再核验指定独立HTML：\n\n    node --experimental-strip-types scripts/enhance-standalone-ui.mjs --check\n\n本包包含原始HTML底稿与所有增强脚本。--check 读取已有主件，验证增强后的精确字节；不是 Next 页面生产构建。完整原文和工具说明见 源码/docs/latest-technical-report.md。\n\n本轮不 push。旧 v3 的源码与bundle在 12-历史材料/v3，旧提示仍保留作历史，不作当前运行说明。\n''')
  js(base/'source-export-verification.json',{'date':DATE,'executor':'AI','gitHead':head,'commits':count,'trackedFiles':len(names),'everyGitBlobVerified':True,'bundle':bundle.name,'bundleRecloneVerified':True,'selectedHtmlSha256':EXPECTED,'nextAndEnhancedHtmlIdentical':False})
  print(json.dumps({'head':head,'commits':count,'sourceFiles':len(names)},ensure_ascii=True))
 def manifest_files(base):

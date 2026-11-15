@@ -10,7 +10,7 @@
       "pages": 12,
       "renderer": "Microsoft Word 16 COM",
       "pdfBytes": 1462988,
-      "pdfSha256": "d17bb2280e415be041dce6ee87d95b566d485f1c8e8716305b834bd3097f60cd",
+      "pdfSha256": "4cc2e725f89b8da9680bd238b4906a289edd1c477a20809af418f6d9e545899c",
       "pageInfo": [
         {
           "page": 1,
@@ -164,8 +164,8 @@
       "pdf": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\02-技术文档\\PathLab-AI-技术文档-最新版-20261115.pdf",
       "pages": 16,
       "renderer": "Microsoft Word 16 COM",
-      "pdfBytes": 1089168,
-      "pdfSha256": "686bb00bdf6f852b54a3003aa06c82ccae18d5f25707c430535fb3192aa5e375",
+      "pdfBytes": 1088977,
+      "pdfSha256": "1fbe04070ad4e32d726ba3661d84b3528a223033740f0d602c79f88525a91050",
       "pageInfo": [
         {
           "page": 1,
@@ -279,7 +279,7 @@
         },
         {
           "page": 12,
-          "characters": 733,
+          "characters": 850,
           "firstLines": [
             "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
             "11 最新单文件的独立复现",
@@ -289,7 +289,7 @@
         },
         {
           "page": 13,
-          "characters": 917,
+          "characters": 980,
           "firstLines": [
             "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
             "12 基础 Next 工程的运行与检查",
@@ -319,7 +319,7 @@
         },
         {
           "page": 16,
-          "characters": 859,
+          "characters": 869,
           "firstLines": [
             "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
             "15 完整迁移、校验与交付边界",
@@ -367,6 +367,10 @@
       {
         "issue": "first render collapsed inline screenshots due to exact paragraph spacing",
         "fix": "image paragraphs changed to automatic single line spacing; both documents rebuilt, re-exported and all final pages viewed"
+      },
+      {
+        "issue": "reproduction instructions omitted locked PostCSS prerequisite",
+        "fix": "technical MD/DOCX revised to run ci before --check; final 12/16 pages re-exported and all 7 contact sheets viewed again"
       }
     ],
     "notHumanAcceptance": true

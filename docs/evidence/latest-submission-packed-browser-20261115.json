@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI automated browser operation",
+  "browser": "Windows Edge 157.0.4341.46",
+  "mode": "headless file:// offline; two simulated widths for ZIP sample; not human or physical-device acceptance",
+  "passed": 23,
+  "checks": [
+    {
+      "name": "root portal current work link",
+      "passed": true
+    },
+    {
+      "name": "acceptance report reachable",
+      "passed": true
+    },
+    {
+      "name": "seven original photo gallery images",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP HTML eight stations",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP HTML no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP home inline coach visible",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP home coach not modal",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP cross-station coach modal",
+      "passed": true
+    },
+    {
+      "name": "1440 ZIP helper visible",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP HTML eight stations",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP HTML no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP home inline coach visible",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP home coach not modal",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP cross-station coach modal",
+      "passed": true
+    },
+    {
+      "name": "390 ZIP helper visible",
+      "passed": true
+    },
+    {
+      "name": "183595fb6fa9eb107ab392f73ca80aa4-H264.mp4 decoded frames after play",
+      "passed": true
+    },
+    {
+      "name": "183595fb6fa9eb107ab392f73ca80aa4-H264.mp4 native dimensions",
+      "passed": true
+    },
+    {
+      "name": "ee88b0dd110e97bb568bd819e5fa5f5f-H264.mp4 decoded frames after play",
+      "passed": true
+    },
+    {
+      "name": "ee88b0dd110e97bb568bd819e5fa5f5f-H264.mp4 native dimensions",
+      "passed": true
+    },
+    {
+      "name": "新版本mp4-H264.mp4 decoded frames after play",
+      "passed": true
+    },
+    {
+      "name": "新版本mp4-H264.mp4 native dimensions",
+      "passed": true
+    },
+    {
+      "name": "no browser page errors",
+      "passed": true
+    },
+    {
+      "name": "no automatic external requests",
+      "passed": true
+    }
+  ],
+  "metadata": [
+    {
+      "file": "183595fb6fa9eb107ab392f73ca80aa4-H264.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 36.033333,
+      "playedAndDecodedFrames": true
+    },
+    {
+      "file": "ee88b0dd110e97bb568bd819e5fa5f5f-H264.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 18.933333,
+      "playedAndDecodedFrames": true
+    },
+    {
+      "file": "新版本mp4-H264.mp4",
+      "width": 960,
+      "height": 544,
+      "duration": 243.1,
+      "playedAndDecodedFrames": true
+    }
+  ],
+  "selectedHtmlSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "scope": "Local entry/gallery/acceptance links and exact ZIP-sampled HTML/H264 metadata+brief frame playback. Does not replace full historical regression or full subjective audio/video review."
+}

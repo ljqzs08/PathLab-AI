@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI independent file/archive verification",
+  "originalV3PathsUnchanged": 622,
+  "v3PathsMapped": 622,
+  "uniqueRetainedV3Files": 572,
+  "newOriginalPhotos": 7,
+  "newOriginalVideos": 3,
+  "selectedHtmlUnchanged": true,
+  "source": {
+    "date": "2026-11-15",
+    "executor": "AI",
+    "gitHead": "a3389d14e849fef03046ea36562d6bfa89e131af",
+    "commits": 73,
+    "trackedFiles": 630,
+    "everyGitBlobVerified": true,
+    "bundle": "PathLab-AI-完整历史-20261115-a3389d1.bundle",
+    "bundleRecloneVerified": true,
+    "selectedHtmlSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+    "nextAndEnhancedHtmlIdentical": false
+  },
+  "sourceFilesRecheckedAgainstGitBlobs": 630,
+  "manifestFiles": 1327,
+  "zip": {
+    "path": "01-上传网盘\\PathLab-AI-完整作品材料-最新版-20261115.zip",
+    "bytes": 1032692646,
+    "sha256": "99e644fc01f21836a6004ed2828e498510aea4e76e6adcce988456becbcdf991",
+    "crcVerified": true,
+    "allEntryHashesVerified": true,
+    "entries": 1328,
+    "allEntriesRechecked": true
+  },
+  "entryLinks": {
+    "00-打开最新参赛材料.html": [
+      "04-完整材料解压版/03-离线体验/PathLab_AI_v4_optimized_final.html",
+      "04-完整材料解压版/01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.pdf",
+      "04-完整材料解压版/02-技术文档/PathLab-AI-技术文档-最新版-20261115.pdf",
+      "04-完整材料解压版/09-演示视频/H264兼容播放/新版本mp4-H264.mp4",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/00-原图索引.html",
+      "04-完整材料解压版/10-最新版更新说明/材料验收报告.html",
+      "04-完整材料解压版/04-源码与演进/源码一致性与恢复说明.md",
+      "04-完整材料解压版/07-文档源稿与来源/20261115最新版/latest-evidence-guide.md",
+      "04-完整材料解压版/10-最新版更新说明/v3迁移映射.json"
+    ],
+    "04-完整材料解压版/00-评审入口.html": [
+      "04-完整材料解压版/03-离线体验/PathLab_AI_v4_optimized_final.html",
+      "04-完整材料解压版/01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.pdf",
+      "04-完整材料解压版/02-技术文档/PathLab-AI-技术文档-最新版-20261115.pdf",
+      "04-完整材料解压版/09-演示视频/H264兼容播放/新版本mp4-H264.mp4",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/00-原图索引.html",
+      "04-完整材料解压版/10-最新版更新说明/材料验收报告.html",
+      "04-完整材料解压版/04-源码与演进/源码一致性与恢复说明.md",
+      "04-完整材料解压版/07-文档源稿与来源/20261115最新版/latest-evidence-guide.md",
+      "04-完整材料解压版/10-最新版更新说明/v3迁移映射.json"
+    ],
+    "04-完整材料解压版/00-打开最新参赛材料.html": [
+      "04-完整材料解压版/03-离线体验/PathLab_AI_v4_optimized_final.html",
+      "04-完整材料解压版/01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.pdf",
+      "04-完整材料解压版/02-技术文档/PathLab-AI-技术文档-最新版-20261115.pdf",
+      "04-完整材料解压版/09-演示视频/H264兼容播放/新版本mp4-H264.mp4",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/00-原图索引.html",
+      "04-完整材料解压版/10-最新版更新说明/材料验收报告.html",
+      "04-完整材料解压版/04-源码与演进/源码一致性与恢复说明.md",
+      "04-完整材料解压版/07-文档源稿与来源/20261115最新版/latest-evidence-guide.md",
+      "04-完整材料解压版/10-最新版更新说明/v3迁移映射.json"
+    ],
+    "04-完整材料解压版/10-最新版更新说明/材料验收报告.html": [
+      "04-完整材料解压版/00-评审入口.html",
+      "04-完整材料解压版/10-最新版更新说明/v3迁移映射.json",
+      "04-完整材料解压版/manifest.json"
+    ],
+    "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/00-原图索引.html": [
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100611_745_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100611_745_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100611_746_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100611_746_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100612_748_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100612_748_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100614_749_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100614_749_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100615_750_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100615_750_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100616_751_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100616_751_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100617_753_2.jpg",
+      "04-完整材料解压版/05-Prompt证据/20261115新增拍屏原图/微信图片_20261115100617_753_2.jpg"
+    ]
+  },
+  "submissionCopiesIdentical": true,
+  "notHumanOrRealDeviceAcceptance": true,
+  "githubPushed": false,
+  "uploadedOrSubmitted": false,
+  "scope": "Independent SHA/CRC/migration/source/link audit. Browser/video playback results are in separate JSON. This external receipt is intentionally not hashed into its own ZIP."
+}

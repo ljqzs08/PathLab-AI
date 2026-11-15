@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "command": "node scripts/verify-latest-packet-browser.cjs",
+  "returnCode": 1,
+  "failure": "AssertionError 1440 ZIP coach visible: false !== true",
+  "cause": "Harness incorrectly required a modal on home. scripts/ui-beginner.js openCoach intentionally scrolls to inline #pl-coach on home and opens #pl-coach-dialog at other stations.",
+  "fix": "Assert home inline visible with dialog closed, then change to intro and assert modal opens. No product file changed; original assertion replaced by more specific assertions of both specified behaviors.",
+  "initialZipSha256": "896cc40b14d0e5dbeb5ea62b64f3c5418228c355b2a9c83b7054e814d58af842",
+  "notUserReportedProductBug": true,
+  "secondProbe": {
+    "returnCode": 1,
+    "failure": "locator.evaluate Timeout 30000ms waiting for #welcome-overlay",
+    "cause": "Same browser context carries the intentional pathlab-visited preference to the second width; returning visitor has no welcome dialog.",
+    "fix": "Guard optional welcome-dialog existence before reading open; retain actual coach/helper/overflow assertions.",
+    "productFileChanged": false
+  }
+}

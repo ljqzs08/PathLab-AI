@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "target": "D:\\竞赛\\.cache\\submission-latest-20261115",
+  "attempt": "Exact native PowerShell Remove-Item request after absolute path/workspace validation; tool policy rejected entire command before execution.",
+  "completed": false,
+  "deletionExecuted": false,
+  "remainingFiles": 24116,
+  "remainingImageFiles": 111,
+  "remainingBytes": 893614791,
+  "remainingContents": "This round disposable Word/PDF rendered pages, check screenshots/video frames, independently restored dependency clone, extracted ZIP sample, temporary ffmpeg tooling and caches.",
+  "noBypassAttempted": true,
+  "olderRejectedDirectoriesTouched": false,
+  "formalScreenshotsPreserved": 11,
+  "authorInputsAndDeliveryPreserved": true,
+  "nextAction": "Owner may manually remove only this exact temporary directory after finishing review; never remove formal screenshots, author inputs, latest deliverable or old v3."
+}

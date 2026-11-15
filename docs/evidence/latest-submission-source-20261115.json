@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "sourceGitHead": "a3389d14e849fef03046ea36562d6bfa89e131af",
+  "method": "independent git bundle clone, pinned npm ci with ignore-scripts/D caches, byte-exact enhancement --check",
+  "initialProbe": {
+    "result": "failed before dependency install",
+    "error": "ERR_MODULE_NOT_FOUND for PathLab-AI/node_modules/postcss/lib/postcss.mjs",
+    "meaning": "Node alone is insufficient; no code/product change"
+  },
+  "commands": [
+    {
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "scripts/Invoke-ProjectNpm.ps1",
+        "ci"
+      ],
+      "returnCode": 0,
+      "elapsedSeconds": 59.287,
+      "stdout": "\nadded 354 packages in 58s\n",
+      "stderr": "npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\LJQ\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+        "--experimental-strip-types",
+        "scripts/enhance-standalone-ui.mjs",
+        "--check"
+      ],
+      "returnCode": 0,
+      "elapsedSeconds": 0.749,
+      "stdout": "Reproducible HTML verified: 7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a\n",
+      "stderr": ""
+    }
+  ],
+  "trackedCloneUnchanged": true,
+  "reproductionPassed": true,
+  "nextFullBuildOrProductSuitesRerun": false
+}

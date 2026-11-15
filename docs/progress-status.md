@@ -192,3 +192,13 @@ JSON：1 MiB、4096 条总命令、每关 32 次开始运行；未提交草稿�
 已用 Poppler 将作品介绍 PDF 15 页渲染并由 AI 查看 4 张联系表；版式、中文字体、表格、图片边界和页码通过。SHA256 与 sidecar 一致：`9af5d3182881c005775e6139e8d18dce855389dbb3e7cc91574b4b28b3cb2339`。校验记录中的 `visualInspection` 已改为带页码、联系表和检查结果的对象；`productRegressionSuiteRerun=false`、`humanOrRealDeviceAcceptance=false`、`uploadPerformed=false` 保持真实。
 
 本轮续答已从当前原始会话提取至 `prompts/sessions/2026-10-25-project-introduction-continue.{md,jsonl}`，含真实用户“继续”和上一条可见助手收尾摘要；它是留证，不是新增核心功能链。仍未完成人工/真机验收、作品视频、正式赛事提交回执、DeepSeek 真实付费联调，以及 C01/C02/C03 各自独立的用户引导 Bug 修复材料。详见 `docs/verification-project-introduction.md`。
+
+### E039 源码独立恢复补验 2026-11-15
+
+真实材料准备提交为 `a3389d14e849fef03046ea36562d6bfa89e131af`；导出630文件逐个Git blob一致，bundle独立恢复73次历史。先安装锁定依赖后增强--check通过，输出SHA与指定HTML完全一致；首次缺PostCSS的前提遗漏如实保留。技术文档与包外恢复说明已修订，冻结源码和bundle不反写；最终ZIP回执另附，未push。
+
+### E039 完整材料最终核验 2026-11-15
+
+最新 E039 收尾（2026-11-15）：完整最新版在 `delivery/PathLab-AI-参赛文件-最新版-20261115`，v3全部622路径/572唯一原件均已迁入，旧ZIP也保留。主HTML仍为7bd7f222…c917a；12/16页PDF与可编辑Word、七张新Prompt原图、三视频原件/三H264、11正式截图、当前源码与完整历史齐备。真实源码基线a3389d14e849fef03046ea36562d6bfa89e131af，630文件/73历史逐blob一致、bundle独立恢复；先ci后增强--check实际通过（最初缺PostCSS前提遗漏已修正文档）。最终ZIP 1032692646字节、1328条目/1327内容文件，SHA256 99e644fc01f21836a6004ed2828e498510aea4e76e6adcce988456becbcdf991，CRC/每项SHA/迁移/源码/入口/外层副本独立复核通过；Edge离线124/124与ZIP抽取播放23/23，非历史全量回归/真人/真机。首次两处额外测试工具假设错误及修正如实留证，不改产品。本轮临时D盘.cache/submission-latest-20261115的精确清理被执行前策略拒绝，24116文件/111图、893614791字节仍留，不在交付目录内、未绕过；正式证据保留。后续收尾归档不伪装已在A的bundle内；本轮final待真实落盘，不push/上传/代交，三链/U01人类材料边界不变。
+
+后续复用 `scripts/build-delivery-latest.py`（分阶段、禁止prepare覆盖）、`scripts/verify-latest-submission-artifacts.py` 与 `10-最新版更新说明/v3迁移映射.json`。源代码归档、后续材料修订和最终ZIP回执分时点，不做哈希自引用。避免只装Node即运行增强脚本、将首页内嵌练习误判为弹窗、把已关闭欢迎界面当必有元素。
