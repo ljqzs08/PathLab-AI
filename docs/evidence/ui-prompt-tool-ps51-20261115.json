@@ -1,0 +1,32 @@
+{
+    "date":  "2026-11-15",
+    "executor":  "AI",
+    "powershell":  "5.1.26100.7705",
+    "result":  {
+                   "testsPassed":  22,
+                   "checks":  [
+                                  "open turn exported without claiming final answer",
+                                  "Chinese original text preserved",
+                                  "generated headings have no trailing whitespace",
+                                  "hidden/system messages excluded",
+                                  "existing snapshot not overwritten implicitly",
+                                  "dash-style handoff is not a real final answer",
+                                  "dash-style internal body is not exported",
+                                  "Chinese handoff is not a real final answer",
+                                  "Chinese internal body is not exported",
+                                  "continuation handoff is not a final answer",
+                                  "excluded internal source line explicitly reported",
+                                  "refresh repairs internal-only contamination without dropping real originals",
+                                  "refresh appends real final answer",
+                                  "internal summary and later turns excluded",
+                                  "all original-text hashes verified",
+                                  "refresh refuses rewriting archived originals",
+                                  "ambiguous prompt prefix refused",
+                                  "missing original prompt not fabricated",
+                                  "wrong session identity refused",
+                                  "unrelated workspace refused",
+                                  "in-progress truncated tail explicitly marked",
+                                  "output traversal refused"
+                              ]
+               }
+}

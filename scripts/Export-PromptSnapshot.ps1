@@ -50,12 +50,17 @@ if ($sourceCwd -ne $workspace -and -not $sourceCwd.StartsWith($workspace + '\', 
 $matches = @($entries | Where-Object { $_.role -eq 'user' -and $_.text.StartsWith($PromptPrefix, [StringComparison]::Ordinal) })
 if ($matches.Count -ne 1) { throw "Prompt prefix must match exactly one real user message; found $($matches.Count)." }
 $start = $matches[0].sourceLine
+function Test-InternalHandoff([string]$Text) {
+    $t = $Text.TrimStart()
+    return $t.StartsWith('# Handoff Summary', [StringComparison]::Ordinal) -or $t.StartsWith('# Handoff —', [StringComparison]::Ordinal) -or $t.StartsWith('# 交接摘要', [StringComparison]::Ordinal) -or ($t.StartsWith('## 任务目标与约束', [StringComparison]::Ordinal) -and $t.Contains('## 推荐后续步骤（务必完成）') -and $t.Contains('## 已发给用户的进展（避免重复）'))
+}
 $selected = [Collections.Generic.List[object]]::new()
+$excludedInternal = [Collections.Generic.List[int]]::new()
 foreach ($entry in $entries) {
     if ($entry.sourceLine -lt $start) { continue }
     if ($selected.Count -gt 0 -and $entry.role -eq 'user') { break }
     # Some logs contain internal handoff material as assistant messages; never export it.
-    if ($entry.role -eq 'assistant' -and ($entry.text.TrimStart().StartsWith('# Handoff Summary', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# Handoff —', [StringComparison]::Ordinal) -or $entry.text.TrimStart().StartsWith('# 交接摘要', [StringComparison]::Ordinal))) { continue }
+    if ($entry.role -eq 'assistant' -and (Test-InternalHandoff $entry.text)) { $excludedInternal.Add($entry.sourceLine); continue }
     $selected.Add($entry)
     if ($entry.role -eq 'assistant' -and $entry.phase -in @('final_answer', 'final')) { break }
 }
@@ -76,6 +81,8 @@ try {
 } finally { $sha.Dispose() }
 if ($Refresh -and (Test-Path -LiteralPath $jsonPath)) {
     $previous = @(Get-Content -LiteralPath $jsonPath -Encoding UTF8 | Where-Object { $_.Trim() } | ForEach-Object { $_ | ConvertFrom-Json })
+    # Repair only recognisable internal handoffs from old exports; real original messages remain immutable.
+    $previous = @($previous | Where-Object { -not ($_.role -eq 'assistant' -and (Test-InternalHandoff $_.text)) })
     if ($previous.Count -gt $records.Count) { throw 'Refresh would remove existing messages.' }
     for ($i = 0; $i -lt $previous.Count; $i++) {
         if ($previous[$i].text -cne $records[$i].text -or $previous[$i].role -cne $records[$i].role -or $previous[$i].sourceLine -ne $records[$i].sourceLine) { throw 'Refresh would alter previously captured original messages.' }
@@ -90,6 +97,7 @@ $md = [Text.StringBuilder]::new()
 [void]$md.AppendLine("- Visible messages captured: $($records.Count)")
 [void]$md.AppendLine("- Final assistant answer captured: $finalCaptured")
 [void]$md.AppendLine("- Incomplete source tail skipped: $partialTail")
+[void]$md.AppendLine("- Internal handoff source lines excluded: $($excludedInternal -join ", ")")
 [void]$md.AppendLine('- Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.')
 [void]$md.AppendLine('- 这是从真实本地记录提取的可见文字，不是工具原生全量导出，也不是截图或录屏。最终答复未写入时，该轮证据仍待补齐；缺失附件不视为已导出。本快照是否属于核心功能链以演进索引为准，策略讨论不能计作核心功能迭代。')
 foreach ($record in $records) {
@@ -105,4 +113,4 @@ foreach ($record in $records) {
 $utf8 = [Text.UTF8Encoding]::new($false)
 [IO.File]::WriteAllText($jsonPath, (($records | ForEach-Object { $_ | ConvertTo-Json -Compress -Depth 6 }) -join "`n") + "`n", $utf8)
 [IO.File]::WriteAllText($mdPath, $md.ToString(), $utf8)
-[pscustomobject]@{ markdown = $mdPath; jsonl = $jsonPath; messages = $records.Count; finalCaptured = $finalCaptured; sourceTailIncomplete = $partialTail }
+[pscustomobject]@{ markdown = $mdPath; jsonl = $jsonPath; messages = $records.Count; finalCaptured = $finalCaptured; sourceTailIncomplete = $partialTail; excludedInternalSourceLines = $excludedInternal.ToArray() }

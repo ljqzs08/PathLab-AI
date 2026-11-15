@@ -51,6 +51,20 @@ try {
     Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'Chinese handoff is not a real final answer'
     $payload = [IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)
     Assert-True (-not $payload.Contains('SYNTHETIC_CN_INTERNAL_BODY')) 'Chinese internal body is not exported'
+    # Recognisable continuation handoff, synthetic only. It must not end this user turn.
+    $continuation = "## 任务目标与约束
+SYNTHETIC_CONTINUATION_BODY
+## 推荐后续步骤（务必完成）
+## 已发给用户的进展（避免重复）"
+    Save-Fixture ($base + @((Message 'assistant' 'final_answer' $continuation)))
+    $result = & $exporter @args -Refresh
+    Assert-True ($result.messages -eq 2 -and -not $result.finalCaptured) 'continuation handoff is not a final answer'
+    Assert-True ($result.excludedInternalSourceLines.Count -eq 1) 'excluded internal source line explicitly reported'
+    $badOld = @{ sequence = 3; role = 'assistant'; phase = 'final_answer'; text = $continuation; sourceLine = 6 } | ConvertTo-Json -Depth 6 -Compress
+    [IO.File]::AppendAllText($result.jsonl, $badOld + "
+", $utf8)
+    $result = & $exporter @args -Refresh
+    Assert-True ($result.messages -eq 2 -and -not ([IO.File]::ReadAllText($result.jsonl, [Text.Encoding]::UTF8)).Contains('SYNTHETIC_CONTINUATION_BODY')) 'refresh repairs internal-only contamination without dropping real originals'
     $full = $base + @((Message 'assistant' 'final_answer' '# Handoff Summary internal'), (Message 'assistant' 'final_answer' '# Handoff — SYNTHETIC_INTERNAL_BODY'), (Message 'assistant' 'final_answer' '已验证，最终说明'), (Message 'user' '' 'NEXT-USER'), (Message 'assistant' 'final_answer' 'NEXT-ANSWER'))
     Save-Fixture $full
     $result = & $exporter @args -Refresh
