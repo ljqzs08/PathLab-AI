@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "sha256": "9c023fa57c263d921ca0db73528b77beacfe5a9a325f951b6e82d6bb7d634874",
+  "browser": "157.0.4341.46",
+  "homeEntry": 0,
+  "homeCard": 0,
+  "originalReviewBeforeSearch": 0,
+  "originalReviewAfterSearch": true,
+  "previewHasRealFacts": true,
+  "finding": "原网页复盘存在，但首页无可操作入口，仅在任务搜索结束后的复盘阶段出现。"
+}

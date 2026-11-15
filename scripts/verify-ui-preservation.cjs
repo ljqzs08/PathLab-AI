@@ -1,6 +1,9 @@
 /** E037: byte-preservation and generated engine-data checks, AI executed. */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {spawnSync,execFileSync}=require('node:child_process'),{pathToFileURL}=require('node:url');
+// Optional run label keeps later verification separate from archived E037 evidence.
+const RUN = process.env.PATHLAB_VERIFY_RUN;
+if (RUN && !/^[a-z0-9-]+$/.test(RUN)) throw Error("Invalid verification run label");
 const ROOT=path.resolve(__dirname,'..'),target=path.join(ROOT,'PathLab_AI_v4_optimized_final.html'),backup=path.join(ROOT,'output/backups/PathLab_AI_v4_optimized_final.before-ui-20261115.html');
 const sha=x=>crypto.createHash('sha256').update(x).digest('hex'),checks=[];
 function check(name,actual,expected){assert.deepEqual(actual,expected,name);checks.push({name,passed:true});}
@@ -39,5 +42,5 @@ function check(name,actual,expected){assert.deepEqual(actual,expected,name);chec
  const unit=spawnSync(process.execPath,['--experimental-strip-types','--test',...fs.readdirSync(path.join(ROOT,'PathLab-AI/tests')).filter(n=>n.endsWith('.test.mjs')).map(n=>path.join(ROOT,'PathLab-AI/tests',n))],{cwd:path.join(ROOT,'PathLab-AI'),encoding:'utf8',maxBuffer:8*1024*1024});
  check('original 171 Node tests pass',unit.status,0);check('actual original unit-test totals',unit.stdout.includes('tests 171')&&unit.stdout.includes('pass 171')&&unit.stdout.includes('fail 0'),true);
  const record={date:'2026-11-15',executor:'AI',baseline:'51d1616',target,original:{bytes:originalBytes.length,sha256:sha(originalBytes)},enhanced:{bytes:targetBytes.length,sha256:sha(targetBytes)},passed:checks.length,nodeTests:{passed:171,failed:0,summary:unit.stdout.split(/\r?\n/).filter(l=>/tests |suites |pass |fail |cancelled |skipped |todo |duration_ms /.test(l)).slice(-8)},checks};
- fs.writeFileSync(path.join(ROOT,'docs/evidence/ui-preservation-20261115.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify({passed:checks.length,nodeTests:record.nodeTests,sha256:record.enhanced.sha256},null,2));
+ fs.writeFileSync(path.join(ROOT, RUN ? 'docs/evidence/' + RUN + '-preservation.json' : 'docs/evidence/ui-preservation-20261115.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify({passed:checks.length,nodeTests:record.nodeTests,sha256:record.enhanced.sha256},null,2));
 })().catch(e=>{console.error(e);process.exitCode=1;});

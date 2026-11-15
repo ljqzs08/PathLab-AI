@@ -1,0 +1,1281 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "humanLearningValidation": false,
+  "physicalDevice": false,
+  "browser": "157.0.4341.46",
+  "offline": true,
+  "clipboard": "synthetic success/denied/absent/pending",
+  "externalNavigation": "manual fixed-URL popup verified with synthetic route; no official login or message sent",
+  "target": "D:\\竞赛\\PathLab_AI_v4_optimized_final.html",
+  "sha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "passed": 312,
+  "results": [
+    {
+      "width": 1440,
+      "passed": 78
+    },
+    {
+      "width": 768,
+      "passed": 78
+    },
+    {
+      "width": 390,
+      "passed": 78
+    },
+    {
+      "width": 320,
+      "passed": 78
+    }
+  ],
+  "checks": [
+    {
+      "name": "1440 home card visible",
+      "passed": true
+    },
+    {
+      "name": "1440 still eight original stations",
+      "passed": true
+    },
+    {
+      "name": "1440 original review not prematurely created",
+      "passed": true
+    },
+    {
+      "name": "1440 no external link activated before user opens panel",
+      "passed": true
+    },
+    {
+      "name": "1440 persistent header entry opens modal",
+      "passed": true
+    },
+    {
+      "name": "1440 default learner template available",
+      "passed": true
+    },
+    {
+      "name": "1440 learning template not invented evidence",
+      "passed": true
+    },
+    {
+      "name": "1440 learner template has no F evidence",
+      "passed": true
+    },
+    {
+      "name": "1440 absent evidence clearly gated",
+      "passed": true
+    },
+    {
+      "name": "1440 no invented result preview",
+      "passed": true
+    },
+    {
+      "name": "1440 no empty clipboard copy",
+      "passed": true
+    },
+    {
+      "name": "1440 source adjustment unavailable until real result",
+      "passed": true
+    },
+    {
+      "name": "1440 API truthful offline boundary",
+      "passed": true
+    },
+    {
+      "name": "1440 no API key field in entry",
+      "passed": true
+    },
+    {
+      "name": "1440 topic start generates safe template",
+      "passed": true
+    },
+    {
+      "name": "1440 topic costs generates safe template",
+      "passed": true
+    },
+    {
+      "name": "1440 topic costs actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "1440 topic walls generates safe template",
+      "passed": true
+    },
+    {
+      "name": "1440 topic walls actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "1440 topic compare generates safe template",
+      "passed": true
+    },
+    {
+      "name": "1440 topic compare actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "1440 brief style reflected in preview",
+      "passed": true
+    },
+    {
+      "name": "1440 copy matches preview exactly",
+      "passed": true
+    },
+    {
+      "name": "1440 copied status does not claim sending",
+      "passed": true
+    },
+    {
+      "name": "1440 changed prompt invalidates copied state",
+      "passed": true
+    },
+    {
+      "name": "1440 new prompt unblocks after pending old copy",
+      "passed": true
+    },
+    {
+      "name": "1440 late copy never marks changed content copied",
+      "passed": true
+    },
+    {
+      "name": "1440 denied fallback message",
+      "passed": true
+    },
+    {
+      "name": "1440 denied fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "1440 denied fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "1440 absent fallback message",
+      "passed": true
+    },
+    {
+      "name": "1440 absent fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "1440 absent fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "1440 manual select available",
+      "passed": true
+    },
+    {
+      "name": "1440 only official fixed webpage",
+      "passed": true
+    },
+    {
+      "name": "1440 safe external target",
+      "passed": true
+    },
+    {
+      "name": "1440 no opener/referrer leakage",
+      "passed": true
+    },
+    {
+      "name": "1440 manual link opens only fixed URL without prompt",
+      "passed": true
+    },
+    {
+      "name": "1440 external popup has no opener/referrer",
+      "passed": true
+    },
+    {
+      "name": "1440 opening website does not complete local task",
+      "passed": true
+    },
+    {
+      "name": "1440 dark review accessibility",
+      "passed": true
+    },
+    {
+      "name": "1440 modal horizontal fit",
+      "passed": true
+    },
+    {
+      "name": "1440 review actions never write storage",
+      "passed": true
+    },
+    {
+      "name": "1440 Escape closes modal",
+      "passed": true
+    },
+    {
+      "name": "1440 close returns focus to opener",
+      "passed": true
+    },
+    {
+      "name": "1440 closing pending copy resets button",
+      "passed": true
+    },
+    {
+      "name": "1440 reopening pending copy allows new request",
+      "passed": true
+    },
+    {
+      "name": "1440 closed copy cannot mark reopened preview copied",
+      "passed": true
+    },
+    {
+      "name": "1440 light review accessibility",
+      "passed": true
+    },
+    {
+      "name": "1440 homepage action also works",
+      "passed": true
+    },
+    {
+      "name": "1440 guided path navigates without resetting",
+      "passed": true
+    },
+    {
+      "name": "1440 navigation closes modal",
+      "passed": true
+    },
+    {
+      "name": "1440 does not auto-start task",
+      "passed": true
+    },
+    {
+      "name": "1440 active search still has no exported results",
+      "passed": true
+    },
+    {
+      "name": "1440 original result still available",
+      "passed": true
+    },
+    {
+      "name": "1440 actual evidence is now unlocked",
+      "passed": true
+    },
+    {
+      "name": "1440 exact original prompt, not rebuilt facts",
+      "passed": true
+    },
+    {
+      "name": "1440 free explanation not exported",
+      "passed": true
+    },
+    {
+      "name": "1440 actual result badge",
+      "passed": true
+    },
+    {
+      "name": "1440 evidence copy byte-equal to source",
+      "passed": true
+    },
+    {
+      "name": "1440 copied evidence does not modify original save",
+      "passed": true
+    },
+    {
+      "name": "1440 adjust returns to real original preview",
+      "passed": true
+    },
+    {
+      "name": "1440 original focus/style edits reflected exactly",
+      "passed": true
+    },
+    {
+      "name": "1440 original style really changed",
+      "passed": true
+    },
+    {
+      "name": "1440 original API stays optional collapsed",
+      "passed": true
+    },
+    {
+      "name": "1440 evidence view accessibility",
+      "passed": true
+    },
+    {
+      "name": "1440 condition editing withdraws original preview",
+      "passed": true
+    },
+    {
+      "name": "1440 condition editing clearly gated",
+      "passed": true
+    },
+    {
+      "name": "1440 cancelling condition preserves valid original record",
+      "passed": true
+    },
+    {
+      "name": "1440 mission switch removes previous result",
+      "passed": true
+    },
+    {
+      "name": "1440 mission switch returns gate",
+      "passed": true
+    },
+    {
+      "name": "1440 no stale copied-result status",
+      "passed": true
+    },
+    {
+      "name": "1440 no iframe embedded chat",
+      "passed": true
+    },
+    {
+      "name": "1440 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "1440 no browser errors",
+      "passed": true
+    },
+    {
+      "name": "1440 page does not overflow horizontally",
+      "passed": true
+    },
+    {
+      "name": "1440 header entry also present in original intro station",
+      "passed": true
+    },
+    {
+      "name": "1440 modal traps keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "768 home card visible",
+      "passed": true
+    },
+    {
+      "name": "768 still eight original stations",
+      "passed": true
+    },
+    {
+      "name": "768 original review not prematurely created",
+      "passed": true
+    },
+    {
+      "name": "768 no external link activated before user opens panel",
+      "passed": true
+    },
+    {
+      "name": "768 persistent header entry opens modal",
+      "passed": true
+    },
+    {
+      "name": "768 default learner template available",
+      "passed": true
+    },
+    {
+      "name": "768 learning template not invented evidence",
+      "passed": true
+    },
+    {
+      "name": "768 learner template has no F evidence",
+      "passed": true
+    },
+    {
+      "name": "768 absent evidence clearly gated",
+      "passed": true
+    },
+    {
+      "name": "768 no invented result preview",
+      "passed": true
+    },
+    {
+      "name": "768 no empty clipboard copy",
+      "passed": true
+    },
+    {
+      "name": "768 source adjustment unavailable until real result",
+      "passed": true
+    },
+    {
+      "name": "768 API truthful offline boundary",
+      "passed": true
+    },
+    {
+      "name": "768 no API key field in entry",
+      "passed": true
+    },
+    {
+      "name": "768 topic start generates safe template",
+      "passed": true
+    },
+    {
+      "name": "768 topic costs generates safe template",
+      "passed": true
+    },
+    {
+      "name": "768 topic costs actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "768 topic walls generates safe template",
+      "passed": true
+    },
+    {
+      "name": "768 topic walls actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "768 topic compare generates safe template",
+      "passed": true
+    },
+    {
+      "name": "768 topic compare actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "768 brief style reflected in preview",
+      "passed": true
+    },
+    {
+      "name": "768 copy matches preview exactly",
+      "passed": true
+    },
+    {
+      "name": "768 copied status does not claim sending",
+      "passed": true
+    },
+    {
+      "name": "768 changed prompt invalidates copied state",
+      "passed": true
+    },
+    {
+      "name": "768 new prompt unblocks after pending old copy",
+      "passed": true
+    },
+    {
+      "name": "768 late copy never marks changed content copied",
+      "passed": true
+    },
+    {
+      "name": "768 denied fallback message",
+      "passed": true
+    },
+    {
+      "name": "768 denied fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "768 denied fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "768 absent fallback message",
+      "passed": true
+    },
+    {
+      "name": "768 absent fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "768 absent fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "768 manual select available",
+      "passed": true
+    },
+    {
+      "name": "768 only official fixed webpage",
+      "passed": true
+    },
+    {
+      "name": "768 safe external target",
+      "passed": true
+    },
+    {
+      "name": "768 no opener/referrer leakage",
+      "passed": true
+    },
+    {
+      "name": "768 manual link opens only fixed URL without prompt",
+      "passed": true
+    },
+    {
+      "name": "768 external popup has no opener/referrer",
+      "passed": true
+    },
+    {
+      "name": "768 opening website does not complete local task",
+      "passed": true
+    },
+    {
+      "name": "768 dark review accessibility",
+      "passed": true
+    },
+    {
+      "name": "768 modal horizontal fit",
+      "passed": true
+    },
+    {
+      "name": "768 review actions never write storage",
+      "passed": true
+    },
+    {
+      "name": "768 Escape closes modal",
+      "passed": true
+    },
+    {
+      "name": "768 close returns focus to opener",
+      "passed": true
+    },
+    {
+      "name": "768 closing pending copy resets button",
+      "passed": true
+    },
+    {
+      "name": "768 reopening pending copy allows new request",
+      "passed": true
+    },
+    {
+      "name": "768 closed copy cannot mark reopened preview copied",
+      "passed": true
+    },
+    {
+      "name": "768 light review accessibility",
+      "passed": true
+    },
+    {
+      "name": "768 homepage action also works",
+      "passed": true
+    },
+    {
+      "name": "768 guided path navigates without resetting",
+      "passed": true
+    },
+    {
+      "name": "768 navigation closes modal",
+      "passed": true
+    },
+    {
+      "name": "768 does not auto-start task",
+      "passed": true
+    },
+    {
+      "name": "768 active search still has no exported results",
+      "passed": true
+    },
+    {
+      "name": "768 original result still available",
+      "passed": true
+    },
+    {
+      "name": "768 actual evidence is now unlocked",
+      "passed": true
+    },
+    {
+      "name": "768 exact original prompt, not rebuilt facts",
+      "passed": true
+    },
+    {
+      "name": "768 free explanation not exported",
+      "passed": true
+    },
+    {
+      "name": "768 actual result badge",
+      "passed": true
+    },
+    {
+      "name": "768 evidence copy byte-equal to source",
+      "passed": true
+    },
+    {
+      "name": "768 copied evidence does not modify original save",
+      "passed": true
+    },
+    {
+      "name": "768 adjust returns to real original preview",
+      "passed": true
+    },
+    {
+      "name": "768 original focus/style edits reflected exactly",
+      "passed": true
+    },
+    {
+      "name": "768 original style really changed",
+      "passed": true
+    },
+    {
+      "name": "768 original API stays optional collapsed",
+      "passed": true
+    },
+    {
+      "name": "768 evidence view accessibility",
+      "passed": true
+    },
+    {
+      "name": "768 condition editing withdraws original preview",
+      "passed": true
+    },
+    {
+      "name": "768 condition editing clearly gated",
+      "passed": true
+    },
+    {
+      "name": "768 cancelling condition preserves valid original record",
+      "passed": true
+    },
+    {
+      "name": "768 mission switch removes previous result",
+      "passed": true
+    },
+    {
+      "name": "768 mission switch returns gate",
+      "passed": true
+    },
+    {
+      "name": "768 no stale copied-result status",
+      "passed": true
+    },
+    {
+      "name": "768 no iframe embedded chat",
+      "passed": true
+    },
+    {
+      "name": "768 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "768 no browser errors",
+      "passed": true
+    },
+    {
+      "name": "768 page does not overflow horizontally",
+      "passed": true
+    },
+    {
+      "name": "768 header entry also present in original intro station",
+      "passed": true
+    },
+    {
+      "name": "768 modal traps keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "390 home card visible",
+      "passed": true
+    },
+    {
+      "name": "390 still eight original stations",
+      "passed": true
+    },
+    {
+      "name": "390 original review not prematurely created",
+      "passed": true
+    },
+    {
+      "name": "390 no external link activated before user opens panel",
+      "passed": true
+    },
+    {
+      "name": "390 persistent header entry opens modal",
+      "passed": true
+    },
+    {
+      "name": "390 default learner template available",
+      "passed": true
+    },
+    {
+      "name": "390 learning template not invented evidence",
+      "passed": true
+    },
+    {
+      "name": "390 learner template has no F evidence",
+      "passed": true
+    },
+    {
+      "name": "390 absent evidence clearly gated",
+      "passed": true
+    },
+    {
+      "name": "390 no invented result preview",
+      "passed": true
+    },
+    {
+      "name": "390 no empty clipboard copy",
+      "passed": true
+    },
+    {
+      "name": "390 source adjustment unavailable until real result",
+      "passed": true
+    },
+    {
+      "name": "390 API truthful offline boundary",
+      "passed": true
+    },
+    {
+      "name": "390 no API key field in entry",
+      "passed": true
+    },
+    {
+      "name": "390 topic start generates safe template",
+      "passed": true
+    },
+    {
+      "name": "390 topic costs generates safe template",
+      "passed": true
+    },
+    {
+      "name": "390 topic costs actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "390 topic walls generates safe template",
+      "passed": true
+    },
+    {
+      "name": "390 topic walls actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "390 topic compare generates safe template",
+      "passed": true
+    },
+    {
+      "name": "390 topic compare actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "390 brief style reflected in preview",
+      "passed": true
+    },
+    {
+      "name": "390 copy matches preview exactly",
+      "passed": true
+    },
+    {
+      "name": "390 copied status does not claim sending",
+      "passed": true
+    },
+    {
+      "name": "390 changed prompt invalidates copied state",
+      "passed": true
+    },
+    {
+      "name": "390 new prompt unblocks after pending old copy",
+      "passed": true
+    },
+    {
+      "name": "390 late copy never marks changed content copied",
+      "passed": true
+    },
+    {
+      "name": "390 denied fallback message",
+      "passed": true
+    },
+    {
+      "name": "390 denied fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "390 denied fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "390 absent fallback message",
+      "passed": true
+    },
+    {
+      "name": "390 absent fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "390 absent fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "390 manual select available",
+      "passed": true
+    },
+    {
+      "name": "390 only official fixed webpage",
+      "passed": true
+    },
+    {
+      "name": "390 safe external target",
+      "passed": true
+    },
+    {
+      "name": "390 no opener/referrer leakage",
+      "passed": true
+    },
+    {
+      "name": "390 manual link opens only fixed URL without prompt",
+      "passed": true
+    },
+    {
+      "name": "390 external popup has no opener/referrer",
+      "passed": true
+    },
+    {
+      "name": "390 opening website does not complete local task",
+      "passed": true
+    },
+    {
+      "name": "390 dark review accessibility",
+      "passed": true
+    },
+    {
+      "name": "390 modal horizontal fit",
+      "passed": true
+    },
+    {
+      "name": "390 review actions never write storage",
+      "passed": true
+    },
+    {
+      "name": "390 Escape closes modal",
+      "passed": true
+    },
+    {
+      "name": "390 close returns focus to opener",
+      "passed": true
+    },
+    {
+      "name": "390 closing pending copy resets button",
+      "passed": true
+    },
+    {
+      "name": "390 reopening pending copy allows new request",
+      "passed": true
+    },
+    {
+      "name": "390 closed copy cannot mark reopened preview copied",
+      "passed": true
+    },
+    {
+      "name": "390 light review accessibility",
+      "passed": true
+    },
+    {
+      "name": "390 homepage action also works",
+      "passed": true
+    },
+    {
+      "name": "390 guided path navigates without resetting",
+      "passed": true
+    },
+    {
+      "name": "390 navigation closes modal",
+      "passed": true
+    },
+    {
+      "name": "390 does not auto-start task",
+      "passed": true
+    },
+    {
+      "name": "390 active search still has no exported results",
+      "passed": true
+    },
+    {
+      "name": "390 original result still available",
+      "passed": true
+    },
+    {
+      "name": "390 actual evidence is now unlocked",
+      "passed": true
+    },
+    {
+      "name": "390 exact original prompt, not rebuilt facts",
+      "passed": true
+    },
+    {
+      "name": "390 free explanation not exported",
+      "passed": true
+    },
+    {
+      "name": "390 actual result badge",
+      "passed": true
+    },
+    {
+      "name": "390 evidence copy byte-equal to source",
+      "passed": true
+    },
+    {
+      "name": "390 copied evidence does not modify original save",
+      "passed": true
+    },
+    {
+      "name": "390 adjust returns to real original preview",
+      "passed": true
+    },
+    {
+      "name": "390 original focus/style edits reflected exactly",
+      "passed": true
+    },
+    {
+      "name": "390 original style really changed",
+      "passed": true
+    },
+    {
+      "name": "390 original API stays optional collapsed",
+      "passed": true
+    },
+    {
+      "name": "390 evidence view accessibility",
+      "passed": true
+    },
+    {
+      "name": "390 condition editing withdraws original preview",
+      "passed": true
+    },
+    {
+      "name": "390 condition editing clearly gated",
+      "passed": true
+    },
+    {
+      "name": "390 cancelling condition preserves valid original record",
+      "passed": true
+    },
+    {
+      "name": "390 mission switch removes previous result",
+      "passed": true
+    },
+    {
+      "name": "390 mission switch returns gate",
+      "passed": true
+    },
+    {
+      "name": "390 no stale copied-result status",
+      "passed": true
+    },
+    {
+      "name": "390 no iframe embedded chat",
+      "passed": true
+    },
+    {
+      "name": "390 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "390 no browser errors",
+      "passed": true
+    },
+    {
+      "name": "390 page does not overflow horizontally",
+      "passed": true
+    },
+    {
+      "name": "390 header entry also present in original intro station",
+      "passed": true
+    },
+    {
+      "name": "390 modal traps keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "320 home card visible",
+      "passed": true
+    },
+    {
+      "name": "320 still eight original stations",
+      "passed": true
+    },
+    {
+      "name": "320 original review not prematurely created",
+      "passed": true
+    },
+    {
+      "name": "320 no external link activated before user opens panel",
+      "passed": true
+    },
+    {
+      "name": "320 persistent header entry opens modal",
+      "passed": true
+    },
+    {
+      "name": "320 default learner template available",
+      "passed": true
+    },
+    {
+      "name": "320 learning template not invented evidence",
+      "passed": true
+    },
+    {
+      "name": "320 learner template has no F evidence",
+      "passed": true
+    },
+    {
+      "name": "320 absent evidence clearly gated",
+      "passed": true
+    },
+    {
+      "name": "320 no invented result preview",
+      "passed": true
+    },
+    {
+      "name": "320 no empty clipboard copy",
+      "passed": true
+    },
+    {
+      "name": "320 source adjustment unavailable until real result",
+      "passed": true
+    },
+    {
+      "name": "320 API truthful offline boundary",
+      "passed": true
+    },
+    {
+      "name": "320 no API key field in entry",
+      "passed": true
+    },
+    {
+      "name": "320 topic start generates safe template",
+      "passed": true
+    },
+    {
+      "name": "320 topic costs generates safe template",
+      "passed": true
+    },
+    {
+      "name": "320 topic costs actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "320 topic walls generates safe template",
+      "passed": true
+    },
+    {
+      "name": "320 topic walls actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "320 topic compare generates safe template",
+      "passed": true
+    },
+    {
+      "name": "320 topic compare actually changes prompt",
+      "passed": true
+    },
+    {
+      "name": "320 brief style reflected in preview",
+      "passed": true
+    },
+    {
+      "name": "320 copy matches preview exactly",
+      "passed": true
+    },
+    {
+      "name": "320 copied status does not claim sending",
+      "passed": true
+    },
+    {
+      "name": "320 changed prompt invalidates copied state",
+      "passed": true
+    },
+    {
+      "name": "320 new prompt unblocks after pending old copy",
+      "passed": true
+    },
+    {
+      "name": "320 late copy never marks changed content copied",
+      "passed": true
+    },
+    {
+      "name": "320 denied fallback message",
+      "passed": true
+    },
+    {
+      "name": "320 denied fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "320 denied fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "320 absent fallback message",
+      "passed": true
+    },
+    {
+      "name": "320 absent fallback selects entire preview",
+      "passed": true
+    },
+    {
+      "name": "320 absent fallback permits retry",
+      "passed": true
+    },
+    {
+      "name": "320 manual select available",
+      "passed": true
+    },
+    {
+      "name": "320 only official fixed webpage",
+      "passed": true
+    },
+    {
+      "name": "320 safe external target",
+      "passed": true
+    },
+    {
+      "name": "320 no opener/referrer leakage",
+      "passed": true
+    },
+    {
+      "name": "320 manual link opens only fixed URL without prompt",
+      "passed": true
+    },
+    {
+      "name": "320 external popup has no opener/referrer",
+      "passed": true
+    },
+    {
+      "name": "320 opening website does not complete local task",
+      "passed": true
+    },
+    {
+      "name": "320 dark review accessibility",
+      "passed": true
+    },
+    {
+      "name": "320 modal horizontal fit",
+      "passed": true
+    },
+    {
+      "name": "320 review actions never write storage",
+      "passed": true
+    },
+    {
+      "name": "320 Escape closes modal",
+      "passed": true
+    },
+    {
+      "name": "320 close returns focus to opener",
+      "passed": true
+    },
+    {
+      "name": "320 closing pending copy resets button",
+      "passed": true
+    },
+    {
+      "name": "320 reopening pending copy allows new request",
+      "passed": true
+    },
+    {
+      "name": "320 closed copy cannot mark reopened preview copied",
+      "passed": true
+    },
+    {
+      "name": "320 light review accessibility",
+      "passed": true
+    },
+    {
+      "name": "320 homepage action also works",
+      "passed": true
+    },
+    {
+      "name": "320 guided path navigates without resetting",
+      "passed": true
+    },
+    {
+      "name": "320 navigation closes modal",
+      "passed": true
+    },
+    {
+      "name": "320 does not auto-start task",
+      "passed": true
+    },
+    {
+      "name": "320 active search still has no exported results",
+      "passed": true
+    },
+    {
+      "name": "320 original result still available",
+      "passed": true
+    },
+    {
+      "name": "320 actual evidence is now unlocked",
+      "passed": true
+    },
+    {
+      "name": "320 exact original prompt, not rebuilt facts",
+      "passed": true
+    },
+    {
+      "name": "320 free explanation not exported",
+      "passed": true
+    },
+    {
+      "name": "320 actual result badge",
+      "passed": true
+    },
+    {
+      "name": "320 evidence copy byte-equal to source",
+      "passed": true
+    },
+    {
+      "name": "320 copied evidence does not modify original save",
+      "passed": true
+    },
+    {
+      "name": "320 adjust returns to real original preview",
+      "passed": true
+    },
+    {
+      "name": "320 original focus/style edits reflected exactly",
+      "passed": true
+    },
+    {
+      "name": "320 original style really changed",
+      "passed": true
+    },
+    {
+      "name": "320 original API stays optional collapsed",
+      "passed": true
+    },
+    {
+      "name": "320 evidence view accessibility",
+      "passed": true
+    },
+    {
+      "name": "320 condition editing withdraws original preview",
+      "passed": true
+    },
+    {
+      "name": "320 condition editing clearly gated",
+      "passed": true
+    },
+    {
+      "name": "320 cancelling condition preserves valid original record",
+      "passed": true
+    },
+    {
+      "name": "320 mission switch removes previous result",
+      "passed": true
+    },
+    {
+      "name": "320 mission switch returns gate",
+      "passed": true
+    },
+    {
+      "name": "320 no stale copied-result status",
+      "passed": true
+    },
+    {
+      "name": "320 no iframe embedded chat",
+      "passed": true
+    },
+    {
+      "name": "320 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "320 no browser errors",
+      "passed": true
+    },
+    {
+      "name": "320 page does not overflow horizontally",
+      "passed": true
+    },
+    {
+      "name": "320 header entry also present in original intro station",
+      "passed": true
+    },
+    {
+      "name": "320 modal traps keyboard focus",
+      "passed": true
+    }
+  ]
+}

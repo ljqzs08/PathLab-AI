@@ -2,9 +2,9 @@
 
 - Session ID: `01a1dc75-a6db-7c80-8d3c-d4cc931c8be9`
 - Source file: `rollout-2026-11-15T07-47-40-01a1dc75-a6db-7c80-8d3c-d4cc931c8be9.jsonl` (read-only)
-- Captured at: 2026-11-15T08:41:21.9713703+08:00
-- Visible messages captured: 7
-- Final assistant answer captured: False
+- Captured at: 2026-11-15T09:03:08.8988645+08:00
+- Visible messages captured: 8
+- Final assistant answer captured: True
 - Incomplete source tail skipped: False
 - Internal handoff source lines excluded: 265, 581
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -63,3 +63,36 @@ Source line: 663; Timestamp: 2026-11-15T00:29:59.091Z; Text SHA256: `6b92969c89b
 Source line: 839; Timestamp: 2026-11-15T00:38:55.226Z; Text SHA256: `8e99e3c803891cec936f9a38e1a9087e1898fcd4722b2f1d5543478fe978ddda`
 
 奶娃拖动问题已修复，原功能完整回归已重新通过 316 项；新增学习交互检查通过 389 项，原算法单测通过 171 项。原媒体和算法也已完成保护性核对。现在只剩验证记录归档和本轮临时文件清理。
+
+## 8. assistant / final_answer
+
+Source line: 906; Timestamp: 2026-11-15T00:43:44.848Z; Text SHA256: `1c6c92bc0121617599eb5caaeb87b2daa0e5370b360532dea34820a8bfabd72b`
+
+已直接修改好你指定的 HTML，**仍可双击打开、离线使用，不需要安装或启动服务。**
+
+**[打开优化后的页面](D:/竞赛/PathLab_AI_v4_optimized_final.html)**  
+[原稿备份，随时可恢复](D:/竞赛/output/backups/PathLab_AI_v4_optimized_final.before-ui-20261115.html)
+
+### 已完成
+- **保留原有功能**：八站课程、图片视频、奶娃助手、闯关、工作台、自由实验、原评分与存档均保留。
+- **优化界面交互**：增加明暗主题、快捷练习入口、继续学习按钮，改善卡片层级、窄屏布局、键盘操作与焦点提示。
+- **补上零基础学习闭环**：  
+  **看懂地图 → 白话理解 g/h/f → 亲手算分 → 预测下一格 → 真实搜索回放 → 换题自测。**
+- **答错能知道为什么**：针对穿墙、斜走、只看某一个分数等错误给出解释；自测记录首答成绩、检查次数，并可导出。
+- **纠正误导性表述**：删除没有依据的性能数字，说明最短路线的适用前提，不再把“看过动画”当作“已经学会”。
+
+### 验证结果
+由 AI 使用 Windows Edge 离线完成四种屏宽检查：
+- 原功能回归：**316/316**
+- 新增交互检查：**389/389**
+- 原算法等单测：**171/171**
+- 原稿、媒体及算法保护性检查：**21/21**
+
+[查看完整修改与验证记录](D:/竞赛/docs/verification-ui-beginner.md)
+
+### 剩余边界
+- 本轮只更新指定 HTML，未同步旧交付包或 Next 源码，**未上传**。
+- 自动检查不能证明真人一定学会；下一步应让一名真正的新手独立完成练习，再换陌生地图检验。后续沿用“**先定义、再动手、先预测、再回放**”的原则。
+- 临时图和缓存清理被工具策略拒绝，仍留在 `D:\竞赛\.cache\ui-beginner-20261115` 与 `D:\竞赛\.cache\ui-original-regression-20261115`，未绕过限制。
+
+本地功能提交：`39e51b2`；归档：`515752b`。[本轮 Prompt 留档](D:/竞赛/prompts/sessions/2026-11-15-ui-beginner.md)，末答复待下轮补齐；原三条核心链及真人证据边界不变。

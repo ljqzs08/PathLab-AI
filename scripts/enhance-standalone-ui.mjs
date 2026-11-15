@@ -47,8 +47,8 @@ for (let i = 0; i < astar.events.length; i++) {
 assert.equal(astar.metrics.pathLength, bfs.metrics.pathLength);
 const data = { input, frames, astar: astar.metrics, bfs: bfs.metrics, path: astar.path };
 const legacyCss = html.match(/<style>([\s\S]*?)<\/style>/)[1];
-const css = lightPalette(legacyCss) + '\n' + fs.readFileSync(path.join(ROOT, 'scripts/ui-beginner.css'), 'utf8');
-const js = fs.readFileSync(path.join(ROOT, 'scripts/ui-beginner.js'), 'utf8');
+const css = lightPalette(legacyCss) + '\n' + fs.readFileSync(path.join(ROOT, 'scripts/ui-beginner.css'), 'utf8') + '\n' + fs.readFileSync(path.join(ROOT, 'scripts/web-review-entry.css'), 'utf8');
+const js = fs.readFileSync(path.join(ROOT, 'scripts/ui-beginner.js'), 'utf8') + '\n' + fs.readFileSync(path.join(ROOT, 'scripts/web-review-entry.js'), 'utf8');
 assert(!js.includes('</script>'), 'Escape script closing tags.');
 html = html.replace('</head>', '\n<!-- E037:STYLE:START -->\n<style id="pl-ui-enhancement">\n' + css + '\n</style>\n<!-- E037:STYLE:END -->\n</head>');
 const injection = '\n<!-- E037:SCRIPT:START -->\n<script id="pl-coach-data" type="application/json">' + JSON.stringify(data) + '</script>\n<script id="pl-ui-script">\n' + js + '\n</script>\n<!-- E037:SCRIPT:END -->\n';

@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "method": "functions.view_image：逐一查看专项最终重跑保存的八张 PNG",
+  "target": "D:\\竞赛\\PathLab_AI_v4_optimized_final.html",
+  "targetSha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "humanLearningValidation": false,
+  "physicalDevice": false,
+  "scope": "桌面与390像素模拟手机视口的首页、学习/证据弹窗、底部操作，以及浅色弹窗；不是所有滚动位置或真实手机的人工验收。",
+  "temporaryImages": "检查后按用户规则尝试删除；实际结果另见 cleanup JSON。",
+  "images": [
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\home-1440.png",
+      "width": 1440,
+      "view": "桌面首页",
+      "bytes": 558346,
+      "sha256": "8b784408ee048d4e3557b0b15f27a4625abcf893f026bf20bf28affa54499c64",
+      "viewedByAI": true,
+      "observation": "顶部常驻按钮和首页卡片均可见，未见明显横向溢出。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\home-390.png",
+      "width": 390,
+      "view": "手机宽度首页",
+      "bytes": 175343,
+      "sha256": "617f4c55cec885c2fa800204b0bafbdcb35e17501b92ed11db7c18ce618a3804",
+      "viewedByAI": true,
+      "observation": "卡片按窄屏纵向排列，两操作按钮可读可见。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\learning-1440.png",
+      "width": 1440,
+      "view": "桌面学习提问",
+      "bytes": 235463,
+      "sha256": "3cc39f96adfca6f7235539cc269e3ec88dd5f3153415b37e168b8a9cd1bc0257",
+      "viewedByAI": true,
+      "observation": "主题/风格、模板预览与复制/网页/选中操作可见，暗色文字可读。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\learning-390.png",
+      "width": 390,
+      "view": "手机宽度学习提问",
+      "bytes": 75986,
+      "sha256": "b8bf441c30ef7cccec971a9b490b612b4c8678f8328855ea1648d3c788a1fc98",
+      "viewedByAI": true,
+      "observation": "弹窗与预览适配窄屏，弹窗内部可纵向滚动，无明显横向截断。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\evidence-1440.png",
+      "width": 1440,
+      "view": "桌面运行复盘",
+      "bytes": 213388,
+      "sha256": "871f12cb67b71a807b11f5a28c7acb8bd114ea3f399c0a1a4bb651d242f4a909",
+      "viewedByAI": true,
+      "observation": "已解锁真实证据状态、原复盘调整入口及当前记录预览可见。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\evidence-390.png",
+      "width": 390,
+      "view": "手机宽度运行复盘",
+      "bytes": 77852,
+      "sha256": "b6c21240ac6efa3c44ef010b3bc7347a4d6eb53d499265de8124add07eac721b",
+      "viewedByAI": true,
+      "observation": "证据状态、调整入口与预览纵向排列可读。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\actions-390.png",
+      "width": 390,
+      "view": "手机宽度底部操作",
+      "bytes": 78421,
+      "sha256": "3c046d742a602d75043660aa6fcb7c569ec2ddfe460a2bba6587e56cff900d88",
+      "viewedByAI": true,
+      "observation": "三项操作与手动复制说明均可见，没有因窄屏而缺失。"
+    },
+    {
+      "temporaryFile": "D:\\竞赛\\.cache\\web-review-entry-20261115\\light-1440.png",
+      "width": 1440,
+      "view": "桌面浅色学习提问",
+      "bytes": 245956,
+      "sha256": "5d892717c34600bd0abb17109d912a6a6ad404fe5d368b60632b2f76f77dee2c",
+      "viewedByAI": true,
+      "observation": "浅色弹窗的输入、预览与操作文字可读。"
+    }
+  ]
+}

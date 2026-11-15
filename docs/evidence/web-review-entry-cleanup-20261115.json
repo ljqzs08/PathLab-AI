@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "workspace": "D:\\竞赛",
+  "scope": "仅本轮 E038 新增的三处临时目录。测试已结束；八张最终检查图已逐一查看，哈希另归档。",
+  "oldDeniedCaches": "E037 等旧拒绝清理目录不重试、不绕过。",
+  "directories": [
+    {
+      "path": "D:\\竞赛\\.cache\\web-review-entry-20261115",
+      "withinWorkspaceCache": true,
+      "reparsePoints": 0,
+      "files": 9,
+      "pngs": 8,
+      "bytes": 1661247.0,
+      "status": "still-present-after-tool-policy-rejection"
+    },
+    {
+      "path": "D:\\竞赛\\.cache\\e038-web-review-entry-20261115-ui",
+      "withinWorkspaceCache": true,
+      "reparsePoints": 0,
+      "files": 13,
+      "pngs": 12,
+      "bytes": 2561163.0,
+      "status": "still-present-after-tool-policy-rejection"
+    },
+    {
+      "path": "D:\\竞赛\\.cache\\e038-web-review-entry-20261115-regression",
+      "withinWorkspaceCache": true,
+      "reparsePoints": 0,
+      "files": 58,
+      "pngs": 0,
+      "bytes": 1603720.0,
+      "status": "still-present-after-tool-policy-rejection"
+    }
+  ],
+  "status": "blocked-by-tool-policy-before-execution",
+  "evidencePreservedIn": "D:\\竞赛\\docs\\evidence",
+  "attemptedMethod": "PowerShell 原生 Remove-Item -LiteralPath，仅三处已核对的 D:\\竞赛\\.cache 下绝对目录；工具执行前拒绝。",
+  "boundary": "未换工具、改路径或重试绕过；未删除重要数据；旧拒绝目录未动。"
+}

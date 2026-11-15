@@ -1,6 +1,9 @@
 /** Reuse the original browser tests against the explicitly selected enhanced HTML. */
 const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
-const ROOT=path.resolve(__dirname,'..'),APP=path.join(ROOT,'PathLab-AI'),TEMP=path.join(ROOT,'.cache/ui-original-regression-20261115');
+// Optional run label keeps later verification separate from archived E037 evidence.
+const RUN = process.env.PATHLAB_VERIFY_RUN;
+if (RUN && !/^[a-z0-9-]+$/.test(RUN)) throw Error("Invalid verification run label");
+const ROOT=path.resolve(__dirname,'..'),APP=path.join(ROOT,'PathLab-AI'),TEMP=path.join(ROOT, RUN ? '.cache/' + RUN + '-regression' : '.cache/ui-original-regression-20261115');
 fs.mkdirSync(TEMP,{recursive:true});process.env.TEMP=process.env.TMP=TEMP;
 process.env.PLAYWRIGHT_BROWSERS_PATH=path.join(ROOT,'.cache/playwright');
 const made=[];
@@ -34,10 +37,10 @@ try{
   for (const child of suite.suites||[]) collect(child);
  }
  collect(report);
- const evidenceFile=path.join(ROOT,'docs/evidence/ui-original-regression-20261115.json');
+ const evidenceFile=path.join(ROOT, RUN ? 'docs/evidence/' + RUN + '-original-regression.json' : 'docs/evidence/ui-original-regression-20261115.json');
  const evidence=fs.existsSync(evidenceFile)?JSON.parse(fs.readFileSync(evidenceFile,'utf8')):{date:'2026-11-15',executor:'AI',offline:true,physicalDevice:false,humanLearningValidation:false,target:path.join(ROOT,'PathLab_AI_v4_optimized_final.html'),browserChannel:'msedge'};
  const run={sha256:require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(ROOT,'PathLab_AI_v4_optimized_final.html'))).digest('hex'),stats:report.stats,tests};
- if(process.argv.length>2){(evidence.targetedRuns??=[]).push(run);}else{evidence.finalRun=run;}
+ if(process.argv.length>2){(evidence.targetedRuns??=[]).push(run);}else{if(evidence.finalRun)(evidence.previousRuns??=[]).push(evidence.finalRun);evidence.finalRun=run;}
  fs.mkdirSync(path.dirname(evidenceFile),{recursive:true});fs.writeFileSync(evidenceFile,JSON.stringify(evidence,null,2)+'\n');
  process.exitCode=result.status??1;
 }finally{

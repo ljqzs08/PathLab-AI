@@ -4,8 +4,11 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const {pathToFileURL} = require('node:url');
+// Optional run label keeps later verification separate from archived E037 evidence.
+const RUN = process.env.PATHLAB_VERIFY_RUN;
+if (RUN && !/^[a-z0-9-]+$/.test(RUN)) throw Error("Invalid verification run label");
 const ROOT = path.resolve(__dirname,'..');
-const TEMP = path.join(ROOT,'.cache/ui-beginner-20261115');
+const TEMP = path.join(ROOT, RUN ? '.cache/' + RUN + '-ui' : '.cache/ui-beginner-20261115');
 fs.mkdirSync(TEMP,{recursive:true}); process.env.TEMP = process.env.TMP = TEMP;
 process.env.PLAYWRIGHT_BROWSERS_PATH = path.join(ROOT,'.cache/playwright');
 const {chromium} = require(path.join(ROOT,'PathLab-AI/node_modules/playwright-core'));
@@ -107,6 +110,6 @@ async function count(page){return Number(await page.locator('#pl-progress-count'
    await p.screenshot({path:path.join(TEMP,'verified-dialog-390.png')});await p.keyboard.press('Escape');check('dialog keyboard restores focus',await p.locator('#pl-open-coach').evaluate(el=>el===document.activeElement),true);
   }finally{await keyboardContext.close();}
   const record={date:'2026-11-15',executor:'AI',browser:await browser.version(),offline:true,physicalDevice:false,humanLearningValidation:false,target,sha256:crypto.createHash('sha256').update(fs.readFileSync(target)).digest('hex'),passed:checks.length,results,checks};
-  fs.mkdirSync(path.join(ROOT,'docs/evidence'),{recursive:true});fs.writeFileSync(path.join(ROOT,'docs/evidence/ui-beginner-20261115.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify({passed:checks.length,results,browser:record.browser},null,2));
+  fs.mkdirSync(path.join(ROOT,'docs/evidence'),{recursive:true});fs.writeFileSync(path.join(ROOT, RUN ? 'docs/evidence/' + RUN + '-ui.json' : 'docs/evidence/ui-beginner-20261115.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify({passed:checks.length,results,browser:record.browser},null,2));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
