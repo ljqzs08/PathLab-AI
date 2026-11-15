@@ -1,0 +1,1610 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "browser": "157.0.4341.46",
+  "offline": true,
+  "physicalDevice": false,
+  "humanLearningValidation": false,
+  "target": "D:\\竞赛\\PathLab_AI_v4_optimized_final.html",
+  "sha256": "9c023fa57c263d921ca0db73528b77beacfe5a9a325f951b6e82d6bb7d634874",
+  "passed": 389,
+  "results": [
+    {
+      "width": 1440,
+      "passed": 94,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 768,
+      "passed": 94,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 390,
+      "passed": 94,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 320,
+      "passed": 94,
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "1440 welcome opens",
+      "passed": true
+    },
+    {
+      "name": "1440 welcome axe",
+      "passed": true
+    },
+    {
+      "name": "1440 welcome Escape closes",
+      "passed": true
+    },
+    {
+      "name": "1440 original stations retained",
+      "passed": true
+    },
+    {
+      "name": "1440 visits are not exercise completion",
+      "passed": true
+    },
+    {
+      "name": "1440 freely switching does not mark complete",
+      "passed": true
+    },
+    {
+      "name": "1440 wall rejected",
+      "passed": true
+    },
+    {
+      "name": "1440 diagonal rejected",
+      "passed": true
+    },
+    {
+      "name": "1440 valid neighbor accepted",
+      "passed": true
+    },
+    {
+      "name": "1440 wrong sum rejected",
+      "passed": true
+    },
+    {
+      "name": "1440 correct sum accepted",
+      "passed": true
+    },
+    {
+      "name": "1440 formula updates visually",
+      "passed": true
+    },
+    {
+      "name": "1440 wrong prediction explained",
+      "passed": true
+    },
+    {
+      "name": "1440 wrong prediction not passed",
+      "passed": true
+    },
+    {
+      "name": "1440 correct prediction accepted",
+      "passed": true
+    },
+    {
+      "name": "1440 final metrics not revealed before replay",
+      "passed": true
+    },
+    {
+      "name": "1440 replay question hidden before final",
+      "passed": true
+    },
+    {
+      "name": "1440 replay cannot complete before final",
+      "passed": true
+    },
+    {
+      "name": "1440 last frame selected",
+      "passed": true
+    },
+    {
+      "name": "1440 original-engine final metrics shown",
+      "passed": true
+    },
+    {
+      "name": "1440 expansion count not mistaken for route length",
+      "passed": true
+    },
+    {
+      "name": "1440 correct replay distinction accepted",
+      "passed": true
+    },
+    {
+      "name": "1440 partial quiz does not pass",
+      "passed": true
+    },
+    {
+      "name": "1440 detailed wrong explanations",
+      "passed": true
+    },
+    {
+      "name": "1440 wrong-answer report axe",
+      "passed": true
+    },
+    {
+      "name": "1440 all correct quiz passes",
+      "passed": true
+    },
+    {
+      "name": "1440 first-attempt score retained",
+      "passed": true
+    },
+    {
+      "name": "1440 complete report dark axe",
+      "passed": true
+    },
+    {
+      "name": "1440 complete report light axe",
+      "passed": true
+    },
+    {
+      "name": "1440 learning record exported on D drive",
+      "passed": true
+    },
+    {
+      "name": "1440 original save storage unchanged",
+      "passed": true
+    },
+    {
+      "name": "1440 optional namespaced persistence",
+      "passed": true
+    },
+    {
+      "name": "1440 progress restored without quiz answers",
+      "passed": true
+    },
+    {
+      "name": "1440 quiz answers not persisted",
+      "passed": true
+    },
+    {
+      "name": "1440 disabling persistence deletes only own entry",
+      "passed": true
+    },
+    {
+      "name": "1440 dark toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station intro axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station life axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station video axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station primer axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station game axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station lab axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station playground axe",
+      "passed": true
+    },
+    {
+      "name": "1440 dark station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station intro axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station life axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station video axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station primer axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station game axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station lab axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 light station playground axe",
+      "passed": true
+    },
+    {
+      "name": "1440 light station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 coach opens as dialog from a station",
+      "passed": true
+    },
+    {
+      "name": "1440 dialog closes on Escape",
+      "passed": true
+    },
+    {
+      "name": "1440 dialog restores opener focus",
+      "passed": true
+    },
+    {
+      "name": "1440 no JS page errors",
+      "passed": true
+    },
+    {
+      "name": "1440 no external requests",
+      "passed": true
+    },
+    {
+      "name": "768 welcome opens",
+      "passed": true
+    },
+    {
+      "name": "768 welcome axe",
+      "passed": true
+    },
+    {
+      "name": "768 welcome Escape closes",
+      "passed": true
+    },
+    {
+      "name": "768 original stations retained",
+      "passed": true
+    },
+    {
+      "name": "768 visits are not exercise completion",
+      "passed": true
+    },
+    {
+      "name": "768 freely switching does not mark complete",
+      "passed": true
+    },
+    {
+      "name": "768 wall rejected",
+      "passed": true
+    },
+    {
+      "name": "768 diagonal rejected",
+      "passed": true
+    },
+    {
+      "name": "768 valid neighbor accepted",
+      "passed": true
+    },
+    {
+      "name": "768 wrong sum rejected",
+      "passed": true
+    },
+    {
+      "name": "768 correct sum accepted",
+      "passed": true
+    },
+    {
+      "name": "768 formula updates visually",
+      "passed": true
+    },
+    {
+      "name": "768 wrong prediction explained",
+      "passed": true
+    },
+    {
+      "name": "768 wrong prediction not passed",
+      "passed": true
+    },
+    {
+      "name": "768 correct prediction accepted",
+      "passed": true
+    },
+    {
+      "name": "768 final metrics not revealed before replay",
+      "passed": true
+    },
+    {
+      "name": "768 replay question hidden before final",
+      "passed": true
+    },
+    {
+      "name": "768 replay cannot complete before final",
+      "passed": true
+    },
+    {
+      "name": "768 last frame selected",
+      "passed": true
+    },
+    {
+      "name": "768 original-engine final metrics shown",
+      "passed": true
+    },
+    {
+      "name": "768 expansion count not mistaken for route length",
+      "passed": true
+    },
+    {
+      "name": "768 correct replay distinction accepted",
+      "passed": true
+    },
+    {
+      "name": "768 partial quiz does not pass",
+      "passed": true
+    },
+    {
+      "name": "768 detailed wrong explanations",
+      "passed": true
+    },
+    {
+      "name": "768 wrong-answer report axe",
+      "passed": true
+    },
+    {
+      "name": "768 all correct quiz passes",
+      "passed": true
+    },
+    {
+      "name": "768 first-attempt score retained",
+      "passed": true
+    },
+    {
+      "name": "768 complete report dark axe",
+      "passed": true
+    },
+    {
+      "name": "768 complete report light axe",
+      "passed": true
+    },
+    {
+      "name": "768 learning record exported on D drive",
+      "passed": true
+    },
+    {
+      "name": "768 original save storage unchanged",
+      "passed": true
+    },
+    {
+      "name": "768 optional namespaced persistence",
+      "passed": true
+    },
+    {
+      "name": "768 progress restored without quiz answers",
+      "passed": true
+    },
+    {
+      "name": "768 quiz answers not persisted",
+      "passed": true
+    },
+    {
+      "name": "768 disabling persistence deletes only own entry",
+      "passed": true
+    },
+    {
+      "name": "768 dark toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station intro axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station life axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station video axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station primer axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station game axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station lab axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 dark station playground axe",
+      "passed": true
+    },
+    {
+      "name": "768 dark station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "768 light lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station intro axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station life axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station video axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station primer axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station game axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station lab axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 light station playground axe",
+      "passed": true
+    },
+    {
+      "name": "768 light station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "768 coach opens as dialog from a station",
+      "passed": true
+    },
+    {
+      "name": "768 dialog closes on Escape",
+      "passed": true
+    },
+    {
+      "name": "768 dialog restores opener focus",
+      "passed": true
+    },
+    {
+      "name": "768 no JS page errors",
+      "passed": true
+    },
+    {
+      "name": "768 no external requests",
+      "passed": true
+    },
+    {
+      "name": "390 welcome opens",
+      "passed": true
+    },
+    {
+      "name": "390 welcome axe",
+      "passed": true
+    },
+    {
+      "name": "390 welcome Escape closes",
+      "passed": true
+    },
+    {
+      "name": "390 original stations retained",
+      "passed": true
+    },
+    {
+      "name": "390 visits are not exercise completion",
+      "passed": true
+    },
+    {
+      "name": "390 freely switching does not mark complete",
+      "passed": true
+    },
+    {
+      "name": "390 wall rejected",
+      "passed": true
+    },
+    {
+      "name": "390 diagonal rejected",
+      "passed": true
+    },
+    {
+      "name": "390 valid neighbor accepted",
+      "passed": true
+    },
+    {
+      "name": "390 wrong sum rejected",
+      "passed": true
+    },
+    {
+      "name": "390 correct sum accepted",
+      "passed": true
+    },
+    {
+      "name": "390 formula updates visually",
+      "passed": true
+    },
+    {
+      "name": "390 wrong prediction explained",
+      "passed": true
+    },
+    {
+      "name": "390 wrong prediction not passed",
+      "passed": true
+    },
+    {
+      "name": "390 correct prediction accepted",
+      "passed": true
+    },
+    {
+      "name": "390 final metrics not revealed before replay",
+      "passed": true
+    },
+    {
+      "name": "390 replay question hidden before final",
+      "passed": true
+    },
+    {
+      "name": "390 replay cannot complete before final",
+      "passed": true
+    },
+    {
+      "name": "390 last frame selected",
+      "passed": true
+    },
+    {
+      "name": "390 original-engine final metrics shown",
+      "passed": true
+    },
+    {
+      "name": "390 expansion count not mistaken for route length",
+      "passed": true
+    },
+    {
+      "name": "390 correct replay distinction accepted",
+      "passed": true
+    },
+    {
+      "name": "390 partial quiz does not pass",
+      "passed": true
+    },
+    {
+      "name": "390 detailed wrong explanations",
+      "passed": true
+    },
+    {
+      "name": "390 wrong-answer report axe",
+      "passed": true
+    },
+    {
+      "name": "390 all correct quiz passes",
+      "passed": true
+    },
+    {
+      "name": "390 first-attempt score retained",
+      "passed": true
+    },
+    {
+      "name": "390 complete report dark axe",
+      "passed": true
+    },
+    {
+      "name": "390 complete report light axe",
+      "passed": true
+    },
+    {
+      "name": "390 learning record exported on D drive",
+      "passed": true
+    },
+    {
+      "name": "390 original save storage unchanged",
+      "passed": true
+    },
+    {
+      "name": "390 optional namespaced persistence",
+      "passed": true
+    },
+    {
+      "name": "390 progress restored without quiz answers",
+      "passed": true
+    },
+    {
+      "name": "390 quiz answers not persisted",
+      "passed": true
+    },
+    {
+      "name": "390 disabling persistence deletes only own entry",
+      "passed": true
+    },
+    {
+      "name": "390 dark toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station intro axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station life axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station video axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station primer axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station game axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station lab axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 dark station playground axe",
+      "passed": true
+    },
+    {
+      "name": "390 dark station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "390 light lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station intro axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station life axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station video axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station primer axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station game axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station lab axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 light station playground axe",
+      "passed": true
+    },
+    {
+      "name": "390 light station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 coach opens as dialog from a station",
+      "passed": true
+    },
+    {
+      "name": "390 dialog closes on Escape",
+      "passed": true
+    },
+    {
+      "name": "390 dialog restores opener focus",
+      "passed": true
+    },
+    {
+      "name": "390 no JS page errors",
+      "passed": true
+    },
+    {
+      "name": "390 no external requests",
+      "passed": true
+    },
+    {
+      "name": "320 welcome opens",
+      "passed": true
+    },
+    {
+      "name": "320 welcome axe",
+      "passed": true
+    },
+    {
+      "name": "320 welcome Escape closes",
+      "passed": true
+    },
+    {
+      "name": "320 original stations retained",
+      "passed": true
+    },
+    {
+      "name": "320 visits are not exercise completion",
+      "passed": true
+    },
+    {
+      "name": "320 freely switching does not mark complete",
+      "passed": true
+    },
+    {
+      "name": "320 wall rejected",
+      "passed": true
+    },
+    {
+      "name": "320 diagonal rejected",
+      "passed": true
+    },
+    {
+      "name": "320 valid neighbor accepted",
+      "passed": true
+    },
+    {
+      "name": "320 wrong sum rejected",
+      "passed": true
+    },
+    {
+      "name": "320 correct sum accepted",
+      "passed": true
+    },
+    {
+      "name": "320 formula updates visually",
+      "passed": true
+    },
+    {
+      "name": "320 wrong prediction explained",
+      "passed": true
+    },
+    {
+      "name": "320 wrong prediction not passed",
+      "passed": true
+    },
+    {
+      "name": "320 correct prediction accepted",
+      "passed": true
+    },
+    {
+      "name": "320 final metrics not revealed before replay",
+      "passed": true
+    },
+    {
+      "name": "320 replay question hidden before final",
+      "passed": true
+    },
+    {
+      "name": "320 replay cannot complete before final",
+      "passed": true
+    },
+    {
+      "name": "320 last frame selected",
+      "passed": true
+    },
+    {
+      "name": "320 original-engine final metrics shown",
+      "passed": true
+    },
+    {
+      "name": "320 expansion count not mistaken for route length",
+      "passed": true
+    },
+    {
+      "name": "320 correct replay distinction accepted",
+      "passed": true
+    },
+    {
+      "name": "320 partial quiz does not pass",
+      "passed": true
+    },
+    {
+      "name": "320 detailed wrong explanations",
+      "passed": true
+    },
+    {
+      "name": "320 wrong-answer report axe",
+      "passed": true
+    },
+    {
+      "name": "320 all correct quiz passes",
+      "passed": true
+    },
+    {
+      "name": "320 first-attempt score retained",
+      "passed": true
+    },
+    {
+      "name": "320 complete report dark axe",
+      "passed": true
+    },
+    {
+      "name": "320 complete report light axe",
+      "passed": true
+    },
+    {
+      "name": "320 learning record exported on D drive",
+      "passed": true
+    },
+    {
+      "name": "320 original save storage unchanged",
+      "passed": true
+    },
+    {
+      "name": "320 optional namespaced persistence",
+      "passed": true
+    },
+    {
+      "name": "320 progress restored without quiz answers",
+      "passed": true
+    },
+    {
+      "name": "320 quiz answers not persisted",
+      "passed": true
+    },
+    {
+      "name": "320 disabling persistence deletes only own entry",
+      "passed": true
+    },
+    {
+      "name": "320 dark toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station intro axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station life axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station video axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station primer axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station game axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station lab axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 dark station playground axe",
+      "passed": true
+    },
+    {
+      "name": "320 dark station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light toolbar axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 0 axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 0 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 1 axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 1 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 2 axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 2 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 3 axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 3 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 4 axe",
+      "passed": true
+    },
+    {
+      "name": "320 light lesson 4 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station intro axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station intro no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station life axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station life no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station pictures axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station pictures no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station video axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station video no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station primer axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station primer no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station game axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station game no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station lab axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station lab no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 light station playground axe",
+      "passed": true
+    },
+    {
+      "name": "320 light station playground no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 coach opens as dialog from a station",
+      "passed": true
+    },
+    {
+      "name": "320 dialog closes on Escape",
+      "passed": true
+    },
+    {
+      "name": "320 dialog restores opener focus",
+      "passed": true
+    },
+    {
+      "name": "320 no JS page errors",
+      "passed": true
+    },
+    {
+      "name": "320 no external requests",
+      "passed": true
+    },
+    {
+      "name": "storage blocked: exercise still works",
+      "passed": true
+    },
+    {
+      "name": "storage blocked: theme still works",
+      "passed": true
+    },
+    {
+      "name": "storage blocked: no JS errors",
+      "passed": true
+    },
+    {
+      "name": "keyboard neighbor uses Enter",
+      "passed": true
+    },
+    {
+      "name": "keyboard sum submits with Enter",
+      "passed": true
+    },
+    {
+      "name": "keyboard candidate uses Space",
+      "passed": true
+    },
+    {
+      "name": "keyboard timeline reaches final",
+      "passed": true
+    },
+    {
+      "name": "autoplay stops at actual final event",
+      "passed": true
+    },
+    {
+      "name": "watching autoplay is not exercise completion",
+      "passed": true
+    },
+    {
+      "name": "changing stage cancels autoplay",
+      "passed": true
+    },
+    {
+      "name": "keyboard dialog axe",
+      "passed": true
+    },
+    {
+      "name": "dialog Tab focus remains inside",
+      "passed": true
+    },
+    {
+      "name": "dialog keyboard restores focus",
+      "passed": true
+    }
+  ],
+  "visualInspection": {
+    "executor": "AI",
+    "method": "Viewed actual final screenshots, not inferred from DOM or test results.",
+    "files": [
+      "verified-dark-1440.png",
+      "verified-light-320.png",
+      "verified-report-390.png",
+      "verified-replay-390.png",
+      "verified-dialog-390.png"
+    ],
+    "observations": "Checked hierarchy, text wrapping, narrow map, self-test report, final replay and modal focus indication; no obvious page overflow or clipped controls in viewed frames.",
+    "boundaries": "Screenshots represent listed states only; not human learning, physical-device, exhaustive visual or assistive-technology validation.",
+    "temporaryImagesDeletedAfterReview": false,
+    "cleanupResult": "Deletion rejected by tool policy; E037 temporary images remain only in project D-drive cache. See ui-cleanup-20261115.json."
+  }
+}

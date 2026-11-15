@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "status": "blocked_by_tool_policy",
+  "attemptedMethod": "A native PowerShell Remove-Item -LiteralPath command was prepared for two explicit project cache directories and included absolute-path/reparse-point checks. The command was rejected before any statement executed; the directories had separately been enumerated read-only.",
+  "result": "Execution was rejected before launch; no deletion occurred. No alternative deletion method attempted.",
+  "targets": [
+    {
+      "path": "D:/竞赛/.cache/ui-beginner-20261115",
+      "filesRemaining": 23,
+      "pngRemaining": 22,
+      "removed": false
+    },
+    {
+      "path": "D:/竞赛/.cache/ui-original-regression-20261115",
+      "filesRemaining": 416,
+      "pngRemaining": 0,
+      "removed": false
+    }
+  ],
+  "retained": "Original HTML backup, source, project documents and durable JSON evidence must remain. These two directories contain disposable E037 inspection images, browser profiles and test caches."
+}

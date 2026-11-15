@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "baseline": "51d1616",
+  "target": "D:\\竞赛\\PathLab_AI_v4_optimized_final.html",
+  "original": {
+    "bytes": 7016218,
+    "sha256": "79e49cc94e14118aa7228e1fdbd2446921d90c8fc39eb736cc508bf074ade0c4"
+  },
+  "enhanced": {
+    "bytes": 7105450,
+    "sha256": "9c023fa57c263d921ca0db73528b77beacfe5a9a325f951b6e82d6bb7d634874"
+  },
+  "passed": 21,
+  "nodeTests": {
+    "passed": 171,
+    "failed": 0,
+    "summary": [
+      "ℹ tests 171",
+      "ℹ suites 0",
+      "ℹ pass 171",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 2465.9502"
+    ]
+  },
+  "checks": [
+    {
+      "name": "original backup exact bytes SHA256",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: h 只会“直线估计”",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: 背后常常都是 A*。",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: 学会了！三句话记住 A*",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: 恭喜你，已经弄懂 A* 最核心的想法了！",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: 所以总是朝着终点走，不像笨办法到处乱试。",
+      "passed": true
+    },
+    {
+      "name": "explicit factual correction present: 所以 A* 找到的一定是最短路线。",
+      "passed": true
+    },
+    {
+      "name": "original React runtime untouched except six teaching-copy corrections",
+      "passed": true
+    },
+    {
+      "name": "both original CSS blocks unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original embedded media byte-identical",
+      "passed": true
+    },
+    {
+      "name": "whole HTML only adds scoped blocks and replaces documented welcome/theme/copy",
+      "passed": true
+    },
+    {
+      "name": "A-star metrics from unchanged engine",
+      "passed": true
+    },
+    {
+      "name": "BFS metrics from unchanged engine",
+      "passed": true
+    },
+    {
+      "name": "final route from unchanged engine",
+      "passed": true
+    },
+    {
+      "name": "16 actual selections, not invented animation frames",
+      "passed": true
+    },
+    {
+      "name": "replay frontier follows f/h/entrySequence priority",
+      "passed": true
+    },
+    {
+      "name": "same shortest length, unequal work in this example only",
+      "passed": true
+    },
+    {
+      "name": "existing Next application tracked files unchanged",
+      "passed": true
+    },
+    {
+      "name": "final HTML reproducible and enhancement idempotent",
+      "passed": true
+    },
+    {
+      "name": "original 171 Node tests pass",
+      "passed": true
+    },
+    {
+      "name": "actual original unit-test totals",
+      "passed": true
+    }
+  ]
+}
