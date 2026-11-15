@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "edition": "formal reviewer packet",
+  "files": [
+    {
+      "source": "formal-project-introduction.md",
+      "docx": "delivery/PathLab-AI-正式参赛文件-20261115/01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.docx",
+      "plannedPages": 12,
+      "embeddedScreenshots": 6,
+      "sha256": "07cc806b3e5cc7a6c587ca888c2b4caa2acf0de8055edb9f9b8b57d9b1ada239"
+    },
+    {
+      "source": "formal-technical-report.md",
+      "docx": "delivery/PathLab-AI-正式参赛文件-20261115/02-技术文档/PathLab-AI-技术文档-最新版-20261115.docx",
+      "plannedPages": 16,
+      "embeddedScreenshots": 4,
+      "sha256": "1af0e5769ac0731f5b89df8572990a8ad5c6656cb5e8b094b84a1fd2a194d974"
+    }
+  ],
+  "rendering": "Microsoft Word16 COM exported 12 and 16 pages; all 28 pages Poppler-rendered and visually inspected by AI; see separate document-qa receipt"
+}

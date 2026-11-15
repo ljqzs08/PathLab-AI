@@ -202,3 +202,7 @@ JSON：1 MiB、4096 条总命令、每关 32 次开始运行；未提交草稿�
 最新 E039 收尾（2026-11-15）：完整最新版在 `delivery/PathLab-AI-参赛文件-最新版-20261115`，v3全部622路径/572唯一原件均已迁入，旧ZIP也保留。主HTML仍为7bd7f222…c917a；12/16页PDF与可编辑Word、七张新Prompt原图、三视频原件/三H264、11正式截图、当前源码与完整历史齐备。真实源码基线a3389d14e849fef03046ea36562d6bfa89e131af，630文件/73历史逐blob一致、bundle独立恢复；先ci后增强--check实际通过（最初缺PostCSS前提遗漏已修正文档）。最终ZIP 1032692646字节、1328条目/1327内容文件，SHA256 99e644fc01f21836a6004ed2828e498510aea4e76e6adcce988456becbcdf991，CRC/每项SHA/迁移/源码/入口/外层副本独立复核通过；Edge离线124/124与ZIP抽取播放23/23，非历史全量回归/真人/真机。首次两处额外测试工具假设错误及修正如实留证，不改产品。本轮临时D盘.cache/submission-latest-20261115的精确清理被执行前策略拒绝，24116文件/111图、893614791字节仍留，不在交付目录内、未绕过；正式证据保留。后续收尾归档不伪装已在A的bundle内；本轮final待真实落盘，不push/上传/代交，三链/U01人类材料边界不变。
 
 后续复用 `scripts/build-delivery-latest.py`（分阶段、禁止prepare覆盖）、`scripts/verify-latest-submission-artifacts.py` 与 `10-最新版更新说明/v3迁移映射.json`。源代码归档、后续材料修订和最终ZIP回执分时点，不做哈希自引用。避免只装Node即运行增强脚本、将首页内嵌练习误判为弹窗、把已关闭欢迎界面当必有元素。
+
+### E040 正式提交版准备 2026-11-15
+
+经用户确认，完整归档与v3不动，另建delivery/PathLab-AI-正式参赛文件-20261115；只设一个当前HTML入口，保留当前文档、源码与必要真实开发证据，不重复旧ZIP/旧演示/视频原件。介绍12页、技术16页由真实Word导出，28页Poppler与AI视觉核对、字体/文本边界/内嵌图字节通过；8项工具测试通过。产品HTML/Next源码未修改。真实Prompt见prompts/sessions/2026-11-15-formal-submission-packet与取舍咨询submission-history-scope；上轮末答复已补。本阶段准备提交后冻结源码与bundle，最终包/浏览器/不改旧目录核验尚待实际执行，见docs/formal-submission-verification.md。不是全产品回归、人工/真机、外部模型联调或条款符合性验收，不push。C01/C02/C03共享开发原文与U01真实纠正边界不变。

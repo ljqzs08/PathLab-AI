@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "toolUnitTests": {
+    "passed": 8,
+    "command": "bundled Python scripts/test-formal-submission-tools.py"
+  },
+  "pythonSyntaxFiles": 5,
+  "browserHarnessNodeCheck": true,
+  "scope": "packaging tools only, not product regressions",
+  "notes": [
+    "manifest root self excluded; nested manifests included",
+    "render_docx unavailable, actual Word used",
+    "pdffonts absent, actual embedded font streams checked via pypdf"
+  ]
+}

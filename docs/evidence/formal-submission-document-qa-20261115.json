@@ -1,0 +1,323 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "rendererAttempt": "Skill render_docx.py attempted; unavailable because LibreOffice soffice.exe missing; actual Microsoft Word 16 COM export, all pages Poppler rendered",
+  "files": [
+    {
+      "readOnlySource": true,
+      "docx": "D:\\竞赛\\delivery\\PathLab-AI-正式参赛文件-20261115\\01-作品介绍\\PathLab-AI-作品介绍文档-最新版-20261115.docx",
+      "pdf": "D:\\竞赛\\delivery\\PathLab-AI-正式参赛文件-20261115\\01-作品介绍\\PathLab-AI-作品介绍文档-最新版-20261115.pdf",
+      "pages": 12,
+      "renderer": "Microsoft Word 16 COM",
+      "embeddedScreenshotsByteVerified": 6,
+      "allFontsEmbedded": true,
+      "pdfBytes": 1449915,
+      "pdfSha256": "2027d09add540e4ff47a2831f403201125cfeed1df96bdbe3795a1aedcd86fdd",
+      "pageInfo": [
+        {
+          "page": 1,
+          "characters": 325,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "PathLab AI",
+            "作品介绍文档"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 2,
+          "characters": 678,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "01 项目详情与体验方法",
+            "要解决的问题"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 3,
+          "characters": 487,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "02 八站学习路径",
+            "不强迫线性观看，也不跳过概念解释"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 4,
+          "characters": 339,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "03 从术语顺序开始纠错",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 5,
+          "characters": 368,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "04 五步零基础练习舱",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 6,
+          "characters": 343,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "05 原工作台：预测、提交、回放",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 7,
+          "characters": 323,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "06 从固定关卡走向自主检验",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 8,
+          "characters": 364,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "07 辅助复盘：让提问带着证据",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 9,
+          "characters": 563,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "08 AI 协同与关键技术",
+            "开发时用 AI，运行时以本地事实为主"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 10,
+          "characters": 555,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "09 开发过程与证据来源",
+            "保留演进证据 不重复提交全部旧版本"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 11,
+          "characters": 563,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "10 验证结果与使用限制",
+            "既有 E039 验证与本次包级核验分开"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 12,
+          "characters": 468,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "11 交付清单与提交边界",
+            "从一个最终作品开始评审"
+          ],
+          "textWithinPage": true
+        }
+      ],
+      "popplerRenderedPages": 12
+    },
+    {
+      "readOnlySource": true,
+      "docx": "D:\\竞赛\\delivery\\PathLab-AI-正式参赛文件-20261115\\02-技术文档\\PathLab-AI-技术文档-最新版-20261115.docx",
+      "pdf": "D:\\竞赛\\delivery\\PathLab-AI-正式参赛文件-20261115\\02-技术文档\\PathLab-AI-技术文档-最新版-20261115.pdf",
+      "pages": 16,
+      "renderer": "Microsoft Word 16 COM",
+      "embeddedScreenshotsByteVerified": 3,
+      "allFontsEmbedded": true,
+      "pdfBytes": 1085754,
+      "pdfSha256": "273479ced2056330484677a65255ce78369500438829771c4443691454602a5d",
+      "pageInfo": [
+        {
+          "page": 1,
+          "characters": 368,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "PathLab AI",
+            "技术文档"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 2,
+          "characters": 705,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "01 双层交付与总体架构",
+            "不把 Next 工程误当成完整最新版"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 3,
+          "characters": 636,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "02 输入模型、BFS 与 A* 适用域",
+            "先约束问题，再解释结论"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 4,
+          "characters": 742,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "03 二叉堆、决胜规则与事件计数",
+            "为什么相同输入能产生同一条教学轨迹"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 5,
+          "characters": 675,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "04 私有会话与预测门控",
+            "预计算不等于提前向界面公开"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 6,
+          "characters": 445,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "05 Canvas 与 DOM 共用事实",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 7,
+          "characters": 692,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "06 站点、课程与误区诊断",
+            "内容先定义，再使用"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 8,
+          "characters": 499,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "07 E037 独立增强层的可复现性",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 9,
+          "characters": 465,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "08 E038 辅助复盘与双重门控",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 10,
+          "characters": 622,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "09 本机存档、备份与恢复",
+            "正式任务与便捷练习分离"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 11,
+          "characters": 659,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "10 反馈、契约与外部 AI 边界",
+            "本地规则是基线能力"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 12,
+          "characters": 848,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "11 最新单文件的独立复现",
+            "最短体验路径"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 13,
+          "characters": 984,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "12 基础 Next 工程的运行与检查",
+            "与最新独立增强明确分工"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 14,
+          "characters": 663,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "13 验证层级与执行时点",
+            "本次包级检查不冒充产品全量回归"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 15,
+          "characters": 683,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "14 Prompt、Git 与媒体证据的来源",
+            "角色、先后和完整性必须可辨"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 16,
+          "characters": 697,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 正式提交版",
+            "15 正式提交包与完整归档分离",
+            "只设一个当前作品入口"
+          ],
+          "textWithinPage": true
+        }
+      ],
+      "popplerRenderedPages": 16
+    }
+  ],
+  "visualInspection": {
+    "status": "passed",
+    "executor": "AI visual inspection",
+    "scope": "All 28 final PDF pages inspected using seven four-page contact sheets after Word16 COM export and Poppler rasterization; title hierarchy, tables, screenshots, footers and page spacing checked. No clipping or overflow observed. Not human acceptance.",
+    "contactSheets": 7,
+    "pages": 28,
+    "temporaryReviewImagesNotSubmissionEvidence": true
+  }
+}
