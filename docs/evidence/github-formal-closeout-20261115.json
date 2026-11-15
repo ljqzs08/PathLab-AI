@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-15",
+  "checkedAt": "2026-11-15T09:34:16.198728+00:00",
+  "executor": "AI",
+  "verifiedAnonymously": true,
+  "publicationRecordCommit": "0a9d1673fb3b7254f9799cadd6d50fc61d5ef4c4",
+  "publishedRecordFilesExactGitBlobs": 19,
+  "readmeExactGitBytes": true,
+  "readmeCurrentDownloadEntryPublished": true,
+  "releaseNotesSameTextWithLFNormalization": true,
+  "releaseNotesRemoteCrLfPairs": 43,
+  "threeAssetsUnchangedSinceFullAnonymousDownload": true,
+  "latestFormalRelease": true,
+  "oldTagObjectsUnchanged": {
+    "v2.0.0": "35bf49231f4b42a2b7c413c43e00cd26d44dd6d2",
+    "v3.0.0": "c4c218744822945413c0fe9089b1f1d1f3289f72",
+    "prompt-evidence-20261025": "9ca1ffcb096bf714ed2bcfcb1aa6da89d9c53ab7"
+  },
+  "trackedWorktreeCleanAtVerification": true,
+  "initialAdditionalCheckFailure": "Strict raw Release-body text comparison failed only because GitHub API body uses CRLF and local notes LF. Comparison now explicitly normalizes line endings for human-readable notes only; ZIP, assets, source and Git blobs still exact bytes.",
+  "scope": "Closeout independently confirms published 0a9d167 record. This receipt is later, not backdated into that commit or packet/source freeze. No product changes or regression rerun. Temporary CLI logout remains a final local action."
+}

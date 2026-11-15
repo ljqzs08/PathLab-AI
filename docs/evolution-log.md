@@ -606,3 +606,5 @@ Prompt见`prompts/sessions/2026-11-15-formal-submission-packet.{md,jsonl}`，当
 README新增唯一正式材料下载入口并纠正当前HTML指向，不将工程版旧生成物冒充指定增强主件。上轮E040真实末答复补为4条/finalCaptured=true；本轮请求与目录澄清分别留证于 `prompts/sessions/2026-11-15-formal-submission-github`、`formal-submission-github-scope`，当前末答复仍需落盘后补。C01/C02/C03共享原文和U01真实纠正边界不变，不因发布补造人类报Bug/学习效果/真机/模型联调或条款验收。
 
 核验工具首次仓库API尾斜杠404和资产名集合失败均真实记录后修正，不修改产品、不放宽包字节断言。新匿名下载缓存仅一次精确PowerShell清理被工具进程前拒绝，3文件/132512208字节留D盘；不重试、不绕过，旧拒绝目录不动。见 `docs/verification-formal-github-publication.md`、`docs/evidence/github-formal-publication-20261115.json`。本轮发布记录随后形成本地正常提交并推送，不产生哈希自引用；不是网站部署或赛事平台正式提交。
+
+E041发布记录真实提交为 `0a9d1673fb3b7254f9799cadd6d50fc61d5ef4c4`，已正常推送；其19个修改文件的公开Git blob/README、三附件、latest与旧标签经匿名API收尾核对。额外Release说明原始文本比较的CRLF差异已明确仅归一文案行尾后核对，不涉及ZIP或源码字节；见 `docs/evidence/github-formal-closeout-20261115.json`。此回执后置，不反写已有包或哈希时序。
