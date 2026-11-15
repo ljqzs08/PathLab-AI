@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "scope": "Synthetic read-only helper checks, not user dialogue, product tests or competition evidence",
+  "passed": 9,
+  "checks": [
+    "root API fixture is parsed",
+    "empty API suffix has no trailing slash",
+    "nested API suffix preserves exact path",
+    "anonymous requests have no Authorization or Cookie headers",
+    "download cache remains under D project",
+    "source tag equals frozen packet source",
+    "local and public asset names are explicitly distinct",
+    "SHA helper matches direct SHA on existing sidecar",
+    "verifier Python syntax"
+  ],
+  "realFailuresBeforeFix": [
+    "Repository root API trailing slash returned 404; corrected canonical endpoint.",
+    "Strict asset set failed because GitHub sanitized Chinese filenames; corrected asset metadata and explicit local/public name mapping."
+  ],
+  "packetBytesChanged": false,
+  "precommitWhitespace": {
+    "initialCheck": "Stopped on two trailing-space lines in original upload-request Markdown snapshot",
+    "paths": [
+      "prompts/sessions/2026-11-15-formal-submission-github.md"
+    ],
+    "knownLines": [
+      9,
+      17
+    ],
+    "resolution": "Preserve exact author Markdown hard-break spaces and original exporter metadata. Run strict diff check on all other paths; verify excluded snapshot against original source and JSONL SHA, rather than reformat authentic evidence."
+  }
+}

@@ -2,6 +2,14 @@
 
 最新核对日期：2026-11-15；以下历史段落保留各自时点。状态基于本地代码、实际日志、真实可见 Prompt 快照与自然产生的 Git 提交，不使用估算完成百分比。
 
+## E041 最新：指定正式参赛版已发布（2026-11-15）
+
+正式包唯一公开下载入口：[formal-submission-20261115 Release](https://github.com/ljqzs08/PathLab-AI/releases/tag/formal-submission-20261115)。下载 `PathLab-AI-formal-submission-20261115.zip`，完整解压后打开 `00-打开最新参赛材料.html`，不要误下GitHub自动生成的Source code ZIP。原中文本地文件没有改名或重打包。完整归档和v3不重复上传；旧远程版本/真实历史保留。
+
+本轮正常推送14个既有领先提交至568eac8，并发布原正式ZIP/SHA/最终回执。标签源码冻结为955df39（653文件/75历史），main后续补发布记录。匿名全量下载核对原ZIP131747543字节、SHA256 `64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25`，三个附件原字节、全CRC/775条目/774清单内容SHA均通过；仓库Public，Release为latest。9项只读合成工具检查通过，不重跑产品/Next/Node。
+
+作者选定的当前HTML为根目录 `PathLab_AI_v4_optimized_final.html`，不与工程版旧生成物混淆。上轮正式包final已真实补齐；本轮final仍待落盘。三链/U01与人类/真机/素材授权/隐私/正式条款边界不变。不是网站部署或赛事表单提交。下载临时副本3文件/132512208字节清理被执行前拒绝仍留D盘，未重试或绕过；无本轮新检查图。详见 [发布核验](verification-formal-github-publication.md)。
+
 ## E039 最新完整材料迁移（2026-11-15）
 
 完整交付目录为 `D:\竞赛\delivery\PathLab-AI-参赛文件-最新版-20261115`。不是补丁：v3 的全部622原路径在新版内有原字节保留去向，相同副本共用文件，572个唯一保留文件；旧目录仅额外安全保留，不要求回去查材料。

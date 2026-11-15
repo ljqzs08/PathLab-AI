@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-15T09:22:42.344053+00:00",
+  "executor": "AI",
+  "authentication": "None: direct Python HTTPS requests, no Authorization header or browser cookies",
+  "repository": "ljqzs08/PathLab-AI",
+  "public": true,
+  "remoteMainAtVerification": "568eac83771d228168d7a545ac675adae1366c4f",
+  "releaseId": 445933755,
+  "tag": "formal-submission-20261115",
+  "tagCommit": "955df39c5db78bf07614486018d6b52b6ea07b69",
+  "releaseUrl": "https://github.com/ljqzs08/PathLab-AI/releases/tag/formal-submission-20261115",
+  "publishedAt": "2026-11-15T09:12:17Z",
+  "latestReleaseVerified": true,
+  "draft": false,
+  "prerelease": false,
+  "assets": [
+    {
+      "id": 750445504,
+      "name": "PathLab-AI-formal-submission-20261115.zip",
+      "url": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-submission-20261115.zip",
+      "bytes": 131747543,
+      "sha256": "64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25",
+      "serverDigest": "sha256:64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25",
+      "downloadedWithoutCredentials": true,
+      "exactLocalBytes": true
+    },
+    {
+      "id": 750445507,
+      "name": "PathLab-AI-formal-submission-20261115.zip.sha256",
+      "url": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-submission-20261115.zip.sha256",
+      "bytes": 110,
+      "sha256": "f80191523b0141456b7b71980364e97444059a65caeaf16ee00a385bad8b8ec1",
+      "serverDigest": "sha256:f80191523b0141456b7b71980364e97444059a65caeaf16ee00a385bad8b8ec1",
+      "downloadedWithoutCredentials": true,
+      "exactLocalBytes": true
+    },
+    {
+      "id": 750445503,
+      "name": "PathLab-AI-formal-verification-20261115.json",
+      "url": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-verification-20261115.json",
+      "bytes": 764555,
+      "sha256": "fcc04c2655fbef00d800ee4debdd860893966541167815373710086586bd3d93",
+      "serverDigest": "sha256:fcc04c2655fbef00d800ee4debdd860893966541167815373710086586bd3d93",
+      "downloadedWithoutCredentials": true,
+      "exactLocalBytes": true
+    }
+  ],
+  "zipBytes": 131747543,
+  "zipSha256": "64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25",
+  "zipEntries": 775,
+  "manifestContentFiles": 774,
+  "downloadedZipCrcPassed": true,
+  "everyManifestEntrySha256Passed": true,
+  "scope": "Exact original E040 formal packet publicly downloaded and verified. Main may later receive this receipt; frozen Release/source/ZIP are not rewritten. Not website deployment, contest submission, product regression, human/device acceptance or teaching-effect validation."
+}

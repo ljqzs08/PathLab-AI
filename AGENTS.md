@@ -114,3 +114,13 @@ Windows Edge157.0.4341.46 headless离线四模拟宽度1440/768/390/320的正式
 Prompt见`prompts/sessions/2026-11-15-formal-submission-packet.{md,jsonl}`，当前3条实际可见原文/角色/阶段/文本SHA已与只读源逐条核对，真实末答复须落盘后下一轮补；完整迁移7条与取舍咨询2条的末答复已核对补齐。C01/C02/C03真实实现、共享原文与Git证据保留，不冒充三次独立人类报Bug；U01真实纠正不变，v5建议和预期分数不是已实现成果。未push、上传、代交或改权限。视频当前243.1秒/960×544，两段聊天回看不等于实时开发协同；作者仍须核对赛事最新条款、素材授权/隐私和真人学习验收。
 
 可复用：`scripts/build-formal-submission.py`分阶段冻结与白名单选材，`scripts/verify-formal-submission-artifacts.py`独立核对；先区分评审入口和归档证据，旧成品仅在必要对照时选入，不把保留历史等同重复提交全部版本。完整说明见`docs/formal-submission-verification.md`与`docs/evidence/formal-submission-final-20261115.json`。收尾提交B哈希在真实git log与最终答复中给出，不产生哈希自引用。
+
+## E041：指定正式参赛文件已发布到 GitHub（2026-11-15）
+
+作者明确选定 `delivery/PathLab-AI-正式参赛文件-20261115`；本轮发布该原ZIP及原SHA/最终回执，不上传完整归档或v3，不修改作品、旧目录和原包。先将原有14个领先提交从远端102902c正常fast-forward至568eac8，保持全部真实历史。新Release `formal-submission-20261115`固定标签于包内冻结源码A `955df39c5db78bf07614486018d6b52b6ea07b69`（653文件/75历史），后续发布核验记录不倒填入A/bundle。
+
+公开地址：https://github.com/ljqzs08/PathLab-AI/releases/tag/formal-submission-20261115 。GitHub自动改写中文附件名后，仅更名本轮资产的下载元数据为清晰英文名，资产ID/大小/digest与本地原件不变。无凭证全量下载核对三个附件字节；正式ZIP131747543字节、775条目/774内容，SHA256 `64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25`，全CRC/每项SHA通过。仓库仍Public、Release为latest；旧v2/v3/Prompt标签不改。发布前195个待推送历史blob的凭证模式扫描无所列命中，9项只读合成工具检查通过，不冒充安全审计或产品回归。
+
+README新增唯一正式材料下载入口并纠正当前HTML指向，不将工程版旧生成物冒充指定增强主件。上轮E040真实末答复补为4条/finalCaptured=true；本轮请求与目录澄清分别留证于 `prompts/sessions/2026-11-15-formal-submission-github`、`formal-submission-github-scope`，当前末答复仍需落盘后补。C01/C02/C03共享原文和U01真实纠正边界不变，不因发布补造人类报Bug/学习效果/真机/模型联调或条款验收。
+
+核验工具首次仓库API尾斜杠404和资产名集合失败均真实记录后修正，不修改产品、不放宽包字节断言。新匿名下载缓存仅一次精确PowerShell清理被工具进程前拒绝，3文件/132512208字节留D盘；不重试、不绕过，旧拒绝目录不动。见 `docs/verification-formal-github-publication.md`、`docs/evidence/github-formal-publication-20261115.json`。本轮发布记录随后形成本地正常提交并推送，不产生哈希自引用；不是网站部署或赛事平台正式提交。

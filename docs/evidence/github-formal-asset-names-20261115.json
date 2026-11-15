@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "releaseId": 445933755,
+  "reason": "GitHub sanitized non-ASCII filenames; only newly uploaded asset metadata renamed. Local packet and uploaded byte content unchanged. Original SHA sidecar retains original Chinese local filename.",
+  "assets": [
+    {
+      "id": 750445503,
+      "githubInitialName": "default.json",
+      "publicDownloadName": "PathLab-AI-formal-verification-20261115.json",
+      "originalLocalFilename": "最终校验回执.json",
+      "bytes": 764555,
+      "serverDigestUnchanged": true,
+      "browserDownloadUrl": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-verification-20261115.json"
+    },
+    {
+      "id": 750445504,
+      "githubInitialName": "PathLab-AI-.-20261115.zip",
+      "publicDownloadName": "PathLab-AI-formal-submission-20261115.zip",
+      "originalLocalFilename": "PathLab-AI-正式参赛材料-20261115.zip",
+      "bytes": 131747543,
+      "serverDigestUnchanged": true,
+      "browserDownloadUrl": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-submission-20261115.zip"
+    },
+    {
+      "id": 750445507,
+      "githubInitialName": "PathLab-AI-.-20261115.zip.sha256",
+      "publicDownloadName": "PathLab-AI-formal-submission-20261115.zip.sha256",
+      "originalLocalFilename": "PathLab-AI-正式参赛材料-20261115.zip.sha256",
+      "bytes": 110,
+      "serverDigestUnchanged": true,
+      "browserDownloadUrl": "https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-submission-20261115.zip.sha256"
+    }
+  ]
+}

@@ -4,13 +4,27 @@
 
 **GitHub：[`ljqzs08/PathLab-AI`](https://github.com/ljqzs08/PathLab-AI)**（Public；仓库是源码与历史，不是已部署的网站）。
 
+## 最新正式参赛文件（2026-11-15）
+
+**[下载完整正式参赛包 ZIP](https://github.com/ljqzs08/PathLab-AI/releases/download/formal-submission-20261115/PathLab-AI-formal-submission-20261115.zip)** · **[Release 页面、SHA256 与核验回执](https://github.com/ljqzs08/PathLab-AI/releases/tag/formal-submission-20261115)**
+
+此附件就是作者选定的 **PathLab-AI-正式参赛文件-20261115**，不是 v3 或全部历史成品归档。完整解压后打开 **`00-打开最新参赛材料.html`**；不要将 GitHub 自动生成的 `Source code (zip)` 当作这份完整材料。
+
+- 包含当前离线 HTML、12 页介绍与16 页技术 PDF/Word、源码和真实历史、Prompt/用户纠正证据、7 张原始拍屏、11 张正式截图及3 份 H.264 视频。
+- ZIP：131,747,543 字节；SHA256：`64fbca276df0b35e7e8d10d11d426a2627b440c1ba07d1aa8496acf235207d25`。下载名称因 GitHub 中文文件名处理改用英文，**内容与本地正式 ZIP 完全相同**。
+- Release 标签固定在包内源码基线 `955df39c5db78bf07614486018d6b52b6ea07b69`（653 文件 / 75 次历史）。main 另外保留其后的核验与发布记录，不改写较早的源码快照、bundle 或 ZIP。
+- 当前作品是根目录 [`PathLab_AI_v4_optimized_final.html`](PathLab_AI_v4_optimized_final.html)：E037 五步练习与主题等增强、E038 更易发现的手动网页辅助复盘均已随本次发布。工程版生成的 `PathLab-AI/PathLab AI.html` 保留原有演进，不冒充与指定增强版完全相同。
+- 旧版本和视频原件在作者的完整归档版中保留，不重复塞入正式评审包。GitHub 发布不等于网站部署或赛事平台提交；人工/真机、教学效果、素材授权与规则核对边界不变。
+
+发布与匿名下载核验见 [`docs/verification-formal-github-publication.md`](docs/verification-formal-github-publication.md)。
+
 **Prompt 历史附件：[下载 ZIP 与校验文件](https://github.com/ljqzs08/PathLab-AI/releases/tag/prompt-evidence-20261025)**（已验证未登录下载；阅读入口见下方导航）。
 
 评审导航：[10 分钟源码复现](#10分钟源码复现) · [复现性声明与本轮实测](docs/reproducibility.md) · [Prompt 评审材料入口](prompts/submission/README.md) · [真实 Prompt 总索引](prompts/README.md) · [演进记录](docs/evolution-log.md) · [三条核心链](docs/core-chain-evidence.md) · [剩余提交材料](docs/progress-status.md)。
 
-**当前状态：阶段 6，本地学习闭环 + 本机进度与安全恢复已接通。** 四关支持真实 BFS/A* 预测、受门控回放、Canvas/DOM、单因素条件实验、前后真实指标与引用解释报告。完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。本地反馈是规则模板，没有调用模型；“记录齐备”不代表掌握，也不判定自由文本解释正确。已支持本机自动存档、版本化 JSON 备份和安全导入。E017 已增加可选的 DeepSeek 服务端证据复盘，默认关闭，模拟协议测试通过不代表真实账号联调已完成。功能检查与参赛证据分别列在 docs/progress-status.md；当前仍不是可直接提交的完整参赛交付。
+**当前状态：阶段 6，本地学习闭环 + 本机进度与安全恢复已接通。** 四关支持真实 BFS/A* 预测、受门控回放、Canvas/DOM、单因素条件实验、前后真实指标与引用解释报告。完整轨迹留在领域控制器私有字段，页面只收到已揭示内容。本地反馈是规则模板，没有调用模型；“记录齐备”不代表掌握，也不判定自由文本解释正确。已支持本机自动存档、版本化 JSON 备份和安全导入。E017 已增加可选的 DeepSeek 服务端证据复盘，默认关闭，模拟协议测试通过不代表真实账号联调已完成。功能检查与参赛证据分别列在 docs/progress-status.md；正式文件已按上述入口整理并发布，但尚未向赛事平台代交；材料完成不等于条款、人工或真机验收通过。
 
-## v4.0.0（2026-11-14，本地版，未推送）：点击式 8 站学习路线 + 奶娃向导 + 闯关游戏
+## v4.0.0（2026-11-14；2026-11-15 随正式材料推送）：点击式 8 站学习路线 + 奶娃向导 + 闯关游戏
 
 网站不再一页全展示，改为可点击的 8 站：认识 A*（9 页从零讲清 A* 与 g/h/f，每页一个小任务）→ 生活里的 A*（导航 g/h/f 配对、点哪走哪的小镇寻路）→ 图解 A*（4 张信息图 + 每张一道检查题 + “容易看错”便签）→ 视频课（3 分钟讲解视频按章节跳转 + 亲手填出视频同款表格）→ 互动入门课（v3 前后测）→ 闯关游戏（画最短路 / f 值快问快答 / 迷宫设计师 / 通关证书）→ 任务工作台 → 自由实验。所有判分仍由站内真实 A* / BFS 计算。视频与图片内嵌在单文件 HTML 中，断网可用。验证（AI 执行）：Node 171/171，离线 HTML 四视口 316/316，各站 axe 0 违规。右下角奶娃桌宠可拖动，点击按当前站点给分级提示，顶部常驻名词小词典。详见 [`docs/verification-v4-journey.md`](docs/verification-v4-journey.md)。
 
@@ -42,7 +56,7 @@
 
 ## 直接打开完整 HTML（无需安装或启动服务）
 
-**实际网站文件：`PathLab-AI/PathLab AI.html`。** 在本工作区为 `D:\竞赛\PathLab-AI\PathLab AI.html`。双击文件，或在已安装的 Edge 中打开即可；不需要 Node.js、终端、API Key、网络或 localhost 服务。也可只复制这一个文件到其他文件夹再打开。
+**当前参赛作品：根目录 `PathLab_AI_v4_optimized_final.html`。** 本工作区为 `D:\竞赛\PathLab_AI_v4_optimized_final.html`；正式包内为 `03-离线体验/PathLab_AI_v4_optimized_final.html`。工程版原生成物 `PathLab-AI/PathLab AI.html` 作为历史/复现材料保留，不是本次选定的增强主件。双击文件，或在已安装的 Edge 中打开即可；不需要 Node.js、终端、API Key、网络或 localhost 服务。也可只复制这一个文件到其他文件夹再打开。
 
 这不是访问卡片、网页截图、iframe 或跳转页：四关、BFS/A*、预测门控、Canvas/文字回放、条件实验、证据报告和 JSON 导入/导出均在 HTML 内运行，使用与工程版相同的组件、算法和关卡数据。原先的 `打开 PathLab AI.html` 入口已被替换，避免误用。
 

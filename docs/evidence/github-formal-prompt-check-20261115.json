@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "source": "read-only original session; only public visible user/assistant text extracted",
+  "snapshots": [
+    {
+      "stem": "2026-11-15-formal-submission-packet",
+      "actualVisibleMessages": 4,
+      "rolesAndExactSourceTextVerified": true,
+      "everyTextSha256Verified": true,
+      "finalCaptured": true
+    },
+    {
+      "stem": "2026-11-15-formal-submission-github",
+      "actualVisibleMessages": 2,
+      "rolesAndExactSourceTextVerified": true,
+      "everyTextSha256Verified": true,
+      "finalCaptured": false
+    },
+    {
+      "stem": "2026-11-15-formal-submission-github-scope",
+      "actualVisibleMessages": 5,
+      "rolesAndExactSourceTextVerified": true,
+      "everyTextSha256Verified": true,
+      "finalCaptured": false
+    }
+  ],
+  "note": "Authorization codes, tool payloads, system/developer messages, internal handoffs and hidden reasoning excluded. Upload request ended at author clarification, so it has no separate final; directory-scope current final pending actual persistence."
+}

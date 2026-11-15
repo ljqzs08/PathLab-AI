@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "target": "D:\\竞赛\\.cache\\github-formal-20261115\\download",
+  "status": "cleanup denied before process start",
+  "attempts": 1,
+  "method": "Native PowerShell exact Remove-Item targets, checked absolute parent and non-reparse regular file type",
+  "files": 3,
+  "images": 0,
+  "bytes": 132512208,
+  "filesRetained": [
+    "PathLab-AI-formal-submission-20261115.zip",
+    "PathLab-AI-formal-submission-20261115.zip.sha256",
+    "PathLab-AI-formal-verification-20261115.json"
+  ],
+  "noRetryOrAlternativeBypass": true,
+  "originalDeliveryUntouched": true,
+  "oldRejectedDirectoriesUntouched": true,
+  "note": "Only this round three anonymous-download copies were selected. Rejected by tool policy before process launch. They remain on D outside the delivery packet. Temporary authentication is handled separately by official gh auth logout after publishing, not by deleting these targets."
+}
