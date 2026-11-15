@@ -59,7 +59,7 @@
 
 ### 实际复核命令
 
-所有命令在 `D:\竞赛` 执行，进程 `TEMP` / `TMP` 指向本轮 D 盘缓存；已有 Node / Edge / PowerShell 仅作为只读工具使用，无新增依赖。
+所有命令在 `D:\竞赛` 执行，浏览器测试进程 `TEMP` / `TMP` 指向本轮 D 盘缓存；构建/语法检查只读取已有源码或在 D 盘生成验证输出。已有 Node / Edge / PowerShell 仅作为工具使用，无新增依赖。
 
 ```powershell
 node --check scripts/web-review-entry.js
@@ -84,6 +84,8 @@ node scripts/verify-ui-preservation.cjs
 当前残留仅作如实披露：`.cache/web-review-entry-20261115`（9 文件 / 8 PNG）、`.cache/e038-web-review-entry-20261115-ui`（13 文件 / 12 PNG）、`.cache/e038-web-review-entry-20261115-regression`（58 文件 / 0 PNG）。合计 80 临时文件、20 PNG；约 5.83 MB。实际清单与拒绝结果：`docs/evidence/web-review-entry-cleanup-20261115.json`。旧轮已拒绝清理目录、原稿备份和持久真实证据不动。
 
 ## Prompt / Git / 三链
+
+- 真实功能与验证提交：`8c1e6c9df3178ef42a65542d9a5efbebd9e7eed2`。已检查仓库根、作者配置、暂存白名单、敏感信息模式、diff 及最终文件哈希；22 文件只属本轮功能/必要 E037 final 补齐，无无关用户文件。后续仅文档归档引用此已存在哈希，不自引用或改写历史。
 
 - 本轮真实 Prompt：`prompts/sessions/2026-11-15-web-review-entry.md` / 同名 JSONL。真实末答复落盘前标记待下一轮补齐；不把内部交接当用户可见答复。
 - 已补齐 E037 的真正最终答复，上轮快照现有 8 条真实可见消息、`finalCaptured=true`。
