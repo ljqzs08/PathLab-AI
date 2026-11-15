@@ -1,0 +1,169 @@
+{
+  "executor": "AI",
+  "date": "2026-11-15",
+  "scope": "MP4 metadata, full audio/video decode and six sampled visual frames per clip; no human viewing or speech transcription",
+  "videos": [
+    {
+      "path": "183595fb6fa9eb107ab392f73ca80aa4.mp4",
+      "bytes": 3369554,
+      "sha256": "1ec5001c7cd21f523224e1ed2440c8947360b2e8d1587bdd72847fe9e433b643",
+      "container": "MP4",
+      "tracks": [
+        {
+          "track": 0,
+          "handler": "vide",
+          "codec": "hvc1",
+          "width": 1280,
+          "height": 720,
+          "timescale": 600,
+          "durationUnits": 21620,
+          "durationSeconds": 36.03333333333333
+        },
+        {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 1591296,
+          "durationSeconds": 36.08380952380952
+        }
+      ],
+      "video": {
+        "track": 0,
+        "handler": "vide",
+        "codec": "hvc1",
+        "width": 1280,
+        "height": 720,
+        "timescale": 600,
+        "durationUnits": 21620,
+        "durationSeconds": 36.03333333333333
+      },
+      "audio": {
+        "track": 1,
+        "handler": "soun",
+        "codec": "mp4a",
+        "width": null,
+        "height": null,
+        "timescale": 44100,
+        "durationUnits": 1591296,
+        "durationSeconds": 36.08380952380952
+      },
+      "durationSeconds": 36.03333333333333,
+      "duration": "00:36.033",
+      "fullDecode": {
+        "returnCode": 0,
+        "errorLogBytes": 0
+      }
+    },
+    {
+      "path": "ee88b0dd110e97bb568bd819e5fa5f5f.mp4",
+      "bytes": 1649958,
+      "sha256": "e5af1c1060121c049fa61f9cd0801c12b64001c242d140418f5fa289151081d4",
+      "container": "MP4",
+      "tracks": [
+        {
+          "track": 0,
+          "handler": "vide",
+          "codec": "hvc1",
+          "width": 1280,
+          "height": 720,
+          "timescale": 600,
+          "durationUnits": 11360,
+          "durationSeconds": 18.933333333333334
+        },
+        {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 837632,
+          "durationSeconds": 18.99392290249433
+        }
+      ],
+      "video": {
+        "track": 0,
+        "handler": "vide",
+        "codec": "hvc1",
+        "width": 1280,
+        "height": 720,
+        "timescale": 600,
+        "durationUnits": 11360,
+        "durationSeconds": 18.933333333333334
+      },
+      "audio": {
+        "track": 1,
+        "handler": "soun",
+        "codec": "mp4a",
+        "width": null,
+        "height": null,
+        "timescale": 44100,
+        "durationUnits": 837632,
+        "durationSeconds": 18.99392290249433
+      },
+      "durationSeconds": 18.933333333333334,
+      "duration": "00:18.933",
+      "fullDecode": {
+        "returnCode": 0,
+        "errorLogBytes": 0
+      }
+    },
+    {
+      "path": "新版本mp4.mp4",
+      "bytes": 13622085,
+      "sha256": "12aa12fd7954de04f75a265280dee3d8c9f96958b657b6d75fdb2e22cff63c36",
+      "container": "MP4",
+      "tracks": [
+        {
+          "track": 0,
+          "handler": "vide",
+          "codec": "hvc1",
+          "width": 960,
+          "height": 544,
+          "timescale": 600,
+          "durationUnits": 145860,
+          "durationSeconds": 243.1
+        },
+        {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 10723328,
+          "durationSeconds": 243.15936507936507
+        }
+      ],
+      "video": {
+        "track": 0,
+        "handler": "vide",
+        "codec": "hvc1",
+        "width": 960,
+        "height": 544,
+        "timescale": 600,
+        "durationUnits": 145860,
+        "durationSeconds": 243.1
+      },
+      "audio": {
+        "track": 1,
+        "handler": "soun",
+        "codec": "mp4a",
+        "width": null,
+        "height": null,
+        "timescale": 44100,
+        "durationUnits": 10723328,
+        "durationSeconds": 243.15936507936507
+      },
+      "durationSeconds": 243.1,
+      "duration": "04:03.100",
+      "fullDecode": {
+        "returnCode": 0,
+        "errorLogBytes": 0
+      }
+    }
+  ]
+}

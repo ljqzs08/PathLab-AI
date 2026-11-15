@@ -1,0 +1,374 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "rendererAttempt": "Skill render_docx.py attempted; unavailable because LibreOffice soffice.exe missing; actual Microsoft Word 16 COM export, all pages Poppler rendered",
+  "files": [
+    {
+      "docx": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\01-作品介绍\\PathLab-AI-作品介绍文档-最新版-20261115.docx",
+      "readOnlySource": true,
+      "pdf": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\01-作品介绍\\PathLab-AI-作品介绍文档-最新版-20261115.pdf",
+      "pages": 12,
+      "renderer": "Microsoft Word 16 COM",
+      "pdfBytes": 1462988,
+      "pdfSha256": "d17bb2280e415be041dce6ee87d95b566d485f1c8e8716305b834bd3097f60cd",
+      "pageInfo": [
+        {
+          "page": 1,
+          "characters": 317,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "PathLab AI",
+            "作品介绍文档"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 2,
+          "characters": 680,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "01 项目详情与体验方法",
+            "要解决的问题"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 3,
+          "characters": 489,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "02 八站学习路径",
+            "不强迫线性观看，也不跳过概念解释"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 4,
+          "characters": 341,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "03 从术语顺序开始纠错",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 5,
+          "characters": 370,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "04 五步零基础练习舱",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 6,
+          "characters": 345,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "05 原工作台：预测、提交、回放",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 7,
+          "characters": 325,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "06 从固定关卡走向自主检验",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 8,
+          "characters": 366,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "07 辅助复盘：让提问带着证据",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 9,
+          "characters": 565,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "08 AI 协同与关键技术",
+            "开发时用 AI，运行时以本地事实为主"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 10,
+          "characters": 608,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "09 新旧证据完整迁入",
+            "不丢旧记录，也不让旧结论冒充最新版"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 11,
+          "characters": 609,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "10 验证结果与使用限制",
+            "本轮实际执行"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 12,
+          "characters": 732,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "11 项目基础、披露与提交导航",
+            "基础项目和优化说明"
+          ],
+          "textWithinPage": true
+        }
+      ],
+      "popplerRenderedPages": 12,
+      "fonts": [
+        {
+          "font": "/BCDEEE+MicrosoftYaHei",
+          "embedded": true
+        },
+        {
+          "font": "/BCDFEE+MicrosoftYaHei",
+          "embedded": true
+        },
+        {
+          "font": "/BCDGEE+MicrosoftYaHei-Bold",
+          "embedded": true
+        },
+        {
+          "font": "/BCDHEE+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/BCDIEE+MicrosoftYaHei-Bold",
+          "embedded": true
+        }
+      ],
+      "embeddedScreenshotHashesVerified": true
+    },
+    {
+      "docx": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\02-技术文档\\PathLab-AI-技术文档-最新版-20261115.docx",
+      "readOnlySource": true,
+      "pdf": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\02-技术文档\\PathLab-AI-技术文档-最新版-20261115.pdf",
+      "pages": 16,
+      "renderer": "Microsoft Word 16 COM",
+      "pdfBytes": 1089168,
+      "pdfSha256": "686bb00bdf6f852b54a3003aa06c82ccae18d5f25707c430535fb3192aa5e375",
+      "pageInfo": [
+        {
+          "page": 1,
+          "characters": 376,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "PathLab AI",
+            "技术文档"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 2,
+          "characters": 707,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "01 双层交付与总体架构",
+            "不把 Next 工程误当成完整最新版"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 3,
+          "characters": 638,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "02 输入模型、BFS 与 A* 适用域",
+            "先约束问题，再解释结论"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 4,
+          "characters": 744,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "03 二叉堆、决胜规则与事件计数",
+            "为什么相同输入能产生同一条教学轨迹"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 5,
+          "characters": 677,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "04 私有会话与预测门控",
+            "预计算不等于提前向界面公开"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 6,
+          "characters": 447,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "05 Canvas 与 DOM 共用事实",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 7,
+          "characters": 694,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "06 站点、课程与误区诊断",
+            "内容先定义，再使用"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 8,
+          "characters": 501,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "07 E037 独立增强层的可复现性",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 9,
+          "characters": 467,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "08 E038 辅助复盘与双重门控",
+            "实际离线页面 · AI 自动操作截图 · 2026-11-15"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 10,
+          "characters": 624,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "09 本机存档、备份与恢复",
+            "正式任务与便捷练习分离"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 11,
+          "characters": 661,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "10 反馈、契约与外部 AI 边界",
+            "本地规则是基线能力"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 12,
+          "characters": 733,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "11 最新单文件的独立复现",
+            "最短体验路径"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 13,
+          "characters": 917,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "12 基础 Next 工程的运行与检查",
+            "与最新独立增强明确分工"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 14,
+          "characters": 758,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "13 验证层级与本轮实际范围",
+            "不合并不同轮次的分数"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 15,
+          "characters": 657,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "14 Prompt、Git 与媒体证据的来源",
+            "角色、先后和完整性必须可辨"
+          ],
+          "textWithinPage": true
+        },
+        {
+          "page": 16,
+          "characters": 859,
+          "firstLines": [
+            "PATHLAB AI / 2026-11-15 / 本地完整迁移版",
+            "15 完整迁移、校验与交付边界",
+            "每个原路径都有字节一致的去向"
+          ],
+          "textWithinPage": true
+        }
+      ],
+      "popplerRenderedPages": 16,
+      "fonts": [
+        {
+          "font": "/BCDEEE+MicrosoftYaHei",
+          "embedded": true
+        },
+        {
+          "font": "/BCDFEE+MicrosoftYaHei",
+          "embedded": true
+        },
+        {
+          "font": "/BCDGEE+MicrosoftYaHei-Bold",
+          "embedded": true
+        },
+        {
+          "font": "/BCDHEE+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/BCDIEE+MicrosoftYaHei-Bold",
+          "embedded": true
+        },
+        {
+          "font": "/BCDJEE+Consolas",
+          "embedded": true
+        }
+      ],
+      "embeddedScreenshotHashesVerified": true
+    }
+  ],
+  "visualInspection": {
+    "status": "completed",
+    "executor": "AI",
+    "scope": "all 28 final pages viewed via 7 four-page contact sheets; 12 introduction pages and 16 technical pages",
+    "result": "readable headers/body/tables/screenshots, consistent page numbering; no observed clipping/overlap",
+    "iterations": [
+      {
+        "issue": "first render collapsed inline screenshots due to exact paragraph spacing",
+        "fix": "image paragraphs changed to automatic single line spacing; both documents rebuilt, re-exported and all final pages viewed"
+      }
+    ],
+    "notHumanAcceptance": true
+  }
+}

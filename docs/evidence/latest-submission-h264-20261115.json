@@ -1,0 +1,202 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI tool operation",
+  "method": "ffmpeg libx264 CRF20 yuv420p AAC160k faststart; no resize/cut/concatenation/speed alteration",
+  "files": [
+    {
+      "original": "183595fb6fa9eb107ab392f73ca80aa4.mp4",
+      "derivative": "09-演示视频/H264兼容播放/183595fb6fa9eb107ab392f73ca80aa4-H264.mp4",
+      "bytes": 13472505,
+      "sha256": "270e33af5a40f9c1892b87ad2f8b55621f6842946cdfac81facd36b63c73cdaa",
+      "codec": "H264/AAC",
+      "resize": false,
+      "trim": false,
+      "speedChange": false,
+      "fullDecodePassed": true,
+      "actualContainerMetadata": {
+        "container": "MP4",
+        "tracks": [
+          {
+            "track": 0,
+            "handler": "vide",
+            "codec": "avc1",
+            "width": 1280,
+            "height": 720,
+            "timescale": 15360,
+            "durationUnits": 553472,
+            "durationSeconds": 36.03333333333333
+          },
+          {
+            "track": 1,
+            "handler": "soun",
+            "codec": "mp4a",
+            "width": null,
+            "height": null,
+            "timescale": 44100,
+            "durationUnits": 1590021,
+            "durationSeconds": 36.05489795918368
+          }
+        ],
+        "video": {
+          "track": 0,
+          "handler": "vide",
+          "codec": "avc1",
+          "width": 1280,
+          "height": 720,
+          "timescale": 15360,
+          "durationUnits": 553472,
+          "durationSeconds": 36.03333333333333
+        },
+        "audio": {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 1590021,
+          "durationSeconds": 36.05489795918368
+        },
+        "durationSeconds": 36.03333333333333,
+        "duration": "00:36.033",
+        "requirements": {
+          "duration5To8Minutes": false,
+          "mp4Container": true,
+          "heightAtLeast1080": false,
+          "aiCollaborationAtLeast2Minutes": "not_verified_from_metadata_manual_review_required"
+        }
+      },
+      "originalDimensionsAndDurationVerified": true
+    },
+    {
+      "original": "ee88b0dd110e97bb568bd819e5fa5f5f.mp4",
+      "derivative": "09-演示视频/H264兼容播放/ee88b0dd110e97bb568bd819e5fa5f5f-H264.mp4",
+      "bytes": 9706644,
+      "sha256": "87e1eae7ed24c4ac429385fdfc0992808e85a8034d16272f5eb006e2873fa807",
+      "codec": "H264/AAC",
+      "resize": false,
+      "trim": false,
+      "speedChange": false,
+      "fullDecodePassed": true,
+      "actualContainerMetadata": {
+        "container": "MP4",
+        "tracks": [
+          {
+            "track": 0,
+            "handler": "vide",
+            "codec": "avc1",
+            "width": 1280,
+            "height": 720,
+            "timescale": 15360,
+            "durationUnits": 290816,
+            "durationSeconds": 18.933333333333334
+          },
+          {
+            "track": 1,
+            "handler": "soun",
+            "codec": "mp4a",
+            "width": null,
+            "height": null,
+            "timescale": 44100,
+            "durationUnits": 835911,
+            "durationSeconds": 18.954897959183672
+          }
+        ],
+        "video": {
+          "track": 0,
+          "handler": "vide",
+          "codec": "avc1",
+          "width": 1280,
+          "height": 720,
+          "timescale": 15360,
+          "durationUnits": 290816,
+          "durationSeconds": 18.933333333333334
+        },
+        "audio": {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 835911,
+          "durationSeconds": 18.954897959183672
+        },
+        "durationSeconds": 18.933333333333334,
+        "duration": "00:18.933",
+        "requirements": {
+          "duration5To8Minutes": false,
+          "mp4Container": true,
+          "heightAtLeast1080": false,
+          "aiCollaborationAtLeast2Minutes": "not_verified_from_metadata_manual_review_required"
+        }
+      },
+      "originalDimensionsAndDurationVerified": true
+    },
+    {
+      "original": "新版本mp4.mp4",
+      "derivative": "09-演示视频/H264兼容播放/新版本mp4-H264.mp4",
+      "bytes": 31791374,
+      "sha256": "dab40d8afb395a463bdd2acd3f1ecc6b883ac76fc50eeece19ca6497e6a0bfe8",
+      "codec": "H264/AAC",
+      "resize": false,
+      "trim": false,
+      "speedChange": false,
+      "fullDecodePassed": true,
+      "actualContainerMetadata": {
+        "container": "MP4",
+        "tracks": [
+          {
+            "track": 0,
+            "handler": "vide",
+            "codec": "avc1",
+            "width": 960,
+            "height": 544,
+            "timescale": 15360,
+            "durationUnits": 3734016,
+            "durationSeconds": 243.1
+          },
+          {
+            "track": 1,
+            "handler": "soun",
+            "codec": "mp4a",
+            "width": null,
+            "height": null,
+            "timescale": 44100,
+            "durationUnits": 10721440,
+            "durationSeconds": 243.11655328798187
+          }
+        ],
+        "video": {
+          "track": 0,
+          "handler": "vide",
+          "codec": "avc1",
+          "width": 960,
+          "height": 544,
+          "timescale": 15360,
+          "durationUnits": 3734016,
+          "durationSeconds": 243.1
+        },
+        "audio": {
+          "track": 1,
+          "handler": "soun",
+          "codec": "mp4a",
+          "width": null,
+          "height": null,
+          "timescale": 44100,
+          "durationUnits": 10721440,
+          "durationSeconds": 243.11655328798187
+        },
+        "durationSeconds": 243.1,
+        "duration": "04:03.100",
+        "requirements": {
+          "duration5To8Minutes": false,
+          "mp4Container": true,
+          "heightAtLeast1080": false,
+          "aiCollaborationAtLeast2Minutes": "not_verified_from_metadata_manual_review_required"
+        }
+      },
+      "originalDimensionsAndDurationVerified": true
+    }
+  ]
+}

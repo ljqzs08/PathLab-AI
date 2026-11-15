@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "files": [
+    {
+      "name": "01-home.png",
+      "bytes": 558346,
+      "sha256": "8b784408ee048d4e3557b0b15f27a4625abcf893f026bf20bf28affa54499c64",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "02-intro.png",
+      "bytes": 274553,
+      "sha256": "6871ffaea467dcdebbf16b5a9ce449e7d14f5bfd79251baead228fd035143488",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "02-lab.png",
+      "bytes": 249565,
+      "sha256": "b88eb1e73f8d03f8f2fa1ae24747dd69a6dfe3cd923b00d43ad551b37b10599b",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "02-pictures.png",
+      "bytes": 514783,
+      "sha256": "b201427b8ae7cd631c70c37a73ff4035461c219fd93bc909358eda90b929b454",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "02-playground.png",
+      "bytes": 208884,
+      "sha256": "44a64966690871ab79938236f061df3a5416ac39b90679e41a55cb211e10d19a",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "02-primer.png",
+      "bytes": 319675,
+      "sha256": "4eeeb898031b849f98d0d39362c793b0496da27e990f30439c175777faa71f40",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "03-coach-replay.png",
+      "bytes": 268241,
+      "sha256": "c8c847e278c549abac85c948a9318d4984141e0dd65a7fb07f5c4a5e38d801e8",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "04-review-learning.png",
+      "bytes": 193333,
+      "sha256": "9b4b4afa71e4e7ecec5fa840c8bc85a39e6095cea5980fd23f4766956ab9da10",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "05-original-reflection.png",
+      "bytes": 311882,
+      "sha256": "cf2f915bfb286e8fdd6bb59056b68b003f36ff79720521902a5eae04f79ec8f2",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "06-mobile-home.png",
+      "bytes": 226356,
+      "sha256": "c19fa7ef80b274cbe8ffd63db7c0f315aed54eef5eae75e8969ee4a08a3d9ef6",
+      "dimensions": [
+        390,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    },
+    {
+      "name": "07-mobile-review.png",
+      "bytes": 79716,
+      "sha256": "474c388fc7e4a43e82a36934b92529a4b632751a47da536bb5544b3e10057e81",
+      "dimensions": [
+        390,
+        1000
+      ],
+      "formalEvidence": true,
+      "visualInspection": "AI viewed rendered image; not human or physical device"
+    }
+  ]
+}

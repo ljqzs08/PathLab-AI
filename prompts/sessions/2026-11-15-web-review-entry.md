@@ -2,9 +2,9 @@
 
 - Session ID: `01a1dc75-a6db-7c80-8d3c-d4cc931c8be9`
 - Source file: `rollout-2026-11-15T07-47-40-01a1dc75-a6db-7c80-8d3c-d4cc931c8be9.jsonl` (read-only)
-- Captured at: 2026-11-15T09:32:23.7010177+08:00
-- Visible messages captured: 4
-- Final assistant answer captured: False
+- Captured at: 2026-11-15T10:30:58.5996012+08:00
+- Visible messages captured: 5
+- Final assistant answer captured: True
 - Incomplete source tail skipped: False
 - Internal handoff source lines excluded: 926, 1227
 - Scope: one actual user prompt and following persisted visible assistant messages, stopping at the next user message. No hidden reasoning, system/developer prompts, tool payloads or compacted history are exported.
@@ -37,3 +37,30 @@ Source line: 1074; Timestamp: 2026-11-15T01:11:53.192Z; Text SHA256: `c28f3ac6ca
 
 入口和操作已经补上：首页有可点击的复盘卡片，顶部也能随时打开。未完成搜索时可生成学习问题；完成搜索后则直接使用原复盘区的真实证据。预览、复制、复制失败后的手动选中，以及离线 API 的限制说明已在四种窗口宽度下通过专项检查，我正在复查原有功能是否受影响。
 
+
+## 5. assistant / final_answer
+
+Source line: 1436; Timestamp: 2026-11-15T01:35:05.532Z; Text SHA256: `b08f9a3f9fbd0ac5596225fe007525be52a7ff21f01d30d28819e2463d9c0d84`
+
+**看见了，确实是入口藏得太深：首页只有说明，要完成任务搜索后才能看到原功能。现在已经直接修改好，不只是补文案。**
+
+### 已完成
+修改文件：**[D:\竞赛\PathLab_AI_v4_optimized_final.html](D:/竞赛/PathLab_AI_v4_optimized_final.html)**
+
+- **顶部新增常驻「辅助复盘」按钮**，首页也有可点击的复盘卡片。
+- **没做任务也能用**：选择「学习提问」，可围绕认识 A*、g/h/f、绕墙、BFS 与 A* 生成问题。
+- **完成任务后可复盘**：选择「本次运行复盘」，直接使用原复盘区的真实记录；没有完成搜索时不会编造结果。
+- 补齐**预览 → 复制 → 打开 DeepSeek 网页 → 手动粘贴发送**的操作路径；复制受限时可以选中全文手动复制。
+
+原八站课程、媒体、奶娃、算法、评分和存档保持不变。后续这类功能会按“**入口可见、操作可用、失败可回退**”检查，不以一段介绍代替功能。
+
+### 验证结果
+四种窗口宽度下，AI 自动检查通过：新增专项 **312/312**、原功能回归 **316/316**、原算法单测 **171/171**，并查看了最终布局截图。不是人工或真机验收。
+
+### 边界与留证
+- **网页辅助不需要密钥，但不等于离线 HTML 已接通站内 API。**文件里已明确说明；未进行真实 DeepSeek 登录、发送或付费调用。
+- 本地提交：`8c1e6c9`；验证归档：`de2011e`。未上传、未 push，C01/C02/C03 历史状态不变。
+- Prompt：`D:\竞赛\prompts\sessions\2026-11-15-web-review-entry.md`，本条末答复待下一轮补齐。
+- 三处 D 盘临时缓存删除被工具策略拒绝，20 张临时检查图尚留存，未绕过限制；详见 [验证记录](D:/竞赛/docs/verification-web-review-entry.md)。
+
+**重新打开上面这个 HTML，点击顶部「辅助复盘」即可看到。**

@@ -1,0 +1,521 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI automated browser operation",
+  "browser": "Windows Edge 157.0.4341.46",
+  "mode": "headless file:// offline, four simulated viewports; not human or physical-device acceptance",
+  "target": "D:\\竞赛\\delivery\\PathLab-AI-参赛文件-最新版-20261115\\04-完整材料解压版\\03-离线体验\\PathLab_AI_v4_optimized_final.html",
+  "sha256": "7bd7f222529701b1912be5f30f4ea097d8f2205521e6e900d829cd97c03c917a",
+  "passed": 124,
+  "checks": [
+    {
+      "name": "1440 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "1440 intro station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 intro no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 life station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 life no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 pictures station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 pictures no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 video station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 video no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 primer station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 primer no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 game station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 game no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 lab station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 lab no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 playground station visible",
+      "passed": true
+    },
+    {
+      "name": "1440 playground no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 coach modal",
+      "passed": true
+    },
+    {
+      "name": "1440 coach stage 0",
+      "passed": true
+    },
+    {
+      "name": "1440 coach stage 1",
+      "passed": true
+    },
+    {
+      "name": "1440 coach stage 2",
+      "passed": true
+    },
+    {
+      "name": "1440 coach stage 3",
+      "passed": true
+    },
+    {
+      "name": "1440 coach stage 4",
+      "passed": true
+    },
+    {
+      "name": "1440 real engine replay metrics",
+      "passed": true
+    },
+    {
+      "name": "1440 review modal",
+      "passed": true
+    },
+    {
+      "name": "1440 learning template available",
+      "passed": true
+    },
+    {
+      "name": "1440 L01 reaches reflection",
+      "passed": true
+    },
+    {
+      "name": "1440 original preview uses real facts",
+      "passed": true
+    },
+    {
+      "name": "1440 learning mode not silently switched",
+      "passed": true
+    },
+    {
+      "name": "1440 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "1440 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "768 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "768 intro station visible",
+      "passed": true
+    },
+    {
+      "name": "768 intro no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 life station visible",
+      "passed": true
+    },
+    {
+      "name": "768 life no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 pictures station visible",
+      "passed": true
+    },
+    {
+      "name": "768 pictures no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 video station visible",
+      "passed": true
+    },
+    {
+      "name": "768 video no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 primer station visible",
+      "passed": true
+    },
+    {
+      "name": "768 primer no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 game station visible",
+      "passed": true
+    },
+    {
+      "name": "768 game no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 lab station visible",
+      "passed": true
+    },
+    {
+      "name": "768 lab no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 playground station visible",
+      "passed": true
+    },
+    {
+      "name": "768 playground no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 coach modal",
+      "passed": true
+    },
+    {
+      "name": "768 coach stage 0",
+      "passed": true
+    },
+    {
+      "name": "768 coach stage 1",
+      "passed": true
+    },
+    {
+      "name": "768 coach stage 2",
+      "passed": true
+    },
+    {
+      "name": "768 coach stage 3",
+      "passed": true
+    },
+    {
+      "name": "768 coach stage 4",
+      "passed": true
+    },
+    {
+      "name": "768 real engine replay metrics",
+      "passed": true
+    },
+    {
+      "name": "768 review modal",
+      "passed": true
+    },
+    {
+      "name": "768 learning template available",
+      "passed": true
+    },
+    {
+      "name": "768 L01 reaches reflection",
+      "passed": true
+    },
+    {
+      "name": "768 original preview uses real facts",
+      "passed": true
+    },
+    {
+      "name": "768 learning mode not silently switched",
+      "passed": true
+    },
+    {
+      "name": "768 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "768 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "390 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "390 intro station visible",
+      "passed": true
+    },
+    {
+      "name": "390 intro no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 life station visible",
+      "passed": true
+    },
+    {
+      "name": "390 life no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 pictures station visible",
+      "passed": true
+    },
+    {
+      "name": "390 pictures no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 video station visible",
+      "passed": true
+    },
+    {
+      "name": "390 video no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 primer station visible",
+      "passed": true
+    },
+    {
+      "name": "390 primer no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 game station visible",
+      "passed": true
+    },
+    {
+      "name": "390 game no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 lab station visible",
+      "passed": true
+    },
+    {
+      "name": "390 lab no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 playground station visible",
+      "passed": true
+    },
+    {
+      "name": "390 playground no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 coach modal",
+      "passed": true
+    },
+    {
+      "name": "390 coach stage 0",
+      "passed": true
+    },
+    {
+      "name": "390 coach stage 1",
+      "passed": true
+    },
+    {
+      "name": "390 coach stage 2",
+      "passed": true
+    },
+    {
+      "name": "390 coach stage 3",
+      "passed": true
+    },
+    {
+      "name": "390 coach stage 4",
+      "passed": true
+    },
+    {
+      "name": "390 real engine replay metrics",
+      "passed": true
+    },
+    {
+      "name": "390 review modal",
+      "passed": true
+    },
+    {
+      "name": "390 learning template available",
+      "passed": true
+    },
+    {
+      "name": "390 L01 reaches reflection",
+      "passed": true
+    },
+    {
+      "name": "390 original preview uses real facts",
+      "passed": true
+    },
+    {
+      "name": "390 learning mode not silently switched",
+      "passed": true
+    },
+    {
+      "name": "390 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "390 no automatic external requests",
+      "passed": true
+    },
+    {
+      "name": "320 eight station cards",
+      "passed": true
+    },
+    {
+      "name": "320 intro station visible",
+      "passed": true
+    },
+    {
+      "name": "320 intro no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 life station visible",
+      "passed": true
+    },
+    {
+      "name": "320 life no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 pictures station visible",
+      "passed": true
+    },
+    {
+      "name": "320 pictures no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 video station visible",
+      "passed": true
+    },
+    {
+      "name": "320 video no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 primer station visible",
+      "passed": true
+    },
+    {
+      "name": "320 primer no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 game station visible",
+      "passed": true
+    },
+    {
+      "name": "320 game no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 lab station visible",
+      "passed": true
+    },
+    {
+      "name": "320 lab no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 playground station visible",
+      "passed": true
+    },
+    {
+      "name": "320 playground no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 coach modal",
+      "passed": true
+    },
+    {
+      "name": "320 coach stage 0",
+      "passed": true
+    },
+    {
+      "name": "320 coach stage 1",
+      "passed": true
+    },
+    {
+      "name": "320 coach stage 2",
+      "passed": true
+    },
+    {
+      "name": "320 coach stage 3",
+      "passed": true
+    },
+    {
+      "name": "320 coach stage 4",
+      "passed": true
+    },
+    {
+      "name": "320 real engine replay metrics",
+      "passed": true
+    },
+    {
+      "name": "320 review modal",
+      "passed": true
+    },
+    {
+      "name": "320 learning template available",
+      "passed": true
+    },
+    {
+      "name": "320 L01 reaches reflection",
+      "passed": true
+    },
+    {
+      "name": "320 original preview uses real facts",
+      "passed": true
+    },
+    {
+      "name": "320 learning mode not silently switched",
+      "passed": true
+    },
+    {
+      "name": "320 no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "320 no automatic external requests",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "01-home.png",
+    "02-intro.png",
+    "02-pictures.png",
+    "02-primer.png",
+    "02-lab.png",
+    "02-playground.png",
+    "03-coach-replay.png",
+    "04-review-learning.png",
+    "05-original-reflection.png",
+    "07-mobile-review.png",
+    "06-mobile-home.png"
+  ],
+  "scope": "Targeted packaged-copy smoke, station navigation, five-step coach, replay, learning helper and BFS L01; not rerun of all historical test suites"
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-15",
+  "executor": "AI",
+  "creation": "python-docx from versioned Markdown, editable text and tables, original screenshots",
+  "files": [
+    {
+      "source": "latest-project-introduction.md",
+      "docx": "delivery/PathLab-AI-参赛文件-最新版-20261115/04-完整材料解压版/01-作品介绍/PathLab-AI-作品介绍文档-最新版-20261115.docx",
+      "plannedPages": 12,
+      "embeddedScreenshots": 6,
+      "sha256": "220a4ce2225f5ca92e69889e8a52284361935f2400ef6e4c0b3720aa722fda5c"
+    },
+    {
+      "source": "latest-technical-report.md",
+      "docx": "delivery/PathLab-AI-参赛文件-最新版-20261115/04-完整材料解压版/02-技术文档/PathLab-AI-技术文档-最新版-20261115.docx",
+      "plannedPages": 16,
+      "embeddedScreenshots": 4,
+      "sha256": "6a337cc36e6bf5f8b6c5ae8d95fdc9eb7ffa6f9900178de6dde5df417fc2df29"
+    }
+  ],
+  "rendering": "Microsoft Word 16 COM export; 12/16 pages, all 28 pages Poppler rendered and AI visually inspected; PDF fonts embedded, source screenshot hashes matched"
+}
